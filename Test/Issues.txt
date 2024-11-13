@@ -1,0 +1,3 @@
+- Comma issue in Stock file
+- See how francesco creates the golden source and see i can find a way to do that independently
+- Maybe refer to the nth column instead of the hard column name - names may change over time.
