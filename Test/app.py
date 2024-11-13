@@ -86,7 +86,7 @@ exclusion_criteria = {
 for column, exclude_value in exclusion_criteria.items():
     # Get ISINs that have either 'Red' or 'Amber' flags
     flagged_isins = Oekom_TrustCarbon_df[
-        Oekom_TrustCarbon_df[column].isin(['Red', 'Amber'])
+        Oekom_TrustCarbon_df[column].isin(['RED', 'Amber'])
     ]['ISIN'].tolist()
     
     # Update the exclude column where applicable
