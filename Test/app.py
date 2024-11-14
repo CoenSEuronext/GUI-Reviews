@@ -232,56 +232,63 @@ for criterion in layoff_criterion.values():
 
 # Staff Rating Screening
 
-# First merge the ICB super sector information and Area Flag
-Oekom_TrustCarbon_df = Oekom_TrustCarbon_df.merge(
-    developed_market_df[['ISIN', 'Area Flag']],
-    on='ISIN',
-    how='left'
-).merge(
-    icb_df,
-    left_on='ISIN',
-    right_on='ISIN Code', 
-    how='left'
+# First get list of ISINs from developed_market_df
+developed_market_isins = developed_market_df['ISIN'].tolist()
+
+# Merge and filter for only companies in developed_market_df
+analysis_df = (Oekom_TrustCarbon_df[Oekom_TrustCarbon_df['ISIN'].isin(developed_market_isins)]
+    .merge(
+        developed_market_df[['ISIN', 'Area Flag']],
+        on='ISIN',
+        how='left'
+    )
+    .merge(
+        icb_df,
+        left_on='ISIN',
+        right_on='ISIN Code',
+        how='left'
+    )
+    .drop_duplicates(subset=['ISIN'])  # Add this to remove duplicates
 )
 
-# Make sure CRStaffRatingNum is numeric
-Oekom_TrustCarbon_df['CRStaffRatingNum'] = pd.to_numeric(Oekom_TrustCarbon_df['CRStaffRatingNum'], errors='coerce').fillna(0)
+# Convert to numeric and fill NaN with 0
+analysis_df['CRStaffRatingNum'] = pd.to_numeric(analysis_df['CRStaffRatingNum'], errors='coerce').fillna(0)
 
-# Let's add some verification prints
-print("\nExample calculations:")
-for area in Oekom_TrustCarbon_df['Area Flag'].unique():
-    for sector in Oekom_TrustCarbon_df['Supersector Code'].unique():
-        subset = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Area Flag'] == area) & 
-            (Oekom_TrustCarbon_df['Supersector Code'] == sector)
-        ]
-        if len(subset) > 0:
-            percentile_20 = subset['CRStaffRatingNum'].quantile(0.2)
-            count_below = len(subset[subset['CRStaffRatingNum'] < percentile_20])
-            print(f"Area: {area}, Sector: {sector}")
-            print(f"20th percentile: {percentile_20:.2f}")
-            print(f"Companies below threshold: {count_below}")
-            print("---")
+# Create an empty list to collect ISINs to exclude
+excluded_isins = []
 
-# Calculate 20th percentile by region and super sector
-percentiles = Oekom_TrustCarbon_df.groupby(['Supersector Code', 'Area Flag'])['CRStaffRatingNum'].transform(
-    lambda x: x.quantile(0.2)
-)
+# Process each group separately
+for (sector, area), group in analysis_df.groupby(['Supersector Code', 'Area Flag']):
+   # Sort companies within this group by their rating
+   sorted_group = group.sort_values('CRStaffRatingNum')
+   
+   # Calculate how many companies make up 20%
+   n_companies = len(sorted_group)
+   n_position = int(np.ceil(n_companies * 0.1999999999))  # Round up to ensure we exclude at least 20%
+   
+   # Get the CRStaffRatingNum value at the 20th percentile position
+   threshold = sorted_group['CRStaffRatingNum'].iloc[n_position-1]
+   
+   # Get all ISINs with values below or equal to this threshold
+   bottom_isins = sorted_group[sorted_group['CRStaffRatingNum'] <= threshold]['ISIN'].tolist()
+   excluded_isins.extend(bottom_isins)
 
-# Get ISINs of companies below their group's 20th percentile
-excluded_isins = Oekom_TrustCarbon_df[
-    Oekom_TrustCarbon_df['CRStaffRatingNum'] < percentiles
-]['ISIN'].tolist()
+   # Print details for verification
+   print(f"\nSector {sector}, Area {area}:")
+   print(f"Total companies: {n_companies}")
+   print(f"20th percentile position: {n_position}")
+   print(f"Threshold value: {threshold}")
+   print(f"Companies excluded: {len(bottom_isins)}")
 
 # Update the exclude column in developed_market_df
 developed_market_df['exclude'] = np.where(
-    (developed_market_df['ISIN'].isin(excluded_isins)) & 
-    (developed_market_df['exclude'].isna()),
-    'exclude_StaffRating',
-    developed_market_df['exclude']
+   (developed_market_df['ISIN'].isin(excluded_isins)) & 
+   (developed_market_df['exclude'].isna()),
+   'exclude_StaffRating',
+   developed_market_df['exclude']
 )
 
-# Print summary of exclusions
+# Print total exclusions
 count = (developed_market_df['exclude'] == 'exclude_StaffRating').sum()
 print(f"\nTotal exclude_StaffRating: {count} companies excluded")
 
