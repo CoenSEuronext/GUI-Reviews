@@ -1,3 +1,10 @@
 - Comma issue in Stock file
 - See how francesco creates the golden source and see i can find a way to do that independently
 - Maybe refer to the nth column instead of the hard column name - names may change over time.
+- Are all companies in the job_creation_df
+
+- Add fillna(10000) to selection_df
+
+
+
+--> What needs to be fixed the selection needs to be selected based on the ranking and after that be alphabetically ordered.

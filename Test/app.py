@@ -6,8 +6,8 @@ from functions import read_semicolon_csv
 
 # Set the path to the folder where data is stored
 data_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Data"
-date = "20241108"
-area = "EU"
+date = "20240917"
+area = "US"
 type = "STOCK"
 universe = "Developed Market"
 index = "FRD4P"
@@ -28,8 +28,8 @@ icb_df = pd.read_excel(
 job_creation_df = pd.read_excel(os.path.join(data_folder, "Job Creation.xlsx"))
 nace_df = pd.read_excel(os.path.join(data_folder, "NACE.xlsx"))
 sesamm_df = pd.read_excel(os.path.join(data_folder, "SESAMM.xlsx"))
-index_eod_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndexEU1_GIS_EOD_INDEX_20241108.csv"), encoding="latin1")
-stock_eod_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndexEU1_GIS_EOD_STOCK_20241108.csv"), encoding="latin1")
+index_eod_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
+stock_eod_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
 
 # Add Flag for XPAR or NON Xpar MIC
 developed_market_df['XPAR Flag'] = developed_market_df['MIC'].apply(lambda x: 1 if x == 'XPAR' else 0)
@@ -252,33 +252,23 @@ analysis_df = (Oekom_TrustCarbon_df[Oekom_TrustCarbon_df['ISIN'].isin(developed_
 )
 
 # Convert to numeric and fill NaN with 0
-analysis_df['CRStaffRatingNum'] = pd.to_numeric(analysis_df['CRStaffRatingNum'], errors='coerce').fillna(0)
+analysis_df['CRStaffRatingNum'] = pd.to_numeric(analysis_df['CRStaffRatingNum'], errors='coerce').fillna(3)
 
 # Create an empty list to collect ISINs to exclude
 excluded_isins = []
 
 # Process each group separately
 for (sector, area), group in analysis_df.groupby(['Supersector Code', 'Area Flag']):
-   # Sort companies within this group by their rating
+   # Sort group by CRStaffRatingNum
    sorted_group = group.sort_values('CRStaffRatingNum')
    
-   # Calculate how many companies make up 20%
-   n_companies = len(sorted_group)
-   n_position = int(np.ceil(n_companies * 0.1999999999))  # Round up to ensure we exclude at least 20%
+   # Calculate number of companies to exclude (20% of total count, rounded down)
+   n_companies = len(group)
+   n_to_exclude = int(np.floor(n_companies * 0.1999999999))
    
-   # Get the CRStaffRatingNum value at the 20th percentile position
-   threshold = sorted_group['CRStaffRatingNum'].iloc[n_position-1]
-   
-   # Get all ISINs with values below or equal to this threshold
-   bottom_isins = sorted_group[sorted_group['CRStaffRatingNum'] <= threshold]['ISIN'].tolist()
+   # Get the ISINs of the bottom n_to_exclude companies by CRStaffRatingNum
+   bottom_isins = sorted_group['ISIN'].iloc[:n_to_exclude].tolist()
    excluded_isins.extend(bottom_isins)
-
-   # Print details for verification
-   print(f"\nSector {sector}, Area {area}:")
-   print(f"Total companies: {n_companies}")
-   print(f"20th percentile position: {n_position}")
-   print(f"Threshold value: {threshold}")
-   print(f"Companies excluded: {len(bottom_isins)}")
 
 # Update the exclude column in developed_market_df
 developed_market_df['exclude'] = np.where(
@@ -288,12 +278,104 @@ developed_market_df['exclude'] = np.where(
    developed_market_df['exclude']
 )
 
+
+
 # Print total exclusions
-count = (developed_market_df['exclude'] == 'exclude_StaffRating').sum()
-print(f"\nTotal exclude_StaffRating: {count} companies excluded")
+# count = (developed_market_df['exclude'] == 'exclude_StaffRating').sum()
+# print(f"\nTotal exclude_StaffRating: {count} companies excluded")
+
+
+# Step 3: Selection Ranking.
+
+# Create selection_df with non-excluded companies
+selection_df = developed_market_df[developed_market_df['exclude'].isna()].copy()
+
+# Merge selection_df with job creation scores and staff ratings
+selection_df = selection_df.merge(
+    job_creation_df[['ISIN', 'number_jobs']], 
+    on='ISIN',
+    how='left'
+).merge(
+    analysis_df[['ISIN', 'CRStaffRatingNum']],
+    on='ISIN',
+    how='left'
+)
+
+# Fill any missing values with 0
+selection_df['number_jobs'] = selection_df['number_jobs'].fillna(0)
+selection_df['CRStaffRatingNum'] = selection_df['CRStaffRatingNum'].fillna(0)
+
+# Create ranking for each XPAR Flag group
+def rank_companies(group):
+    sorted_group = group.sort_values(['number_jobs', 'CRStaffRatingNum'], ascending=[False, False])
+    sorted_group['rank'] = range(1, len(sorted_group) + 1)
+    return sorted_group
+
+# Apply ranking within each XPAR group
+# Create ranking within each XPAR group
+for xpar in [0, 1]:
+    mask = selection_df['XPAR Flag'] == xpar
+    sorted_group = selection_df[mask].sort_values(['number_jobs', 'CRStaffRatingNum'], ascending=[False, False])
+    selection_df.loc[mask, 'rank'] = range(1, len(sorted_group) + 1)
+
+# Sort selection_df by rank for each group
+xpar_top20 = selection_df[selection_df['XPAR Flag'] == 1].sort_values('rank').head(20)
+nonxpar_top20 = selection_df[selection_df['XPAR Flag'] == 0].sort_values('rank').head(20)
+
+# Combine top 20 from each group
+final_selection_df = pd.concat([xpar_top20, nonxpar_top20])
+
+# Sort by Name
+final_selection_df = final_selection_df.sort_values('Name')
+
+
+final_selection_df.to_excel('final_selection_df.xlsx', index=False)
+
+os.startfile('final_selection_df.xlsx')
+
+selection_df.to_excel('selection_df.xlsx', index=False)
+
+os.startfile('selection_df.xlsx')
 
 
 
-developed_market_df.to_excel('developed_market.xlsx', index=False)
 
-os.startfile('developed_market.xlsx')
+
+# Get market cap value from index_eod_df
+# Get market cap value from index_eod_df
+total_mkt_cap = index_eod_df[index_eod_df['Mnemo'] == 'FRD4P']['Mkt Cap'].iloc[0]
+print(total_mkt_cap)
+
+
+
+final_selection_df = final_selection_df.merge(
+   ff_df[['ISIN Code:', 'Free Float Round:']],
+   left_on='ISIN',
+   right_on='ISIN Code:',
+   how='left'
+).merge(
+   stock_eod_df[
+       (stock_eod_df['Index'] == 'FRD4P')
+   ][['Isin Code', 'FX/Index Ccy', 'Close Prc']],
+   left_on='ISIN',
+   right_on='Isin Code',
+   how='left'
+).merge(
+   developed_market_df[['ISIN', 'NOSH']],
+   on='ISIN',
+   how='left'
+)
+
+print(final_selection_df)
+
+
+# index_eod_df Free float market cap needed
+# stock_eod_df individual free float market cap - price
+
+
+
+
+# Launch developed_market_df
+# developed_market_df.to_excel('developed_market.xlsx', index=False)
+
+# os.startfile('developed_market.xlsx')
