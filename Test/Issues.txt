@@ -8,3 +8,5 @@
 
 
 --> What needs to be fixed the selection needs to be selected based on the ranking and after that be alphabetically ordered.
+
+fillna(0) for 305/306 selection_df

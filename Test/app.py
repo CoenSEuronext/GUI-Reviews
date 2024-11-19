@@ -8,9 +8,13 @@ from functions import read_semicolon_csv
 data_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Data"
 date = "20240917"
 area = "US"
+area2 = "EU"
 type = "STOCK"
 universe = "Developed Market"
 index = "FRD4P"
+isin = "FRIX00003031"
+feed = "Reuters"
+currency = "EUR"
 year = "2024"
 
 # Load files into DataFrames from the specified folder
@@ -28,8 +32,14 @@ icb_df = pd.read_excel(
 job_creation_df = pd.read_excel(os.path.join(data_folder, "Job Creation.xlsx"))
 nace_df = pd.read_excel(os.path.join(data_folder, "NACE.xlsx"))
 sesamm_df = pd.read_excel(os.path.join(data_folder, "SESAMM.xlsx"))
-index_eod_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
-stock_eod_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
+index_eod_us_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
+stock_eod_us_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
+index_eod_eu_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area2 + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
+stock_eod_eu_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area2 + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
+
+
+index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
+stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
 
 # Add Flag for XPAR or NON Xpar MIC
 developed_market_df['XPAR Flag'] = developed_market_df['MIC'].apply(lambda x: 1 if x == 'XPAR' else 0)
@@ -289,64 +299,71 @@ developed_market_df['exclude'] = np.where(
 
 # Create selection_df with non-excluded companies
 selection_df = developed_market_df[developed_market_df['exclude'].isna()].copy()
-
+ 
 # Merge selection_df with job creation scores and staff ratings
 selection_df = selection_df.merge(
-    job_creation_df[['ISIN', 'number_jobs']], 
-    on='ISIN',
-    how='left'
+   job_creation_df[['ISIN', 'number_jobs']], 
+   on='ISIN',
+   how='left'
 ).merge(
-    analysis_df[['ISIN', 'CRStaffRatingNum']],
-    on='ISIN',
-    how='left'
+   analysis_df[['ISIN', 'CRStaffRatingNum']],
+   on='ISIN',
+   how='left'
 )
 
-# Fill any missing values with 0
-selection_df['number_jobs'] = selection_df['number_jobs'].fillna(0)
-selection_df['CRStaffRatingNum'] = selection_df['CRStaffRatingNum'].fillna(0)
 
-# Create ranking for each XPAR Flag group
-def rank_companies(group):
-    sorted_group = group.sort_values(['number_jobs', 'CRStaffRatingNum'], ascending=[False, False])
-    sorted_group['rank'] = range(1, len(sorted_group) + 1)
-    return sorted_group
+def select_top_stocks(df, mic_type, n_stocks=20):
+    """
+    Select top n stocks based on number_jobs and CRStaffRatingNum for given MIC type.
+    
+    Args:
+        df: DataFrame containing the stock data
+        mic_type: 'XPAR' or 'NOXPAR'
+        n_stocks: Number of stocks to select (default 20)
+    
+    Returns:
+        DataFrame with selected stocks
+    """
+    # Filter for MIC type
+    if mic_type == 'XPAR':
+        filtered_df = df[df['MIC'] == 'XPAR'].copy()
+    else:  # NOXPAR
+        filtered_df = df[df['MIC'] != 'XPAR'].copy()
+    
+    # Convert to numeric and handle NaN values
+    filtered_df['number_jobs'] = pd.to_numeric(filtered_df['number_jobs'], errors='coerce')
+    filtered_df['CRStaffRatingNum'] = pd.to_numeric(filtered_df['CRStaffRatingNum'], errors='coerce')
+    
+    # Sort by number_jobs (descending) and CRStaffRatingNum (descending)
+    sorted_df = filtered_df.sort_values(
+        by=['number_jobs', 'CRStaffRatingNum'],
+        ascending=[False, False],
+        na_position='last'
+    )
+    
+    # Select top n stocks
+    selected_stocks = sorted_df.head(n_stocks)
+    
+    return selected_stocks
 
-# Apply ranking within each XPAR group
-# Create ranking within each XPAR group
-for xpar in [0, 1]:
-    mask = selection_df['XPAR Flag'] == xpar
-    sorted_group = selection_df[mask].sort_values(['number_jobs', 'CRStaffRatingNum'], ascending=[False, False])
-    selection_df.loc[mask, 'rank'] = range(1, len(sorted_group) + 1)
+# Select top stocks for both XPAR and NOXPAR
+xpar_selected = select_top_stocks(selection_df, 'XPAR')
+noxpar_selected = select_top_stocks(selection_df, 'NOXPAR')
 
-# Sort selection_df by rank for each group
-xpar_top20 = selection_df[selection_df['XPAR Flag'] == 1].sort_values('rank').head(20)
-nonxpar_top20 = selection_df[selection_df['XPAR Flag'] == 0].sort_values('rank').head(20)
-
-# Combine top 20 from each group
-final_selection_df = pd.concat([xpar_top20, nonxpar_top20])
-
-# Sort by Name
-final_selection_df = final_selection_df.sort_values('Name')
+# Combine the selections
+final_selection_df = pd.concat([xpar_selected, noxpar_selected])
 
 
-final_selection_df.to_excel('final_selection_df.xlsx', index=False)
-
-os.startfile('final_selection_df.xlsx')
-
-selection_df.to_excel('selection_df.xlsx', index=False)
-
-os.startfile('selection_df.xlsx')
-
-
-
-
-
-# Get market cap value from index_eod_df
-# Get market cap value from index_eod_df
 total_mkt_cap = index_eod_df[index_eod_df['Mnemo'] == 'FRD4P']['Mkt Cap'].iloc[0]
 print(total_mkt_cap)
 
-
+stock_eod_df['id1'] = stock_eod_df['Isin Code'] + ' ' + stock_eod_df['Index']
+stock_eod_df['Reuters/Optiq'] = stock_eod_df['#Symbol'].str.len().apply(lambda x: 'Reuters' if x < 12 else 'Optiq')
+stock_eod_df['id2'] = stock_eod_df['#Symbol'] + ' ' + stock_eod_df['Currency']
+stock_eod_df['id3'] = stock_eod_df['#Symbol'] + ' ' + stock_eod_df['Currency']
+stock_eod_df['id4'] = stock_eod_df['#Symbol'] + ' ' + stock_eod_df['Currency']
+stock_eod_df['id5'] = stock_eod_df['#Symbol'] + ' ' + stock_eod_df['Currency']
+print(stock_eod_df[['#Symbol', 'Currency', 'id5']].head())
 
 final_selection_df = final_selection_df.merge(
    ff_df[['ISIN Code:', 'Free Float Round:']],
@@ -366,7 +383,6 @@ final_selection_df = final_selection_df.merge(
    how='left'
 )
 
-print(final_selection_df)
 
 
 # index_eod_df Free float market cap needed
@@ -376,6 +392,6 @@ print(final_selection_df)
 
 
 # Launch developed_market_df
-# developed_market_df.to_excel('developed_market.xlsx', index=False)
+final_selection_df.to_excel('final_selection_df.xlsx', index=False)
 
-# os.startfile('developed_market.xlsx')
+os.startfile('final_selection_df.xlsx')
