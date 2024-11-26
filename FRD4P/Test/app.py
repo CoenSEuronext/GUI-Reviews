@@ -8,6 +8,7 @@ from functions import read_semicolon_csv
 data_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\FRD4p\Data"
 
 date = "20240917"
+effective_date = "23-Sep-24"
 area = "US"
 area2 = "EU"
 type = "STOCK"
@@ -441,15 +442,86 @@ noxpar_selected['Free Float'] = noxpar_selected.apply(
 
 xpar_selected['Price in Index Currency'] = xpar_selected['Price'] * xpar_selected['FX Rate']
 noxpar_selected['Price in Index Currency'] = noxpar_selected['Price'] * noxpar_selected['FX Rate']
-xpar_selected['Original market cap'] = xpar_selected['Price in Index Currency'] * xpar_selected['NOSH'] * noxpar_selected['Free Float']
+xpar_selected['Original market cap'] = xpar_selected['Price in Index Currency'] * xpar_selected['NOSH'] * xpar_selected['Free Float']
 noxpar_selected['Original market cap'] = noxpar_selected['Price in Index Currency'] * noxpar_selected['NOSH'] * noxpar_selected['Free Float']
+
+def apply_capping(df, step, cap_threshold=0.2, final_step=False):
+    current_step = step
+    next_step = step + 1
+    
+    # Use previous Mcap if available, otherwise use Original market cap
+    prev_mcap = f'Mcap {current_step-1}' if current_step > 1 else 'Original market cap'
+    
+    # Count capped items and calculate new market cap
+    n_capping = (df[f'Capping {current_step}'] == 1).sum()
+    perc_no_cap = 1 - (n_capping * cap_threshold)
+    mcap_capping = df[df[f'Capping {current_step}'] == 1][prev_mcap].sum()
+    new_mcap = (df[prev_mcap].sum() - mcap_capping) / perc_no_cap
+    
+    # Calculate new market cap and weight
+    df[f'Mcap {current_step}'] = df.apply(
+        lambda row: cap_threshold * new_mcap if row[f'Capping {current_step}'] == 1 else row[prev_mcap],
+        axis=1
+    )
+    df[f'Weight {current_step}'] = df[f'Mcap {current_step}'] / new_mcap
+    
+    # Only add next Capping if not the final step
+    if not final_step:
+        df[f'Capping {next_step}'] = df[f'Weight {current_step}'].apply(lambda x: 1 if x > cap_threshold else 0)
+    
+    return df
+
+# Initial setup
+index_mkt_cap = index_eod_df[index_eod_df['IsinCode'] == isin]['Mkt Cap'].iloc[0]
+ffmc_world = noxpar_selected['Original market cap'].sum()
+ffmc_france = xpar_selected['Original market cap'].sum()
+ffmc_total = ffmc_france + ffmc_world
+
+# Initial weights
+xpar_selected['Weight'] = xpar_selected['Original market cap'] / ffmc_france
+noxpar_selected['Weight'] = noxpar_selected['Original market cap'] / ffmc_world
+xpar_selected['Capping 1'] = xpar_selected['Weight'].apply(lambda x: 1 if x > 0.2 else 0)
+noxpar_selected['Capping 1'] = noxpar_selected['Weight'].apply(lambda x: 1 if x > 0.2 else 0)
+
+# Apply capping process three times
+for step in [1, 2]:  
+   xpar_selected = apply_capping(xpar_selected, step)
+   noxpar_selected = apply_capping(noxpar_selected, step)
+
+# Final step without creating next Capping column
+xpar_selected = apply_capping(xpar_selected, 3, final_step=True)
+noxpar_selected = apply_capping(noxpar_selected, 3, final_step=True)
+
+xpar_selected['Final Capping'] = (xpar_selected['Weight 3'] * ffmc_total) / xpar_selected['Original market cap']
+noxpar_selected['Final Capping'] = (noxpar_selected['Weight 3'] * ffmc_total) / noxpar_selected['Original market cap']
+
 
 # Combine into final selection if needed
 final_selection_df = pd.concat([xpar_selected, noxpar_selected])
+max_capping = final_selection_df['Final Capping'].max()
+final_selection_df['Final Capping'] = (final_selection_df['Final Capping'] / max_capping).round(14)
+final_selection_df['Effective Date of Review'] = effective_date
+FRD4P_df = final_selection_df[[
+   'Name', 
+   'ISIN', 
+   'MIC', 
+   'NOSH', 
+   'Free Float',
+   'Final Capping',
+   'Effective Date of Review',  # Assuming this is the Free Float column
+   'Currency (Local)'  # Assuming this is the Final Capping
+]].copy()
+
+# Optionally rename columns if needed
+FRD4P_df = FRD4P_df.rename(columns={
+   'Currency (Local)': 'Currency',
+})
+FRD4P_df = FRD4P_df.sort_values('Name')
 
 
 
 # # Launch developed_market_df
-noxpar_selected.to_excel('noxpar_selected.xlsx', index=False)
+FRD4P_df.to_excel('FRD4P_df.xlsx', index=False)
 
-os.startfile('noxpar_selected.xlsx')
+os.startfile('FRD4P_df.xlsx')
+
