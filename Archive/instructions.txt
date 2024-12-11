@@ -1,0 +1,11 @@
+# Install the service
+python archive_copy.py install
+
+# Start the service
+python archive_copy.py start
+
+# To stop the service later
+python archive_copy.py stop
+
+# To remove the service
+python archive_copy.py remove

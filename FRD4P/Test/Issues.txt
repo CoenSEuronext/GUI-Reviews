@@ -12,3 +12,5 @@
 fillna(0) for 305/306 selection_df
 
 - Maybe note FFMc and mkt cap
+
+Make an output possible for the reason why something was excluded and also provide the output equal to DATAIKU
