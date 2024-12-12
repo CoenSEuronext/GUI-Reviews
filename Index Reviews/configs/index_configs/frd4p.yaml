@@ -4,23 +4,26 @@ type: "STOCK"
 universe: "Developed Market"
 currency: "EUR"
 
+# Date parameters
+date: "20241122"                  # EOD data date
+effective_date: "23-Dec-24"       # Effective date for the review
+
 # Review parameters
 review_frequency: "monthly"
-rebalance_day: 23  # Day of month for rebalancing
-notice_days: 2     # Days before rebalance for announcement
+rebalance_day: 23
+notice_days: 2
 
 # Market parameters
 area: "US"
 area2: "EU"
 
-# Selection criteria
+# Rest of the configuration remains the same...
 selection:
   xpar_count: 20
   noxpar_count: 20
   primary_metric: "Job_score_3Y"
   secondary_metric: "CRStaffRatingNum"
 
-# Screening criteria
 screening:
   currencies:
     - "EUR"
@@ -51,7 +54,6 @@ screening:
   staff_rating:
     bottom_percentile: 0.20
 
-# Capping parameters
 capping:
   max_weight: 0.20
   iterations: 3

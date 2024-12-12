@@ -106,8 +106,19 @@ class ReviewRunner:
     
     def _get_paths(self) -> Dict[str, str]:
         """Get data file paths."""
-        with open(Path(self.config_path) / 'path_configs.yaml', 'r') as f:
-            return yaml.safe_load(f)
+        try:
+            with open(Path(self.config_path) / 'path_configs.yaml', 'r') as f:
+                paths = yaml.safe_load(f)
+                
+                # Ensure output directory exists for current month
+                current_month = datetime.now().strftime("%Y/%m")
+                output_path = Path(paths['data_paths']['output_folder']) / current_month
+                output_path.mkdir(parents=True, exist_ok=True)
+                
+                return paths['data_paths']
+        except Exception as e:
+            self.logger.error(f"Error loading path configuration: {str(e)}")
+            raise
     
     def _save_results(self, df: pd.DataFrame, config: Dict[str, Any]) -> str:
         """Save review results to appropriate location."""

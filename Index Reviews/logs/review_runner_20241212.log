@@ -1,0 +1,24 @@
+2024-12-12 14:41:08,404 - review_runner - INFO - Loaded 2 index configurations
+2024-12-12 14:41:08,405 - review_runner - INFO - Starting review for FRD4P
+2024-12-12 14:41:08,405 - review_runner - ERROR - Error in review for FRD4P: [Errno 2] No such file or directory: 'configs\\path_configs.yaml'
+2024-12-12 14:41:08,405 - review_runner - INFO - Starting review for FRI4P
+2024-12-12 14:41:08,406 - review_runner - ERROR - Error in review for FRI4P: [Errno 2] No such file or directory: 'configs\\path_configs.yaml'
+2024-12-12 14:41:08,540 - review_runner - ERROR - Error in review process: Cannot save file into a non-existent directory: 'output\2024\12'
+2024-12-12 14:44:00,133 - review_runner - INFO - Loaded 2 index configurations
+2024-12-12 14:44:00,134 - review_runner - INFO - Starting review for FRD4P
+2024-12-12 14:44:10,435 - review_runner - ERROR - Error in review for FRD4P: Error loading data: 'date'
+2024-12-12 14:44:10,446 - review_runner - INFO - Starting review for FRI4P
+2024-12-12 14:44:18,532 - review_runner - ERROR - Error in review for FRI4P: Error loading data: 'date'
+2024-12-12 14:44:18,561 - review_runner - INFO - Generated review summary at output\2024\12\review_summary.xlsx
+2024-12-12 14:45:22,660 - review_runner - INFO - Loaded 2 index configurations
+2024-12-12 14:45:22,660 - review_runner - INFO - Starting review for FRD4P
+2024-12-12 14:45:34,966 - review_runner - ERROR - Error in review for FRD4P: 'Reuters/Optiq'
+2024-12-12 14:45:34,982 - review_runner - INFO - Starting review for FRI4P
+2024-12-12 14:45:44,047 - review_runner - ERROR - Error in review for FRI4P: 'Reuters/Optiq'
+2024-12-12 14:45:44,070 - review_runner - INFO - Generated review summary at output\2024\12\review_summary.xlsx
+2024-12-12 14:47:06,210 - review_runner - INFO - Loaded 2 index configurations
+2024-12-12 14:47:06,211 - review_runner - INFO - Starting review for FRD4P
+2024-12-12 14:47:30,000 - review_runner - INFO - Completed review for FRD4P
+2024-12-12 14:47:30,014 - review_runner - INFO - Starting review for FRI4P
+2024-12-12 14:47:52,296 - review_runner - INFO - Completed review for FRI4P
+2024-12-12 14:47:52,316 - review_runner - INFO - Generated review summary at output\2024\12\review_summary.xlsx

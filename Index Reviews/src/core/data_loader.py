@@ -64,42 +64,73 @@ class DataLoader:
             os.path.join(self.paths['data_folder'], "SESAMM.xlsx")
         )
     
+    # In src/core/data_loader.py
+
     def _load_eod_data(self) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """Load and process EOD data for both US and EU."""
-        # Load US data
-        index_eod_us = read_semicolon_csv(
-            os.path.join(
-                self.paths['dlf_folder'],
-                f"TTMIndex{self.config['area']}1_GIS_EOD_INDEX_{self.config['date']}.csv"
-            ),
-            encoding="latin1"
-        )
-        stock_eod_us = read_semicolon_csv(
-            os.path.join(
-                self.paths['dlf_folder'],
-                f"TTMIndex{self.config['area']}1_GIS_EOD_STOCK_{self.config['date']}.csv"
-            ),
-            encoding="latin1"
-        )
-        
-        # Load EU data
-        index_eod_eu = read_semicolon_csv(
-            os.path.join(
-                self.paths['dlf_folder'],
-                f"TTMIndex{self.config['area2']}1_GIS_EOD_INDEX_{self.config['date']}.csv"
-            ),
-            encoding="latin1"
-        )
-        stock_eod_eu = read_semicolon_csv(
-            os.path.join(
-                self.paths['dlf_folder'],
-                f"TTMIndex{self.config['area2']}1_GIS_EOD_STOCK_{self.config['date']}.csv"
-            ),
-            encoding="latin1"
-        )
-        
-        # Combine data
-        return (
-            pd.concat([index_eod_us, index_eod_eu], ignore_index=True),
-            pd.concat([stock_eod_us, stock_eod_eu], ignore_index=True)
-        )
+        try:
+            # Load US data
+            index_eod_us = read_semicolon_csv(
+                os.path.join(
+                    self.paths['dlf_folder'],
+                    f"TTMIndex{self.config['area']}1_GIS_EOD_INDEX_{self.config['date']}.csv"
+                ),
+                encoding="latin1"
+            )
+            stock_eod_us = read_semicolon_csv(
+                os.path.join(
+                    self.paths['dlf_folder'],
+                    f"TTMIndex{self.config['area']}1_GIS_EOD_STOCK_{self.config['date']}.csv"
+                ),
+                encoding="latin1"
+            )
+            
+            # Load EU data
+            index_eod_eu = read_semicolon_csv(
+                os.path.join(
+                    self.paths['dlf_folder'],
+                    f"TTMIndex{self.config['area2']}1_GIS_EOD_INDEX_{self.config['date']}.csv"
+                ),
+                encoding="latin1"
+            )
+            stock_eod_eu = read_semicolon_csv(
+                os.path.join(
+                    self.paths['dlf_folder'],
+                    f"TTMIndex{self.config['area2']}1_GIS_EOD_STOCK_{self.config['date']}.csv"
+                ),
+                encoding="latin1"
+            )
+            
+            # Combine data
+            index_eod_df = pd.concat([index_eod_us, index_eod_eu], ignore_index=True)
+            stock_eod_df = pd.concat([stock_eod_us, stock_eod_eu], ignore_index=True)
+            
+            # Add Index Currency
+            stock_eod_df['Index Currency'] = stock_eod_df.apply(
+                lambda row: self._get_index_currency(row, index_eod_df), 
+                axis=1
+            )
+            
+            # Add ISIN/Index combination
+            stock_eod_df['ISIN/Index'] = stock_eod_df['Isin Code'] + stock_eod_df['Index']
+            
+            # Add id5
+            stock_eod_df['id5'] = stock_eod_df['#Symbol'] + stock_eod_df['Index Currency']
+            
+            # Add Reuters/Optiq classification
+            stock_eod_df['Reuters/Optiq'] = stock_eod_df['#Symbol'].str.len().apply(
+                lambda x: 'Reuters' if x < 12 else 'Optiq'
+            )
+            
+            return index_eod_df, stock_eod_df
+            
+        except Exception as e:
+            raise Exception(f"Error loading EOD data: {str(e)}")
+
+    def _get_index_currency(self, row: pd.Series, index_df: pd.DataFrame) -> str:
+        """Get the currency for an index by matching Index with Mnemo."""
+        mask = index_df['Mnemo'] == row['Index']
+        matches = index_df[mask]
+        if not matches.empty:
+            return matches.iloc[0]['Curr']
+        return None

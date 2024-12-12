@@ -1,0 +1,16 @@
+# configs/path_configs.yaml
+data_paths:
+  dlf_folder: "V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive"
+  data_folder: "V:\\PM-Indices-IndexOperations\\Review Files\\202412"
+  output_folder: "output"
+  log_folder: "logs"
+
+input_files:
+  developed_market: "Developed Market.xlsx"
+  free_float: "FF.xlsx"
+  oekom: "Oekom Trust&Carbon.xlsx"
+  icb: "ICB.xlsx"
+  sesamm: "SESAMM.xlsx"
+  nace: "NACE.xlsx"
+
+eod_pattern: "TTMIndex{area}1_GIS_EOD_{type}_{date}.csv"
