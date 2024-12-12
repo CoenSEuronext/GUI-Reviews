@@ -1,0 +1,58 @@
+name: "FRD4P"
+isin: "FRIX00003031"
+type: "STOCK"
+universe: "Developed Market"
+currency: "EUR"
+
+# Review parameters
+review_frequency: "monthly"
+rebalance_day: 23  # Day of month for rebalancing
+notice_days: 2     # Days before rebalance for announcement
+
+# Market parameters
+area: "US"
+area2: "EU"
+
+# Selection criteria
+selection:
+  xpar_count: 20
+  noxpar_count: 20
+  primary_metric: "Job_score_3Y"
+  secondary_metric: "CRStaffRatingNum"
+
+# Screening criteria
+screening:
+  currencies:
+    - "EUR"
+    - "JPY"
+    - "USD"
+    - "CAD"
+    - "GBP"
+  
+  turnover:
+    min_adtv_eur: 10000000
+  
+  layoff:
+    exclude_positive_score: true
+  
+  weapons:
+    exclude_red: true
+    exclude_amber: true
+  
+  energy:
+    coal_revenue_threshold: 0.01
+    fossil_fuel_threshold: 0.10
+    thermal_power_threshold: 0.50
+  
+  tobacco:
+    production_threshold: 0
+    distribution_threshold: 0.15
+  
+  staff_rating:
+    bottom_percentile: 0.20
+
+# Capping parameters
+capping:
+  max_weight: 0.20
+  iterations: 3
+  rounding_decimals: 14

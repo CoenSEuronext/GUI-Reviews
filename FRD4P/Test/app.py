@@ -7,8 +7,12 @@ from functions import read_semicolon_csv
 # Set the path to the folder where data is stored
 data_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\FRD4p\Data"
 
-date = "20240917"
-effective_date = "23-Sep-24"
+# To be used for real reviews
+dlf_folder = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
+data2_folder = r"V:\PM-Indices-IndexOperations\Review Files" + "\\" + datetime.now().strftime("%Y%m")
+
+date = "20241122"
+effective_date = "23-Dec-24"
 area = "US"
 area2 = "EU"
 type = "STOCK"
@@ -20,24 +24,22 @@ currency = "EUR"
 year = "2024"
 
 # Load files into DataFrames from the specified folder
-climate_ghg_df = pd.read_excel(os.path.join(data_folder, "ClimateGHG.xlsx"))
-developed_market_df = pd.read_excel(os.path.join(data_folder, "Developed Market.xlsx"))
-ff_df = pd.read_excel(os.path.join(data_folder, "FF.xlsx"))
+developed_market_df = pd.read_excel(os.path.join(data2_folder, "Developed Market.xlsx"))
+ff_df = pd.read_excel(os.path.join(data2_folder, "FF.xlsx"))
 Oekom_TrustCarbon_df = pd.read_excel(
-    os.path.join(data_folder, "Oekom Trust&Carbon.xlsx"),
+    os.path.join(data2_folder, "Oekom Trust&Carbon.xlsx"),
     header=1
 )
 icb_df = pd.read_excel(
-    os.path.join(data_folder, "ICB.xlsx"),
+    os.path.join(data2_folder, "ICB.xlsx"),
     header=3
 )
-job_creation_df = pd.read_excel(os.path.join(data_folder, "Job Creation.xlsx"))
 nace_df = pd.read_excel(os.path.join(data_folder, "NACE.xlsx"))
-sesamm_df = pd.read_excel(os.path.join(data_folder, "SESAMM.xlsx"))
-index_eod_us_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
-stock_eod_us_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
-index_eod_eu_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area2 + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
-stock_eod_eu_df = read_semicolon_csv(os.path.join(data_folder, "TTMIndex"+ area2 + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
+sesamm_df = pd.read_excel(os.path.join(data2_folder, "SESAMM.xlsx"))
+index_eod_us_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
+stock_eod_us_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
+index_eod_eu_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area2 + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
+stock_eod_eu_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area2 + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
 
 
 index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
@@ -54,16 +56,30 @@ developed_market_df['Area Flag'] = developed_market_df['index'].apply(
     else None
 )
 
-# Exclusion for if there is no SesamM Layoff score + creation of Exclude column
+
+
+# Create exclude column
+developed_market_df['exclude'] = None
+
+# Exclusion for non-major currencies
+allowed_currencies = ['EUR', 'JPY', 'USD', 'CAD', 'GBP']
 developed_market_df['exclude'] = np.where(
-    ~developed_market_df['ISIN'].isin(sesamm_df['ISIN']),
+    ~developed_market_df['Currency (Local)'].isin(allowed_currencies),
+    'exclude_currency',
+    developed_market_df['exclude']
+)
+
+# Exclusion for if there is no SesamM Layoff score
+developed_market_df['exclude'] = np.where(
+    ~developed_market_df['ISIN'].isin(sesamm_df['ISIN']) & 
+    (developed_market_df['exclude'].isna()),
     'exclude_layoff_score_6m',
-    None
+    developed_market_df['exclude']
 )
 
 #Exclusion for 3 months aver. Turnover EUR
 developed_market_df['exclude'] = np.where(
-    (developed_market_df['3 months aver. Turnover EUR'] < 10000000) & 
+    (developed_market_df['3 months ADTV'] < 10000000) & 
     (developed_market_df['exclude'].isna()),
     'exclude_turnover_EUR',
     developed_market_df['exclude']
@@ -162,7 +178,6 @@ sbt_criterion = {
    'SBT': {
        'condition': lambda df: (
            (df['ClimateGHGReductionTargets'] != 'Approved SBT') & 
-           (df['Date'].astype(str).str.contains('2024')) &
            (df['ISIN'].isin(high_impact_isins))
        ),
        'exclude_value': 'exclude_SBT_NACE'
@@ -172,8 +187,8 @@ sbt_criterion = {
 # Process the criterion
 for criterion in sbt_criterion.values():
    # Get ISINs that meet the exclusion condition
-   excluded_isins = climate_ghg_df[
-       criterion['condition'](climate_ghg_df)
+   excluded_isins = Oekom_TrustCarbon_df[
+       criterion['condition'](Oekom_TrustCarbon_df)
    ]['ISIN'].tolist()
    
    # Update the exclude column
@@ -292,10 +307,6 @@ developed_market_df['exclude'] = np.where(
 
 
 
-# Print total exclusions
-# count = (developed_market_df['exclude'] == 'exclude_StaffRating').sum()
-# print(f"\nTotal exclude_StaffRating: {count} companies excluded")
-
 
 # Step 3: Selection Ranking.
 
@@ -304,7 +315,7 @@ selection_df = developed_market_df[developed_market_df['exclude'].isna()].copy()
  
 # Merge selection_df with job creation scores and staff ratings
 selection_df = selection_df.merge(
-   job_creation_df[['ISIN', 'number_jobs']], 
+   sesamm_df[['ISIN', 'Job_score_3Y']], 
    on='ISIN',
    how='left'
 ).merge(
@@ -314,9 +325,9 @@ selection_df = selection_df.merge(
 )
 
 
-def select_top_stocks(df, mic_type, n_stocks=20):
+def select_top_stocks(df, mic_type, n_stocks=[20, 25]):
     """
-    Select top n stocks based on number_jobs and CRStaffRatingNum for given MIC type.
+    Select top n stocks based on Job_score_3Y and CRStaffRatingNum for given MIC type.
     
     Args:
         df: DataFrame containing the stock data
@@ -324,6 +335,7 @@ def select_top_stocks(df, mic_type, n_stocks=20):
         n_stocks: Number of stocks to select (default 20)
     
     Returns:
+
         DataFrame with selected stocks
     """
     # Filter for MIC type
@@ -333,12 +345,12 @@ def select_top_stocks(df, mic_type, n_stocks=20):
         filtered_df = df[df['MIC'] != 'XPAR'].copy()
     
     # Convert to numeric and handle NaN values
-    filtered_df['number_jobs'] = pd.to_numeric(filtered_df['number_jobs'], errors='coerce')
+    filtered_df['Job_score_3Y'] = pd.to_numeric(filtered_df['Job_score_3Y'], errors='coerce')
     filtered_df['CRStaffRatingNum'] = pd.to_numeric(filtered_df['CRStaffRatingNum'], errors='coerce')
     
-    # Sort by number_jobs (descending) and CRStaffRatingNum (descending)
+    # Sort by Job_score_3Y (descending) and CRStaffRatingNum (descending)
     sorted_df = filtered_df.sort_values(
-        by=['number_jobs', 'CRStaffRatingNum'],
+        by=['Job_score_3Y', 'CRStaffRatingNum'],  # Changed from number_jobs
         ascending=[False, False],
         na_position='last'
     )
@@ -349,11 +361,14 @@ def select_top_stocks(df, mic_type, n_stocks=20):
     return selected_stocks
 
 # Select top stocks for both XPAR and NOXPAR
-xpar_selected = select_top_stocks(selection_df, 'XPAR')
-noxpar_selected = select_top_stocks(selection_df, 'NOXPAR')
+xpar_selected_25 = select_top_stocks(selection_df, 'XPAR', 25)
+noxpar_selected_25 = select_top_stocks(selection_df, 'NOXPAR', 25)
+xpar_selected_20 = select_top_stocks(selection_df, 'XPAR', 20)
+noxpar_selected_20 = select_top_stocks(selection_df, 'NOXPAR', 20)
 
 # Combine the selections
-final_selection_df = pd.concat([xpar_selected, noxpar_selected])
+full_selection_df = pd.concat([xpar_selected_25, noxpar_selected_25])
+final_selection_df = pd.concat([xpar_selected_20, noxpar_selected_20])
 
 
 
@@ -411,12 +426,12 @@ def get_stock_info(row, stock_df, target_currency):
     return pd.Series({'Symbol': None, 'Price': None, 'FX Rate': None})
 
 # Add Symbol, Price, and FX Rate columns to xpar_selected
-xpar_selected[['Symbol', 'Price', 'FX Rate']] = xpar_selected.apply(
+xpar_selected_20[['Symbol', 'Price', 'FX Rate']] = xpar_selected_20.apply(
     lambda row: get_stock_info(row, stock_eod_df, currency), axis=1
 )
 
 # Add Symbol, Price, and FX Rate columns to noxpar_selected
-noxpar_selected[['Symbol', 'Price', 'FX Rate']] = noxpar_selected.apply(
+noxpar_selected_20[['Symbol', 'Price', 'FX Rate']] = noxpar_selected_20.apply(
     lambda row: get_stock_info(row, stock_eod_df, currency), axis=1
 )
 
@@ -431,19 +446,19 @@ def get_free_float(row, ff_dataframe):
    return None
 
 # Add Free Float Round: column to xpar_selected
-xpar_selected['Free Float'] = xpar_selected.apply(
+xpar_selected_20['Free Float'] = xpar_selected_20.apply(
    lambda row: get_free_float(row, ff_df), axis=1
 )
 
 # Add Free Float Round: column to noxpar_selected
-noxpar_selected['Free Float'] = noxpar_selected.apply(
+noxpar_selected_20['Free Float'] = noxpar_selected_20.apply(
    lambda row: get_free_float(row, ff_df), axis=1
 )
 
-xpar_selected['Price in Index Currency'] = xpar_selected['Price'] * xpar_selected['FX Rate']
-noxpar_selected['Price in Index Currency'] = noxpar_selected['Price'] * noxpar_selected['FX Rate']
-xpar_selected['Original market cap'] = xpar_selected['Price in Index Currency'] * xpar_selected['NOSH'] * xpar_selected['Free Float']
-noxpar_selected['Original market cap'] = noxpar_selected['Price in Index Currency'] * noxpar_selected['NOSH'] * noxpar_selected['Free Float']
+xpar_selected_20['Price in Index Currency'] = xpar_selected_20['Price'] * xpar_selected_20['FX Rate']
+noxpar_selected_20['Price in Index Currency'] = noxpar_selected_20['Price'] * noxpar_selected_20['FX Rate']
+xpar_selected_20['Original market cap'] = xpar_selected_20['Price in Index Currency'] * xpar_selected_20['NOSH'] * xpar_selected_20['Free Float']
+noxpar_selected_20['Original market cap'] = noxpar_selected_20['Price in Index Currency'] * noxpar_selected_20['NOSH'] * noxpar_selected_20['Free Float']
 
 def apply_capping(df, step, cap_threshold=0.2, final_step=False):
     current_step = step
@@ -473,31 +488,31 @@ def apply_capping(df, step, cap_threshold=0.2, final_step=False):
 
 # Initial setup
 index_mkt_cap = index_eod_df[index_eod_df['IsinCode'] == isin]['Mkt Cap'].iloc[0]
-ffmc_world = noxpar_selected['Original market cap'].sum()
-ffmc_france = xpar_selected['Original market cap'].sum()
+ffmc_world = noxpar_selected_20['Original market cap'].sum()
+ffmc_france = xpar_selected_20['Original market cap'].sum()
 ffmc_total = ffmc_france + ffmc_world
 
 # Initial weights
-xpar_selected['Weight'] = xpar_selected['Original market cap'] / ffmc_france
-noxpar_selected['Weight'] = noxpar_selected['Original market cap'] / ffmc_world
-xpar_selected['Capping 1'] = xpar_selected['Weight'].apply(lambda x: 1 if x > 0.2 else 0)
-noxpar_selected['Capping 1'] = noxpar_selected['Weight'].apply(lambda x: 1 if x > 0.2 else 0)
+xpar_selected_20['Weight'] = xpar_selected_20['Original market cap'] / ffmc_france
+noxpar_selected_20['Weight'] = noxpar_selected_20['Original market cap'] / ffmc_world
+xpar_selected_20['Capping 1'] = xpar_selected_20['Weight'].apply(lambda x: 1 if x > 0.2 else 0)
+noxpar_selected_20['Capping 1'] = noxpar_selected_20['Weight'].apply(lambda x: 1 if x > 0.2 else 0)
 
 # Apply capping process three times
 for step in [1, 2]:  
-   xpar_selected = apply_capping(xpar_selected, step)
-   noxpar_selected = apply_capping(noxpar_selected, step)
+   xpar_selected_20 = apply_capping(xpar_selected_20, step)
+   noxpar_selected_20 = apply_capping(noxpar_selected_20, step)
 
 # Final step without creating next Capping column
-xpar_selected = apply_capping(xpar_selected, 3, final_step=True)
-noxpar_selected = apply_capping(noxpar_selected, 3, final_step=True)
+xpar_selected_20 = apply_capping(xpar_selected_20, 3, final_step=True)
+noxpar_selected_20 = apply_capping(noxpar_selected_20, 3, final_step=True)
 
-xpar_selected['Final Capping'] = (xpar_selected['Weight 3'] * ffmc_total) / xpar_selected['Original market cap']
-noxpar_selected['Final Capping'] = (noxpar_selected['Weight 3'] * ffmc_total) / noxpar_selected['Original market cap']
+xpar_selected_20['Final Capping'] = (xpar_selected_20['Weight 3'] * ffmc_total) / xpar_selected_20['Original market cap']
+noxpar_selected_20['Final Capping'] = (noxpar_selected_20['Weight 3'] * ffmc_total) / noxpar_selected_20['Original market cap']
 
 
 # Combine into final selection if needed
-final_selection_df = pd.concat([xpar_selected, noxpar_selected])
+final_selection_df = pd.concat([xpar_selected_20, noxpar_selected_20])
 max_capping = final_selection_df['Final Capping'].max()
 final_selection_df['Final Capping'] = (final_selection_df['Final Capping'] / max_capping).round(14)
 final_selection_df['Effective Date of Review'] = effective_date
@@ -521,6 +536,10 @@ FRD4P_df = FRD4P_df.sort_values('Name')
 # developed_market_df.to_excel('developed_market_df.xlsx', index=False)
 
 # os.startfile('developed_market_df.xlsx')
+
+# full_selection_df.to_excel('full_selection_df.xlsx', index=False)
+
+# os.startfile('full_selection_df.xlsx')
 
 # Launch developed_market_df
 FRD4P_df.to_excel('FRD4P_df.xlsx', index=False)
