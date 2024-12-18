@@ -5,13 +5,10 @@ from datetime import datetime
 from functions import read_semicolon_csv
 
 # Set the path to the folder where data is stored
-data_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\FRD4p\Data"
-
-# To be used for real reviews
 dlf_folder = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
-data2_folder = r"V:\PM-Indices-IndexOperations\Review Files" + "\\" + datetime.now().strftime("%Y%m")
+data_folder = r"V:\PM-Indices-IndexOperations\Review Files" + "\\" + datetime.now().strftime("%Y%m")
 
-date = "20241122"
+date = "20241217"
 effective_date = "23-Dec-24"
 area = "US"
 area2 = "EU"
@@ -24,18 +21,18 @@ currency = "EUR"
 year = "2024"
 
 # Load files into DataFrames from the specified folder
-developed_market_df = pd.read_excel(os.path.join(data2_folder, "Developed Market.xlsx"))
-ff_df = pd.read_excel(os.path.join(data2_folder, "FF.xlsx"))
+developed_market_df = pd.read_excel(os.path.join(data_folder, "Developed Market.xlsx"))
+ff_df = pd.read_excel(os.path.join(data_folder, "FF.xlsx"))
 Oekom_TrustCarbon_df = pd.read_excel(
-    os.path.join(data2_folder, "Oekom Trust&Carbon.xlsx"),
+    os.path.join(data_folder, "Oekom Trust&Carbon.xlsx"),
     header=1
 )
 icb_df = pd.read_excel(
-    os.path.join(data2_folder, "ICB.xlsx"),
+    os.path.join(data_folder, "ICB.xlsx"),
     header=3
 )
 nace_df = pd.read_excel(os.path.join(data_folder, "NACE.xlsx"))
-sesamm_df = pd.read_excel(os.path.join(data2_folder, "SESAMM.xlsx"))
+sesamm_df = pd.read_excel(os.path.join(data_folder, "SESAMM.xlsx"))
 index_eod_us_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
 stock_eod_us_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area + "1_GIS_EOD_STOCK_" + date + ".csv"), encoding="latin1")
 index_eod_eu_df = read_semicolon_csv(os.path.join(dlf_folder, "TTMIndex"+ area2 + "1_GIS_EOD_INDEX_" + date + ".csv"), encoding="latin1")
@@ -530,8 +527,14 @@ FRD4P_df = final_selection_df[[
 # Optionally rename columns if needed
 FRD4P_df = FRD4P_df.rename(columns={
    'Currency (Local)': 'Currency',
+   'Name': 'Company',
+   'ISIN': 'ISIN Code',
+   'NOSH': 'Number of Shares',
+   'Final Capping': 'Capping Factor'
+
+
 })
-FRD4P_df = FRD4P_df.sort_values('Name')
+FRD4P_df = FRD4P_df.sort_values('Company')
 
 # developed_market_df.to_excel('developed_market_df.xlsx', index=False)
 

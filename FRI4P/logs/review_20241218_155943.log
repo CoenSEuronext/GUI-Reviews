@@ -1,0 +1,29 @@
+2024-12-18 15:59:43,314 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 15:59:43,315 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 15:59:43,324 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 15:59:43,761 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 15:59:43,763 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2024-12-18 15:59:44,872 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 15:59:44] "GET / HTTP/1.1" 200 -
+2024-12-18 16:00:14,969 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 16:00:14] "POST /calculate HTTP/1.1" 200 -
+2024-12-18 16:01:05,451 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2024-12-18 16:01:05,454 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2024-12-18 16:01:05,456 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading
+2024-12-18 16:01:05,459 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2024-12-18 16:01:05,463 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2024-12-18 16:01:05,481 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
+2024-12-18 16:01:05,608 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2024-12-18 16:01:05,610 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading
+2024-12-18 16:01:05,612 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_scalars.py', reloading
+2024-12-18 16:01:05,682 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2024-12-18 16:01:05,684 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading
+2024-12-18 16:01:05,829 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:01:37,946 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:05:51,732 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:05:53,308 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:07:56,899 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:07:59,456 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:17:33,251 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:17:34,830 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:18:03,267 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-18 16:19:14,211 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

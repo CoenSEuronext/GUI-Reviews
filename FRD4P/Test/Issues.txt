@@ -1,5 +1,5 @@
 - Maybe refer to the nth column instead of the hard column name - names may change over time.
-- Are all companies in the job_creation_df
+
 
 
 
