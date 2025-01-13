@@ -5,6 +5,7 @@ from datetime import datetime
 # Network paths
 DLF_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
+DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
 
 # Index Configurations
 INDEX_CONFIGS = {
@@ -25,7 +26,7 @@ INDEX_CONFIGS = {
     },
     "GICP": {
         "index": "GICP",
-        "isin": "FRIX00003031",
+        "isin": "NLIX00005321",
         "output_key": "gicp_path"
     }
     # Add new indices here following the same pattern

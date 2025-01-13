@@ -5,7 +5,7 @@ import os
 import logging
 import traceback
 from Review.functions import read_semicolon_csv
-from config import DLF_FOLDER, DATA_FOLDER
+from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 
 # Set up logging
 def setup_logging():
@@ -41,7 +41,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
         date (str): Calculation date in format YYYYMMDD
         effective_date (str): Effective date in format DD-MMM-YY
         index (str, optional): Index name. Defaults to "gicp"
-        isin (str, optional): ISIN code. Defaults to "FRIX00003031"
+        isin (str, optional): ISIN code. Defaults to "NLIX00005321"
         area (str, optional): Primary area. Defaults to "US"
         area2 (str, optional): Secondary area. Defaults to "EU"
         type (str, optional): Type of instrument. Defaults to "STOCK"
@@ -59,7 +59,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             year = str(datetime.strptime(date, '%Y%m%d').year)
 
         # Set data folder for current month
-        current_data_folder = os.path.join(DATA_FOLDER, date[:6])
+        current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
 
         # Load files into DataFrames from the specified folder
         developed_market_df = pd.read_excel(os.path.join(current_data_folder, "Developed Market.xlsx"))
@@ -92,12 +92,22 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
         stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
 
         developed_market_df = developed_market_df.merge(
-            icb_df[['ISIN Code', 'Subsector Code']], 
+            icb_df.drop_duplicates('ISIN Code', keep='first')[['ISIN Code', 'Subsector Code']],
             left_on='ISIN',
             right_on='ISIN Code',
             how='left'
         ).drop('ISIN Code', axis=1)
 
+        # Add Free Float data from ff_df
+        developed_market_df = developed_market_df.merge(
+            ff_df.drop_duplicates('ISIN Code:', keep='first')[['ISIN Code:', 'Free Float Round:']],
+            left_on='ISIN',
+            right_on='ISIN Code:',
+            how='left'
+        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+
+        developed_market_df['FFMC'] = developed_market_df['NOSH'] * developed_market_df['Price (EUR) '] * developed_market_df['Free Float']
+        
         # Convert index column to string type before string operations
         developed_market_df['index'] = developed_market_df['index'].astype(str)
         # Add EU500 exclusion
@@ -108,7 +118,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             'exclude_Area',
             None
         )
-
+        
         # Similarly convert Subsector Code to string
         developed_market_df['Subsector Code'] = developed_market_df['Subsector Code'].astype(str)
 
@@ -123,7 +133,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             
             # Category 2: XPAR + Clothing and Accessories Subsector (40204020)
             ((developed_market_df['MIC'] == 'XPAR') & 
-            (developed_market_df['Subsector Code'] == '40204020')) |
+            (developed_market_df['Subsector Code'].str[:8] == '40204020')) |
             
             # Category 3: XETR + Automobiles and Parts Super Sector (4010)
             ((developed_market_df['MIC'] == 'XETR') & 
@@ -158,16 +168,16 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             developed_market_df['exclusion_2'].isna()
         )
 
-        # Add rank for non-excluded companies based on Mcap in EUR
+
+        # Add rank for non-excluded companies based on FFMC in EUR
         developed_market_df['rank'] = None
         developed_market_df.loc[non_excluded_mask, 'rank'] = (
-            developed_market_df.loc[non_excluded_mask, 'Mcap in EUR']
+            developed_market_df.loc[non_excluded_mask, 'FFMC']
             .rank(method='first', ascending=False)
         )
 
-        # Initialize rank column
-        developed_market_df['rank'] = None
 
+        
         # Define the category conditions and rank within each category
         category_definitions = [
             # Category 1: XPAR + Banks Super Sector (3010)
@@ -183,7 +193,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             {
                 'mask': (
                     (developed_market_df['MIC'] == 'XPAR') & 
-                    (developed_market_df['Subsector Code'] == '40204020') &
+                    (developed_market_df['Subsector Code'].str[:8] == '40204020') &
                     developed_market_df['exclusion_1'].isna()
                 ),
                 'name': 'Category_2'
@@ -245,7 +255,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             developed_market_df.loc[mask, 'category'] = category['name']
             # Rank within category based on market cap
             developed_market_df.loc[mask, 'rank'] = (
-                developed_market_df.loc[mask, 'Mcap in EUR']
+                developed_market_df.loc[mask, 'FFMC']
                 .rank(method='first', ascending=False)
             )
         # Define the number of companies to select from each category
@@ -276,7 +286,79 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
         # Create final selection dataframe
         final_selection_df = developed_market_df[developed_market_df['selected']].copy()
         
-        final_selection_df['Final Capping'] = 1  # Or calculate appropriate capping
+        final_selection_df['Original market cap'] = index_eod_df['Mcap in EUR'] * final_selection_df['Free Float']
+
+        # Define category weights
+        category_weights = {
+            'Category_1': 0.12,  # 12%
+            'Category_2': 0.12,
+            'Category_3': 0.12,
+            'Category_4': 0.12,
+            'Category_5': 0.12,
+            'Category_6': 0.20,  # 20%
+            'Category_7': 0.20
+        }
+
+        def apply_category_capping(df, target_weight, max_weight=0.10):
+            """Apply capping within a category"""
+            total_mcap = df['Original market cap'].sum()
+            df['Initial Weight'] = df['Original market cap'] / total_mcap
+            
+            iteration = 0
+            weights_changed = True
+            max_iterations = 100
+            
+            while weights_changed and iteration < max_iterations:
+                weights_changed = False
+                # Identify capped constituents
+                capped_constituents = df['Initial Weight'] > max_weight
+                n_capped = capped_constituents.sum()
+                
+                if n_capped > 0:
+                    # Cap weights at max_weight
+                    df.loc[capped_constituents, 'Initial Weight'] = max_weight
+                    
+                    # Redistribute excess weight
+                    total_capped_weight = max_weight * n_capped
+                    available_weight = target_weight - total_capped_weight
+                    
+                    if available_weight > 0:
+                        # Redistribute to uncapped constituents proportionally
+                        uncapped = ~capped_constituents
+                        sum_uncapped_weights = df.loc[uncapped, 'Initial Weight'].sum()
+                        
+                        if sum_uncapped_weights > 0:
+                            scaling_factor = available_weight / sum_uncapped_weights
+                            df.loc[uncapped, 'Initial Weight'] *= scaling_factor
+                            weights_changed = True
+                
+                iteration += 1
+            
+            return df
+
+        # Apply capping by category
+        for category, target_weight in category_weights.items():
+            category_mask = final_selection_df['category'] == category
+            category_df = final_selection_df[category_mask].copy()
+            
+            if not category_df.empty:
+                # Apply category capping
+                category_df = apply_category_capping(category_df, target_weight)
+                final_selection_df.loc[category_mask, 'Initial Weight'] = category_df['Initial Weight']
+
+        # Calculate Final Capping factor
+        final_selection_df['Final Capping'] = (final_selection_df['Initial Weight'] * final_selection_df['Original market cap'].sum()) / final_selection_df['Original market cap']
+
+        # Verify final weights
+        final_selection_df['Final Weight'] = final_selection_df['Original market cap'] * final_selection_df['Final Capping'] / (final_selection_df['Original market cap'] * final_selection_df['Final Capping']).sum()
+
+        # Log verification
+        for category in category_weights:
+            cat_weight = final_selection_df[final_selection_df['category'] == category]['Final Weight'].sum()
+            logger.info(f"{category} final weight: {cat_weight:.4%}")
+
+        max_weight = final_selection_df['Final Weight'].max()
+        logger.info(f"Maximum constituent weight: {max_weight:.4%}")
         final_selection_df['Effective Date of Review'] = effective_date
         
         # Create final output DataFrame

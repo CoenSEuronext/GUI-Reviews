@@ -106,46 +106,44 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             else None
         )
 
-        # Create exclude column
-        developed_market_df['exclude'] = None
-
-        # Exclusion for non-major currencies
+        # Initialize exclusion columns
+        # Currency exclusion
+        developed_market_df['exclusion_1'] = None
         allowed_currencies = ['EUR', 'JPY', 'USD', 'CAD', 'GBP']
-        developed_market_df['exclude'] = np.where(
+        developed_market_df['exclusion_1'] = np.where(
             ~developed_market_df['Currency (Local)'].isin(allowed_currencies),
             'exclude_currency',
-            developed_market_df['exclude']
+            None
         )
 
-        # Exclusion for if there is no SesamM Layoff score
-        developed_market_df['exclude'] = np.where(
-            ~developed_market_df['ISIN'].isin(sesamm_df['ISIN']) & 
-            (developed_market_df['exclude'].isna()),
+        # SesamM Layoff score exclusion
+        developed_market_df['exclusion_2'] = None
+        developed_market_df['exclusion_2'] = np.where(
+            ~developed_market_df['ISIN'].isin(sesamm_df['ISIN']),
             'exclude_layoff_score_6m',
-            developed_market_df['exclude']
+            None
         )
 
-        #Exclusion for 3 months aver. Turnover EUR
-        developed_market_df['exclude'] = np.where(
-            (developed_market_df['3 months ADTV'] < 10000000) & 
-            (developed_market_df['exclude'].isna()),
+        # Turnover EUR exclusion
+        developed_market_df['exclusion_3'] = None
+        developed_market_df['exclusion_3'] = np.where(
+            (developed_market_df['3 months ADTV'] < 10000000),
             'exclude_turnover_EUR',
-            developed_market_df['exclude']
+            None
         )
 
-        #Exclusion for Breaches of internatonal standards
+        # NBR Overall Flag exclusion
+        developed_market_df['exclusion_4'] = None
         NBR_Overall_Flag_Red = Oekom_TrustCarbon_df[
             Oekom_TrustCarbon_df['NBR Overall Flag'] == 'RED'
         ]['ISIN'].tolist()
 
-        developed_market_df['exclude'] = np.where(
-            (developed_market_df['ISIN'].isin(NBR_Overall_Flag_Red)) & 
-            (developed_market_df['exclude'].isna()),
+        developed_market_df['exclusion_4'] = np.where(
+            (developed_market_df['ISIN'].isin(NBR_Overall_Flag_Red)),
             'exclude_NBROverallFlag',
-            developed_market_df['exclude']
+            None
         )
 
-        # Exclusion for Controversial Weapons
         exclusion_criteria = {
             'Biological Weapons - Overall Flag': 'exclude_BiologicalWeaponsFlag',
             'Chemical Weapons - Overall Flag': 'exclude_ChemicalWeaponsFlag',
@@ -156,18 +154,27 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             'Anti-personnel Mines - Overall Flag': 'exclude_APMinesFlag',
             'White Phosphorous Weapons - Overall Flag': 'exclude_WhitePhosphorusFlag'
         }
-
+        
+        # Weapons exclusions
+        exclusion_count = 5
         for column, exclude_value in exclusion_criteria.items():
+            # Create new exclusion column
+            new_col = f'exclusion_{exclusion_count}'
+            developed_market_df[new_col] = None
+            
+            # Get ISINs for this weapon type
             flagged_isins = Oekom_TrustCarbon_df[
                 Oekom_TrustCarbon_df[column].isin(['RED', 'Amber'])
             ]['ISIN'].tolist()
             
-            developed_market_df['exclude'] = np.where(
-                (developed_market_df['ISIN'].isin(flagged_isins)) & 
-                (developed_market_df['exclude'].isna()),
+            # Apply exclusion independently
+            developed_market_df[new_col] = np.where(
+                developed_market_df['ISIN'].isin(flagged_isins),
                 exclude_value,
-                developed_market_df['exclude']
+                None
             )
+            
+            exclusion_count += 1
 
         # Energy Screening
         # Convert columns to numeric
@@ -177,10 +184,11 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             'FossilFuelDistMaxRev',
             'Power Generation - Thermal Maximum Percentage of Revenues (%)'
         ]
-        
+
         for col in energy_columns:
             Oekom_TrustCarbon_df[col] = pd.to_numeric(Oekom_TrustCarbon_df[col], errors='coerce')
 
+        # Process energy exclusions
         energy_criteria = {
             'Coal': {
                 'condition': lambda df: df['Coal Mining and Power Gen - Maximum Percentage of Revenues (%)'] >= 0.01,
@@ -196,24 +204,30 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             }
         }
 
-        for criterion in energy_criteria.values():
+        for criterion_name, criterion in energy_criteria.items():
+            new_col = f'exclusion_{exclusion_count}'
+            developed_market_df[new_col] = None
+            
+            # Get ISINs that meet the exclusion condition
             excluded_isins = Oekom_TrustCarbon_df[
                 criterion['condition'](Oekom_TrustCarbon_df)
             ]['ISIN'].tolist()
             
-            developed_market_df['exclude'] = np.where(
-                (developed_market_df['ISIN'].isin(excluded_isins)) & 
-                (developed_market_df['exclude'].isna()),
+            # Apply exclusion independently
+            developed_market_df[new_col] = np.where(
+                developed_market_df['ISIN'].isin(excluded_isins),
                 criterion['exclude_value'],
-                developed_market_df['exclude']
+                None
             )
+            
+            exclusion_count += 1
 
         # Tobacco Screening
         tobacco_columns = [
             'Tobacco - Production Maximum Percentage of Revenues (%)',
             'Tobacco - Distribution Maximum Percentage of Revenues (%)'
         ]
-        
+
         for col in tobacco_columns:
             Oekom_TrustCarbon_df[col] = pd.to_numeric(Oekom_TrustCarbon_df[col], errors='coerce')
 
@@ -228,37 +242,39 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             }
         }
 
-        for criterion in tobacco_criteria.values():
+        for criterion_name, criterion in tobacco_criteria.items():
+            new_col = f'exclusion_{exclusion_count}'
+            developed_market_df[new_col] = None
+            
+            # Get ISINs that meet the exclusion condition
             excluded_isins = Oekom_TrustCarbon_df[
                 criterion['condition'](Oekom_TrustCarbon_df)
             ]['ISIN'].tolist()
             
-            developed_market_df['exclude'] = np.where(
-                (developed_market_df['ISIN'].isin(excluded_isins)) & 
-                (developed_market_df['exclude'].isna()),
+            # Apply exclusion independently
+            developed_market_df[new_col] = np.where(
+                developed_market_df['ISIN'].isin(excluded_isins),
                 criterion['exclude_value'],
-                developed_market_df['exclude']
+                None
             )
+            
+            exclusion_count += 1
 
         # Layoff Screening
-        layoff_criterion = {
-            'Layoff': {
-                'condition': lambda df: df['layoff_score_6m'] > 0,
-                'exclude_value': 'exclude_Layoff'
-            }
-        }
+        new_col = f'exclusion_{exclusion_count}'
+        developed_market_df[new_col] = None
 
-        for criterion in layoff_criterion.values():
-            excluded_isins = sesamm_df[
-                criterion['condition'](sesamm_df)
-            ]['ISIN'].tolist()
-            
-            developed_market_df['exclude'] = np.where(
-                (developed_market_df['ISIN'].isin(excluded_isins)) & 
-                (developed_market_df['exclude'].isna()),
-                criterion['exclude_value'],
-                developed_market_df['exclude']
-            )
+        excluded_isins = sesamm_df[
+            sesamm_df['layoff_score_6m'] > 0
+        ]['ISIN'].tolist()
+
+        developed_market_df[new_col] = np.where(
+            developed_market_df['ISIN'].isin(excluded_isins),
+            'exclude_Layoff',
+            None
+        )
+
+        exclusion_count += 1
 
         # Staff Rating Screening
         developed_market_isins = developed_market_df['ISIN'].tolist()
@@ -283,21 +299,34 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
         excluded_isins = []
 
         for (sector, area), group in analysis_df.groupby(['Supersector Code', 'Area Flag']):
+            logger.info(f"Processing sector: {sector}, area: {area}, group size: {len(group)}")
             sorted_group = group.sort_values('CRStaffRatingNum')
             n_companies = len(group)
             n_to_exclude = int(np.floor(n_companies * 0.1999999999))
-            bottom_isins = sorted_group['ISIN'].iloc[:n_to_exclude].tolist()
-            excluded_isins.extend(bottom_isins)
+            logger.info(f"Companies in group: {n_companies}, to exclude: {n_to_exclude}")
+            if n_companies > 0 and n_to_exclude > 0:  # Add this check
+                bottom_isins = sorted_group['ISIN'].iloc[:n_to_exclude].tolist()
+                excluded_isins.extend(bottom_isins)
+            else:
+                logger.warning(f"No companies to exclude for sector {sector} and area {area}")
 
-        developed_market_df['exclude'] = np.where(
-            (developed_market_df['ISIN'].isin(excluded_isins)) & 
-            (developed_market_df['exclude'].isna()),
+        new_col = f'exclusion_{exclusion_count}'
+        developed_market_df[new_col] = None
+        developed_market_df[new_col] = np.where(
+            developed_market_df['ISIN'].isin(excluded_isins),
             'exclude_StaffRating',
-            developed_market_df['exclude']
+            None
         )
 
-        # Selection Ranking
-        selection_df = developed_market_df[developed_market_df['exclude'].isna()].copy()
+        exclusion_count += 1
+
+        # Create list of all exclusion columns
+        exclusion_columns = [f'exclusion_{i}' for i in range(1, exclusion_count)]
+
+        # Select companies that have no exclusions (all exclusion columns are None)
+        selection_df = developed_market_df[
+            developed_market_df[exclusion_columns].isna().all(axis=1)
+        ].copy()
         
         selection_df = selection_df.merge(
             sesamm_df[['ISIN', 'Job_score_3Y']],
@@ -428,7 +457,15 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             return df
 
         # Initial setup for capping
-        index_mkt_cap = index_eod_df[index_eod_df['IsinCode'] == isin]['Mkt Cap'].iloc[0]
+        logger.info(f"Checking IsinCode {isin} in index_eod_df")
+        matching_rows = index_eod_df[index_eod_df['IsinCode'] == isin]
+        logger.info(f"Found {len(matching_rows)} matching rows")
+        if len(matching_rows) > 0:
+            index_mkt_cap = matching_rows['Mkt Cap'].iloc[0]
+        else:
+            logger.error(f"No matching index found for ISIN {isin}")
+            raise ValueError(f"No matching index found for ISIN {isin}")
+
         ffmc_world = noxpar_selected_20['Original market cap'].sum()
         ffmc_france = xpar_selected_20['Original market cap'].sum()
         ffmc_total = ffmc_france + ffmc_world
@@ -487,8 +524,11 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             
             # Save with timestamp to avoid any conflicts
             logger.info(f"Saving FRI4P output to: {fri4p_path}")
-            FRI4P_df.to_excel(fri4p_path, index=False)
-            
+            with pd.ExcelWriter(fri4p_path) as writer:
+                    # Write each DataFrame to a different sheet
+                    FRI4P_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                    developed_market_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                
             return {
                 "status": "success",
                 "message": "Review completed successfully",

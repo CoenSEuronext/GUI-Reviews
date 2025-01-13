@@ -28,6 +28,7 @@ def calculate():
         date = request.form['date']
         effective_date = request.form['effective_date']
         currency = request.form['currency']
+        auto_open = request.form.get('auto_open') == 'on'
 
         # Get index configuration
         index_config = get_index_config(review_type)
@@ -43,7 +44,7 @@ def calculate():
         )
 
         # Open Excel file if calculation was successful
-        if result["status"] == "success":
+        if result["status"] == "success" and auto_open:
             output_path = result["data"].get(index_config["output_key"])
             if output_path and os.path.exists(output_path):
                 os.startfile(output_path)
