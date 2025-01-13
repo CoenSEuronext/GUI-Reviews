@@ -1,0 +1,2 @@
+- Make option to open review output via the GUI
+- Not necessary to auto open the review
