@@ -286,7 +286,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
         # Create final selection dataframe
         final_selection_df = developed_market_df[developed_market_df['selected']].copy()
         
-        final_selection_df['Original market cap'] = index_eod_df['Mcap in EUR'] * final_selection_df['Free Float']
+        final_selection_df['Original market cap'] = stock_eod_df['Close Prc'] * stock_eod_df['FX/Index Ccy'] * final_selection_df['Free Float'] * final_selection_df['NOSH']
 
         # Define category weights
         category_weights = {

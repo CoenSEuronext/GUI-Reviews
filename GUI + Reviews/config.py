@@ -28,6 +28,11 @@ INDEX_CONFIGS = {
         "index": "GICP",
         "isin": "NLIX00005321",
         "output_key": "gicp_path"
+    },
+        "EDWPT": {
+        "index": "EDWPT",
+        "isin": "NLIX00001932",
+        "output_key": "edwpt_path"
     }
     # Add new indices here following the same pattern
 }

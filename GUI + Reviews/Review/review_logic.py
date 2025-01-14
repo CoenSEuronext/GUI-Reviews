@@ -5,6 +5,7 @@ from .reviews.fri4p_review import run_fri4p_review
 from .reviews.frd4p_review import run_frd4p_review
 from .reviews.egspp_review import run_egspp_review
 from .reviews.gicp_review import run_gicp_review
+from .reviews.edwpt_review import run_edwpt_review
 
 def run_review(review_type, **kwargs):
     """
@@ -19,6 +20,8 @@ def run_review(review_type, **kwargs):
             return run_egspp_review(**kwargs)
         elif review_type.upper() == "GICP":
             return run_gicp_review(**kwargs)
+        elif review_type.upper() == "EDWPT":
+            return run_edwpt_review(**kwargs)
         else:
             raise ValueError(f"Unknown review type: {review_type}")
     except Exception as e:

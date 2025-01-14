@@ -1,0 +1,30 @@
+2025-01-14 16:02:44,165 - werkzeug - WARNING -  * Debugger is active!
+2025-01-14 16:02:44,168 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-14 16:02:48,698 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-14 16:02:50,154 - Review.reviews.edwpt_review - ERROR - Error during review calculation: 'NOSH'
+2025-01-14 16:02:50,158 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-01-14 16:02:50,160 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-01-14 16:02:50,160 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'NOSH'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 114, in run_edwpt_review
+    universe_df['FFMC'] = stock_eod_df['Close Prc'] * universe_df['NOSH'] * universe_df['']
+                                                      ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'NOSH'
+
+2025-01-14 16:02:50,179 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2025 16:02:50] "POST /calculate HTTP/1.1" 200 -
