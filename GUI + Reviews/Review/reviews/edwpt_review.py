@@ -97,27 +97,77 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
         
         full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['cutoff_nosh'] * full_universe_df['cutoff_price'] * full_universe_df['free_float']
         # Create column mapping dictionary where the key is the new column name and value is the original column name
+        # Create column mapping dictionary where the key is the new column name and value is the original name
         column_mapping = {
-            'Ticker': 'fs_ticker',           # Want 'Ticker', currently 'fs_ticker'
-            'Name': 'proper_name',           # Want 'Name', currently 'proper_name'
-            'ISIN': 'ISIN',                 # Want 'ISIN', currently 'ISIN'
-            'MIC': 'MIC',                   # Want 'MIC', currently 'MIC'
-            'NOSH': 'cutoff_nosh',          # Want 'NOSH', currently 'cutoff_nosh'
-            'Price (EUR) ': 'cutoff_price',  # Want 'Price (EUR)', currently 'cutoff_price'
-            'Currency (Local)': 'p_currency',# Want 'Currency (Local)', currently 'p_currency'
-            'Mcap in EUR': 'Mcap in EUR',   # Want 'Mcap in EUR', currently 'Mcap in EUR'
-            'FFMC': 'free_float_market_cap' # Want 'FFMC', currently 'free_float_market_cap'
+            'Ticker': 'fs_ticker',           
+            'Name': 'proper_name',           
+            'ISIN': 'ISIN',                 
+            'MIC': 'MIC',                   
+            'NOSH': 'cutoff_nosh',          
+            'Price (EUR) ': 'cutoff_price',  
+            'Currency (Local)': 'p_currency',
+            'Mcap in EUR': 'Mcap in EUR',   
+            'FFMC': 'free_float_market_cap' 
         }
 
         # Create universe_df with selected and renamed columns
         universe_df = full_universe_df[list(column_mapping.values())]  # Select columns using current names
         universe_df = universe_df.rename(columns={v: k for k, v in column_mapping.items()})  # Rename to desired names
-        
-        # Add rank column for each MIC group based on FFMC
-        universe_df['Rank'] = universe_df.groupby('MIC')['FFMC'].rank(method='first', ascending=False)
 
-        # Sort the DataFrame by MIC and Rank for better visualization
-        universe_df = universe_df.sort_values(['MIC', 'Rank'])
+        # Sort entire DataFrame by FFMC descending
+        universe_df = universe_df.sort_values('FFMC', ascending=False)
+
+        # Add cumulative count for entire universe
+        universe_df['Cumulative Count'] = range(1, len(universe_df) + 1)
+
+        # Calculate universe-level cumulative statistics
+        universe_df['Total Universe FFMC'] = universe_df['FFMC'].sum()
+        universe_df['Universe Cumulative FFMC'] = universe_df['FFMC'].cumsum()
+        universe_df['Universe Cumulative Percentage'] = (universe_df['Universe Cumulative FFMC'] / universe_df['Total Universe FFMC']) * 100
+
+        # Add rank column for each MIC group while maintaining global FFMC sort
+        universe_df['MIC Rank'] = universe_df.groupby('MIC')['FFMC'].rank(method='first', ascending=False)
+
+        # Calculate MIC-level statistics
+        universe_df['MIC Cumulative FFMC'] = universe_df.groupby('MIC')['FFMC'].cumsum()
+        universe_df['Total MIC FFMC'] = universe_df.groupby('MIC')['FFMC'].transform('sum')
+        universe_df['MIC Cumulative Percentage'] = (universe_df['MIC Cumulative FFMC'] / universe_df['Total MIC FFMC']) * 100
+        
+        # Create EDWPT_selection column (1 if within 98% of either universe or MIC, 0 if not)
+        universe_df['EDWPT_selection'] = np.where(
+            (universe_df['Universe Cumulative Percentage'] <= 98) |  # Universe top 98%
+            (universe_df['MIC Cumulative Percentage'] <= 98),        # MIC top 98%
+            1, 0)
+
+        # Create list of DNAPT MICs
+        dnapt_mics = ['XTSE', 'XNAS', 'XNYS', 'BATS']
+
+        # Initialize DNAPT_selection column with 0s
+        universe_df['DNAPT_selection'] = 0
+
+        # Update selection for DNAPT MICs using existing calculations
+        dnapt_mask = universe_df['MIC'].isin(dnapt_mics)
+        universe_df.loc[dnapt_mask, 'DNAPT_selection'] = np.where(
+            (universe_df.loc[dnapt_mask, 'Universe Cumulative Percentage'] <= 98) |
+            (universe_df.loc[dnapt_mask, 'MIC Cumulative Percentage'] <= 98),
+            1, 0
+        )
+        # Keep DataFrame sorted by FFMC descending
+        universe_df = universe_df.sort_values('FFMC', ascending=False)
+
+        # Print summary statistics
+        print("\nGlobal Selection Summary:")
+        print(f"Total companies selected: {universe_df['EDWPT_selection'].sum()}")
+        print(f"Total FFMC covered: {universe_df[universe_df['EDWPT_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100:.2f}%")
+
+        mic_summary = universe_df.groupby('MIC').agg({
+            'ISIN': 'count',
+            'FFMC': 'sum',
+            'EDWPT_selection': 'sum'
+        }).round(2)
+
+        print("\nMIC-level Summary:")
+        print(mic_summary)
         EDWPT_df = None
 
         try:
