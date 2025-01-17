@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 logger = setup_logging()
 
 def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932", 
-                    area="US", area2="EU", type="STOCK", universe="98% Universe", 
+                    area="US", area2="EU", type="STOCK", universe="98% Universe2", 
                     feed="Reuters", currency="EUR", year=None):
     """
     Run the index review calculation
@@ -101,15 +101,14 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
         column_mapping = {
             'Ticker': 'fs_ticker',           
             'Name': 'proper_name',           
-            'ISIN': 'ISIN',                 
-            'MIC': 'MIC',                   
+            'ISIN': 'ISIN',         
+            'MIC': 'MIC_GIS',                   
             'NOSH': 'cutoff_nosh',          
             'Price (EUR) ': 'cutoff_price',  
             'Currency (Local)': 'p_currency',
-            'Mcap in EUR': 'Mcap in EUR',   
-            'FFMC': 'free_float_market_cap' 
-        }
-
+            'FFMC': 'Mcap in EUR' 
+        }     
+        
         # Create universe_df with selected and renamed columns
         universe_df = full_universe_df[list(column_mapping.values())]  # Select columns using current names
         universe_df = universe_df.rename(columns={v: k for k, v in column_mapping.items()})  # Rename to desired names
@@ -125,33 +124,117 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
         universe_df['Universe Cumulative FFMC'] = universe_df['FFMC'].cumsum()
         universe_df['Universe Cumulative Percentage'] = (universe_df['Universe Cumulative FFMC'] / universe_df['Total Universe FFMC']) * 100
 
-        # Add rank column for each MIC group while maintaining global FFMC sort
-        universe_df['MIC Rank'] = universe_df.groupby('MIC')['FFMC'].rank(method='first', ascending=False)
 
-        # Calculate MIC-level statistics
-        universe_df['MIC Cumulative FFMC'] = universe_df.groupby('MIC')['FFMC'].cumsum()
-        universe_df['Total MIC FFMC'] = universe_df.groupby('MIC')['FFMC'].transform('sum')
+
+        # Create MIC grouping mapping
+        mic_groups = {
+            'US': ['XNYS', 'XNGS', 'BATS'],
+            'SE': ['XSTO', 'XNGM'],
+            'IT': ['XMIL', 'MTAA'],
+            'IE': ['XESM', 'XMSM'],
+            'AU': ['XASX'],
+            'AT': ['WBAH'],
+            'BE': ['XBRU'],
+            'CA': ['XTSE'],
+            'DK': ['XCSE'],
+            'FI': ['XHEL'],
+            'FR': ['XPAR', 'ALXP'],
+            'DE': ['XETR'],
+            'ES': ['XMAD'],
+            'JP': ['XTKS'],
+            'NL': ['XAMS'],
+            'NZ': ['XNZE'],
+            'NO': ['XOSL', 'MERK'],
+            'PT': ['XLIS'],
+            'SG': ['XSES'],
+            'CH': ['XSWX'],
+            'UK': ['XLON'],
+            'HK': ['XHKG'],
+            'IL': ['XTAE'],             
+        }
+
+        # Create a 'Country Group' column for grouping MICs
+        mic_to_country = {mic: country for country, mics in mic_groups.items() for mic in mics}
+
+        # Update get_country_group function
+        def get_country_group(mic):
+            return mic_to_country.get(mic, mic)  # Get country code from mapping, or return mic if not found
+
+        # Add country group column
+        universe_df['Country Group'] = universe_df['MIC'].apply(get_country_group)
+
+        # Recalculate MIC-level statistics using Country Group instead of MIC
+        universe_df['MIC Rank'] = universe_df.groupby('Country Group')['FFMC'].rank(method='first', ascending=False)
+        universe_df['MIC Cumulative FFMC'] = universe_df.groupby('Country Group')['FFMC'].cumsum()
+        universe_df['Total MIC FFMC'] = universe_df.groupby('Country Group')['FFMC'].transform('sum')
         universe_df['MIC Cumulative Percentage'] = (universe_df['MIC Cumulative FFMC'] / universe_df['Total MIC FFMC']) * 100
         
-        # Create EDWPT_selection column (1 if within 98% of either universe or MIC, 0 if not)
-        universe_df['EDWPT_selection'] = np.where(
-            (universe_df['Universe Cumulative Percentage'] <= 98) |  # Universe top 98%
-            (universe_df['MIC Cumulative Percentage'] <= 98),        # MIC top 98%
-            1, 0)
+        # Define all country groups
+        country_groups = {
+            'EDWPT': ['US', 'SE', 'IT', 'IE', 'AU', 'AT', 'BE', 'CA', 'DK', 
+                    'FI', 'FR', 'DE', 'ES', 'JP', 'NL', 'NZ', 'NO', 'PT', 
+                    'SG', 'CH', 'UK', 'HK', 'IL'],
+            'DEUPT': ['NL', 'AT', 'BE', 'DK', 'DE', 'FI', 'PT', 'UK', 'ES', 'IT', 'IE', 'NO', 'FR', 'SE', 'CH'],
+            'DEZPT': ['AT', 'NL', 'BE', 'DE', 'FI', 'PT', 'ES', 'IT', 'IE', 'FR'],
+            'DAPPT': ['HK', 'JP', 'SG', 'AU', 'NZ'],
+            'DNAPT': ['US', 'CA'],
+            'DASPT': ['HK', 'JP', 'SG'],
+            'DPAPT': ['NZ', 'AU'],
+            'EUSPT': ['US'],
+            'EJPPT': ['JP'],
+            'ECHPT': ['CH'],
+            'EUKPT': ['UK'],
+            'CANPT': ['CA']
+        }
 
-        # Create list of DNAPT MICs
-        dnapt_mics = ['XTSE', 'XNAS', 'XNYS', 'BATS']
+        # Function to calculate selection for a group
+        def calculate_group_selection(df, group_name, countries):
+            # Create mask for countries in this group
+            group_mask = df['Country Group'].isin(countries)
+            
+            # Calculate combined group universe percentages
+            group_total_ffmc = df.loc[group_mask, 'FFMC'].sum()
+            
+            if group_total_ffmc > 0:  # Only proceed if there are companies in this group
+                df.loc[group_mask, f'{group_name}_Universe_Cumulative_FFMC'] = (
+                    df.loc[group_mask, 'FFMC'].cumsum()
+                )
+                df.loc[group_mask, f'{group_name}_Universe_Cumulative_Percentage'] = (
+                    df.loc[group_mask, f'{group_name}_Universe_Cumulative_FFMC'] / group_total_ffmc * 100
+                )
+                
+                # Create selection column
+                df[f'{group_name}_selection'] = 0
+                
+                # Get the first row that exceeds 98% for both universe and country levels
+                universe_exceed_mask = (
+                    (df.loc[group_mask, f'{group_name}_Universe_Cumulative_Percentage'] > 98)
+                )
+                country_exceed_mask = (
+                    (df.loc[group_mask, 'MIC Cumulative Percentage'] > 98)
+                )
+                
+                # Select all rows up to and including the first row that exceeds 98%
+                df.loc[group_mask, f'{group_name}_selection'] = np.where(
+                    (df.loc[group_mask, f'{group_name}_Universe_Cumulative_Percentage'] <= 98) |
+                    (df.loc[group_mask, 'MIC Cumulative Percentage'] <= 98) |
+                    (universe_exceed_mask & ~universe_exceed_mask.shift(1, fill_value=False)) |
+                    (country_exceed_mask & ~country_exceed_mask.shift(1, fill_value=False)),
+                    1, 0
+                )
+            
+            return df
 
-        # Initialize DNAPT_selection column with 0s
-        universe_df['DNAPT_selection'] = 0
+        # Apply selections for all groups
+        for group_name, countries in country_groups.items():
+            universe_df = calculate_group_selection(universe_df, group_name, countries)
+            
+            # Print summary statistics for each group
+            group_mask = universe_df['Country Group'].isin(countries)
+            print(f"\n{group_name} Selection Summary:")
+            print(f"Total companies selected: {universe_df[universe_df[f'{group_name}_selection'] == 1].shape[0]}")
+            print(f"Total FFMC covered: {universe_df[universe_df[f'{group_name}_selection'] == 1]['FFMC'].sum() / universe_df.loc[group_mask, 'FFMC'].sum() * 100:.2f}%")
 
-        # Update selection for DNAPT MICs using existing calculations
-        dnapt_mask = universe_df['MIC'].isin(dnapt_mics)
-        universe_df.loc[dnapt_mask, 'DNAPT_selection'] = np.where(
-            (universe_df.loc[dnapt_mask, 'Universe Cumulative Percentage'] <= 98) |
-            (universe_df.loc[dnapt_mask, 'MIC Cumulative Percentage'] <= 98),
-            1, 0
-        )
         # Keep DataFrame sorted by FFMC descending
         universe_df = universe_df.sort_values('FFMC', ascending=False)
 
