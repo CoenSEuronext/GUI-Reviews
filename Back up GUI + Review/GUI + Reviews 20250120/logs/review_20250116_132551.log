@@ -1,0 +1,27 @@
+2025-01-16 13:25:51,215 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:25:51,217 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-16 13:25:56,421 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:25:56] "GET / HTTP/1.1" 200 -
+2025-01-16 13:26:06,119 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-16 13:26:06,120 - Review.reviews.edwpt_review - ERROR - Error during review calculation: [Errno 2] No such file or directory: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\202412\\FF.xlsx'
+2025-01-16 13:26:06,122 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-16 13:26:06,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py', reloading
+2025-01-16 13:26:06,125 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 68, in run_edwpt_review
+    ff_df = pd.read_excel(os.path.join(current_data_folder, "FF.xlsx"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\202412\\FF.xlsx'
+
+2025-01-16 13:26:06,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\common.py', reloading
+2025-01-16 13:26:06,129 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:26:06] "POST /calculate HTTP/1.1" 200 -

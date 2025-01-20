@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 logger = setup_logging()
 
 def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932", 
-                    area="US", area2="EU", type="STOCK", universe="98% Universe2", 
+                    area="US", area2="EU", type="STOCK", universe="98% Universe", 
                     feed="Reuters", currency="EUR", year=None):
     """
     Run the index review calculation
@@ -57,7 +57,7 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
     """
     
     try:
-        logger.info("Starting EDWPT review calculation")  # First log message
+        logger.info("Starting EDWPT review calculation")
         # If year is not provided, get it from the date
         if year is None:
             year = str(datetime.strptime(date, '%Y%m%d').year)
@@ -67,12 +67,8 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
 
         ff_df = pd.read_excel(os.path.join(current_data_folder, "FF.xlsx"))
         
-        full_universe_df = pd.read_csv(
-            os.path.join(current_data_folder, f"{universe}.csv"),
-            encoding='latin1',  # Try different encoding
-            sep=';',           # Explicitly specify separator
-            engine='python'    # Use python engine which is more forgiving
-        )
+        full_universe_df = pd.read_excel(
+            os.path.join(current_data_folder, f"{universe}.xlsx"))
         
         # Load EOD data
         index_eod_us_df = read_semicolon_csv(
@@ -96,8 +92,8 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
         stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
         
         full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['cutoff_nosh'] * full_universe_df['cutoff_price'] * full_universe_df['free_float']
-        # Create column mapping dictionary where the key is the new column name and value is the original column name
-        # Create column mapping dictionary where the key is the new column name and value is the original name
+        
+        # Column mapping dictionary
         column_mapping = {
             'Ticker': 'fs_ticker',           
             'Name': 'proper_name',           
@@ -106,25 +102,37 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
             'NOSH': 'cutoff_nosh',          
             'Price (EUR) ': 'cutoff_price',  
             'Currency (Local)': 'p_currency',
-            'FFMC': 'Mcap in EUR' 
+            'FFMC': 'free_float_market_cap' 
         }     
         
         # Create universe_df with selected and renamed columns
-        universe_df = full_universe_df[list(column_mapping.values())]  # Select columns using current names
-        universe_df = universe_df.rename(columns={v: k for k, v in column_mapping.items()})  # Rename to desired names
+        universe_df = full_universe_df[list(column_mapping.values())]
+        universe_df = universe_df.rename(columns={v: k for k, v in column_mapping.items()})
 
-        # Sort entire DataFrame by FFMC descending
+        # Sort by FFMC descending
         universe_df = universe_df.sort_values('FFMC', ascending=False)
-
-        # Add cumulative count for entire universe
+        
+        # Remove duplicates from ff_df
+        ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
+        
+        # Add Free Float data
+        universe_df = universe_df.merge(
+            ff_df[['ISIN Code:', 'Free Float Round:']],
+            left_on='ISIN',
+            right_on='ISIN Code:',
+            how='left'
+        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+        
+        universe_df['Final Capping'] = 1
+        universe_df['Effective Date of Review'] = effective_date
+        
+        # Add cumulative count
         universe_df['Cumulative Count'] = range(1, len(universe_df) + 1)
 
-        # Calculate universe-level cumulative statistics
+        # Calculate universe-level statistics
         universe_df['Total Universe FFMC'] = universe_df['FFMC'].sum()
         universe_df['Universe Cumulative FFMC'] = universe_df['FFMC'].cumsum()
         universe_df['Universe Cumulative Percentage'] = (universe_df['Universe Cumulative FFMC'] / universe_df['Total Universe FFMC']) * 100
-
-
 
         # Create MIC grouping mapping
         mic_groups = {
@@ -153,23 +161,22 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
             'IL': ['XTAE'],             
         }
 
-        # Create a 'Country Group' column for grouping MICs
+        # Create mapping from MIC to country
         mic_to_country = {mic: country for country, mics in mic_groups.items() for mic in mics}
 
-        # Update get_country_group function
         def get_country_group(mic):
-            return mic_to_country.get(mic, mic)  # Get country code from mapping, or return mic if not found
+            return mic_to_country.get(mic, mic)
 
         # Add country group column
         universe_df['Country Group'] = universe_df['MIC'].apply(get_country_group)
 
-        # Recalculate MIC-level statistics using Country Group instead of MIC
+        # Calculate MIC-level statistics
         universe_df['MIC Rank'] = universe_df.groupby('Country Group')['FFMC'].rank(method='first', ascending=False)
         universe_df['MIC Cumulative FFMC'] = universe_df.groupby('Country Group')['FFMC'].cumsum()
         universe_df['Total MIC FFMC'] = universe_df.groupby('Country Group')['FFMC'].transform('sum')
         universe_df['MIC Cumulative Percentage'] = (universe_df['MIC Cumulative FFMC'] / universe_df['Total MIC FFMC']) * 100
         
-        # Define all country groups
+        # Define country groups
         country_groups = {
             'EDWPT': ['US', 'SE', 'IT', 'IE', 'AU', 'AT', 'BE', 'CA', 'DK', 
                     'FI', 'FR', 'DE', 'ES', 'JP', 'NL', 'NZ', 'NO', 'PT', 
@@ -187,41 +194,99 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
             'CANPT': ['CA']
         }
 
+        def analyze_changes(universe_df, stock_eod_df, group_name, selected_columns):
+            """
+            Analyze inclusions and exclusions for a given group
+            
+            Args:
+                universe_df: DataFrame with selected companies
+                stock_eod_df: DataFrame with current stock data
+                group_name: Name of the index (e.g., 'EDWPT')
+                selected_columns: List of columns to include
+            """
+            # Get ISINs of selected companies for this group from universe_df
+            selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN'].tolist())
+            
+            # Get current constituents from stock_eod_df for this specific index
+            current_isins = set(stock_eod_df[stock_eod_df['MIC'] == group_name]['Isin Code'].unique().tolist())
+            
+            # Find inclusions (in selected but not in current constituents)
+            inclusion_isins = selected_isins - current_isins
+            
+            # Find exclusions (in current constituents but not in selected)
+            exclusion_isins = current_isins - selected_isins
+            
+            # Create DataFrame for inclusions using universe_df data
+            inclusions_df = universe_df[
+                universe_df['ISIN'].isin(inclusion_isins)
+            ][['ISIN', 'Name']].copy()
+            inclusions_df['Change Type'] = 'Inclusion'
+            
+            # Create DataFrame for exclusions using stock_eod_df data
+            exclusions_df = stock_eod_df[
+                (stock_eod_df['MIC'] == group_name) & 
+                (stock_eod_df['Isin Code'].isin(exclusion_isins))
+            ][['Isin Code', 'Name']].copy()
+            exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN'})
+            exclusions_df['Change Type'] = 'Exclusion'
+            
+            return inclusions_df, exclusions_df
+
         # Function to calculate selection for a group
         def calculate_group_selection(df, group_name, countries):
             # Create mask for countries in this group
             group_mask = df['Country Group'].isin(countries)
             
-            # Calculate combined group universe percentages
+            # Initialize selection column
+            df[f'{group_name}_selection'] = 0
+            
+            # Calculate total FFMC for the group
             group_total_ffmc = df.loc[group_mask, 'FFMC'].sum()
             
-            if group_total_ffmc > 0:  # Only proceed if there are companies in this group
-                df.loc[group_mask, f'{group_name}_Universe_Cumulative_FFMC'] = (
-                    df.loc[group_mask, 'FFMC'].cumsum()
-                )
-                df.loc[group_mask, f'{group_name}_Universe_Cumulative_Percentage'] = (
-                    df.loc[group_mask, f'{group_name}_Universe_Cumulative_FFMC'] / group_total_ffmc * 100
+            if group_total_ffmc > 0:
+                # Sort group data by FFMC descending
+                group_df = df[group_mask].sort_values('FFMC', ascending=False).copy()
+                
+                # Calculate group level cumulative stats
+                group_df[f'{group_name}_Cumulative_FFMC'] = group_df['FFMC'].cumsum()
+                group_df[f'{group_name}_Cumulative_Percentage'] = (
+                    group_df[f'{group_name}_Cumulative_FFMC'] / group_total_ffmc * 100
                 )
                 
-                # Create selection column
-                df[f'{group_name}_selection'] = 0
+                # Add group percentage to main DataFrame
+                df.loc[group_mask, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage']
                 
-                # Get the first row that exceeds 98% for both universe and country levels
-                universe_exceed_mask = (
-                    (df.loc[group_mask, f'{group_name}_Universe_Cumulative_Percentage'] > 98)
-                )
-                country_exceed_mask = (
-                    (df.loc[group_mask, 'MIC Cumulative Percentage'] > 98)
-                )
+                # Select companies up to 98% plus first one exceeding
+                exceeds_98_group = group_df[f'{group_name}_Cumulative_Percentage'] > 98
+                first_exceed_group = exceeds_98_group & ~exceeds_98_group.shift(1, fill_value=False)
+                group_selection = (group_df[f'{group_name}_Cumulative_Percentage'] <= 98) | first_exceed_group
                 
-                # Select all rows up to and including the first row that exceeds 98%
-                df.loc[group_mask, f'{group_name}_selection'] = np.where(
-                    (df.loc[group_mask, f'{group_name}_Universe_Cumulative_Percentage'] <= 98) |
-                    (df.loc[group_mask, 'MIC Cumulative Percentage'] <= 98) |
-                    (universe_exceed_mask & ~universe_exceed_mask.shift(1, fill_value=False)) |
-                    (country_exceed_mask & ~country_exceed_mask.shift(1, fill_value=False)),
-                    1, 0
-                )
+                # Process each country in the group
+                for country in countries:
+                    country_mask = group_df['Country Group'] == country
+                    if country_mask.any():
+                        country_df = group_df[country_mask].copy()
+                        country_total = country_df['FFMC'].sum()
+                        
+                        if country_total > 0:
+                            country_df['Country_Cumulative_FFMC'] = country_df['FFMC'].cumsum()
+                            country_df['Country_Cumulative_Percentage'] = (
+                                country_df['Country_Cumulative_FFMC'] / country_total * 100
+                            )
+                            
+                            # Add country percentage to main DataFrame
+                            df.loc[country_df.index, f'{group_name}_Country_Percentage'] = country_df['Country_Cumulative_Percentage']
+                            
+                            # Select companies up to 98% plus first one exceeding
+                            exceeds_98_country = country_df['Country_Cumulative_Percentage'] > 98
+                            first_exceed_country = exceeds_98_country & ~exceeds_98_country.shift(1, fill_value=False)
+                            country_selection = (country_df['Country_Cumulative_Percentage'] <= 98) | first_exceed_country
+                            
+                            # Update group selection
+                            group_selection.loc[country_df.index] |= country_selection
+                
+                # Update main DataFrame with selections
+                df.loc[group_df.index, f'{group_name}_selection'] = group_selection.astype(int)
             
             return df
 
@@ -229,29 +294,38 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
         for group_name, countries in country_groups.items():
             universe_df = calculate_group_selection(universe_df, group_name, countries)
             
-            # Print summary statistics for each group
+            # Print group summary statistics
             group_mask = universe_df['Country Group'].isin(countries)
-            print(f"\n{group_name} Selection Summary:")
-            print(f"Total companies selected: {universe_df[universe_df[f'{group_name}_selection'] == 1].shape[0]}")
-            print(f"Total FFMC covered: {universe_df[universe_df[f'{group_name}_selection'] == 1]['FFMC'].sum() / universe_df.loc[group_mask, 'FFMC'].sum() * 100:.2f}%")
+            logger.info(f"\n{group_name} Selection Summary:")
+            logger.info(f"Total companies selected: {universe_df[universe_df[f'{group_name}_selection'] == 1].shape[0]}")
+            logger.info(f"Total FFMC covered: {universe_df[universe_df[f'{group_name}_selection'] == 1]['FFMC'].sum() / universe_df.loc[group_mask, 'FFMC'].sum() * 100:.2f}%")
 
         # Keep DataFrame sorted by FFMC descending
         universe_df = universe_df.sort_values('FFMC', ascending=False)
 
-        # Print summary statistics
-        print("\nGlobal Selection Summary:")
-        print(f"Total companies selected: {universe_df['EDWPT_selection'].sum()}")
-        print(f"Total FFMC covered: {universe_df[universe_df['EDWPT_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100:.2f}%")
+        # Print global summary statistics
+        logger.info("\nGlobal Selection Summary:")
+        logger.info(f"Total companies selected: {universe_df['EDWPT_selection'].sum()}")
+        logger.info(f"Total FFMC covered: {universe_df[universe_df['EDWPT_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100:.2f}%")
 
+        # Create MIC-level summary
         mic_summary = universe_df.groupby('MIC').agg({
             'ISIN': 'count',
             'FFMC': 'sum',
             'EDWPT_selection': 'sum'
         }).round(2)
 
-        print("\nMIC-level Summary:")
-        print(mic_summary)
-        EDWPT_df = None
+        logger.info("\nMIC-level Summary:")
+        logger.info(mic_summary)
+        
+        # Create DataFrames for all country groups
+        all_dfs = {}
+        selected_columns = ['Name', 'ISIN', 'MIC', 'NOSH', 'Free Float', 'Final Capping', 
+                        'Effective Date of Review', 'Currency (Local)']
+
+        for group_name in country_groups.keys():
+            all_dfs[group_name] = universe_df[universe_df[f'{group_name}_selection'] == 1][selected_columns].copy()
+
 
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
@@ -260,33 +334,71 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             edwpt_path = os.path.join(output_dir, f'EDWPT_df_{timestamp}.xlsx')
             
-            logger.info(f"Saving EDWPT output to: {edwpt_path}")
+            logger.info(f"Saving output to: {edwpt_path}")
+            
             with pd.ExcelWriter(edwpt_path) as writer:
-                # EDWPT_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                # Write each group's DataFrame to separate sheets
+                for group_name, df in all_dfs.items():
+                    # Write composition sheet
+                    df.to_excel(writer, sheet_name=f'{group_name} Composition', index=False)
+                    
+                    # Generate and write inclusion/exclusion analysis
+                    inclusions_df, exclusions_df = analyze_changes(
+                        universe_df, 
+                        stock_eod_df, 
+                        group_name, 
+                        selected_columns
+                    )
+                    
+                    # Write changes to separate sheets
+                    if not inclusions_df.empty:
+                        inclusions_df.to_excel(writer, sheet_name=f'{group_name} Inclusions', index=False)
+                    if not exclusions_df.empty:
+                        exclusions_df.to_excel(writer, sheet_name=f'{group_name} Exclusions', index=False)
+                    
+                    # Log changes summary
+                    logger.info(f"\n{group_name} Changes Summary:")
+                    logger.info(f"Inclusions: {len(inclusions_df)}")
+                    logger.info(f"Exclusions: {len(exclusions_df)}")
+                
+                # Write full universe sheet
                 universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
-            # Add this print to confirm file exists
+            # Verify file was saved
+            # Replace the return statement in the try block with this:
             if os.path.exists(edwpt_path):
-                print(f"File successfully saved to: {edwpt_path}")
-            else:
-                print("File was not saved successfully")
-
-            return {
-                "status": "success",
-                "message": "Review completed successfully",
-                "data": {
-                    "edwpt_path": edwpt_path
+                logger.info(f"File successfully saved to: {edwpt_path}")
+                return {
+                    "status": "success",
+                    "message": "Review completed successfully",
+                    "data": {
+                        "edwpt_path": edwpt_path,
+                        "summary": {
+                            "total_companies": int(universe_df['EDWPT_selection'].sum()),  # Convert to standard int
+                            "total_ffmc_coverage": float(universe_df[universe_df['EDWPT_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100)  # Convert to standard float
+                        }
+                    }
                 }
-            }
-            
+            else:
+                error_msg = "File was not saved successfully"
+                logger.error(error_msg)
+                return {
+                    "status": "error",
+                    "message": error_msg,
+                    "data": None
+                }
+                
         except Exception as e:
             error_msg = f"Error saving output file: {str(e)}"
             logger.error(error_msg)
+            logger.error(traceback.format_exc())
             return {
-                "status": "error",
+                "status": "error", 
                 "message": error_msg,
+                "traceback": traceback.format_exc(),
                 "data": None
             }
+            
     except Exception as e:
         logger.error(f"Error during review calculation: {str(e)}")
         logger.error(traceback.format_exc())

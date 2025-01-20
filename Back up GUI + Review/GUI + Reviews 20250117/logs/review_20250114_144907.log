@@ -1,0 +1,15 @@
+2025-01-14 14:49:07,286 - werkzeug - WARNING -  * Debugger is active!
+2025-01-14 14:49:07,288 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-14 14:49:19,569 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2025 14:49:19] "GET / HTTP/1.1" 200 -
+2025-01-14 14:49:32,626 - Review.reviews.gicp_review - INFO - Category_1 final weight: 14.5992%
+2025-01-14 14:49:32,627 - Review.reviews.gicp_review - INFO - Category_2 final weight: 5.8397%
+2025-01-14 14:49:32,627 - Review.reviews.gicp_review - INFO - Category_3 final weight: 11.4420%
+2025-01-14 14:49:32,628 - Review.reviews.gicp_review - INFO - Category_4 final weight: 10.3673%
+2025-01-14 14:49:32,629 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.6149%
+2025-01-14 14:49:32,629 - Review.reviews.gicp_review - INFO - Category_6 final weight: 30.3445%
+2025-01-14 14:49:32,630 - Review.reviews.gicp_review - INFO - Category_7 final weight: 14.7925%
+2025-01-14 14:49:32,630 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 4.8664%
+2025-01-14 14:49:32,631 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250114_144932.xlsx
+2025-01-14 14:49:32,846 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2025 14:49:32] "POST /calculate HTTP/1.1" 200 -
+2025-01-14 14:50:11,461 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-01-14 14:50:11,462 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading

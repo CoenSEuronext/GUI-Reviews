@@ -1,0 +1,18 @@
+2025-01-17 10:40:41,673 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 10:40:41,673 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-17 10:40:43,067 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 10:40:43] "GET / HTTP/1.1" 200 -
+2025-01-17 10:40:45,936 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-17 10:40:47,433 - Review.reviews.edwpt_review - ERROR - Error during review calculation: The column label 'FFMC' is not unique.
+2025-01-17 10:40:47,436 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 133, in run_edwpt_review
+    universe_df = universe_df.sort_values('FFMC', ascending=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 7189, in sort_values
+    k = self._get_label_or_level_values(by[0], axis=axis)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1925, in _get_label_or_level_values
+    raise ValueError(
+ValueError: The column label 'FFMC' is not unique.
+
+2025-01-17 10:40:47,437 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-01-17 10:40:47,451 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 10:40:47] "POST /calculate HTTP/1.1" 200 -

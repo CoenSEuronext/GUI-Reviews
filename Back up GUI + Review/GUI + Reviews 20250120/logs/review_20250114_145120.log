@@ -1,0 +1,28 @@
+2025-01-14 14:51:20,195 - werkzeug - WARNING -  * Debugger is active!
+2025-01-14 14:51:20,198 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-14 14:51:20,224 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-14 14:51:20,542 - Review.reviews.edwpt_review - ERROR - Error during review calculation: Expected 1 fields in line 4, saw 2
+2025-01-14 14:51:20,545 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 70, in run_edwpt_review
+    full_universe_df = pd.read_csv(
+                       ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\python_parser.py", line 288, in read
+    alldata = self._rows_to_cols(content)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\python_parser.py", line 1063, in _rows_to_cols
+    self._alert_malformed(msg, row_num + 1)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\python_parser.py", line 781, in _alert_malformed
+    raise ParserError(msg)
+pandas.errors.ParserError: Expected 1 fields in line 4, saw 2
+
+2025-01-14 14:51:20,546 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\parsers\\python_parser.py', reloading
+2025-01-14 14:51:20,549 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2025 14:51:20] "POST /calculate HTTP/1.1" 200 -

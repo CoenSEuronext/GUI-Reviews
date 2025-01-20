@@ -1,0 +1,117 @@
+2025-01-20 16:14:07,306 - werkzeug - WARNING -  * Debugger is active!
+2025-01-20 16:14:07,308 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-20 16:14:08,342 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-20 16:14:12,781 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-01-20 16:14:12,783 - Review.reviews.edwpt_review - INFO - Total companies selected: 5446
+2025-01-20 16:14:12,784 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-01-20 16:14:12,808 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-01-20 16:14:12,810 - Review.reviews.edwpt_review - INFO - Total companies selected: 1327
+2025-01-20 16:14:12,811 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.67%
+2025-01-20 16:14:12,831 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-01-20 16:14:12,833 - Review.reviews.edwpt_review - INFO - Total companies selected: 494
+2025-01-20 16:14:12,834 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.51%
+2025-01-20 16:14:12,850 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-01-20 16:14:12,852 - Review.reviews.edwpt_review - INFO - Total companies selected: 1909
+2025-01-20 16:14:12,853 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.13%
+2025-01-20 16:14:12,866 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-01-20 16:14:12,867 - Review.reviews.edwpt_review - INFO - Total companies selected: 1764
+2025-01-20 16:14:12,868 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.18%
+2025-01-20 16:14:12,882 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-01-20 16:14:12,883 - Review.reviews.edwpt_review - INFO - Total companies selected: 1563
+2025-01-20 16:14:12,885 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2025-01-20 16:14:12,892 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-01-20 16:14:12,893 - Review.reviews.edwpt_review - INFO - Total companies selected: 320
+2025-01-20 16:14:12,893 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.04%
+2025-01-20 16:14:12,905 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-01-20 16:14:12,906 - Review.reviews.edwpt_review - INFO - Total companies selected: 1481
+2025-01-20 16:14:12,907 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-01-20 16:14:12,917 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-01-20 16:14:12,919 - Review.reviews.edwpt_review - INFO - Total companies selected: 1414
+2025-01-20 16:14:12,921 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-01-20 16:14:12,926 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-01-20 16:14:12,927 - Review.reviews.edwpt_review - INFO - Total companies selected: 74
+2025-01-20 16:14:12,928 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.05%
+2025-01-20 16:14:12,933 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-01-20 16:14:12,935 - Review.reviews.edwpt_review - INFO - Total companies selected: 320
+2025-01-20 16:14:12,936 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-01-20 16:14:12,941 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-01-20 16:14:12,942 - Review.reviews.edwpt_review - INFO - Total companies selected: 230
+2025-01-20 16:14:12,943 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-01-20 16:14:12,954 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-01-20 16:14:12,955 - Review.reviews.edwpt_review - INFO - Total companies selected: 5446
+2025-01-20 16:14:12,957 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-01-20 16:14:12,959 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-01-20 16:14:12,960 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  1.337544e+09                1
+BATS     3  1.962934e+10                1
+MERK     2  2.803735e+08                2
+MTAA   246  5.292374e+11               85
+WBAH    26  5.370078e+10               17
+XAMS    79  1.157401e+12               44
+XASX   886  1.442942e+12              283
+XBRU    58  1.938564e+11               34
+XCSE   107  6.350474e+11               36
+XESM     2  1.794035e+09                2
+XETR   227  1.472409e+12              106
+XHEL   127  2.061674e+11               49
+XHKG   209  3.465502e+11               69
+XLIS    18  3.541669e+10               11
+XLON   872  2.336733e+12              320
+XMAD    99  4.808796e+11               41
+XMSM    14  5.274635e+10               10
+XNGM    47  4.908139e+08                1
+XNGS  2628  2.418978e+13              773
+XNYS  1736  2.534917e+13             1143
+XNZE    52  6.656698e+10               35
+XOSL   245  1.738210e+11              125
+XPAR   351  1.866583e+12               94
+XSES   118  2.570802e+11               62
+XSTO   648  7.073552e+11              222
+XSWX   148  1.669679e+12               86
+XTAE   275  1.399417e+11              150
+XTKS  3711  4.991981e+12             1414
+XTSE   491  2.080540e+12              230
+2025-01-20 16:14:12,979 - Review.reviews.edwpt_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250120_161412.xlsx
+2025-01-20 16:14:13,317 - Review.reviews.edwpt_review - ERROR - Error saving output file: The column label 'ISIN' is not unique.
+2025-01-20 16:14:13,320 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-01-20 16:14:13,321 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py', reloading
+2025-01-20 16:14:13,323 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 341, in run_edwpt_review
+    inclusions_df, exclusions_df = analyze_changes(
+                                   ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 220, in analyze_changes
+    exclusions_df = exclusions_df.merge(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1925, in _get_label_or_level_values
+    raise ValueError(
+ValueError: The column label 'ISIN' is not unique.
+
+2025-01-20 16:14:13,324 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-01-20 16:14:13,339 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2025 16:14:13] "POST /calculate HTTP/1.1" 200 -

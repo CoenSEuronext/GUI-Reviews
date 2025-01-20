@@ -1,0 +1,7 @@
+2025-01-14 16:03:27,041 - werkzeug - WARNING -  * Debugger is active!
+2025-01-14 16:03:27,043 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-14 16:03:27,068 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-14 16:03:29,717 - Review.reviews.edwpt_review - INFO - Saving EDWPT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250114_160329.xlsx
+2025-01-14 16:03:30,610 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2025 16:03:30] "POST /calculate HTTP/1.1" 200 -
+2025-01-14 16:05:02,263 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-14 16:05:02,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
