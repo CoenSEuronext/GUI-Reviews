@@ -1,4 +1,4 @@
-#review_logic.py
+# review_logic.py
 import traceback
 from config import DLF_FOLDER, DATA_FOLDER
 from .reviews.fri4p_review import run_fri4p_review
@@ -6,24 +6,38 @@ from .reviews.frd4p_review import run_frd4p_review
 from .reviews.egspp_review import run_egspp_review
 from .reviews.gicp_review import run_gicp_review
 from .reviews.edwpt_review import run_edwpt_review
+from .reviews.edwp_review import run_edwp_review
+from .reviews.f4rip_review import run_f4rip_review
+
+# Dictionary mapping review types to their corresponding functions
+REVIEW_FUNCTIONS = {
+    "FRI4P": run_fri4p_review,
+    "FRD4P": run_frd4p_review,
+    "EGSPP": run_egspp_review,
+    "GICP": run_gicp_review,
+    "EDWPT": run_edwpt_review,
+    "EDWP": run_edwp_review,
+    "F4RIP": run_f4rip_review
+}
 
 def run_review(review_type, **kwargs):
     """
     Route to appropriate review based on type
+
+    Args:
+        review_type (str): Type of review to run
+        **kwargs: Arguments to pass to the review function
+
+    Returns:
+        dict: Result of the review containing status, message, and data
     """
     try:
-        if review_type.upper() == "FRI4P":
-            return run_fri4p_review(**kwargs)
-        elif review_type.upper() == "FRD4P":
-            return run_frd4p_review(**kwargs)
-        elif review_type.upper() == "EGSPP":
-            return run_egspp_review(**kwargs)
-        elif review_type.upper() == "GICP":
-            return run_gicp_review(**kwargs)
-        elif review_type.upper() == "EDWPT":
-            return run_edwpt_review(**kwargs)
-        else:
+        review_function = REVIEW_FUNCTIONS.get(review_type.upper())
+        if review_function is None:
             raise ValueError(f"Unknown review type: {review_type}")
+            
+        return review_function(**kwargs)
+        
     except Exception as e:
         return {
             "status": "error",

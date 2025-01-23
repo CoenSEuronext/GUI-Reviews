@@ -1,0 +1,14 @@
+2025-01-22 15:10:55,339 - werkzeug - WARNING -  * Debugger is active!
+2025-01-22 15:10:55,341 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-22 15:10:57,498 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-22 15:11:00,354 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-22 15:11:00,621 - Review.reviews.f4rip_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-22 15:11:00,622 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 60, in run_f4rip_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-22 15:11:00,628 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 15:11:00] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 15:11:19,122 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-01-22 15:11:19,131 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-01-22 15:11:19,133 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

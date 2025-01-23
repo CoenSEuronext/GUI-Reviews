@@ -2,36 +2,13 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import os
-import logging
 import traceback
 from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
+from utils.logging_utils import setup_logging
+from utils.data_loader import load_eod_data, load_reference_data
 
-# Set up logging
-def setup_logging():
-    """Configure logging for the review process"""
-    # Create logs directory if it doesn't exist
-    log_dir = os.path.join(os.getcwd(), 'logs')
-    os.makedirs(log_dir, exist_ok=True)
-    
-    # Create log file name with timestamp
-    log_file = os.path.join(log_dir, f'review_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log')
-    
-    # Configure logging
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(log_file),
-            logging.StreamHandler()  # This will also print to console
-        ]
-    )
-    
-    return logging.getLogger(__name__)
-
-logger = logging.getLogger(__name__)
-
-logger = setup_logging()
+logger = setup_logging(__name__)
 
 def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932", 
                     area="US", area2="EU", type="STOCK", universe="98% Universe", 
@@ -65,31 +42,21 @@ def run_edwpt_review(date, effective_date, index="EDWPT", isin="NLIX00001932",
         # Set data folder for current month
         current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
 
-        ff_df = pd.read_excel(os.path.join(current_data_folder, "FF.xlsx"))
-        
-        full_universe_df = pd.read_excel(
-            os.path.join(current_data_folder, f"{universe}.xlsx"))
-        
-        # Load EOD data
-        index_eod_us_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area}1_GIS_EOD_INDEX_{date}.csv"), 
-            encoding="latin1"
-        )
-        stock_eod_us_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area}1_GIS_EOD_STOCK_{date}.csv"), 
-            encoding="latin1"
-        )
-        index_eod_eu_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area2}1_GIS_EOD_INDEX_{date}.csv"), 
-            encoding="latin1"
-        )
-        stock_eod_eu_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area2}1_GIS_EOD_STOCK_{date}.csv"), 
-            encoding="latin1"
+        index_eod_df, stock_eod_df = load_eod_data(date, area, area2, DLF_FOLDER)
+
+        ref_data = load_reference_data(
+            current_data_folder, 
+            required_files=['ff', 'universe'],
+            universe_name=universe  # This will be "98% Universe" by default
         )
 
-        index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
-        stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
+        # Get the DataFrames from ref_data
+        ff_df = ref_data.get('ff')
+        full_universe_df = ref_data.get('universe')
+
+        # Add validation
+        if ff_df is None or full_universe_df is None:
+            raise ValueError("Failed to load required reference data files")
         
         full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['cutoff_nosh'] * full_universe_df['cutoff_price'] * full_universe_df['free_float']
         

@@ -2,34 +2,13 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import os
-import logging
 import traceback
 from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
+from utils.logging_utils import setup_logging
+from utils.data_loader import load_eod_data, load_reference_data
 
-# Set up logging
-def setup_logging():
-    """Configure logging for the review process"""
-    # Create logs directory if it doesn't exist
-    log_dir = os.path.join(os.getcwd(), 'logs')
-    os.makedirs(log_dir, exist_ok=True)
-    
-    # Create log file name with timestamp
-    log_file = os.path.join(log_dir, f'review_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log')
-    
-    # Configure logging
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(log_file),
-            logging.StreamHandler()  # This will also print to console
-        ]
-    )
-    
-    return logging.getLogger(__name__)
-
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321", 
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 
@@ -61,36 +40,23 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
         # Set data folder for current month
         current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
 
-        # Load files into DataFrames from the specified folder
-        developed_market_df = pd.read_excel(os.path.join(current_data_folder, "Developed Market.xlsx"))
-        ff_df = pd.read_excel(os.path.join(current_data_folder, "FF.xlsx"))
+        # Use data_loader functions to load data
+        logger.info("Loading EOD data...")
+        index_eod_df, stock_eod_df = load_eod_data(date, area, area2, DLF_FOLDER)
         
-        icb_df = pd.read_excel(
-            os.path.join(current_data_folder, "ICB.xlsx"),
-            header=3
-        )
+        logger.info("Loading reference data...")
+        ref_data = load_reference_data(current_data_folder, ['ff', 'developed_market', 'icb'])
         
-        # Load EOD data
-        index_eod_us_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area}1_GIS_EOD_INDEX_{date}.csv"), 
-            encoding="latin1"
-        )
-        stock_eod_us_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area}1_GIS_EOD_STOCK_{date}.csv"), 
-            encoding="latin1"
-        )
-        index_eod_eu_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area2}1_GIS_EOD_INDEX_{date}.csv"), 
-            encoding="latin1"
-        )
-        stock_eod_eu_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area2}1_GIS_EOD_STOCK_{date}.csv"), 
-            encoding="latin1"
-        )
+        # Extract the needed DataFrames
+        ff_df = ref_data['ff']
+        developed_market_df = ref_data['developed_market']
+        icb_df = ref_data['icb']
+        
+        if any(df is None for df in [ff_df, developed_market_df, icb_df]):
+            raise ValueError("Failed to load one or more required reference data files")
 
-        index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
-        stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
-
+        # Rest of your code remains the same...
+        logger.info("Processing market data...")
         developed_market_df = developed_market_df.merge(
             icb_df.drop_duplicates('ISIN Code', keep='first')[['ISIN Code', 'Subsector Code']],
             left_on='ISIN',
@@ -98,15 +64,18 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             how='left'
         ).drop('ISIN Code', axis=1)
 
-        # Add Free Float data from ff_df
+        # Add Free Float data
         developed_market_df = developed_market_df.merge(
-            ff_df.drop_duplicates('ISIN Code:', keep='first')[['ISIN Code:', 'Free Float Round:']],
+            ff_df[['ISIN Code:', 'Free Float Round:']],
             left_on='ISIN',
             right_on='ISIN Code:',
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
 
-        developed_market_df['FFMC'] = developed_market_df['NOSH'] * developed_market_df['Price (EUR) '] * developed_market_df['Free Float']
+        # Continue with the rest of your existing logic...
+        developed_market_df['FFMC'] = (developed_market_df['NOSH'] * 
+                                     developed_market_df['Price (EUR) '] * 
+                                     developed_market_df['Free Float'])
         
         # Convert index column to string type before string operations
         developed_market_df['index'] = developed_market_df['index'].astype(str)
@@ -286,8 +255,32 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
         # Create final selection dataframe
         final_selection_df = developed_market_df[developed_market_df['selected']].copy()
         
-        final_selection_df['Original market cap'] = stock_eod_df['Close Prc'] * stock_eod_df['FX/Index Ccy'] * final_selection_df['Free Float'] * final_selection_df['NOSH']
+        # First remove duplicates from stock_eod_df
+        unique_stock_eod = (stock_eod_df[['Isin Code', 'Currency', 'Close Prc', 'FX/Index Ccy']]
+                        .drop_duplicates(subset=['Isin Code', 'Currency'], keep='first'))
 
+        # Then merge with final_selection_df
+        final_selection_df = final_selection_df.merge(
+            unique_stock_eod,
+            left_on=['ISIN', 'Currency (Local)'],
+            right_on=['Isin Code', 'Currency'],
+            how='left'
+        ).drop(['Isin Code', 'Currency'], axis=1)
+
+        # Now calculate Original market cap using the merged data
+        final_selection_df['Original market cap'] = (
+            final_selection_df['Close Prc'] * 
+            final_selection_df['FX/Index Ccy'] * 
+            final_selection_df['Free Float'] * 
+            final_selection_df['NOSH']
+        )
+
+        # Add logging to check if all matches were found
+        missing_data = final_selection_df[final_selection_df['Close Prc'].isna()]
+        if not missing_data.empty:
+            logger.warning(f"Missing price/FX data for {len(missing_data)} companies:")
+            for _, row in missing_data.iterrows():
+                logger.warning(f"ISIN: {row['ISIN']}, Currency: {row['Currency (Local)']}")
         # Define category weights
         category_weights = {
             'Category_1': 0.12,  # 12%
@@ -299,10 +292,24 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             'Category_7': 0.20
         }
 
-        def apply_category_capping(df, target_weight, max_weight=0.10):
-            """Apply capping within a category"""
-            total_mcap = df['Original market cap'].sum()
+        def apply_category_capping(df, target_weight, total_mcap, max_weight=0.10):
+            """
+            Apply capping within a category
+            
+            Args:
+                df: DataFrame containing the category's constituents
+                target_weight: Target weight for the entire category (e.g., 0.12 for 12%)
+                total_mcap: Total market cap of all selected companies
+                max_weight: Maximum weight for any individual constituent (as % of total portfolio)
+            """
+            # Calculate initial weights relative to total portfolio
             df['Initial Weight'] = df['Original market cap'] / total_mcap
+            
+            # Calculate the scaling factor to achieve target category weight
+            category_weight = df['Initial Weight'].sum()
+            if category_weight > 0:
+                initial_scaling = target_weight / category_weight
+                df['Initial Weight'] *= initial_scaling
             
             iteration = 0
             weights_changed = True
@@ -310,25 +317,25 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             
             while weights_changed and iteration < max_iterations:
                 weights_changed = False
-                # Identify capped constituents
+                
+                # Identify constituents exceeding max weight
                 capped_constituents = df['Initial Weight'] > max_weight
                 n_capped = capped_constituents.sum()
                 
                 if n_capped > 0:
-                    # Cap weights at max_weight
+                    # Cap the exceeding constituents
                     df.loc[capped_constituents, 'Initial Weight'] = max_weight
                     
-                    # Redistribute excess weight
-                    total_capped_weight = max_weight * n_capped
-                    available_weight = target_weight - total_capped_weight
+                    # Calculate remaining weight to distribute
+                    remaining_target = target_weight - (max_weight * n_capped)
                     
-                    if available_weight > 0:
-                        # Redistribute to uncapped constituents proportionally
+                    if remaining_target > 0:
+                        # Redistribute excess to uncapped constituents proportionally
                         uncapped = ~capped_constituents
-                        sum_uncapped_weights = df.loc[uncapped, 'Initial Weight'].sum()
+                        uncapped_sum = df.loc[uncapped, 'Initial Weight'].sum()
                         
-                        if sum_uncapped_weights > 0:
-                            scaling_factor = available_weight / sum_uncapped_weights
+                        if uncapped_sum > 0:
+                            scaling_factor = remaining_target / uncapped_sum
                             df.loc[uncapped, 'Initial Weight'] *= scaling_factor
                             weights_changed = True
                 
@@ -337,22 +344,31 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             return df
 
         # Apply capping by category
+        total_mcap = final_selection_df['Original market cap'].sum()
+        final_selection_df['Initial Weight'] = 0.0
+
         for category, target_weight in category_weights.items():
             category_mask = final_selection_df['category'] == category
             category_df = final_selection_df[category_mask].copy()
             
             if not category_df.empty:
-                # Apply category capping
-                category_df = apply_category_capping(category_df, target_weight)
+                # Apply category capping with total market cap
+                category_df = apply_category_capping(category_df, target_weight, total_mcap)
                 final_selection_df.loc[category_mask, 'Initial Weight'] = category_df['Initial Weight']
 
+        # Verify category weights
+        for category, target in category_weights.items():
+            actual = final_selection_df[final_selection_df['category'] == category]['Initial Weight'].sum()
+            logger.info(f"{category} weight: {actual:.4%} (target: {target:.4%})")
+
         # Calculate Final Capping factor
-        final_selection_df['Final Capping'] = (final_selection_df['Initial Weight'] * final_selection_df['Original market cap'].sum()) / final_selection_df['Original market cap']
+        final_selection_df['Final Capping'] = (final_selection_df['Initial Weight'] * total_mcap) / final_selection_df['Original market cap']
 
         # Verify final weights
-        final_selection_df['Final Weight'] = final_selection_df['Original market cap'] * final_selection_df['Final Capping'] / (final_selection_df['Original market cap'] * final_selection_df['Final Capping']).sum()
+        final_selection_df['Final Weight'] = (final_selection_df['Original market cap'] * final_selection_df['Final Capping']) / (final_selection_df['Original market cap'] * final_selection_df['Final Capping']).sum()
 
         # Log verification
+        logger.info("\nFinal Weight Verification:")
         for category in category_weights:
             cat_weight = final_selection_df[final_selection_df['category'] == category]['Final Weight'].sum()
             logger.info(f"{category} final weight: {cat_weight:.4%}")
@@ -391,6 +407,7 @@ def run_gicp_review(date, effective_date, index="GICP", isin="NLIX00005321",
             with pd.ExcelWriter(gicp_path) as writer:
                 GICP_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 developed_market_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                final_selection_df.to_excel(writer, sheet_name='final_selection', index=False)
             
             return {
                 "status": "success",

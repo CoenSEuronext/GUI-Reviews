@@ -2,34 +2,12 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import os
-import logging
 import traceback
 from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER
+from utils.logging_utils import setup_logging
 
-# Set up logging
-def setup_logging():
-    """Configure logging for the review process"""
-    # Create logs directory if it doesn't exist
-    log_dir = os.path.join(os.getcwd(), 'logs')
-    os.makedirs(log_dir, exist_ok=True)
-    
-    # Create log file name with timestamp
-    log_file = os.path.join(log_dir, f'review_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log')
-    
-    # Configure logging
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(log_file),
-            logging.StreamHandler()  # This will also print to console
-        ]
-    )
-    
-    return logging.getLogger(__name__)
-
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 def run_egspp_review(date, effective_date, index="FRD4P", isin="FRIX00003031", 
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 

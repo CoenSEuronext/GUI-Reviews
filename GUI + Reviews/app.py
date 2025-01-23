@@ -36,9 +36,15 @@ def create_app():
             # Get form data
             review_type = request.form['review_type']
             date = request.form['date']
+            co_date = request.form['co_date']
             effective_date = request.form['effective_date']
             currency = request.form['currency']
             auto_open = request.form.get('auto_open') == 'on'
+            
+            try:
+                effective_date = datetime.strptime(effective_date, "%d-%b-%y").strftime("%d-%b-%y")
+            except ValueError as ve:
+                raise ValueError("Effective Date must be in the format 'DD-MMM-YY'. Please correct the input.")
 
             # Get index configuration
             index_config = get_index_config(review_type)
@@ -47,11 +53,13 @@ def create_app():
             result = run_review(
                 review_type=review_type,
                 date=date,
+                co_date=co_date,
                 effective_date=effective_date,
                 index=index_config["index"],
                 isin=index_config["isin"],
                 currency=currency
             )
+
 
             # Open Excel file if calculation was successful
             if result["status"] == "success" and auto_open:

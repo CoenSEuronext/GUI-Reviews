@@ -1,7 +1,28 @@
 Add Inclusion Exclusion to the reviews
-GICP: DATA_FOLDER2
-FRI4P capping
-GICP capping
-Add FRD4P Free float to Full universe
-Add output files to edwpt_review
 Seperate CSS/JS from HTML
+
+
+FRD4P:
+Make sure all variables that are calculated end up in Full Universe files
+Exclusion - Inclusion
+
+FRI4P:
+Make sure all variables that are calculated end up in Full Universe files
+Exclusion - Inclusion
+
+GICP: 
+Exclusion - Inclusion
+
+EDWPT/EDWP:
+Create all the outputs in one script, retrieve the actual output + inclusion + exclusion from that same script
+Exclusion - Inclusion
+move functions.py
+
+
+Create an empty review and copy the rulebook into claude to code a base
+
+Make selection_df the uniform choice for the name of the selection
+
+Integrate co_date everywhere
+
+Update all the names to what the final output names should be.

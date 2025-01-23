@@ -29,11 +29,21 @@ INDEX_CONFIGS = {
         "isin": "NLIX00005321",
         "output_key": "gicp_path"
     },
-        "EDWPT": {
+    "EDWPT": {
         "index": "EDWPT",
         "isin": "NLIX00001932",
         "output_key": "edwpt_path"
-    }
+    },
+    "EDWP": {
+        "index": "EDWP",
+        "isin": "NLIX00001577",
+        "output_key": "edwp_path"
+    },
+    "F4RIP": {
+        "index": "F4RIP",
+        "isin": "FR0013376209",
+        "output_key": "f4rip_path"
+    }    
     # Add new indices here following the same pattern
 }
 

@@ -1,0 +1,5 @@
+2025-01-21 15:18:23,095 - werkzeug - WARNING -  * Debugger is active!
+2025-01-21 15:18:23,097 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-21 15:18:23,973 - werkzeug - INFO - 127.0.0.1 - - [21/Jan/2025 15:18:23] "GET / HTTP/1.1" 200 -
+2025-01-21 15:18:32,706 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-01-21 15:18:32,716 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
