@@ -1,0 +1,23 @@
+2025-01-24 14:34:22,955 - werkzeug - WARNING -  * Debugger is active!
+2025-01-24 14:34:22,957 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-24 14:34:23,306 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-24 14:34:25,342 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-24 14:34:25,922 - Review.reviews.f4rip_review - ERROR - Error during review calculation: "['ISIN_right'] not found in axis"
+2025-01-24 14:34:25,926 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 111, in run_f4rip_review
+    ).drop('ISIN_right', axis=1).rename(columns={'New Sustainability Score': 'Mirova/ISS-oekom score'})
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['ISIN_right'] not found in axis"
+
+2025-01-24 14:34:25,939 - werkzeug - INFO - 127.0.0.1 - - [24/Jan/2025 14:34:25] "POST /calculate HTTP/1.1" 200 -

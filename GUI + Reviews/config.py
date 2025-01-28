@@ -43,6 +43,11 @@ INDEX_CONFIGS = {
         "index": "F4RIP",
         "isin": "FR0013376209",
         "output_key": "f4rip_path"
+    },
+    "SES5P": {
+        "index": "SES5P",
+        "isin": "NL0015000EF0",
+        "output_key": "ses5p_path"
     }    
     # Add new indices here following the same pattern
 }

@@ -1,0 +1,20 @@
+2025-01-28 16:20:20,015 - werkzeug - WARNING -  * Debugger is active!
+2025-01-28 16:20:20,017 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-28 16:20:23,439 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2025-01-28 16:20:25,361 - Review.reviews.ses5p_review - INFO - Loading reference data...
+2025-01-28 16:20:32,172 - Review.reviews.ses5p_review - ERROR - Error during review calculation: "['Final Capping'] not in index"
+2025-01-28 16:20:32,175 - Review.reviews.ses5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ses5p_review.py", line 158, in run_ses5p_review
+    SES5P_df = selection_df[selection_df['Final Selection']][
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Final Capping'] not in index"
+
+2025-01-28 16:20:32,175 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-01-28 16:20:32,205 - werkzeug - INFO - 127.0.0.1 - - [28/Jan/2025 16:20:32] "POST /calculate HTTP/1.1" 200 -

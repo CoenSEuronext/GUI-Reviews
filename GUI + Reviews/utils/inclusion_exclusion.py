@@ -24,21 +24,16 @@ def inclusion_exclusion_analysis(selection_df, stock_eod_df, index, isin_column=
     
     # Prepare inclusion DataFrame
     inclusion_df = selection_df[selection_df['Inclusion']][[
-        'Company', 
+        'Name', 
         isin_column, 
         'MIC'
-    ]].rename(columns={
-        'Company': 'Name',
-        isin_column: 'ISIN'
-    }).sort_values('Name')
+    ]].sort_values('Name')
     
     # Prepare exclusion DataFrame
     exclusion_df = filtered_stock_eod_df[
         ~filtered_stock_eod_df['Isin Code'].isin(selection_df[isin_column])
-    ][['Name', 'Isin Code', 'MIC']].rename(columns={
-        'Isin Code': 'ISIN'
-    }).sort_values('Name')
-    
+    ][['Name', 'Isin Code', 'MIC']].sort_values('Name').rename(columns={'Isin Code': 'ISIN'})
+
     return {
         'inclusion_df': inclusion_df,
         'exclusion_df': exclusion_df

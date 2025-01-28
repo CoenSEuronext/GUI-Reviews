@@ -3,14 +3,14 @@ import numpy as np
 from datetime import datetime
 import os
 import traceback
-from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
+from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643", 
+def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX00003643", 
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 
                     feed="Reuters", currency="EUR", year=None):
     """
@@ -42,7 +42,7 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
 
         # Use data_loader functions to load data
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df = load_eod_data(date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
         
         logger.info("Loading reference data...")
         ref_data = load_reference_data(current_data_folder, ['ff', 'developed_market', 'icb', 'sesamm', 'oekom_trustcarbon'])
@@ -485,7 +485,16 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             'Currency (Local)': 'Currency',
         })
         FRI4P_df = FRI4P_df.sort_values('Name')
+        
+        analysis_results = inclusion_exclusion_analysis(
+            selection_df, 
+            stock_eod_df, 
+            index, 
+            isin_column='ISIN'
+        )
 
+        inclusion_df = analysis_results['inclusion_df']
+        exclusion_df = analysis_results['exclusion_df']
         # Save output files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
@@ -500,6 +509,8 @@ def run_fri4p_review(date, effective_date, index="FRI4P", isin="FRIX00003643",
             with pd.ExcelWriter(fri4p_path) as writer:
                     # Write each DataFrame to a different sheet
                     FRI4P_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                    inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
+                    exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                     developed_market_df.to_excel(writer, sheet_name='Full Universe', index=False)
                 
             return {

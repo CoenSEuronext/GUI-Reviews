@@ -3,10 +3,10 @@ import numpy as np
 from datetime import datetime
 import os
 import traceback
-from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
+from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
@@ -56,6 +56,8 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         selection_df = ref_data['cac_family'].drop(columns=['Effective Date of Review'])
         oekom_score_df = ref_data['oekom_score']
         
+        selection_df = selection_df.rename(columns={'Company': 'Name', 'ISIN code': 'ISIN'})
+                
         if any(df is None for df in [ff_df, selection_df, oekom_score_df]):
             raise ValueError("Failed to load one or more required reference data files")
 
@@ -66,7 +68,7 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         # Merge with the filtered symbols
         selection_df = selection_df.merge(
             symbols_filtered,
-            left_on='ISIN code',
+            left_on='ISIN',
             right_on='Isin Code', 
             how='left'
         ).drop('Isin Code', axis=1)
@@ -101,11 +103,11 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         selection_df['Rank Universe'] = selection_df['FFMC CO'].rank(ascending=False, method='first')
         
         selection_df = selection_df.merge(
-        oekom_score_df[['ISIN', 'New Sustainability Score']],
-        left_on='ISIN code',
-        right_on='ISIN',
-        how='left'
-        ).drop('ISIN', axis=1).rename(columns={'New Sustainability Score': 'Mirova/ISS-oekom score'})
+            oekom_score_df[['ISIN', 'New Sustainability Score']],
+            left_on='ISIN',
+            right_on='ISIN',
+            how='left'
+        ).rename(columns={'New Sustainability Score': 'Mirova/ISS-oekom score'})
         
         selection_df = selection_df.sort_values(['Mirova/ISS-oekom score', 'FFMC CO'], ascending=[False, False])
 
@@ -118,36 +120,27 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
                         bins=[0, 10, 20, 30, 40, float('inf')],
                         labels=[0.04, 0.03, 0.02, 0.01, 0],
                         include_lowest=True).astype(float)
-
+         
         # Find index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == 'FR0013376209', 'Mkt Cap'].iloc[0]
         ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
         selection_df['Shares'] = index_mcap * selection_df['Weight'] / selection_df['Close Prc_EOD']
-        
+
         # Add Free Float data
         selection_df = selection_df.merge(
             ff_df[['ISIN Code:', 'Free Float Round:']],
-            left_on='ISIN code',
+            left_on='ISIN',
             right_on='ISIN Code:',
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
         
         selection_df['Effective Date of Review'] = effective_date
 
-
-
-        F4RIP_df = selection_df[[
-            'Company', 
-            'ISIN code', 
-            'MIC', 
-            'Preliminary Number of shares', 
-            'Preliminary Free Float',
-            'Preliminary Capping Factor',
-            'Effective Date of Review',
-            'Currency'
-        ]].copy().rename(columns={
-            'Company': 'Name',
-            'ISIN code': 'ISIN', 
+        F4RIP_df = selection_df[
+            ['Name', 'ISIN', 'MIC', 'Preliminary Number of shares', 
+            'Preliminary Free Float', 'Preliminary Capping Factor', 
+            'Effective Date of Review', 'Currency']
+        ].rename(columns={
             'Preliminary Number of shares': 'NOSH',
             'Preliminary Free Float': 'Free Float', 
             'Preliminary Capping Factor': 'Final Capping',
@@ -156,50 +149,15 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
 
         F4RIP_df = F4RIP_df.sort_values('Name')
 
-        def inclusion(selection_df, stock_eod_df, index):
-            """
-            Add a flag to selection_df indicating whether the company is found in stock_eod_df.
-            Flag is 1 if the company (based on ISIN code) is not found in stock_eod_df,
-            and 0 if it is found.
-            
-            Args:
-                selection_df (DataFrame): DataFrame with 'ISIN code' and company details.
-                stock_eod_df (DataFrame): DataFrame with 'Isin Code' and other stock data.
-                index (str): The index value to filter stock_eod_df by 'Index'.
-            
-            Returns:
-                DataFrame: selection_df with an added flag indicating presence in stock_eod_df.
-            """
-            # Filter stock_eod_df based on the provided index
-            filtered_stock_eod_df = stock_eod_df[stock_eod_df['Index'] == index]
-            
-            # Create a set of ISIN codes from the filtered stock_eod_df
-            isin_set = set(filtered_stock_eod_df['Isin Code'])
-            
-            # Check if each ISIN in selection_df is in the isin_set, and assign a flag
-            selection_df['Inclusion'] = selection_df['ISIN code'].apply(lambda x: 1 if x not in isin_set else 0)
-            
-            return selection_df
-        
-        index = "F4RIP"
-        selection_df = inclusion(selection_df, stock_eod_df, index)
-        inclusion_df = selection_df[selection_df['Inclusion'] == 1][[
-            'Company', 
-            'ISIN code', 
-            'MIC'
-        ]].rename(columns={
-            'Company': 'Name',
-            'ISIN code': 'ISIN'
-        }).sort_values('Name')
-        
-        filtered_stock_eod_df = stock_eod_df[stock_eod_df['Index'] == index]
+        analysis_results = inclusion_exclusion_analysis(
+            selection_df, 
+            stock_eod_df, 
+            index, 
+            isin_column='ISIN'
+        )
 
-        # Find companies in stock_eod_df that are not in selection_df
-        exclusion_df = filtered_stock_eod_df[
-            ~filtered_stock_eod_df['Isin Code'].isin(selection_df['ISIN code'])
-        ][['Name', 'Isin Code', 'MIC']].rename(columns={
-            'Isin Code': 'ISIN'
-        }).sort_values('Name')
+        inclusion_df = analysis_results['inclusion_df']
+        exclusion_df = analysis_results['exclusion_df']
         # Save output files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')

@@ -1,0 +1,6 @@
+2025-01-28 15:47:17,166 - werkzeug - WARNING -  * Debugger is active!
+2025-01-28 15:47:17,168 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-28 15:49:43,445 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
+2025-01-28 15:49:43,451 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
+2025-01-28 15:49:43,452 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
+2025-01-28 15:49:44,384 - Review.reviews.ses5p_review - INFO - Loading EOD data...

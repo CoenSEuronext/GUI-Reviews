@@ -8,6 +8,7 @@ from .reviews.gicp_review import run_gicp_review
 from .reviews.edwpt_review import run_edwpt_review
 from .reviews.edwp_review import run_edwp_review
 from .reviews.f4rip_review import run_f4rip_review
+from .reviews.ses5p_review import run_ses5p_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -17,7 +18,8 @@ REVIEW_FUNCTIONS = {
     "GICP": run_gicp_review,
     "EDWPT": run_edwpt_review,
     "EDWP": run_edwp_review,
-    "F4RIP": run_f4rip_review
+    "F4RIP": run_f4rip_review,
+    "SES5P": run_ses5p_review
 }
 
 def run_review(review_type, **kwargs):

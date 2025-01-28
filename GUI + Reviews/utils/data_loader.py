@@ -95,6 +95,10 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
             'filename': 'Oekom Score.xlsx',
             'loader': lambda f: pd.read_excel(f)
         },
+        'eurozone_300': {
+            'filename': 'Eurozone 300.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
     }
     
     # Rest of the function remains the same

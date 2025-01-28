@@ -1,0 +1,26 @@
+2025-01-28 15:50:05,365 - werkzeug - WARNING -  * Debugger is active!
+2025-01-28 15:50:05,367 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-28 15:50:09,282 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2025-01-28 15:50:10,995 - Review.reviews.ses5p_review - INFO - Loading reference data...
+2025-01-28 15:50:17,983 - Review.reviews.ses5p_review - ERROR - Error during review calculation: Can only use .str accessor with string values!
+2025-01-28 15:50:17,987 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-01-28 15:50:17,988 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\accessor.py', reloading
+2025-01-28 15:50:17,989 - Review.reviews.ses5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ses5p_review.py", line 126, in run_ses5p_review
+    selection_df['ICB_Supersector'] = selection_df['Subsector Code'].str[:4]
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\strings\accessor.py", line 191, in __init__
+    self._inferred_dtype = self._validate(data)
+                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\strings\accessor.py", line 245, in _validate
+    raise AttributeError("Can only use .str accessor with string values!")
+AttributeError: Can only use .str accessor with string values!. Did you mean: 'std'?
+
+2025-01-28 15:50:17,990 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\strings\\accessor.py', reloading
+2025-01-28 15:50:18,017 - werkzeug - INFO - 127.0.0.1 - - [28/Jan/2025 15:50:18] "POST /calculate HTTP/1.1" 200 -
