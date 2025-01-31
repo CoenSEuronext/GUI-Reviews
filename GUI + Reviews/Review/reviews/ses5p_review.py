@@ -52,10 +52,10 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
         
         # Extract the needed DataFrames
         ff_df = ref_data['ff']
-        selection_df = ref_data['eurozone_300']
+        eurozone_300_df = ref_data['eurozone_300']
         icb_df = ref_data['icb']
                 
-        if any(df is None for df in [ff_df, selection_df, icb_df]):
+        if any(df is None for df in [ff_df, eurozone_300_df, icb_df]):
             raise ValueError("Failed to load one or more required reference data files")
 
         symbols_filtered = stock_eod_df[
@@ -65,7 +65,7 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
         ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
         
         # Add Free Float data
-        selection_df = selection_df.merge(
+        eurozone_300_df = eurozone_300_df.merge(
             ff_df[['ISIN Code:', 'Free Float Round:']],
             left_on='ISIN',
             right_on='ISIN Code:',
@@ -73,21 +73,21 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
         
         # Merge with the filtered symbols
-        selection_df = selection_df.merge(
+        eurozone_300_df = eurozone_300_df.merge(
             symbols_filtered,
             left_on='ISIN',
             right_on='Isin Code', 
             how='left'
         ).drop('Isin Code', axis=1)
 
-        selection_df = selection_df.merge(
+        eurozone_300_df = eurozone_300_df.merge(
             stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
             left_on='#Symbol', 
             right_on='#Symbol', 
             how='left'
         )
 
-        selection_df = selection_df.merge(
+        eurozone_300_df = eurozone_300_df.merge(
             stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
             left_on='#Symbol', 
             right_on='#Symbol', 
@@ -96,7 +96,7 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
         )
 
         # Merge CO Close Price
-        selection_df = selection_df.merge(
+        eurozone_300_df = eurozone_300_df.merge(
             stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
             left_on='#Symbol', 
             right_on='#Symbol', 
@@ -104,58 +104,61 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
             suffixes=('_EOD', '_CO')
         )
         
-        icb_codes_stock = stock_eod_df[['Isin Code', 'ICBCode']].drop_duplicates(subset=['Isin Code'], keep='first')
-        icb_codes_icb = icb_df[['ISIN Code', 'Subsector Code']].drop_duplicates(subset=['ISIN Code'], keep='first')
+        icb_codes_stock = stock_eod_df[['Isin Code', 'ICBCode', 'MIC']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first')
+        icb_codes_icb = icb_df[['ISIN Code', 'Subsector Code', 'MIC Code']].drop_duplicates(subset=['ISIN Code', 'MIC Code'], keep='first')
 
-        # Add ICB codes to selection DataFrame
-        selection_df = selection_df.merge(
-        icb_codes_stock,
-        left_on='ISIN',
-        right_on='Isin Code',
-        how='left'
+        # Do the merge
+        eurozone_300_df = eurozone_300_df.merge(
+            icb_codes_stock,
+            left_on=['ISIN', 'MIC'],
+            right_on=['Isin Code', 'MIC'],
+            how='left'
         ).drop('Isin Code', axis=1)
         
-        selection_df = selection_df.merge(
+        eurozone_300_df = eurozone_300_df.merge(
             icb_codes_icb,
-            left_on='ISIN',
-            right_on='ISIN Code',
+            left_on=['ISIN', 'MIC'],
+            right_on=['ISIN Code', 'MIC Code'], 
             how='left'
         ).drop('ISIN Code', axis=1)
         
-        selection_df['Uni_Supersector'] = selection_df['ICBCode'].astype(str).str[:4]
-        selection_df['ICB_Supersector'] = selection_df['Subsector Code'].astype(str).str[:4]
+        eurozone_300_df['Uni_Supersector'] = eurozone_300_df['ICBCode'].astype(str).str[:4]
+        eurozone_300_df['ICB_Supersector'] = eurozone_300_df['Subsector Code'].astype(str).str[:4]
                 
-        selection_df['FFMC CO'] = selection_df['NOSH'] * selection_df['Free Float'] * selection_df['Close Prc_CO']
+        eurozone_300_df['FFMC CO'] = eurozone_300_df['NOSH'] * eurozone_300_df['Free Float'] * eurozone_300_df['Close Prc_CO']
         
         eligible_supersectors = ['3030', '1510', '6510', '6010']
 
         # Create proper Inclusion column - Change the column name to be clear
-        selection_df['Inclusion_Sector'] = (
-            (selection_df['Uni_Supersector'].isin(eligible_supersectors)) | 
-            (selection_df['ICB_Supersector'].isin(eligible_supersectors))
+        eurozone_300_df['Inclusion_Sector'] = (
+            (eurozone_300_df['Uni_Supersector'].isin(eligible_supersectors)) | 
+            (eurozone_300_df['ICB_Supersector'].isin(eligible_supersectors))
         )
 
         # Rank only the truly included companies
-        selection_df['Rank Universe'] = selection_df.loc[selection_df['Inclusion_Sector']]['FFMC CO'].rank(ascending=False, method='first')
+        eurozone_300_df['Rank Universe'] = eurozone_300_df.loc[eurozone_300_df['Inclusion_Sector']]['FFMC CO'].rank(ascending=False, method='first')
 
         # Create Final Selection column - initialize as False
-        selection_df['Final Selection'] = False
+        eurozone_300_df['Final Selection'] = False
 
         # Set True for top 50 ranked companies (only among included companies)
-        selection_df.loc[
-            (selection_df['Inclusion_Sector']) & 
-            (selection_df['Rank Universe'] <= 50), 
+        eurozone_300_df.loc[
+            (eurozone_300_df['Inclusion_Sector']) & 
+            (eurozone_300_df['Rank Universe'] <= 50), 
             'Final Selection'
         ] = True
          
         # Find index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
         
-        selection_df['Effective Date of Review'] = effective_date
+        eurozone_300_df['Effective Date of Review'] = effective_date
 
         # Save to Excel for debugging
 
-        selection_df['Final Capping'] = 1
+        eurozone_300_df['Final Capping'] = 1
+        
+        selection_df = eurozone_300_df[eurozone_300_df['Final Selection']].copy()
+        
         SES5P_df = selection_df[selection_df['Final Selection']][
             ['Name', 'ISIN', 'MIC', 'NOSH', 
             'Free Float', 'Final Capping', 

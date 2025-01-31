@@ -1,0 +1,4 @@
+2025-01-30 17:51:41,594 - werkzeug - WARNING -  * Debugger is active!
+2025-01-30 17:51:41,597 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-30 17:51:48,915 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 17:51:48,919 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading

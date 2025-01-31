@@ -1,0 +1,41 @@
+2025-01-30 16:54:49,761 - werkzeug - WARNING -  * Debugger is active!
+2025-01-30 16:54:49,764 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-30 16:54:49,788 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 16:54:52,511 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-01-30 16:54:59,716 - Review.reviews.aerdp_review - ERROR - Error during review calculation: No engine for filetype: ''
+2025-01-30 16:54:59,720 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-01-30 16:54:59,721 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\formats\\excel.py', reloading
+2025-01-30 16:54:59,721 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py', reloading
+2025-01-30 16:54:59,722 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1136, in __new__
+    engine = config.get_option(f"io.excel.{ext}.writer", silent=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\_config\config.py", line 274, in __call__
+    return self.__func__(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\_config\config.py", line 146, in _get_option
+    key = _get_single_key(pat, silent)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\_config\config.py", line 132, in _get_single_key
+    raise OptionError(f"No such keys(s): {repr(pat)}")
+pandas._config.config.OptionError: No such keys(s): 'io.excel..writer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 98, in run_aerdp_review
+    developed_market_df.to_excel('debug output', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1140, in __new__
+    raise ValueError(f"No engine for filetype: '{ext}'") from err
+ValueError: No engine for filetype: ''
+
+2025-01-30 16:54:59,722 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\_config\\config.py', reloading
+2025-01-30 16:54:59,747 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 16:54:59] "POST /calculate HTTP/1.1" 200 -

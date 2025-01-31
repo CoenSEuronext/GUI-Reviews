@@ -31,3 +31,5 @@ GICP Capping check before making the other macro
 modularize index_mcap reference
 
 modularize universe reference
+
+Ask Francesco whether to use ICB codes or ICB codes from stock files
