@@ -1,0 +1,45 @@
+2025-02-03 15:28:54,823 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 15:28:54,826 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 15:28:54,976 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\__init__.py', reloading
+2025-02-03 15:28:54,985 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\__init__.py', reloading
+2025-02-03 15:28:55,003 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading
+2025-02-03 15:28:55,014 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-02-03 15:28:55,025 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\egspp_review.py', reloading
+2025-02-03 15:28:55,041 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-02-03 15:28:55,046 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-02-03 15:28:55,061 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-02-03 15:28:55,081 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-02-03 15:28:55,098 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\logging_utils.py', reloading
+2025-02-03 15:28:55,137 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\__init__.py', reloading
+2025-02-03 15:28:55,139 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\app.py', reloading
+2025-02-03 15:28:55,149 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-02-03 15:28:55,158 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-02-03 15:28:55,163 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\templating.py', reloading
+2025-02-03 15:28:55,165 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-02-03 15:28:55,167 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-02-03 15:28:55,183 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\globals.py', reloading
+2025-02-03 15:28:55,185 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\wrappers.py', reloading
+2025-02-03 15:28:55,192 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-02-03 15:28:55,193 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-02-03 15:28:55,196 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-02-03 15:28:55,199 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\json\\__init__.py', reloading
+2025-02-03 15:28:55,200 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-02-03 15:28:55,203 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 15:28:55,204 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 15:28:55,207 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-02-03 15:28:55,233 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\traceback.py', reloading
+2025-02-03 15:28:55,250 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2025-02-03 15:28:55,251 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading
+2025-02-03 15:28:55,288 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\config.py', reloading
+2025-02-03 15:28:55,293 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\typing.py', reloading
+2025-02-03 15:28:55,295 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-02-03 15:28:55,295 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-02-03 15:28:55,306 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-02-03 15:28:55,317 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-02-03 15:28:55,322 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-02-03 15:28:55,330 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-02-03 15:28:55,635 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-02-03 15:28:55,637 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-02-03 15:28:55,638 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2025-02-03 15:28:55,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-02-03 15:28:55,658 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading

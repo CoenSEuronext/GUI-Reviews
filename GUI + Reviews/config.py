@@ -49,10 +49,15 @@ INDEX_CONFIGS = {
         "isin": "NL0015000EF0",
         "output_key": "ses5p_path"
     },
-        "AERDP": {
+    "AERDP": {
         "index": "AERDP",
         "isin": "NLIX00003086",
         "output_key": "aerdp_path"
+    },
+    "BNEW": {
+        "index": "BNEW",
+        "isin": "NL0011376116",
+        "output_key": "bnew_path"
     }        
     # Add new indices here following the same pattern
 }

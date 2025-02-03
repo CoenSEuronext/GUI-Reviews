@@ -137,7 +137,7 @@ def run_aerdp_review(date, co_date, effective_date, index="AERDP", isin="NLIX000
         )
         
         developed_market_df['Close Prc_CO'] = developed_market_df['Close Prc_CO'].fillna(0)
-        developed_market_df['FFMC CO'] = developed_market_df['NOSH'] * developed_market_df['Free Float'] * developed_market_df['Close Prc_CO'] * developed_market_df['FX/Index Ccy']
+        developed_market_df['FFMC CO'] = developed_market_df['NOSH'] * developed_market_df['Free Float'] * developed_market_df['Close Prc_EOD'] * developed_market_df['FX/Index Ccy']
         developed_market_df['Effective Date of Review'] = effective_date
         developed_market_df['Final Capping'] = 1
         # Only rank included companies
@@ -148,48 +148,73 @@ def run_aerdp_review(date, co_date, effective_date, index="AERDP", isin="NLIX000
         # Find index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == 'NLIX00003086', 'Mkt Cap'].iloc[0]
         total_ffmc = developed_market_df.loc[developed_market_df['Inclusion'], 'FFMC CO'].sum()
-        
+                
         # Initialize weight column for all components
         developed_market_df['Weight'] = 0.0
 
         # Calculate initial weights only for included companies
         included_mask = developed_market_df['Inclusion']
-        developed_market_df.loc[included_mask, 'Weight'] = \
-            developed_market_df.loc[included_mask, 'FFMC CO'] / total_ffmc * 100
 
-        def redistribute_excess_weight(weights, cap_level=5.0):
-            """Helper function to redistribute excess weight from capped components"""
-            uncapped_mask = weights <= cap_level
-            if not any(uncapped_mask):
-                return weights
+        def calculate_initial_weights(df, mask):
+            """Calculate initial weights based on FFMC proportions for included companies"""
+            total_ffmc = df.loc[mask, 'FFMC CO'].sum()
+            df.loc[mask, 'Weight'] = df.loc[mask, 'FFMC CO'] / total_ffmc * 100
+            return df
+
+        def redistribute_excess_weight(df, mask, capped_companies, cap_level=5.0):
+            """Redistribute excess weight above cap proportionally by FFMC to uncapped companies"""
+            # Only work with included companies
+            included_df = df[mask].copy()
             
-            excess = sum(weights[~uncapped_mask] - cap_level)
-            if excess <= 0:
-                return weights
+            # Identify companies above cap (that aren't already capped)
+            above_cap = (included_df['Weight'] > cap_level) & ~included_df.index.isin(capped_companies)
             
-            # Distribute excess proportionally among uncapped components
-            weights[uncapped_mask] += excess * (weights[uncapped_mask] / sum(weights[uncapped_mask]))
-            weights[~uncapped_mask] = cap_level
-            return weights
+            if not any(above_cap):
+                return df, capped_companies
+            
+            # Calculate excess weight
+            excess = sum(included_df.loc[above_cap, 'Weight'] - cap_level)
+            
+            # Cap the companies above threshold
+            included_df.loc[above_cap, 'Weight'] = cap_level
+            capped_companies = capped_companies.union(included_df[above_cap].index)
+            
+            # Redistribute excess only to companies that aren't capped
+            available_mask = ~included_df.index.isin(capped_companies)
+            if any(available_mask):
+                ffmc_available = included_df.loc[available_mask, 'FFMC CO']
+                included_df.loc[available_mask, 'Weight'] += excess * (ffmc_available / ffmc_available.sum())
+            
+            # Update the original dataframe
+            df.loc[included_df.index, 'Weight'] = included_df['Weight']
+            
+            return df, capped_companies
 
-        # Perform three rounds of 5% capping only on included companies
-        for round in range(3):
-            weights = developed_market_df.loc[included_mask, 'Weight'].copy()
-            new_weights = redistribute_excess_weight(weights, cap_level=5.0)
-            developed_market_df.loc[included_mask, 'Weight'] = new_weights
+        # Initial weight calculation
+        developed_market_df = calculate_initial_weights(developed_market_df, included_mask)
 
-        # Initialize Final Capping for all components
+        # Keep track of companies that have been capped
+        capped_companies = set()
+
+        # Perform four rounds of 5% capping
+        for round in range(4):
+            developed_market_df, capped_companies = redistribute_excess_weight(
+                developed_market_df, 
+                included_mask, 
+                capped_companies, 
+                cap_level=5.0
+            )
+
+        # Calculate final capping factors
         developed_market_df['Final Capping'] = 1.0
-
-        # Calculate final capping factors only for included companies
         developed_market_df.loc[included_mask, 'Final Capping'] = \
-        developed_market_df.loc[included_mask, 'Weight'] / \
-        (developed_market_df.loc[included_mask, 'FFMC CO'] / total_ffmc * 100)
+            developed_market_df.loc[included_mask, 'Weight'] / \
+            (developed_market_df.loc[included_mask, 'FFMC CO'] / total_ffmc * 100)
 
-        # Normalize capping factors only for included companies - using only their max value
+        # Normalize capping factors
         max_included_capping = developed_market_df.loc[included_mask, 'Final Capping'].max()
         developed_market_df.loc[included_mask, 'Final Capping'] = \
-        developed_market_df.loc[included_mask, 'Final Capping'] / max_included_capping
+            developed_market_df.loc[included_mask, 'Final Capping'] / max_included_capping
         
         # Create selection_df from eligible companies
         selection_df = developed_market_df[developed_market_df['Inclusion']].copy()

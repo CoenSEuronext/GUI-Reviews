@@ -1,0 +1,31 @@
+2025-02-03 13:05:44,819 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 13:05:44,821 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 13:05:49,920 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-02-03 13:05:51,658 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-02-03 13:05:52,413 - Review.reviews.bnew_review - ERROR - Error during review calculation: 'Preliminary number of shares'
+2025-02-03 13:05:52,416 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Preliminary number of shares'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 116, in run_bnew_review
+    aex_bel_df['FFMC CO'] = aex_bel_df['Preliminary number of shares'] * aex_bel_df['Preliminary free float'] * aex_bel_df['Preliminary capping*'] * aex_bel_df['Close Prc_CO']
+                            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Preliminary number of shares'
+
+2025-02-03 13:05:52,430 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 13:05:52] "POST /calculate HTTP/1.1" 200 -
+2025-02-03 13:05:59,219 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 13:05:59,220 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading

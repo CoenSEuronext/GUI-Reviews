@@ -10,6 +10,7 @@ from .reviews.edwp_review import run_edwp_review
 from .reviews.f4rip_review import run_f4rip_review
 from .reviews.ses5p_review import run_ses5p_review
 from .reviews.aerdp_review import run_aerdp_review
+from .reviews.bnew_review import run_bnew_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -21,7 +22,8 @@ REVIEW_FUNCTIONS = {
     "EDWP": run_edwp_review,
     "F4RIP": run_f4rip_review,
     "SES5P": run_ses5p_review,
-    "AERDP": run_aerdp_review
+    "AERDP": run_aerdp_review,
+    "BNEW": run_bnew_review
 }
 
 def run_review(review_type, **kwargs):

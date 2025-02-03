@@ -14,10 +14,11 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 
                     feed="Reuters", currency="EUR", year=None):
     """
-    Run the index review calculation
+    Run the index review calculation for F4RIP index
 
     Args:
         date (str): Calculation date in format YYYYMMDD
+        co_date (str): Comparison date
         effective_date (str): Effective date in format DD-MMM-YY
         index (str, optional): Index name. Defaults to "F4RIP"
         isin (str, optional): ISIN code. Defaults to "FR0013376209"
@@ -33,14 +34,13 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         dict: Result dictionary containing status, message, and data
     """
     try:
-        # If year is not provided, get it from the date
-        if year is None:
-            year = str(datetime.strptime(date, '%Y%m%d').year)
+        # Simplify year extraction
+        year = year or str(datetime.strptime(date, '%Y%m%d').year)
 
         # Set data folder for current month
         current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
 
-        # Use data_loader functions to load data
+        # Load data with error handling
         logger.info("Loading EOD data...")
         index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
         
@@ -51,131 +51,137 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
             sheet_names={'cac_family': 'PX1'}
         )
         
-        # Extract the needed DataFrames
-        ff_df = ref_data['ff']
-        selection_df = ref_data['cac_family'].drop(columns=['Effective Date of Review'])
+        # Validate and prepare reference DataFrames
+        ff_df = ref_data['ff'].drop_duplicates(subset=['ISIN Code:'], keep='first')
+        selection_df = ref_data['cac_family'].drop(columns=['Effective Date of Review']).rename(
+            columns={
+                'Company': 'Name', 
+                'ISIN code': 'ISIN',
+                'Preliminary Number of shares': 'Preliminary_Number_of_shares',
+                'Preliminary Free Float': 'Preliminary_Free_Float',
+                'Preliminary Capping Factor': 'Preliminary_Capping_Factor'
+            }
+        )
         oekom_score_df = ref_data['oekom_score']
         
-        selection_df = selection_df.rename(columns={'Company': 'Name', 'ISIN code': 'ISIN'})
-                
+        # Validate data loading
         if any(df is None for df in [ff_df, selection_df, oekom_score_df]):
             raise ValueError("Failed to load one or more required reference data files")
 
+        # Prepare and filter stock symbols
         symbols_filtered = stock_eod_df[
             stock_eod_df['#Symbol'].str.len() == 12
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
 
-        # Merge with the filtered symbols
-        selection_df = selection_df.merge(
-            symbols_filtered,
-            left_on='ISIN',
-            right_on='Isin Code', 
-            how='left'
-        ).drop('Isin Code', axis=1)
-
-        selection_df = selection_df.merge(
-            stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
-            left_on='#Symbol', 
-            right_on='#Symbol', 
-            how='left'
+        # Perform multi-stage merging with reduced redundancy
+        selection_df = (selection_df
+            # Merge filtered symbols
+            .merge(
+                symbols_filtered,
+                left_on='ISIN',
+                right_on='Isin Code', 
+                how='left'
+            )
+            .drop('Isin Code', axis=1)
+            
+            # Merge FX/Index Ccy
+            .merge(
+                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol', 
+                how='left'
+            )
+            
+            # Merge Close Prices (Working Day and Comparison)
+            .merge(
+                stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol', 
+                how='left', 
+                suffixes=('', '_EOD')
+            )
+            .merge(
+                stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol', 
+                how='left', 
+                suffixes=('_EOD', '_CO')
+            )
+            
+            # Merge Free Float data
+            .merge(
+                ff_df[['ISIN Code:', 'Free Float Round:']],
+                left_on='ISIN',
+                right_on='ISIN Code:',
+                how='left'
+            )
+            .drop('ISIN Code:', axis=1)
+            .rename(columns={'Free Float Round:': 'Free Float'})
         )
-
-        selection_df = selection_df.merge(
-            stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
-            left_on='#Symbol', 
-            right_on='#Symbol', 
-            how='left',
-            suffixes=('', '_EOD')
-        )
-
-        # Merge CO Close Price
-        selection_df = selection_df.merge(
-            stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
-            left_on='#Symbol', 
-            right_on='#Symbol', 
-            how='left',
-            suffixes=('_EOD', '_CO')
-        )
-
         
-        selection_df['FFMC CO'] = selection_df['Preliminary Number of shares'] * selection_df['Preliminary Free Float'] * selection_df['Preliminary Capping Factor'] * selection_df['Close Prc_CO']
-        
+        # Calculate Financial Metrics
+        selection_df['FFMC CO'] = (
+            selection_df['Preliminary_Number_of_shares'] * 
+            selection_df['Preliminary_Free_Float'] * 
+            selection_df['Preliminary_Capping_Factor'] * 
+            selection_df['Close Prc_CO']
+        )
         selection_df['Rank Universe'] = selection_df['FFMC CO'].rank(ascending=False, method='first')
-
-         
-        # Find index market cap
-        index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == 'FR0013376209', 'Mkt Cap'].iloc[0]
-        ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
-
-        # Add Free Float data
-        selection_df = selection_df.merge(
-            ff_df[['ISIN Code:', 'Free Float Round:']],
-            left_on='ISIN',
-            right_on='ISIN Code:',
-            how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
         
+        # Find index market cap
+        index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+        
+        # Add Effective Date
         selection_df['Effective Date of Review'] = effective_date
-
+        
+        # Prepare F4RIP DataFrame
         F4RIP_df = selection_df[
-            ['Name', 'ISIN', 'MIC', 'Preliminary Number of shares', 
-            'Preliminary Free Float', 'Preliminary Capping Factor', 
-            'Effective Date of Review', 'Currency']
+            ['Name', 'ISIN', 'MIC', 'Preliminary_Number_of_shares', 
+             'Preliminary_Free_Float', 'Preliminary_Capping_Factor', 
+             'Effective Date of Review', 'Currency']
         ].rename(columns={
-            'Preliminary Number of shares': 'NOSH',
-            'Preliminary Free Float': 'Free Float', 
-            'Preliminary Capping Factor': 'Final Capping',
+            'Preliminary_Number_of_shares': 'NOSH',
+            'Preliminary_Free_Float': 'Free Float', 
+            'Preliminary_Capping_Factor': 'Final Capping',
             'Currency': 'Currency (Local)'
-        })
+        }).sort_values('Name')
 
-        F4RIP_df = F4RIP_df.sort_values('Name')
-
+        # Perform Inclusion/Exclusion Analysis
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 
             stock_eod_df, 
             index, 
             isin_column='ISIN'
         )
-
         inclusion_df = analysis_results['inclusion_df']
         exclusion_df = analysis_results['exclusion_df']
+
         # Save output files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
             os.makedirs(output_dir, exist_ok=True)
             
-            # Create filename with timestamp to avoid conflicts
+            # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             f4rip_path = os.path.join(output_dir, f'F4RIP_df_{timestamp}.xlsx')
             
-            # Save with timestamp to avoid any conflicts
+            # Save output with multiple sheets
             logger.info(f"Saving F4RIP output to: {f4rip_path}")
             with pd.ExcelWriter(f4rip_path) as writer:
-                    # Write each DataFrame to a different sheet
-                    F4RIP_df.to_excel(writer, sheet_name='Index Composition', index=False)
-                    inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
-                    exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
-                    selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
-                    index_mcap_df = pd.DataFrame({'Index Market Cap': [index_mcap]})
-                    index_mcap_df.to_excel(writer, sheet_name='Index Market Cap', index=False)
+                F4RIP_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
+                exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
+                selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                pd.DataFrame({'Index Market Cap': [index_mcap]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
 
-                
             return {
                 "status": "success",
                 "message": "Review completed successfully",
-                "data": {
-                    "f4rip_path": f4rip_path
-                }
+                "data": {"f4rip_path": f4rip_path}
             }
             
         except Exception as e:
             error_msg = f"Error saving output file: {str(e)}"
             logger.error(error_msg)
-            return {
-                "status": "error",
-                "message": error_msg,
-                "data": None
-            }
+            return {"status": "error", "message": error_msg, "data": None}
+    
     except Exception as e:
         logger.error(f"Error during review calculation: {str(e)}")
         logger.error(traceback.format_exc())
