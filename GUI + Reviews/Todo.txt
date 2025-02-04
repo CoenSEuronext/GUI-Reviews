@@ -1,7 +1,6 @@
 Add Inclusion Exclusion to the reviews
 Seperate CSS/JS from HTML
 
-
 FRD4P:
 Make sure all variables that are calculated end up in Full Universe files
 Exclusion - Inclusion
@@ -33,3 +32,9 @@ modularize index_mcap reference
 modularize universe reference
 
 Ask Francesco whether to use ICB codes or ICB codes from stock files
+
+Change ICB in AERDP
+
+Update all the names to follow the headers from dataiku + match it with inclusion_exclusion:
+
+Company	  ISIN Code	MIC	Number of Shares	Free Float	Capping Factor	Effective Date of Review	Currency

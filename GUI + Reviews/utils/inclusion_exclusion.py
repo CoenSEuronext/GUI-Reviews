@@ -24,10 +24,10 @@ def inclusion_exclusion_analysis(selection_df, stock_eod_df, index, isin_column=
     
     # Prepare inclusion DataFrame
     inclusion_df = selection_df[selection_df['Inclusion']][[
-        'Name', 
+        'Company', 
         isin_column, 
         'MIC'
-    ]].sort_values('Name')
+    ]].sort_values('Company')
     
     # Prepare exclusion DataFrame
     exclusion_df = filtered_stock_eod_df[

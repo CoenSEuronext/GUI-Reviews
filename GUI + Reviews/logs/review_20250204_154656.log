@@ -1,0 +1,24 @@
+2025-02-04 15:46:56,586 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 15:46:56,588 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-04 15:46:56,827 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-04 15:46:58,643 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-04 15:46:58,659 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-04 15:46:58,659 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 43, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-04 15:46:58,670 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 15:46:58] "POST /calculate HTTP/1.1" 200 -
+2025-02-04 15:46:59,870 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-04 15:47:00,510 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-04 15:47:00,522 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-04 15:47:00,523 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 43, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-04 15:47:00,527 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 15:47:00] "POST /calculate HTTP/1.1" 200 -
+2025-02-04 15:47:09,980 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexew_review.py', reloading
+2025-02-04 15:47:09,980 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexew_review.py', reloading

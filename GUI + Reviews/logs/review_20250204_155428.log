@@ -1,0 +1,66 @@
+2025-02-04 15:54:29,003 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 15:54:29,003 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-04 15:54:29,033 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-04 15:54:30,493 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-04 15:54:30,509 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-04 15:54:30,509 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 44, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-04 15:54:30,515 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 15:54:30] "POST /calculate HTTP/1.1" 200 -
+2025-02-04 15:54:31,069 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-04 15:54:31,659 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-04 15:54:31,671 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-04 15:54:31,672 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 44, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-04 15:54:31,677 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 15:54:31] "POST /calculate HTTP/1.1" 200 -
+2025-02-04 15:54:35,857 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-04 15:54:36,497 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-04 15:54:36,653 - Review.reviews.aexew_review - ERROR - Error during review calculation: "['ISIN Code:'] not found in axis"
+2025-02-04 15:54:36,653 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 78, in run_aexew_review
+    .drop('ISIN Code:', axis=1)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['ISIN Code:'] not found in axis"
+
+2025-02-04 15:54:36,664 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 15:54:36] "POST /calculate HTTP/1.1" 200 -
+2025-02-04 15:54:37,370 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-04 15:54:38,014 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-04 15:54:38,046 - Review.reviews.aexew_review - ERROR - Error during review calculation: "['ISIN Code:'] not found in axis"
+2025-02-04 15:54:38,048 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 78, in run_aexew_review
+    .drop('ISIN Code:', axis=1)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['ISIN Code:'] not found in axis"
+
+2025-02-04 15:54:38,048 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 15:54:38] "POST /calculate HTTP/1.1" 200 -
+2025-02-04 15:54:54,635 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexew_review.py', reloading
+2025-02-04 15:54:54,640 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexew_review.py', reloading

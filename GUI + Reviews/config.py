@@ -1,7 +1,4 @@
 # config.py
-import os
-from datetime import datetime
-
 # Network paths
 DLF_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
@@ -58,6 +55,11 @@ INDEX_CONFIGS = {
         "index": "BNEW",
         "isin": "NL0011376116",
         "output_key": "bnew_path"
+    },
+    "AEXEW": {
+        "index": "AEXEW",
+        "isin": "QS0011159744",
+        "output_key": "aexew_path"
     }        
     # Add new indices here following the same pattern
 }

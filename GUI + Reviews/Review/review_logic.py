@@ -1,6 +1,5 @@
 # review_logic.py
 import traceback
-from config import DLF_FOLDER, DATA_FOLDER
 from .reviews.fri4p_review import run_fri4p_review
 from .reviews.frd4p_review import run_frd4p_review
 from .reviews.egspp_review import run_egspp_review
@@ -11,6 +10,7 @@ from .reviews.f4rip_review import run_f4rip_review
 from .reviews.ses5p_review import run_ses5p_review
 from .reviews.aerdp_review import run_aerdp_review
 from .reviews.bnew_review import run_bnew_review
+from .reviews.aexew_review import run_aexew_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -23,7 +23,8 @@ REVIEW_FUNCTIONS = {
     "F4RIP": run_f4rip_review,
     "SES5P": run_ses5p_review,
     "AERDP": run_aerdp_review,
-    "BNEW": run_bnew_review
+    "BNEW": run_bnew_review,
+    "AEXEW": run_aexew_review
 }
 
 def run_review(review_type, **kwargs):
