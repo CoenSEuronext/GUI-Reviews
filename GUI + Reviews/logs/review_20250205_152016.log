@@ -1,0 +1,22 @@
+2025-02-05 15:20:16,649 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 15:20:16,652 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 15:20:16,678 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 15:20:19,184 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 15:20:19,947 - Review.reviews.sbf80_review - INFO - Total companies selected: 80
+2025-02-05 15:20:19,948 - Review.reviews.sbf80_review - INFO - Buffer zone selections:
+2025-02-05 15:20:19,948 - Review.reviews.sbf80_review - INFO - Rank 76.0: SOITEC - Current Constituent: True - Selected
+2025-02-05 15:20:19,949 - Review.reviews.sbf80_review - INFO - Rank 77.0: VALEO - Current Constituent: True - Selected
+2025-02-05 15:20:19,949 - Review.reviews.sbf80_review - INFO - Rank 78.0: PLUXEE - Current Constituent: True - Selected
+2025-02-05 15:20:19,950 - Review.reviews.sbf80_review - INFO - Rank 80.0: IPSOS - Current Constituent: True - Selected
+2025-02-05 15:20:19,950 - Review.reviews.sbf80_review - INFO - Rank 84.0: WORLDLINE - Current Constituent: True - Selected
+2025-02-05 15:20:19,950 - Review.reviews.sbf80_review - INFO - Rank 79.0: COFACE - Current Constituent: False - Not Selected
+2025-02-05 15:20:19,951 - Review.reviews.sbf80_review - INFO - Rank 81.0: AYVENS - Current Constituent: False - Not Selected
+2025-02-05 15:20:19,951 - Review.reviews.sbf80_review - INFO - Rank 82.0: VIRBAC - Current Constituent: False - Not Selected
+2025-02-05 15:20:19,951 - Review.reviews.sbf80_review - INFO - Rank 83.0: FORVIA - Current Constituent: False - Not Selected
+2025-02-05 15:20:19,952 - Review.reviews.sbf80_review - INFO - Rank 85.0: REMY COINTREAU - Current Constituent: False - Not Selected
+2025-02-05 15:20:19,959 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20250205_152019.xlsx
+2025-02-05 15:20:20,102 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 15:20:20] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 15:20:29,851 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 15:20:29,852 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 15:20:29,852 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 15:20:29,853 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
