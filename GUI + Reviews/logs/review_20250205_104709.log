@@ -1,0 +1,8 @@
+2025-02-05 10:47:09,703 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 10:47:09,705 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 10:47:09,801 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-05 10:47:11,486 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-05 10:47:11,516 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
+2025-02-05 10:47:11,526 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
+2025-02-05 10:47:11,529 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading
+2025-02-05 10:47:11,682 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250205_104711.xlsx

@@ -11,7 +11,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 logger = setup_logging(__name__)
 
 def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS0011159744", 
-                   area="US", area2="EU", type="STOCK", universe="Developed Market", 
+                   area="US", area2="EU", type="STOCK", universe="aex_family", 
                    feed="Reuters", currency="EUR", year=None):
 
     try:
@@ -80,29 +80,24 @@ def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS00111
         # Validate data loading
         if any(df is None for df in [selection_df]):
             raise ValueError("Failed to load one or more required reference data files")
-       
-        # Calculate Financial Metrics
-        selection_df['FFMC CO'] = (
-            selection_df['Number of Shares'] * 
-            selection_df['Free Float'] * 
-            selection_df['Capping Factor'] * 
-            selection_df['Close Prc_CO']
-        )
-        selection_df['Rank Universe'] = selection_df['FFMC CO'].rank(ascending=False, method='first')
-       
+        
         # Find index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
-       
+        selection_df['Unrounded NOSH'] = (index_mcap / 25)/ selection_df['Close Prc_EOD']
+        selection_df['Rounded NOSH'] = selection_df['Unrounded NOSH'].round()
+        selection_df['Capping Factor'] = 1
+        selection_df['Free Float'] = 1
         # Add Effective Date
         selection_df['Effective Date of Review'] = effective_date
         selection_df['Currency'] = currency
         # Prepare AEXEW DataFrame
-        AEXEW_df = (selection_df[
-            ['Company', 'ISIN code', 'MIC', 'Number of Shares', 
-                'Free Float', 'Capping Factor', 
+        AEXEW_df = (
+            selection_df[
+                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
                 'Effective Date of Review', 'Currency']
-        ]
-        .sort_values('Company')
+            ]
+            .rename(columns={'Rounded NOSH': 'Number of Shares'})
+            .sort_values('Company')
         )
 
         # Perform Inclusion/Exclusion Analysis
@@ -110,7 +105,7 @@ def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS00111
             selection_df, 
             stock_eod_df, 
             index, 
-            isin_column='ISIN'
+            isin_column='ISIN code'
         )
         inclusion_df = analysis_results['inclusion_df']
         exclusion_df = analysis_results['exclusion_df']

@@ -60,7 +60,17 @@ INDEX_CONFIGS = {
         "index": "AEXEW",
         "isin": "QS0011159744",
         "output_key": "aexew_path"
-    }        
+    },
+    "CACEW": {
+        "index": "CACEW",
+        "isin": "QS0011159777",
+        "output_key": "cacew_path"
+    },
+    "CLEW": {
+        "index": "CLEW",
+        "isin": "FR0012663292",
+        "output_key": "clew_path"
+    }
     # Add new indices here following the same pattern
 }
 

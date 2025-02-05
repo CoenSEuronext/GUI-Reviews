@@ -396,6 +396,7 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         })
         GICP_df = GICP_df.sort_values('Name')
 
+        selection_df['Company'] = selection_df['Name']
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 
             stock_eod_df, 

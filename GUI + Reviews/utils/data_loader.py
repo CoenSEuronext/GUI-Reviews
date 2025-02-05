@@ -89,7 +89,7 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         },
         'cac_family': {
             'filename': 'CAC Family.xlsx',
-            'loader': lambda f: pd.read_excel(f, sheet_name=sheet_names.get('cac_family', 'PX1'), header=1)
+            'loader': lambda f: pd.read_excel(f, header=1)
         },
         'aex_family': {
             'filename': 'AEX Family.xlsx',

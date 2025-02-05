@@ -1,0 +1,24 @@
+2025-02-05 10:46:04,170 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 10:46:04,172 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 10:46:28,325 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\__init__.py', reloading
+2025-02-05 10:46:28,332 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\app.py', reloading
+2025-02-05 10:46:28,355 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-02-05 10:46:28,361 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-02-05 10:46:28,367 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\templating.py', reloading
+2025-02-05 10:46:28,370 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-02-05 10:46:28,372 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-02-05 10:46:28,390 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\globals.py', reloading
+2025-02-05 10:46:28,392 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\json\\__init__.py', reloading
+2025-02-05 10:46:28,394 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\wrappers.py', reloading
+2025-02-05 10:46:28,397 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-02-05 10:46:28,398 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-02-05 10:46:28,409 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-02-05 10:46:28,419 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\typing.py', reloading
+2025-02-05 10:46:28,421 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-02-05 10:46:28,426 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-02-05 10:46:28,442 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-02-05 10:46:28,445 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-02-05 10:46:28,449 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-02-05 10:46:28,460 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-02-05 10:46:28,466 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-02-05 10:46:28,473 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading

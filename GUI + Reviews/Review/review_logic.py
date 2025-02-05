@@ -11,6 +11,8 @@ from .reviews.ses5p_review import run_ses5p_review
 from .reviews.aerdp_review import run_aerdp_review
 from .reviews.bnew_review import run_bnew_review
 from .reviews.aexew_review import run_aexew_review
+from .reviews.cacew_review import run_cacew_review
+from .reviews.clew_review import run_clew_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -24,7 +26,9 @@ REVIEW_FUNCTIONS = {
     "SES5P": run_ses5p_review,
     "AERDP": run_aerdp_review,
     "BNEW": run_bnew_review,
-    "AEXEW": run_aexew_review
+    "AEXEW": run_aexew_review,
+    "CACEW": run_cacew_review,
+    "CLEW": run_clew_review
 }
 
 def run_review(review_type, **kwargs):
