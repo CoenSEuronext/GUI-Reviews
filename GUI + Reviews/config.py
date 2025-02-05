@@ -70,6 +70,11 @@ INDEX_CONFIGS = {
         "index": "CLEW",
         "isin": "FR0012663292",
         "output_key": "clew_path"
+    },
+    "SBF80": {
+        "index": "SBF80",
+        "isin": "FR0013017936",
+        "output_key": "sbf80_path"
     }
     # Add new indices here following the same pattern
 }

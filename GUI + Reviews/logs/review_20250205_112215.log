@@ -1,0 +1,32 @@
+2025-02-05 11:22:15,791 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 11:22:15,794 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 11:22:16,810 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 11:22:18,051 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 11:22:18,381 - Review.reviews.sbf80_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2025-02-05 11:22:18,384 - Review.reviews.sbf80_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sbf80_review.py", line 94, in run_sbf80_review
+    selection_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2025-02-05 11:22:18,391 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 11:22:18] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 11:22:21,905 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 11:22:22,512 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 11:22:22,837 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20250205_112222.xlsx
+2025-02-05 11:22:22,891 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 11:22:22] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 11:25:01,621 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading

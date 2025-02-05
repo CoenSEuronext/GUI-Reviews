@@ -1,0 +1,29 @@
+2025-02-05 11:15:32,820 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 11:15:32,822 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 11:15:33,692 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 11:15:34,304 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 11:15:34,598 - Review.reviews.sbf80_review - ERROR - Error during review calculation: 'ISIN Code'
+2025-02-05 11:15:34,601 - Review.reviews.sbf80_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sbf80_review.py", line 50, in run_sbf80_review
+    .merge(
+     ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'ISIN Code'
+
+2025-02-05 11:15:34,607 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 11:15:34] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 11:16:13,711 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 11:16:13,712 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 11:16:13,713 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading

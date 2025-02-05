@@ -1,0 +1,14 @@
+2025-02-05 14:14:57,318 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 14:14:57,318 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 14:14:57,348 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 14:15:00,673 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 14:15:01,373 - Review.reviews.sbf80_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-05 14:15:01,373 - Review.reviews.sbf80_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sbf80_review.py", line 47, in run_sbf80_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-05 14:15:01,373 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 14:15:01] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 14:16:47,454 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-02-05 14:16:47,454 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

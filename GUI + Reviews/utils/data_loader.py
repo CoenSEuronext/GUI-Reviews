@@ -89,7 +89,7 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         },
         'cac_family': {
             'filename': 'CAC Family.xlsx',
-            'loader': lambda f: pd.read_excel(f, header=1)
+            'loader': lambda f, sheet=None: pd.read_excel(f, header=1, sheet_name=sheet if sheet else 0)
         },
         'aex_family': {
             'filename': 'AEX Family.xlsx',
@@ -123,7 +123,11 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         if file_key in all_files:
             try:
                 file_path = os.path.join(current_data_folder, all_files[file_key]['filename'])
-                results[file_key] = all_files[file_key]['loader'](file_path)
+                # Pass sheet name if specified
+                if file_key in sheet_names:
+                    results[file_key] = all_files[file_key]['loader'](file_path, sheet_names[file_key])
+                else:
+                    results[file_key] = all_files[file_key]['loader'](file_path)
             except Exception as e:
                 print(f"Error loading {file_key}: {str(e)}")
                 results[file_key] = None
