@@ -1,0 +1,24 @@
+2025-02-10 14:26:26,290 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 14:26:26,293 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-10 14:26:26,794 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-02-10 14:26:30,212 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-02-10 14:26:37,648 - Review.reviews.aerdp_review - ERROR - Error during review calculation: "['Company'] not in index"
+2025-02-10 14:26:37,652 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 234, in run_aerdp_review
+    analysis_results = inclusion_exclusion_analysis(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\inclusion_exclusion.py", line 26, in inclusion_exclusion_analysis
+    inclusion_df = selection_df[selection_df['Inclusion']][[
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Company'] not in index"
+
+2025-02-10 14:26:37,671 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 14:26:37] "POST /calculate HTTP/1.1" 200 -
+2025-02-10 14:29:17,868 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
+2025-02-10 14:29:17,875 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading

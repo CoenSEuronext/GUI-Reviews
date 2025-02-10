@@ -13,25 +13,6 @@ logger = setup_logging(__name__)
 def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR0013376209", 
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 
                     feed="Reuters", currency="EUR", year=None):
-    """
-    Run the index review calculation
-
-    Args:
-        date (str): Calculation date in format YYYYMMDD
-        effective_date (str): Effective date in format DD-MMM-YY
-        index (str, optional): Index name. Defaults to "F4RIP"
-        isin (str, optional): ISIN code. Defaults to "FR0013376209"
-        area (str, optional): Primary area. Defaults to "US"
-        area2 (str, optional): Secondary area. Defaults to "EU"
-        type (str, optional): Type of instrument. Defaults to "STOCK"
-        universe (str, optional): Universe name. Defaults to "Developed Market"
-        feed (str, optional): Feed source. Defaults to "Reuters"
-        currency (str, optional): Currency code. Defaults to "EUR"
-        year (str, optional): Year for calculation. Defaults to None (extracted from date)
-
-    Returns:
-        dict: Result dictionary containing status, message, and data
-    """
     try:
         # If year is not provided, get it from the date
         if year is None:
@@ -56,7 +37,7 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         selection_df = ref_data['cac_family'].drop(columns=['Effective Date of Review'])
         oekom_score_df = ref_data['oekom_score']
         
-        selection_df = selection_df.rename(columns={'Company': 'Name', 'ISIN code': 'ISIN'})
+        selection_df = selection_df.rename(columns={'ISIN code': 'ISIN'})
                 
         if any(df is None for df in [ff_df, selection_df, oekom_score_df]):
             raise ValueError("Failed to load one or more required reference data files")
@@ -137,7 +118,7 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         selection_df['Effective Date of Review'] = effective_date
 
         F4RIP_df = selection_df[
-            ['Name', 'ISIN', 'MIC', 'Preliminary Number of shares', 
+            ['Company', 'ISIN', 'MIC', 'Preliminary Number of shares', 
             'Preliminary Free Float', 'Preliminary Capping Factor', 
             'Effective Date of Review', 'Currency']
         ].rename(columns={
@@ -147,7 +128,7 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
             'Currency': 'Currency (Local)'
         })
 
-        F4RIP_df = F4RIP_df.sort_values('Name')
+        F4RIP_df = F4RIP_df.sort_values('Company')
 
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 

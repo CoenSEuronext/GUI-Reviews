@@ -93,7 +93,7 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         },
         'aex_family': {
             'filename': 'AEX Family.xlsx',
-            'loader': lambda f: pd.read_excel(f, header=1)
+            'loader': lambda f, sheet=None: pd.read_excel(f, header=1, sheet_name=sheet if sheet else 0)
         },
         'oekom_score': {
             'filename': 'Oekom Score.xlsx',

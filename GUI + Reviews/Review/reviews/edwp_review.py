@@ -7,6 +7,7 @@ from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
+from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
@@ -161,44 +162,6 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
             'CANP': ['CA']
         }
 
-        def analyze_changes(universe_df, stock_eod_df, group_name, selected_columns):
-            """
-            Analyze inclusions and exclusions for a given group
-            
-            Args:
-                universe_df: DataFrame with selected companies
-                stock_eod_df: DataFrame with current stock data
-                group_name: Name of the index (e.g., 'EDWP')
-                selected_columns: List of columns to include
-            """
-            # Get ISINs of selected companies for this group from universe_df
-            selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN'].tolist())
-            
-            # Get current constituents from stock_eod_df for this specific index
-            current_isins = set(stock_eod_df[stock_eod_df['MIC'] == group_name]['Isin Code'].unique().tolist())
-            
-            # Find inclusions (in selected but not in current constituents)
-            inclusion_isins = selected_isins - current_isins
-            
-            # Find exclusions (in current constituents but not in selected)
-            exclusion_isins = current_isins - selected_isins
-            
-            # Create DataFrame for inclusions using universe_df data
-            inclusions_df = universe_df[
-                universe_df['ISIN'].isin(inclusion_isins)
-            ][['ISIN', 'Name']].copy()
-            inclusions_df['Change Type'] = 'Inclusion'
-            
-            # Create DataFrame for exclusions using stock_eod_df data
-            exclusions_df = stock_eod_df[
-                (stock_eod_df['MIC'] == group_name) & 
-                (stock_eod_df['Isin Code'].isin(exclusion_isins))
-            ][['Isin Code', 'Name']].copy()
-            exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN'})
-            exclusions_df['Change Type'] = 'Exclusion'
-            
-            return inclusions_df, exclusions_df
-
         # Function to calculate selection for a group
         def calculate_group_selection(df, group_name, countries):
             # Create mask for countries in this group
@@ -302,22 +265,35 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
             edwp_path = os.path.join(output_dir, f'EDWP_df_{timestamp}.xlsx')
             
             logger.info(f"Saving output to: {edwp_path}")
-            
+                        
             with pd.ExcelWriter(edwp_path) as writer:
                 # Write each group's DataFrame to separate sheets
-                for group_name, df in all_dfs.items():
-                    # Write composition sheet
-                    df.to_excel(writer, sheet_name=f'{group_name} Composition', index=False)
+                for group_name in country_groups.keys():
+                    # Get selected companies for this index
+                    group_df = all_dfs[group_name].copy()
+                    group_df = group_df.rename(columns={
+                        'Name': 'Company',
+                        'ISIN': 'ISIN code'
+                    })
+                    group_df.to_excel(writer, sheet_name=f'{group_name} Composition', index=False)
                     
-                    # Generate and write inclusion/exclusion analysis
-                    inclusions_df, exclusions_df = analyze_changes(
-                        universe_df, 
-                        stock_eod_df, 
-                        group_name, 
-                        selected_columns
+                    # Get current constituents for this specific index
+                    current_index_df = stock_eod_df[
+                        (stock_eod_df['Index'] == group_name)
+                    ].copy()
+                    
+                    # Run inclusion/exclusion analysis for this specific index
+                    analysis_results = inclusion_exclusion_analysis(
+                        group_df,                # New selected companies
+                        current_index_df,        # Current index constituents
+                        group_name,
+                        isin_column='ISIN code'
                     )
                     
-                    # Write changes to separate sheets
+                    # Get results and write to sheets
+                    inclusions_df = analysis_results['inclusion_df']
+                    exclusions_df = analysis_results['exclusion_df']
+                    
                     if not inclusions_df.empty:
                         inclusions_df.to_excel(writer, sheet_name=f'{group_name} Inclusions', index=False)
                     if not exclusions_df.empty:
@@ -332,7 +308,6 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                 universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
             # Verify file was saved
-            # Replace the return statement in the try block with this:
             if os.path.exists(edwp_path):
                 logger.info(f"File successfully saved to: {edwp_path}")
                 return {
@@ -341,8 +316,8 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                     "data": {
                         "edwp_path": edwp_path,
                         "summary": {
-                            "total_companies": int(universe_df['EDWP_selection'].sum()),  # Convert to standard int
-                            "total_ffmc_coverage": float(universe_df[universe_df['EDWP_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100)  # Convert to standard float
+                            "total_companies": int(universe_df['EDWP_selection'].sum()),
+                            "total_ffmc_coverage": float(universe_df[universe_df['EDWP_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100)
                         }
                     }
                 }

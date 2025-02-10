@@ -6,31 +6,13 @@ import traceback
 from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER
 from utils.logging_utils import setup_logging
+from utils.data_loader import load_eod_data, load_reference_data
 
 logger = setup_logging(__name__)
 
-def run_egspp_review(date, effective_date, index="FRD4P", isin="FRIX00003031", 
+def run_egspp_review(date, co_date, effective_date, index="FRD4P", isin="FRIX00003031", 
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 
                     feed="Reuters", currency="EUR", year=None):
-    """
-    Run the index review calculation
-
-    Args:
-        date (str): Calculation date in format YYYYMMDD
-        effective_date (str): Effective date in format DD-MMM-YY
-        index (str, optional): Index name. Defaults to "frd4p"
-        isin (str, optional): ISIN code. Defaults to "FRIX00003031"
-        area (str, optional): Primary area. Defaults to "US"
-        area2 (str, optional): Secondary area. Defaults to "EU"
-        type (str, optional): Type of instrument. Defaults to "STOCK"
-        universe (str, optional): Universe name. Defaults to "Developed Market"
-        feed (str, optional): Feed source. Defaults to "Reuters"
-        currency (str, optional): Currency code. Defaults to "EUR"
-        year (str, optional): Year for calculation. Defaults to None (extracted from date)
-
-    Returns:
-        dict: Result dictionary containing status, message, and data
-    """
     try:
         # If year is not provided, get it from the date
         if year is None:
@@ -39,40 +21,26 @@ def run_egspp_review(date, effective_date, index="FRD4P", isin="FRIX00003031",
         # Set data folder for current month
         current_data_folder = os.path.join(DATA_FOLDER, date[:6])
 
-        # Load files into DataFrames from the specified folder
-        developed_market_df = pd.read_excel(os.path.join(current_data_folder, "Developed Market.xlsx"))
-        ff_df = pd.read_excel(os.path.join(current_data_folder, "FF.xlsx"))
-        Oekom_TrustCarbon_df = pd.read_excel(
-            os.path.join(current_data_folder, "Oekom Trust&Carbon.xlsx"),
-            header=1
-        )
-        icb_df = pd.read_excel(
-            os.path.join(current_data_folder, "ICB.xlsx"),
-            header=3
-        )
-        nace_df = pd.read_excel(os.path.join(current_data_folder, "NACE.xlsx"))
-        sesamm_df = pd.read_excel(os.path.join(current_data_folder, "SESAMm.xlsx"))
-        
-        # Load EOD data
-        index_eod_us_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area}1_GIS_EOD_INDEX_{date}.csv"), 
-            encoding="latin1"
-        )
-        stock_eod_us_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area}1_GIS_EOD_STOCK_{date}.csv"), 
-            encoding="latin1"
-        )
-        index_eod_eu_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area2}1_GIS_EOD_INDEX_{date}.csv"), 
-            encoding="latin1"
-        )
-        stock_eod_eu_df = read_semicolon_csv(
-            os.path.join(DLF_FOLDER, f"TTMIndex{area2}1_GIS_EOD_STOCK_{date}.csv"), 
-            encoding="latin1"
+                # Load EOD data
+        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+
+        # Load reference data
+        ref_data = load_reference_data(
+            current_data_folder,
+            required_files=['ff', 'developed_market', 'icb', 'nace', 'oekom_trustcarbon', 'sesamm'],
         )
 
-        index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
-        stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
+        # Extract DataFrames
+        developed_market_df = ref_data['developed_market']
+        ff_df = ref_data['ff']
+        Oekom_TrustCarbon_df = ref_data['oekom_trustcarbon']
+        icb_df = ref_data['icb']
+        nace_df = ref_data['nace']
+        sesamm_df = ref_data['sesamm']
+
+        # Validate data loading
+        if any(df is None for df in [developed_market_df, ff_df, Oekom_TrustCarbon_df, icb_df, nace_df, sesamm_df]):
+            raise ValueError("Failed to load one or more required reference data files")
 
         # Add Flag for XPAR or NON Xpar MIC
         developed_market_df['XPAR Flag'] = developed_market_df['MIC'].apply(lambda x: 1 if x == 'XPAR' else 0)

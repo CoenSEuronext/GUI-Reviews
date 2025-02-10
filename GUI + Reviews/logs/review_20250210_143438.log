@@ -1,0 +1,7 @@
+2025-02-10 14:34:38,561 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 14:34:38,563 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-10 14:34:39,651 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-10 14:34:41,348 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-10 14:34:41,501 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250210_143441.xlsx
+2025-02-10 14:34:41,630 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 14:34:41] "POST /calculate HTTP/1.1" 200 -
+2025-02-10 14:35:40,435 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\series.py', reloading

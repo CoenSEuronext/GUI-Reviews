@@ -65,7 +65,8 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
             left_on='ISIN',
             right_on='ISIN Code:',
             how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float',
+                                                     'Name': 'Company'})
 
         
         # Add Flag for XPAR or NON Xpar MIC
@@ -470,7 +471,7 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
 
         # Create final output DataFrame
         FRI4P_df = final_selection_df[[
-            'Name', 
+            'Company', 
             'ISIN', 
             'MIC', 
             'NOSH', 
@@ -484,7 +485,7 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
         FRI4P_df = FRI4P_df.rename(columns={
             'Currency (Local)': 'Currency',
         })
-        FRI4P_df = FRI4P_df.sort_values('Name')
+        FRI4P_df = FRI4P_df.sort_values('Company')
         
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 

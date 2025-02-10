@@ -105,7 +105,8 @@ def run_aerdp_review(date, co_date, effective_date, index="AERDP", isin="NLIX000
             left_on='ISIN',
             right_on='ISIN Code:',
             how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float',
+                                                    'Name': 'Company'})
         
         icb_codes_stock = stock_eod_df[['Isin Code', 'ICBCode', 'MIC']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first')
         icb_codes_icb = icb_df[['ISIN Code', 'Subsector Code', 'MIC Code']].drop_duplicates(subset=['ISIN Code', 'MIC Code'], keep='first')
@@ -218,17 +219,14 @@ def run_aerdp_review(date, co_date, effective_date, index="AERDP", isin="NLIX000
         
         # Create selection_df from eligible companies
         selection_df = developed_market_df[developed_market_df['Inclusion']].copy()
-
-         
-
         
         AERDP_df = selection_df[
-            ['Name', 'ISIN', 'MIC', 'NOSH', 
+            ['Company', 'ISIN', 'MIC', 'NOSH', 
             'Free Float', 'Final Capping', 
             'Effective Date of Review', 'Currency (Local)']
         ]
 
-        AERDP_df = AERDP_df.sort_values('Name')
+        AERDP_df = AERDP_df.sort_values('Company')
 
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 

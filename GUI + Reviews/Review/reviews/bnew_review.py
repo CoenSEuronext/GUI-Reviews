@@ -35,7 +35,6 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
         master_report_df = ref_data['master_report']
         aex_bel_df = ref_data['aex_bel'].drop(columns=['Effective date of review']).rename(
             columns={
-                'Company': 'Name', 
                 'ISIN code': 'ISIN', 
                 'Preliminary number of shares': 'NOSH'
             }
@@ -125,12 +124,12 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
         
         # Prepare BNEW DataFrame
         BNEW_df = selection_df[
-            ['Name', 'ISIN', 'MIC', 'final nosh', 'Free Float', 'Capping Factor', 
+            ['Company', 'ISIN', 'MIC', 'final nosh', 'Free Float', 'Capping Factor', 
              'Effective Date of Review', 'Currency']
         ].rename(columns={
             'final nosh': 'NOSH',
-            'Currency': 'Currency (Local)'
-        }).sort_values('Name')
+            'Currency': 'Currency (Local)',
+        }).sort_values('Company')
 
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 

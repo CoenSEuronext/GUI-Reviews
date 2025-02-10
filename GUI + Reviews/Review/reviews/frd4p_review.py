@@ -10,7 +10,7 @@ from utils.data_loader import load_eod_data, load_reference_data
 
 logger = setup_logging(__name__)
 
-def run_frd4p_review(date, effective_date, index="FRD4P", isin="FRIX00003031", 
+def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX00003031", 
                     area="US", area2="EU", type="STOCK", universe="Developed Market", 
                     feed="Reuters", currency="EUR", year=None):
     """
@@ -42,7 +42,7 @@ def run_frd4p_review(date, effective_date, index="FRD4P", isin="FRIX00003031",
 
         # Use data_loader functions to load data
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df = load_eod_data(date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
         
         logger.info("Loading reference data...")
         ref_data = load_reference_data(current_data_folder, ['ff', 'developed_market', 'icb', 'sesamm', 'oekom_trustcarbon', 'nace'])

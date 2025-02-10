@@ -1,0 +1,5 @@
+2025-02-10 14:36:58,428 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 14:36:58,430 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-10 14:37:06,275 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-10 14:37:07,549 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\inclusion_exclusion.py', reloading
+2025-02-10 14:37:07,549 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\inclusion_exclusion.py', reloading

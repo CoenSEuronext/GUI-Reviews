@@ -71,7 +71,8 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
             left_on='ISIN',
             right_on='ISIN Code:',
             how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float',
+                                                     'Name': 'Company'})
 
         # Continue with the rest of your existing logic...
         developed_market_df['FFMC'] = (developed_market_df['NOSH'] * 
@@ -380,7 +381,7 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         
         # Create final output DataFrame
         GICP_df = selection_df[[
-            'Name', 
+            'Company', 
             'ISIN', 
             'MIC', 
             'NOSH', 
@@ -394,9 +395,8 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         GICP_df = GICP_df.rename(columns={
             'Currency (Local)': 'Currency',
         })
-        GICP_df = GICP_df.sort_values('Name')
-
-        selection_df['Company'] = selection_df['Name']
+        GICP_df = GICP_df.sort_values('Company')
+        
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 
             stock_eod_df, 

@@ -32,7 +32,8 @@ def inclusion_exclusion_analysis(selection_df, stock_eod_df, index, isin_column=
     # Prepare exclusion DataFrame
     exclusion_df = filtered_stock_eod_df[
         ~filtered_stock_eod_df['Isin Code'].isin(selection_df[isin_column])
-    ][['Name', 'Isin Code', 'MIC']].sort_values('Name').rename(columns={'Isin Code': 'ISIN'})
+    ][['Name', 'Isin Code', 'MIC']].drop_duplicates(subset=['Isin Code']).sort_values('Name').rename(columns={'Isin Code': 'ISIN code',
+                                                                        'Name': 'Company'})
 
     return {
         'inclusion_df': inclusion_df,
