@@ -1,0 +1,5 @@
+2025-02-18 14:55:08,183 - werkzeug - WARNING -  * Debugger is active!
+2025-02-18 14:55:08,185 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-18 14:55:08,210 - werkzeug - INFO - 127.0.0.1 - - [18/Feb/2025 14:55:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-18 16:57:12,039 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-02-18 16:57:12,052 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading
