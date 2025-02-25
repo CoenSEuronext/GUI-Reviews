@@ -106,16 +106,33 @@ def process_fixed_income_data(file_path, h16r12_path, cutoff_date_str, effective
         # Add Exclusion 3 column (1 if NOT equal to GOVT NATIONAL)
         universe_df['Exclusion 3'] = (universe_df['issuerCategory'] != 'GOVT NATIONAL').astype(int)
         
+        # Create Initial Exclusion column for universe_df
+        universe_df['Initial Exclusion'] = ((universe_df['Exclusion 1'] == 1) | 
+                                         (universe_df['Exclusion 2'] == 1) | 
+                                         (universe_df['Exclusion 3'] == 1)).astype(int)
+        
+        # First create a copy of the entire universe for MEEUG and MEUBG processing
+        eu_bonds_df = universe_df.copy()
+        
+        # Filter universe based on first 3 exclusions to create selection dataframe
+        selection_df = universe_df[universe_df['Initial Exclusion'] == 0].copy()
+        
+        # Print information about the initial filtering
+        print(f"\nInitial universe size: {len(universe_df)} bonds")
+        print(f"Bonds excluded by initial criteria: {universe_df['Initial Exclusion'].sum()}")
+        print(f"Selection dataframe size after initial filtering: {len(selection_df)} bonds")
+        
+        # Continue with additional exclusions on the filtered selection_df
         # Add Exclusion 4 column (1 if Currency is NOT EUR)
-        universe_df['Exclusion 4'] = (universe_df['Currency'] != 'EUR').astype(int)
+        selection_df['Exclusion 4'] = (selection_df['Currency'] != 'EUR').astype(int)
         
         # Add Exclusion 5 column (1 if CouponType is NOT 1)
         # Checking multiple possible representations of "1"
-        universe_df['Exclusion 5'] = (~universe_df['CouponType'].isin(['1', '1.0', 1, 1.0])).astype(int)
+        selection_df['Exclusion 5'] = (~selection_df['CouponType'].isin(['1', '1.0', 1, 1.0])).astype(int)
         
         # Add Exclusion 6 column (1 if issuedCapital <= 2000000000 or NaN)
-        universe_df['Exclusion 6'] = ((universe_df['issuedCapital'] <= 2000000000) | 
-                                     universe_df['issuedCapital'].isna()).astype(int)
+        selection_df['Exclusion 6'] = ((selection_df['issuedCapital'] <= 2000000000) | 
+                                     selection_df['issuedCapital'].isna()).astype(int)
         
         # Define country-specific bond types mapping
         country_bond_types = {
@@ -141,25 +158,28 @@ def process_fixed_income_data(file_path, h16r12_path, cutoff_date_str, effective
                 return int(bond_type not in country_bond_types[country])
             return 1  # Exclude if country not in mapping
         
-        universe_df['Exclusion 7'] = universe_df.apply(check_bond_type_by_country, axis=1)
+        selection_df['Exclusion 7'] = selection_df.apply(check_bond_type_by_country, axis=1)
         
         # Add Total Exclusion column (1 if any exclusion is 1)
-        universe_df['Total Exclusion'] = ((universe_df['Exclusion 1'] == 1) | 
-                                        (universe_df['Exclusion 2'] == 1) | 
-                                        (universe_df['Exclusion 3'] == 1) |
-                                        (universe_df['Exclusion 4'] == 1) |
-                                        (universe_df['Exclusion 5'] == 1) |
-                                        (universe_df['Exclusion 6'] == 1) |
-                                        (universe_df['Exclusion 7'] == 1)).astype(int)
+        selection_df['Total Exclusion'] = ((selection_df['Exclusion 4'] == 1) | 
+                                        (selection_df['Exclusion 5'] == 1) |
+                                        (selection_df['Exclusion 6'] == 1) |
+                                        (selection_df['Exclusion 7'] == 1)).astype(int)
         
-        # Generate dynamic date ranges based on the cutoff date
-        year_1 = cutoff_date + relativedelta(years=1)
-        year_3 = cutoff_date + relativedelta(years=3)
-        year_5 = cutoff_date + relativedelta(years=5)
-        year_7 = cutoff_date + relativedelta(years=7)
-        year_10 = cutoff_date + relativedelta(years=10)
-        year_15 = cutoff_date + relativedelta(years=15)
-        year_25 = cutoff_date + relativedelta(years=25)
+        # Print exclusion statistics for the filtered selection
+        print("\nExclusion statistics in selection dataframe:")
+        for col in ['Exclusion 4', 'Exclusion 5', 'Exclusion 6', 'Exclusion 7', 'Total Exclusion']:
+            excluded = selection_df[col].sum()
+            print(f"{col}: {excluded} out of {len(selection_df)} ({excluded/len(selection_df)*100:.2f}%)")
+        
+        # Generate dynamic date ranges based on the effective date
+        year_1 = effective_date + relativedelta(years=1)
+        year_3 = effective_date + relativedelta(years=3)
+        year_5 = effective_date + relativedelta(years=5)
+        year_7 = effective_date + relativedelta(years=7)
+        year_10 = effective_date + relativedelta(years=10)
+        year_15 = effective_date + relativedelta(years=15)
+        year_25 = effective_date + relativedelta(years=25)
         
         # Define index mnemo specifications dynamically
         index_specs = [
@@ -214,29 +234,11 @@ def process_fixed_income_data(file_path, h16r12_path, cutoff_date_str, effective
             {"Mnemo": "MENLG", "BondType": ['DSL'], 
              "MinMat": year_1, "MaxMat": None},
             {"Mnemo": "MEPTG", "BondType": ['PTE'], 
-             "MinMat": year_1, "MaxMat": None},
-            # MEEUG index
-            {"Mnemo": "MEEUG", "BondType": ['NXG'], 
-             "MinMat": min_maturity_threshold, "MaxMat": None, 
-             "SpecialCriteria": {
-                 "Currency": "EUR",
-                 "CouponType": "1",
-                 "IssuedCapital": 3000000000,
-                 "MaxIssueDate": cutoff_date
-             }},
-            # New MEUBG index (comprehensive all-bonds index)
-            {"Mnemo": "MEUBG", "BondType": ['ATS','OLO','DEM','OBE','BON','RFG','OAT','IRL','BTP','DSL','PTE','NXG'], 
-             "MinMat": min_maturity_threshold, "MaxMat": None,
-             "SpecialCriteria": {
-                 "Currency": "EUR",
-                 "CouponType": "1",
-                 "IssuedCapital_EU": 3000000000,  # 3 billion for EU bonds
-                 "IssuedCapital_Govt": 2000000000,  # 2 billion for government bonds
-             }}
+             "MinMat": year_1, "MaxMat": None}
         ]
         
         # Print dynamic date ranges for verification
-        print(f"\nDynamic date ranges based on cutoff date {cutoff_date.strftime('%Y-%m-%d')}:")
+        print(f"\nDynamic date ranges based on effective date {effective_date.strftime('%Y-%m-%d')}:")
         print(f"1 year: {year_1.strftime('%Y-%m-%d')}")
         print(f"3 years: {year_3.strftime('%Y-%m-%d')}")
         print(f"5 years: {year_5.strftime('%Y-%m-%d')}")
@@ -251,162 +253,355 @@ def process_fixed_income_data(file_path, h16r12_path, cutoff_date_str, effective
             if row['matures_within_1year'] == 1:
                 return 0
             
-            # For MEUBG, use its specific criteria
-            if index_spec["Mnemo"] == "MEUBG":
-                spec_criteria = index_spec["SpecialCriteria"]
-                
-                # Check if bond type is eligible
-                if row['bondType'] not in index_spec["BondType"]:
-                    return 0
-                
-                # Skip if maturity date is missing
-                if pd.isna(row['maturityDate']):
-                    return 0
-                    
-                # Check maturity date criteria
-                if row['maturityDate'] < index_spec["MinMat"]:
-                    return 0
-                    
-                if index_spec["MaxMat"] and row['maturityDate'] > index_spec["MaxMat"]:
-                    return 0
-                
-                # Check Currency
-                if row['Currency'] != spec_criteria["Currency"]:
-                    return 0
-                
-                # Check CouponType
-                if row['CouponType'] != spec_criteria["CouponType"]:
-                    return 0
-                
-                # Check issuedCapital - different thresholds for EU vs govt bonds
-                if pd.isna(row['issuedCapital']):
-                    return 0
-                    
-                # EU bonds need 3 billion minimum
-                if row['bondType'] == 'NXG' and row['issuedCapital'] < spec_criteria["IssuedCapital_EU"]:
-                    return 0
-                    
-                # Government bonds need 2 billion minimum
-                if row['bondType'] != 'NXG' and row['issuedCapital'] < spec_criteria["IssuedCapital_Govt"]:
-                    return 0
-                
-                return 1
-                
-            # Special criteria for MEEUG
-            elif index_spec["Mnemo"] == "MEEUG":
-                # Check if bond type is eligible
-                if row['bondType'] not in index_spec["BondType"]:
-                    return 0
-                
-                # Check if maturity date meets the criteria
-                mat_date = row['maturityDate']
-                
-                # Skip if maturity date is missing
-                if pd.isna(mat_date):
-                    return 0
-                    
-                # Check maturity date criteria
-                if mat_date < index_spec["MinMat"]:
-                    return 0
-                    
-                if index_spec["MaxMat"] and mat_date > index_spec["MaxMat"]:
-                    return 0
-                
-                spec_criteria = index_spec["SpecialCriteria"]
-                
-                # Check Currency
-                if row['Currency'] != spec_criteria["Currency"]:
-                    return 0
-                
-                # Check CouponType
-                if row['CouponType'] != spec_criteria["CouponType"]:
-                    return 0
-                
-                # Check issuedCapital
-                if pd.isna(row['issuedCapital']) or row['issuedCapital'] < spec_criteria["IssuedCapital"]:
-                    return 0
-                
-                # Check issueDate (must be before cutoff date)
-                if pd.isna(row['issueDate']) or row['issueDate'] > spec_criteria["MaxIssueDate"]:
-                    return 0
-                
-                return 1
+            # For all regular indices
+            # Check if bond type is eligible
+            if row['bondType'] not in index_spec["BondType"]:
+                return 0
             
-            # For all other indices (regular criteria)
-            else:
-                # If bond is excluded, it's not eligible for any index
-                if row['Total Exclusion'] == 1:
-                    return 0
-                    
-                # Check if bond type is eligible
-                if row['bondType'] not in index_spec["BondType"]:
-                    return 0
+            # Check if maturity date meets the criteria
+            mat_date = row['maturityDate']
+            
+            # Skip if maturity date is missing
+            if pd.isna(mat_date):
+                return 0
                 
-                # Check if maturity date meets the criteria
-                mat_date = row['maturityDate']
+            # Check maturity date criteria
+            if mat_date < index_spec["MinMat"]:
+                return 0
                 
-                # Skip if maturity date is missing
-                if pd.isna(mat_date):
-                    return 0
-                    
-                # Check maturity date criteria
-                if mat_date < index_spec["MinMat"]:
-                    return 0
-                    
-                if index_spec["MaxMat"] and mat_date > index_spec["MaxMat"]:
-                    return 0
+            if index_spec["MaxMat"] and mat_date > index_spec["MaxMat"]:
+                return 0
+            
+            # For regular indices (not special ones), check Total Exclusion
+            if row['Total Exclusion'] == 1:
+                return 0
                 
-                return 1
+            return 1
         
-        # Add index eligibility columns
+        # Add index eligibility columns for regular indices
         for spec in index_specs:
             col_name = f"EligibleFor_{spec['Mnemo']}"
-            universe_df[col_name] = universe_df.apply(lambda row: check_index_eligibility(row, spec), axis=1)
+            selection_df[col_name] = selection_df.apply(lambda row: check_index_eligibility(row, spec), axis=1)
         
-        # Print eligibility statistics
-        print("\nIndex eligibility statistics:")
+        # Function for MEEUG eligibility check
+        def check_meeug_eligibility(row):
+            # Check if maturity is at least 1 year after effective date
+            if row['matures_within_1year'] == 1:
+                return 0
+                
+            # Check if bond type is eligible (NXG for EU bonds)
+            if row['bondType'] != 'NXG':
+                return 0
+            
+            # Check if maturity date meets the criteria
+            mat_date = row['maturityDate']
+            
+            # Skip if maturity date is missing
+            if pd.isna(mat_date):
+                return 0
+                
+            # Check maturity date criteria
+            if mat_date < min_maturity_threshold:
+                return 0
+            
+            # Check Currency
+            if row['Currency'] != 'EUR':
+                return 0
+            
+            # Check CouponType
+            if row['CouponType'] != '1':
+                return 0
+            
+            # Check issuedCapital
+            if pd.isna(row['issuedCapital']) or row['issuedCapital'] < 3000000000:
+                return 0
+            
+            # Check issueDate (must be before cutoff date)
+            if pd.isna(row['issueDate']) or row['issueDate'] > cutoff_date:
+                return 0
+            
+            return 1
+        
+        # Apply MEEUG eligibility check to the whole universe
+        eu_bonds_df['EligibleFor_MEEUG'] = eu_bonds_df.apply(check_meeug_eligibility, axis=1)
+        
+        # Function for MEUBG eligibility check
+        def check_meubg_eligibility(row):
+            # Check if maturity is at least 1 year after effective date
+            if row['matures_within_1year'] == 1:
+                return 0
+                
+            # Check if bond type is eligible
+            valid_bond_types = ['ATS','OLO','DEM','OBE','BON','RFG','OAT','IRL','BTP','DSL','PTE','NXG']
+            if row['bondType'] not in valid_bond_types:
+                return 0
+            
+            # Check if maturity date meets the criteria
+            mat_date = row['maturityDate']
+            
+            # Skip if maturity date is missing
+            if pd.isna(mat_date):
+                return 0
+                
+            # Check maturity date criteria
+            if mat_date < min_maturity_threshold:
+                return 0
+            
+            # Check Currency
+            if row['Currency'] != 'EUR':
+                return 0
+            
+            # Check CouponType
+            if row['CouponType'] != '1':
+                return 0
+            
+            # Check issuedCapital - different thresholds for EU vs govt bonds
+            if pd.isna(row['issuedCapital']):
+                return 0
+                
+            # EU bonds need 3 billion minimum
+            if row['bondType'] == 'NXG' and row['issuedCapital'] < 3000000000:
+                return 0
+                
+            # Government bonds need 2 billion minimum
+            if row['bondType'] != 'NXG' and row['issuedCapital'] < 2000000000:
+                return 0
+            
+            return 1
+        
+        # Apply MEUBG eligibility check to the whole universe
+        eu_bonds_df['EligibleFor_MEUBG'] = eu_bonds_df.apply(check_meubg_eligibility, axis=1)
+        
+        # Print EU index eligibility statistics
+        meeug_eligible = eu_bonds_df['EligibleFor_MEEUG'].sum()
+        meubg_eligible = eu_bonds_df['EligibleFor_MEUBG'].sum()
+        print(f"\nEU-specific index statistics:")
+        print(f"EligibleFor_MEEUG: {meeug_eligible} out of {len(eu_bonds_df)} ({meeug_eligible/len(eu_bonds_df)*100:.2f}%)")
+        print(f"EligibleFor_MEUBG: {meubg_eligible} out of {len(eu_bonds_df)} ({meubg_eligible/len(eu_bonds_df)*100:.2f}%)")
+        
+        # Print regular index eligibility statistics
+        print("\nRegular index eligibility statistics:")
         for spec in index_specs:
             col_name = f"EligibleFor_{spec['Mnemo']}"
-            eligible = universe_df[col_name].sum()
-            print(f"{col_name}: {eligible} out of {len(universe_df)} ({eligible/len(universe_df)*100:.2f}%)")
+            if col_name not in ['EligibleFor_MEEUG', 'EligibleFor_MEUBG']:  # Skip the special indices
+                eligible = selection_df[col_name].sum()
+                print(f"{col_name}: {eligible} out of {len(selection_df)} ({eligible/len(selection_df)*100:.2f}%)")
         
-        # Basic data cleaning - only dropping NaN values for key columns
-        universe_df = universe_df.dropna(subset=[
+        # Drop any rows with missing essential data
+        selection_df = selection_df.dropna(subset=[
             'bondCode', 'bondType', 'description', 'MarketCode',
             'issuerCountry', 'issuerCategory',
             'CouponType', 'Currency'
         ])
         
-        return universe_df
+        # Copy EU-specific index eligibility back to selection_df
+        for bond_code in selection_df['bondCode']:
+            if bond_code in eu_bonds_df['bondCode'].values:
+                # Get the eligibility values from eu_bonds_df
+                eu_mask = eu_bonds_df['bondCode'] == bond_code
+                meeug_eligible = eu_bonds_df.loc[eu_mask, 'EligibleFor_MEEUG'].values[0]
+                meubg_eligible = eu_bonds_df.loc[eu_mask, 'EligibleFor_MEUBG'].values[0]
+                
+                # Update selection_df
+                sel_mask = selection_df['bondCode'] == bond_code
+                selection_df.loc[sel_mask, 'EligibleFor_MEEUG'] = meeug_eligible
+                selection_df.loc[sel_mask, 'EligibleFor_MEUBG'] = meubg_eligible
+        
+        # For EU bonds not in selection_df but eligible for MEEUG or MEUBG, add them to selection_df
+        for _, eu_bond in eu_bonds_df.iterrows():
+            if eu_bond['bondType'] == 'NXG' and (eu_bond['EligibleFor_MEEUG'] == 1 or eu_bond['EligibleFor_MEUBG'] == 1):
+                if eu_bond['bondCode'] not in selection_df['bondCode'].values:
+                    # Need to add this EU bond to selection_df
+                    # First calculate all exclusions
+                    eu_bond['Exclusion 4'] = 1 if eu_bond['Currency'] != 'EUR' else 0
+                    eu_bond['Exclusion 5'] = 1 if eu_bond['CouponType'] not in ['1', '1.0', 1, 1.0] else 0
+                    eu_bond['Exclusion 6'] = 1 if (eu_bond['issuedCapital'] <= 2000000000 or pd.isna(eu_bond['issuedCapital'])) else 0
+                    eu_bond['Exclusion 7'] = 0  # NXG bonds don't follow country-specific bond types
+                    
+                    # Add Total Exclusion
+                    eu_bond['Total Exclusion'] = 1 if (eu_bond['Exclusion 4'] == 1 or 
+                                               eu_bond['Exclusion 5'] == 1 or
+                                               eu_bond['Exclusion 6'] == 1 or
+                                               eu_bond['Exclusion 7'] == 1) else 0
+                    
+                    # Set all other index eligibility to 0
+                    for spec in index_specs:
+                        col_name = f"EligibleFor_{spec['Mnemo']}"
+                        if col_name not in ['EligibleFor_MEEUG', 'EligibleFor_MEUBG']:
+                            eu_bond[col_name] = 0
+                    
+                    # Add to selection_df
+                    selection_df = pd.concat([selection_df, pd.DataFrame([eu_bond])], ignore_index=True)
+        
+        # Simplify universe_df to only include essential columns
+        essential_columns = [
+            'bondCode',
+            'bondType', 
+            'description',
+            'MarketCode',
+            'issuerCountry',
+            'issuerCategory',
+            'maturityDate',
+            'CouponType',
+            'Currency',
+            'issueDate',
+            'issuedCapital',
+            'Exclusion 1',
+            'Exclusion 2',
+            'Exclusion 3',
+            'Initial Exclusion'
+        ]
+        
+        universe_df = universe_df[essential_columns]
+        
+        return universe_df, selection_df, eu_bonds_df
 
     except FileNotFoundError:
         print(f"Error: File not found.")
-        return None
+        return None, None, None
     except Exception as e:
         print(f"Error processing file: {str(e)}")
         import traceback
         traceback.print_exc()
-        return None
-
+        return None, None, None
+def compare_constituents(calculated_df, reference_file_path):
+    try:
+        # Read the reference file
+        reference_df = pd.read_csv(reference_file_path)
+        
+        print("\nComparing constituents with reference file...")
+        print(f"Reference file: {os.path.basename(reference_file_path)}")
+        
+        # Get all index columns (excluding the ISIN column)
+        index_columns = [col for col in calculated_df.columns if col != 'ISIN']
+        
+        # Create a dictionary to store comparison results
+        comparison_results = {}
+        
+        # Compare each index
+        for index_name in index_columns:
+            # Get ISINs where the index value is 1 in calculated data
+            calc_isins = set(calculated_df[calculated_df[index_name] == 1]['ISIN'])
+            
+            # Get ISINs where the index value is 1 in reference data
+            if index_name in reference_df.columns:
+                ref_isins = set(reference_df[reference_df[index_name] == 1]['ISIN'])
+                
+                # Calculate differences
+                only_in_calc = calc_isins - ref_isins
+                only_in_ref = ref_isins - calc_isins
+                
+                # Store results
+                comparison_results[index_name] = {
+                    'calc_count': len(calc_isins),
+                    'ref_count': len(ref_isins),
+                    'match_count': len(calc_isins.intersection(ref_isins)),
+                    'only_in_calc': only_in_calc,
+                    'only_in_ref': only_in_ref,
+                    'match_percentage': len(calc_isins.intersection(ref_isins)) / max(len(calc_isins.union(ref_isins)), 1) * 100
+                }
+            else:
+                print(f"Warning: Index {index_name} not found in reference file")
+        
+        # Create comparison summary dataframe
+        summary_data = []
+        for index_name, result in comparison_results.items():
+            summary_data.append({
+                'Index': index_name,
+                'Calculated_Count': result['calc_count'],
+                'Reference_Count': result['ref_count'],
+                'Matching_Count': result['match_count'],
+                'Only_in_Calculated': len(result['only_in_calc']),
+                'Only_in_Reference': len(result['only_in_ref']),
+                'Match_Percentage': result['match_percentage']
+            })
+        
+        summary_df = pd.DataFrame(summary_data)
+        
+        # Create detailed differences dataframes
+        differences_by_index = {}
+        for index_name, result in comparison_results.items():
+            if result['only_in_calc'] or result['only_in_ref']:
+                diff_data = []
+                
+                for isin in result['only_in_calc']:
+                    diff_data.append({'ISIN': isin, 'Source': 'Calculated Only'})
+                
+                for isin in result['only_in_ref']:
+                    diff_data.append({'ISIN': isin, 'Source': 'Reference Only'})
+                
+                differences_by_index[index_name] = pd.DataFrame(diff_data)
+        
+        return summary_df, differences_by_index
+    
+    except Exception as e:
+        print(f"Error comparing constituents: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return None, None
 # Usage
 if __name__ == "__main__":
     # Get current directory
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Define file paths
-    file_path = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\DVE_MTS_CMF_20250127_SDP_REFERENCEDATA.csv"
-    h16r12_path = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\H16R12.20250127.CSV"
-    output_file = os.path.join(current_dir, "processed_fixed_income_data.xlsx")
-    
     # Define cutoff date and effective date - now you can easily change these for future reviews
-    cutoff_date = "20250127"      # Format: YYYYMMDD
-    effective_date = "20250131"   # Format: YYYYMMDD
+    cutoff_date = "20250224"      # Format: YYYYMMDD
+    effective_date = "20250228"   # Format: YYYYMMDD
     
-    universe_df = process_fixed_income_data(file_path, h16r12_path, cutoff_date, effective_date)
+    # Define file paths with dynamic cutoff date
+    file_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\DVE_MTS_CMF_{cutoff_date}_SDP_REFERENCEDATA.csv"
+    h16r12_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\H16R12.{cutoff_date}.CSV"
+    output_file = os.path.join(current_dir, f"Fixed_Income_Review_{cutoff_date}.xlsx")
+    
+    universe_df, selection_df, eu_bonds_df = process_fixed_income_data(file_path, h16r12_path, cutoff_date, effective_date)
     if universe_df is not None:        
+        # In the output section:
         try:
-            # Export processed data to an Excel file
-            universe_df.to_excel(output_file, index=False, sheet_name='Universe')
+            # Export processed data to an Excel file with multiple sheets
+            with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+                universe_df.to_excel(writer, sheet_name='Universe', index=False)
+                selection_df.to_excel(writer, sheet_name='Selection', index=False)
+                
+                # Create a simplified constituents sheet
+                constituents_df = selection_df[['bondCode'] + 
+                                            [col for col in selection_df.columns if col.startswith('EligibleFor_')]].copy()
+                
+                # Rename bondCode to ISIN
+                constituents_df = constituents_df.rename(columns={'bondCode': 'ISIN'})
+                
+                # Rename the columns to remove 'EligibleFor_' prefix
+                rename_dict = {col: col.replace('EligibleFor_', '') for col in constituents_df.columns if col.startswith('EligibleFor_')}
+                constituents_df = constituents_df.rename(columns=rename_dict)
+                
+                # Sort the constituents by ISIN
+                constituents_df = constituents_df.sort_values(by='ISIN')
+                
+                # Export it as a third sheet
+                constituents_df.to_excel(writer, sheet_name='Constituents', index=False)
+                
+                # Compare with reference file
+                reference_file = os.path.join(os.path.dirname(file_path), f"Euronext_FI_Review_{cutoff_date}.csv")
+                if os.path.exists(reference_file):
+                    summary_df, differences = compare_constituents(constituents_df, reference_file)
+                    
+                    # Export comparison results
+                    if summary_df is not None:
+                        summary_df.to_excel(writer, sheet_name='Comparison_Summary', index=False)
+                        
+                        # Export detailed differences
+                        for index_name, diff_df in differences.items():
+                            # Excel has a 31 character limit for sheet names
+                            sheet_name = f"Diff_{index_name}"[:31]
+                            diff_df.to_excel(writer, sheet_name=sheet_name, index=False)
+                else:
+                    print(f"Reference file not found: {reference_file}")
+                
+                # For debugging, also save the EU bonds dataframe
+                if 'EligibleFor_MEEUG' in eu_bonds_df.columns:
+                    eu_eligible = eu_bonds_df[(eu_bonds_df['EligibleFor_MEEUG'] == 1) | 
+                                        (eu_bonds_df['EligibleFor_MEUBG'] == 1)]
+                    eu_eligible.to_excel(writer, sheet_name='EU_Eligible', index=False)
+            
             print(f"File saved successfully to: {output_file}")
             
             # Open the processed file with default application
@@ -417,4 +612,4 @@ if __name__ == "__main__":
                 print(f"Error: Output file not found at {output_file}")
                 
         except Exception as e:
-            print(f"Error saving or opening file: {e}")
+            print(f"Error saving or opening file: {str(e)}")
