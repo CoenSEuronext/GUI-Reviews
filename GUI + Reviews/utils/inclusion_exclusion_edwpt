@@ -1,0 +1,44 @@
+def inclusion_exclusion_analysis(universe_df, stock_eod_df, group_name, selection_column=None):
+    """
+    Perform inclusion and exclusion analysis between universe_df and stock_eod_df.
+    
+    Args:
+        universe_df (DataFrame): DataFrame with selected companies
+        stock_eod_df (DataFrame): DataFrame with current stock data
+        group_name (str): Name of the index (e.g., 'EDWPT')
+        selection_column (str, optional): Column name for selection in universe_df
+                                         Default: '{group_name}_selection'
+    
+    Returns:
+        Tuple of (inclusions_df, exclusions_df)
+    """
+    if selection_column is None:
+        selection_column = f'{group_name}_selection'
+    
+    # Get ISINs of selected companies for this group from universe_df
+    selected_isins = set(universe_df[universe_df[selection_column] == 1]['ISIN'].tolist())
+    
+    # Get current constituents from stock_eod_df for this specific index
+    current_isins = set(stock_eod_df[stock_eod_df['MIC'] == group_name]['Isin Code'].unique().tolist())
+    
+    # Find inclusions (in selected but not in current constituents)
+    inclusion_isins = selected_isins - current_isins
+    
+    # Find exclusions (in current constituents but not in selected)
+    exclusion_isins = current_isins - selected_isins
+    
+    # Create DataFrame for inclusions using universe_df data
+    inclusions_df = universe_df[
+        universe_df['ISIN'].isin(inclusion_isins)
+    ][['ISIN', 'Name']].copy()
+    inclusions_df['Change Type'] = 'Inclusion'
+    
+    # Create DataFrame for exclusions using stock_eod_df data
+    exclusions_df = stock_eod_df[
+        (stock_eod_df['MIC'] == group_name) & 
+        (stock_eod_df['Isin Code'].isin(exclusion_isins))
+    ][['Isin Code', 'Name']].copy()
+    exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN'})
+    exclusions_df['Change Type'] = 'Exclusion'
+    
+    return inclusions_df, exclusions_df

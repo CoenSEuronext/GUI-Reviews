@@ -175,7 +175,8 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
             selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN'].tolist())
             
             # Get current constituents from stock_eod_df for this specific index
-            current_isins = set(stock_eod_df[stock_eod_df['MIC'] == group_name]['Isin Code'].unique().tolist())
+            # Change 'MIC' to 'Index' to correctly filter the data
+            current_isins = set(stock_eod_df[stock_eod_df['Index'] == group_name]['Isin Code'].unique().tolist())
             
             # Find inclusions (in selected but not in current constituents)
             inclusion_isins = selected_isins - current_isins
@@ -191,7 +192,7 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
             
             # Create DataFrame for exclusions using stock_eod_df data
             exclusions_df = stock_eod_df[
-                (stock_eod_df['MIC'] == group_name) & 
+                (stock_eod_df['Index'] == group_name) & 
                 (stock_eod_df['Isin Code'].isin(exclusion_isins))
             ][['Isin Code', 'Name']].copy()
             exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN'})
@@ -299,10 +300,13 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
             os.makedirs(output_dir, exist_ok=True)
             
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            
+            # Path for the main Excel file with all sheets
             edwpt_path = os.path.join(output_dir, f'EDWPT_df_{timestamp}.xlsx')
             
-            logger.info(f"Saving output to: {edwpt_path}")
+            logger.info(f"Saving main output to: {edwpt_path}")
             
+            # Create the main Excel file with all sheets
             with pd.ExcelWriter(edwpt_path) as writer:
                 # Write each group's DataFrame to separate sheets
                 for group_name, df in all_dfs.items():
@@ -331,23 +335,37 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                 # Write full universe sheet
                 universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
-            # Verify file was saved
-            # Replace the return statement in the try block with this:
+            # Now create individual Excel files for each index with just the composition sheet
+            individual_files = []
+            for group_name, df in all_dfs.items():
+                individual_path = os.path.join(output_dir, f'{group_name}_Composition_{timestamp}.xlsx')
+                logger.info(f"Saving individual composition file for {group_name} to: {individual_path}")
+                
+                # Create Excel file with just the composition sheet
+                with pd.ExcelWriter(individual_path) as writer:
+                    df.to_excel(writer, sheet_name=f'{group_name} Composition', index=False)
+                
+                individual_files.append(individual_path)
+            
+            # Verify files were saved
             if os.path.exists(edwpt_path):
-                logger.info(f"File successfully saved to: {edwpt_path}")
+                logger.info(f"Main file successfully saved to: {edwpt_path}")
+                logger.info(f"Individual composition files saved: {len(individual_files)}")
+                
                 return {
                     "status": "success",
                     "message": "Review completed successfully",
                     "data": {
                         "edwpt_path": edwpt_path,
+                        "individual_files": individual_files,
                         "summary": {
-                            "total_companies": int(universe_df['EDWPT_selection'].sum()),  # Convert to standard int
-                            "total_ffmc_coverage": float(universe_df[universe_df['EDWPT_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100)  # Convert to standard float
+                            "total_companies": int(universe_df['EDWPT_selection'].sum()),
+                            "total_ffmc_coverage": float(universe_df[universe_df['EDWPT_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100)
                         }
                     }
                 }
             else:
-                error_msg = "File was not saved successfully"
+                error_msg = "Files were not saved successfully"
                 logger.error(error_msg)
                 return {
                     "status": "error",
