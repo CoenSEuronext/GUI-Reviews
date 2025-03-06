@@ -25,7 +25,7 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
         area (str, optional): Primary area. Defaults to "US"
         area2 (str, optional): Secondary area. Defaults to "EU"
         type (str, optional): Type of instrument. Defaults to "STOCK"
-        universe (str, optional): Universe name. Defaults to "98% Universe"
+        universe (str, optional): Universe name. Defaults to 85% Universe"
         feed (str, optional): Feed source. Defaults to "Reuters"
         currency (str, optional): Currency code. Defaults to "EUR"
         year (str, optional): Year for calculation. Defaults to None (extracted from date)
@@ -48,7 +48,7 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
         ref_data = load_reference_data(
             current_data_folder, 
             required_files=['ff', 'universe'],
-            universe_name=universe  # This will be "98% Universe" by default
+            universe_name=universe  # This will be "85% Universe" by default
         )
 
         # Get the DataFrames from ref_data
@@ -186,10 +186,10 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                 # Add group percentage to main DataFrame
                 df.loc[group_mask, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage']
                 
-                # Select companies up to 98% plus first one exceeding
-                exceeds_98_group = group_df[f'{group_name}_Cumulative_Percentage'] > 98
-                first_exceed_group = exceeds_98_group & ~exceeds_98_group.shift(1, fill_value=False)
-                group_selection = (group_df[f'{group_name}_Cumulative_Percentage'] <= 98) | first_exceed_group
+                # Select companies up to 85% plus first one exceeding
+                exceeds_85_group = group_df[f'{group_name}_Cumulative_Percentage'] > 85
+                first_exceed_group = exceeds_85_group & ~exceeds_85_group.shift(1, fill_value=False)
+                group_selection = (group_df[f'{group_name}_Cumulative_Percentage'] <= 85) | first_exceed_group
                 
                 # Process each country in the group
                 for country in countries:
@@ -207,10 +207,10 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                             # Add country percentage to main DataFrame
                             df.loc[country_df.index, f'{group_name}_Country_Percentage'] = country_df['Country_Cumulative_Percentage']
                             
-                            # Select companies up to 98% plus first one exceeding
-                            exceeds_98_country = country_df['Country_Cumulative_Percentage'] > 98
-                            first_exceed_country = exceeds_98_country & ~exceeds_98_country.shift(1, fill_value=False)
-                            country_selection = (country_df['Country_Cumulative_Percentage'] <= 98) | first_exceed_country
+                            # Select companies up to 85% plus first one exceeding
+                            exceeds_85_country = country_df['Country_Cumulative_Percentage'] > 85
+                            first_exceed_country = exceeds_85_country & ~exceeds_85_country.shift(1, fill_value=False)
+                            country_selection = (country_df['Country_Cumulative_Percentage'] <= 85) | first_exceed_country
                             
                             # Update group selection
                             group_selection.loc[country_df.index] |= country_selection
@@ -265,7 +265,9 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
             edwp_path = os.path.join(output_dir, f'EDWP_df_{timestamp}.xlsx')
             
             logger.info(f"Saving output to: {edwp_path}")
-                        
+            
+            # Comment out this block to skip creating the main Excel file
+            
             with pd.ExcelWriter(edwp_path) as writer:
                 # Write each group's DataFrame to separate sheets
                 for group_name in country_groups.keys():
@@ -307,14 +309,35 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                 # Write full universe sheet
                 universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
-            # Verify file was saved
-            if os.path.exists(edwp_path):
-                logger.info(f"File successfully saved to: {edwp_path}")
+            
+            # Now create individual Excel files for each index with just the composition sheet
+            individual_files = []
+            for group_name, df in all_dfs.items():
+                individual_path = os.path.join(output_dir, f'{group_name}_Composition_{timestamp}.xlsx')
+                logger.info(f"Saving individual composition file for {group_name} to: {individual_path}")
+                
+                # Create a copy of the DataFrame with the renamed columns
+                group_df = df.copy()
+                group_df = group_df.rename(columns={
+                    'Name': 'Company',
+                    'ISIN': 'ISIN code'
+                })
+                
+                # Create Excel file with just the composition sheet
+                with pd.ExcelWriter(individual_path) as writer:
+                    group_df.to_excel(writer, sheet_name=f'{group_name} Composition', index=False)
+                
+                individual_files.append(individual_path)
+            
+            # Verify files were saved (updated to check only individual files)
+            if individual_files and all(os.path.exists(f) for f in individual_files):
+                logger.info(f"Individual composition files saved: {len(individual_files)}")
+                
                 return {
                     "status": "success",
-                    "message": "Review completed successfully",
+                    "message": "Review completed successfully - Individual files created",
                     "data": {
-                        "edwp_path": edwp_path,
+                        "individual_files": individual_files,
                         "summary": {
                             "total_companies": int(universe_df['EDWP_selection'].sum()),
                             "total_ffmc_coverage": float(universe_df[universe_df['EDWP_selection'] == 1]['FFMC'].sum() / universe_df['FFMC'].sum() * 100)
@@ -322,7 +345,7 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                     }
                 }
             else:
-                error_msg = "File was not saved successfully"
+                error_msg = "Individual files were not saved successfully"
                 logger.error(error_msg)
                 return {
                     "status": "error",
