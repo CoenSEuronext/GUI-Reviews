@@ -1,0 +1,120 @@
+2025-03-17 19:00:10,425 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 19:00:10,435 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-17 19:00:25,967 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-03-17 19:00:31,192 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-03-17 19:00:31,192 - Review.reviews.edwpt_review - INFO - Total companies selected: 5329
+2025-03-17 19:00:31,192 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.85%
+2025-03-17 19:00:31,248 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-03-17 19:00:31,251 - Review.reviews.edwpt_review - INFO - Total companies selected: 1263
+2025-03-17 19:00:31,252 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.66%
+2025-03-17 19:00:31,272 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-03-17 19:00:31,272 - Review.reviews.edwpt_review - INFO - Total companies selected: 484
+2025-03-17 19:00:31,273 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.55%
+2025-03-17 19:00:31,289 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-03-17 19:00:31,290 - Review.reviews.edwpt_review - INFO - Total companies selected: 1919
+2025-03-17 19:00:31,292 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.16%
+2025-03-17 19:00:31,307 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-03-17 19:00:31,308 - Review.reviews.edwpt_review - INFO - Total companies selected: 1694
+2025-03-17 19:00:31,309 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.16%
+2025-03-17 19:00:31,325 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-03-17 19:00:31,327 - Review.reviews.edwpt_review - INFO - Total companies selected: 1568
+2025-03-17 19:00:31,328 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.10%
+2025-03-17 19:00:31,333 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-03-17 19:00:31,339 - Review.reviews.edwpt_review - INFO - Total companies selected: 323
+2025-03-17 19:00:31,340 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.04%
+2025-03-17 19:00:31,346 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-03-17 19:00:31,356 - Review.reviews.edwpt_review - INFO - Total companies selected: 1429
+2025-03-17 19:00:31,358 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-03-17 19:00:31,361 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-03-17 19:00:31,370 - Review.reviews.edwpt_review - INFO - Total companies selected: 1406
+2025-03-17 19:00:31,371 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-03-17 19:00:31,375 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-03-17 19:00:31,377 - Review.reviews.edwpt_review - INFO - Total companies selected: 75
+2025-03-17 19:00:31,377 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.03%
+2025-03-17 19:00:31,382 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-03-17 19:00:31,385 - Review.reviews.edwpt_review - INFO - Total companies selected: 293
+2025-03-17 19:00:31,386 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-03-17 19:00:31,390 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-03-17 19:00:31,392 - Review.reviews.edwpt_review - INFO - Total companies selected: 219
+2025-03-17 19:00:31,393 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-03-17 19:00:31,397 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-03-17 19:00:31,397 - Review.reviews.edwpt_review - INFO - Total companies selected: 5329
+2025-03-17 19:00:31,406 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.85%
+2025-03-17 19:00:31,408 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-03-17 19:00:31,408 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  9.968077e+08                1
+BATS     1  2.112040e+10                1
+MERK     2  2.278097e+08                2
+MTAA   237  5.901140e+11               78
+WBAH    27  6.292269e+10               19
+XAMS    79  1.132677e+12               45
+XASX   878  1.527946e+12              287
+XBRU    62  2.045026e+11               35
+XCSE   102  5.132591e+11               36
+XESM     2  1.518334e+09                2
+XETR   223  1.747680e+12               97
+XHEL   127  2.211743e+11               48
+XHKG   236  4.848765e+11               73
+XLIS    16  3.253346e+10               12
+XLON   857  2.406037e+12              293
+XMAD    91  5.438350e+11               39
+XMSM    15  5.888329e+10               10
+XNGM    52  5.491666e+08                0
+XNGS  2653  2.837069e+13              762
+XNYS  1730  2.815322e+13             1106
+XNZE    52  6.129570e+10               35
+XOSL   237  1.757004e+11              115
+XPAR   350  1.993030e+12               93
+XSES   127  3.085594e+11               63
+XSTO   630  7.504324e+11              206
+XSWX   159  1.768558e+12               85
+XTAE   282  1.937618e+11              161
+XTKS  3664  5.213690e+12             1406
+XTSE   493  2.314548e+12              219
+2025-03-17 19:00:31,428 - Review.reviews.edwpt_review - INFO - Saving main output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250317_190031.xlsx
+2025-03-17 19:00:31,733 - Review.reviews.edwpt_review - ERROR - Error saving output file: 'ISIN'
+2025-03-17 19:00:31,733 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'ISIN'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 310, in run_edwpt_review
+    inclusions_df, exclusions_df = analyze_changes(
+                                   ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 167, in analyze_changes
+    selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN'].tolist())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'ISIN'
+
+2025-03-17 19:00:31,753 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:00:31] "POST /calculate HTTP/1.1" 200 -
+2025-03-17 19:02:34,227 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-17 19:02:34,227 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-17 19:02:34,227 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

@@ -11,7 +11,7 @@ from utils.data_loader import load_eod_data, load_reference_data
 logger = setup_logging(__name__)
 
 def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX00001932", 
-                    area="US", area2="EU", type="STOCK", universe="98% Universe", 
+                    area="US", area2="EU", type="STOCK", universe="98% universe", 
                     feed="Reuters", currency="EUR", year=None):
     """
     Run the index review calculation
@@ -58,7 +58,7 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
         if ff_df is None or full_universe_df is None:
             raise ValueError("Failed to load required reference data files")
         
-        full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['cutoff_nosh'] * full_universe_df['cutoff_price'] * full_universe_df['free_float']
+        full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['NOSH_final'] * full_universe_df['Price_final'] * full_universe_df['free_float']
         
         # Column mapping dictionary
         column_mapping = {
@@ -66,10 +66,11 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
             'Name': 'proper_name',           
             'ISIN': 'ISIN',         
             'MIC': 'MIC_GIS',                   
-            'NOSH': 'cutoff_nosh',          
-            'Price (EUR) ': 'cutoff_price',  
-            'Currency (Local)': 'p_currency',
-            'FFMC': 'free_float_market_cap' 
+            'Number of Shares': 'NOSH_final',
+            'Free Float': 'free_float',         
+            'Price (EUR) ': 'Price_final',  
+            'Currency': 'p_currency',
+            'FFMC': 'Mcap in EUR' 
         }     
         
         # Create universe_df with selected and renamed columns
@@ -79,18 +80,9 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
         # Sort by FFMC descending
         universe_df = universe_df.sort_values('FFMC', ascending=False)
         
-        # Remove duplicates from ff_df
-        ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
+
         
-        # Add Free Float data
-        universe_df = universe_df.merge(
-            ff_df[['ISIN Code:', 'Free Float Round:']],
-            left_on='ISIN',
-            right_on='ISIN Code:',
-            how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
-        
-        universe_df['Final Capping'] = 1
+        universe_df['Capping Factor'] = 1
         universe_df['Effective Date of Review'] = effective_date
         
         # Add cumulative count
@@ -172,7 +164,7 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                 selected_columns: List of columns to include
             """
             # Get ISINs of selected companies for this group from universe_df
-            selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN'].tolist())
+            selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN Code'].tolist())
             
             # Get current constituents from stock_eod_df for this specific index
             # Change 'MIC' to 'Index' to correctly filter the data
@@ -186,8 +178,8 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
             
             # Create DataFrame for inclusions using universe_df data
             inclusions_df = universe_df[
-                universe_df['ISIN'].isin(inclusion_isins)
-            ][['ISIN', 'Name']].copy()
+                universe_df['ISIN Code'].isin(inclusion_isins)
+            ][['ISIN Code', 'Name']].copy()
             inclusions_df['Change Type'] = 'Inclusion'
             
             # Create DataFrame for exclusions using stock_eod_df data
@@ -195,7 +187,7 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                 (stock_eod_df['Index'] == group_name) & 
                 (stock_eod_df['Isin Code'].isin(exclusion_isins))
             ][['Isin Code', 'Name']].copy()
-            exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN'})
+            exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN Code'})
             exclusions_df['Change Type'] = 'Exclusion'
             
             return inclusions_df, exclusions_df
@@ -286,13 +278,18 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
         logger.info("\nMIC-level Summary:")
         logger.info(mic_summary)
         
+        # Rename ISIN to ISIN Code just before defining selected_columns
+        universe_df = universe_df.rename(columns={'ISIN': 'ISIN Code'})
+        
         # Create DataFrames for all country groups
         all_dfs = {}
-        selected_columns = ['Name', 'ISIN', 'MIC', 'NOSH', 'Free Float', 'Final Capping', 
-                        'Effective Date of Review', 'Currency (Local)']
+        selected_columns = ['Name', 'ISIN Code', 'MIC', 'Number of Shares', 'Free Float', 'Capping Factor', 
+                        'Effective Date of Review', 'Currency']
 
         for group_name in country_groups.keys():
             all_dfs[group_name] = universe_df[universe_df[f'{group_name}_selection'] == 1][selected_columns].copy()
+            # Sort all DataFrames alphabetically by Company name
+            all_dfs[group_name] = all_dfs[group_name].sort_values('Name', ascending=True)
 
 
         try:
@@ -321,10 +318,12 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                         selected_columns
                     )
                     
-                    # Write changes to separate sheets
+                    # Write changes to separate sheets (after sorting alphabetically by Company)
                     if not inclusions_df.empty:
+                        inclusions_df = inclusions_df.sort_values('Name', ascending=True)
                         inclusions_df.to_excel(writer, sheet_name=f'{group_name} Inclusions', index=False)
                     if not exclusions_df.empty:
+                        exclusions_df = exclusions_df.sort_values('Name', ascending=True)
                         exclusions_df.to_excel(writer, sheet_name=f'{group_name} Exclusions', index=False)
                     
                     # Log changes summary

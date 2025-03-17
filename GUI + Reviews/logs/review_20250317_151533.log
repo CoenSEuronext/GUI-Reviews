@@ -1,0 +1,172 @@
+2025-03-17 15:15:33,749 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 15:15:33,751 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-17 15:15:41,916 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-03-17 15:15:47,331 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-03-17 15:15:47,332 - Review.reviews.edwp_review - INFO - Total companies selected: 1545
+2025-03-17 15:15:47,333 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.81%
+2025-03-17 15:15:47,357 - Review.reviews.edwp_review - INFO - 
+DEUP Selection Summary:
+2025-03-17 15:15:47,358 - Review.reviews.edwp_review - INFO - Total companies selected: 431
+2025-03-17 15:15:47,359 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.77%
+2025-03-17 15:15:47,374 - Review.reviews.edwp_review - INFO - 
+DEZP Selection Summary:
+2025-03-17 15:15:47,375 - Review.reviews.edwp_review - INFO - Total companies selected: 178
+2025-03-17 15:15:47,376 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.52%
+2025-03-17 15:15:47,392 - Review.reviews.edwp_review - INFO - 
+DAPPR Selection Summary:
+2025-03-17 15:15:47,393 - Review.reviews.edwp_review - INFO - Total companies selected: 494
+2025-03-17 15:15:47,394 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.85%
+2025-03-17 15:15:47,407 - Review.reviews.edwp_review - INFO - 
+DNAP Selection Summary:
+2025-03-17 15:15:47,408 - Review.reviews.edwp_review - INFO - Total companies selected: 460
+2025-03-17 15:15:47,409 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.75%
+2025-03-17 15:15:47,421 - Review.reviews.edwp_review - INFO - 
+DASP Selection Summary:
+2025-03-17 15:15:47,422 - Review.reviews.edwp_review - INFO - Total companies selected: 394
+2025-03-17 15:15:47,423 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.59%
+2025-03-17 15:15:47,430 - Review.reviews.edwp_review - INFO - 
+DPAP Selection Summary:
+2025-03-17 15:15:47,431 - Review.reviews.edwp_review - INFO - Total companies selected: 95
+2025-03-17 15:15:47,432 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.98%
+2025-03-17 15:15:47,446 - Review.reviews.edwp_review - INFO - 
+EUSP Selection Summary:
+2025-03-17 15:15:47,448 - Review.reviews.edwp_review - INFO - Total companies selected: 371
+2025-03-17 15:15:47,449 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.04%
+2025-03-17 15:15:47,463 - Review.reviews.edwp_review - INFO - 
+EJPP Selection Summary:
+2025-03-17 15:15:47,464 - Review.reviews.edwp_review - INFO - Total companies selected: 337
+2025-03-17 15:15:47,465 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.01%
+2025-03-17 15:15:47,472 - Review.reviews.edwp_review - INFO - 
+ECHP Selection Summary:
+2025-03-17 15:15:47,474 - Review.reviews.edwp_review - INFO - Total companies selected: 24
+2025-03-17 15:15:47,475 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.67%
+2025-03-17 15:15:47,482 - Review.reviews.edwp_review - INFO - 
+EUKP Selection Summary:
+2025-03-17 15:15:47,483 - Review.reviews.edwp_review - INFO - Total companies selected: 83
+2025-03-17 15:15:47,484 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.06%
+2025-03-17 15:15:47,491 - Review.reviews.edwp_review - INFO - 
+CANP Selection Summary:
+2025-03-17 15:15:47,492 - Review.reviews.edwp_review - INFO - Total companies selected: 69
+2025-03-17 15:15:47,493 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.18%
+2025-03-17 15:15:47,503 - Review.reviews.edwp_review - INFO - 
+Global Selection Summary:
+2025-03-17 15:15:47,504 - Review.reviews.edwp_review - INFO - Total companies selected: 1545
+2025-03-17 15:15:47,505 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.81%
+2025-03-17 15:15:47,507 - Review.reviews.edwp_review - INFO - 
+MIC-level Summary:
+2025-03-17 15:15:47,508 - Review.reviews.edwp_review - INFO -       ISIN          FFMC  EDWP_selection
+MIC                                     
+ALXP     1  9.968077e+08               0
+BATS     1  2.112040e+10               1
+MERK     2  2.278097e+08               0
+MTAA   237  5.901140e+11              26
+WBAH    27  6.292269e+10               9
+XAMS    79  1.132677e+12              16
+XASX   878  1.527946e+12              75
+XBRU    62  2.045026e+11              15
+XCSE   102  5.132591e+11              12
+XESM     2  1.518334e+09               0
+XETR   223  1.747680e+12              31
+XHEL   127  2.211743e+11              16
+XHKG   236  4.848765e+11              23
+XLIS    16  3.253346e+10               5
+XLON   857  2.406037e+12              83
+XMAD    91  5.438350e+11              13
+XMSM    15  5.888329e+10               4
+XNGM    52  5.491666e+08               0
+XNGS  2653  2.837069e+13             180
+XNYS  1730  2.815322e+13             368
+XNZE    52  6.129570e+10              15
+XOSL   237  1.757004e+11              41
+XPAR   350  1.993030e+12              29
+XSES   127  3.085594e+11              24
+XSTO   630  7.504324e+11              67
+XSWX   159  1.768558e+12              27
+XTAE   282  1.937618e+11              59
+XTKS  3664  5.213690e+12             337
+XTSE   493  2.314548e+12              69
+2025-03-17 15:15:47,525 - Review.reviews.edwp_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20250317_151547.xlsx
+2025-03-17 15:15:47,613 - Review.reviews.edwp_review - INFO - 
+EDWP Changes Summary:
+2025-03-17 15:15:47,614 - Review.reviews.edwp_review - INFO - Inclusions: 68
+2025-03-17 15:15:47,614 - Review.reviews.edwp_review - INFO - Exclusions: 127
+2025-03-17 15:15:47,633 - Review.reviews.edwp_review - INFO - 
+DEUP Changes Summary:
+2025-03-17 15:15:47,634 - Review.reviews.edwp_review - INFO - Inclusions: 18
+2025-03-17 15:15:47,634 - Review.reviews.edwp_review - INFO - Exclusions: 48
+2025-03-17 15:15:47,645 - Review.reviews.edwp_review - INFO - 
+DEZP Changes Summary:
+2025-03-17 15:15:47,645 - Review.reviews.edwp_review - INFO - Inclusions: 8
+2025-03-17 15:15:47,645 - Review.reviews.edwp_review - INFO - Exclusions: 13
+2025-03-17 15:15:47,666 - Review.reviews.edwp_review - INFO - 
+DAPPR Changes Summary:
+2025-03-17 15:15:47,667 - Review.reviews.edwp_review - INFO - Inclusions: 21
+2025-03-17 15:15:47,667 - Review.reviews.edwp_review - INFO - Exclusions: 21
+2025-03-17 15:15:47,688 - Review.reviews.edwp_review - INFO - 
+DNAP Changes Summary:
+2025-03-17 15:15:47,688 - Review.reviews.edwp_review - INFO - Inclusions: 22
+2025-03-17 15:15:47,688 - Review.reviews.edwp_review - INFO - Exclusions: 52
+2025-03-17 15:15:47,706 - Review.reviews.edwp_review - INFO - 
+DASP Changes Summary:
+2025-03-17 15:15:47,706 - Review.reviews.edwp_review - INFO - Inclusions: 17
+2025-03-17 15:15:47,707 - Review.reviews.edwp_review - INFO - Exclusions: 17
+2025-03-17 15:15:47,715 - Review.reviews.edwp_review - INFO - 
+DPAP Changes Summary:
+2025-03-17 15:15:47,715 - Review.reviews.edwp_review - INFO - Inclusions: 4
+2025-03-17 15:15:47,715 - Review.reviews.edwp_review - INFO - Exclusions: 2
+2025-03-17 15:15:47,732 - Review.reviews.edwp_review - INFO - 
+EUSP Changes Summary:
+2025-03-17 15:15:47,733 - Review.reviews.edwp_review - INFO - Inclusions: 15
+2025-03-17 15:15:47,733 - Review.reviews.edwp_review - INFO - Exclusions: 39
+2025-03-17 15:15:47,748 - Review.reviews.edwp_review - INFO - 
+EJPP Changes Summary:
+2025-03-17 15:15:47,749 - Review.reviews.edwp_review - INFO - Inclusions: 13
+2025-03-17 15:15:47,749 - Review.reviews.edwp_review - INFO - Exclusions: 15
+2025-03-17 15:15:47,755 - Review.reviews.edwp_review - INFO - 
+ECHP Changes Summary:
+2025-03-17 15:15:47,755 - Review.reviews.edwp_review - INFO - Inclusions: 1
+2025-03-17 15:15:47,755 - Review.reviews.edwp_review - INFO - Exclusions: 1
+2025-03-17 15:15:47,763 - Review.reviews.edwp_review - INFO - 
+EUKP Changes Summary:
+2025-03-17 15:15:47,763 - Review.reviews.edwp_review - INFO - Inclusions: 3
+2025-03-17 15:15:47,763 - Review.reviews.edwp_review - INFO - Exclusions: 14
+2025-03-17 15:15:47,770 - Review.reviews.edwp_review - INFO - 
+CANP Changes Summary:
+2025-03-17 15:15:47,771 - Review.reviews.edwp_review - INFO - Inclusions: 3
+2025-03-17 15:15:47,771 - Review.reviews.edwp_review - INFO - Exclusions: 9
+2025-03-17 15:15:51,544 - Review.reviews.edwp_review - INFO - Saving individual composition file for EDWP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,657 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEUP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,689 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEZP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,709 - Review.reviews.edwp_review - INFO - Saving individual composition file for DAPPR to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPR_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,763 - Review.reviews.edwp_review - INFO - Saving individual composition file for DNAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,798 - Review.reviews.edwp_review - INFO - Saving individual composition file for DASP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,830 - Review.reviews.edwp_review - INFO - Saving individual composition file for DPAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,847 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUSP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,880 - Review.reviews.edwp_review - INFO - Saving individual composition file for EJPP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,908 - Review.reviews.edwp_review - INFO - Saving individual composition file for ECHP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,921 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUKP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,938 - Review.reviews.edwp_review - INFO - Saving individual composition file for CANP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANP_Composition_20250317_151547.xlsx
+2025-03-17 15:15:51,954 - Review.reviews.edwp_review - INFO - Individual composition files saved: 12
+2025-03-17 15:15:51,965 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 15:15:51] "POST /calculate HTTP/1.1" 200 -
+2025-03-17 15:24:54,304 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare.py', reloading
+2025-03-17 15:24:54,929 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-03-17 15:24:54,930 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading
+2025-03-17 15:24:54,930 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\logging_utils.py', reloading
+2025-03-17 15:24:54,933 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\__init__.py', reloading
+2025-03-17 15:24:54,933 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-03-17 15:24:54,934 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\__init__.py', reloading
+2025-03-17 15:24:54,934 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
+2025-03-17 15:24:54,935 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexew_review.py', reloading
+2025-03-17 15:24:54,935 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-03-17 15:24:54,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\cacew_review.py', reloading
+2025-03-17 15:24:54,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clew_review.py', reloading
+2025-03-17 15:24:54,937 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\egspp_review.py', reloading
+2025-03-17 15:24:54,937 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-03-17 15:24:54,938 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-03-17 15:24:54,939 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-03-17 15:24:54,939 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-03-17 15:24:54,940 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-03-17 15:24:54,941 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
+2025-03-17 15:24:54,953 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\ntpath.py', reloading
+2025-03-17 15:24:54,954 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\traceback.py', reloading

@@ -59,18 +59,19 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
         if ff_df is None or full_universe_df is None:
             raise ValueError("Failed to load required reference data files")
         
-        full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['cutoff_nosh'] * full_universe_df['cutoff_price'] * full_universe_df['free_float']
+        full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['NOSH_final'] * full_universe_df['Price_final'] * full_universe_df['free_float']
         
         # Column mapping dictionary
         column_mapping = {
             'Ticker': 'fs_ticker',           
-            'Name': 'proper_name',           
+            'Name': 'entity_name',           
             'ISIN': 'ISIN',         
             'MIC': 'MIC_GIS',                   
-            'NOSH': 'cutoff_nosh',          
-            'Price (EUR) ': 'cutoff_price',  
-            'Currency (Local)': 'p_currency',
-            'FFMC': 'free_float_market_cap' 
+            'Number of Shares': 'NOSH_final',
+            'Free Float': 'free_float',            
+            'Price (EUR) ': 'Price_final',  
+            'Currency': 'p_currency',
+            'FFMC': 'Mcap in EUR' 
         }     
         
         # Create universe_df with selected and renamed columns
@@ -80,16 +81,6 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
         # Sort by FFMC descending
         universe_df = universe_df.sort_values('FFMC', ascending=False)
         
-        # Remove duplicates from ff_df
-        ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
-        
-        # Add Free Float data
-        universe_df = universe_df.merge(
-            ff_df[['ISIN Code:', 'Free Float Round:']],
-            left_on='ISIN',
-            right_on='ISIN Code:',
-            how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
         
         universe_df['Final Capping'] = 1
         universe_df['Effective Date of Review'] = effective_date
@@ -250,11 +241,13 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
         
         # Create DataFrames for all country groups
         all_dfs = {}
-        selected_columns = ['Name', 'ISIN', 'MIC', 'NOSH', 'Free Float', 'Final Capping', 
-                        'Effective Date of Review', 'Currency (Local)']
+        selected_columns = ['Name', 'ISIN', 'MIC', 'Number of Shares', 'Free Float', 'Final Capping', 
+                        'Effective Date of Review', 'Currency']
 
         for group_name in country_groups.keys():
+            # Get selected companies and SORT ALPHABETICALLY BY NAME
             all_dfs[group_name] = universe_df[universe_df[f'{group_name}_selection'] == 1][selected_columns].copy()
+            all_dfs[group_name] = all_dfs[group_name].sort_values('Name', ascending=True)
 
 
         try:
@@ -275,7 +268,7 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                     group_df = all_dfs[group_name].copy()
                     group_df = group_df.rename(columns={
                         'Name': 'Company',
-                        'ISIN': 'ISIN code'
+                        'ISIN': 'ISIN Code'
                     })
                     group_df.to_excel(writer, sheet_name=f'{group_name} Composition', index=False)
                     
@@ -289,16 +282,18 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                         group_df,                # New selected companies
                         current_index_df,        # Current index constituents
                         group_name,
-                        isin_column='ISIN code'
+                        isin_column='ISIN Code'
                     )
                     
-                    # Get results and write to sheets
+                    # Get results and write to sheets (SORTED ALPHABETICALLY BY COMPANY)
                     inclusions_df = analysis_results['inclusion_df']
-                    exclusions_df = analysis_results['exclusion_df']
-                    
                     if not inclusions_df.empty:
+                        inclusions_df = inclusions_df.sort_values('Company', ascending=True)
                         inclusions_df.to_excel(writer, sheet_name=f'{group_name} Inclusions', index=False)
+                        
+                    exclusions_df = analysis_results['exclusion_df']
                     if not exclusions_df.empty:
+                        exclusions_df = exclusions_df.sort_values('Company', ascending=True)
                         exclusions_df.to_excel(writer, sheet_name=f'{group_name} Exclusions', index=False)
                     
                     # Log changes summary
@@ -320,8 +315,11 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                 group_df = df.copy()
                 group_df = group_df.rename(columns={
                     'Name': 'Company',
-                    'ISIN': 'ISIN code'
+                    'ISIN': 'ISIN Code'
                 })
+                
+                # Sort alphabetically by Company name
+                group_df = group_df.sort_values('Company', ascending=True)
                 
                 # Create Excel file with just the composition sheet
                 with pd.ExcelWriter(individual_path) as writer:
