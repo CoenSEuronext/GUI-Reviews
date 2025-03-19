@@ -73,7 +73,7 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
         developed_market_df['Area Flag'] = developed_market_df['index'].apply(
             lambda x: 'NA' if 'NA500' in str(x) 
             else 'AS' if 'AS500' in str(x)
-            else 'EU' if 'EU500' in str(x)
+            else 'EU' if ('EU500' in str(x) or 'EZ300' in str(x))
             else None
         )
 
@@ -194,17 +194,21 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
             exclusion_count += 1
 
         # SBT alignment exclusion
-        # Get list of high climate impact NACE codes
+        # Get list of high climate impact NACE codes (first letter)
         high_impact_nace = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'L']
 
         # Get ISINs from nace_df that have high impact NACE codes
-        high_impact_isins = nace_df[nace_df['NACE'].isin(high_impact_nace)]['ISIN'].tolist()
+        # Need to check if the first character of each NACE code is in the high impact list
+        high_impact_isins = nace_df[nace_df['NACE'].str[0].isin(high_impact_nace)]['ISIN'].tolist()
 
         # Create new exclusion column for SBT
         new_col = f'exclusion_{exclusion_count}'
         developed_market_df[new_col] = None
 
-        # Get ISINs that meet the SBT exclusion condition
+        # Get ISINs that meet the SBT exclusion condition - this part is correct
+        # It finds companies that:
+        # 1. Don't have 'Approved SBT' in ClimateGHGReductionTargets
+        # 2. Are in the high_impact_isins list (have a high-impact NACE code)
         sbt_excluded_isins = Oekom_TrustCarbon_df[
             (Oekom_TrustCarbon_df['ClimateGHGReductionTargets'] != 'Approved SBT') & 
             (Oekom_TrustCarbon_df['ISIN'].isin(high_impact_isins))
@@ -506,9 +510,13 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
 
         # Rename columns and sort
         FRD4P_df = FRD4P_df.rename(columns={
+            'Name': 'Company',
+            'ISIN': 'ISIN Code',
+            'NOSH': 'Number of Shares',
+            'Final Capping': 'Capping Factor',
             'Currency (Local)': 'Currency',
         })
-        FRD4P_df = FRD4P_df.sort_values('Name')
+        FRD4P_df = FRD4P_df.sort_values('Company')
 
         # Save output files
         try:
