@@ -123,9 +123,26 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         if file_key in all_files:
             try:
                 file_path = os.path.join(current_data_folder, all_files[file_key]['filename'])
+                
                 # Pass sheet name if specified
                 if file_key in sheet_names:
-                    results[file_key] = all_files[file_key]['loader'](file_path, sheet_names[file_key])
+                    sheet = sheet_names[file_key]
+                    
+                    # Special handling for CAC Family and AEX Family
+                    if file_key in ['cac_family', 'aex_family']:
+                        # Verify the sheet exists
+                        try:
+                            xls = pd.ExcelFile(file_path)
+                            if sheet not in xls.sheet_names:
+                                print(f"Sheet '{sheet}' not found in {file_path}. Available sheets: {', '.join(xls.sheet_names)}")
+                                results[file_key] = None
+                                continue
+                        except Exception as e:
+                            print(f"Error checking sheets in {file_path}: {str(e)}")
+                            
+                        results[file_key] = all_files[file_key]['loader'](file_path, sheet)
+                    else:
+                        results[file_key] = all_files[file_key]['loader'](file_path, sheet)
                 else:
                     results[file_key] = all_files[file_key]['loader'](file_path)
             except Exception as e:

@@ -97,6 +97,7 @@ def run_clew_review(date, co_date, effective_date, index="CLEW", isin="FR0012663
                 'Effective Date of Review', 'Currency']
             ]
             .rename(columns={'Rounded NOSH': 'Number of Shares'})
+            .rename(columns={'ISIN code': 'ISIN Code'})
             .sort_values('Company')
         )
 

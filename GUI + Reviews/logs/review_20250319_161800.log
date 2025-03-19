@@ -1,0 +1,7 @@
+2025-03-19 16:18:00,932 - werkzeug - WARNING -  * Debugger is active!
+2025-03-19 16:18:00,932 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-19 16:21:58,053 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-03-19 16:22:00,768 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-03-19 16:22:02,654 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20250319_162202.xlsx
+2025-03-19 16:22:02,826 - werkzeug - INFO - 127.0.0.1 - - [19/Mar/2025 16:22:02] "POST /calculate HTTP/1.1" 200 -
+2025-03-19 16:24:46,711 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\curses\\__init__.py', reloading

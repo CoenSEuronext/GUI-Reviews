@@ -33,15 +33,33 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         )
         
         # Extract the needed DataFrames
-        ff_df = ref_data['ff']
-        selection_df = ref_data['cac_family'].drop(columns=['Effective Date of Review'])
-        oekom_score_df = ref_data['oekom_score']
+        ff_df = ref_data.get('ff')
+        selection_df = ref_data.get('cac_family')
+        oekom_score_df = ref_data.get('oekom_score')
         
+        # Check if any required data is missing and handle explicitly
+        missing_data = []
+        if ff_df is None:
+            missing_data.append("FF.xlsx")
+        if selection_df is None:
+            missing_data.append("CAC Family.xlsx (sheet: PX1)")
+        if oekom_score_df is None:
+            missing_data.append("Oekom Score.xlsx")
+        
+        if missing_data:
+            error_msg = f"Failed to load required reference data files: {', '.join(missing_data)}"
+            logger.error(error_msg)
+            logger.error(f"Data folder path: {current_data_folder}")
+            return {
+                "status": "error",
+                "message": error_msg,
+                "data": None
+            }
+        
+        # Now we can safely rename columns since we've verified selection_df is not None
         selection_df = selection_df.rename(columns={'ISIN code': 'ISIN'})
-                
-        if any(df is None for df in [ff_df, selection_df, oekom_score_df]):
-            raise ValueError("Failed to load one or more required reference data files")
-
+        
+        # The rest of the function remains unchanged
         symbols_filtered = stock_eod_df[
             stock_eod_df['#Symbol'].str.len() == 12
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
@@ -79,7 +97,7 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         )
 
         
-        selection_df['FFMC CO'] = selection_df['Preliminary Number of shares'] * selection_df['Preliminary Free Float'] * selection_df['Preliminary Capping Factor'] * selection_df['Close Prc_CO']
+        selection_df['FFMC CO'] = selection_df['Number of shares'] * selection_df['Free Float'] * selection_df['Capping'] * selection_df['Close Prc_CO']
         
         selection_df['Rank Universe'] = selection_df['FFMC CO'].rank(ascending=False, method='first')
         
@@ -118,14 +136,11 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         selection_df['Effective Date of Review'] = effective_date
 
         F4RIP_df = selection_df[
-            ['Company', 'ISIN', 'MIC', 'Preliminary Number of shares', 
-            'Preliminary Free Float', 'Preliminary Capping Factor', 
+            ['Company', 'ISIN', 'MIC', 'Number of shares', 
+            'Free Float', 'Capping', 
             'Effective Date of Review', 'Currency']
         ].rename(columns={
-            'Preliminary Number of shares': 'NOSH',
-            'Preliminary Free Float': 'Free Float', 
-            'Preliminary Capping Factor': 'Final Capping',
-            'Currency': 'Currency (Local)'
+            'Capping': 'Final Capping',
         })
 
         F4RIP_df = F4RIP_df.sort_values('Company')

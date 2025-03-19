@@ -127,8 +127,8 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
             ['Company', 'ISIN', 'MIC', 'final nosh', 'Free Float', 'Capping Factor', 
              'Effective Date of Review', 'Currency']
         ].rename(columns={
-            'final nosh': 'NOSH',
-            'Currency': 'Currency (Local)',
+            'final nosh': 'Number of Shares',
+            'ISIN': 'ISIN Code'
         }).sort_values('Company')
 
         analysis_results = inclusion_exclusion_analysis(

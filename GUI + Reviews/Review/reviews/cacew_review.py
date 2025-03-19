@@ -97,6 +97,7 @@ def run_cacew_review(date, co_date, effective_date, index="CACEW", isin="QS00111
                 'Effective Date of Review', 'Currency']
             ]
             .rename(columns={'Rounded NOSH': 'Number of Shares'})
+            .rename(columns={'ISIN code': 'ISIN Code'})
             .sort_values('Company')
         )
 

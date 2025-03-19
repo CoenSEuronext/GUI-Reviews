@@ -10,7 +10,8 @@ def get_mnemo_from_filename(filename):
     # List all possible mnemos
     mnemos = ["CANP", "CANPT", "DAPPR", "DAPPT", "DASP", "DASPT", "DEUP", "DEUPT", 
               "DEZP", "DEZPT", "DNAP", "DNAPT", "DPAP", "DPAPT", "ECHP", "ECHPT", 
-              "EDWP", "EDWPT", "EJPP", "EJPPT", "EUKP", "EUKPT", "EUSP", "EUSPT"]
+              "EDWP", "EDWPT", "EJPP", "EJPPT", "EUKP", "EUKPT", "EUSP", "EUSPT",
+              "AEXEW", "BNEW", "CACEW", "CLEW"]
     
     # Look for pattern "MNEMO_" in the filename
     for mnemo in mnemos:
@@ -19,7 +20,7 @@ def get_mnemo_from_filename(filename):
             return mnemo
             
     # Alternative regex approach
-    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT)[_-]'
+    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW)[_-]'
     match = re.search(pattern, filename)
     if match:
         return match.group(1)

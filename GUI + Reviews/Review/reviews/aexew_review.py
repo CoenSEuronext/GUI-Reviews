@@ -91,14 +91,7 @@ def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS00111
         selection_df['Effective Date of Review'] = effective_date
         selection_df['Currency'] = currency
         # Prepare AEXEW DataFrame
-        AEXEW_df = (
-            selection_df[
-                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
-                'Effective Date of Review', 'Currency']
-            ]
-            .rename(columns={'Rounded NOSH': 'Number of Shares'})
-            .sort_values('Company')
-        )
+
 
         # Perform Inclusion/Exclusion Analysis
         analysis_results = inclusion_exclusion_analysis(
@@ -109,6 +102,15 @@ def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS00111
         )
         inclusion_df = analysis_results['inclusion_df']
         exclusion_df = analysis_results['exclusion_df']
+        AEXEW_df = (
+            selection_df[
+                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
+                'Effective Date of Review', 'Currency']
+            ]
+            .rename(columns={'ISIN code': 'ISIN Code'})
+            .rename(columns={'Rounded NOSH': 'Number of Shares'})
+            .sort_values('Company')
+        )
 
         # Save output files
         try:
@@ -122,7 +124,7 @@ def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS00111
             # Save output with multiple sheets
             logger.info(f"Saving AEXEW output to: {aexew_path}")
             with pd.ExcelWriter(aexew_path) as writer:
-                AEXEW_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                AEXEW_df.to_excel(writer, sheet_name=index + ' Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
