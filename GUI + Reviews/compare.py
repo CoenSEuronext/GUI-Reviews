@@ -121,6 +121,24 @@ def compare_files(coen_file, dataiku_file):
         if field in dataiku_df.columns:
             dataiku_capping_field = field
     
+    # Helper function for float comparison
+    def compare_float_values(val1, val2, tolerance=1e-10):
+        """Compare float values with a small tolerance for floating-point precision"""
+        try:
+            # Try to convert both values to float
+            float1 = float(val1) if val1 is not None else None
+            float2 = float(val2) if val2 is not None else None
+            
+            # If either value is None, they're equal only if both are None
+            if float1 is None or float2 is None:
+                return float1 is None and float2 is None
+            
+            # Compare with tolerance
+            return abs(float1 - float2) < tolerance
+        except (ValueError, TypeError):
+            # If conversion fails, fall back to direct equality
+            return val1 == val2
+    
     # Initialize field comparison results
     field_results = {}
     
@@ -144,25 +162,26 @@ def compare_files(coen_file, dataiku_file):
                     coen_value = coen_dict.get(isin)
                     dataiku_value = dataiku_dict.get(isin)
                     
-                    # For numeric fields, convert to float for comparison
+                    # For numeric fields, use float comparison with tolerance
                     if field in ['Number of Shares', 'Free Float']:
-                        try:
-                            if coen_value is not None:
-                                coen_value = float(coen_value)
-                            if dataiku_value is not None:
-                                dataiku_value = float(dataiku_value)
-                        except (ValueError, TypeError):
-                            pass  # Keep original values if conversion fails
-                    
-                    # Compare values with equality check
-                    if coen_value != dataiku_value:
-                        mismatches += 1
-                        if len(mismatch_examples) < 5:  # Limit to 5 examples
-                            mismatch_examples.append({
-                                'ISIN': isin,
-                                'Coen value': coen_value,
-                                'Dataiku value': dataiku_value
-                            })
+                        if not compare_float_values(coen_value, dataiku_value):
+                            mismatches += 1
+                            if len(mismatch_examples) < 5:  # Limit to 5 examples
+                                mismatch_examples.append({
+                                    'ISIN': isin,
+                                    'Coen value': coen_value,
+                                    'Dataiku value': dataiku_value
+                                })
+                    else:
+                        # For non-numeric fields, use direct equality
+                        if coen_value != dataiku_value:
+                            mismatches += 1
+                            if len(mismatch_examples) < 5:  # Limit to 5 examples
+                                mismatch_examples.append({
+                                    'ISIN': isin,
+                                    'Coen value': coen_value,
+                                    'Dataiku value': dataiku_value
+                                })
                 
                 if mismatches > 0:
                     field_results[field] = {
@@ -194,17 +213,8 @@ def compare_files(coen_file, dataiku_file):
                 coen_value = coen_dict.get(isin)
                 dataiku_value = dataiku_dict.get(isin)
                 
-                # Convert to float for comparison
-                try:
-                    if coen_value is not None:
-                        coen_value = float(coen_value)
-                    if dataiku_value is not None:
-                        dataiku_value = float(dataiku_value)
-                except (ValueError, TypeError):
-                    pass  # Keep original values if conversion fails
-                
-                # Compare values
-                if coen_value != dataiku_value:
+                # Use float comparison with tolerance for capping values
+                if not compare_float_values(coen_value, dataiku_value):
                     mismatches += 1
                     if len(mismatch_examples) < 5:  # Limit to 5 examples
                         mismatch_examples.append({
