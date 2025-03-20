@@ -1,0 +1,12 @@
+2025-03-20 17:14:41,335 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-20 17:14:41,336 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-20 17:14:41,357 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-20 17:14:41,930 - werkzeug - WARNING -  * Debugger is active!
+2025-03-20 17:14:41,933 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-20 17:14:43,396 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\unicode_escape.py', reloading
+2025-03-20 17:14:43,398 - werkzeug - INFO - 127.0.0.1 - - [20/Mar/2025 17:14:43] "GET / HTTP/1.1" 200 -
+2025-03-20 17:14:43,537 - werkzeug - INFO - 127.0.0.1 - - [20/Mar/2025 17:14:43] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-03-20 17:14:43,543 - werkzeug - INFO - 127.0.0.1 - - [20/Mar/2025 17:14:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-20 17:14:44,078 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-20 17:15:01,571 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

@@ -76,7 +76,7 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
         developed_market_df['Area Flag'] = developed_market_df['index'].apply(
             lambda x: 'NA' if 'NA500' in str(x) 
             else 'AS' if 'AS500' in str(x)
-            else 'EU' if 'EU500' in str(x)
+            else 'EU' if ('EU500' in str(x) or 'EZ300' in str(x))
             else None
         )
 
@@ -154,8 +154,8 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
         # Convert columns to numeric
         energy_columns = [
             'Coal Mining and Power Gen - Maximum Percentage of Revenues (%)',
-            'FossilFuelProdMaxRev',
-            'FossilFuelDistMaxRev',
+            'FossilFuelProdMaxRev-values',
+            'FossilFuelDistMaxRev-values',
             'Power Generation - Thermal Maximum Percentage of Revenues (%)'
         ]
 
@@ -169,7 +169,7 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
                 'exclude_value': 'exclude_CoalMining'
             },
             'FossilFuel': {
-                'condition': lambda df: (df['FossilFuelProdMaxRev'] + df['FossilFuelDistMaxRev']) >= 0.10,
+                'condition': lambda df: (df['FossilFuelProdMaxRev-values'] + df['FossilFuelDistMaxRev-values']) >= 0.10,
                 'exclude_value': 'exclude_FossilFuel'
             },
             'Thermal': {
@@ -484,6 +484,9 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
         # Rename columns and sort
         FRI4P_df = FRI4P_df.rename(columns={
             'Currency (Local)': 'Currency',
+            'ISIN': 'ISIN Code',
+            'NOSH': 'Number of Shares',
+            'Final Capping': 'Capping Factor',
         })
         FRI4P_df = FRI4P_df.sort_values('Company')
         
