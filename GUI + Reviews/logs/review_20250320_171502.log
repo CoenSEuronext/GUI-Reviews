@@ -127,3 +127,5 @@
 2025-03-20 17:15:25,277 - Review.reviews.frd4p_review - INFO - Found 1 matching rows
 2025-03-20 17:15:25,292 - Review.reviews.frd4p_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRD4P_df_20250320_171525.xlsx
 2025-03-20 17:15:25,677 - werkzeug - INFO - 127.0.0.1 - - [20/Mar/2025 17:15:25] "POST /calculate HTTP/1.1" 200 -
+2025-03-20 18:21:02,472 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-03-20 18:21:02,472 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare.py', reloading

@@ -545,8 +545,8 @@ if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Define cutoff date and effective date - now you can easily change these for future reviews
-    cutoff_date = "20250224"      # Format: YYYYMMDD
-    effective_date = "20250228"   # Format: YYYYMMDD
+    cutoff_date = "20250325"      # Format: YYYYMMDD
+    effective_date = "20250331"   # Format: YYYYMMDD
     
     # Define file paths with dynamic cutoff date
     file_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\DVE_MTS_CMF_{cutoff_date}_SDP_REFERENCEDATA.csv"
