@@ -1,0 +1,6 @@
+2025-03-31 16:18:09,008 - werkzeug - WARNING -  * Debugger is active!
+2025-03-31 16:18:09,018 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-31 16:18:11,744 - Review.reviews.wifrp_review - INFO - Loading EOD data...
+2025-03-31 16:18:14,694 - Review.reviews.wifrp_review - INFO - Loading reference data...
+2025-03-31 16:18:15,015 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-03-31 16:18:15,015 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
