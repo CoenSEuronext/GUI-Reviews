@@ -72,6 +72,29 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
             if before_count != after_count:
                 logger.warning(f"Removed {before_count - after_count} duplicate rows from SESAMm data")
         
+        # Add Index_Currency to stock_eod_df and stock_co_df by looking up Index in index_eod_df
+        logger.info("Adding Index_Currency to stock_eod_df by looking up Index in index_eod_df...")
+        
+        # Check if required columns exist in both dataframes
+        if 'Index' in stock_eod_df.columns and 'Mnemo' in index_eod_df.columns and 'Curr' in index_eod_df.columns:
+            # Create a mapping dictionary from index_eod_df for faster lookup
+            index_currency_map = dict(zip(index_eod_df['Mnemo'], index_eod_df['Curr']))
+            
+            # Apply the mapping to stock_eod_df to create the Index_Currency column
+            stock_eod_df['Index_Currency'] = stock_eod_df['Index'].map(index_currency_map)
+            
+            logger.info(f"Added Index_Currency to stock_eod_df. Found {stock_eod_df['Index_Currency'].notna().sum()} matches.")
+            
+            # Also add to stock_co_df if it has the Index column
+            if 'Index' in stock_co_df.columns:
+                stock_co_df['Index_Currency'] = stock_co_df['Index'].map(index_currency_map)
+                logger.info(f"Added Index_Currency to stock_co_df. Found {stock_co_df['Index_Currency'].notna().sum()} matches.")
+        else:
+            logger.warning("Cannot add Index_Currency. Missing required columns in stock_eod_df or index_eod_df.")
+            # Create empty column if lookup can't be performed
+            stock_eod_df['Index_Currency'] = None
+            stock_co_df['Index_Currency'] = None
+        
         # STEP 1: Prepare Universe
         # Rename columns as specified
         universe_df = developed_market_df.rename(columns={
@@ -470,48 +493,78 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
         
         # Step 3: Calculate FFMC for all companies in the universe for ranking purposes
         # According to the rulebook, Step 3: Selection ranking should use the Cut-Off Date data
-        logger.info("Calculating FFMC for all companies in universe using cut-off date data (stock_co_df)...")
-        
+        logger.info("Calculating FFMC for all companies in universe...")
+
         # Always initialize the FFMC column first to avoid KeyError
         universe_df['FFMC'] = np.nan
-        
-        # Check if stock_co_df has the necessary columns for calculating FFMC
-        required_cols = ['Isin Code', 'Close Prc', 'FX/Index Ccy']
-        if all(col in stock_co_df.columns for col in required_cols):
-            # Create a price lookup dataframe from stock_co_df
-            # In case of multiple entries per ISIN, take the first one
-            price_lookup = stock_co_df[required_cols].drop_duplicates('Isin Code').rename(
-                columns={'Isin Code': 'ISIN Code', 'Close Prc': 'Price', 'FX/Index Ccy': 'FX Rate'}
-            )
-            
-            # Merge price and FX data from cut-off date
-            universe_df = universe_df.merge(
-                price_lookup[['ISIN Code', 'Price', 'FX Rate']],
-                on='ISIN Code',
-                how='left'
-            )
-            
-            # Calculate FFMC using the Close Prc and FX Rate from stock_co_df
-            logger.info("Calculating FFMC using Close Prc and FX Rate from stock_co_df (cut-off date data)")
-            universe_df['FX Rate'] = universe_df['FX Rate'].fillna(1.0)
-            universe_df['FFMC'] = universe_df['Free Float'] * universe_df['Number of Shares'] * universe_df['Price'] * universe_df['FX Rate']
+
+        # Check if universe_df has the 'Price (EUR)' column
+        if 'Price (EUR)' in universe_df.columns:
+            logger.info("Using Price (EUR) from universe_df for FFMC calculation")
+            universe_df['FFMC'] = universe_df['Free Float'] * universe_df['Number of Shares'] * universe_df['Price (EUR)']
+        elif 'Mcap in EUR' in universe_df.columns:
+            logger.info("Using Mcap in EUR to calculate FFMC")
+            universe_df['FFMC'] = universe_df['Mcap in EUR'] * universe_df['Free Float']
         else:
-            missing_cols = [col for col in required_cols if col not in stock_co_df.columns]
-            logger.warning(f"Cannot get all required data from stock_co_df. Missing columns: {missing_cols}")
+            # Fall back to the old approach if neither 'Price (EUR)' nor 'Mcap in EUR' is available
+            logger.warning("Neither 'Price (EUR)' nor 'Mcap in EUR' columns found in universe_df. Falling back to stock_co_df data.")
             
-            # Fall back to using Price (EUR) if available
-            if 'Price (EUR)' in universe_df.columns:
-                logger.info("Falling back to Price (EUR) from universe_df")
-                universe_df['FFMC'] = universe_df['Free Float'] * universe_df['Number of Shares'] * universe_df['Price (EUR)']
-            elif 'Mcap in EUR' in universe_df.columns:
-                logger.info("Using Mcap in EUR to calculate FFMC")
-                universe_df['FFMC'] = universe_df['Mcap in EUR'] * universe_df['Free Float']
-        
+            # Check if stock_co_df has the necessary columns for calculating FFMC
+            required_cols = ['Isin Code', 'Close Prc', 'Index_Currency']
+            if all(col in stock_co_df.columns for col in required_cols):
+                # Filter for records where Index_Currency is EUR
+                eur_records = stock_co_df[stock_co_df['Index_Currency'] == 'EUR']
+                
+                if len(eur_records) > 0:
+                    logger.info(f"Found {len(eur_records)} records with Index_Currency='EUR' in stock_co_df")
+                    # Create a price lookup dataframe from stock_co_df (EUR records only)
+                    # In case of multiple entries per ISIN, take the first one
+                    price_lookup = eur_records[['Isin Code', 'Close Prc']].drop_duplicates('Isin Code').rename(
+                        columns={'Isin Code': 'ISIN Code', 'Close Prc': 'Price'}
+                    )
+                    
+                    # Merge price data from cut-off date
+                    universe_df = universe_df.merge(
+                        price_lookup[['ISIN Code', 'Price']],
+                        on='ISIN Code',
+                        how='left'
+                    )
+                    
+                    # Calculate FFMC using the EUR Close Prc from stock_co_df (no FX conversion needed)
+                    logger.info("Calculating FFMC using Close Prc from EUR records in stock_co_df (cut-off date data)")
+                    universe_df['FFMC'] = universe_df['Free Float'] * universe_df['Number of Shares'] * universe_df['Price']
+                else:
+                    logger.warning("No records with Index_Currency='EUR' found in stock_co_df. Falling back to all records with FX conversion.")
+                    
+                    # Check if FX/Index Ccy column exists for conversion
+                    if 'FX/Index Ccy' in stock_co_df.columns:
+                        # Create a price lookup dataframe from all stock_co_df records
+                        price_lookup = stock_co_df[['Isin Code', 'Close Prc', 'FX/Index Ccy']].drop_duplicates('Isin Code').rename(
+                            columns={'Isin Code': 'ISIN Code', 'Close Prc': 'Price', 'FX/Index Ccy': 'FX Rate'}
+                        )
+                        
+                        # Merge price and FX data from cut-off date
+                        universe_df = universe_df.merge(
+                            price_lookup[['ISIN Code', 'Price', 'FX Rate']],
+                            on='ISIN Code',
+                            how='left'
+                        )
+                        
+                        # Calculate FFMC using the Close Prc and FX Rate from stock_co_df
+                        logger.info("Calculating FFMC using Close Prc and FX Rate from stock_co_df (cut-off date data)")
+                        universe_df['FX Rate'] = universe_df['FX Rate'].fillna(1.0)
+                        universe_df['FFMC'] = universe_df['Free Float'] * universe_df['Number of Shares'] * universe_df['Price'] * universe_df['FX Rate']
+                    else:
+                        logger.error("Cannot calculate FFMC. Missing 'FX/Index Ccy' column in stock_co_df for currency conversion.")
+            else:
+                missing_cols = [col for col in required_cols if col not in stock_co_df.columns]
+                logger.error(f"Cannot calculate FFMC. Missing columns in stock_co_df: {missing_cols} and missing 'Price (EUR)' in universe_df")
+
         # Create rank based on FFMC (descending)
         # Fill NaN values with a large negative value to ensure they get ranked last
         logger.info("Creating rank based on FFMC...")
         universe_df['Rank'] = universe_df['FFMC'].fillna(float('-inf')).rank(ascending=False, method='min')
-        
+
         # Mark rows with NaN FFMC explicitly
         universe_df['Rank'] = np.where(
             universe_df['FFMC'].isna(),
@@ -579,21 +632,148 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
         logger.info("Selecting top 40 companies by FFMC...")
         # Sort by the FFMC computed using the cut-off date data
         final_selection = eligible_df.sort_values('FFMC', ascending=False).head(40).copy()
-        
+
+        # Add Symbol column to final_selection by looking up ISIN and MIC in stock_eod_df
+        logger.info("Adding Symbol column to final_selection...")
+        if all(col in stock_eod_df.columns for col in ['Isin Code', 'MIC', '#Symbol']):
+            # Create a dictionary for faster lookup
+            symbol_map = {}
+            for _, row in stock_eod_df.iterrows():
+                key = (row['Isin Code'], row['MIC'])
+                if key not in symbol_map and pd.notna(row['#Symbol']):
+                    symbol_map[key] = row['#Symbol']
+            
+            # Add Symbol column to final_selection
+            final_selection['Symbol'] = final_selection.apply(
+                lambda row: symbol_map.get((row['ISIN Code'], row['MIC']), None), 
+                axis=1
+            )
+            
+            logger.info(f"Added Symbol to {final_selection['Symbol'].notna().sum()} companies out of {len(final_selection)}")
+            
+            # Check if any companies are missing a Symbol
+            if final_selection['Symbol'].isna().any():
+                logger.warning(f"{final_selection['Symbol'].isna().sum()} companies don't have a matching Symbol in stock_eod_df")
+        else:
+            logger.warning("Cannot add Symbol. Missing required columns in stock_eod_df.")
+            final_selection['Symbol'] = None
+
         # Step 6: Calculate capping factor (max weight 10%)
         # Use the most recent pricing data from stock_eod_df for the capping calculation
         logger.info("Calculating weights and capping factors using the most recent pricing data...")
-        
+
         # For capping factor calculation, we want to use the most recent data (stock_eod_df)
         # We need to create separate columns for the EOD pricing to distinguish from the cut-off date pricing
-        
-        # Check if stock_eod_df has the necessary columns
-        required_eod_cols = ['Isin Code', 'Close Prc', 'FX/Index Ccy']
-        if all(col in stock_eod_df.columns for col in required_eod_cols):
-            # Create a price lookup dataframe from stock_eod_df
-            eod_price_lookup = stock_eod_df[required_eod_cols].drop_duplicates('Isin Code').rename(
-                columns={'Isin Code': 'ISIN Code', 'Close Prc': 'EOD_Price', 'FX/Index Ccy': 'EOD_FX_Rate'}
-            )
+
+        # Check if stock_eod_df has the necessary columns and Symbol column was added successfully
+        required_eod_cols = ['#Symbol', 'Close Prc', 'FX/Index Ccy', 'Index_Currency']
+        if all(col in stock_eod_df.columns for col in required_eod_cols) and 'Symbol' in final_selection.columns and final_selection['Symbol'].notna().any():
+            # Get list of Symbols from final selection to look up in stock_eod_df
+            selected_symbols = final_selection['Symbol'].dropna().tolist()
+            
+            # Filter for records matching selected symbols and with Index_Currency='EUR'
+            matched_eur_records = stock_eod_df[
+                (stock_eod_df['#Symbol'].isin(selected_symbols)) & 
+                (stock_eod_df['Index_Currency'] == 'EUR')
+            ]
+            
+            if len(matched_eur_records) > 0:
+                # Create a mapping from Symbol to FX/Index Ccy from the EUR records
+                logger.info(f"Found {len(matched_eur_records)} records with Index_Currency='EUR' for selected Symbols")
+                fx_map = dict(zip(matched_eur_records['#Symbol'], matched_eur_records['FX/Index Ccy']))
+                
+                # Create a price lookup dataframe using all records (for maximum coverage)
+                # First get all records for the selected symbols
+                all_selected_records = stock_eod_df[stock_eod_df['#Symbol'].isin(selected_symbols)]
+                
+                # Then create a lookup dataframe with Symbol, taking the first occurrence of each Symbol
+                eod_price_lookup = all_selected_records[['#Symbol', 'Close Prc']].drop_duplicates('#Symbol').rename(
+                    columns={'#Symbol': 'Symbol', 'Close Prc': 'EOD_Price'}
+                )
+                
+                # Add FX/Index Ccy from EUR records mapping
+                eod_price_lookup['EOD_FX_Rate'] = eod_price_lookup['Symbol'].map(fx_map)
+                
+                # For Symbols that don't have FX/Index Ccy from EUR records, get from the general stock_eod_df
+                missing_fx = eod_price_lookup['EOD_FX_Rate'].isna()
+                if missing_fx.any():
+                    logger.warning(f"{missing_fx.sum()} Symbols don't have FX rates from EUR index records, using general FX rates")
+                    # Create a general FX map as fallback
+                    general_fx_map = dict(zip(stock_eod_df['#Symbol'], stock_eod_df['FX/Index Ccy']))
+                    # Only fill missing FX rates
+                    missing_symbols = eod_price_lookup.loc[missing_fx, 'Symbol']
+                    for symbol in missing_symbols:
+                        if symbol in general_fx_map:
+                            eod_price_lookup.loc[eod_price_lookup['Symbol'] == symbol, 'EOD_FX_Rate'] = general_fx_map[symbol]
+                
+                # Merge EOD price and FX data with final_selection based on Symbol
+                final_selection = final_selection.merge(
+                    eod_price_lookup[['Symbol', 'EOD_Price', 'EOD_FX_Rate']],
+                    on='Symbol',
+                    how='left'
+                )
+            else:
+                logger.warning("No records with Index_Currency='EUR' found in stock_eod_df for selected Symbols. Falling back to ISIN matching.")
+                # Fall back to ISIN matching if no EUR records found for symbols
+                selected_isins = final_selection['ISIN Code'].tolist()
+                all_selected_records = stock_eod_df[stock_eod_df['Isin Code'].isin(selected_isins)]
+                
+                eod_price_lookup = all_selected_records[['Isin Code', 'Close Prc', 'FX/Index Ccy']].drop_duplicates('Isin Code').rename(
+                    columns={'Isin Code': 'ISIN Code', 'Close Prc': 'EOD_Price', 'FX/Index Ccy': 'EOD_FX_Rate'}
+                )
+                
+                # Merge EOD price and FX data
+                final_selection = final_selection.merge(
+                    eod_price_lookup[['ISIN Code', 'EOD_Price', 'EOD_FX_Rate']],
+                    on='ISIN Code',
+                    how='left'
+                )
+        else:
+            logger.warning("Cannot use Symbol matching. Falling back to ISIN matching for price and FX data.")
+            # Fall back to the original ISIN-based approach
+            selected_isins = final_selection['ISIN Code'].tolist()
+            
+            if 'Index_Currency' in stock_eod_df.columns:
+                # Filter for records matching selected ISINs and with Index_Currency='EUR'
+                matched_eur_records = stock_eod_df[
+                    (stock_eod_df['Isin Code'].isin(selected_isins)) & 
+                    (stock_eod_df['Index_Currency'] == 'EUR')
+                ]
+                
+                if len(matched_eur_records) > 0:
+                    # Create a mapping from Isin Code to FX/Index Ccy from the EUR records
+                    logger.info(f"Found {len(matched_eur_records)} records with Index_Currency='EUR' for selected ISINs")
+                    fx_map = dict(zip(matched_eur_records['Isin Code'], matched_eur_records['FX/Index Ccy']))
+                    
+                    # Create a price lookup dataframe using all records (for maximum coverage)
+                    all_selected_records = stock_eod_df[stock_eod_df['Isin Code'].isin(selected_isins)]
+                    eod_price_lookup = all_selected_records[['Isin Code', 'Close Prc']].drop_duplicates('Isin Code').rename(
+                        columns={'Isin Code': 'ISIN Code', 'Close Prc': 'EOD_Price'}
+                    )
+                    
+                    # Add FX/Index Ccy from EUR records mapping
+                    eod_price_lookup['EOD_FX_Rate'] = eod_price_lookup['ISIN Code'].map(fx_map)
+                    
+                    # For ISINs that don't have FX/Index Ccy from EUR records, get from the general stock_eod_df
+                    missing_fx = eod_price_lookup['EOD_FX_Rate'].isna()
+                    if missing_fx.any():
+                        # Create a general FX map as fallback
+                        general_fx_map = dict(zip(stock_eod_df['Isin Code'], stock_eod_df['FX/Index Ccy']))
+                        # Only fill missing FX rates
+                        missing_isins = eod_price_lookup.loc[missing_fx, 'ISIN Code']
+                        for isin in missing_isins:
+                            if isin in general_fx_map:
+                                eod_price_lookup.loc[eod_price_lookup['ISIN Code'] == isin, 'EOD_FX_Rate'] = general_fx_map[isin]
+                else:
+                    logger.warning("No records with Index_Currency='EUR' found. Using all available FX rates.")
+                    eod_price_lookup = stock_eod_df[['Isin Code', 'Close Prc', 'FX/Index Ccy']].drop_duplicates('Isin Code').rename(
+                        columns={'Isin Code': 'ISIN Code', 'Close Prc': 'EOD_Price', 'FX/Index Ccy': 'EOD_FX_Rate'}
+                    )
+            else:
+                # Basic fallback if Index_Currency is not available
+                eod_price_lookup = stock_eod_df[['Isin Code', 'Close Prc', 'FX/Index Ccy']].drop_duplicates('Isin Code').rename(
+                    columns={'Isin Code': 'ISIN Code', 'Close Prc': 'EOD_Price', 'FX/Index Ccy': 'EOD_FX_Rate'}
+                )
             
             # Merge EOD price and FX data
             final_selection = final_selection.merge(
@@ -601,21 +781,25 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
                 on='ISIN Code',
                 how='left'
             )
+
+        # Handle potential NaN values in EOD FX Rate
+        final_selection['EOD_FX_Rate'] = final_selection['EOD_FX_Rate'].fillna(1.0)
+
+        # Handle potential NaN values in EOD_Price
+        if 'EOD_Price' in final_selection.columns and final_selection['EOD_Price'].isna().any():
+            logger.warning(f"{final_selection['EOD_Price'].isna().sum()} companies missing EOD_Price")
             
-            # Handle potential NaN values in EOD FX Rate
-            final_selection['EOD_FX_Rate'] = final_selection['EOD_FX_Rate'].fillna(1.0)
-            
-            # Calculate EOD FFMC using the most recent pricing data
-            final_selection['EOD_FFMC'] = final_selection['Free Float'] * final_selection['Number of Shares'] * final_selection['EOD_Price'] * final_selection['EOD_FX_Rate']
-            
-            # Use the EOD FFMC for weight calculations
-            total_mcap = final_selection['EOD_FFMC'].sum()
-            final_selection['Weight'] = final_selection['EOD_FFMC'] / total_mcap
-        else:
-            # If we can't get EOD data, fall back to using the previously calculated FFMC
-            logger.warning("Cannot get EOD data from stock_eod_df. Using FFMC from cut-off date for weighting.")
-            total_mcap = final_selection['FFMC'].sum()
-            final_selection['Weight'] = final_selection['FFMC'] / total_mcap
+            # For companies missing EOD_Price, try to get it from other sources if available
+            if 'Price (EUR)' in final_selection.columns:
+                final_selection.loc[final_selection['EOD_Price'].isna(), 'EOD_Price'] = final_selection.loc[final_selection['EOD_Price'].isna(), 'Price (EUR)']
+                logger.info("Filled missing EOD_Price values with Price (EUR)")
+
+        # Calculate EOD FFMC using the most recent pricing data
+        final_selection['EOD_FFMC'] = final_selection['Free Float'] * final_selection['Number of Shares'] * final_selection['EOD_Price'] * final_selection['EOD_FX_Rate']
+
+        # Use the EOD FFMC for weight calculations
+        total_mcap = final_selection['EOD_FFMC'].sum()
+        final_selection['Weight'] = final_selection['EOD_FFMC'] / total_mcap
         
         # Identify companies above 10% weight
         capped_companies = final_selection[final_selection['Weight'] > 0.10].copy()
