@@ -111,6 +111,26 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
             'filename': 'Master Report.xlsx',
             'loader': lambda f: pd.read_excel(f, header=1)
         },
+        'eu_taxonomy_pocket': {
+            'filename': 'EuTaxonomyPocket_after_Committee.xlsx',
+            'loader': lambda f, sheet=None: pd.read_excel(f, sheet_name=sheet if sheet else 0)
+        },
+        'gafi_black_list': {
+            'filename': '20250221_GAFI_Black_List.xlsx',
+            'loader': lambda f, sheet=None: pd.read_excel(f, sheet_name=sheet if sheet else 0)
+        },
+        'gafi_grey_list': {
+            'filename': '20250221_GAFI_Grey_List.xlsx',
+            'loader': lambda f, sheet=None: pd.read_excel(f, sheet_name=sheet if sheet else 0)
+        },
+        'non_fiscally_cooperative_with_eu': {
+            'filename': '20250221_Non_Fiscally_Cooperative_with_EU.xlsx',
+            'loader': lambda f, sheet=None: pd.read_excel(f, sheet_name=sheet if sheet else 0)
+        },
+        'cdp_climate': {
+            'filename': 'CDP Climate.xlsx',
+            'loader': lambda f, sheet=None: pd.read_excel(f, sheet_name=sheet if sheet else 0)
+        }
     }
     
     # Rest of the function remains the same

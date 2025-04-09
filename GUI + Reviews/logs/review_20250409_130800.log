@@ -1,0 +1,15 @@
+2025-04-09 13:08:00,253 - werkzeug - WARNING -  * Debugger is active!
+2025-04-09 13:08:00,255 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-09 13:08:01,120 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-04-09 13:08:01,919 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-04-09 13:08:11,599 - Review.reviews.lc100_review - ERROR - Error during review calculation: 'gafi_black_list'
+2025-04-09 13:08:11,599 - Review.reviews.lc100_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc100_review.py", line 62, in run_lc100_review
+    gafi_black_list_df = ref_data['gafi_black_list']
+                         ~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'gafi_black_list'
+
+2025-04-09 13:08:11,625 - werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 13:08:11] "POST /calculate HTTP/1.1" 200 -
+2025-04-09 13:08:27,718 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-04-09 13:08:27,718 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-04-09 13:08:27,718 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

@@ -1,0 +1,53 @@
+2025-04-09 13:14:49,042 - werkzeug - WARNING -  * Debugger is active!
+2025-04-09 13:14:49,049 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-09 13:14:49,858 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-04-09 13:14:50,483 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-04-09 13:15:00,173 - Review.reviews.lc100_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-09 13:15:00,173 - Review.reviews.lc100_review - INFO - Filtering universe for EU500 companies...
+2025-04-09 13:15:00,173 - Review.reviews.lc100_review - INFO - Universe size after EU500 filter: 499
+2025-04-09 13:15:00,173 - Review.reviews.lc100_review - INFO - Adding Free Float data...
+2025-04-09 13:15:00,189 - Review.reviews.lc100_review - INFO - Adding ICB Subsector data...
+2025-04-09 13:15:00,198 - Review.reviews.lc100_review - INFO - Adding CDP Climate data...
+2025-04-09 13:15:00,211 - Review.reviews.lc100_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-09 13:15:00,211 - Review.reviews.lc100_review - WARNING - Column 'Shale Oil and/or Gas - Involvement Tie' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,211 - Review.reviews.lc100_review - WARNING - Column 'Arctic Drilling - Involvement Tie' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Fossil Fuel - Deepwater Drilling Involvement' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Hydraulic Fracturing - Involvement Tie' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Coal Mining Expansion - Involved' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Oil Gas Extraction Expansion - Involved' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Other Fossil Fuel Infrastructure - Involved' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Nuclear Power - Involvement Tie' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Nuclear Power - Total Maximum Percentage of Revenues' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Nuclear Power - Uranium Mining Max Percentage of Revenues (%)' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Civilian Firearms - Revenue Share Max (%)' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Military Equipment and Services - Dist Revenue Share Max (%)' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Social Rating Numeric' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - WARNING - Column 'Governance Rating Numeric' not found in Oekom data. Using alternative name or skipping.
+2025-04-09 13:15:00,212 - Review.reviews.lc100_review - INFO - Adding NACE data...
+2025-04-09 13:15:00,220 - Review.reviews.lc100_review - INFO - Adding EU Taxonomy flag...
+2025-04-09 13:15:00,220 - Review.reviews.lc100_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-09 13:15:00,221 - Review.reviews.lc100_review - INFO - Applying exclusion criteria...
+2025-04-09 13:15:00,230 - Review.reviews.lc100_review - WARNING - Column 'Fossil Fuel - Deepwater Drilling Involvement' not found. Cannot apply this exclusion criterion.
+2025-04-09 13:15:00,249 - Review.reviews.lc100_review - INFO - Calculating Climate Score for ranking...
+2025-04-09 13:15:00,251 - Review.reviews.lc100_review - INFO - Selecting EU Taxonomy companies...
+2025-04-09 13:15:00,252 - Review.reviews.lc100_review - INFO - Found 0 EU Taxonomy companies after exclusions
+2025-04-09 13:15:00,253 - Review.reviews.lc100_review - INFO - Found 3 Non-EU Taxonomy eligible companies after exclusions
+2025-04-09 13:15:00,253 - Review.reviews.lc100_review - INFO - Target number of constituents: 100
+2025-04-09 13:15:00,253 - Review.reviews.lc100_review - INFO - Number of EU Taxonomy companies: 0
+2025-04-09 13:15:00,253 - Review.reviews.lc100_review - INFO - Target number of Non-EU Taxonomy companies: 100
+2025-04-09 13:15:00,280 - Review.reviews.lc100_review - INFO - Super-sector allocation: 
+   Supersector  Count  Target
+0       1510.0      1      20
+1       4020.0      4      80
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - WARNING - Selected 5 Non-EU Taxonomy companies, target was 100
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - Final selection contains 5 companies
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - - EU Taxonomy: 0
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - - Non-EU Taxonomy: 5
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - Initial weight allocations:
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - - EU Taxonomy pocket: 5.00%
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - - Non-EU Taxonomy pocket: 95.00%
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - WARNING - No EU Taxonomy companies in selection.
+2025-04-09 13:15:00,282 - Review.reviews.lc100_review - INFO - Saving output files...
+2025-04-09 13:15:00,668 - Review.reviews.lc100_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC100_review_20250409_131500.xlsx
+2025-04-09 13:15:00,695 - werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 13:15:00] "POST /calculate HTTP/1.1" 200 -
+2025-04-09 13:23:59,241 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

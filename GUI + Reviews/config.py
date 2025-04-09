@@ -80,6 +80,11 @@ INDEX_CONFIGS = {
         "index": "WIFRP",
         "isin": "FRIX00002777",
         "output_key": "wifrp_path"
+    },
+    "LC100": {
+        "index": "LC100",
+        "isin": "QS0011131735",
+        "output_key": "lc100_path"
     }
     # Add new indices here following the same pattern
 }

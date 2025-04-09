@@ -15,6 +15,7 @@ from .reviews.cacew_review import run_cacew_review
 from .reviews.clew_review import run_clew_review
 from .reviews.sbf80_review import run_sbf80_review
 from .reviews.wifrp_review import run_wifrp_review
+from .reviews.lc100_review import run_lc100_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -33,6 +34,7 @@ REVIEW_FUNCTIONS = {
     "CLEW": run_clew_review,
     "SBF80": run_sbf80_review,
     "WIFRP": run_wifrp_review,
+    "LC100": run_lc100_review,
 }
 
 def run_review(review_type, **kwargs):

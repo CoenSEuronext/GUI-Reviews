@@ -1,0 +1,71 @@
+2025-04-09 14:18:46,155 - werkzeug - WARNING -  * Debugger is active!
+2025-04-09 14:18:46,155 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-09 14:18:47,334 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-04-09 14:18:50,919 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-04-09 14:18:54,666 - Review.reviews.lc100_review - ERROR - Error during review calculation: Failed to load developed_market_df from reference data
+2025-04-09 14:18:54,676 - Review.reviews.lc100_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc100_review.py", line 73, in run_lc100_review
+    raise ValueError(f"Failed to load {df_name} from reference data")
+ValueError: Failed to load developed_market_df from reference data
+
+2025-04-09 14:18:54,676 - werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 14:18:54] "POST /calculate HTTP/1.1" 200 -
+2025-04-09 14:18:59,484 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-04-09 14:19:00,176 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-04-09 14:19:10,532 - Review.reviews.lc100_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-09 14:19:10,532 - Review.reviews.lc100_review - INFO - Filtering universe for EU500 companies...
+2025-04-09 14:19:10,532 - Review.reviews.lc100_review - INFO - Universe size after EU500 filter: 499
+2025-04-09 14:19:10,532 - Review.reviews.lc100_review - INFO - Adding Free Float data...
+2025-04-09 14:19:10,544 - Review.reviews.lc100_review - INFO - Adding ICB Subsector data with ISIN and MIC matching...
+2025-04-09 14:19:10,544 - Review.reviews.lc100_review - INFO - Both MIC columns found, performing merge with ISIN and MIC matching
+2025-04-09 14:19:10,574 - Review.reviews.lc100_review - INFO - Companies with missing Subsector Code after ISIN+MIC merge: 91
+2025-04-09 14:19:10,574 - Review.reviews.lc100_review - INFO - Attempting to fill missing Subsector Codes with ISIN-only matching
+2025-04-09 14:19:10,590 - Review.reviews.lc100_review - INFO - After ISIN-only fallback, 62 companies still missing Subsector Code
+2025-04-09 14:19:10,675 - Review.reviews.lc100_review - INFO - Debug file saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\debug\universe_df_after_nace_20250409_141910.xlsx
+2025-04-09 14:19:10,675 - Review.reviews.lc100_review - INFO - Adding CDP Climate data...
+2025-04-09 14:19:10,680 - Review.reviews.lc100_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-09 14:19:10,680 - Review.reviews.lc100_review - WARNING - Column 'Social Rating Numeric' not found in Oekom data. Skipping this column.
+2025-04-09 14:19:10,681 - Review.reviews.lc100_review - WARNING - Column 'Governance Rating Numeric' not found in Oekom data. Skipping this column.
+2025-04-09 14:19:10,684 - Review.reviews.lc100_review - INFO - Adding NACE data...
+2025-04-09 14:19:10,686 - Review.reviews.lc100_review - INFO - Adding EU Taxonomy flag...
+2025-04-09 14:19:10,687 - Review.reviews.lc100_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-09 14:19:10,688 - Review.reviews.lc100_review - INFO - Applying exclusion criteria...
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Calculating Climate Score for ranking...
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Selecting EU Taxonomy companies...
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Found 355 Non-EU Taxonomy eligible companies after exclusions
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Target number of constituents: 100
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Number of EU Taxonomy companies: 14
+2025-04-09 14:19:10,717 - Review.reviews.lc100_review - INFO - Target number of Non-EU Taxonomy companies: 86
+2025-04-09 14:19:10,743 - Review.reviews.lc100_review - INFO - Super-sector allocation: 
+    Supersector  Count  Target
+0        1010.0     32       5
+1        1510.0     34       5
+2        2010.0     60       9
+3        3010.0     88      13
+4        3020.0     46       7
+5        3030.0     56       8
+6        3510.0     34       5
+7        4010.0     24       4
+8        4020.0     40       6
+9        4030.0     14       2
+10       4040.0     15       3
+11       4050.0     24       4
+12       4510.0     34       5
+13       4520.0     10       2
+14       5010.0      9       2
+15       5020.0     64      10
+16       5510.0      6       1
+17       5520.0     18       3
+18       6510.0      1       1
+2025-04-09 14:19:10,755 - Review.reviews.lc100_review - INFO - Selected 95 companies, need to remove 9
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - Removed 9 companies, new total: 86
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - Final selection contains 100 companies
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - - EU Taxonomy: 14
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - - Non-EU Taxonomy: 86
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - Initial weight allocations:
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - - EU Taxonomy pocket: 10.00%
+2025-04-09 14:19:10,757 - Review.reviews.lc100_review - INFO - - Non-EU Taxonomy pocket: 90.00%
+2025-04-09 14:19:10,761 - Review.reviews.lc100_review - INFO - Saving output files...
+2025-04-09 14:19:11,010 - Review.reviews.lc100_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC100_review_20250409_141910.xlsx
+2025-04-09 14:19:11,034 - werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 14:19:11] "POST /calculate HTTP/1.1" 200 -
+2025-04-09 14:23:59,525 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
