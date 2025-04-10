@@ -94,7 +94,8 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             'Name': 'Company',
             'ISIN': 'ISIN Code',
             'NOSH': 'Number of Shares',
-            'Currency (Local)': 'Currency'
+            'Currency (Local)': 'Currency',
+            '3 months ADTV': 'VOL_AV_3M'
         }).copy()
         
         # Check for and remove any duplicates in the initial universe
@@ -737,24 +738,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         if min_companies_per_supersector < 2:
             logger.warning(f"Some supersectors have fewer than 2 companies! Minimum is {min_companies_per_supersector}")
 
-        # Save detailed step output to a separate Excel file for analysis
-        output_dir = os.path.join(os.getcwd(), 'output')
-        os.makedirs(output_dir, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        step_output_path = os.path.join(output_dir, f'non_eu_taxonomy_selection_steps_{timestamp}.xlsx')
-
-        with pd.ExcelWriter(step_output_path) as writer:
-            step_output.to_excel(writer, sheet_name='Target Calculation', index=False)
-            non_eu_taxonomy_eligible.to_excel(writer, sheet_name='Eligible Companies', index=False)
-            non_eu_taxonomy_selected_initial.to_excel(writer, sheet_name='Initial Selection', index=False)
-            non_eu_taxonomy_selected.to_excel(writer, sheet_name='Final Selection', index=False)
-            if len(removals_df) > 0:
-                removals_df.to_excel(writer, sheet_name='Removal Process', index=False)
-
-        logger.info(f"Detailed selection steps saved to {step_output_path}")
-
-
-        
+       
         # Combine EU Taxonomy and Non-EU Taxonomy selected companies for final selection
         final_selection = pd.concat([eu_taxonomy_companies, non_eu_taxonomy_selected])
         
@@ -762,77 +746,164 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         logger.info(f"- EU Taxonomy: {len(eu_taxonomy_companies)}")
         logger.info(f"- Non-EU Taxonomy: {len(non_eu_taxonomy_selected)}")
         
-        # Create a base weighting for both pockets
-        # EU Taxonomy pocket: Minimum 5%, maximum 10% of index weight
-        eu_taxonomy_weight = min(max(0.05, len(eu_taxonomy_companies) / target_constituents), 0.1)
-        non_eu_taxonomy_weight = 1 - eu_taxonomy_weight
-        
-        logger.info(f"Initial weight allocations:")
-        logger.info(f"- EU Taxonomy pocket: {eu_taxonomy_weight:.2%}")
-        logger.info(f"- Non-EU Taxonomy pocket: {non_eu_taxonomy_weight:.2%}")
-        
-        # Assign equal weight within each pocket
-        if len(eu_taxonomy_companies) > 0:
-            eu_taxonomy_companies['Initial_Weight'] = eu_taxonomy_weight / len(eu_taxonomy_companies)
-        else:
-            logger.warning("No EU Taxonomy companies in selection.")
-        
-        non_eu_taxonomy_selected['Initial_Weight'] = non_eu_taxonomy_weight / len(non_eu_taxonomy_selected)
-        
-        # Add Initial_Weight to final selection
-        final_selection['Initial_Weight'] = np.where(
-            final_selection['EU_Taxonomy'] == 1,
-            eu_taxonomy_weight / len(eu_taxonomy_companies) if len(eu_taxonomy_companies) > 0 else 0,
-            non_eu_taxonomy_weight / len(non_eu_taxonomy_selected)
+        # Set global WACI value
+        WACI = 301.45
+
+        # Add PAB flag based on CDP temperature score
+        logger.info("Adding PAB flag based on CDP temperature score...")
+        final_selection['PAB_Flag'] = np.where(
+            pd.to_numeric(final_selection['cdp_temperature_score'], errors='coerce') < 2, 
+            1, 0
         )
         
-        # Calculate Free Float Market Cap (FFMC) for capping purposes
-        if 'Price (EUR)' in final_selection.columns and 'Number of Shares' in final_selection.columns and 'Free Float' in final_selection.columns:
-            final_selection['FFMC'] = final_selection['Price (EUR)'] * final_selection['Number of Shares'] * final_selection['Free Float']
-        elif 'Mcap in EUR' in final_selection.columns and 'Free Float' in final_selection.columns:
-            final_selection['FFMC'] = final_selection['Mcap in EUR'] * final_selection['Free Float']
+        high_impact_count = final_selection['High_Climate_Impact'].sum()
+        high_impact_percentage = (high_impact_count / len(final_selection)) * 100
+        pab_aligned_count = final_selection['PAB_Flag'].sum()
+        
+        # Liquidity Constraints for both EU Taxonomy and Non-EU Taxonomy companies
+        logger.info("Calculating liquidity constraints for all companies...")
+
+        # Portfolio sizes in billions of euros
+        portfolio_size_eu = 2     # €2 billion for EU Taxonomy
+        portfolio_size_non_eu = 1  # €1 billion for Non-EU Taxonomy
+
+        # 1. EU Taxonomy Companies
+        # Calculate market cap based weights for EU Taxonomy companies
+        # Total market cap is already calculated for all companies
+                # Calculate total FFMC for ALL companies (not just Non-EU)
+        total_ffmc = final_selection['Mcap in EUR'].sum()
+        logger.info(f"Total FFMC for all companies: {total_ffmc:.2f}")
+
+
+        # Filter for EU Taxonomy companies
+        eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 1].copy()
+        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['Mcap in EUR'] / total_ffmc
+        logger.info(f"Market cap based weights calculated for EU Taxonomy companies")
+
+        # Calculate liquidity constraints for each EU Taxonomy company
+        eu_taxonomy_selection['Liquidity_Cap'] = eu_taxonomy_selection.apply(
+            lambda row: min(
+                row['WIG'] + (row['VOL_AV_3M'] * 0.30 * 5 / (portfolio_size_eu * 1e9)),
+                0.10  # 10% maximum weight
+            ), 
+            axis=1
+        )
+
+        eu_taxonomy_selection['Liquidity_Floor'] = eu_taxonomy_selection.apply(
+            lambda row: max(
+                row['WIG'] - (row['VOL_AV_3M'] * 0.30 * 5 / (portfolio_size_eu * 1e9)),
+                0  # 0% minimum weight
+            ),
+            axis=1
+        )
+
+        # Log EU Taxonomy liquidity statistics
+        max_cap_eu = eu_taxonomy_selection['Liquidity_Cap'].max() * 100
+        min_cap_eu = eu_taxonomy_selection['Liquidity_Cap'].min() * 100
+        avg_cap_eu = eu_taxonomy_selection['Liquidity_Cap'].mean() * 100
+
+        max_floor_eu = eu_taxonomy_selection['Liquidity_Floor'].max() * 100
+        min_floor_eu = eu_taxonomy_selection['Liquidity_Floor'].min() * 100
+        avg_floor_eu = eu_taxonomy_selection['Liquidity_Floor'].mean() * 100
+
+        logger.info(f"Liquidity caps for EU Taxonomy companies - Max: {max_cap_eu:.4f}%, Min: {min_cap_eu:.4f}%, Avg: {avg_cap_eu:.4f}%")
+        logger.info(f"Liquidity floors for EU Taxonomy companies - Max: {max_floor_eu:.4f}%, Min: {min_floor_eu:.4f}%, Avg: {avg_floor_eu:.4f}%")
+
+        # Check for EU Taxonomy companies with liquidity issues
+        problematic_eu = eu_taxonomy_selection[eu_taxonomy_selection['Liquidity_Floor'] > eu_taxonomy_selection['Liquidity_Cap']]
+        if len(problematic_eu) > 0:
+            logger.warning(f"Found {len(problematic_eu)} EU Taxonomy companies with liquidity issues (floor > cap)")
+            for _, company in problematic_eu.iterrows():
+                logger.warning(f"Liquidity issue for {company['ISIN Code']}: Floor {company['Liquidity_Floor']*100:.4f}% > Cap {company['Liquidity_Cap']*100:.4f}%")
         else:
-            logger.warning("Missing columns for FFMC calculation. Using alternative approach with EOD data.")
-            
-            # Try to merge price data from stock_eod_df
-            if 'Close Prc' in stock_eod_df.columns and 'Isin Code' in stock_eod_df.columns:
-                # Create a price lookup dataframe
-                price_df = stock_eod_df[['Isin Code', 'Close Prc']].drop_duplicates('Isin Code').rename(
-                    columns={'Isin Code': 'ISIN Code', 'Close Prc': 'Price'}
-                )
-                
-                # Merge price data
-                final_selection = final_selection.merge(
-                    price_df,
-                    on='ISIN Code',
-                    how='left'
-                )
-                
-                # Calculate FFMC using the Close Prc
-                if 'Number of Shares' in final_selection.columns and 'Free Float' in final_selection.columns:
-                    final_selection['FFMC'] = final_selection['Price'] * final_selection['Number of Shares'] * final_selection['Free Float']
-                else:
-                    logger.error("Cannot calculate FFMC. Missing required columns.")
-                    final_selection['FFMC'] = np.nan
-            else:
-                logger.error("Cannot calculate FFMC. Missing required columns in stock_eod_df.")
-                final_selection['FFMC'] = np.nan
+            logger.info("No liquidity issues found for EU Taxonomy companies")
+
+        # 2. Non-EU Taxonomy Companies
+        # Filter for Non-EU Taxonomy companies
+        non_eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 0].copy()
+
+        # Calculate WIG based on FFMC proportion for Non-EU Taxonomy companies
+        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['Mcap in EUR'] / total_ffmc
+
+        # Calculate liquidity constraints for each Non-EU Taxonomy company
+        non_eu_taxonomy_selection['Liquidity_Cap'] = non_eu_taxonomy_selection.apply(
+            lambda row: min(
+                row['WIG'] + (row['VOL_AV_3M'] * 0.30 * 2 / (portfolio_size_non_eu * 1e9)),
+                0.10  # 10% maximum weight
+            ), 
+            axis=1
+        )
+
+        non_eu_taxonomy_selection['Liquidity_Floor'] = non_eu_taxonomy_selection.apply(
+            lambda row: max(
+                row['WIG'] - (row['VOL_AV_3M'] * 0.30 * 2 / (portfolio_size_non_eu * 1e9)),
+                0  # 0% minimum weight
+            ),
+            axis=1
+        )
+
+        # Log Non-EU Taxonomy liquidity statistics
+        max_cap_non_eu = non_eu_taxonomy_selection['Liquidity_Cap'].max() * 100
+        min_cap_non_eu = non_eu_taxonomy_selection['Liquidity_Cap'].min() * 100
+        avg_cap_non_eu = non_eu_taxonomy_selection['Liquidity_Cap'].mean() * 100
+
+        max_floor_non_eu = non_eu_taxonomy_selection['Liquidity_Floor'].max() * 100
+        min_floor_non_eu = non_eu_taxonomy_selection['Liquidity_Floor'].min() * 100
+        avg_floor_non_eu = non_eu_taxonomy_selection['Liquidity_Floor'].mean() * 100
+
+        logger.info(f"Liquidity caps for Non-EU Taxonomy companies - Max: {max_cap_non_eu:.4f}%, Min: {min_cap_non_eu:.4f}%, Avg: {avg_cap_non_eu:.4f}%")
+        logger.info(f"Liquidity floors for Non-EU Taxonomy companies - Max: {max_floor_non_eu:.4f}%, Min: {min_floor_non_eu:.4f}%, Avg: {avg_floor_non_eu:.4f}%")
+
+        # Check for Non-EU Taxonomy companies with liquidity issues
+        problematic_non_eu = non_eu_taxonomy_selection[non_eu_taxonomy_selection['Liquidity_Floor'] > non_eu_taxonomy_selection['Liquidity_Cap']]
+        if len(problematic_non_eu) > 0:
+            logger.warning(f"Found {len(problematic_non_eu)} Non-EU Taxonomy companies with liquidity issues (floor > cap)")
+            for _, company in problematic_non_eu.iterrows():
+                logger.warning(f"Liquidity issue for {company['ISIN Code']}: Floor {company['Liquidity_Floor']*100:.4f}% > Cap {company['Liquidity_Cap']*100:.4f}%")
+        else:
+            logger.info("No liquidity issues found for Non-EU Taxonomy companies")
+
+        # 3. Update the final selection dataframe
+        # Create a combined dataframe with updated constraints
+        updated_constraints = pd.concat([
+            eu_taxonomy_selection[['ISIN Code', 'Liquidity_Cap', 'Liquidity_Floor']],
+            non_eu_taxonomy_selection[['ISIN Code', 'Liquidity_Cap', 'Liquidity_Floor']]
+        ])
+
+        # Remove existing constraints columns from final_selection if they exist
+        final_selection = final_selection.drop(columns=['Liquidity_Cap', 'Liquidity_Floor'], errors='ignore')
+
+        # Add the new constraints
+        final_selection = final_selection.merge(
+            updated_constraints[['ISIN Code', 'Liquidity_Cap', 'Liquidity_Floor']], 
+            on='ISIN Code', 
+            how='left'
+        )
+
+        logger.info(f"Liquidity constraints have been calculated for all {len(final_selection)} companies")
+        
         
         # Save final selection to output
         logger.info("Saving output files...")
         output_dir = os.path.join(os.getcwd(), 'output')
         os.makedirs(output_dir, exist_ok=True)
-        
-        # Create filename with timestamp to avoid conflicts
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_path = os.path.join(output_dir, f'LC100_review_{timestamp}.xlsx')
-        
-        # Save results to Excel
+
+        # Save all results to a single Excel file
         with pd.ExcelWriter(output_path) as writer:
-            # Write each DataFrame to a different sheet
+            # Write final selection data
             final_selection.to_excel(writer, sheet_name='Selected Companies', index=False)
             universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
-        
+            
+            # Add the detailed step output sheets
+            step_output.to_excel(writer, sheet_name='Target Calculation', index=False)
+            non_eu_taxonomy_eligible.to_excel(writer, sheet_name='Eligible Companies', index=False)
+            non_eu_taxonomy_selected_initial.to_excel(writer, sheet_name='Initial Selection', index=False)
+            non_eu_taxonomy_selected.to_excel(writer, sheet_name='Final Selection', index=False)
+            if len(removals_df) > 0:
+                removals_df.to_excel(writer, sheet_name='Removal Process', index=False)
+
         logger.info(f"Results saved to {output_path}")
         
         return {

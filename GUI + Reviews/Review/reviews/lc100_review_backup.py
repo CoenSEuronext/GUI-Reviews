@@ -541,142 +541,203 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
 
         logger.info(f"Found {len(non_eu_taxonomy_eligible)} Non-EU Taxonomy eligible companies after exclusions")
 
-        # Target number of companies is 100
-        target_constituents = 100
-        num_eu_taxonomy = len(eu_taxonomy_companies)
-        num_non_eu_taxonomy_target = target_constituents - num_eu_taxonomy
 
-        logger.info(f"Target number of constituents: {target_constituents}")
-        logger.info(f"Number of EU Taxonomy companies: {num_eu_taxonomy}")
-        logger.info(f"Target number of Non-EU Taxonomy companies: {num_non_eu_taxonomy_target}")
-
-        # Step 4a: Determine the target number of Non-EU Taxonomy companies within each ICB super-sector
-        # Use existing 'Supersector Code' column as 'Supersector' for sector allocation
-        if 'Supersector' not in non_eu_taxonomy_eligible.columns:
-            # Simply rename the existing 'Supersector Code' column to 'Supersector'
-            non_eu_taxonomy_eligible = non_eu_taxonomy_eligible.rename(columns={'Supersector Code': 'Supersector'})
-
-        # Calculate target number of companies per super-sector
-        if 'Supersector' in non_eu_taxonomy_eligible.columns:
-            # Count companies per super-sector
-            sector_counts = non_eu_taxonomy_eligible.groupby('Supersector').size().reset_index(name='Count')
-            total_eligible = len(non_eu_taxonomy_eligible)
-            
-            # Calculate target number per sector (proportional, rounded up)
-            sector_counts['Target'] = np.ceil((sector_counts['Count'] / total_eligible) * num_non_eu_taxonomy_target).astype(int)
-            logger.info(f"Super-sector allocation: \n{sector_counts[['Supersector', 'Count', 'Target']]}")
-            
-            # Step 4b: Select Non-EU Taxonomy companies
-            selected_non_eu_companies = []
-            
-            # Select companies within each super-sector based on climate score
-            for sector, target in zip(sector_counts['Supersector'], sector_counts['Target']):
-                sector_companies = non_eu_taxonomy_eligible[non_eu_taxonomy_eligible['Supersector'] == sector].copy()
-                
-                # Sort by climate score (lowest/best first)
-                sector_companies = sector_companies.sort_values('climate_score')
-                
-                # Select the n best companies
-                selected_sector_companies = sector_companies.head(target)
-                selected_non_eu_companies.append(selected_sector_companies)
-            
-            # Combine all selected companies
-            non_eu_taxonomy_selected = pd.concat(selected_non_eu_companies)
-            
-            # Due to rounding up, we might have more companies than needed
-            total_selected = len(non_eu_taxonomy_selected)
-            excess_count = total_selected - num_non_eu_taxonomy_target
-            
-            if excess_count > 0:
-                logger.info(f"Selected {total_selected} companies, need to remove {excess_count}")
-                
-                # Remove companies with worst climate scores, ensuring at least 2 per super-sector
-                # First, count companies per super-sector in the selection
-                sector_selected_counts = non_eu_taxonomy_selected.groupby('Supersector').size().reset_index(name='SelectedCount')
-                
-                # Identify sectors with more than 2 companies
-                sectors_with_extra = sector_selected_counts[sector_selected_counts['SelectedCount'] > 2]['Supersector'].tolist()
-                
-                # Sort companies by climate score (highest/worst first)
-                non_eu_taxonomy_selected = non_eu_taxonomy_selected.sort_values('climate_score', ascending=False)
-                
-                # Remove excess companies one by one, ensuring at least 2 per sector
-                removed = 0
-                removed_sectors = set()
-                
-                # Create copy to avoid modification during iteration
-                to_remove = []
-                
-                for idx, row in non_eu_taxonomy_selected.iterrows():
-                    sector = row['Supersector']
-                    
-                    # Skip if we've already removed from this sector
-                    if sector in removed_sectors:
-                        continue
-                    
-                    # Skip if sector has only 2 companies
-                    if sector not in sectors_with_extra:
-                        continue
-                    
-                    # Check if removing would result in fewer than 2 companies in the sector
-                    sector_count = non_eu_taxonomy_selected[non_eu_taxonomy_selected['Supersector'] == sector].shape[0]
-                    if sector_count <= 2:
-                        continue
-                    
-                    # Mark for removal
-                    to_remove.append(idx)
-                    removed_sectors.add(sector)
-                    removed += 1
-                    
-                    # Exit if we've removed enough
-                    if removed == excess_count:
-                        break
-                
-                # If we haven't removed enough yet, continue with the worst climate scores
-                # but don't remove more than one per sector
-                if removed < excess_count:
-                    remaining_to_remove = excess_count - removed
-                    logger.warning(f"Still need to remove {remaining_to_remove} companies. Continuing with worst climate scores.")
-                    
-                    # Reset for the second pass
-                    removed_sectors = set()
-                    
-                    for idx, row in non_eu_taxonomy_selected.iterrows():
-                        if idx in to_remove:
-                            continue  # Skip already marked for removal
-                            
-                        sector = row['Supersector']
-                        
-                        # Skip if we've already removed from this sector
-                        if sector in removed_sectors:
-                            continue
-                        
-                        # Check if removing would result in fewer than 2 companies in the sector
-                        sector_count = non_eu_taxonomy_selected[non_eu_taxonomy_selected['Supersector'] == sector].shape[0]
-                        if sector_count <= 2:
-                            continue
-                        
-                        # Mark for removal
-                        to_remove.append(idx)
-                        removed_sectors.add(sector)
-                        removed += 1
-                        
-                        # Exit if we've removed enough
-                        if removed == excess_count:
-                            break
-                
-                # Remove marked companies
-                non_eu_taxonomy_selected = non_eu_taxonomy_selected.drop(to_remove)
-                logger.info(f"Removed {len(to_remove)} companies, new total: {len(non_eu_taxonomy_selected)}")
-            
-            # Final check on the number of selected companies
-            if len(non_eu_taxonomy_selected) != num_non_eu_taxonomy_target:
-                logger.warning(f"Selected {len(non_eu_taxonomy_selected)} Non-EU Taxonomy companies, target was {num_non_eu_taxonomy_target}")
-        else:
-            # If no Supersector data, just select top companies by climate score
-            logger.warning("No Supersector data available. Selecting top companies by climate score only.")
-            non_eu_taxonomy_selected = non_eu_taxonomy_eligible.sort_values('climate_score').head(num_non_eu_taxonomy_target)
         
+
+        # STEP 4a: Determination of the target number of Non-EU Taxonomy companies within each ICB super-sector
+        logger.info("STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...")
+
+        # Define target number of index constituents
+        target_constituents = 100  # As mentioned in the prompt
+
+        # Calculate target number of Non-EU Taxonomy companies
+        target_non_eu_taxonomy = target_constituents - len(eu_taxonomy_companies)
+        logger.info(f"Target number of Non-EU Taxonomy companies: {target_non_eu_taxonomy}")
+
+        # Create a DataFrame to track the super-sector distribution
+        # Get counts of eligible companies by Supersector
+        supersector_counts = non_eu_taxonomy_eligible.groupby('Supersector Code').size().reset_index(name='Eligible_Count')
+        supersector_counts = supersector_counts.sort_values('Supersector Code')
+
+        # Get the total number of eligible companies
+        total_eligible = non_eu_taxonomy_eligible['ISIN Code'].nunique()
+        logger.info(f"Total eligible Non-EU Taxonomy companies: {total_eligible}")
+
+        # Calculate the proportional target for each super-sector and round up
+        supersector_counts['Target_Raw'] = supersector_counts['Eligible_Count'] / total_eligible * target_non_eu_taxonomy
+        # Make sure to convert to integer type properly
+        supersector_counts['Target_Rounded'] = np.ceil(supersector_counts['Target_Raw']).astype('int64')
+
+        # Calculate the total after rounding
+        total_rounded = supersector_counts['Target_Rounded'].sum()
+        logger.info(f"Total target after rounding: {total_rounded} (vs. target of {target_non_eu_taxonomy})")
+
+        # Check if we need to reduce the number of companies
+        excess = total_rounded - target_non_eu_taxonomy
+        if excess > 0:
+            logger.info(f"Need to remove {excess} companies due to rounding up")
+
+        # Create a detailed output DataFrame for the step-by-step process
+        step_output = pd.DataFrame()
+        step_output['ICB_Supersector_Code'] = supersector_counts['Supersector Code']
+        step_output['Eligible_Count'] = supersector_counts['Eligible_Count']
+        step_output['Proportion'] = supersector_counts['Eligible_Count'] / total_eligible
+        step_output['Raw_Target'] = supersector_counts['Target_Raw']
+        step_output['Rounded_Target'] = supersector_counts['Target_Rounded']
+
+        # STEP 4b: Selection of Non-EU Taxonomy companies
+        logger.info("STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...")
+
+        # Create a dictionary to store selected companies from each super-sector
+        supersector_selections = {}
+
+        # Select the best companies from each super-sector based on climate score
+        for _, row in supersector_counts.iterrows():
+            supersector_code = row['Supersector Code']
+            target_count = int(row['Target_Rounded'])  # Explicitly cast to int
+            
+            # Get companies in this super-sector
+            supersector_companies = non_eu_taxonomy_eligible[
+                non_eu_taxonomy_eligible['Supersector Code'] == supersector_code
+            ].copy()
+            
+            # Sort by climate score (lowest/best first)
+            supersector_companies = supersector_companies.sort_values('climate_score')
+            
+            # Select the top N companies (using int)
+            selected = supersector_companies.head(target_count)
+            
+            # Store in dictionary
+            supersector_selections[supersector_code] = selected
+            
+            logger.info(f"Selected {len(selected)} companies from super-sector {supersector_code}")
+
+        # Combine all selected companies
+        non_eu_taxonomy_selected_initial = pd.concat(supersector_selections.values())
+
+        # Update step output with initial selection counts
+        supersector_initial_selections = non_eu_taxonomy_selected_initial.groupby('Supersector Code').size().reset_index(name='Initial_Selected')
+        step_output = step_output.merge(
+            supersector_initial_selections, 
+            left_on='ICB_Supersector_Code', 
+            right_on='Supersector Code', 
+            how='left'
+        ).drop('Supersector Code', axis=1)
+        step_output['Initial_Selected'] = step_output['Initial_Selected'].fillna(0).astype(int)
+
+        # Fix if we have too many companies due to rounding up
+        if len(non_eu_taxonomy_selected_initial) > target_non_eu_taxonomy:
+            logger.info(f"Initial selection has {len(non_eu_taxonomy_selected_initial)} companies, need to remove {len(non_eu_taxonomy_selected_initial) - target_non_eu_taxonomy}")
+            
+            # Create a DataFrame to track removals
+            removals_tracking = pd.DataFrame()
+            
+            # Continue removing companies until we reach the target
+            non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
+            
+            # Keep track of how many companies we've removed from each super-sector
+            removed_counts = {code: 0 for code in supersector_counts['Supersector Code']}
+            
+            # Identify supersectors with more than 2 companies (eligible for removal)
+            removal_iterations = []
+            
+            while len(non_eu_taxonomy_selected) > target_non_eu_taxonomy:
+                # Get current counts per supersector
+                current_supersector_counts = non_eu_taxonomy_selected.groupby('Supersector Code').size().to_dict()
+                
+                # Create a list of supersectors eligible for removal (more than 2 companies)
+                eligible_supersectors = [code for code, count in current_supersector_counts.items() if count > 2]
+                
+                if not eligible_supersectors:
+                    logger.warning("Cannot remove more companies while maintaining minimum 2 per supersector. Keeping extra companies.")
+                    break
+                
+                # For each eligible supersector, find the company with the worst climate score
+                candidates_for_removal = []
+                
+                for supersector in eligible_supersectors:
+                    # Get companies in this supersector
+                    supersector_companies = non_eu_taxonomy_selected[non_eu_taxonomy_selected['Supersector Code'] == supersector]
+                    
+                    # Sort by climate score (highest/worst first)
+                    supersector_companies = supersector_companies.sort_values('climate_score', ascending=False)
+                    
+                    # Get the worst company
+                    worst_company = supersector_companies.iloc[0]
+                    
+                    # Add to candidates
+                    candidates_for_removal.append(worst_company)
+                
+                # Sort candidates by climate score (worst first)
+                candidates_df = pd.DataFrame(candidates_for_removal)
+                candidates_df = candidates_df.sort_values('climate_score', ascending=False)
+                
+                # In case of equal climate score, sort by Free Float Market Cap (lower first)
+                if 'FFMC' in candidates_df.columns:
+                    candidates_with_same_score = candidates_df.duplicated('climate_score', keep=False)
+                    if candidates_with_same_score.any():
+                        # Sort those with duplicate scores by FFMC
+                        for score_group in candidates_df.loc[candidates_with_same_score, 'climate_score'].unique():
+                            score_mask = candidates_df['climate_score'] == score_group
+                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC')
+                
+                # Get the worst company overall
+                company_to_remove = candidates_df.iloc[0]
+                supersector_to_remove_from = company_to_remove['Supersector Code']
+                
+                # Remove the company
+                non_eu_taxonomy_selected = non_eu_taxonomy_selected[
+                    non_eu_taxonomy_selected['ISIN Code'] != company_to_remove['ISIN Code']
+                ]
+                
+                # Update removal count
+                removed_counts[supersector_to_remove_from] += 1
+                
+                # Track this removal iteration
+                removal_info = {
+                    'Iteration': len(removal_iterations) + 1,
+                    'Removed_ISIN': company_to_remove['ISIN Code'],
+                    'Removed_Company': company_to_remove['Company'] if 'Company' in company_to_remove else 'Unknown',
+                    'Supersector_Code': supersector_to_remove_from,
+                    'Climate_Score': company_to_remove['climate_score'],
+                    'FFMC': company_to_remove['FFMC'] if 'FFMC' in company_to_remove else None,
+                    'Remaining_Count': len(non_eu_taxonomy_selected)
+                }
+                removal_iterations.append(removal_info)
+                
+                logger.info(f"Removed company {company_to_remove['ISIN Code']} from supersector {supersector_to_remove_from} (Climate Score: {company_to_remove['climate_score']})")
+            
+            # Create a DataFrame of removal iterations
+            removals_df = pd.DataFrame(removal_iterations)
+            
+            # Update step output with final selection counts
+            supersector_final_selections = non_eu_taxonomy_selected.groupby('Supersector Code').size().reset_index(name='Final_Selected')
+            step_output = step_output.merge(
+                supersector_final_selections, 
+                left_on='ICB_Supersector_Code', 
+                right_on='Supersector Code', 
+                how='left'
+            ).drop('Supersector Code', axis=1)
+            step_output['Final_Selected'] = step_output['Final_Selected'].fillna(0).astype(int)
+            step_output['Companies_Removed'] = step_output['Initial_Selected'] - step_output['Final_Selected']
+        else:
+            # If we don't need to remove any companies
+            non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
+            step_output['Final_Selected'] = step_output['Initial_Selected']
+            step_output['Companies_Removed'] = 0
+            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC', 'Remaining_Count'])
+
+        logger.info(f"Final Non-EU Taxonomy selection has {len(non_eu_taxonomy_selected)} companies")
+
+        # Verify that we have at least 2 companies per supersector
+        final_supersector_counts = non_eu_taxonomy_selected.groupby('Supersector Code').size()
+        min_companies_per_supersector = final_supersector_counts.min()
+        logger.info(f"Minimum companies per supersector: {min_companies_per_supersector}")
+
+        if min_companies_per_supersector < 2:
+            logger.warning(f"Some supersectors have fewer than 2 companies! Minimum is {min_companies_per_supersector}")
+
+       
         # Combine EU Taxonomy and Non-EU Taxonomy selected companies for final selection
         final_selection = pd.concat([eu_taxonomy_companies, non_eu_taxonomy_selected])
         
@@ -744,21 +805,23 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         logger.info("Saving output files...")
         output_dir = os.path.join(os.getcwd(), 'output')
         os.makedirs(output_dir, exist_ok=True)
-        
-        # Create filename with timestamp to avoid conflicts
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_path = os.path.join(output_dir, f'LC100_review_{timestamp}.xlsx')
-        
-        # Save results to Excel
+
+        # Save all results to a single Excel file
         with pd.ExcelWriter(output_path) as writer:
-            # Write each DataFrame to a different sheet
+            # Write final selection data
             final_selection.to_excel(writer, sheet_name='Selected Companies', index=False)
             universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
-            # If we have super-sector data, save that as well
-            if 'sector_counts' in locals():
-                sector_counts.to_excel(writer, sheet_name='Sector Allocation', index=False)
-        
+            # Add the detailed step output sheets
+            step_output.to_excel(writer, sheet_name='Target Calculation', index=False)
+            non_eu_taxonomy_eligible.to_excel(writer, sheet_name='Eligible Companies', index=False)
+            non_eu_taxonomy_selected_initial.to_excel(writer, sheet_name='Initial Selection', index=False)
+            non_eu_taxonomy_selected.to_excel(writer, sheet_name='Final Selection', index=False)
+            if len(removals_df) > 0:
+                removals_df.to_excel(writer, sheet_name='Removal Process', index=False)
+
         logger.info(f"Results saved to {output_path}")
         
         return {
