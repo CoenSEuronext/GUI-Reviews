@@ -1,0 +1,61 @@
+2025-04-10 17:12:58,970 - werkzeug - WARNING -  * Debugger is active!
+2025-04-10 17:12:58,973 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-10 17:12:59,977 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-04-10 17:13:03,621 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-04-10 17:13:13,137 - Review.reviews.lc100_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-10 17:13:13,139 - Review.reviews.lc100_review - INFO - Filtering universe for EU500 companies...
+2025-04-10 17:13:13,140 - Review.reviews.lc100_review - INFO - Universe size after EU500 filter: 499
+2025-04-10 17:13:13,147 - Review.reviews.lc100_review - INFO - Adding Free Float data...
+2025-04-10 17:13:13,151 - Review.reviews.lc100_review - INFO - Adding ICB Subsector data...
+2025-04-10 17:13:13,164 - Review.reviews.lc100_review - WARNING - Removed 9316 duplicate rows from ICB data
+2025-04-10 17:13:13,246 - Review.reviews.lc100_review - INFO - Debug file saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\debug\universe_df_after_nace_20250410_171313.xlsx
+2025-04-10 17:13:13,247 - Review.reviews.lc100_review - INFO - Adding CDP Climate data...
+2025-04-10 17:13:13,251 - Review.reviews.lc100_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-10 17:13:13,252 - Review.reviews.lc100_review - WARNING - Column 'Social Rating Numeric' not found in Oekom data. Skipping this column.
+2025-04-10 17:13:13,252 - Review.reviews.lc100_review - WARNING - Column 'Governance Rating Numeric' not found in Oekom data. Skipping this column.
+2025-04-10 17:13:13,254 - Review.reviews.lc100_review - INFO - Adding NACE data...
+2025-04-10 17:13:13,256 - Review.reviews.lc100_review - INFO - Adding EU Taxonomy flag...
+2025-04-10 17:13:13,257 - Review.reviews.lc100_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-10 17:13:13,258 - Review.reviews.lc100_review - INFO - Applying exclusion criteria...
+2025-04-10 17:13:13,281 - Review.reviews.lc100_review - INFO - Calculating Climate Score for ranking...
+2025-04-10 17:13:13,283 - Review.reviews.lc100_review - INFO - Selecting EU Taxonomy companies...
+2025-04-10 17:13:13,284 - Review.reviews.lc100_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-04-10 17:13:13,285 - Review.reviews.lc100_review - INFO - Found 347 Non-EU Taxonomy eligible companies after exclusions
+2025-04-10 17:13:13,285 - Review.reviews.lc100_review - INFO - Target number of constituents: 100
+2025-04-10 17:13:13,286 - Review.reviews.lc100_review - INFO - Number of EU Taxonomy companies: 14
+2025-04-10 17:13:13,286 - Review.reviews.lc100_review - INFO - Target number of Non-EU Taxonomy companies: 86
+2025-04-10 17:13:13,304 - Review.reviews.lc100_review - INFO - Super-sector allocation: 
+    Supersector  Count  Target
+0        1010.0     19       5
+1        1510.0     18       5
+2        2010.0     43      11
+3        3010.0     45      12
+4        3020.0     31       8
+5        3030.0     30       8
+6        3510.0     20       5
+7        4010.0      8       2
+8        4020.0     21       6
+9        4030.0      9       3
+10       4040.0      8       2
+11       4050.0     12       3
+12       4510.0     21       6
+13       4520.0      8       2
+14       5010.0      6       2
+15       5020.0     36       9
+16       5510.0      4       1
+17       5520.0      7       2
+18       6510.0      1       1
+2025-04-10 17:13:13,315 - Review.reviews.lc100_review - INFO - Selected 93 companies, need to remove 7
+2025-04-10 17:13:13,318 - Review.reviews.lc100_review - INFO - Removed 7 companies, new total: 86
+2025-04-10 17:13:13,320 - Review.reviews.lc100_review - INFO - Final selection contains 100 companies
+2025-04-10 17:13:13,320 - Review.reviews.lc100_review - INFO - - EU Taxonomy: 14
+2025-04-10 17:13:13,320 - Review.reviews.lc100_review - INFO - - Non-EU Taxonomy: 86
+2025-04-10 17:13:13,321 - Review.reviews.lc100_review - INFO - Initial weight allocations:
+2025-04-10 17:13:13,321 - Review.reviews.lc100_review - INFO - - EU Taxonomy pocket: 10.00%
+2025-04-10 17:13:13,321 - Review.reviews.lc100_review - INFO - - Non-EU Taxonomy pocket: 90.00%
+2025-04-10 17:13:13,322 - Review.reviews.lc100_review - INFO - Saving output files...
+2025-04-10 17:13:13,581 - Review.reviews.lc100_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC100_review_20250410_171313.xlsx
+2025-04-10 17:13:13,611 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 17:13:13] "POST /calculate HTTP/1.1" 200 -
+2025-04-10 17:30:08,038 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading
+2025-04-10 17:30:08,044 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading
+2025-04-10 17:30:08,045 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading

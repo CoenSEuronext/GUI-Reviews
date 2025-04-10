@@ -129,7 +129,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
 
         # Now merge the deduplicated ICB data with universe_df
         universe_df = universe_df.merge(
-            icb_df[['ISIN Code', 'Subsector Code']],
+            icb_df[['ISIN Code', 'Subsector Code', 'Supersector Code']],
             on='ISIN Code',
             how='left'
         )
@@ -166,13 +166,13 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             'coal_mining_and_power_gen_maximum_percentage_of_revenues-values',
             'Fossil Fuel - Total Maximum Percentage of Revenues (%)',
             'power_generation_thermal_maximum_percentage_of_revenues-values',
-            'shale_oil_and_or_gas_involvement_tie', 'arctic_drilling_involvement',
+            'shale_oil_and_or_gas_involvement_tie', 'arctic_drilling_share_max-values',
             'deepwater_drilling_involvement', 'HydraulicFracturingInvolvement',
             'CoalMiningExpInvolved', 'OilGasExtractExpInvolved',
             'OtherFFInfraInvolved', 'NuclearPowerInvolvement',
             'NuclearPowerRevShareMax-values', 'NuclearPowerUraniumRevShareMax-values',
             'CivFAProdServMaxRev-values', 'MilitaryEqmtDistMaxRev-values',
-            'Social Rating Numeric', 'Governance Rating Numeric'
+            'Social Rating (Num)', 'Governance Rating (Num)'
         ]
         
         # Check which columns exist in the dataset
@@ -243,15 +243,17 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         universe_df['exclude_non_fiscal_coop'] = np.where(universe_df['Non_Fiscally_Cooperative'] == 1, 'exclude_non_fiscal_coop', None)
         
         # 2. ICB Subsector exclusions
-        excluded_subsectors = ['45103010', '50201010', '50201020', '60101030']  # Tobacco, Defense, Aerospace, Oil Equipment & Services
-        
-        # Create a safer way to handle the exclusion
-        def create_subsector_exclusion(row):
-            if pd.notna(row['Subsector Code']) and row['Subsector Code'] in excluded_subsectors:
-                return f"exclude_subsector_{row['Subsector Code']}"
-            return None
-        
-        universe_df['exclude_subsector'] = universe_df.apply(create_subsector_exclusion, axis=1)
+        excluded_subsectors = [45103010, 50201010, 50201020, 60101030]  # Tobacco, Defense, Aerospace, Oil Equipment & Services
+
+        # First make sure Subsector Code is numeric
+        universe_df['Subsector Code'] = pd.to_numeric(universe_df['Subsector Code'], errors='coerce')
+
+        # Simple and direct exclusion using isin
+        universe_df['exclude_subsector'] = np.where(
+            universe_df['Subsector Code'].isin(excluded_subsectors),
+            universe_df['Subsector Code'].apply(lambda x: f"exclude_subsector_{x}"),
+            None
+        )
         
         # 3. Breaches of international standards
         if 'NBR Overall Flag' in universe_df.columns:
@@ -277,7 +279,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         tobacco_dist_col = 'Tobacco - Distribution Maximum Percentage of Revenues (%)'
         if tobacco_dist_col in universe_df.columns:
             universe_df['exclude_tobacco_dist'] = np.where(
-                pd.to_numeric(universe_df[tobacco_dist_col], errors='coerce') > 5,
+                pd.to_numeric(universe_df[tobacco_dist_col], errors='coerce') > 0.05,
                 'exclude_tobacco_distribution',
                 None
             )
@@ -325,7 +327,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         # 7. Unconventional Oil & Gas exclusions
         oil_gas_criteria = {
             'shale_oil_and_or_gas_involvement_tie': ('exclude_shale_oil_gas', ['Production', 'Services']),
-            'arctic_drilling_involvement': ('exclude_arctic_drilling', ['T']),
+            'arctic_drilling_share_max-values': ('exclude_arctic_drilling', ['T']),
             'deepwater_drilling_involvement': ('exclude_deepwater_drilling', ['T']),
             'HydraulicFracturingInvolvement': ('exclude_hydraulic_fracturing', ['Production', 'Services']),
             'CoalMiningExpInvolved': ('exclude_coal_mining_expansion', ['T']),
@@ -346,7 +348,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         # 8. Nuclear exclusions
         nuclear_criteria = {
             'Nuclear Power - Involvement Tie': ('exclude_nuclear_power', ['Production', 'Services']),
-            'Nuclear Power - Total Maximum Percentage of Revenues': ('exclude_nuclear_power_revenue', 5),  # >= 5%
+            'Nuclear Power - Total Maximum Percentage of Revenues': ('exclude_nuclear_power_revenue', 0.05), 
             'Nuclear Power - Uranium Mining Max Percentage of Revenues (%)': ('exclude_nuclear_uranium', 0)  # > 0%
         }
         
@@ -408,33 +410,69 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
                     logger.warning(f"Column '{column}' not found. Cannot apply this exclusion criterion.")
         
         # 9. Civilian firearms and Military exclusions
-        firearm_criteria = {
-            'Civilian Firearms - Revenue Share Max (%)': ('exclude_civilian_firearms', 5),
-            'Military Equipment and Services - Dist Revenue Share Max (%)': ('exclude_military_equipment', 5)
-        }
+        # Define criteria in a standard format
+        if 'CivFAProdServMaxRev-values' in universe_df.columns:
+            universe_df['exclude_civilian_firearms'] = np.where(
+                pd.to_numeric(universe_df['CivFAProdServMaxRev-values'], errors='coerce') >= 0.05,
+                'exclude_civilian_firearms',
+                None
+            )
+        else:
+            logger.warning("Column 'CivFAProdServMaxRev-values' not found. Cannot apply civilian firearms exclusion.")
+
+        if 'MilitaryEqmtDistMaxRev-values' in universe_df.columns:
+            universe_df['exclude_military_equipment'] = np.where(
+                pd.to_numeric(universe_df['MilitaryEqmtDistMaxRev-values'], errors='coerce') >= 0.05,
+                'exclude_military_equipment', 
+                None
+            )
+        else:
+            logger.warning("Column 'MilitaryEqmtDistMaxRev-values' not found. Cannot apply military equipment exclusion.")
         
-        for column, (exclude_value, threshold) in firearm_criteria.items():
-            if column in universe_df.columns:
-                universe_df[exclude_value] = np.where(
-                    pd.to_numeric(universe_df[column], errors='coerce') >= threshold,
-                    exclude_value,
-                    None
+        # 10. Social and Governance Score exclusions (bottom 10%)
+        if 'Social Rating (Num)' in universe_df.columns and 'Governance Rating (Num)' in universe_df.columns:
+            # Calculate average of Social and Governance scores
+            universe_df['SG_Score'] = (
+                pd.to_numeric(universe_df['Social Rating (Num)'], errors='coerce') +
+                pd.to_numeric(universe_df['Governance Rating (Num)'], errors='coerce')
+            ) / 2
+            
+            # Find the threshold for the bottom 10%
+            bottom_10_threshold = universe_df['SG_Score'].quantile(0.1)
+            
+            # Mark companies in the bottom 10% for exclusion
+            bottom_10_percent = universe_df[universe_df['SG_Score'] <= bottom_10_threshold].copy()
+            
+            # In case of ties at the threshold, keep companies with higher Social score
+            if len(bottom_10_percent) > len(universe_df) * 0.1:
+                # For companies at the threshold, sort by Social score and keep the better ones
+                threshold_companies = bottom_10_percent[bottom_10_percent['SG_Score'] == bottom_10_threshold]
+                threshold_companies = threshold_companies.sort_values('Social Rating (Num)', ascending=False)
+                
+                # Calculate how many to keep
+                total_to_exclude = int(len(universe_df) * 0.1)
+                below_threshold_count = len(bottom_10_percent[bottom_10_percent['SG_Score'] < bottom_10_threshold])
+                threshold_to_exclude = total_to_exclude - below_threshold_count
+                
+                # Get ISINs to exclude
+                threshold_to_exclude_isins = threshold_companies.iloc[:threshold_to_exclude]['ISIN Code'].tolist()
+                all_to_exclude_isins = (
+                    bottom_10_percent[bottom_10_percent['SG_Score'] < bottom_10_threshold]['ISIN Code'].tolist() +
+                    threshold_to_exclude_isins
                 )
             else:
-                alt_column = None
-                if column == 'Civilian Firearms - Revenue Share Max (%)':
-                    alt_column = 'CivFAProdServMaxRev-values'
-                elif column == 'Military Equipment and Services - Dist Revenue Share Max (%)':
-                    alt_column = 'MilitaryEqmtDistMaxRev-values'
-                
-                if alt_column and alt_column in universe_df.columns:
-                    universe_df[exclude_value] = np.where(
-                        pd.to_numeric(universe_df[alt_column], errors='coerce') >= threshold,
-                        exclude_value,
-                        None
-                    )
-                else:
-                    logger.warning(f"Column '{column}' not found. Cannot apply this exclusion criterion.")
+                all_to_exclude_isins = bottom_10_percent['ISIN Code'].tolist()
+            
+            # Add exclusion flag
+            universe_df['exclude_sg_bottom_10'] = np.where(
+                universe_df['ISIN Code'].isin(all_to_exclude_isins),
+                'exclude_sg_bottom_10',
+                None
+            )
+            
+            logger.info(f"Marked {len(all_to_exclude_isins)} companies (10%) with worst SG scores for exclusion")
+        else:
+            logger.warning("Social Rating and/or Governance Rating columns not found. Cannot apply SG exclusion criterion.")
         
         # 10. Create a general exclusion flag based on all exclusion columns
         # Get all exclusion columns
@@ -500,189 +538,222 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             (universe_df['EU_Taxonomy'] == 0) & 
             (universe_df['Excluded'] == 'No')
         ].copy()
-        
+
         logger.info(f"Found {len(non_eu_taxonomy_eligible)} Non-EU Taxonomy eligible companies after exclusions")
+
+
         
-        # Check for Social and Governance score to exclude worst 10%
-        if 'Social Rating Numeric' in non_eu_taxonomy_eligible.columns and 'Governance Rating Numeric' in non_eu_taxonomy_eligible.columns:
-            # Calculate average of Social and Governance scores
-            non_eu_taxonomy_eligible['SG_Score'] = (
-                pd.to_numeric(non_eu_taxonomy_eligible['Social Rating Numeric'], errors='coerce') +
-                pd.to_numeric(non_eu_taxonomy_eligible['Governance Rating Numeric'], errors='coerce')
-            ) / 2
+
+        # STEP 4a: Determination of the target number of Non-EU Taxonomy companies within each ICB super-sector
+        logger.info("STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...")
+
+        # Define target number of index constituents
+        target_constituents = 100  # As mentioned in the prompt
+
+        # Calculate target number of Non-EU Taxonomy companies
+        target_non_eu_taxonomy = target_constituents - len(eu_taxonomy_companies)
+        logger.info(f"Target number of Non-EU Taxonomy companies: {target_non_eu_taxonomy}")
+
+        # Create a DataFrame to track the super-sector distribution
+        # Get counts of eligible companies by Supersector
+        supersector_counts = non_eu_taxonomy_eligible.groupby('Supersector Code').size().reset_index(name='Eligible_Count')
+        supersector_counts = supersector_counts.sort_values('Supersector Code')
+
+        # Get the total number of eligible companies
+        total_eligible = non_eu_taxonomy_eligible['ISIN Code'].nunique()
+        logger.info(f"Total eligible Non-EU Taxonomy companies: {total_eligible}")
+
+        # Calculate the proportional target for each super-sector and round up
+        supersector_counts['Target_Raw'] = supersector_counts['Eligible_Count'] / total_eligible * target_non_eu_taxonomy
+        # Make sure to convert to integer type properly
+        supersector_counts['Target_Rounded'] = np.ceil(supersector_counts['Target_Raw']).astype('int64')
+
+        # Calculate the total after rounding
+        total_rounded = supersector_counts['Target_Rounded'].sum()
+        logger.info(f"Total target after rounding: {total_rounded} (vs. target of {target_non_eu_taxonomy})")
+
+        # Check if we need to reduce the number of companies
+        excess = total_rounded - target_non_eu_taxonomy
+        if excess > 0:
+            logger.info(f"Need to remove {excess} companies due to rounding up")
+
+        # Create a detailed output DataFrame for the step-by-step process
+        step_output = pd.DataFrame()
+        step_output['ICB_Supersector_Code'] = supersector_counts['Supersector Code']
+        step_output['Eligible_Count'] = supersector_counts['Eligible_Count']
+        step_output['Proportion'] = supersector_counts['Eligible_Count'] / total_eligible
+        step_output['Raw_Target'] = supersector_counts['Target_Raw']
+        step_output['Rounded_Target'] = supersector_counts['Target_Rounded']
+
+        # STEP 4b: Selection of Non-EU Taxonomy companies
+        logger.info("STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...")
+
+        # Create a dictionary to store selected companies from each super-sector
+        supersector_selections = {}
+
+        # Select the best companies from each super-sector based on climate score
+        for _, row in supersector_counts.iterrows():
+            supersector_code = row['Supersector Code']
+            target_count = int(row['Target_Rounded'])  # Explicitly cast to int
             
-            # Find the threshold for the bottom 10%
-            bottom_10_threshold = non_eu_taxonomy_eligible['SG_Score'].quantile(0.1)
+            # Get companies in this super-sector
+            supersector_companies = non_eu_taxonomy_eligible[
+                non_eu_taxonomy_eligible['Supersector Code'] == supersector_code
+            ].copy()
             
-            # Mark companies in the bottom 10% for exclusion
-            bottom_10_percent = non_eu_taxonomy_eligible[non_eu_taxonomy_eligible['SG_Score'] <= bottom_10_threshold].copy()
+            # Sort by climate score (lowest/best first)
+            supersector_companies = supersector_companies.sort_values('climate_score')
             
-            # In case of ties at the threshold, keep companies with higher Social score
-            if len(bottom_10_percent) > len(non_eu_taxonomy_eligible) * 0.1:
-                # For companies at the threshold, sort by Social score and keep the better ones
-                threshold_companies = bottom_10_percent[bottom_10_percent['SG_Score'] == bottom_10_threshold]
-                threshold_companies = threshold_companies.sort_values('Social Rating Numeric', ascending=False)
-                
-                # Calculate how many to keep
-                total_to_exclude = int(len(non_eu_taxonomy_eligible) * 0.1)
-                below_threshold_count = len(bottom_10_percent[bottom_10_percent['SG_Score'] < bottom_10_threshold])
-                threshold_to_exclude = total_to_exclude - below_threshold_count
-                
-                # Get ISINs to exclude
-                threshold_to_exclude_isins = threshold_companies.iloc[:threshold_to_exclude]['ISIN Code'].tolist()
-                all_to_exclude_isins = (
-                    bottom_10_percent[bottom_10_percent['SG_Score'] < bottom_10_threshold]['ISIN Code'].tolist() +
-                    threshold_to_exclude_isins
-                )
-            else:
-                all_to_exclude_isins = bottom_10_percent['ISIN Code'].tolist()
+            # Select the top N companies (using int)
+            selected = supersector_companies.head(target_count)
             
-            # Filter out the worst 10% from eligible non-EU Taxonomy companies
-            non_eu_taxonomy_eligible = non_eu_taxonomy_eligible[~non_eu_taxonomy_eligible['ISIN Code'].isin(all_to_exclude_isins)]
-            logger.info(f"Excluded {len(all_to_exclude_isins)} companies (10%) with worst SG scores")
-        
-        # Target number of companies is 100
-        target_constituents = 100
-        num_eu_taxonomy = len(eu_taxonomy_companies)
-        num_non_eu_taxonomy_target = target_constituents - num_eu_taxonomy
-        
-        logger.info(f"Target number of constituents: {target_constituents}")
-        logger.info(f"Number of EU Taxonomy companies: {num_eu_taxonomy}")
-        logger.info(f"Target number of Non-EU Taxonomy companies: {num_non_eu_taxonomy_target}")
-        
-        # Step 4a: Determine the target number of Non-EU Taxonomy companies within each ICB super-sector
-        # Get ICB Supersector for each company
-        if 'Supersector' not in non_eu_taxonomy_eligible.columns:
-            if 'Supersector Code' in icb_df.columns:
-                # Merge Supersector data if available
-                non_eu_taxonomy_eligible = non_eu_taxonomy_eligible.merge(
-                    icb_df[['ISIN Code', 'Supersector Code']].rename(columns={'Supersector Code': 'Supersector'}),
-                    on='ISIN Code',
-                    how='left'
-                )
-            else:
-                logger.warning("'Supersector Code' not found in ICB data. Cannot perform sectorial allocation.")
-        
-        # Calculate target number of companies per super-sector
-        if 'Supersector' in non_eu_taxonomy_eligible.columns:
-            # Count companies per super-sector
-            sector_counts = non_eu_taxonomy_eligible.groupby('Supersector').size().reset_index(name='Count')
-            total_eligible = len(non_eu_taxonomy_eligible)
+            # Store in dictionary
+            supersector_selections[supersector_code] = selected
             
-            # Calculate target number per sector (proportional, rounded up)
-            sector_counts['Target'] = np.ceil((sector_counts['Count'] / total_eligible) * num_non_eu_taxonomy_target).astype(int)
-            logger.info(f"Super-sector allocation: \n{sector_counts[['Supersector', 'Count', 'Target']]}")
+            logger.info(f"Selected {len(selected)} companies from super-sector {supersector_code}")
+
+        # Combine all selected companies
+        non_eu_taxonomy_selected_initial = pd.concat(supersector_selections.values())
+
+        # Update step output with initial selection counts
+        supersector_initial_selections = non_eu_taxonomy_selected_initial.groupby('Supersector Code').size().reset_index(name='Initial_Selected')
+        step_output = step_output.merge(
+            supersector_initial_selections, 
+            left_on='ICB_Supersector_Code', 
+            right_on='Supersector Code', 
+            how='left'
+        ).drop('Supersector Code', axis=1)
+        step_output['Initial_Selected'] = step_output['Initial_Selected'].fillna(0).astype(int)
+
+        # Fix if we have too many companies due to rounding up
+        if len(non_eu_taxonomy_selected_initial) > target_non_eu_taxonomy:
+            logger.info(f"Initial selection has {len(non_eu_taxonomy_selected_initial)} companies, need to remove {len(non_eu_taxonomy_selected_initial) - target_non_eu_taxonomy}")
             
-            # Step 4b: Select Non-EU Taxonomy companies
-            selected_non_eu_companies = []
+            # Create a DataFrame to track removals
+            removals_tracking = pd.DataFrame()
             
-            # Select companies within each super-sector based on climate score
-            for sector, target in zip(sector_counts['Supersector'], sector_counts['Target']):
-                sector_companies = non_eu_taxonomy_eligible[non_eu_taxonomy_eligible['Supersector'] == sector].copy()
-                
-                # Sort by climate score (lowest/best first)
-                sector_companies = sector_companies.sort_values('climate_score')
-                
-                # Select the n best companies
-                selected_sector_companies = sector_companies.head(target)
-                selected_non_eu_companies.append(selected_sector_companies)
+            # Continue removing companies until we reach the target
+            non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
             
-            # Combine all selected companies
-            non_eu_taxonomy_selected = pd.concat(selected_non_eu_companies)
+            # Keep track of how many companies we've removed from each super-sector
+            removed_counts = {code: 0 for code in supersector_counts['Supersector Code']}
             
-            # Due to rounding up, we might have more companies than needed
-            total_selected = len(non_eu_taxonomy_selected)
-            excess_count = total_selected - num_non_eu_taxonomy_target
+            # Identify supersectors with more than 2 companies (eligible for removal)
+            removal_iterations = []
             
-            if excess_count > 0:
-                logger.info(f"Selected {total_selected} companies, need to remove {excess_count}")
+            while len(non_eu_taxonomy_selected) > target_non_eu_taxonomy:
+                # Get current counts per supersector
+                current_supersector_counts = non_eu_taxonomy_selected.groupby('Supersector Code').size().to_dict()
                 
-                # Remove companies with worst climate scores, ensuring at least 2 per super-sector
-                # First, count companies per super-sector in the selection
-                sector_selected_counts = non_eu_taxonomy_selected.groupby('Supersector').size().reset_index(name='SelectedCount')
+                # Create a list of supersectors eligible for removal (more than 2 companies)
+                eligible_supersectors = [code for code, count in current_supersector_counts.items() if count > 2]
                 
-                # Identify sectors with more than 2 companies
-                sectors_with_extra = sector_selected_counts[sector_selected_counts['SelectedCount'] > 2]['Supersector'].tolist()
+                if not eligible_supersectors:
+                    logger.warning("Cannot remove more companies while maintaining minimum 2 per supersector. Keeping extra companies.")
+                    break
                 
-                # Sort companies by climate score (highest/worst first)
-                non_eu_taxonomy_selected = non_eu_taxonomy_selected.sort_values('climate_score', ascending=False)
+                # For each eligible supersector, find the company with the worst climate score
+                candidates_for_removal = []
                 
-                # Remove excess companies one by one, ensuring at least 2 per sector
-                removed = 0
-                removed_sectors = set()
-                
-                # Create copy to avoid modification during iteration
-                to_remove = []
-                
-                for idx, row in non_eu_taxonomy_selected.iterrows():
-                    sector = row['Supersector']
+                for supersector in eligible_supersectors:
+                    # Get companies in this supersector
+                    supersector_companies = non_eu_taxonomy_selected[non_eu_taxonomy_selected['Supersector Code'] == supersector]
                     
-                    # Skip if we've already removed from this sector
-                    if sector in removed_sectors:
-                        continue
+                    # Sort by climate score (highest/worst first)
+                    supersector_companies = supersector_companies.sort_values('climate_score', ascending=False)
                     
-                    # Skip if sector has only 2 companies
-                    if sector not in sectors_with_extra:
-                        continue
+                    # Get the worst company
+                    worst_company = supersector_companies.iloc[0]
                     
-                    # Check if removing would result in fewer than 2 companies in the sector
-                    sector_count = non_eu_taxonomy_selected[non_eu_taxonomy_selected['Supersector'] == sector].shape[0]
-                    if sector_count <= 2:
-                        continue
-                    
-                    # Mark for removal
-                    to_remove.append(idx)
-                    removed_sectors.add(sector)
-                    removed += 1
-                    
-                    # Exit if we've removed enough
-                    if removed == excess_count:
-                        break
+                    # Add to candidates
+                    candidates_for_removal.append(worst_company)
                 
-                # If we haven't removed enough yet, continue with the worst climate scores
-                # but don't remove more than one per sector
-                if removed < excess_count:
-                    remaining_to_remove = excess_count - removed
-                    logger.warning(f"Still need to remove {remaining_to_remove} companies. Continuing with worst climate scores.")
-                    
-                    # Reset for the second pass
-                    removed_sectors = set()
-                    
-                    for idx, row in non_eu_taxonomy_selected.iterrows():
-                        if idx in to_remove:
-                            continue  # Skip already marked for removal
-                            
-                        sector = row['Supersector']
-                        
-                        # Skip if we've already removed from this sector
-                        if sector in removed_sectors:
-                            continue
-                        
-                        # Check if removing would result in fewer than 2 companies in the sector
-                        sector_count = non_eu_taxonomy_selected[non_eu_taxonomy_selected['Supersector'] == sector].shape[0]
-                        if sector_count <= 2:
-                            continue
-                        
-                        # Mark for removal
-                        to_remove.append(idx)
-                        removed_sectors.add(sector)
-                        removed += 1
-                        
-                        # Exit if we've removed enough
-                        if removed == excess_count:
-                            break
+                # Sort candidates by climate score (worst first)
+                candidates_df = pd.DataFrame(candidates_for_removal)
+                candidates_df = candidates_df.sort_values('climate_score', ascending=False)
                 
-                # Remove marked companies
-                non_eu_taxonomy_selected = non_eu_taxonomy_selected.drop(to_remove)
-                logger.info(f"Removed {len(to_remove)} companies, new total: {len(non_eu_taxonomy_selected)}")
+                # In case of equal climate score, sort by Free Float Market Cap (lower first)
+                if 'FFMC' in candidates_df.columns:
+                    candidates_with_same_score = candidates_df.duplicated('climate_score', keep=False)
+                    if candidates_with_same_score.any():
+                        # Sort those with duplicate scores by FFMC
+                        for score_group in candidates_df.loc[candidates_with_same_score, 'climate_score'].unique():
+                            score_mask = candidates_df['climate_score'] == score_group
+                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC')
+                
+                # Get the worst company overall
+                company_to_remove = candidates_df.iloc[0]
+                supersector_to_remove_from = company_to_remove['Supersector Code']
+                
+                # Remove the company
+                non_eu_taxonomy_selected = non_eu_taxonomy_selected[
+                    non_eu_taxonomy_selected['ISIN Code'] != company_to_remove['ISIN Code']
+                ]
+                
+                # Update removal count
+                removed_counts[supersector_to_remove_from] += 1
+                
+                # Track this removal iteration
+                removal_info = {
+                    'Iteration': len(removal_iterations) + 1,
+                    'Removed_ISIN': company_to_remove['ISIN Code'],
+                    'Removed_Company': company_to_remove['Company'] if 'Company' in company_to_remove else 'Unknown',
+                    'Supersector_Code': supersector_to_remove_from,
+                    'Climate_Score': company_to_remove['climate_score'],
+                    'FFMC': company_to_remove['FFMC'] if 'FFMC' in company_to_remove else None,
+                    'Remaining_Count': len(non_eu_taxonomy_selected)
+                }
+                removal_iterations.append(removal_info)
+                
+                logger.info(f"Removed company {company_to_remove['ISIN Code']} from supersector {supersector_to_remove_from} (Climate Score: {company_to_remove['climate_score']})")
             
-            # Final check on the number of selected companies
-            if len(non_eu_taxonomy_selected) != num_non_eu_taxonomy_target:
-                logger.warning(f"Selected {len(non_eu_taxonomy_selected)} Non-EU Taxonomy companies, target was {num_non_eu_taxonomy_target}")
+            # Create a DataFrame of removal iterations
+            removals_df = pd.DataFrame(removal_iterations)
+            
+            # Update step output with final selection counts
+            supersector_final_selections = non_eu_taxonomy_selected.groupby('Supersector Code').size().reset_index(name='Final_Selected')
+            step_output = step_output.merge(
+                supersector_final_selections, 
+                left_on='ICB_Supersector_Code', 
+                right_on='Supersector Code', 
+                how='left'
+            ).drop('Supersector Code', axis=1)
+            step_output['Final_Selected'] = step_output['Final_Selected'].fillna(0).astype(int)
+            step_output['Companies_Removed'] = step_output['Initial_Selected'] - step_output['Final_Selected']
         else:
-            # If no Supersector data, just select top companies by climate score
-            logger.warning("No Supersector data available. Selecting top companies by climate score only.")
-            non_eu_taxonomy_selected = non_eu_taxonomy_eligible.sort_values('climate_score').head(num_non_eu_taxonomy_target)
+            # If we don't need to remove any companies
+            non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
+            step_output['Final_Selected'] = step_output['Initial_Selected']
+            step_output['Companies_Removed'] = 0
+            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC', 'Remaining_Count'])
+
+        logger.info(f"Final Non-EU Taxonomy selection has {len(non_eu_taxonomy_selected)} companies")
+
+        # Verify that we have at least 2 companies per supersector
+        final_supersector_counts = non_eu_taxonomy_selected.groupby('Supersector Code').size()
+        min_companies_per_supersector = final_supersector_counts.min()
+        logger.info(f"Minimum companies per supersector: {min_companies_per_supersector}")
+
+        if min_companies_per_supersector < 2:
+            logger.warning(f"Some supersectors have fewer than 2 companies! Minimum is {min_companies_per_supersector}")
+
+        # Save detailed step output to a separate Excel file for analysis
+        output_dir = os.path.join(os.getcwd(), 'output')
+        os.makedirs(output_dir, exist_ok=True)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        step_output_path = os.path.join(output_dir, f'non_eu_taxonomy_selection_steps_{timestamp}.xlsx')
+
+        with pd.ExcelWriter(step_output_path) as writer:
+            step_output.to_excel(writer, sheet_name='Target Calculation', index=False)
+            non_eu_taxonomy_eligible.to_excel(writer, sheet_name='Eligible Companies', index=False)
+            non_eu_taxonomy_selected_initial.to_excel(writer, sheet_name='Initial Selection', index=False)
+            non_eu_taxonomy_selected.to_excel(writer, sheet_name='Final Selection', index=False)
+            if len(removals_df) > 0:
+                removals_df.to_excel(writer, sheet_name='Removal Process', index=False)
+
+        logger.info(f"Detailed selection steps saved to {step_output_path}")
+
+
         
         # Combine EU Taxonomy and Non-EU Taxonomy selected companies for final selection
         final_selection = pd.concat([eu_taxonomy_companies, non_eu_taxonomy_selected])
@@ -761,10 +832,6 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             # Write each DataFrame to a different sheet
             final_selection.to_excel(writer, sheet_name='Selected Companies', index=False)
             universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
-            
-            # If we have super-sector data, save that as well
-            if 'sector_counts' in locals():
-                sector_counts.to_excel(writer, sheet_name='Sector Allocation', index=False)
         
         logger.info(f"Results saved to {output_path}")
         
