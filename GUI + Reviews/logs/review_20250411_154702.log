@@ -150,3 +150,7 @@
 2025-04-11 15:50:37,859 - Review.reviews.lc1ep_review - INFO - Saving output files...
 2025-04-11 15:50:38,208 - Review.reviews.lc1ep_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC1EP_review_20250411_155037.xlsx
 2025-04-11 15:50:38,237 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 15:50:38] "POST /calculate HTTP/1.1" 200 -
+2025-04-11 15:59:05,015 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-04-11 15:59:05,023 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-04-11 15:59:05,074 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc1ep_review.py', reloading
+2025-04-11 15:59:05,077 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading

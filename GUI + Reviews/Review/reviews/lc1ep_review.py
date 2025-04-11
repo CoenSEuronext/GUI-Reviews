@@ -491,8 +491,8 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
         logger.info("Calculating Climate Score for ranking...")
         
         # Fill empty values with 3.4 for temperature scores as mentioned in Step 3 of the prompt
-        universe_df['itr_scope123_target_filled'] = universe_df['itr_scope123_target'].fillna(3.4)
-        universe_df['itr_scope12_trend_filled'] = universe_df['itr_scope12_trend'].fillna(3.4)
+        universe_df['itr_scope123_target_filled'] = universe_df['itr_scope123_target'].fillna(universe_df['itr_scope123_target'].max())
+        universe_df['itr_scope12_trend_filled'] = universe_df['itr_scope12_trend'].fillna(universe_df['itr_scope12_trend'].max())
         
         # Calculate CDP temperature score (average of target and trend)
         universe_df['cdp_temperature_score'] = (universe_df['itr_scope123_target_filled'] + universe_df['itr_scope12_trend_filled']) / 2
