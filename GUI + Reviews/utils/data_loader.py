@@ -130,6 +130,10 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         'cdp_climate': {
             'filename': 'CDP Climate.xlsx',
             'loader': lambda f, sheet=None: pd.read_excel(f, sheet_name=sheet if sheet else 0)
+        },
+        'euronext_world': {
+            'filename': 'Euronext World.xlsx',
+            'loader': lambda f: pd.read_excel(f)
         }
     }
     

@@ -85,6 +85,16 @@ INDEX_CONFIGS = {
         "index": "LC100",
         "isin": "QS0011131735",
         "output_key": "lc100_path"
+    },
+    "LC3WP": {
+        "index": "LC3WP",
+        "isin": "FR0013522588",
+        "output_key": "lc3wp_path"
+    },
+    "LC1EP": {
+        "index": "LC1EP",
+        "isin": "FR0013522554",
+        "output_key": "lc100_path"
     }
     # Add new indices here following the same pattern
 }

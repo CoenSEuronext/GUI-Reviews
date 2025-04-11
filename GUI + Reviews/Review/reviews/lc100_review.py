@@ -45,11 +45,15 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
         
         logger.info("Loading reference data...")
-        ref_data = load_reference_data(current_data_folder, [
-            'developed_market', 'ff', 'icb', 'cdp_climate', 'oekom_trustcarbon', 
-            'nace', 'eu_taxonomy_pocket', 'gafi_black_list', 'gafi_grey_list', 
-            'non_fiscally_cooperative_with_eu'
-        ])
+        ref_data = load_reference_data(
+            current_data_folder,
+            required_files=['ff', 'developed_market', 'icb', 'nace', 
+                        'oekom_trustcarbon', 'eu_taxonomy_pocket', 'gafi_black_list', 
+                        'gafi_grey_list', 'non_fiscally_cooperative_with_eu', 'cdp_climate'],
+            sheet_names={
+                'eu_taxonomy_pocket': 'Europe'  # Specify 'Europe' sheet for eu_taxonomy_pocket
+            }
+        )
         
         # Extract the needed DataFrames from reference data
         developed_market_df = ref_data['developed_market']
@@ -438,31 +442,21 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
                 pd.to_numeric(universe_df['Governance Rating (Num)'], errors='coerce')
             ) / 2
             
-            # Find the threshold for the bottom 10%
-            bottom_10_threshold = universe_df['SG_Score'].quantile(0.1)
+            # Calculate exact number to exclude (10% of total companies, rounded down)
+            total_to_exclude = int(len(universe_df) * 0.1)
             
-            # Mark companies in the bottom 10% for exclusion
-            bottom_10_percent = universe_df[universe_df['SG_Score'] <= bottom_10_threshold].copy()
+            # Get companies with valid SG scores
+            companies_with_sg = universe_df.dropna(subset=['SG_Score']).copy()
             
-            # In case of ties at the threshold, keep companies with higher Social score
-            if len(bottom_10_percent) > len(universe_df) * 0.1:
-                # For companies at the threshold, sort by Social score and keep the better ones
-                threshold_companies = bottom_10_percent[bottom_10_percent['SG_Score'] == bottom_10_threshold]
-                threshold_companies = threshold_companies.sort_values('Social Rating (Num)', ascending=False)
-                
-                # Calculate how many to keep
-                total_to_exclude = int(len(universe_df) * 0.1)
-                below_threshold_count = len(bottom_10_percent[bottom_10_percent['SG_Score'] < bottom_10_threshold])
-                threshold_to_exclude = total_to_exclude - below_threshold_count
-                
-                # Get ISINs to exclude
-                threshold_to_exclude_isins = threshold_companies.iloc[:threshold_to_exclude]['ISIN Code'].tolist()
-                all_to_exclude_isins = (
-                    bottom_10_percent[bottom_10_percent['SG_Score'] < bottom_10_threshold]['ISIN Code'].tolist() +
-                    threshold_to_exclude_isins
-                )
-            else:
-                all_to_exclude_isins = bottom_10_percent['ISIN Code'].tolist()
+            # Sort companies by SG Score (ascending) and then by Social Rating (descending) for tiebreaking
+            companies_with_sg = companies_with_sg.sort_values(
+                ['SG_Score', 'Social Rating (Num)'], 
+                ascending=[True, False]
+            )
+            
+            # Take exactly the bottom N companies
+            companies_to_exclude = companies_with_sg.iloc[:total_to_exclude]
+            all_to_exclude_isins = companies_to_exclude['ISIN Code'].tolist()
             
             # Add exclusion flag
             universe_df['exclude_sg_bottom_10'] = np.where(
@@ -474,6 +468,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             logger.info(f"Marked {len(all_to_exclude_isins)} companies (10%) with worst SG scores for exclusion")
         else:
             logger.warning("Social Rating and/or Governance Rating columns not found. Cannot apply SG exclusion criterion.")
+
         
         # 10. Create a general exclusion flag based on all exclusion columns
         # Get all exclusion columns
@@ -636,8 +631,8 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             # Continue removing companies until we reach the target
             non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
             
-            # Keep track of how many companies we've removed from each super-sector
-            removed_counts = {code: 0 for code in supersector_counts['Supersector Code']}
+            # Keep track of supersectors from which we've already removed a company
+            removed_from_supersector = set()
             
             # Identify supersectors with more than 2 companies (eligible for removal)
             removal_iterations = []
@@ -646,11 +641,14 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
                 # Get current counts per supersector
                 current_supersector_counts = non_eu_taxonomy_selected.groupby('Supersector Code').size().to_dict()
                 
-                # Create a list of supersectors eligible for removal (more than 2 companies)
-                eligible_supersectors = [code for code, count in current_supersector_counts.items() if count > 2]
+                # Create a list of supersectors eligible for removal (more than 2 companies AND not already removed from)
+                eligible_supersectors = [
+                    code for code, count in current_supersector_counts.items() 
+                    if count > 2 and code not in removed_from_supersector
+                ]
                 
                 if not eligible_supersectors:
-                    logger.warning("Cannot remove more companies while maintaining minimum 2 per supersector. Keeping extra companies.")
+                    logger.warning("Cannot remove more companies while maintaining constraints. Keeping extra companies.")
                     break
                 
                 # For each eligible supersector, find the company with the worst climate score
@@ -691,8 +689,8 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
                     non_eu_taxonomy_selected['ISIN Code'] != company_to_remove['ISIN Code']
                 ]
                 
-                # Update removal count
-                removed_counts[supersector_to_remove_from] += 1
+                # Mark this supersector as already removed from
+                removed_from_supersector.add(supersector_to_remove_from)
                 
                 # Track this removal iteration
                 removal_info = {
@@ -738,7 +736,6 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         if min_companies_per_supersector < 2:
             logger.warning(f"Some supersectors have fewer than 2 companies! Minimum is {min_companies_per_supersector}")
 
-       
         # Combine EU Taxonomy and Non-EU Taxonomy selected companies for final selection
         final_selection = pd.concat([eu_taxonomy_companies, non_eu_taxonomy_selected])
         
