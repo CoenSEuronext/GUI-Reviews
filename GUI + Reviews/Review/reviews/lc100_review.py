@@ -828,7 +828,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         # Calculate liquidity constraints for each Non-EU Taxonomy company
         non_eu_taxonomy_selection['Liquidity_Cap'] = non_eu_taxonomy_selection.apply(
             lambda row: min(
-                row['WIG'] + (row['VOL_AV_3M'] * 0.30 * 2 / (portfolio_size_non_eu * 1e9)),
+                row['WIG'] + (row['VOL_AV_3M'] * 0.30 / (portfolio_size_non_eu * 1e9)),
                 0.10  # 10% maximum weight
             ), 
             axis=1
@@ -836,7 +836,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
 
         non_eu_taxonomy_selection['Liquidity_Floor'] = non_eu_taxonomy_selection.apply(
             lambda row: max(
-                row['WIG'] - (row['VOL_AV_3M'] * 0.30 * 2 / (portfolio_size_non_eu * 1e9)),
+                row['WIG'] - (row['VOL_AV_3M'] * 0.30 / (portfolio_size_non_eu * 1e9)),
                 0  # 0% minimum weight
             ),
             axis=1
