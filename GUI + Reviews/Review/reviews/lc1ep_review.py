@@ -121,7 +121,9 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             left_on='ISIN Code',
             right_on='ISIN Code:',
             how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})        
+        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})      
+        
+        universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']  
         
         # Add ICB Subsector data
         logger.info("Adding ICB Subsector data...")
@@ -176,7 +178,7 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             'CoalMiningExpInvolved', 'OilGasExtractExpInvolved',
             'OtherFFInfraInvolved', 'NuclearPowerInvolvement',
             'NuclearPowerRevShareMax-values', 'NuclearPowerUraniumRevShareMax-values',
-            'CivFAProdServMaxRev-values', 'MilitaryEqmtDistMaxRev-values',
+            'CivFARevShareMax-values', 'MilitaryEqmtDistMaxRev-values',
             'Social Rating (Num)', 'Governance Rating (Num)'
         ]
         
@@ -416,14 +418,14 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
         
         # 9. Civilian firearms and Military exclusions
         # Define criteria in a standard format
-        if 'CivFAProdServMaxRev-values' in universe_df.columns:
+        if 'CivFARevShareMax-values' in universe_df.columns:
             universe_df['exclude_civilian_firearms'] = np.where(
-                pd.to_numeric(universe_df['CivFAProdServMaxRev-values'], errors='coerce') >= 0.05,
+                pd.to_numeric(universe_df['CivFARevShareMax-values'], errors='coerce') >= 0.05,
                 'exclude_civilian_firearms',
                 None
             )
         else:
-            logger.warning("Column 'CivFAProdServMaxRev-values' not found. Cannot apply civilian firearms exclusion.")
+            logger.warning("Column 'CivFARevShareMax-values' not found. Cannot apply civilian firearms exclusion.")
 
         if 'MilitaryEqmtDistMaxRev-values' in universe_df.columns:
             universe_df['exclude_military_equipment'] = np.where(
@@ -597,8 +599,9 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
                 non_eu_taxonomy_eligible['Supersector Code'] == supersector_code
             ].copy()
             
-            # Sort by climate score (lowest/best first)
-            supersector_companies = supersector_companies.sort_values('climate_score')
+            # Sort by climate score (lowest/best first), and then by FFMC (highest first) to break ties
+            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC'], 
+                                                                    ascending=[True, False])
             
             # Select the top N companies (using int)
             selected = supersector_companies.head(target_count)
@@ -768,13 +771,13 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
         # Calculate market cap based weights for EU Taxonomy companies
         # Total market cap is already calculated for all companies
                 # Calculate total FFMC for ALL companies (not just Non-EU)
-        total_ffmc = final_selection['Mcap in EUR'].sum()
+        total_ffmc = final_selection['FFMC'].sum()
         logger.info(f"Total FFMC for all companies: {total_ffmc:.2f}")
 
 
         # Filter for EU Taxonomy companies
         eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 1].copy()
-        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['Mcap in EUR'] / total_ffmc
+        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC'] / total_ffmc
         logger.info(f"Market cap based weights calculated for EU Taxonomy companies")
 
         # Calculate liquidity constraints for each EU Taxonomy company
@@ -820,7 +823,7 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
         non_eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 0].copy()
 
         # Calculate WIG based on FFMC proportion for Non-EU Taxonomy companies
-        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['Mcap in EUR'] / total_ffmc
+        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC'] / total_ffmc
 
         # Calculate liquidity constraints for each Non-EU Taxonomy company
         non_eu_taxonomy_selection['Liquidity_Cap'] = non_eu_taxonomy_selection.apply(

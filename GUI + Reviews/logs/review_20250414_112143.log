@@ -1,0 +1,36 @@
+2025-04-14 11:21:43,826 - werkzeug - WARNING -  * Debugger is active!
+2025-04-14 11:21:43,826 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-14 11:21:43,864 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-04-14 11:21:44,678 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-04-14 11:21:55,039 - Review.reviews.lc100_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-14 11:21:55,042 - Review.reviews.lc100_review - INFO - Filtering universe for EU500 companies...
+2025-04-14 11:21:55,043 - Review.reviews.lc100_review - INFO - Universe size after EU500 filter: 499
+2025-04-14 11:21:55,044 - Review.reviews.lc100_review - INFO - Adding Free Float data...
+2025-04-14 11:21:55,048 - Review.reviews.lc100_review - ERROR - Error during review calculation: 'Price (EUR)'
+2025-04-14 11:21:55,052 - Review.reviews.lc100_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Price (EUR)'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc100_review.py", line 126, in run_lc100_review
+    universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR)'] * universe_df['Free Float']
+                                                            ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Price (EUR)'
+
+2025-04-14 11:21:55,077 - werkzeug - INFO - 127.0.0.1 - - [14/Apr/2025 11:21:55] "POST /calculate HTTP/1.1" 200 -
+2025-04-14 11:22:02,141 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading
+2025-04-14 11:22:02,141 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading
+2025-04-14 11:22:02,141 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading
