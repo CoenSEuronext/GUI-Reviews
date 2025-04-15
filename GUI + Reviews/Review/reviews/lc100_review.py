@@ -123,7 +123,13 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})        
         
-        universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']
+        universe_df['FFMC_CO'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']  
+        universe_df['FFMC_WD'] = universe_df.merge(
+            stock_eod_df[['Isin Code', 'Close Prc']], 
+            left_on='ISIN Code', 
+            right_on='Isin Code', 
+            how='left'
+        )['Close Prc'] * universe_df['Number of Shares'] * universe_df['Free Float']
         
         # Add ICB Subsector data
         logger.info("Adding ICB Subsector data...")
@@ -600,7 +606,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             ].copy()
             
             # Sort by climate score (lowest/best first), and then by FFMC (highest first) to break ties
-            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC'], 
+            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC_CO'], 
                                                                     ascending=[True, False])
             
             # Select the top N companies (using int)
@@ -675,13 +681,13 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
                 candidates_df = candidates_df.sort_values('climate_score', ascending=False)
                 
                 # In case of equal climate score, sort by Free Float Market Cap (lower first)
-                if 'FFMC' in candidates_df.columns:
+                if 'FFMC_CO' in candidates_df.columns:
                     candidates_with_same_score = candidates_df.duplicated('climate_score', keep=False)
                     if candidates_with_same_score.any():
-                        # Sort those with duplicate scores by FFMC
+                        # Sort those with duplicate scores by FFMC_CO
                         for score_group in candidates_df.loc[candidates_with_same_score, 'climate_score'].unique():
                             score_mask = candidates_df['climate_score'] == score_group
-                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC')
+                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC_CO')
                 
                 # Get the worst company overall
                 company_to_remove = candidates_df.iloc[0]
@@ -702,7 +708,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
                     'Removed_Company': company_to_remove['Company'] if 'Company' in company_to_remove else 'Unknown',
                     'Supersector_Code': supersector_to_remove_from,
                     'Climate_Score': company_to_remove['climate_score'],
-                    'FFMC': company_to_remove['FFMC'] if 'FFMC' in company_to_remove else None,
+                    'FFMC_CO': company_to_remove['FFMC_CO'] if 'FFMC_CO' in company_to_remove else None,
                     'Remaining_Count': len(non_eu_taxonomy_selected)
                 }
                 removal_iterations.append(removal_info)
@@ -727,7 +733,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
             step_output['Final_Selected'] = step_output['Initial_Selected']
             step_output['Companies_Removed'] = 0
-            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC', 'Remaining_Count'])
+            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC_CO', 'Remaining_Count'])
 
         logger.info(f"Final Non-EU Taxonomy selection has {len(non_eu_taxonomy_selected)} companies")
 
@@ -770,14 +776,14 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         # 1. EU Taxonomy Companies
         # Calculate market cap based weights for EU Taxonomy companies
         # Total market cap is already calculated for all companies
-                # Calculate total FFMC for ALL companies (not just Non-EU)
-        total_ffmc = final_selection['FFMC'].sum()
-        logger.info(f"Total FFMC for all companies: {total_ffmc:.2f}")
+        # Calculate total FFMC on WD for ALL companies (not just Non-EU)
+        total_ffmc_wd = final_selection['FFMC_WD'].sum()
+        logger.info(f"Total FFMC_WD for all companies: {total_ffmc_wd:.2f}")
 
 
         # Filter for EU Taxonomy companies
         eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 1].copy()
-        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC'] / total_ffmc
+        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC_WD'] / total_ffmc_wd
         logger.info(f"Market cap based weights calculated for EU Taxonomy companies")
 
         # Calculate liquidity constraints for each EU Taxonomy company
@@ -823,7 +829,7 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
         non_eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 0].copy()
 
         # Calculate WIG based on FFMC proportion for Non-EU Taxonomy companies
-        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC'] / total_ffmc
+        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC_WD'] / total_ffmc_wd
 
         # Calculate liquidity constraints for each Non-EU Taxonomy company
         non_eu_taxonomy_selection['Liquidity_Cap'] = non_eu_taxonomy_selection.apply(

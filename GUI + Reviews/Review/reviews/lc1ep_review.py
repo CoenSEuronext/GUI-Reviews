@@ -123,7 +123,7 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})      
         
-        universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']  
+        universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']
         
         # Add ICB Subsector data
         logger.info("Adding ICB Subsector data...")

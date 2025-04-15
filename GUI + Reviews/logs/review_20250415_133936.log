@@ -1,0 +1,114 @@
+2025-04-15 13:39:36,610 - werkzeug - WARNING -  * Debugger is active!
+2025-04-15 13:39:36,612 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-15 13:39:40,225 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-04-15 13:39:40,819 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-04-15 13:39:50,134 - Review.reviews.lc3wp_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-15 13:39:50,145 - Review.reviews.lc3wp_review - INFO - Adding Free Float data...
+2025-04-15 13:39:50,184 - Review.reviews.lc3wp_review - INFO - Adding ICB Subsector data...
+2025-04-15 13:39:50,200 - Review.reviews.lc3wp_review - WARNING - Removed 9315 duplicate rows from ICB data
+2025-04-15 13:39:50,433 - Review.reviews.lc3wp_review - INFO - Debug file saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\debug\universe_df_after_nace_20250415_133950.xlsx
+2025-04-15 13:39:50,433 - Review.reviews.lc3wp_review - INFO - Adding CDP Climate data...
+2025-04-15 13:39:50,438 - Review.reviews.lc3wp_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-15 13:39:50,441 - Review.reviews.lc3wp_review - INFO - Adding NACE data...
+2025-04-15 13:39:50,445 - Review.reviews.lc3wp_review - INFO - Adding EU Taxonomy flag...
+2025-04-15 13:39:50,445 - Review.reviews.lc3wp_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-15 13:39:50,447 - Review.reviews.lc3wp_review - INFO - Applying exclusion criteria...
+2025-04-15 13:39:50,470 - Review.reviews.lc3wp_review - INFO - Marked 149 companies (10%) with worst SG scores for exclusion
+2025-04-15 13:39:50,489 - Review.reviews.lc3wp_review - INFO - Calculating Climate Score for ranking...
+2025-04-15 13:39:50,491 - Review.reviews.lc3wp_review - INFO - Selecting EU Taxonomy companies...
+2025-04-15 13:39:50,492 - Review.reviews.lc3wp_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-04-15 13:39:50,494 - Review.reviews.lc3wp_review - INFO - Found 979 Non-EU Taxonomy eligible companies after exclusions
+2025-04-15 13:39:50,494 - Review.reviews.lc3wp_review - INFO - STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...
+2025-04-15 13:39:50,495 - Review.reviews.lc3wp_review - INFO - Target number of Non-EU Taxonomy companies: 286
+2025-04-15 13:39:50,496 - Review.reviews.lc3wp_review - INFO - Total eligible Non-EU Taxonomy companies: 979
+2025-04-15 13:39:50,497 - Review.reviews.lc3wp_review - INFO - Total target after rounding: 295 (vs. target of 286)
+2025-04-15 13:39:50,497 - Review.reviews.lc3wp_review - INFO - Need to remove 9 companies due to rounding up
+2025-04-15 13:39:50,498 - Review.reviews.lc3wp_review - INFO - STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...
+2025-04-15 13:39:50,500 - Review.reviews.lc3wp_review - INFO - Selected 39 companies from super-sector 1010.0
+2025-04-15 13:39:50,501 - Review.reviews.lc3wp_review - INFO - Selected 12 companies from super-sector 1510.0
+2025-04-15 13:39:50,501 - Review.reviews.lc3wp_review - INFO - Selected 34 companies from super-sector 2010.0
+2025-04-15 13:39:50,503 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3010.0
+2025-04-15 13:39:50,503 - Review.reviews.lc3wp_review - INFO - Selected 21 companies from super-sector 3020.0
+2025-04-15 13:39:50,504 - Review.reviews.lc3wp_review - INFO - Selected 19 companies from super-sector 3030.0
+2025-04-15 13:39:50,505 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3510.0
+2025-04-15 13:39:50,506 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 4010.0
+2025-04-15 13:39:50,507 - Review.reviews.lc3wp_review - INFO - Selected 17 companies from super-sector 4020.0
+2025-04-15 13:39:50,507 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 4030.0
+2025-04-15 13:39:50,508 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4040.0
+2025-04-15 13:39:50,509 - Review.reviews.lc3wp_review - INFO - Selected 11 companies from super-sector 4050.0
+2025-04-15 13:39:50,510 - Review.reviews.lc3wp_review - INFO - Selected 15 companies from super-sector 4510.0
+2025-04-15 13:39:50,511 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4520.0
+2025-04-15 13:39:50,512 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5010.0
+2025-04-15 13:39:50,513 - Review.reviews.lc3wp_review - INFO - Selected 33 companies from super-sector 5020.0
+2025-04-15 13:39:50,514 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5510.0
+2025-04-15 13:39:50,514 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 5520.0
+2025-04-15 13:39:50,515 - Review.reviews.lc3wp_review - INFO - Selected 2 companies from super-sector 6510.0
+2025-04-15 13:39:50,523 - Review.reviews.lc3wp_review - INFO - Initial selection has 295 companies, need to remove 9
+2025-04-15 13:39:50,545 - Review.reviews.lc3wp_review - INFO - Removed company US38141G1040 from supersector 3020.0 (Climate Score: 2.75)
+2025-04-15 13:39:50,551 - Review.reviews.lc3wp_review - INFO - Removed company AU000000ANZ3 from supersector 3010.0 (Climate Score: 2.75)
+2025-04-15 13:39:50,557 - Review.reviews.lc3wp_review - INFO - Removed company CA0679011084 from supersector 5510.0 (Climate Score: 2.58973159003276)
+2025-04-15 13:39:50,563 - Review.reviews.lc3wp_review - INFO - Removed company JP3539220008 from supersector 3030.0 (Climate Score: 2.5)
+2025-04-15 13:39:50,568 - Review.reviews.lc3wp_review - INFO - Removed company US7475251036 from supersector 1010.0 (Climate Score: 2.30023900135313)
+2025-04-15 13:39:50,573 - Review.reviews.lc3wp_review - INFO - Removed company US2538681030 from supersector 3510.0 (Climate Score: 2.26099033267267)
+2025-04-15 13:39:50,578 - Review.reviews.lc3wp_review - INFO - Removed company JP3705200008 from supersector 4050.0 (Climate Score: 2.24552928645429)
+2025-04-15 13:39:50,583 - Review.reviews.lc3wp_review - INFO - Removed company DE0005552004 from supersector 5020.0 (Climate Score: 2.220375488488155)
+2025-04-15 13:39:50,590 - Review.reviews.lc3wp_review - INFO - Removed company US4595061015 from supersector 5520.0 (Climate Score: 2.2099302264427454)
+2025-04-15 13:39:50,594 - Review.reviews.lc3wp_review - INFO - Final Non-EU Taxonomy selection has 286 companies
+2025-04-15 13:39:50,596 - Review.reviews.lc3wp_review - INFO - Minimum companies per supersector: 2
+2025-04-15 13:39:50,603 - Review.reviews.lc3wp_review - INFO - Final selection contains 300 companies
+2025-04-15 13:39:50,603 - Review.reviews.lc3wp_review - INFO - - EU Taxonomy: 14
+2025-04-15 13:39:50,603 - Review.reviews.lc3wp_review - INFO - - Non-EU Taxonomy: 286
+2025-04-15 13:39:50,604 - Review.reviews.lc3wp_review - INFO - Adding PAB flag based on CDP temperature score...
+2025-04-15 13:39:50,604 - Review.reviews.lc3wp_review - INFO - Calculating liquidity constraints for all companies...
+2025-04-15 13:39:50,605 - Review.reviews.lc3wp_review - INFO - Total FFMC_WD for all companies: 10468631126780.40
+2025-04-15 13:39:50,606 - Review.reviews.lc3wp_review - INFO - Market cap based weights calculated for EU Taxonomy companies
+2025-04-15 13:39:50,608 - Review.reviews.lc3wp_review - INFO - Liquidity caps for EU Taxonomy companies - Max: 4.5085%, Min: 0.5432%, Avg: 1.7228%
+2025-04-15 13:39:50,609 - Review.reviews.lc3wp_review - INFO - Liquidity floors for EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-15 13:39:50,610 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for EU Taxonomy companies
+2025-04-15 13:39:50,616 - Review.reviews.lc3wp_review - INFO - Liquidity caps for Non-EU Taxonomy companies - Max: 10.0000%, Min: 0.1534%, Avg: 3.7633%
+2025-04-15 13:39:50,616 - Review.reviews.lc3wp_review - INFO - Liquidity floors for Non-EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-15 13:39:50,617 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for Non-EU Taxonomy companies
+2025-04-15 13:39:50,619 - Review.reviews.lc3wp_review - INFO - Liquidity constraints have been calculated for all 300 companies
+2025-04-15 13:39:50,620 - Review.reviews.lc3wp_review - INFO - Saving output files...
+2025-04-15 13:39:52,083 - Review.reviews.lc3wp_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC3WP_review_20250415_133950.xlsx
+2025-04-15 13:39:52,122 - werkzeug - INFO - 127.0.0.1 - - [15/Apr/2025 13:39:52] "POST /calculate HTTP/1.1" 200 -
+2025-04-15 14:05:29,507 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\__init__.py', reloading
+2025-04-15 14:05:29,521 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\app.py', reloading
+2025-04-15 14:05:29,567 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-04-15 14:05:29,577 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-04-15 14:05:29,593 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\templating.py', reloading
+2025-04-15 14:05:29,598 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-04-15 14:05:29,600 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-04-15 14:05:29,625 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\globals.py', reloading
+2025-04-15 14:05:29,629 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\wrappers.py', reloading
+2025-04-15 14:05:29,633 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-04-15 14:05:29,635 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-04-15 14:05:29,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-04-15 14:05:29,648 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\json\\__init__.py', reloading
+2025-04-15 14:05:29,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-04-15 14:05:29,662 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-04-15 14:05:29,672 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-04-15 14:05:29,688 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\typing.py', reloading
+2025-04-15 14:05:29,693 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-04-15 14:05:29,695 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-04-15 14:05:29,730 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-04-15 14:05:29,746 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-04-15 14:05:29,754 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-04-15 14:05:29,777 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-04-15 14:05:29,787 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-04-15 14:05:29,797 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-04-15 14:05:29,806 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\egspp_review.py', reloading
+2025-04-15 14:05:29,814 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-04-15 14:05:29,828 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-04-15 14:05:29,839 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading
+2025-04-15 14:05:29,844 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-04-15 14:05:29,849 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
+2025-04-15 14:05:29,853 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
+2025-04-15 14:05:29,866 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-04-15 14:05:29,871 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexew_review.py', reloading
+2025-04-15 14:05:29,875 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\cacew_review.py', reloading
+2025-04-15 14:05:29,879 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clew_review.py', reloading
+2025-04-15 14:05:29,882 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-04-15 14:05:29,888 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-04-15 14:05:29,897 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc1ep_review.py', reloading
+2025-04-15 14:05:29,924 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\config.py', reloading

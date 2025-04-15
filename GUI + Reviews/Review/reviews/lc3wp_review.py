@@ -7,6 +7,7 @@ from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
 
+
 logger = setup_logging(__name__)
 
 def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR0013522588", 
@@ -101,7 +102,8 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             'Currency (Local)': 'Currency',
             '3 months ADTV': 'VOL_AV_3M'
         }).copy()
-        
+        # Convert GBP to GBX in universe_df to match stock_eod_df currency format
+        universe_df['Currency'] = universe_df['Currency'].replace('GBP', 'GBX')
         # Check for and remove any duplicates in the initial universe
         before_count = len(universe_df)
         universe_df = universe_df.drop_duplicates(subset=['ISIN Code'])
@@ -119,8 +121,69 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
         
-        universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']          
         
+        universe_df['FFMC_CO'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']          
+        # First deduplicate stock_eod_df
+        # Create a dictionary mapping from index mnemonics to their currencies
+        index_currency_map = dict(zip(index_eod_df['Mnemo'], index_eod_df['Curr']))
+
+        # Add the Index Ccy column to stock_eod_df by looking up the Index in the mapping
+        stock_eod_df['Index Ccy'] = stock_eod_df['Index'].map(index_currency_map)
+
+        # Now deduplicate AFTER adding the Index Ccy column
+        deduplicated_stock_eod_df = stock_eod_df.drop_duplicates(subset=['Isin Code', 'MIC', 'Index Ccy'], keep='first')
+
+        # Filter deduplicated_stock_eod_df to only include rows where Index Ccy is 'EUR'
+        eur_deduplicated_stock_eod_df = deduplicated_stock_eod_df[deduplicated_stock_eod_df['Index Ccy'] == 'EUR']
+
+        # Create a dictionary mapping from (Isin Code, Currency) to Close Prc for quick lookup
+        price_map = dict(zip(
+            zip(deduplicated_stock_eod_df['Isin Code'], deduplicated_stock_eod_df['MIC']),
+            deduplicated_stock_eod_df['Close Prc']
+        ))
+
+        # Create a dictionary mapping from (Isin Code, Currency) to FX/Index Ccy for quick lookup
+        # Only using rows where Index Ccy is EUR
+        fx_ccy_map = dict(zip(
+            zip(eur_deduplicated_stock_eod_df['Isin Code'], eur_deduplicated_stock_eod_df['Currency']),
+            eur_deduplicated_stock_eod_df['FX/Index Ccy']
+        ))
+        # Store the original values that need to be temporarily changed for lookup
+        # For MIC discrepancy
+        specific_isin_mic = "CA82509L1076"  # Replace with the actual ISIN that has the MIC discrepancy
+        mic_rows = universe_df['ISIN Code'] == specific_isin_mic
+        original_mic_values = universe_df.loc[mic_rows, 'MIC'].copy()
+
+        # For ISIN code change
+        old_isin = "AU000000IPL1"
+        new_isin = "AU0000390544"
+        isin_rows = universe_df['ISIN Code'] == old_isin
+        original_isin_values = universe_df.loc[isin_rows, 'ISIN Code'].copy()
+
+        # Temporarily change values for the lookup
+        # Change XNYS to XNGS for the specific ISIN
+        universe_df.loc[mic_rows & (universe_df['MIC'] == 'XNYS'), 'MIC'] = 'XNGS'
+
+        # Change old ISIN to new ISIN
+        universe_df.loc[isin_rows, 'ISIN Code'] = new_isin
+
+        # Perform the lookups with the modified values
+        universe_df['Close Prc'] = universe_df.apply(
+            lambda row: price_map.get((row['ISIN Code'], row['MIC']), None), 
+            axis=1
+        )
+
+        universe_df['FX/Index Ccy'] = universe_df.apply(
+            lambda row: fx_ccy_map.get((row['ISIN Code'], row['Currency']), None), 
+            axis=1
+        )
+
+        # Restore the original values
+        universe_df.loc[mic_rows, 'MIC'] = original_mic_values
+        universe_df.loc[isin_rows, 'ISIN Code'] = original_isin_values
+        
+        universe_df['FFMC_WD'] = universe_df['Number of Shares'] * universe_df['Close Prc'] * universe_df['Free Float'] * universe_df['FX/Index Ccy']
+        universe_df['Price_WD'] = universe_df['FX/Index Ccy'] * universe_df['Close Prc']
         # Add ICB Subsector data
         logger.info("Adding ICB Subsector data...")
         # First, check for and remove duplicates in icb_df
@@ -136,17 +199,7 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             on='ISIN Code',
             how='left'
         )
-        
-        # Simple debug code to output universe_df to Excel
-        debug_dir = os.path.join(os.getcwd(), 'debug')
-        os.makedirs(debug_dir, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        debug_path = os.path.join(debug_dir, f'universe_df_after_nace_{timestamp}.xlsx')
-
-        # Save universe_df to Excel
-        universe_df.to_excel(debug_path, index=False)
-        logger.info(f"Debug file saved to {debug_path}")
-        
+                
         # Add CDP Climate data
         logger.info("Adding CDP Climate data...")
         universe_df = universe_df.merge(
@@ -175,7 +228,8 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             'OtherFFInfraInvolved', 'NuclearPowerInvolvement',
             'NuclearPowerRevShareMax-values', 'NuclearPowerUraniumRevShareMax-values',
             'CivFARevShareMax-values', 'MilitaryEqmtDistMaxRev-values',
-            'Social Rating (Num)', 'Governance Rating (Num)'
+            'Social Rating (Num)', 'Governance Rating (Num)',
+            'Carbon Intensity (ISS)', 'ScoreTemperatureISS'
         ]
         
         # Check which columns exist in the dataset
@@ -193,6 +247,7 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             right_on='ISIN',
             how='left'
         ).drop('ISIN', axis=1)
+        
         
         # Add NACE data and flag for climate impact sections
         logger.info("Adding NACE data...")
@@ -517,6 +572,49 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
         universe_df['bonus_malus'] = universe_df['CDP_climate_score'].apply(map_to_bonus_malus)
         universe_df['climate_score'] = universe_df['cdp_temperature_score'] + universe_df['bonus_malus']
         
+        logger.info("Calculating median Carbon Intensity by Supersector excluding zero values...")
+
+        # Convert Carbon Intensity to numeric, coercing errors to NaN
+        universe_df['Carbon Intensity (ISS)'] = pd.to_numeric(universe_df['Carbon Intensity (ISS)'], errors='coerce')
+
+        # Replace zeros with NaN to exclude them from the median calculation
+        universe_df_for_median = universe_df.copy()
+        universe_df_for_median.loc[universe_df_for_median['Carbon Intensity (ISS)'] == 0, 'Carbon Intensity (ISS)'] = np.nan
+
+        # Group by Supersector Code and calculate median Carbon Intensity (excluding zeros)
+        supersector_medians = universe_df_for_median.groupby('Supersector Code')['Carbon Intensity (ISS)'].median().reset_index()
+        supersector_medians.rename(columns={'Carbon Intensity (ISS)': 'Median_Carbon_Intensity_Supersector'}, inplace=True)
+
+        # Merge the median values back to the main dataframe
+        universe_df = universe_df.merge(
+            supersector_medians,
+            on='Supersector Code',
+            how='left'
+        )
+
+        # Log info about the medians calculated
+        logger.info(f"Calculated median Carbon Intensity for {len(supersector_medians)} supersectors, excluding zero values")
+        universe_df['Median_Carbon_Intensity_Supersector'] = pd.to_numeric(universe_df['Median_Carbon_Intensity_Supersector'], errors='coerce')
+        # Create CI column - use Carbon Intensity (ISS) if it exists and is not zero, otherwise use median
+        universe_df['CI'] = universe_df.apply(
+            lambda row: row['Carbon Intensity (ISS)'] 
+            if pd.notna(row['Carbon Intensity (ISS)']) and row['Carbon Intensity (ISS)'] != 0 
+            else row['Median_Carbon_Intensity_Supersector'],
+            axis=1
+        )
+
+        # Log some statistics about the new CI column
+        logger.info(f"Created CI column combining company-specific and median carbon intensity values")
+        missing_ci = universe_df['CI'].isna().sum()
+        if missing_ci > 0:
+            logger.warning(f"{missing_ci} companies still have no CI value (neither company-specific nor supersector median)")
+        universe_df['Weight_FFMC_WD'] = universe_df['FFMC_WD'] / universe_df['FFMC_WD'].sum()
+        universe_df['WCI'] = universe_df['CI'] * universe_df['Weight_FFMC_WD']
+        universe_df['PAB_Plan_Flag'] = np.where(universe_df['ScoreTemperatureISS'] <= 2, 1, 0)
+        
+        WACI = universe_df['WCI'].sum()
+        logger.info(f"Calculated WACI: {WACI}")
+        
         # STEP 4: Selection of constituents
         # First, separate EU Taxonomy and Non-EU Taxonomy companies
         logger.info("Selecting EU Taxonomy companies...")
@@ -535,8 +633,6 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
 
         logger.info(f"Found {len(non_eu_taxonomy_eligible)} Non-EU Taxonomy eligible companies after exclusions")
 
-
-        
 
         # STEP 4a: Determination of the target number of Non-EU Taxonomy companies within each ICB super-sector
         logger.info("STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...")
@@ -595,8 +691,8 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
                 non_eu_taxonomy_eligible['Supersector Code'] == supersector_code
             ].copy()
             
-            # Sort by climate score (lowest/best first), and then by FFMC (highest first) to break ties
-            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC'], 
+            # Sort by climate score (lowest/best first), and then by FFMC_CO (highest first) to break ties
+            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC_CO'], 
                                                                     ascending=[True, False])
             
             # Select the top N companies (using int)
@@ -671,13 +767,13 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
                 candidates_df = candidates_df.sort_values('climate_score', ascending=False)
                 
                 # In case of equal climate score, sort by Free Float Market Cap (lower first)
-                if 'FFMC' in candidates_df.columns:
+                if 'FFMC_CO' in candidates_df.columns:
                     candidates_with_same_score = candidates_df.duplicated('climate_score', keep=False)
                     if candidates_with_same_score.any():
-                        # Sort those with duplicate scores by FFMC
+                        # Sort those with duplicate scores by FFMC_CO
                         for score_group in candidates_df.loc[candidates_with_same_score, 'climate_score'].unique():
                             score_mask = candidates_df['climate_score'] == score_group
-                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC')
+                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC_CO')
                 
                 # Get the worst company overall
                 company_to_remove = candidates_df.iloc[0]
@@ -698,7 +794,7 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
                     'Removed_Company': company_to_remove['Company'] if 'Company' in company_to_remove else 'Unknown',
                     'Supersector_Code': supersector_to_remove_from,
                     'Climate_Score': company_to_remove['climate_score'],
-                    'FFMC': company_to_remove['FFMC'] if 'FFMC' in company_to_remove else None,
+                    'FFMC_CO': company_to_remove['FFMC_CO'] if 'FFMC_CO' in company_to_remove else None,
                     'Remaining_Count': len(non_eu_taxonomy_selected)
                 }
                 removal_iterations.append(removal_info)
@@ -723,7 +819,7 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
             step_output['Final_Selected'] = step_output['Initial_Selected']
             step_output['Companies_Removed'] = 0
-            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC', 'Remaining_Count'])
+            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC_CO', 'Remaining_Count'])
 
         logger.info(f"Final Non-EU Taxonomy selection has {len(non_eu_taxonomy_selected)} companies")
 
@@ -766,14 +862,14 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
         # 1. EU Taxonomy Companies
         # Calculate market cap based weights for EU Taxonomy companies
         # Total market cap is already calculated for all companies
-                # Calculate total FFMC for ALL companies (not just Non-EU)
-        total_ffmc = final_selection['FFMC'].sum()
-        logger.info(f"Total FFMC for all companies: {total_ffmc:.2f}")
+                # Calculate total FFMC_WD for ALL companies (not just Non-EU)
+        total_ffmc_wd = final_selection['FFMC_WD'].sum()
+        logger.info(f"Total FFMC_WD for all companies: {total_ffmc_wd:.2f}")
 
 
         # Filter for EU Taxonomy companies
         eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 1].copy()
-        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC'] / total_ffmc
+        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC_WD'] / total_ffmc_wd
         logger.info(f"Market cap based weights calculated for EU Taxonomy companies")
 
         # Calculate liquidity constraints for each EU Taxonomy company
@@ -818,8 +914,8 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
         # Filter for Non-EU Taxonomy companies
         non_eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 0].copy()
 
-        # Calculate WIG based on FFMC proportion for Non-EU Taxonomy companies
-        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC'] / total_ffmc
+        # Calculate WIG based on FFMC_WD proportion for Non-EU Taxonomy companies
+        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC_WD'] / total_ffmc_wd
 
         # Calculate liquidity constraints for each Non-EU Taxonomy company
         non_eu_taxonomy_selection['Liquidity_Cap'] = non_eu_taxonomy_selection.apply(
@@ -838,26 +934,6 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             axis=1
         )
 
-        # Log Non-EU Taxonomy liquidity statistics
-        max_cap_non_eu = non_eu_taxonomy_selection['Liquidity_Cap'].max() * 100
-        min_cap_non_eu = non_eu_taxonomy_selection['Liquidity_Cap'].min() * 100
-        avg_cap_non_eu = non_eu_taxonomy_selection['Liquidity_Cap'].mean() * 100
-
-        max_floor_non_eu = non_eu_taxonomy_selection['Liquidity_Floor'].max() * 100
-        min_floor_non_eu = non_eu_taxonomy_selection['Liquidity_Floor'].min() * 100
-        avg_floor_non_eu = non_eu_taxonomy_selection['Liquidity_Floor'].mean() * 100
-
-        logger.info(f"Liquidity caps for Non-EU Taxonomy companies - Max: {max_cap_non_eu:.4f}%, Min: {min_cap_non_eu:.4f}%, Avg: {avg_cap_non_eu:.4f}%")
-        logger.info(f"Liquidity floors for Non-EU Taxonomy companies - Max: {max_floor_non_eu:.4f}%, Min: {min_floor_non_eu:.4f}%, Avg: {avg_floor_non_eu:.4f}%")
-
-        # Check for Non-EU Taxonomy companies with liquidity issues
-        problematic_non_eu = non_eu_taxonomy_selection[non_eu_taxonomy_selection['Liquidity_Floor'] > non_eu_taxonomy_selection['Liquidity_Cap']]
-        if len(problematic_non_eu) > 0:
-            logger.warning(f"Found {len(problematic_non_eu)} Non-EU Taxonomy companies with liquidity issues (floor > cap)")
-            for _, company in problematic_non_eu.iterrows():
-                logger.warning(f"Liquidity issue for {company['ISIN Code']}: Floor {company['Liquidity_Floor']*100:.4f}% > Cap {company['Liquidity_Cap']*100:.4f}%")
-        else:
-            logger.info("No liquidity issues found for Non-EU Taxonomy companies")
 
         # 3. Update the final selection dataframe
         # Create a combined dataframe with updated constraints

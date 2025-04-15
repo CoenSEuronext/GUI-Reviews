@@ -1,0 +1,269 @@
+2025-04-15 14:08:35,193 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.199.43.197:5000
+2025-04-15 14:08:35,193 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-15 14:08:35,200 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-04-15 14:08:35,689 - werkzeug - WARNING -  * Debugger is active!
+2025-04-15 14:08:35,691 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-15 14:08:43,503 - werkzeug - INFO - 10.199.43.197 - - [15/Apr/2025 14:08:43] "GET / HTTP/1.1" 200 -
+2025-04-15 14:08:43,596 - werkzeug - INFO - 10.199.43.197 - - [15/Apr/2025 14:08:43] "GET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1" 200 -
+2025-04-15 14:08:43,922 - werkzeug - INFO - 10.199.43.197 - - [15/Apr/2025 14:08:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-15 14:08:53,836 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:08:53] "GET / HTTP/1.1" 200 -
+2025-04-15 14:08:53,872 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:08:53] "GET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1" 200 -
+2025-04-15 14:08:54,464 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:08:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-15 14:10:03,375 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-04-15 14:10:05,683 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-04-15 14:10:14,977 - Review.reviews.lc3wp_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-15 14:10:14,980 - Review.reviews.lc3wp_review - INFO - Adding Free Float data...
+2025-04-15 14:10:15,014 - Review.reviews.lc3wp_review - INFO - Adding ICB Subsector data...
+2025-04-15 14:10:15,031 - Review.reviews.lc3wp_review - WARNING - Removed 9315 duplicate rows from ICB data
+2025-04-15 14:10:15,250 - Review.reviews.lc3wp_review - INFO - Debug file saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\debug\universe_df_after_nace_20250415_141015.xlsx
+2025-04-15 14:10:15,250 - Review.reviews.lc3wp_review - INFO - Adding CDP Climate data...
+2025-04-15 14:10:15,255 - Review.reviews.lc3wp_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-15 14:10:15,259 - Review.reviews.lc3wp_review - INFO - Adding NACE data...
+2025-04-15 14:10:15,262 - Review.reviews.lc3wp_review - INFO - Adding EU Taxonomy flag...
+2025-04-15 14:10:15,263 - Review.reviews.lc3wp_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-15 14:10:15,264 - Review.reviews.lc3wp_review - INFO - Applying exclusion criteria...
+2025-04-15 14:10:15,276 - Review.reviews.lc3wp_review - INFO - Marked 149 companies (10%) with worst SG scores for exclusion
+2025-04-15 14:10:15,294 - Review.reviews.lc3wp_review - INFO - Calculating Climate Score for ranking...
+2025-04-15 14:10:15,297 - Review.reviews.lc3wp_review - INFO - Selecting EU Taxonomy companies...
+2025-04-15 14:10:15,298 - Review.reviews.lc3wp_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-04-15 14:10:15,300 - Review.reviews.lc3wp_review - INFO - Found 979 Non-EU Taxonomy eligible companies after exclusions
+2025-04-15 14:10:15,300 - Review.reviews.lc3wp_review - INFO - STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...
+2025-04-15 14:10:15,301 - Review.reviews.lc3wp_review - INFO - Target number of Non-EU Taxonomy companies: 286
+2025-04-15 14:10:15,302 - Review.reviews.lc3wp_review - INFO - Total eligible Non-EU Taxonomy companies: 979
+2025-04-15 14:10:15,303 - Review.reviews.lc3wp_review - INFO - Total target after rounding: 295 (vs. target of 286)
+2025-04-15 14:10:15,303 - Review.reviews.lc3wp_review - INFO - Need to remove 9 companies due to rounding up
+2025-04-15 14:10:15,305 - Review.reviews.lc3wp_review - INFO - STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...
+2025-04-15 14:10:15,306 - Review.reviews.lc3wp_review - INFO - Selected 39 companies from super-sector 1010.0
+2025-04-15 14:10:15,307 - Review.reviews.lc3wp_review - INFO - Selected 12 companies from super-sector 1510.0
+2025-04-15 14:10:15,308 - Review.reviews.lc3wp_review - INFO - Selected 34 companies from super-sector 2010.0
+2025-04-15 14:10:15,309 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3010.0
+2025-04-15 14:10:15,310 - Review.reviews.lc3wp_review - INFO - Selected 21 companies from super-sector 3020.0
+2025-04-15 14:10:15,311 - Review.reviews.lc3wp_review - INFO - Selected 19 companies from super-sector 3030.0
+2025-04-15 14:10:15,312 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3510.0
+2025-04-15 14:10:15,313 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 4010.0
+2025-04-15 14:10:15,314 - Review.reviews.lc3wp_review - INFO - Selected 17 companies from super-sector 4020.0
+2025-04-15 14:10:15,315 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 4030.0
+2025-04-15 14:10:15,316 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4040.0
+2025-04-15 14:10:15,317 - Review.reviews.lc3wp_review - INFO - Selected 11 companies from super-sector 4050.0
+2025-04-15 14:10:15,318 - Review.reviews.lc3wp_review - INFO - Selected 15 companies from super-sector 4510.0
+2025-04-15 14:10:15,318 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4520.0
+2025-04-15 14:10:15,319 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5010.0
+2025-04-15 14:10:15,320 - Review.reviews.lc3wp_review - INFO - Selected 33 companies from super-sector 5020.0
+2025-04-15 14:10:15,321 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5510.0
+2025-04-15 14:10:15,322 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 5520.0
+2025-04-15 14:10:15,323 - Review.reviews.lc3wp_review - INFO - Selected 2 companies from super-sector 6510.0
+2025-04-15 14:10:15,331 - Review.reviews.lc3wp_review - INFO - Initial selection has 295 companies, need to remove 9
+2025-04-15 14:10:15,352 - Review.reviews.lc3wp_review - INFO - Removed company US38141G1040 from supersector 3020.0 (Climate Score: 2.75)
+2025-04-15 14:10:15,359 - Review.reviews.lc3wp_review - INFO - Removed company AU000000ANZ3 from supersector 3010.0 (Climate Score: 2.75)
+2025-04-15 14:10:15,365 - Review.reviews.lc3wp_review - INFO - Removed company CA0679011084 from supersector 5510.0 (Climate Score: 2.58973159003276)
+2025-04-15 14:10:15,371 - Review.reviews.lc3wp_review - INFO - Removed company JP3539220008 from supersector 3030.0 (Climate Score: 2.5)
+2025-04-15 14:10:15,376 - Review.reviews.lc3wp_review - INFO - Removed company US7475251036 from supersector 1010.0 (Climate Score: 2.30023900135313)
+2025-04-15 14:10:15,381 - Review.reviews.lc3wp_review - INFO - Removed company US2538681030 from supersector 3510.0 (Climate Score: 2.26099033267267)
+2025-04-15 14:10:15,386 - Review.reviews.lc3wp_review - INFO - Removed company JP3705200008 from supersector 4050.0 (Climate Score: 2.24552928645429)
+2025-04-15 14:10:15,391 - Review.reviews.lc3wp_review - INFO - Removed company DE0005552004 from supersector 5020.0 (Climate Score: 2.220375488488155)
+2025-04-15 14:10:15,396 - Review.reviews.lc3wp_review - INFO - Removed company US4595061015 from supersector 5520.0 (Climate Score: 2.2099302264427454)
+2025-04-15 14:10:15,398 - Review.reviews.lc3wp_review - INFO - Final Non-EU Taxonomy selection has 286 companies
+2025-04-15 14:10:15,398 - Review.reviews.lc3wp_review - INFO - Minimum companies per supersector: 2
+2025-04-15 14:10:15,402 - Review.reviews.lc3wp_review - INFO - Final selection contains 300 companies
+2025-04-15 14:10:15,402 - Review.reviews.lc3wp_review - INFO - - EU Taxonomy: 14
+2025-04-15 14:10:15,402 - Review.reviews.lc3wp_review - INFO - - Non-EU Taxonomy: 286
+2025-04-15 14:10:15,402 - Review.reviews.lc3wp_review - INFO - Adding PAB flag based on CDP temperature score...
+2025-04-15 14:10:15,403 - Review.reviews.lc3wp_review - INFO - Calculating liquidity constraints for all companies...
+2025-04-15 14:10:15,403 - Review.reviews.lc3wp_review - INFO - Total FFMC_WD for all companies: 10468631126780.40
+2025-04-15 14:10:15,404 - Review.reviews.lc3wp_review - INFO - Market cap based weights calculated for EU Taxonomy companies
+2025-04-15 14:10:15,406 - Review.reviews.lc3wp_review - INFO - Liquidity caps for EU Taxonomy companies - Max: 4.5085%, Min: 0.5432%, Avg: 1.7228%
+2025-04-15 14:10:15,406 - Review.reviews.lc3wp_review - INFO - Liquidity floors for EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-15 14:10:15,406 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for EU Taxonomy companies
+2025-04-15 14:10:15,411 - Review.reviews.lc3wp_review - INFO - Liquidity caps for Non-EU Taxonomy companies - Max: 10.0000%, Min: 0.1534%, Avg: 3.7633%
+2025-04-15 14:10:15,411 - Review.reviews.lc3wp_review - INFO - Liquidity floors for Non-EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-15 14:10:15,412 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for Non-EU Taxonomy companies
+2025-04-15 14:10:15,414 - Review.reviews.lc3wp_review - INFO - Liquidity constraints have been calculated for all 300 companies
+2025-04-15 14:10:15,415 - Review.reviews.lc3wp_review - INFO - Saving output files...
+2025-04-15 14:10:16,864 - Review.reviews.lc3wp_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC3WP_review_20250415_141015.xlsx
+2025-04-15 14:10:16,901 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:10:16] "POST /calculate HTTP/1.1" 200 -
+2025-04-15 14:10:39,320 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:10:39] "[33mGET /docs/user-manual.pdf HTTP/1.1[0m" 404 -
+2025-04-15 14:10:42,317 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:10:42] "[33mGET /docs/methodology.pdf HTTP/1.1[0m" 404 -
+2025-04-15 14:10:44,453 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:10:44] "[33mGET /docs/quick-guide.pdf HTTP/1.1[0m" 404 -
+2025-04-15 14:12:00,830 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-04-15 14:12:02,542 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-04-15 14:12:09,285 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-04-15 14:12:09,366 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:09,367 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:09,367 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:09,368 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:09,368 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:09,369 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-04-15 14:12:09,369 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-04-15 14:12:09,370 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-04-15 14:12:09,370 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-04-15 14:12:09,371 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-04-15 14:12:09,372 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-04-15 14:12:09,372 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-04-15 14:12:09,373 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-04-15 14:12:09,374 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-04-15 14:12:09,374 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-04-15 14:12:09,375 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-04-15 14:12:09,378 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250415_141209.xlsx
+2025-04-15 14:12:09,576 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:12:09] "POST /calculate HTTP/1.1" 200 -
+2025-04-15 14:12:21,255 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-04-15 14:12:22,994 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-04-15 14:12:29,748 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-04-15 14:12:29,823 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:29,824 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:29,825 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:29,826 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:29,826 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-04-15 14:12:29,827 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-04-15 14:12:29,827 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-04-15 14:12:29,828 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-04-15 14:12:29,829 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-04-15 14:12:29,829 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-04-15 14:12:29,830 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-04-15 14:12:29,831 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-04-15 14:12:29,831 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-04-15 14:12:29,832 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-04-15 14:12:29,833 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-04-15 14:12:29,833 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-04-15 14:12:29,837 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250415_141229.xlsx
+2025-04-15 14:12:30,127 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:12:30] "POST /calculate HTTP/1.1" 200 -
+2025-04-15 14:12:49,050 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-04-15 14:12:50,765 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-04-15 14:12:58,575 - Review.reviews.frd4p_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-04-15 14:12:58,576 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 59, in run_frd4p_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-04-15 14:12:58,594 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:12:58] "POST /calculate HTTP/1.1" 200 -
+2025-04-15 14:13:11,353 - Review.reviews.fri4p_review - INFO - Loading EOD data...
+2025-04-15 14:13:13,178 - Review.reviews.fri4p_review - INFO - Loading reference data...
+2025-04-15 14:13:20,899 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: AS, group size: 46
+2025-04-15 14:13:20,900 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-04-15 14:13:20,900 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: EU, group size: 25
+2025-04-15 14:13:20,901 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-04-15 14:13:20,901 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: NA, group size: 83
+2025-04-15 14:13:20,902 - Review.reviews.fri4p_review - INFO - Companies in group: 83, to exclude: 16
+2025-04-15 14:13:20,902 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: AS, group size: 12
+2025-04-15 14:13:20,903 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-15 14:13:20,903 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: EU, group size: 19
+2025-04-15 14:13:20,903 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-04-15 14:13:20,904 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: NA, group size: 10
+2025-04-15 14:13:20,904 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-15 14:13:20,904 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: AS, group size: 30
+2025-04-15 14:13:20,905 - Review.reviews.fri4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-04-15 14:13:20,905 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: EU, group size: 48
+2025-04-15 14:13:20,906 - Review.reviews.fri4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-04-15 14:13:20,906 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: NA, group size: 46
+2025-04-15 14:13:20,907 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-04-15 14:13:20,907 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: AS, group size: 30
+2025-04-15 14:13:20,908 - Review.reviews.fri4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-04-15 14:13:20,909 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: EU, group size: 46
+2025-04-15 14:13:20,909 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-04-15 14:13:20,909 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: NA, group size: 21
+2025-04-15 14:13:20,910 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-04-15 14:13:20,910 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: AS, group size: 17
+2025-04-15 14:13:20,911 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-15 14:13:20,911 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: EU, group size: 35
+2025-04-15 14:13:20,911 - Review.reviews.fri4p_review - INFO - Companies in group: 35, to exclude: 6
+2025-04-15 14:13:20,912 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: NA, group size: 32
+2025-04-15 14:13:20,912 - Review.reviews.fri4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-04-15 14:13:20,912 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: AS, group size: 13
+2025-04-15 14:13:20,913 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-04-15 14:13:20,913 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: EU, group size: 32
+2025-04-15 14:13:20,914 - Review.reviews.fri4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-04-15 14:13:20,914 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: NA, group size: 23
+2025-04-15 14:13:20,914 - Review.reviews.fri4p_review - INFO - Companies in group: 23, to exclude: 4
+2025-04-15 14:13:20,915 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: AS, group size: 48
+2025-04-15 14:13:20,915 - Review.reviews.fri4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-04-15 14:13:20,915 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: EU, group size: 25
+2025-04-15 14:13:20,916 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-04-15 14:13:20,916 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: NA, group size: 22
+2025-04-15 14:13:20,916 - Review.reviews.fri4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-04-15 14:13:20,917 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: AS, group size: 15
+2025-04-15 14:13:20,917 - Review.reviews.fri4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-04-15 14:13:20,917 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: EU, group size: 13
+2025-04-15 14:13:20,918 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-04-15 14:13:20,918 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-04-15 14:13:20,919 - Review.reviews.fri4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-04-15 14:13:20,919 - Review.reviews.fri4p_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-04-15 14:13:20,919 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: AS, group size: 29
+2025-04-15 14:13:20,920 - Review.reviews.fri4p_review - INFO - Companies in group: 29, to exclude: 5
+2025-04-15 14:13:20,921 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: EU, group size: 26
+2025-04-15 14:13:20,921 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-04-15 14:13:20,922 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: NA, group size: 17
+2025-04-15 14:13:20,922 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-15 14:13:20,923 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: AS, group size: 6
+2025-04-15 14:13:20,923 - Review.reviews.fri4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-04-15 14:13:20,923 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: EU, group size: 10
+2025-04-15 14:13:20,924 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-15 14:13:20,924 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: NA, group size: 6
+2025-04-15 14:13:20,924 - Review.reviews.fri4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-04-15 14:13:20,925 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: AS, group size: 13
+2025-04-15 14:13:20,925 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-04-15 14:13:20,925 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: EU, group size: 11
+2025-04-15 14:13:20,926 - Review.reviews.fri4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-04-15 14:13:20,926 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: NA, group size: 20
+2025-04-15 14:13:20,926 - Review.reviews.fri4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-04-15 14:13:20,927 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-04-15 14:13:20,927 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-04-15 14:13:20,927 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: EU, group size: 13
+2025-04-15 14:13:20,928 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-04-15 14:13:20,928 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: NA, group size: 19
+2025-04-15 14:13:20,928 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-04-15 14:13:20,929 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: AS, group size: 25
+2025-04-15 14:13:20,929 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-04-15 14:13:20,929 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: EU, group size: 26
+2025-04-15 14:13:20,930 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-04-15 14:13:20,930 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: NA, group size: 17
+2025-04-15 14:13:20,931 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-15 14:13:20,931 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: AS, group size: 16
+2025-04-15 14:13:20,932 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-04-15 14:13:20,932 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: EU, group size: 12
+2025-04-15 14:13:20,933 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-15 14:13:20,933 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-04-15 14:13:20,933 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-15 14:13:20,933 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: AS, group size: 17
+2025-04-15 14:13:20,934 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-15 14:13:20,934 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: EU, group size: 27
+2025-04-15 14:13:20,935 - Review.reviews.fri4p_review - INFO - Companies in group: 27, to exclude: 5
+2025-04-15 14:13:20,935 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: NA, group size: 10
+2025-04-15 14:13:20,935 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-15 14:13:20,936 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: AS, group size: 95
+2025-04-15 14:13:20,937 - Review.reviews.fri4p_review - INFO - Companies in group: 95, to exclude: 18
+2025-04-15 14:13:20,937 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: EU, group size: 97
+2025-04-15 14:13:20,938 - Review.reviews.fri4p_review - INFO - Companies in group: 97, to exclude: 19
+2025-04-15 14:13:20,938 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: NA, group size: 75
+2025-04-15 14:13:20,938 - Review.reviews.fri4p_review - INFO - Companies in group: 75, to exclude: 14
+2025-04-15 14:13:20,939 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: AS, group size: 20
+2025-04-15 14:13:20,939 - Review.reviews.fri4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-04-15 14:13:20,940 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: EU, group size: 16
+2025-04-15 14:13:20,940 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-04-15 14:13:20,941 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: NA, group size: 12
+2025-04-15 14:13:20,941 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-15 14:13:20,941 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: AS, group size: 17
+2025-04-15 14:13:20,942 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-15 14:13:20,942 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: EU, group size: 19
+2025-04-15 14:13:20,943 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-04-15 14:13:20,943 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: NA, group size: 6
+2025-04-15 14:13:20,944 - Review.reviews.fri4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-04-15 14:13:20,944 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: AS, group size: 10
+2025-04-15 14:13:20,945 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-15 14:13:20,945 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: EU, group size: 21
+2025-04-15 14:13:20,946 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-04-15 14:13:20,946 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: NA, group size: 34
+2025-04-15 14:13:20,946 - Review.reviews.fri4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-04-15 14:13:20,947 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: AS, group size: 22
+2025-04-15 14:13:20,947 - Review.reviews.fri4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-04-15 14:13:20,947 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: EU, group size: 25
+2025-04-15 14:13:20,948 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-04-15 14:13:20,948 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: NA, group size: 31
+2025-04-15 14:13:20,948 - Review.reviews.fri4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-04-15 14:13:33,280 - Review.reviews.fri4p_review - INFO - Checking IsinCode FRIX00003643 in index_eod_df
+2025-04-15 14:13:33,281 - Review.reviews.fri4p_review - INFO - Found 1 matching rows
+2025-04-15 14:13:33,292 - Review.reviews.fri4p_review - INFO - Saving FRI4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRI4P_df_20250415_141333.xlsx
+2025-04-15 14:13:33,610 - werkzeug - INFO - 10.199.43.57 - - [15/Apr/2025 14:13:33] "POST /calculate HTTP/1.1" 200 -
