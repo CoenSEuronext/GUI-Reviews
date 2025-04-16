@@ -101,7 +101,8 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             'Currency (Local)': 'Currency',
             '3 months ADTV': 'VOL_AV_3M'
         }).copy()
-        
+        # Convert GBP to GBX in universe_df to match stock_eod_df currency format
+        universe_df['Currency'] = universe_df['Currency'].replace('GBP', 'GBX')
         # Check for and remove any duplicates in the initial universe
         before_count = len(universe_df)
         universe_df = universe_df.drop_duplicates(subset=['ISIN Code'])
@@ -123,7 +124,52 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})      
         
-        universe_df['FFMC'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']
+        universe_df['FFMC_CO'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']          
+        # First deduplicate stock_eod_df
+        # Create a dictionary mapping from index mnemonics to their currencies
+        index_currency_map = dict(zip(index_eod_df['Mnemo'], index_eod_df['Curr']))
+
+        # Add the Index Ccy column to stock_eod_df by looking up the Index in the mapping
+        stock_eod_df['Index Ccy'] = stock_eod_df['Index'].map(index_currency_map)
+
+        # Now deduplicate AFTER adding the Index Ccy column
+        deduplicated_stock_eod_df = stock_eod_df.drop_duplicates(subset=['Isin Code', 'MIC', 'Index Ccy'], keep='first')
+
+        # Filter deduplicated_stock_eod_df to only include rows where Index Ccy is 'EUR'
+        eur_deduplicated_stock_eod_df = deduplicated_stock_eod_df[deduplicated_stock_eod_df['Index Ccy'] == 'EUR']
+
+        # Create a dictionary mapping from (Isin Code, Currency) to Close Prc for quick lookup
+        price_map = dict(zip(
+            zip(deduplicated_stock_eod_df['Isin Code'], deduplicated_stock_eod_df['MIC']),
+            deduplicated_stock_eod_df['Close Prc']
+        ))
+
+        # Create a dictionary mapping from (Isin Code, Currency) to FX/Index Ccy for quick lookup
+        # Only using rows where Index Ccy is EUR
+        fx_ccy_map = dict(zip(
+            zip(eur_deduplicated_stock_eod_df['Isin Code'], eur_deduplicated_stock_eod_df['Currency']),
+            eur_deduplicated_stock_eod_df['FX/Index Ccy']
+        ))
+        # Store the original values that need to be temporarily changed for lookup
+
+
+
+        # Perform the lookups with the modified values
+        universe_df['Close Prc'] = universe_df.apply(
+            lambda row: price_map.get((row['ISIN Code'], row['MIC']), None), 
+            axis=1
+        )
+
+        universe_df['FX/Index Ccy'] = universe_df.apply(
+            lambda row: fx_ccy_map.get((row['ISIN Code'], row['Currency']), None), 
+            axis=1
+        )
+        
+        universe_df['FFMC_WD'] = universe_df['Number of Shares'] * universe_df['Close Prc'] * universe_df['Free Float'] * universe_df['FX/Index Ccy']
+        universe_df['Price_WD'] = universe_df['FX/Index Ccy'] * universe_df['Close Prc']
+        
+        
+        
         
         # Add ICB Subsector data
         logger.info("Adding ICB Subsector data...")
@@ -600,7 +646,7 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             ].copy()
             
             # Sort by climate score (lowest/best first), and then by FFMC (highest first) to break ties
-            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC'], 
+            supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC_CO'], 
                                                                     ascending=[True, False])
             
             # Select the top N companies (using int)
@@ -675,13 +721,13 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
                 candidates_df = candidates_df.sort_values('climate_score', ascending=False)
                 
                 # In case of equal climate score, sort by Free Float Market Cap (lower first)
-                if 'FFMC' in candidates_df.columns:
+                if 'FFMC_CO' in candidates_df.columns:
                     candidates_with_same_score = candidates_df.duplicated('climate_score', keep=False)
                     if candidates_with_same_score.any():
-                        # Sort those with duplicate scores by FFMC
+                        # Sort those with duplicate scores by FFMC_CO
                         for score_group in candidates_df.loc[candidates_with_same_score, 'climate_score'].unique():
                             score_mask = candidates_df['climate_score'] == score_group
-                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC')
+                            candidates_df.loc[score_mask] = candidates_df.loc[score_mask].sort_values('FFMC_CO')
                 
                 # Get the worst company overall
                 company_to_remove = candidates_df.iloc[0]
@@ -702,7 +748,7 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
                     'Removed_Company': company_to_remove['Company'] if 'Company' in company_to_remove else 'Unknown',
                     'Supersector_Code': supersector_to_remove_from,
                     'Climate_Score': company_to_remove['climate_score'],
-                    'FFMC': company_to_remove['FFMC'] if 'FFMC' in company_to_remove else None,
+                    'FFMC_CO': company_to_remove['FFMC_CO'] if 'FFMC_CO' in company_to_remove else None,
                     'Remaining_Count': len(non_eu_taxonomy_selected)
                 }
                 removal_iterations.append(removal_info)
@@ -727,7 +773,7 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             non_eu_taxonomy_selected = non_eu_taxonomy_selected_initial.copy()
             step_output['Final_Selected'] = step_output['Initial_Selected']
             step_output['Companies_Removed'] = 0
-            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC', 'Remaining_Count'])
+            removals_df = pd.DataFrame(columns=['Iteration', 'Removed_ISIN', 'Removed_Company', 'Supersector_Code', 'Climate_Score', 'FFMC_CO', 'Remaining_Count'])
 
         logger.info(f"Final Non-EU Taxonomy selection has {len(non_eu_taxonomy_selected)} companies")
 
@@ -770,14 +816,14 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
         # 1. EU Taxonomy Companies
         # Calculate market cap based weights for EU Taxonomy companies
         # Total market cap is already calculated for all companies
-                # Calculate total FFMC for ALL companies (not just Non-EU)
-        total_ffmc = final_selection['FFMC'].sum()
-        logger.info(f"Total FFMC for all companies: {total_ffmc:.2f}")
+                # Calculate total FFMC_wd for ALL companies (not just Non-EU)
+        total_ffmc_wd = final_selection['FFMC_WD'].sum()
+        logger.info(f"Total FFMC_WD for all companies: {total_ffmc_wd:.2f}")
 
 
         # Filter for EU Taxonomy companies
         eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 1].copy()
-        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC'] / total_ffmc
+        eu_taxonomy_selection['WIG'] = eu_taxonomy_selection['FFMC_WD'] / total_ffmc_wd
         logger.info(f"Market cap based weights calculated for EU Taxonomy companies")
 
         # Calculate liquidity constraints for each EU Taxonomy company
@@ -822,8 +868,8 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
         # Filter for Non-EU Taxonomy companies
         non_eu_taxonomy_selection = final_selection[final_selection['EU_Taxonomy'] == 0].copy()
 
-        # Calculate WIG based on FFMC proportion for Non-EU Taxonomy companies
-        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC'] / total_ffmc
+        # Calculate WIG based on FFMC_WD proportion for Non-EU Taxonomy companies
+        non_eu_taxonomy_selection['WIG'] = non_eu_taxonomy_selection['FFMC_WD'] / total_ffmc_wd
 
         # Calculate liquidity constraints for each Non-EU Taxonomy company
         non_eu_taxonomy_selection['Liquidity_Cap'] = non_eu_taxonomy_selection.apply(

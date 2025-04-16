@@ -101,7 +101,8 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             'Currency (Local)': 'Currency',
             '3 months ADTV': 'VOL_AV_3M'
         }).copy()
-        
+        # Convert GBP to GBX in universe_df to match stock_eod_df currency format
+        universe_df['Currency'] = universe_df['Currency'].replace('GBP', 'GBX')
         # Check for and remove any duplicates in the initial universe
         before_count = len(universe_df)
         universe_df = universe_df.drop_duplicates(subset=['ISIN Code'])
@@ -123,13 +124,49 @@ def run_lc100_review(date, co_date, effective_date, index="LC100", isin="QS00111
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})        
         
-        universe_df['FFMC_CO'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']  
-        universe_df['FFMC_WD'] = universe_df.merge(
-            stock_eod_df[['Isin Code', 'Close Prc']], 
-            left_on='ISIN Code', 
-            right_on='Isin Code', 
-            how='left'
-        )['Close Prc'] * universe_df['Number of Shares'] * universe_df['Free Float']
+        universe_df['FFMC_CO'] = universe_df['Number of Shares'] * universe_df['Price (EUR) '] * universe_df['Free Float']          
+        # First deduplicate stock_eod_df
+        # Create a dictionary mapping from index mnemonics to their currencies
+        index_currency_map = dict(zip(index_eod_df['Mnemo'], index_eod_df['Curr']))
+
+        # Add the Index Ccy column to stock_eod_df by looking up the Index in the mapping
+        stock_eod_df['Index Ccy'] = stock_eod_df['Index'].map(index_currency_map)
+
+        # Now deduplicate AFTER adding the Index Ccy column
+        deduplicated_stock_eod_df = stock_eod_df.drop_duplicates(subset=['Isin Code', 'MIC', 'Index Ccy'], keep='first')
+
+        # Filter deduplicated_stock_eod_df to only include rows where Index Ccy is 'EUR'
+        eur_deduplicated_stock_eod_df = deduplicated_stock_eod_df[deduplicated_stock_eod_df['Index Ccy'] == 'EUR']
+
+        # Create a dictionary mapping from (Isin Code, Currency) to Close Prc for quick lookup
+        price_map = dict(zip(
+            zip(deduplicated_stock_eod_df['Isin Code'], deduplicated_stock_eod_df['MIC']),
+            deduplicated_stock_eod_df['Close Prc']
+        ))
+
+        # Create a dictionary mapping from (Isin Code, Currency) to FX/Index Ccy for quick lookup
+        # Only using rows where Index Ccy is EUR
+        fx_ccy_map = dict(zip(
+            zip(eur_deduplicated_stock_eod_df['Isin Code'], eur_deduplicated_stock_eod_df['Currency']),
+            eur_deduplicated_stock_eod_df['FX/Index Ccy']
+        ))
+        # Store the original values that need to be temporarily changed for lookup
+
+
+
+        # Perform the lookups with the modified values
+        universe_df['Close Prc'] = universe_df.apply(
+            lambda row: price_map.get((row['ISIN Code'], row['MIC']), None), 
+            axis=1
+        )
+
+        universe_df['FX/Index Ccy'] = universe_df.apply(
+            lambda row: fx_ccy_map.get((row['ISIN Code'], row['Currency']), None), 
+            axis=1
+        )
+        
+        universe_df['FFMC_WD'] = universe_df['Number of Shares'] * universe_df['Close Prc'] * universe_df['Free Float'] * universe_df['FX/Index Ccy']
+        universe_df['Price_WD'] = universe_df['FX/Index Ccy'] * universe_df['Close Prc']
         
         # Add ICB Subsector data
         logger.info("Adding ICB Subsector data...")

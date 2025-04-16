@@ -6,6 +6,7 @@ import traceback
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
+from utils.weight_optimization import optimize_weights
 
 
 logger = setup_logging(__name__)
@@ -838,8 +839,6 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
         logger.info(f"- EU Taxonomy: {len(eu_taxonomy_companies)}")
         logger.info(f"- Non-EU Taxonomy: {len(non_eu_taxonomy_selected)}")
         
-        # Set global WACI value
-        WACI = 301.45
 
         # Add PAB flag based on CDP temperature score
         logger.info("Adding PAB flag based on CDP temperature score...")
@@ -934,7 +933,6 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             axis=1
         )
 
-
         # 3. Update the final selection dataframe
         # Create a combined dataframe with updated constraints
         updated_constraints = pd.concat([
@@ -944,7 +942,9 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
 
         # Remove existing constraints columns from final_selection if they exist
         final_selection = final_selection.drop(columns=['Liquidity_Cap', 'Liquidity_Floor'], errors='ignore')
-
+        final_selection['Weight_FFMC_WD'] = final_selection['FFMC_WD'] / final_selection['FFMC_WD'].sum()
+        final_selection['WCI'] = final_selection['CI'] * final_selection['Weight_FFMC_WD']
+        final_selection_waci = final_selection['WCI'].sum()
         # Add the new constraints
         final_selection = final_selection.merge(
             updated_constraints[['ISIN Code', 'Liquidity_Cap', 'Liquidity_Floor']], 
@@ -953,8 +953,88 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
         )
 
         logger.info(f"Liquidity constraints have been calculated for all {len(final_selection)} companies")
-        
-        
+
+        # STEP 5: Implement PAB weighting optimization procedure (section 2.4.6)
+        logger.info("STEP 5: Implementing PAB weighting optimization procedure...")
+
+        try:
+            # Import the optimize_weights function
+            from utils.weight_optimization import optimize_weights
+
+            # Calculate total FFMC_WD for portfolio calculation
+            total_ffmc_wd = final_selection['FFMC_WD'].sum()
+            logger.info(f"Total FFMC_WD for selected companies: {total_ffmc_wd:.2f}")
+
+            # Run the optimization
+            optimized_portfolio = optimize_weights(final_selection, universe_df, WACI, date)
+
+            # Verify that optimization was successful by checking if 'Optimized_Weight' column exists
+            if 'Optimized_Weight' in optimized_portfolio.columns:
+                # Check if weights sum to approximately 1
+                weights_sum = optimized_portfolio['Optimized_Weight'].sum()
+                if abs(weights_sum - 1.0) > 0.0001:
+                    logger.warning(f"Optimized weights sum to {weights_sum}, not 1.0. Normalizing weights.")
+                    optimized_portfolio['Optimized_Weight'] = optimized_portfolio['Optimized_Weight'] / weights_sum
+                    
+                # Update the final_selection with optimized weights
+                final_selection = optimized_portfolio
+            else:
+                logger.error("Optimization did not produce valid weights. Using market cap weights instead.")
+                # Fallback to market cap weights
+                final_selection['Optimized_Weight'] = final_selection['FFMC_WD'] / total_ffmc_wd
+        except Exception as e:
+            logger.error(f"Error during weight optimization: {str(e)}")
+            logger.error(traceback.format_exc())
+            # Fallback to market cap weights
+            logger.warning("Using market cap weights as fallback due to optimization failure")
+            final_selection['Optimized_Weight'] = final_selection['FFMC_WD'] / total_ffmc_wd
+
+        # Calculate the Number of Shares for each company based on optimized weights
+        final_selection['Index_Weight'] = final_selection['Optimized_Weight']
+        final_selection['Weighting_Factor'] = final_selection['Index_Weight'] / (final_selection['FFMC_WD'] / total_ffmc_wd)
+        logger.info("Calculated weighting factors based on optimized weights")
+
+        # Perform validation checks on final weights
+        # First handle potential missing values in CI column
+        final_selection['CI'] = pd.to_numeric(final_selection['CI'], errors='coerce').fillna(0)
+
+        optimized_waci = (final_selection['CI'] * final_selection['Index_Weight']).sum()
+        waci_target = WACI * 0.5
+        logger.info(f"Final optimized WACI: {optimized_waci:.2f} (target: < {waci_target:.2f})")
+        if optimized_waci > waci_target:
+            logger.warning(f"WACI reduction target not met: {optimized_waci:.2f} > {waci_target:.2f}")
+            logger.warning(f"Achieved only {(1 - optimized_waci/WACI)*100:.2f}% reduction vs target of 50%")
+
+        eu_taxonomy_weight = final_selection[final_selection['EU_Taxonomy'] == 1]['Index_Weight'].sum()
+        logger.info(f"EU Taxonomy pocket weight: {eu_taxonomy_weight*100:.2f}% (target: 5-10%)")
+        if eu_taxonomy_weight < 0.05 or eu_taxonomy_weight > 0.10:
+            logger.warning(f"EU Taxonomy weight constraint not met: {eu_taxonomy_weight*100:.2f}% outside target range 5-10%")
+
+        # Get universe HCI weight - this should have been calculated earlier
+        universe_hci = universe_df[universe_df['High_Climate_Impact'] == 1]
+        universe_hci_weight = universe_hci['FFMC_WD'].sum() / universe_df['FFMC_WD'].sum()
+
+        hci_weight = final_selection[final_selection['High_Climate_Impact'] == 1]['Index_Weight'].sum()
+        logger.info(f"High Climate Impact section weight: {hci_weight*100:.2f}% (target: >= {universe_hci_weight*100:.2f}%)")
+        EPSILON = 1e-6  # Small tolerance value
+        if hci_weight < universe_hci_weight - EPSILON:
+            logger.warning(f"High Climate Impact weight constraint not met: {hci_weight*100:.2f}% < {universe_hci_weight*100:.2f}%")
+
+        # Get universe PAB plan ratio
+        pab_universe_ratio = universe_df[universe_df['PAB_Plan_Flag'] == 1]['FFMC_WD'].sum() / universe_df['FFMC_WD'].sum()
+
+        pab_weight = final_selection[final_selection['PAB_Plan_Flag'] == 1]['Index_Weight'].sum()
+        logger.info(f"Companies with Paris Agreement Plan weight: {pab_weight*100:.2f}% (target: > {pab_universe_ratio*100:.2f}%)")
+        if pab_weight <= pab_universe_ratio:
+            logger.warning(f"Paris Agreement Plan weight constraint not met: {pab_weight*100:.2f}% <= {pab_universe_ratio*100:.2f}%")
+
+        hci_pab_weight = final_selection[(final_selection['High_Climate_Impact'] == 1) & 
+                                        (final_selection['PAB_Plan_Flag'] == 1)]['Index_Weight'].sum()
+        hci_pab_percentage = (hci_pab_weight / hci_weight * 100) if hci_weight > 0 else 0
+        logger.info(f"HCI companies with Paris Agreement Plan: {hci_pab_percentage:.2f}% (target: >= 35%)")
+        if hci_pab_percentage < 35 - EPSILON:
+            logger.warning(f"HCI with Paris Agreement Plan constraint not met: {hci_pab_percentage:.2f}% < 35%")
+
         # Save final selection to output
         logger.info("Saving output files...")
         output_dir = os.path.join(os.getcwd(), 'output')
@@ -964,7 +1044,7 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
 
         # Save all results to a single Excel file
         with pd.ExcelWriter(output_path) as writer:
-            # Write final selection data
+            # Write final selection data with weights
             final_selection.to_excel(writer, sheet_name='Selected Companies', index=False)
             universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
@@ -975,8 +1055,136 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             non_eu_taxonomy_selected.to_excel(writer, sheet_name='Final Selection', index=False)
             if len(removals_df) > 0:
                 removals_df.to_excel(writer, sheet_name='Removal Process', index=False)
+                
+            # Add a sheet with sector weights
+            sector_weights = final_selection.groupby('Supersector Code')['Index_Weight'].sum().reset_index()
+            universe_sector_weights = universe_df.groupby('Supersector Code')['FFMC_WD'].sum().reset_index()
+            universe_sector_weights['Universe_Weight'] = universe_sector_weights['FFMC_WD'] / universe_sector_weights['FFMC_WD'].sum()
+            sector_comparison = sector_weights.merge(
+                universe_sector_weights[['Supersector Code', 'Universe_Weight']], 
+                on='Supersector Code', 
+                how='left'
+            )
+            sector_comparison['Deviation'] = sector_comparison['Index_Weight'] - sector_comparison['Universe_Weight']
+            sector_comparison.to_excel(writer, sheet_name='Sector Weights', index=False)
+            
+            # Add a sheet with optimization results
+            waci_reduction = (1 - optimized_waci/WACI)*100
+            hci_pab_percentage = (hci_pab_weight / hci_weight * 100) if hci_weight > 0 else 0
+            
+            # Define functions to check if constraints are met
+            def check_waci(waci):
+                return waci < WACI * 0.5
+            
+            def check_waci_reduction(reduction):
+                return reduction >= 50
+            
+            def check_eu_taxonomy(weight):
+                return 5 <= weight <= 10
+            
+            def check_hci(weight, target):
+                return weight >= target
+            
+            def check_pab(weight, target):
+                return weight > target
+            
+            def check_hci_pab(percentage):
+                return percentage >= 35
+            
+            # Create status column values
+            optimization_results = pd.DataFrame({
+                'Constraint': [
+                    'WACI', 
+                    'WACI Reduction vs Universe', 
+                    'EU Taxonomy Weight', 
+                    'High Climate Impact Weight',
+                    'Paris Agreement Plan Weight',
+                    'HCI with Paris Agreement Plan',
+                    'Weights Sum to 1',
+                    'Liquidity Constraints Met',
+                    'FFMC Factor Used'
+                ],
+                'Value': [
+                    f"{optimized_waci:.2f}",
+                    f"{waci_reduction:.2f}%",
+                    f"{eu_taxonomy_weight*100:.2f}%",
+                    f"{hci_weight*100:.2f}%",
+                    f"{pab_weight*100:.2f}%",
+                    f"{hci_pab_percentage:.2f}%",
+                    f"{final_selection['Index_Weight'].sum():.6f}",
+                    "All companies" if (final_selection['Index_Weight'] <= final_selection['Liquidity_Cap']).all() and 
+                                    (final_selection['Index_Weight'] >= final_selection['Liquidity_Floor']).all() 
+                                else "Some violations",
+                    f"{final_selection['Optimization_Factor'].iloc[0] if 'Optimization_Factor' in final_selection.columns else 'N/A'}"
+                ],
+                'Target': [
+                    f"< {WACI*0.5:.2f}",
+                    ">= 50%",
+                    "5-10%",
+                    f">= {universe_hci_weight*100:.2f}%",
+                    f"> {pab_universe_ratio*100:.2f}%",
+                    ">= 35%",
+                    "= 1.0",
+                    "All within bounds",
+                    "<= 20"
+                ],
+                'Status': [
+                    "PASS" if check_waci(optimized_waci) else "FAIL",
+                    "PASS" if check_waci_reduction(waci_reduction) else "FAIL",
+                    "PASS" if check_eu_taxonomy(eu_taxonomy_weight*100) else "FAIL",
+                    "PASS" if check_hci(hci_weight, universe_hci_weight) else "FAIL",
+                    "PASS" if check_pab(pab_weight, pab_universe_ratio) else "FAIL",
+                    "PASS" if check_hci_pab(hci_pab_percentage) else "FAIL",
+                    "PASS" if abs(final_selection['Index_Weight'].sum() - 1.0) < 0.0001 else "FAIL",
+                    "PASS" if (final_selection['Index_Weight'] <= final_selection['Liquidity_Cap']).all() and 
+                            (final_selection['Index_Weight'] >= final_selection['Liquidity_Floor']).all() 
+                            else "FAIL",
+                    "PASS" if 'Optimization_Factor' in final_selection.columns and final_selection['Optimization_Factor'].iloc[0] <= 20 else "N/A"
+                ]
+            })
+            
+            # Add another sheet with summary statistics about weights
+            weight_stats = pd.DataFrame({
+                'Statistic': [
+                    'Minimum Weight', 
+                    'Maximum Weight',
+                    'Mean Weight',
+                    'Median Weight',
+                    'Standard Deviation',
+                    'Number of Companies',
+                    'Number of EU Taxonomy Companies',
+                    'Number of Non-EU Taxonomy Companies',
+                    'Number of HCI Companies',
+                    'Number of Companies with Paris Agreement Plan'
+                ],
+                'Value': [
+                    f"{final_selection['Index_Weight'].min()*100:.6f}%",
+                    f"{final_selection['Index_Weight'].max()*100:.6f}%",
+                    f"{final_selection['Index_Weight'].mean()*100:.6f}%",
+                    f"{final_selection['Index_Weight'].median()*100:.6f}%",
+                    f"{final_selection['Index_Weight'].std()*100:.6f}%",
+                    len(final_selection),
+                    len(final_selection[final_selection['EU_Taxonomy'] == 1]),
+                    len(final_selection[final_selection['EU_Taxonomy'] == 0]),
+                    len(final_selection[final_selection['High_Climate_Impact'] == 1]),
+                    len(final_selection[final_selection['PAB_Plan_Flag'] == 1])
+                ]
+            })
+            
+            optimization_results.to_excel(writer, sheet_name='Optimization Results', index=False)
+            weight_stats.to_excel(writer, sheet_name='Weight Statistics', index=False)
+            
+            # Add a sheet with liquidity constraint violations if any exist
+            liquidity_violations = final_selection[
+                (final_selection['Index_Weight'] > final_selection['Liquidity_Cap']) | 
+                (final_selection['Index_Weight'] < final_selection['Liquidity_Floor'])
+            ][['ISIN Code', 'Company', 'Index_Weight', 'Liquidity_Floor', 'Liquidity_Cap']]
+            
+            if len(liquidity_violations) > 0:
+                liquidity_violations.to_excel(writer, sheet_name='Liquidity Violations', index=False)
 
         logger.info(f"Results saved to {output_path}")
+        
         
         return {
             "status": "success",

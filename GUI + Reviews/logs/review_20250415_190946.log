@@ -1,0 +1,103 @@
+2025-04-15 19:09:47,237 - werkzeug - WARNING -  * Debugger is active!
+2025-04-15 19:09:47,239 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-15 19:09:48,117 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-04-15 19:09:49,223 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-04-15 19:09:58,819 - Review.reviews.lc3wp_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-15 19:09:58,819 - Review.reviews.lc3wp_review - INFO - Adding Free Float data...
+2025-04-15 19:09:58,853 - Review.reviews.lc3wp_review - INFO - Adding ICB Subsector data...
+2025-04-15 19:09:58,870 - Review.reviews.lc3wp_review - WARNING - Removed 9314 duplicate rows from ICB data
+2025-04-15 19:09:58,886 - Review.reviews.lc3wp_review - INFO - Adding CDP Climate data...
+2025-04-15 19:09:58,886 - Review.reviews.lc3wp_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-15 19:09:58,897 - Review.reviews.lc3wp_review - INFO - Adding NACE data...
+2025-04-15 19:09:58,900 - Review.reviews.lc3wp_review - INFO - Adding EU Taxonomy flag...
+2025-04-15 19:09:58,902 - Review.reviews.lc3wp_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-15 19:09:58,903 - Review.reviews.lc3wp_review - INFO - Applying exclusion criteria...
+2025-04-15 19:09:58,916 - Review.reviews.lc3wp_review - INFO - Marked 149 companies (10%) with worst SG scores for exclusion
+2025-04-15 19:09:58,935 - Review.reviews.lc3wp_review - INFO - Calculating Climate Score for ranking...
+2025-04-15 19:09:58,937 - Review.reviews.lc3wp_review - INFO - Calculating median Carbon Intensity by Supersector excluding zero values...
+2025-04-15 19:09:58,942 - Review.reviews.lc3wp_review - INFO - Calculated median Carbon Intensity for 20 supersectors, excluding zero values
+2025-04-15 19:09:58,948 - Review.reviews.lc3wp_review - INFO - Created CI column combining company-specific and median carbon intensity values
+2025-04-15 19:09:58,953 - Review.reviews.lc3wp_review - INFO - Calculated WACI: 498.58403295446817
+2025-04-15 19:09:58,953 - Review.reviews.lc3wp_review - INFO - Selecting EU Taxonomy companies...
+2025-04-15 19:09:58,954 - Review.reviews.lc3wp_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-04-15 19:09:58,955 - Review.reviews.lc3wp_review - INFO - Found 979 Non-EU Taxonomy eligible companies after exclusions
+2025-04-15 19:09:58,955 - Review.reviews.lc3wp_review - INFO - STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...
+2025-04-15 19:09:58,955 - Review.reviews.lc3wp_review - INFO - Target number of Non-EU Taxonomy companies: 286
+2025-04-15 19:09:58,956 - Review.reviews.lc3wp_review - INFO - Total eligible Non-EU Taxonomy companies: 979
+2025-04-15 19:09:58,957 - Review.reviews.lc3wp_review - INFO - Total target after rounding: 295 (vs. target of 286)
+2025-04-15 19:09:58,957 - Review.reviews.lc3wp_review - INFO - Need to remove 9 companies due to rounding up
+2025-04-15 19:09:58,959 - Review.reviews.lc3wp_review - INFO - STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...
+2025-04-15 19:09:58,960 - Review.reviews.lc3wp_review - INFO - Selected 39 companies from super-sector 1010.0
+2025-04-15 19:09:58,960 - Review.reviews.lc3wp_review - INFO - Selected 12 companies from super-sector 1510.0
+2025-04-15 19:09:58,961 - Review.reviews.lc3wp_review - INFO - Selected 34 companies from super-sector 2010.0
+2025-04-15 19:09:58,962 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3010.0
+2025-04-15 19:09:58,964 - Review.reviews.lc3wp_review - INFO - Selected 21 companies from super-sector 3020.0
+2025-04-15 19:09:58,965 - Review.reviews.lc3wp_review - INFO - Selected 19 companies from super-sector 3030.0
+2025-04-15 19:09:58,966 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3510.0
+2025-04-15 19:09:58,967 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 4010.0
+2025-04-15 19:09:58,968 - Review.reviews.lc3wp_review - INFO - Selected 17 companies from super-sector 4020.0
+2025-04-15 19:09:58,969 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 4030.0
+2025-04-15 19:09:58,970 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4040.0
+2025-04-15 19:09:58,970 - Review.reviews.lc3wp_review - INFO - Selected 11 companies from super-sector 4050.0
+2025-04-15 19:09:58,971 - Review.reviews.lc3wp_review - INFO - Selected 15 companies from super-sector 4510.0
+2025-04-15 19:09:58,972 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4520.0
+2025-04-15 19:09:58,973 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5010.0
+2025-04-15 19:09:58,973 - Review.reviews.lc3wp_review - INFO - Selected 33 companies from super-sector 5020.0
+2025-04-15 19:09:58,974 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5510.0
+2025-04-15 19:09:58,976 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 5520.0
+2025-04-15 19:09:58,976 - Review.reviews.lc3wp_review - INFO - Selected 2 companies from super-sector 6510.0
+2025-04-15 19:09:58,981 - Review.reviews.lc3wp_review - INFO - Initial selection has 295 companies, need to remove 9
+2025-04-15 19:09:59,031 - Review.reviews.lc3wp_review - INFO - Removed company US38141G1040 from supersector 3020 (Climate Score: 2.75)
+2025-04-15 19:09:59,031 - Review.reviews.lc3wp_review - INFO - Removed company AU000000ANZ3 from supersector 3010 (Climate Score: 2.75)
+2025-04-15 19:09:59,045 - Review.reviews.lc3wp_review - INFO - Removed company CA0679011084 from supersector 5510 (Climate Score: 2.58973159003276)
+2025-04-15 19:09:59,050 - Review.reviews.lc3wp_review - INFO - Removed company JP3539220008 from supersector 3030 (Climate Score: 2.5)
+2025-04-15 19:09:59,053 - Review.reviews.lc3wp_review - INFO - Removed company US7475251036 from supersector 1010 (Climate Score: 2.30023900135313)
+2025-04-15 19:09:59,062 - Review.reviews.lc3wp_review - INFO - Removed company US2538681030 from supersector 3510 (Climate Score: 2.26099033267267)
+2025-04-15 19:09:59,065 - Review.reviews.lc3wp_review - INFO - Removed company JP3705200008 from supersector 4050 (Climate Score: 2.24552928645429)
+2025-04-15 19:09:59,072 - Review.reviews.lc3wp_review - INFO - Removed company DE0005552004 from supersector 5020 (Climate Score: 2.220375488488155)
+2025-04-15 19:09:59,074 - Review.reviews.lc3wp_review - INFO - Removed company US4595061015 from supersector 5520 (Climate Score: 2.2099302264427454)
+2025-04-15 19:09:59,074 - Review.reviews.lc3wp_review - INFO - Final Non-EU Taxonomy selection has 286 companies
+2025-04-15 19:09:59,074 - Review.reviews.lc3wp_review - INFO - Minimum companies per supersector: 2
+2025-04-15 19:09:59,083 - Review.reviews.lc3wp_review - INFO - Final selection contains 300 companies
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - - EU Taxonomy: 14
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - - Non-EU Taxonomy: 286
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - Adding PAB flag based on CDP temperature score...
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - Calculating liquidity constraints for all companies...
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - Total FFMC_WD for all companies: 10468631126780.40
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - Market cap based weights calculated for EU Taxonomy companies
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - Liquidity caps for EU Taxonomy companies - Max: 4.5085%, Min: 0.5432%, Avg: 1.7228%
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - Liquidity floors for EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-15 19:09:59,084 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for EU Taxonomy companies
+2025-04-15 19:09:59,092 - Review.reviews.lc3wp_review - INFO - STEP 5: Performing weight optimization...
+2025-04-15 19:09:59,092 - Review.reviews.lc3wp_review - INFO - Optimizing weights for 300 constituents
+2025-04-15 19:09:59,093 - Review.reviews.lc3wp_review - INFO - Number of Super Sectors: 20
+2025-04-15 19:09:59,098 - Review.reviews.lc3wp_review - INFO - Total FFMC of universe: 57414098526819.23
+2025-04-15 19:09:59,098 - Review.reviews.lc3wp_review - INFO - Parent index WACI: 498.58
+2025-04-15 19:09:59,098 - Review.reviews.lc3wp_review - ERROR - Error during weight optimization: 'Liquidity_Cap'
+2025-04-15 19:09:59,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-04-15 19:09:59,106 - Review.reviews.lc3wp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Liquidity_Cap'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc3wp_review.py", line 1070, in run_lc3wp_review
+    liquidity_caps = constituents['Liquidity_Cap'].values
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Liquidity_Cap'
+
+2025-04-15 19:09:59,106 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-04-15 19:09:59,107 - Review.reviews.lc3wp_review - INFO - Liquidity constraints have been calculated for all 300 companies
+2025-04-15 19:09:59,107 - Review.reviews.lc3wp_review - INFO - Saving output files...
