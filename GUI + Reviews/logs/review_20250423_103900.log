@@ -1,0 +1,10 @@
+2025-04-23 10:39:00,367 - werkzeug - WARNING -  * Debugger is active!
+2025-04-23 10:39:00,370 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-23 11:08:41,716 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-04-23 11:08:41,716 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-04-23 11:08:41,716 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-04-23 11:08:41,728 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2025-04-23 11:08:41,728 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2025-04-23 11:08:41,729 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2025-04-23 11:08:41,729 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading
+2025-04-23 11:08:41,729 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\traceback.py', reloading

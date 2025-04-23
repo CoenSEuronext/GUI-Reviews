@@ -76,3 +76,4 @@
 2025-04-16 14:44:52,090 - Review.reviews.lc100_review - INFO - Saving output files...
 2025-04-16 14:44:52,579 - Review.reviews.lc100_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC100_review_20250416_144452.xlsx
 2025-04-16 14:44:52,605 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 14:44:52] "POST /calculate HTTP/1.1" 200 -
+2025-04-16 15:17:20,511 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\weight_optimization.py', reloading

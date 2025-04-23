@@ -1,0 +1,67 @@
+2025-04-23 10:02:42,893 - werkzeug - WARNING -  * Debugger is active!
+2025-04-23 10:02:42,893 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\concurrent\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\idlelib\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\lib2to3\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\msilib\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\test\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\turtledemo\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\wsgiref\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xmlrpc\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\__phello__\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\adodbapi\\__init__.py', reloading
+2025-04-23 10:37:54,435 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\alembic\\__init__.py', reloading
+2025-04-23 10:37:54,498 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\altgraph\\__init__.py', reloading
+2025-04-23 10:37:54,499 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\annotated_types\\__init__.py', reloading
+2025-04-23 10:37:54,500 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\__init__.py', reloading
+2025-04-23 10:37:54,515 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_eventloop.py', reloading
+2025-04-23 10:37:54,519 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_exceptions.py', reloading
+2025-04-23 10:37:54,536 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_fileio.py', reloading
+2025-04-23 10:37:54,542 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_resources.py', reloading
+2025-04-23 10:37:54,542 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_signals.py', reloading
+2025-04-23 10:37:54,546 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_sockets.py', reloading
+2025-04-23 10:37:54,554 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_streams.py', reloading
+2025-04-23 10:37:54,556 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_subprocesses.py', reloading
+2025-04-23 10:37:54,558 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_synchronization.py', reloading
+2025-04-23 10:37:54,561 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_tasks.py', reloading
+2025-04-23 10:37:54,563 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_testing.py', reloading
+2025-04-23 10:37:54,564 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\anyio\\_core\\_typedattr.py', reloading
+2025-04-23 10:37:54,565 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\asttokens\\__init__.py', reloading
+2025-04-23 10:37:54,568 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\asttokens\\line_numbers.py', reloading
+2025-04-23 10:37:54,571 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\asttokens\\asttokens.py', reloading
+2025-04-23 10:37:54,573 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\blinker\\__init__.py', reloading
+2025-04-23 10:37:54,575 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\blinker\\base.py', reloading
+2025-04-23 10:37:54,577 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\boto3\\__init__.py', reloading
+2025-04-23 10:37:54,578 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\botocore\\__init__.py', reloading
+2025-04-23 10:37:54,578 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\__init__.py', reloading
+2025-04-23 10:37:54,582 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\base.py', reloading
+2025-04-23 10:37:54,584 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\dynamodb.py', reloading
+2025-04-23 10:37:54,585 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\file.py', reloading
+2025-04-23 10:37:54,589 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\memcached.py', reloading
+2025-04-23 10:37:54,592 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\mongodb.py', reloading
+2025-04-23 10:37:54,593 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\redis.py', reloading
+2025-04-23 10:37:54,594 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\simple.py', reloading
+2025-04-23 10:37:54,595 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\uwsgi.py', reloading
+2025-04-23 10:37:54,595 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\__init__.py', reloading
+2025-04-23 10:37:54,596 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\core.py', reloading
+2025-04-23 10:37:54,599 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\__init__.py', reloading
+2025-04-23 10:37:54,602 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\api.py', reloading
+2025-04-23 10:37:54,605 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\legacy.py', reloading
+2025-04-23 10:37:54,606 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\models.py', reloading
+2025-04-23 10:37:54,611 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\utils.py', reloading
+2025-04-23 10:37:54,613 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\version.py', reloading
+2025-04-23 10:37:54,614 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\__init__.py', reloading
+2025-04-23 10:37:54,617 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\core.py', reloading
+2025-04-23 10:37:54,630 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\decorators.py', reloading
+2025-04-23 10:37:54,634 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\exceptions.py', reloading
+2025-04-23 10:37:54,636 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\formatting.py', reloading
+2025-04-23 10:37:54,638 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\globals.py', reloading
+2025-04-23 10:37:54,639 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\parser.py', reloading
+2025-04-23 10:37:54,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\termui.py', reloading
+2025-04-23 10:37:54,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\types.py', reloading
+2025-04-23 10:37:54,648 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\click\\utils.py', reloading
+2025-04-23 10:37:54,650 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\comm\\__init__.py', reloading
+2025-04-23 10:37:54,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\debugpy\\__init__.py', reloading
+2025-04-23 10:37:54,654 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\debugpy\\public_api.py', reloading
+2025-04-23 10:37:54,659 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\distro\\__init__.py', reloading
+2025-04-23 10:37:54,661 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\distro\\distro.py', reloading
