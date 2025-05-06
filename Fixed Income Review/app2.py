@@ -856,10 +856,19 @@ if __name__ == "__main__":
     cutoff_date = "20250325"      # Format: YYYYMMDD
     effective_date = "20250331"   # Format: YYYYMMDD
     
+    # Create an output folder if it doesn't exist
+    output_folder = os.path.join(current_dir, "Output")
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+        print(f"Created output folder: {output_folder}")
+    
+    # Get current timestamp for the output file
+    current_timestamp = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
+    
     # Define file paths with dynamic cutoff date
     file_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\DVE_MTS_CMF_{cutoff_date}_SDP_REFERENCEDATA.csv"
     h16r12_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Fixed Income Review\Data\H16R12.{cutoff_date}.CSV"
-    output_file = os.path.join(current_dir, f"Fixed_Income_Review_{cutoff_date}.xlsx")
+    output_file = os.path.join(output_folder, f"Fixed_Income_Review_{cutoff_date}_{current_timestamp}.xlsx")
     
     universe_df, selection_df, eu_bonds_df = process_fixed_income_data(file_path, h16r12_path, cutoff_date, effective_date)
     if universe_df is not None:        

@@ -5,6 +5,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from datetime import datetime, timedelta
 import logging
+import logging.handlers
 import re
 from concurrent.futures import ThreadPoolExecutor
 import queue
@@ -15,14 +16,27 @@ import threading
 script_dir = os.path.dirname(os.path.abspath(__file__))
 log_file = os.path.join(script_dir, 'folder_monitor.log')
 
-# Set up logging
-logging.basicConfig(
-    filename=log_file,
-    level=logging.INFO,
-    format='%(asctime)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-
+try:
+    handler = logging.handlers.RotatingFileHandler(
+        log_file,
+        maxBytes=10*1024*1024,  # 10MB
+        backupCount=5,
+        encoding='utf-8'
+    )
+    formatter = logging.Formatter('%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+    handler.setFormatter(formatter)
+    
+    logger = logging.getLogger('FolderMonitor')
+    logger.setLevel(logging.INFO)
+    logger.addHandler(handler)
+except Exception as e:
+    print(f"Warning: Could not set up logging to file: {str(e)}")
+    # Set up console-only logging as fallback
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
 # Network timeout settings
 socket.setdefaulttimeout(30)  # 30 seconds timeout for network operations
 
@@ -42,10 +56,34 @@ def extract_date_from_filename(filename):
             return None
     return None
 
-def is_within_date_range(file_date, max_age_days):
-    if not file_date:
-        return False
-    return datetime.now() - file_date <= timedelta(days=max_age_days)
+def compare_folders(source_path, destination_path):
+    """Compare source and destination folders to identify missing files"""
+    try:
+        # Get lists of files in both folders
+        source_files = set(f for f in os.listdir(source_path) if os.path.isfile(os.path.join(source_path, f)))
+        dest_files = set(f for f in os.listdir(destination_path) if os.path.isfile(os.path.join(destination_path, f)))
+        
+        # Find missing files that are within 100 days
+        missing_files = []
+        for filename in source_files - dest_files:
+            file_date = extract_date_from_filename(filename)
+            if file_date and (datetime.now() - file_date).days <= 100:
+                missing_files.append(filename)
+        
+        if missing_files:
+            logging.info(f"Found {len(missing_files)} missing files:")
+            for file in missing_files[:10]:  # Log first 10 missing files
+                logging.info(f"Missing file: {file}")
+                print(f"Missing file: {file}")
+            if len(missing_files) > 10:
+                logging.info(f"... and {len(missing_files) - 10} more")
+                print(f"... and {len(missing_files) - 10} more")
+        
+        return missing_files
+    except Exception as e:
+        logging.error(f"Error comparing folders: {str(e)}")
+        return []
+    
 
 def retry_operation(operation, max_retries=3, delay=5):
     """Retry an operation with exponential backoff"""
@@ -97,26 +135,46 @@ def should_copy_file(src_path, dest_path):
         return False
 
 def copy_file(src_path, dest_path, filename):
-    """Copy file with network safety measures"""
+    """Copy file with network safety measures and set as read-only"""
     try:
         if should_copy_file(src_path, dest_path):
             def do_copy():
+                logging.info(f"Starting copy of {filename}")
                 # Remove destination file if it exists to ensure clean copy
                 if os.path.exists(dest_path):
-                    os.remove(dest_path)
+                    try:
+                        # Remove read-only attribute if it exists
+                        os.chmod(dest_path, 0o777)  # Give all permissions temporarily
+                        os.remove(dest_path)
+                    except Exception as e:
+                        logging.error(f"Error removing existing file {filename}: {str(e)}")
+                        raise
+                    
+                # Copy the file
                 shutil.copy2(src_path, dest_path)
+                
+                # Verify the copy
+                if not os.path.exists(dest_path):
+                    raise Exception("File not copied successfully")
+                
+                if os.path.getsize(src_path) != os.path.getsize(dest_path):
+                    raise Exception("File sizes don't match after copy")
+                
+                # Set destination file as read-only
+                os.chmod(dest_path, 0o444)  # Read-only for all users
+                
+                logging.info(f"Successfully copied {filename}")
                 time.sleep(NETWORK_DELAY)  # Rate limiting
             
             retry_operation(do_copy)
-            logging.info(f"Copied {filename} to destination")
-            print(f"Copied {filename} to destination")
+            print(f"Copied {filename} to destination and set as read-only")
         else:
             logging.debug(f"Skipped {filename} - already up to date")
     except Exception as e:
         logging.error(f"Error copying {filename}: {str(e)}")
         print(f"Error copying {filename}: {str(e)}")
 
-def process_file_batch(files, source_path, destination_path, max_age_days):
+def process_file_batch(files, source_path, destination_path):
     """Process a batch of files"""
     for filename in files:
         src_path = os.path.join(source_path, filename)
@@ -124,9 +182,11 @@ def process_file_batch(files, source_path, destination_path, max_age_days):
             continue
             
         file_date = extract_date_from_filename(filename)
-        if file_date and is_within_date_range(file_date, max_age_days):
+        if file_date:
             dest_path = os.path.join(destination_path, filename)
-            copy_file(src_path, dest_path, filename)
+            # Only copy if file is within 100 days
+            if (datetime.now() - file_date).days <= 100:
+                copy_file(src_path, dest_path, filename)
 
 def process_existing_files(source_path, destination_path, max_age_days):
     """Process existing files with batching and rate limiting"""
@@ -150,21 +210,31 @@ def process_existing_files(source_path, destination_path, max_age_days):
         
         total_files = len(all_files)
         print(f"Found {total_files} files to process")
+        logging.info(f"Found {total_files} files to process")
         
         # Process files in batches using thread pool
         with ThreadPoolExecutor(max_workers=4) as executor:
             for i in range(0, total_files, batch_size):
                 batch = all_files[i:i + batch_size]
-                executor.submit(process_file_batch, batch, source_path, destination_path, max_age_days)
+                executor.submit(process_file_batch, batch, source_path, destination_path)
                 print(f"Processing files {i + 1} to {min(i + batch_size, total_files)} of {total_files}")
                 time.sleep(NETWORK_DELAY)  # Rate limiting between batches
+        
+        # After processing, verify and report missing files
+        print("\nVerifying file copy completion...")
+        missing_files = compare_folders(source_path, destination_path)
+        if missing_files:
+            print(f"\nWARNING: {len(missing_files)} files were not copied successfully.")
+            # Try to copy missing files again
+            print("Attempting to copy missing files...")
+            process_file_batch(missing_files, source_path, destination_path)
                 
     except Exception as e:
         logging.error(f"Error during initial scan: {str(e)}")
         print(f"Error during initial scan: {str(e)}")
 
 class FileHandler(FileSystemEventHandler):
-    def __init__(self, source_path, destination_path, max_age_days=30):
+    def __init__(self, source_path, destination_path, max_age_days=100):  # Added back with default 100
         self.source_path = source_path
         self.destination_path = destination_path
         self.max_age_days = max_age_days
@@ -177,7 +247,6 @@ class FileHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if event.is_directory:
             return
-        # Also queue modified files for processing
         file_queue.put((event.src_path, datetime.now()))
 
 def process_queue(destination_path, max_age_days):
@@ -192,7 +261,7 @@ def process_queue(destination_path, max_age_days):
             dest_path = os.path.join(destination_path, file_name)
             
             file_date = extract_date_from_filename(file_name)
-            if file_date and is_within_date_range(file_date, max_age_days):
+            if file_date and (datetime.now() - file_date).days <= max_age_days:
                 copy_file(src_path, dest_path, file_name)
                 
             time.sleep(NETWORK_DELAY)  # Rate limiting
@@ -201,34 +270,39 @@ def process_queue(destination_path, max_age_days):
         except Exception as e:
             logging.error(f"Error processing queued file: {str(e)}")
 
-def cleanup_old_files(folder_path, max_age_days):
-    """Remove files older than max_age_days based on filename date"""
-    files_removed = 0
+def check_destination_folder_age(destination_path):
+    """Check destination folder for files older than 120 days"""
+    try:
+        current_date = datetime.now()
+        for filename in os.listdir(destination_path):
+            if os.path.isfile(os.path.join(destination_path, filename)):
+                file_date = extract_date_from_filename(filename)
+                if file_date:
+                    days_old = (current_date - file_date).days
+                    if days_old >= 120:
+                        print("\n" + "="*50)
+                        print("AGE ALERT!")
+                        print(f"File: {filename}")
+                        print(f"Location: {destination_path}")
+                        print(f"File date: {file_date.strftime('%Y-%m-%d')}")
+                        print(f"Days old: {days_old}")
+                        print("Please review this file for archival.")
+                        print("="*50 + "\n")
+                        logging.info(f"Age alert for {filename} in destination folder - {days_old} days old")
+    except Exception as e:
+        logging.error(f"Error checking destination folder age: {str(e)}")
 
-    for filename in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, filename)
-        if os.path.isfile(file_path):
-            file_date = extract_date_from_filename(filename)
-            if file_date and not is_within_date_range(file_date, max_age_days):
-                try:
-                    os.remove(file_path)
-                    files_removed += 1
-                    logging.info(f"Removed old file: {filename}")
-                    print(f"Removed old file: {filename}")
-                except Exception as e:
-                    logging.error(f"Error removing {filename}: {str(e)}")
-                    print(f"Error removing {filename}: {str(e)}")
-    
-    return files_removed
-
-def monitor_folder(source_path, destination_path, max_age_days=30):
+def monitor_folder(source_path, destination_path, max_age_days=100):
     if not os.path.exists(destination_path):
         os.makedirs(destination_path)
 
     print("Starting folder monitor...")
     logging.info("Starting folder monitor...")
     
-    # Start queue processor thread with proper parameters
+    # Check destination folder for old files
+    check_destination_folder_age(destination_path)
+    
+    # Rest of the monitor_folder function remains the same
     queue_thread = threading.Thread(
         target=process_queue,
         args=(destination_path, max_age_days),
@@ -236,10 +310,8 @@ def monitor_folder(source_path, destination_path, max_age_days=30):
     )
     queue_thread.start()
     
-    # Process existing files
     process_existing_files(source_path, destination_path, max_age_days)
     
-    # Initialize event handler and observer
     event_handler = FileHandler(source_path, destination_path, max_age_days)
     observer = Observer()
     observer.schedule(event_handler, source_path, recursive=False)
@@ -247,28 +319,22 @@ def monitor_folder(source_path, destination_path, max_age_days=30):
 
     print(f"\nMonitoring folder: {source_path}")
     print(f"Files will be copied to: {destination_path}")
-    print(f"Only files with dates newer than {max_age_days} days will be processed")
+    print(f"Files up to {max_age_days} days old will be copied")
     print("Monitor is running... (Press Ctrl+C to stop)")
 
     try:
         while True:
-            cleanup_old_files(destination_path, max_age_days)
+            check_destination_folder_age(destination_path)  # Periodically check destination folder age
             time.sleep(3600)  # Check every hour
     except KeyboardInterrupt:
         observer.stop()
         print("\nMonitoring stopped")
         logging.info("Monitoring stopped")
-        
+    
     observer.join()
 
 if __name__ == "__main__":
     SOURCE_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
     DESTINATION_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
-    MAX_AGE_DAYS = 30
     
-    try:
-        monitor_folder(SOURCE_FOLDER, DESTINATION_FOLDER, MAX_AGE_DAYS)
-    except KeyboardInterrupt:
-        print("\nScript interrupted by user. Exiting...")
-    except Exception as e:
-        print(f"Error: {str(e)}")
+    monitor_folder(SOURCE_FOLDER, DESTINATION_FOLDER)

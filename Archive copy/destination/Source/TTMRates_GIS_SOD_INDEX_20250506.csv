@@ -1,0 +1,2 @@
+#Symbol;System Date;Change;IsinCode;Country;Mnemo;Name;MIC;Divisor;t-1 IV;t0 IV;t0 IV unround;Mkt Cap;Nr of components;Curr;FX;ISIN Underlying Price Index;ISIN Gross Return version;ISIN Net Return version;Effect Gross Total Return;Effect Net Total Return ;Stocks Effect Index;Dividend Currency Type;Calculation Type;Index Type;Return Method;Return Value;Number Of Days;Yearly Days;Dead Flag;Rate Name
+EURIBORRATE;06-05-2025;;EURIBOR3MNT;NL;EURIB;EURIBOR 3 MONTH INDEX;XAMS;1;2.16;2.14;2.142;2.142;1;EUR;1;;;;;;;ECB;EU Price;Indices;;;;;0;

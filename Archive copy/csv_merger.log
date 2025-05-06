@@ -1,0 +1,1862 @@
+2025-05-06 14:06:01 - Starting folder monitor for CSV merging...
+2025-05-06 14:06:01 - Checking existing files...
+2025-05-06 14:06:55 - New file detected: TRF_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TRF_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TRF_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMStratUS_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStratUS_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStratUS_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMStratUS_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStratUS_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStratUS_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMStrategy_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStrategy_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStrategy_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMStrategy_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStrategy_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStrategy_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TRF_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStratUS_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStratUS_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMSTRATBUI_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMSTRATBUI_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStrategy_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMStrategy_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMSTRATBUI_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMSTRATBUI_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMSTRATBUI_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMSTRATBUI_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMSTRATBUI_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMSTRATBUI_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMRates_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMRates_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMRates_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:55 - New file detected: TTMRates_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMRates_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:55 - File modified: TTMRates_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - New file detected: TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMRates_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMRates_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - New file detected: TTMIndexSSIE_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexSSIE_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexSSIE_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - New file detected: TTMIndexSSIE_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexSSIE_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexSSIE_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - New file detected: TTMIndexEU1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexEU1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexEU1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - New file detected: TTMIndexEU1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexEU1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexSSIE_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexSSIE_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:56 - File modified: TTMIndexEU1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - File modified: TTMIndexEU1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - New file detected: TFixedIncome_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - File modified: TFixedIncome_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - File modified: TFixedIncome_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - New file detected: TFixedIncome_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TFixedIncome_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TFixedIncome_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TTMIndexEU1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TFixedIncome_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - New file detected: TAllEquities_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - File modified: TAllEquities_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - File modified: TAllEquities_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:57 - New file detected: TAllEquities_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TAllEquities_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TFixedIncome_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:57 - File modified: TAllEquities_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:58 - New file detected: TFixedIncome_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TFixedIncome_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TFixedIncome_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - New file detected: TFixedIncome_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TFixedIncome_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TFixedIncome_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TFixedIncome_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - New file detected: TAllEquities_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TFixedIncome_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - New file detected: TAllEquities_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TAllEquities_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - New file detected: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:58 - New file detected: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:58 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - New file detected: TTMStratUS_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMStratUS_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMStratUS_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:59 - New file detected: TTMStratUS_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMStratUS_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMStratUS_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TAllEquities_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:59 - New file detected: TTMIndexUS1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - New file detected: TTMIndexUS1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMStratUS_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMStratUS_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:06:59 - File modified: TTMIndexUS1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:07:00 - New file detected: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:07:00 - New file detected: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexUS1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:07:00 - New file detected: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:00 - New file detected: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:00 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - New file detected: TTMIndexSSIE_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexSSIE_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexSSIE_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - New file detected: TTMIndexSSIE_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexSSIE_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexSSIE_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - New file detected: TTMRates_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMRates_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMRates_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - New file detected: TTMRates_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMRates_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMRates_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexSSIE_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - New file detected: OsloIndexTrades_20250505.csv
+2025-05-06 14:07:01 - File modified: OsloIndexTrades_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMIndexSSIE_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMRates_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMRates_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:01 - File modified: OsloIndexTrades_20250505.csv
+2025-05-06 14:07:01 - New file detected: TTMStrategy_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMStrategy_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:01 - File modified: TTMStrategy_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMStrategy_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMSTRATBUI_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMSTRATBUI_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: OsloIndexTrades_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMStratUS_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMStratUS_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMStrategy_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStratUS_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMStrategy_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMStrategy_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMSTRATBUI_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:02 - New file detected: TTMSTRATBUI_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:02 - File modified: TTMSTRATBUI_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMSTRATBUI_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - New file detected: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMStrategy_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMSTRATBUI_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMSTRATBUI_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - New file detected: TTMRates_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMRates_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMRates_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - New file detected: TTMRates_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMRates_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMRates_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMRates_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMRates_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - New file detected: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:03 - New file detected: TTMIndexSSIE_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexSSIE_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:03 - File modified: TTMIndexSSIE_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - New file detected: TTMIndexSSIE_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexSSIE_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexSSIE_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - New file detected: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - New file detected: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexSSIE_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexSSIE_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - New file detected: TFixedIncome_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - File modified: TFixedIncome_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - File modified: TFixedIncome_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:04 - New file detected: TFixedIncome_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TFixedIncome_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:04 - File modified: TFixedIncome_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:05 - New file detected: TAllEquities_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:05 - File modified: TAllEquities_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:05 - File modified: TAllEquities_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:05 - New file detected: TAllEquities_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:05 - File modified: TAllEquities_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:05 - File modified: TFixedIncome_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:05 - File modified: TFixedIncome_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:05 - File modified: TAllEquities_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:07:05 - File modified: TAllEquities_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:07:06 - File modified: TAllEquities_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:11 - File modified: TTMStrategy_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:15 - File modified: TTMIndexEU1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:15 - File modified: TTMIndexEU1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:17 - File modified: TTMStratUS_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:13:17 - File modified: TTMStratUS_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:13:17 - File modified: TTMStratUS_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:18 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:18 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:18 - File modified: TFixedIncome_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:25 - File modified: TAllEquities_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:25 - File modified: TAllEquities_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:26 - File modified: TTMRates_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:33 - File modified: TTMIndexSSIE_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:13:36 - File modified: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:13:36 - File modified: TTMIndexSSIE_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:13:37 - File modified: TTMIndexSSIE_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:41 - File modified: TFixedIncome_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:13:41 - File modified: TTMIndexSSIE_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:13:41 - File modified: TTMIndexSSIE_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:13:41 - File modified: TTMSTRATBUI_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:13:42 - File modified: TTMRates_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:42 - File modified: TTMRates_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:45 - File modified: TFixedIncome_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:13:45 - File modified: TFixedIncome_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:13:48 - File modified: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:13:48 - File modified: TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:49 - File modified: TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:51 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:51 - File modified: TTMSTRATBUI_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:52 - File modified: TTMIndexSSIE_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:53 - File modified: TTMIndexSSIE_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:13:53 - File modified: TTMIndexSSIE_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:54 - File modified: TTMIndexSSIE_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:13:57 - File modified: TTMRates_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:57 - File modified: TTMRates_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:13:59 - File modified: TTMIndexUS1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:14:00 - File modified: TTMIndexUS1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:14:00 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:14:03 - File modified: TRF_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:14:04 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:14:05 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:14:05 - File modified: TFixedIncome_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:14:06 - File modified: TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:07 - File modified: TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:07 - File modified: TTMRates_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:09 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:14:15 - File modified: TTMStrategy_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:14:15 - File modified: TTMIndexUS1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:14:15 - File modified: TTMIndexUS1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:14:23 - File modified: TTMSTRATBUI_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:26 - File modified: TAllEquities_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:14:26 - File modified: TAllEquities_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:14:27 - File modified: TTMRates_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:14:31 - File modified: TAllEquities_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:31 - File modified: TAllEquities_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:34 - File modified: TFixedIncome_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:35 - File modified: TTMStratUS_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:14:36 - File modified: TTMSTRATBUI_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:14:36 - File modified: TTMStrategy_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:14:36 - File modified: TTMSTRATBUI_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:14:36 - File modified: TTMStrategy_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:14:39 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:14:39 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:14:40 - File modified: TTMStratUS_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:14:44 - File modified: TTMStrategy_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:14:44 - File modified: TTMStrategy_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:14:50 - File modified: OsloIndexTrades_20250505.csv
+2025-05-06 14:14:50 - File modified: OsloIndexTrades_20250505.csv
+2025-05-06 14:14:50 - File modified: TTMSTRATBUI_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:14:52 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:14:52 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:14:56 - File modified: TTMStrategy_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:14:56 - File modified: TTMStrategy_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:15:09 - File modified: TTMSTRATBUI_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:15:09 - File modified: TTMSTRATBUI_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:15:09 - File modified: TFixedIncome_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:15:15 - File modified: TTMRates_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:15:17 - File modified: TAllEquities_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:15:17 - File modified: TAllEquities_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:15:19 - File modified: TTMIndexEU1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:15:19 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:15:20 - File modified: TAllEquities_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:15:20 - File modified: TAllEquities_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:15:21 - File modified: TTMStratUS_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:15:23 - File modified: TTMStratUS_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:15:23 - File modified: TAllEquities_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:15:23 - File modified: TAllEquities_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:18:33 - Starting folder monitor for CSV merging...
+2025-05-06 14:18:33 - Checking previous workday files...
+2025-05-06 14:18:33 - Checking for previous workday (20250505) output files...
+2025-05-06 14:18:33 - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:18:33 - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-05-06 14:18:33 - Error merging files: Error tokenizing data. C error: Expected 1 fields in line 76, saw 2
+
+2025-05-06 14:18:33 - Error merging files: 'utf-8' codec can't decode byte 0xa0 in position 17948: invalid start byte
+2025-05-06 14:18:33 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:18:33 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 14:18:33 - Error merging files: Error tokenizing data. C error: Expected 1 fields in line 76, saw 2
+
+2025-05-06 14:18:33 - Error merging files: 'utf-8' codec can't decode byte 0xa0 in position 20197: invalid start byte
+2025-05-06 14:18:33 - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250505.csv', 'EU_SOD_US_SOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:18:33 - Found all source files for SOD from previous workday. Creating missing output files.
+2025-05-06 14:18:33 - Error merging files: Error tokenizing data. C error: Expected 1 fields in line 76, saw 2
+
+2025-05-06 14:18:33 - Error merging files: 'utf-8' codec can't decode byte 0xa0 in position 20194: invalid start byte
+2025-05-06 14:18:33 - Checking existing files for current day...
+2025-05-06 14:18:33 - File modified: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv
+2025-05-06 14:18:33 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:18:33 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:18:34 - File modified: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv
+2025-05-06 14:18:34 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:18:34 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:23:31 - Starting folder monitor for CSV merging...
+2025-05-06 14:23:31 - Checking previous workday files...
+2025-05-06 14:23:31 - Checking for previous workday (20250505) output files...
+2025-05-06 14:23:31 - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:23:31 - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-05-06 14:23:31 - Error merging files: read_csv() got an unexpected keyword argument 'error_bad_lines'
+2025-05-06 14:23:31 - Attempting alternative merge method for: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv and TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:23:31 - Successfully merged files using alternative method: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv
+2025-05-06 14:23:31 - Created previous workday file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv
+2025-05-06 14:23:31 - Error merging files: read_csv() got an unexpected keyword argument 'error_bad_lines'
+2025-05-06 14:23:31 - Attempting alternative merge method for: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv and TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:23:31 - Successfully merged files using alternative method: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv
+2025-05-06 14:23:31 - Created previous workday file: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv
+2025-05-06 14:23:31 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:23:31 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 14:23:31 - Error merging files: read_csv() got an unexpected keyword argument 'error_bad_lines'
+2025-05-06 14:23:31 - Attempting alternative merge method for: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:23:31 - Successfully merged files using alternative method: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:23:31 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:23:31 - Error merging files: read_csv() got an unexpected keyword argument 'error_bad_lines'
+2025-05-06 14:23:31 - Attempting alternative merge method for: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:23:31 - Successfully merged files using alternative method: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:23:31 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:23:31 - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250505.csv', 'EU_SOD_US_SOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:23:31 - Found all source files for SOD from previous workday. Creating missing output files.
+2025-05-06 14:23:31 - Error merging files: read_csv() got an unexpected keyword argument 'error_bad_lines'
+2025-05-06 14:23:31 - Attempting alternative merge method for: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv and TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:23:31 - Successfully merged files using alternative method: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:23:31 - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:23:31 - Error merging files: read_csv() got an unexpected keyword argument 'error_bad_lines'
+2025-05-06 14:23:31 - Attempting alternative merge method for: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv and TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:23:31 - Successfully merged files using alternative method: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:23:31 - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:23:31 - Checking existing files for current day...
+2025-05-06 14:23:32 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:23:32 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:23:32 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:23:32 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:23:32 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:23:32 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:26:50 - Starting folder monitor for CSV merging...
+2025-05-06 14:26:50 - Checking previous workday files...
+2025-05-06 14:26:50 - Checking for previous workday (20250505) output files...
+2025-05-06 14:26:50 - All MANUAL output files from previous workday already exist.
+2025-05-06 14:26:50 - All EOD output files from previous workday already exist.
+2025-05-06 14:26:50 - All SOD output files from previous workday already exist.
+2025-05-06 14:26:50 - Checking existing files for current day...
+2025-05-06 14:27:14 - Starting folder monitor for CSV merging...
+2025-05-06 14:27:14 - Checking previous workday files...
+2025-05-06 14:27:14 - Checking for previous workday (20250505) output files...
+2025-05-06 14:27:14 - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:27:14 - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-05-06 14:27:14 - Merging files: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv and TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:27:14 - Successfully merged files: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv
+2025-05-06 14:27:14 - Created previous workday file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv
+2025-05-06 14:27:14 - Merging files: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv and TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:27:14 - Successfully merged files: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv
+2025-05-06 14:27:14 - Created previous workday file: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv
+2025-05-06 14:27:14 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:27:14 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 14:27:14 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:27:14 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:27:14 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:27:14 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:27:14 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:27:14 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:27:14 - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250505.csv', 'EU_SOD_US_SOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:27:14 - Found all source files for SOD from previous workday. Creating missing output files.
+2025-05-06 14:27:14 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv and TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:27:15 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:27:15 - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:27:15 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv and TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:27:15 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:27:15 - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:27:15 - Checking existing files for current day...
+2025-05-06 14:27:15 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:27:15 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:27:15 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:27:15 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:29:12 - Starting folder monitor for CSV merging...
+2025-05-06 14:29:12 - Checking previous workday files...
+2025-05-06 14:29:12 - Checking for previous workday (20250505) output files...
+2025-05-06 14:29:12 - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:29:12 - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-05-06 14:29:12 - Merging files: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv and TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 14:29:12 - Successfully merged files: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv
+2025-05-06 14:29:12 - Created previous workday file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.csv
+2025-05-06 14:29:12 - Merging files: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv and TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 14:29:12 - Successfully merged files: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv
+2025-05-06 14:29:12 - Created previous workday file: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.csv
+2025-05-06 14:29:12 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:29:12 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 14:29:12 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:29:12 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:29:12 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:29:12 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:29:12 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:29:12 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:29:12 - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250505.csv', 'EU_SOD_US_SOD_INDEX_MERGED_20250505.csv']
+2025-05-06 14:29:12 - Found all source files for SOD from previous workday. Creating missing output files.
+2025-05-06 14:29:12 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv and TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:29:12 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:29:12 - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 14:29:12 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv and TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:29:12 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:29:12 - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 14:29:12 - Checking existing files for current day...
+2025-05-06 14:29:12 - File modified: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:29:13 - File modified: TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 14:29:13 - File modified: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:29:13 - File modified: TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 14:30:10 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:10 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:10 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:10 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:15 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:15 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:15 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:15 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - New file detected: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - New file detected: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:52 - New file detected: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - New file detected: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:52 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:53 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:54 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:55 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:55 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 14:30:56 - File modified: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 14:30:58 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:14:02 - Starting folder monitor for CSV merging...
+2025-05-06 15:14:02 - Checking previous workday files...
+2025-05-06 15:14:02 - Checking for previous workday (20250505) output files...
+2025-05-06 15:14:02 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:14:02 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 15:14:02 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 15:14:02 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:14:02 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:14:02 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:14:02 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:14:02 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:14:02 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:14:02 - All SOD output files from previous workday already exist.
+2025-05-06 15:14:02 - Checking existing files for current day...
+2025-05-06 15:14:03 - File modified: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:14:03 - File modified: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:14:03 - File modified: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:15:33 - Starting folder monitor for CSV merging...
+2025-05-06 15:15:33 - Checking previous workday files...
+2025-05-06 15:15:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:15:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:15:33 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 15:15:33 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 15:15:33 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:15:33 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:15:33 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:15:33 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:15:33 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:15:33 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:15:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:15:33 - Checking existing files for current day...
+2025-05-06 15:15:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:15:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:15:33 - All EOD output files from previous workday already exist.
+2025-05-06 15:15:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:16:03 - Checking for previous workday (20250505) output files...
+2025-05-06 15:16:03 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:16:03 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 15:16:03 - Cannot create EOD output files for previous workday. Missing source files: ['TTMIndexEU1_GIS_EOD_STOCK_20250505.csv', 'TTMIndexUS1_GIS_EOD_STOCK_20250505.csv', 'TTMIndexEU1_GIS_EOD_INDEX_20250505.csv', 'TTMIndexUS1_GIS_EOD_INDEX_20250505.csv']
+2025-05-06 15:16:03 - All SOD output files from previous workday already exist.
+2025-05-06 15:16:22 - New file detected: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:16:23 - Checking for previous workday (20250505) output files...
+2025-05-06 15:16:23 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:16:23 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 15:16:23 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 15:16:23 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:16:24 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:16:24 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:16:24 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:16:24 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:16:24 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:16:24 - All SOD output files from previous workday already exist.
+2025-05-06 15:16:24 - New file detected: TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:16:25 - Checking for previous workday (20250505) output files...
+2025-05-06 15:16:25 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:16:25 - All EOD output files from previous workday already exist.
+2025-05-06 15:16:25 - All SOD output files from previous workday already exist.
+2025-05-06 15:16:25 - New file detected: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:16:26 - Checking for previous workday (20250505) output files...
+2025-05-06 15:16:26 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:16:26 - All EOD output files from previous workday already exist.
+2025-05-06 15:16:26 - All SOD output files from previous workday already exist.
+2025-05-06 15:16:26 - New file detected: TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:16:27 - Checking for previous workday (20250505) output files...
+2025-05-06 15:16:27 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:16:27 - All EOD output files from previous workday already exist.
+2025-05-06 15:16:27 - All SOD output files from previous workday already exist.
+2025-05-06 15:16:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:16:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:16:33 - All EOD output files from previous workday already exist.
+2025-05-06 15:16:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:17:03 - Checking for previous workday (20250505) output files...
+2025-05-06 15:17:03 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:17:03 - All EOD output files from previous workday already exist.
+2025-05-06 15:17:03 - All SOD output files from previous workday already exist.
+2025-05-06 15:17:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:17:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:17:33 - All EOD output files from previous workday already exist.
+2025-05-06 15:17:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:18:03 - Checking for previous workday (20250505) output files...
+2025-05-06 15:18:03 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:18:03 - All EOD output files from previous workday already exist.
+2025-05-06 15:18:03 - All SOD output files from previous workday already exist.
+2025-05-06 15:18:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:18:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:18:33 - All EOD output files from previous workday already exist.
+2025-05-06 15:18:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:19:03 - Checking for previous workday (20250505) output files...
+2025-05-06 15:19:03 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:19:03 - All EOD output files from previous workday already exist.
+2025-05-06 15:19:03 - All SOD output files from previous workday already exist.
+2025-05-06 15:19:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:19:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:19:33 - All EOD output files from previous workday already exist.
+2025-05-06 15:19:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:20:03 - Checking for previous workday (20250505) output files...
+2025-05-06 15:20:03 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:20:03 - All EOD output files from previous workday already exist.
+2025-05-06 15:20:03 - All SOD output files from previous workday already exist.
+2025-05-06 15:20:33 - Checking for previous workday (20250505) output files...
+2025-05-06 15:20:33 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:20:33 - All EOD output files from previous workday already exist.
+2025-05-06 15:20:33 - All SOD output files from previous workday already exist.
+2025-05-06 15:20:39 - Starting folder monitor for CSV merging...
+2025-05-06 15:20:39 - Checking previous workday files...
+2025-05-06 15:20:39 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:20:39 - All EOD output files from previous workday already exist.
+2025-05-06 15:20:39 - All SOD output files from previous workday already exist.
+2025-05-06 15:20:39 - Checking existing files for current day...
+2025-05-06 15:20:39 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:20:39 - All EOD output files from previous workday already exist.
+2025-05-06 15:20:39 - All SOD output files from previous workday already exist.
+2025-05-06 15:21:09 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:21:09 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.csv', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.csv']
+2025-05-06 15:21:09 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 15:21:09 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 15:21:10 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:21:10 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.csv
+2025-05-06 15:21:10 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 15:21:10 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:21:10 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.csv
+2025-05-06 15:21:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:21:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:21:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:21:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:22:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:22:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:22:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:22:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:22:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:22:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:23:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:23:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:23:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:23:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:23:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:23:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:24:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:24:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:24:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:24:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:24:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:24:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:25:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:25:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:25:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:25:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:25:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:25:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:26:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:26:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:26:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:26:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:26:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:26:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:27:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:27:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:27:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:27:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:27:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:27:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:28:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:28:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:28:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:28:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:28:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:28:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:29:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:29:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:29:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:29:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:29:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:29:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:30:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:30:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:30:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:30:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:30:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:30:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:31:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:31:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:31:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:31:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:31:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:31:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:32:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:32:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:32:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:32:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:32:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:32:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:33:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:33:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:33:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:33:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:33:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:33:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:34:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:34:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:34:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:34:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:34:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:34:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:35:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:35:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:35:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:35:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:35:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:35:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:36:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:36:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:36:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:36:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:36:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:36:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:37:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:37:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:37:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:37:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:37:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:37:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:38:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:38:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:38:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:38:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:38:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:38:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:39:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:39:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:39:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:39:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:39:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:39:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:40:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:40:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:40:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:40:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:40:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:40:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:41:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:41:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:41:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:41:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:41:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:41:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:42:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:42:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:42:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:42:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:42:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:42:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:43:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:43:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:43:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:43:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:43:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:43:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:44:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:44:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:44:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:44:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:44:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:44:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:45:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:45:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:45:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:45:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:45:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:45:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:46:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:46:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:46:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:46:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:46:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:46:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:47:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:47:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:47:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:47:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:47:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:47:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:48:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:48:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:48:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:48:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:48:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:48:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:49:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:49:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:49:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:49:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:49:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:49:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:50:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:50:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:50:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:50:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:50:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:50:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:51:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:51:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:51:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:51:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:51:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:51:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:52:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:52:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:52:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:52:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:52:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:52:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:53:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:53:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:53:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:53:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:53:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:53:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:54:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:54:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:54:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:54:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:54:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:54:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:55:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:55:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:55:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:55:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:55:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:55:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:56:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:56:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:56:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:56:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:56:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:56:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:57:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:57:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:57:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:57:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:57:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:57:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:58:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:58:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:58:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:58:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:58:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:58:40 - All SOD output files from previous workday already exist.
+2025-05-06 15:59:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:59:10 - All EOD output files from previous workday already exist.
+2025-05-06 15:59:10 - All SOD output files from previous workday already exist.
+2025-05-06 15:59:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 15:59:40 - All EOD output files from previous workday already exist.
+2025-05-06 15:59:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:00:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:00:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:00:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:00:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:00:40 - All EOD output files from previous workday already exist.
+2025-05-06 16:00:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:01:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:01:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:01:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:01:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:01:40 - All EOD output files from previous workday already exist.
+2025-05-06 16:01:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:02:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:02:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:02:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:02:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:02:40 - All EOD output files from previous workday already exist.
+2025-05-06 16:02:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:03:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:03:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:03:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:03:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:03:40 - All EOD output files from previous workday already exist.
+2025-05-06 16:03:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:04:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:04:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:04:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:04:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:04:40 - All EOD output files from previous workday already exist.
+2025-05-06 16:04:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:05:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:05:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:05:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:05:40 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:05:40 - All EOD output files from previous workday already exist.
+2025-05-06 16:05:40 - All SOD output files from previous workday already exist.
+2025-05-06 16:06:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:06:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:06:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:06:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:06:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:06:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:07:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:07:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:07:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:07:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:07:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:07:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:08:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:08:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:08:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:08:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:08:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:08:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:09:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:09:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:09:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:09:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:09:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:09:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:10:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:10:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:10:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:10:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:10:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:10:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:11:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:11:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:11:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:11:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:11:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:11:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:12:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:12:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:12:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:12:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:12:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:12:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:13:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:13:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:13:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:13:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:13:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:13:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:14:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:14:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:14:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:14:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:14:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:14:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:15:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:15:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:15:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:15:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:15:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:15:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:16:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:16:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:16:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:16:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:16:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:16:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:17:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:17:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:17:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:17:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:17:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:17:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:18:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:18:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:18:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:18:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:18:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:18:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:19:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:19:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:19:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:19:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:19:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:19:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:20:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:20:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:20:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:20:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:20:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:20:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:21:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:21:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:21:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:21:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:21:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:21:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:22:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:22:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:22:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:22:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:22:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:22:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:23:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:23:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:23:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:23:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:23:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:23:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:24:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:24:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:24:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:24:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:24:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:24:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:25:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:25:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:25:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:25:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:25:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:25:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:26:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:26:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:26:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:26:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:26:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:26:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:27:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:27:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:27:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:27:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:27:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:27:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:28:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:28:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:28:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:28:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:28:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:28:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:29:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:29:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:29:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:29:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:29:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:29:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:30:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:30:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:30:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:30:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:30:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:30:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:31:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:31:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:31:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:31:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:31:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:31:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:32:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:32:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:32:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:32:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:32:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:32:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:33:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:33:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:33:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:33:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:33:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:33:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:34:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:34:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:34:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:34:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:34:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:34:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:35:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:35:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:35:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:35:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:35:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:35:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:36:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:36:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:36:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:36:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:36:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:36:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:37:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:37:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:37:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:37:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:37:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:37:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:38:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:38:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:38:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:38:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:38:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:38:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:41 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:41 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:41 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:50 - New file detected: TRF_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:51 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:51 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:51 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:51 - New file detected: OsloIndexTrades_20250506.csv
+2025-05-06 16:39:52 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:52 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:52 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:52 - File modified: OsloIndexTrades_20250506.csv
+2025-05-06 16:39:53 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:53 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:53 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:53 - New file detected: TTMIndexEU1_GIS_MANUAL_INDEX_20250506.csv
+2025-05-06 16:39:54 - All SOD files found. Starting merge process.
+2025-05-06 16:39:54 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:39:54 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:54 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:54 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:54 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:54 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:54 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:54 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:54 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:54 - New file detected: TTMIndexUS1_GIS_MANUAL_STOCK_20250506.csv
+2025-05-06 16:39:55 - All SOD files found. Starting merge process.
+2025-05-06 16:39:55 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:39:55 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:55 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:55 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:55 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:55 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:55 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:55 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:55 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:55 - New file detected: TTMStratUS_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:56 - All SOD files found. Starting merge process.
+2025-05-06 16:39:56 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:39:57 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:57 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:57 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:57 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:57 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:57 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:57 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:57 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:57 - New file detected: TTMIndexEU1_GIS_MANUAL_STOCK_20250506.csv
+2025-05-06 16:39:58 - All SOD files found. Starting merge process.
+2025-05-06 16:39:58 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:39:58 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:58 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:58 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:58 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:58 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:58 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:58 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:58 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:58 - New file detected: TTMIndexUS1_GIS_MANUAL_INDEX_20250506.csv
+2025-05-06 16:39:59 - All SOD files found. Starting merge process.
+2025-05-06 16:39:59 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:39:59 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:59 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:39:59 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:39:59 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:59 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:39:59 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:39:59 - All EOD output files from previous workday already exist.
+2025-05-06 16:39:59 - All SOD output files from previous workday already exist.
+2025-05-06 16:39:59 - New file detected: TTMRates_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:00 - All SOD files found. Starting merge process.
+2025-05-06 16:40:00 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:01 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:01 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:01 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:01 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:01 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:01 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:01 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:01 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:01 - New file detected: TTMRates_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:02 - All SOD files found. Starting merge process.
+2025-05-06 16:40:02 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:02 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:02 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:02 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:02 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:02 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:02 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:02 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:02 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:02 - New file detected: TTMStratUS_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:03 - All SOD files found. Starting merge process.
+2025-05-06 16:40:03 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:03 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:03 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:03 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:03 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:03 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:03 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:03 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:03 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:03 - New file detected: TTMSTRATBUI_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:04 - All SOD files found. Starting merge process.
+2025-05-06 16:40:04 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:04 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:04 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:04 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:04 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:04 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:04 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:04 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:04 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:04 - New file detected: TTMStrategy_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:05 - All SOD files found. Starting merge process.
+2025-05-06 16:40:05 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:06 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:06 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:06 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:06 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:06 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:06 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:06 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:06 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:06 - New file detected: TTMStrategy_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:07 - All SOD files found. Starting merge process.
+2025-05-06 16:40:07 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:07 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:07 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:07 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:07 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:07 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:07 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:07 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:07 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:07 - New file detected: TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:08 - All SOD files found. Starting merge process.
+2025-05-06 16:40:08 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:08 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:08 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:08 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:08 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:08 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:08 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:08 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:08 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:08 - New file detected: TTMSTRATBUI_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:09 - All SOD files found. Starting merge process.
+2025-05-06 16:40:09 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:10 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:10 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:10 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:10 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:10 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:10 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:10 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:10 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:10 - New file detected: TTMIndexSSIE_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:11 - All SOD files found. Starting merge process.
+2025-05-06 16:40:11 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:11 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:11 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:11 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:11 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:11 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:11 - New file detected: TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:11 - All SOD files found. Starting merge process.
+2025-05-06 16:40:11 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:11 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:11 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:11 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:11 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:11 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:11 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:11 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:11 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:12 - All SOD files found. Starting merge process.
+2025-05-06 16:40:12 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:12 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:12 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:12 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:12 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:12 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:12 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:12 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:12 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:12 - New file detected: TTMIndexSSIE_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:13 - All SOD files found. Starting merge process.
+2025-05-06 16:40:13 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:13 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:13 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:13 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:13 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:13 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:13 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:13 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:13 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:13 - New file detected: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:14 - All SOD files found. Starting merge process.
+2025-05-06 16:40:14 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:15 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:15 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:15 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:15 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:15 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:15 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:15 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:15 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:15 - New file detected: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:16 - All SOD files found. Starting merge process.
+2025-05-06 16:40:16 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:16 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:16 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:16 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:16 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:16 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:16 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:16 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:16 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:16 - New file detected: TFixedIncome_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:17 - All SOD files found. Starting merge process.
+2025-05-06 16:40:17 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:17 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:17 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:17 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:17 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:17 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:17 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:17 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:17 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:17 - New file detected: TAllEquities_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:18 - All SOD files found. Starting merge process.
+2025-05-06 16:40:18 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:19 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:19 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:19 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:19 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:19 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:19 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:19 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:19 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:19 - New file detected: TFixedIncome_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:20 - All SOD files found. Starting merge process.
+2025-05-06 16:40:20 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:20 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:20 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:20 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:20 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:20 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:20 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:20 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:20 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:20 - New file detected: TAllEquities_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:21 - All SOD files found. Starting merge process.
+2025-05-06 16:40:21 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:21 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:21 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:21 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:21 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:21 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:21 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:21 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:21 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:21 - File modified: TAllEquities_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:22 - All SOD files found. Starting merge process.
+2025-05-06 16:40:22 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:22 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:23 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:23 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:23 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:23 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:23 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:23 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:23 - All SOD output files from previous workday already exist.
+2025-05-06 16:40:41 - All SOD files found. Starting merge process.
+2025-05-06 16:40:41 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:40:42 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:42 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:40:42 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:40:42 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:42 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:40:42 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:40:42 - All EOD output files from previous workday already exist.
+2025-05-06 16:40:42 - All SOD output files from previous workday already exist.
+2025-05-06 16:41:12 - All SOD files found. Starting merge process.
+2025-05-06 16:41:12 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:41:12 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:41:12 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:41:12 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:41:12 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:41:12 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:41:12 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:41:12 - All EOD output files from previous workday already exist.
+2025-05-06 16:41:12 - All SOD output files from previous workday already exist.
+2025-05-06 16:41:42 - All SOD files found. Starting merge process.
+2025-05-06 16:41:42 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:41:42 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:41:42 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:41:42 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:41:42 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:41:42 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:41:42 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:41:42 - All EOD output files from previous workday already exist.
+2025-05-06 16:41:42 - All SOD output files from previous workday already exist.
+2025-05-06 16:42:12 - All SOD files found. Starting merge process.
+2025-05-06 16:42:12 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:42:12 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:42:13 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:42:13 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:42:13 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:42:13 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:42:13 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:42:13 - All EOD output files from previous workday already exist.
+2025-05-06 16:42:13 - All SOD output files from previous workday already exist.
+2025-05-06 16:42:43 - All SOD files found. Starting merge process.
+2025-05-06 16:42:43 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:42:43 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:42:43 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:42:43 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:42:43 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:42:43 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:42:43 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:42:43 - All EOD output files from previous workday already exist.
+2025-05-06 16:42:43 - All SOD output files from previous workday already exist.
+2025-05-06 16:43:13 - All SOD files found. Starting merge process.
+2025-05-06 16:43:13 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:43:13 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:43:13 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:43:13 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:43:13 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:43:13 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:43:13 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:43:13 - All EOD output files from previous workday already exist.
+2025-05-06 16:43:13 - All SOD output files from previous workday already exist.
+2025-05-06 16:43:43 - All SOD files found. Starting merge process.
+2025-05-06 16:43:43 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:43:43 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:43:43 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:43:43 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:43:43 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:43:43 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:43:43 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:43:43 - All EOD output files from previous workday already exist.
+2025-05-06 16:43:43 - All SOD output files from previous workday already exist.
+2025-05-06 16:44:13 - All SOD files found. Starting merge process.
+2025-05-06 16:44:13 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:44:14 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:44:14 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:44:14 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:44:14 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:44:14 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:44:14 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:44:14 - All EOD output files from previous workday already exist.
+2025-05-06 16:44:14 - All SOD output files from previous workday already exist.
+2025-05-06 16:44:44 - All SOD files found. Starting merge process.
+2025-05-06 16:44:44 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:44:44 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:44:44 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:44:44 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:44:44 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:44:44 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:44:44 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:44:44 - All EOD output files from previous workday already exist.
+2025-05-06 16:44:44 - All SOD output files from previous workday already exist.
+2025-05-06 16:45:14 - All SOD files found. Starting merge process.
+2025-05-06 16:45:14 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:45:14 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:45:14 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:45:14 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:45:14 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:45:14 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:45:14 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:45:14 - All EOD output files from previous workday already exist.
+2025-05-06 16:45:14 - All SOD output files from previous workday already exist.
+2025-05-06 16:45:44 - All SOD files found. Starting merge process.
+2025-05-06 16:45:44 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:45:44 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:45:44 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:45:44 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:45:44 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:45:44 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:45:44 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:45:44 - All EOD output files from previous workday already exist.
+2025-05-06 16:45:44 - All SOD output files from previous workday already exist.
+2025-05-06 16:46:14 - All SOD files found. Starting merge process.
+2025-05-06 16:46:14 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:46:15 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:46:15 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:46:15 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:46:15 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:46:15 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:46:15 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:46:15 - All EOD output files from previous workday already exist.
+2025-05-06 16:46:15 - All SOD output files from previous workday already exist.
+2025-05-06 16:46:45 - All SOD files found. Starting merge process.
+2025-05-06 16:46:45 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:46:45 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:46:45 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:46:45 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:46:45 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:46:45 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:46:45 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:46:45 - All EOD output files from previous workday already exist.
+2025-05-06 16:46:45 - All SOD output files from previous workday already exist.
+2025-05-06 16:47:15 - All SOD files found. Starting merge process.
+2025-05-06 16:47:15 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:47:15 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:47:15 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:47:15 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:47:15 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:47:15 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:47:15 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:47:15 - All EOD output files from previous workday already exist.
+2025-05-06 16:47:15 - All SOD output files from previous workday already exist.
+2025-05-06 16:47:45 - All SOD files found. Starting merge process.
+2025-05-06 16:47:45 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:47:45 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:47:46 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:47:46 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:47:46 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:47:46 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:47:46 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:47:46 - All EOD output files from previous workday already exist.
+2025-05-06 16:47:46 - All SOD output files from previous workday already exist.
+2025-05-06 16:48:16 - All SOD files found. Starting merge process.
+2025-05-06 16:48:16 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:48:16 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:48:16 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:48:16 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:48:16 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:48:16 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:48:16 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:48:16 - All EOD output files from previous workday already exist.
+2025-05-06 16:48:16 - All SOD output files from previous workday already exist.
+2025-05-06 16:48:46 - All SOD files found. Starting merge process.
+2025-05-06 16:48:46 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:48:46 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:48:46 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:48:46 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:48:46 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:48:46 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:48:46 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:48:46 - All EOD output files from previous workday already exist.
+2025-05-06 16:48:46 - All SOD output files from previous workday already exist.
+2025-05-06 16:49:16 - All SOD files found. Starting merge process.
+2025-05-06 16:49:16 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:49:16 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:49:16 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:49:16 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:49:16 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:49:16 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:49:16 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:49:16 - All EOD output files from previous workday already exist.
+2025-05-06 16:49:16 - All SOD output files from previous workday already exist.
+2025-05-06 16:49:46 - All SOD files found. Starting merge process.
+2025-05-06 16:49:46 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:49:47 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:49:47 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:49:47 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:49:47 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:49:47 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:49:47 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:49:47 - All EOD output files from previous workday already exist.
+2025-05-06 16:49:47 - All SOD output files from previous workday already exist.
+2025-05-06 16:50:17 - All SOD files found. Starting merge process.
+2025-05-06 16:50:17 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:50:17 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:50:17 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:50:17 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:50:17 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:50:17 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:50:17 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:50:17 - All EOD output files from previous workday already exist.
+2025-05-06 16:50:17 - All SOD output files from previous workday already exist.
+2025-05-06 16:50:47 - All SOD files found. Starting merge process.
+2025-05-06 16:50:47 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:50:47 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:50:47 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:50:47 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:50:47 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:50:47 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:50:47 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:50:47 - All EOD output files from previous workday already exist.
+2025-05-06 16:50:47 - All SOD output files from previous workday already exist.
+2025-05-06 16:51:17 - All SOD files found. Starting merge process.
+2025-05-06 16:51:17 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:51:17 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:51:18 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:51:18 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:51:18 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:51:18 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:51:18 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:51:18 - All EOD output files from previous workday already exist.
+2025-05-06 16:51:18 - All SOD output files from previous workday already exist.
+2025-05-06 16:51:48 - All SOD files found. Starting merge process.
+2025-05-06 16:51:48 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:51:48 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:51:48 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:51:48 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:51:48 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:51:48 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:51:48 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:51:48 - All EOD output files from previous workday already exist.
+2025-05-06 16:51:48 - All SOD output files from previous workday already exist.
+2025-05-06 16:52:18 - All SOD files found. Starting merge process.
+2025-05-06 16:52:18 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:52:18 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:52:18 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:52:18 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:52:18 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:52:18 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:52:18 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:52:18 - All EOD output files from previous workday already exist.
+2025-05-06 16:52:18 - All SOD output files from previous workday already exist.
+2025-05-06 16:52:48 - All SOD files found. Starting merge process.
+2025-05-06 16:52:48 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:52:48 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:52:48 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:52:48 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:52:48 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:52:48 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:52:48 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:52:48 - All EOD output files from previous workday already exist.
+2025-05-06 16:52:48 - All SOD output files from previous workday already exist.
+2025-05-06 16:53:18 - All SOD files found. Starting merge process.
+2025-05-06 16:53:18 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:53:19 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:53:19 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:53:19 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:53:19 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:53:19 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:53:19 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:53:19 - All EOD output files from previous workday already exist.
+2025-05-06 16:53:19 - All SOD output files from previous workday already exist.
+2025-05-06 16:53:49 - All SOD files found. Starting merge process.
+2025-05-06 16:53:49 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:53:49 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:53:49 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:53:49 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:53:49 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:53:49 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:53:49 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:53:49 - All EOD output files from previous workday already exist.
+2025-05-06 16:53:49 - All SOD output files from previous workday already exist.
+2025-05-06 16:54:19 - All SOD files found. Starting merge process.
+2025-05-06 16:54:19 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:54:19 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:54:19 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:54:19 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:54:19 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:54:19 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:54:19 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:54:19 - All EOD output files from previous workday already exist.
+2025-05-06 16:54:19 - All SOD output files from previous workday already exist.
+2025-05-06 16:54:49 - All SOD files found. Starting merge process.
+2025-05-06 16:54:49 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:54:49 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:54:49 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:54:49 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:54:49 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:54:49 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:54:49 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:54:49 - All EOD output files from previous workday already exist.
+2025-05-06 16:54:49 - All SOD output files from previous workday already exist.
+2025-05-06 16:55:19 - All SOD files found. Starting merge process.
+2025-05-06 16:55:19 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:55:20 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:55:20 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:55:20 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:55:20 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:55:20 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:55:20 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:55:20 - All EOD output files from previous workday already exist.
+2025-05-06 16:55:20 - All SOD output files from previous workday already exist.
+2025-05-06 16:55:50 - All SOD files found. Starting merge process.
+2025-05-06 16:55:50 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:55:50 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:55:50 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:55:50 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:55:50 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:55:50 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:55:50 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:55:50 - All EOD output files from previous workday already exist.
+2025-05-06 16:55:50 - All SOD output files from previous workday already exist.
+2025-05-06 16:56:20 - All SOD files found. Starting merge process.
+2025-05-06 16:56:20 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:56:20 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:56:20 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:56:20 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:56:20 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:56:20 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:56:20 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:56:20 - All EOD output files from previous workday already exist.
+2025-05-06 16:56:20 - All SOD output files from previous workday already exist.
+2025-05-06 16:56:50 - All SOD files found. Starting merge process.
+2025-05-06 16:56:50 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:56:51 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:56:51 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:56:51 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:56:51 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:56:51 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:56:51 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:56:51 - All EOD output files from previous workday already exist.
+2025-05-06 16:56:51 - All SOD output files from previous workday already exist.
+2025-05-06 16:57:07 - Starting folder monitor for CSV merging...
+2025-05-06 16:57:07 - Added 147 holidays to the exclusion list
+2025-05-06 16:57:07 - Checking previous workday files...
+2025-05-06 16:57:07 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:57:07 - All EOD output files from previous workday already exist.
+2025-05-06 16:57:07 - All SOD output files from previous workday already exist.
+2025-05-06 16:57:07 - Checking existing files for current day...
+2025-05-06 16:57:07 - All SOD files found. Starting merge process.
+2025-05-06 16:57:07 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:57:07 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:07 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:07 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:57:07 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:07 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:07 - All SOD files found. Starting merge process.
+2025-05-06 16:57:07 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:57:07 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:07 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:07 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:57:07 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:07 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:07 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:57:07 - All EOD output files from previous workday already exist.
+2025-05-06 16:57:07 - All SOD output files from previous workday already exist.
+2025-05-06 16:57:15 - Starting folder monitor for CSV merging...
+2025-05-06 16:57:15 - Added 147 holidays to the exclusion list
+2025-05-06 16:57:15 - Checking previous workday files...
+2025-05-06 16:57:15 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:57:15 - All EOD output files from previous workday already exist.
+2025-05-06 16:57:15 - All SOD output files from previous workday already exist.
+2025-05-06 16:57:15 - Checking existing files for current day...
+2025-05-06 16:57:15 - All SOD files found. Starting merge process.
+2025-05-06 16:57:15 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:57:16 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:16 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:16 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:57:16 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:16 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:16 - All SOD files found. Starting merge process.
+2025-05-06 16:57:16 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:57:16 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:16 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:16 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:57:16 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:16 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:16 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:57:16 - All EOD output files from previous workday already exist.
+2025-05-06 16:57:16 - All SOD output files from previous workday already exist.
+2025-05-06 16:57:46 - All SOD files found. Starting merge process.
+2025-05-06 16:57:46 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:57:46 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:46 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:57:46 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:57:46 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:46 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:57:46 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:57:46 - All EOD output files from previous workday already exist.
+2025-05-06 16:57:46 - All SOD output files from previous workday already exist.
+2025-05-06 16:58:16 - All SOD files found. Starting merge process.
+2025-05-06 16:58:16 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:58:17 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:58:17 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:58:17 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:58:17 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:58:17 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:58:17 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:58:17 - All EOD output files from previous workday already exist.
+2025-05-06 16:58:17 - All SOD output files from previous workday already exist.
+2025-05-06 16:58:47 - All SOD files found. Starting merge process.
+2025-05-06 16:58:47 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:58:47 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:58:47 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:58:47 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:58:47 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:58:47 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:58:47 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:58:47 - All EOD output files from previous workday already exist.
+2025-05-06 16:58:47 - All SOD output files from previous workday already exist.
+2025-05-06 16:59:17 - All SOD files found. Starting merge process.
+2025-05-06 16:59:17 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:59:17 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:59:17 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:59:17 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:59:17 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:59:17 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:59:17 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:59:17 - All EOD output files from previous workday already exist.
+2025-05-06 16:59:17 - All SOD output files from previous workday already exist.
+2025-05-06 16:59:47 - All SOD files found. Starting merge process.
+2025-05-06 16:59:47 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 16:59:47 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:59:47 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 16:59:47 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 16:59:47 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:59:47 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 16:59:47 - All MANUAL output files from previous workday already exist.
+2025-05-06 16:59:47 - All EOD output files from previous workday already exist.
+2025-05-06 16:59:47 - All SOD output files from previous workday already exist.
+2025-05-06 17:00:17 - All SOD files found. Starting merge process.
+2025-05-06 17:00:17 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 17:00:18 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 17:00:18 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 17:00:18 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 17:00:18 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 17:00:18 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 17:00:18 - All MANUAL output files from previous workday already exist.
+2025-05-06 17:00:18 - All EOD output files from previous workday already exist.
+2025-05-06 17:00:18 - All SOD output files from previous workday already exist.
+2025-05-06 17:00:26 - Starting folder monitor for CSV merging...
+2025-05-06 17:00:26 - Added 147 holidays to the exclusion list
+2025-05-06 17:00:26 - Checking previous workday files...
+2025-05-06 17:00:26 - Checking existing files for current day...
+2025-05-06 17:00:59 - Starting folder monitor for CSV merging...
+2025-05-06 17:00:59 - Added 147 holidays to the exclusion list
+2025-05-06 17:00:59 - Checking previous workday files...
+2025-05-06 17:00:59 - Checking existing files for current day...
+2025-05-06 17:04:04 - Starting folder monitor for CSV merging...
+2025-05-06 17:04:04 - Added 147 holidays to the exclusion list
+2025-05-06 17:04:04 - Checking previous workday files...
+2025-05-06 17:04:04 - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250505.csv', 'EU_SOD_US_SOD_INDEX_MERGED_20250505.csv']
+2025-05-06 17:04:04 - Found all source files for SOD from previous workday. Creating missing output files.
+2025-05-06 17:04:04 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv and TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 17:04:05 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 17:04:05 - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250505.csv
+2025-05-06 17:04:05 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv and TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 17:04:06 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 17:04:06 - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250505.csv
+2025-05-06 17:04:06 - Checking existing files for current day...
+2025-05-06 17:04:11 - All SOD files found. Starting merge process.
+2025-05-06 17:04:11 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 17:04:13 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 17:04:13 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.csv
+2025-05-06 17:04:13 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 17:04:14 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 17:04:14 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.csv
+2025-05-06 17:09:12 - Starting folder monitor for CSV merging...
+2025-05-06 17:09:12 - Added 147 holidays to the exclusion list
+2025-05-06 17:09:12 - Checking previous workday files...
+2025-05-06 17:09:12 - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.xlsx', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.xlsx']
+2025-05-06 17:09:12 - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-05-06 17:09:12 - Merging files: TTMIndexEU1_GIS_MANUAL_STOCK_20250505.csv and TTMIndexUS1_GIS_NXTD_STOCK_20250505.csv
+2025-05-06 17:09:20 - Successfully merged files: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.xlsx
+2025-05-06 17:09:21 - Created previous workday file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250505.xlsx
+2025-05-06 17:09:21 - Merging files: TTMIndexEU1_GIS_MANUAL_INDEX_20250505.csv and TTMIndexUS1_GIS_NXTD_INDEX_20250505.csv
+2025-05-06 17:09:21 - Successfully merged files: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.xlsx
+2025-05-06 17:09:21 - Created previous workday file: EU_MANUAL_US_NXTD_INDEX_MERGED_20250505.xlsx
+2025-05-06 17:09:21 - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250505.xlsx', 'EU_EOD_US_EOD_INDEX_MERGED_20250505.xlsx']
+2025-05-06 17:09:21 - Found all source files for EOD from previous workday. Creating missing output files.
+2025-05-06 17:09:21 - Merging files: TTMIndexEU1_GIS_EOD_STOCK_20250505.csv and TTMIndexUS1_GIS_EOD_STOCK_20250505.csv
+2025-05-06 17:09:29 - Successfully merged files: EU_EOD_US_EOD_STOCK_MERGED_20250505.xlsx
+2025-05-06 17:09:29 - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250505.xlsx
+2025-05-06 17:09:29 - Merging files: TTMIndexEU1_GIS_EOD_INDEX_20250505.csv and TTMIndexUS1_GIS_EOD_INDEX_20250505.csv
+2025-05-06 17:09:30 - Successfully merged files: EU_EOD_US_EOD_INDEX_MERGED_20250505.xlsx
+2025-05-06 17:09:30 - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250505.xlsx
+2025-05-06 17:09:30 - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250505.xlsx', 'EU_SOD_US_SOD_INDEX_MERGED_20250505.xlsx']
+2025-05-06 17:09:30 - Found all source files for SOD from previous workday. Creating missing output files.
+2025-05-06 17:09:30 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250505.csv and TTMIndexUS1_GIS_SOD_STOCK_20250505.csv
+2025-05-06 17:09:38 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250505.xlsx
+2025-05-06 17:09:38 - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250505.xlsx
+2025-05-06 17:09:38 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250505.csv and TTMIndexUS1_GIS_SOD_INDEX_20250505.csv
+2025-05-06 17:09:38 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250505.xlsx
+2025-05-06 17:09:38 - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250505.xlsx
+2025-05-06 17:09:38 - Checking existing files for current day...
+2025-05-06 17:09:38 - All SOD files found. Starting merge process.
+2025-05-06 17:09:38 - Merging files: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv and TTMIndexUS1_GIS_SOD_STOCK_20250506.csv
+2025-05-06 17:09:47 - Successfully merged files: EU_SOD_US_SOD_STOCK_MERGED_20250506.xlsx
+2025-05-06 17:09:47 - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250506.csv + TTMIndexUS1_GIS_SOD_STOCK_20250506.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250506.xlsx
+2025-05-06 17:09:47 - Merging files: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv and TTMIndexUS1_GIS_SOD_INDEX_20250506.csv
+2025-05-06 17:09:47 - Successfully merged files: EU_SOD_US_SOD_INDEX_MERGED_20250506.xlsx
+2025-05-06 17:09:47 - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250506.csv + TTMIndexUS1_GIS_SOD_INDEX_20250506.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250506.xlsx
