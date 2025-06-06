@@ -4,6 +4,7 @@ import shutil
 import csv
 import logging
 import logging.handlers
+import stat
 from watchdog.observers.polling import PollingObserver  # Changed to PollingObserver
 from watchdog.events import FileSystemEventHandler
 from datetime import datetime, timedelta
@@ -14,6 +15,9 @@ import calendar
 
 # Initialize holidays list
 HOLIDAYS = []
+
+# Global variable to track processed files
+processed_files_today = set()
 
 # Get the directory where the script is located
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -43,7 +47,7 @@ except Exception as e:
     )
 
 # Path definitions
-SOURCE_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Source"
+SOURCE_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
 MANUAL_OUTPUT_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Manual"
 EOD_OUTPUT_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\EOD"
 SOD_OUTPUT_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\SOD"
@@ -53,6 +57,27 @@ for folder in [MANUAL_OUTPUT_FOLDER, EOD_OUTPUT_FOLDER, SOD_OUTPUT_FOLDER]:
     if not os.path.exists(folder):
         os.makedirs(folder)
         logger.info(f"Created output folder: {folder}")
+
+def set_file_readonly(file_path):
+    """Set a file to read-only mode"""
+    try:
+        # Get current file permissions
+        current_permissions = os.stat(file_path).st_mode
+        
+        # Remove write permissions for owner, group, and others
+        readonly_permissions = current_permissions & ~stat.S_IWRITE & ~stat.S_IWGRP & ~stat.S_IWOTH
+        
+        # Set the new permissions
+        os.chmod(file_path, readonly_permissions)
+        
+        logger.info(f"Set file to read-only: {os.path.basename(file_path)}")
+        print(f"Set file to read-only: {os.path.basename(file_path)}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Error setting file to read-only {os.path.basename(file_path)}: {str(e)}")
+        print(f"Error setting file to read-only {os.path.basename(file_path)}: {str(e)}")
+        return False
 
 def get_current_date_string():
     """Get current date in YYYYMMDD format"""
@@ -87,6 +112,78 @@ def extract_date_from_filename(filename):
             return None
     return None
 
+def convert_single_csv_to_xlsx(csv_path, output_path):
+    """Convert a single CSV file to XLSX format with proper formatting"""
+    try:
+        logger.info(f"Converting file: {os.path.basename(csv_path)} to XLSX")
+        print(f"Converting file: {os.path.basename(csv_path)} to XLSX")
+        
+        # Read the CSV file with pandas - using latin1 encoding and semicolon delimiter
+        df = pd.read_csv(csv_path, encoding='latin1', sep=';')
+        
+        # Make sure the output path has .xlsx extension
+        if not output_path.endswith('.xlsx'):
+            output_path = output_path.replace('.csv', '.xlsx')
+            
+        # Create an Excel writer using XlsxWriter as the engine
+        writer = pd.ExcelWriter(output_path, engine='xlsxwriter')
+        
+        # Get workbook and define formats
+        workbook = writer.book
+        
+        # Create a plain header format (no bold, no underline)
+        header_format = workbook.add_format({
+            'bold': False,
+            'underline': False,
+            'bottom': 0,
+            'font_name': 'Verdana',
+            'font_size': 10
+        })
+        
+        # Create the default cell format for the entire worksheet
+        cell_format = workbook.add_format({
+            'font_name': 'Verdana',
+            'font_size': 10
+        })
+        
+        # Write the DataFrame to Excel without the index
+        df.to_excel(writer, index=False, sheet_name='Data')
+        
+        # Get the worksheet and apply formats
+        worksheet = writer.sheets['Data']
+        
+        # Apply Verdana 10 to the entire worksheet
+        worksheet.set_column(0, 100, None, cell_format)  # Apply to all columns
+        
+        # Apply the plain header format to the first row
+        for col_num, value in enumerate(df.columns.values):
+            worksheet.write(0, col_num, value, header_format)
+        
+        # Apply date formatting to column B (typically the date column)
+        date_format = workbook.add_format({
+            'num_format': 'mm/dd/yyyy;@',
+            'font_name': 'Verdana',
+            'font_size': 10
+        })
+        
+        # Column B in Excel is column 1 (0-indexed) in the DataFrame + 1 for the Excel column
+        worksheet.set_column(1, 1, None, date_format)
+        
+        # Close the writer to save the file
+        writer.close()
+        
+        # Set the output file to read-only
+        set_file_readonly(output_path)
+        
+        logger.info(f"Successfully converted file: {os.path.basename(output_path)}")
+        print(f"Successfully converted file: {os.path.basename(output_path)}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Error converting file: {str(e)}")
+        print(f"Error converting file: {str(e)}")
+        return False
+
 def merge_csv_files(file1_path, file2_path, output_path):
     """Merge two CSV files and save as XLSX, keeping all rows from both files"""
     try:
@@ -102,6 +199,21 @@ def merge_csv_files(file1_path, file2_path, output_path):
         # Combine the dataframes - keeping all rows including header of second file
         merged_df = pd.concat([df1, df2])
         
+        # Convert column I to numeric if it exists (8th column, 0-indexed)
+        if len(merged_df.columns) > 8:
+            col_I_name = merged_df.columns[8]
+            # Try to convert the column to numeric
+            try:
+                # Force conversion to numeric values
+                merged_df[col_I_name] = pd.to_numeric(merged_df[col_I_name], errors='coerce')
+                # Replace NaN with 0 or original value
+                numeric_mask = pd.isna(merged_df[col_I_name])
+                if numeric_mask.any():
+                    original_values = df1[col_I_name].copy()
+                    merged_df.loc[numeric_mask, col_I_name] = original_values.loc[numeric_mask]
+            except Exception as e:
+                logger.warning(f"Could not convert column I to numeric: {str(e)}")
+        
         # Make sure the output path has .xlsx extension
         if not output_path.endswith('.xlsx'):
             output_path = output_path.replace('.csv', '.xlsx')
@@ -109,11 +221,73 @@ def merge_csv_files(file1_path, file2_path, output_path):
         # Create an Excel writer using XlsxWriter as the engine
         writer = pd.ExcelWriter(output_path, engine='xlsxwriter')
         
-        # Write the merged dataframe to Excel without the index
+        # Get workbook and define formats
+        workbook = writer.book
+        
+        # Create a plain header format (no bold, no underline)
+        header_format = workbook.add_format({
+            'bold': False,
+            'underline': False,
+            'bottom': 0,
+            'font_name': 'Verdana',
+            'font_size': 10
+        })
+        
+        # Create the default cell format for the entire worksheet
+        cell_format = workbook.add_format({
+            'font_name': 'Verdana',
+            'font_size': 10
+        })
+        
+        # Write the DataFrame to Excel without the index
         merged_df.to_excel(writer, index=False, sheet_name='Merged_Data')
+        
+        # Get the worksheet and apply formats
+        worksheet = writer.sheets['Merged_Data']
+        
+        # Apply Verdana 10 to the entire worksheet
+        worksheet.set_column(0, 100, None, cell_format)  # Apply to all columns
+        
+        # Apply the plain header format to the first row
+        for col_num, value in enumerate(merged_df.columns.values):
+            worksheet.write(0, col_num, value, header_format)
+        
+        # Apply date formatting to column B (typically the date column)
+        date_format = workbook.add_format({
+            'num_format': 'mm/dd/yyyy;@',
+            'font_name': 'Verdana',
+            'font_size': 10
+        })
+        
+        # Column B in Excel is column 1 (0-indexed) in the DataFrame + 1 for the Excel column
+        worksheet.set_column(1, 1, None, date_format)
+        
+        # For column I, manually write each cell as a number instead of applying format
+        if len(merged_df.columns) > 8:
+            col_I_name = merged_df.columns[8]
+            num_format = workbook.add_format({
+                'font_name': 'Verdana',
+                'font_size': 10,
+                'num_format': '0'  # Integer format
+            })
+            
+            # Write each cell in column I as a numeric value
+            for row_idx, value in enumerate(merged_df[col_I_name]):
+                try:
+                    # Add 1 to row_idx to account for header row
+                    if pd.notna(value):
+                        # Try to convert to float first
+                        num_value = float(value)
+                        worksheet.write_number(row_idx + 1, 8, num_value, num_format)
+                except (ValueError, TypeError):
+                    # If conversion fails, write as is
+                    worksheet.write(row_idx + 1, 8, value, cell_format)
         
         # Close the writer to save the file
         writer.close()
+        
+        # Set the output file to read-only
+        set_file_readonly(output_path)
         
         logger.info(f"Successfully merged files: {os.path.basename(output_path)}")
         print(f"Successfully merged files: {os.path.basename(output_path)}")
@@ -123,7 +297,7 @@ def merge_csv_files(file1_path, file2_path, output_path):
         logger.error(f"Error merging files: {str(e)}")
         print(f"Error merging files: {str(e)}")
         
-        # Fallback method if pandas fails
+        # Fallback method if pandas fails - with similar formatting
         try:
             logger.info(f"Attempting alternative merge method for: {os.path.basename(file1_path)} and {os.path.basename(file2_path)}")
             print(f"Attempting alternative merge method...")
@@ -142,7 +316,6 @@ def merge_csv_files(file1_path, file2_path, output_path):
             merged_data = data1 + data2
             
             # Convert the combined data to a pandas DataFrame
-            # Using the first row as header for demonstration, but keeping all rows in the data
             df = pd.DataFrame(merged_data)
             
             # Make sure the output path has .xlsx extension
@@ -152,11 +325,63 @@ def merge_csv_files(file1_path, file2_path, output_path):
             # Create an Excel writer using XlsxWriter as the engine
             writer = pd.ExcelWriter(output_path, engine='xlsxwriter')
             
+            # Get workbook and define formats
+            workbook = writer.book
+            
+            # Create a plain header format (no bold, no underline)
+            header_format = workbook.add_format({
+                'bold': False,
+                'underline': False,
+                'bottom': 0,
+                'font_name': 'Verdana',
+                'font_size': 10
+            })
+            
+            # Create the default cell format for the entire worksheet
+            cell_format = workbook.add_format({
+                'font_name': 'Verdana',
+                'font_size': 10
+            })
+            
             # Write the DataFrame to Excel without the index
             df.to_excel(writer, index=False, header=False, sheet_name='Merged_Data')
             
+            # Get the worksheet and apply formats
+            worksheet = writer.sheets['Merged_Data']
+            
+            # Apply Verdana 10 to the entire worksheet
+            worksheet.set_column(0, 100, None, cell_format)  # Apply to all columns
+            
+            # Apply the plain header format to the first row if there's data
+            if len(df) > 0 and len(df.columns) > 0:
+                for col_num in range(len(df.columns)):
+                    if len(df) > 0:  # Make sure there's at least one row
+                        value = df.iloc[0, col_num] if not pd.isna(df.iloc[0, col_num]) else ""
+                        worksheet.write(0, col_num, value, header_format)
+            
+            # Apply date formatting to column B
+            date_format = workbook.add_format({
+                'num_format': 'mm/dd/yyyy;@',
+                'font_name': 'Verdana',
+                'font_size': 10
+            })
+            worksheet.set_column(1, 1, None, date_format)
+            
+            # Apply text-as-number formatting to column I
+            text_number_format = workbook.add_format({
+                'num_format': '0',  # Format as a number without decimals
+                'font_name': 'Verdana',
+                'font_size': 10
+            })
+            
+            # Column I in Excel is column 8 (0-indexed) in the DataFrame
+            worksheet.set_column(8, 8, None, text_number_format)
+            
             # Close the writer to save the file
             writer.close()
+            
+            # Set the output file to read-only
+            set_file_readonly(output_path)
             
             logger.info(f"Successfully merged files using alternative method: {os.path.basename(output_path)}")
             print(f"Successfully merged files using alternative method: {os.path.basename(output_path)}")
@@ -185,23 +410,29 @@ def get_merge_groups(date_str):
             "merge_pairs": [
                 (0, 1, 0),  # (file1_index, file2_index, output_index)
                 (2, 3, 1)
-            ]
+            ],
+            "single_files": []  # No single file conversions for MANUAL
         },
         "EOD": {
             "files": [
                 f"TTMIndexEU1_GIS_EOD_STOCK_{date_str}.csv",
                 f"TTMIndexUS1_GIS_EOD_STOCK_{date_str}.csv",
                 f"TTMIndexEU1_GIS_EOD_INDEX_{date_str}.csv",
-                f"TTMIndexUS1_GIS_EOD_INDEX_{date_str}.csv"
+                f"TTMIndexUS1_GIS_EOD_INDEX_{date_str}.csv",
+                f"TTMStrategy_GIS_EOD_INDEX_{date_str}.csv"  # Added strategy file
             ],
             "output_dir": EOD_OUTPUT_FOLDER,
             "output_files": [
                 f"EU_EOD_US_EOD_STOCK_MERGED_{date_str}.xlsx",
-                f"EU_EOD_US_EOD_INDEX_MERGED_{date_str}.xlsx"
+                f"EU_EOD_US_EOD_INDEX_MERGED_{date_str}.xlsx",
+                f"TTMStrategy_GIS_EOD_INDEX_{date_str}.xlsx"  # Added strategy output
             ],
             "merge_pairs": [
                 (0, 1, 0),
                 (2, 3, 1)
+            ],
+            "single_files": [
+                (4, 2)  # (source_file_index, output_file_index) for strategy file
             ]
         },
         "SOD": {
@@ -219,7 +450,8 @@ def get_merge_groups(date_str):
             "merge_pairs": [
                 (0, 1, 0),
                 (2, 3, 1)
-            ]
+            ],
+            "single_files": []  # No single file conversions for SOD
         }
     }
 
@@ -274,6 +506,17 @@ def check_previous_workday_files():
                             if merge_csv_files(file1_path, file2_path, output_path):
                                 logger.info(f"Created previous workday file: {os.path.basename(output_path)}")
                                 print(f"Created previous workday file: {os.path.basename(output_path)}")
+                    
+                    # Handle single file conversions for this group
+                    if "single_files" in group_data:
+                        for source_idx, output_idx in group_data["single_files"]:
+                            if group_data["output_files"][output_idx] in missing_outputs:
+                                source_path = os.path.join(SOURCE_FOLDER, group_data["files"][source_idx])
+                                output_path = os.path.join(group_data["output_dir"], group_data["output_files"][output_idx])
+                                
+                                if convert_single_csv_to_xlsx(source_path, output_path):
+                                    logger.info(f"Created previous workday file: {os.path.basename(output_path)}")
+                                    print(f"Created previous workday file: {os.path.basename(output_path)}")
                 else:
                     missing_files = [file for file in group_data["files"] if not os.path.exists(os.path.join(SOURCE_FOLDER, file))]
                     logger.info(f"Cannot create {group_name} output files for previous workday. Missing source files: {missing_files}")
@@ -288,41 +531,48 @@ def check_previous_workday_files():
 def check_files_for_merge():
     """Check if all necessary files are available for merging"""
     try:
+        global processed_files_today
+        
         # Get all files in the source directory
         files = os.listdir(SOURCE_FOLDER)
         
         # Get current date string
         current_date = get_current_date_string()
         
+        # Reset processed files if it's a new day
+        current_day_key = f"daily_check_{current_date}"
+        if current_day_key not in processed_files_today:
+            processed_files_today.clear()
+            processed_files_today.add(current_day_key)
+        
         # Get merge groups for current date
         merge_groups = get_merge_groups(current_date)
         
         # Check each merge group
         for group_name, group_data in merge_groups.items():
-            # First check if output files already exist
-            all_outputs_exist = True
-            for output_file in group_data["output_files"]:
-                output_path = os.path.join(group_data["output_dir"], output_file)
-                if not os.path.exists(output_path):
-                    all_outputs_exist = False
-                    break
+            # Process merge operations
+            merge_files_exist = True
+            merge_files_needed = set()
+            for file1_idx, file2_idx, output_idx in group_data["merge_pairs"]:
+                merge_files_needed.add(file1_idx)
+                merge_files_needed.add(file2_idx)
             
-            # If all output files already exist, skip this group
-            if all_outputs_exist:
-                logger.debug(f"All {group_name} output files for today already exist. Skipping merge.")
-                continue
-                
-            # Check if all files in this group exist
-            source_files_exist = True
-            for file in group_data["files"]:
-                file_path = os.path.join(SOURCE_FOLDER, file)
+            # Check if merge files exist
+            for file_idx in merge_files_needed:
+                file_path = os.path.join(SOURCE_FOLDER, group_data["files"][file_idx])
                 if not os.path.exists(file_path):
-                    source_files_exist = False
+                    merge_files_exist = False
                     break
             
-            if source_files_exist:
-                logger.info(f"All {group_name} files found. Starting merge process.")
-                print(f"All {group_name} files found. Starting merge process.")
+            # Create a unique key for this merge group operation
+            merge_key = f"{group_name}_merge_{current_date}"
+            
+            if merge_files_exist and merge_key not in processed_files_today:
+                logger.info(f"All {group_name} merge files found. Starting merge process.")
+                print(f"All {group_name} merge files found. Starting merge process.")
+                
+                # Mark this merge operation as processed
+                processed_files_today.add(merge_key)
                 
                 # Perform merges for this group
                 for file1_idx, file2_idx, output_idx in group_data["merge_pairs"]:
@@ -337,9 +587,48 @@ def check_files_for_merge():
                     
                     if merge_csv_files(file1_path, file2_path, output_path):
                         logger.info(f"Merged: {os.path.basename(file1_path)} + {os.path.basename(file2_path)} -> {os.path.basename(output_path)}")
+            elif merge_files_exist and merge_key in processed_files_today:
+                # Files exist but already processed - no need to log
+                pass
             else:
-                missing_files = [file for file in group_data["files"] if not os.path.exists(os.path.join(SOURCE_FOLDER, file))]
-                logger.debug(f"Not all {group_name} files found. Missing: {missing_files}")
+                merge_missing_files = [group_data["files"][idx] for idx in merge_files_needed if not os.path.exists(os.path.join(SOURCE_FOLDER, group_data["files"][idx]))]
+                # Only log missing files once per day
+                missing_key = f"{group_name}_missing_{current_date}"
+                if missing_key not in processed_files_today:
+                    logger.debug(f"Not all {group_name} merge files found. Missing: {merge_missing_files}")
+                    processed_files_today.add(missing_key)
+            
+            # Process single file conversions independently
+            if "single_files" in group_data:
+                for source_idx, output_idx in group_data["single_files"]:
+                    source_path = os.path.join(SOURCE_FOLDER, group_data["files"][source_idx])
+                    output_path = os.path.join(group_data["output_dir"], group_data["output_files"][output_idx])
+                    
+                    # Create a unique key for this single file operation
+                    single_file_key = f"{group_name}_single_{source_idx}_{current_date}"
+                    
+                    # Check if source file exists and hasn't been processed
+                    if os.path.exists(source_path) and single_file_key not in processed_files_today:
+                        # Skip if output file already exists
+                        if os.path.exists(output_path):
+                            logger.debug(f"Output file already exists: {os.path.basename(output_path)}. Skipping conversion.")
+                            processed_files_today.add(single_file_key)
+                            continue
+                        
+                        logger.info(f"Found {group_name} single file for conversion: {os.path.basename(source_path)}")
+                        print(f"Found {group_name} single file for conversion: {os.path.basename(source_path)}")
+                        
+                        # Mark this single file operation as processed
+                        processed_files_today.add(single_file_key)
+                        
+                        if convert_single_csv_to_xlsx(source_path, output_path):
+                            logger.info(f"Converted: {os.path.basename(source_path)} -> {os.path.basename(output_path)}")
+                    elif not os.path.exists(source_path):
+                        # Only log missing single files once per day
+                        missing_single_key = f"{group_name}_single_missing_{source_idx}_{current_date}"
+                        if missing_single_key not in processed_files_today:
+                            logger.debug(f"Single file not found: {group_data['files'][source_idx]}")
+                            processed_files_today.add(missing_single_key)
     
     except Exception as e:
         logger.error(f"Error checking files for merge: {str(e)}")

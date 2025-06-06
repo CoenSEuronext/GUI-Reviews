@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Euronext Index Calculator</title>
+    <!-- Add the Barlow font import here -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap" rel="stylesheet">
+    <style>
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+            height: auto;
+            z-index: 1000;
+        }
+
+        :root {
+            --primary-color: rgb(0, 141, 127);
+            --secondary-color-1: rgb(0, 57, 52);
+            --secondary-color-2: rgb(7, 39, 45);
+            --gray-1: rgb(193, 201, 203);
+            --gray-2: rgb(230, 233, 234);
+        }
+
+        html {
+            background-color: var(--primary-color);
+        }
+        
+        body {
+            font-family: 'Barlow', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 141, 127, 0.75);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            min-height: 100vh;
+            backdrop-filter: blur(3px);
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--secondary-color-1);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--gray-1);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0, 141, 127, 0.2);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color-1);
+        }
+
+        button:disabled {
+            background-color: var(--gray-1);
+            cursor: not-allowed;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .success {
+            background-color: rgba(0, 141, 127, 0.1);
+            border: 1px solid var(--primary-color);
+            color: var(--secondary-color-1);
+        }
+
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .document-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-1);
+        }
+
+        .document-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .doc-link {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: var(--gray-2);
+            border-radius: 4px;
+            color: var(--secondary-color-1);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .doc-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .doc-link svg {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/Euronext_Logo-RGB_black.png') }}" alt="Euronext Logo" class="logo">
+    <div class="container">
+        <h1>Euronext Index Calculator</h1>
+        
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="review_type">Review Type:</label>
+                <select id="review_type" name="review_type">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Calculation Date (YYYYMMDD):</label>
+                <input type="text" id="date" name="date" required pattern="\d{8}" placeholder="20241217">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Cut off Date (YYYYMMDD):</label>
+                <input type="text" id="co_date" name="co_date" required pattern="\d{8}" placeholder="20241122">
+            </div>
+
+            <div class="form-group">
+                <label for="effective_date">Effective Date (DD-MMM-YY):</label>
+                <input type="text" id="effective_date" name="effective_date" required placeholder="23-Dec-24">
+            </div>
+
+            <div class="form-group">
+                <label for="index">Index:</label>
+                <input type="text" id="index" name="index" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="isin">ISIN:</label>
+                <input type="text" id="isin" name="isin" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="currency">Currency:</label>
+                <select id="currency" name="currency">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="auto_open" name="auto_open">
+                    Automatically open output file
+                </label>
+            </div>
+            <button type="submit" id="submitBtn">Calculate Index</button>
+        </form>
+
+        <div id="result"></div>
+
+        <div class="document-section">
+            <h2>Related Documents</h2>
+            <div class="document-links">
+                <a href="/docs/user-manual.pdf" class="doc-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                    User Manual
+                </a>
+                <a href="/docs/methodology.pdf" class="doc-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Methodology
+                </a>
+                <a href="/docs/quick-guide.pdf" class="doc-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Quick Guide
+                </a>
+                <a href="/docs/faq.pdf" class="doc-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    FAQ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const configs = {{ INDEX_CONFIGS|tojson|safe }};
+
+        function populateReviewTypes() {
+            const selectElement = document.getElementById('review_type');
+            selectElement.innerHTML = '';
+            
+            Object.keys(configs).forEach(reviewType => {
+                const option = document.createElement('option');
+                option.value = reviewType;
+                option.textContent = `${reviewType} Review`;
+                selectElement.appendChild(option);
+            });
+
+            updateIndexAndIsin();
+        }
+
+        function updateIndexAndIsin() {
+            const reviewType = document.getElementById('review_type').value;
+            const configs = {{ INDEX_CONFIGS|tojson|safe }};
+            const config = configs[reviewType];
+            
+            if (config) {
+                document.getElementById('index').value = config.index;
+                document.getElementById('isin').value = config.isin;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateReviewTypes();
+        });
+
+        document.getElementById('review_type').addEventListener('change', updateIndexAndIsin);
+
+        document.getElementById('calculatorForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const resultDiv = document.getElementById('result');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Calculating...';
+            resultDiv.style.display = 'block';
+            resultDiv.className = '';
+            resultDiv.innerHTML = 'Processing your request...';
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch('/calculate', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                resultDiv.className = data.status === 'success' ? 'success' : 'error';
+                resultDiv.innerHTML = `
+                    <h3>${data.status === 'success' ? 'Success!' : 'Error'}</h3>
+                    <p>${data.message}</p>
+                `;
+            } catch (error) {
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = `
+                    <h3>Error</h3>
+                    <p>An error occurred while calculating the index.</p>
+                `;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Calculate Index';
+            }
+        });
+    </script>
+</body>
+</html>

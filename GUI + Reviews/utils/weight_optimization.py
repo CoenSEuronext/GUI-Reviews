@@ -232,7 +232,7 @@ def optimize_weights(final_selection, universe_df, WACI, date):
     logger.info(f"Initial WACI: {initial_waci:.2f} (targets: < {0.5 * WACI:.2f} and < {target_waci:.2f})")
     
     # Try optimization with increasing factors until a solution is found
-    max_factor = 20
+    max_factor = 5
     successful = False
     
     # Set initial factor

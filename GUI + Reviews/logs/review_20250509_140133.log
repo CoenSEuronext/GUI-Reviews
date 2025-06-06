@@ -1,0 +1,10 @@
+2025-05-09 14:01:34,175 - werkzeug - WARNING -  * Debugger is active!
+2025-05-09 14:01:34,175 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-05-09 14:09:39,731 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\__init__.py', reloading
+2025-05-09 14:09:39,738 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_optimize.py', reloading
+2025-05-09 14:09:39,777 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_minimize.py', reloading
+2025-05-09 14:09:39,782 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_root.py', reloading
+2025-05-09 14:09:39,796 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_root_scalar.py', reloading
+2025-05-09 14:09:39,800 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_minpack_py.py', reloading
+2025-05-09 14:09:39,819 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_zeros_py.py', reloading
+2025-05-09 14:09:39,832 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy\\optimize\\_nonlin.py', reloading

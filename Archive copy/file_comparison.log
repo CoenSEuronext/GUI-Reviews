@@ -1,0 +1,78 @@
+2025-06-06 16:20:57 - Starting GIS Morning Stock Changes comparison
+2025-06-06 16:20:57 - Starting file comparison...
+2025-06-06 16:20:57 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:20:57 - Error reading file C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Manual\EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Manual\\EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx'
+2025-06-06 16:20:57 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:20:57 - Error reading file C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\SOD\EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-06-06 16:20:57 - Failed to read one or both files
+2025-06-06 16:20:57 - File comparison failed
+2025-06-06 16:22:52 - Starting GIS Morning Stock Changes comparison
+2025-06-06 16:22:52 - Starting file comparison...
+2025-06-06 16:22:52 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:22:52 - Failed to read with openpyxl: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Manual\\EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx'
+2025-06-06 16:22:52 - Failed to read with xlrd: Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.
+2025-06-06 16:22:52 - All read attempts failed: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Manual\\EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx'
+2025-06-06 16:22:52 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:22:56 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:22:56 - Failed to read one or both files
+2025-06-06 16:22:56 - File comparison failed
+2025-06-06 16:23:23 - Starting GIS Morning Stock Changes comparison
+2025-06-06 16:23:23 - Starting file comparison...
+2025-06-06 16:23:23 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:23:28 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:23:28 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:23:32 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:23:32 - Found 54624 common records to compare
+2025-06-06 16:26:24 - Found 54624 differences
+2025-06-06 16:26:24 - Error comparing files: No module named 'xlsxwriter'
+2025-06-06 16:26:24 - File comparison failed
+2025-06-06 16:28:55 - Starting GIS Morning Stock Changes comparison
+2025-06-06 16:28:55 - Starting file comparison...
+2025-06-06 16:28:55 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:29:00 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:29:00 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:29:05 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:29:05 - Found 54624 common records to compare
+2025-06-06 16:31:57 - Found 54624 differences
+2025-06-06 16:32:02 - Error comparing files: NAN/INF not supported in write_number() without 'nan_inf_to_errors' Workbook() option
+2025-06-06 16:32:02 - File comparison failed
+2025-06-06 16:34:35 - Starting GIS Morning Stock Changes comparison
+2025-06-06 16:34:35 - Starting file comparison...
+2025-06-06 16:34:35 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:34:40 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:34:40 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:34:44 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:34:44 - Found 54624 common records to compare
+2025-06-06 16:37:32 - Found 54624 differences
+2025-06-06 16:37:32 - Error comparing files: ExcelWriter.__new__() got an unexpected keyword argument 'options'
+2025-06-06 16:37:32 - File comparison failed
+2025-06-06 16:38:25 - Starting GIS Morning Stock Changes comparison
+2025-06-06 16:38:25 - Starting file comparison...
+2025-06-06 16:38:25 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:38:30 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 16:38:30 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:38:34 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 16:38:34 - Found 54624 common records to compare
+2025-06-06 16:41:23 - Found 54624 differences
+2025-06-06 16:43:53 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-06-06 16:43:53 - File comparison completed successfully
+2025-06-06 17:17:11 - Starting GIS Morning Stock Changes comparison
+2025-06-06 17:17:11 - Starting file comparison...
+2025-06-06 17:17:11 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 17:17:15 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 17:17:15 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 17:17:20 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 17:17:20 - Found 54624 common records to compare
+2025-06-06 17:20:09 - Found 457 differences
+2025-06-06 17:21:56 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-06-06 17:21:56 - File comparison completed successfully
+2025-06-06 17:26:16 - Starting GIS Morning Stock Changes comparison
+2025-06-06 17:26:16 - Starting file comparison...
+2025-06-06 17:26:16 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 17:26:21 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-06 17:26:21 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 17:26:25 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-06 17:26:25 - Found 54624 common records to compare
+2025-06-06 17:29:13 - Found 2 differences
+2025-06-06 17:30:59 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-06-06 17:30:59 - File comparison completed successfully
