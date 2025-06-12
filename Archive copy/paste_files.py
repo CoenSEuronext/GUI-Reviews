@@ -71,7 +71,7 @@ def set_file_readonly(file_path):
         os.chmod(file_path, readonly_permissions)
         
         logger.info(f"Set file to read-only: {os.path.basename(file_path)}")
-        print(f"Set file to read-only: {os.path.basename(file_path)}")
+        # Removed print statement
         return True
         
     except Exception as e:
@@ -116,7 +116,7 @@ def convert_single_csv_to_xlsx(csv_path, output_path):
     """Convert a single CSV file to XLSX format with proper formatting"""
     try:
         logger.info(f"Converting file: {os.path.basename(csv_path)} to XLSX")
-        print(f"Converting file: {os.path.basename(csv_path)} to XLSX")
+        # Removed print statement
         
         # Read the CSV file with pandas - using latin1 encoding and semicolon delimiter
         df = pd.read_csv(csv_path, encoding='latin1', sep=';')
@@ -188,7 +188,7 @@ def merge_csv_files(file1_path, file2_path, output_path):
     """Merge two CSV files and save as XLSX, keeping all rows from both files"""
     try:
         logger.info(f"Merging files: {os.path.basename(file1_path)} and {os.path.basename(file2_path)}")
-        print(f"Merging files: {os.path.basename(file1_path)} and {os.path.basename(file2_path)}")
+        # Removed print statement
         
         # Read the first file with pandas - using latin1 encoding and semicolon delimiter
         df1 = pd.read_csv(file1_path, encoding='latin1', sep=';')
@@ -300,7 +300,7 @@ def merge_csv_files(file1_path, file2_path, output_path):
         # Fallback method if pandas fails - with similar formatting
         try:
             logger.info(f"Attempting alternative merge method for: {os.path.basename(file1_path)} and {os.path.basename(file2_path)}")
-            print(f"Attempting alternative merge method...")
+            # Removed print statement
             
             # Read the first file
             with open(file1_path, 'r', encoding='latin1', newline='') as f1:
@@ -482,7 +482,7 @@ def check_previous_workday_files():
             # If any output files are missing, check if source files exist to create them
             if missing_outputs:
                 logger.info(f"Missing {group_name} output files from previous workday: {missing_outputs}")
-                print(f"Missing {group_name} output files from previous workday: {missing_outputs}")
+                # Removed print statement
                 
                 # Check if all source files for this group exist
                 source_files_exist = True
@@ -494,7 +494,7 @@ def check_previous_workday_files():
                 
                 if source_files_exist:
                     logger.info(f"Found all source files for {group_name} from previous workday. Creating missing output files.")
-                    print(f"Found all source files for {group_name} from previous workday. Creating missing output files.")
+                    # Removed print statement
                     
                     # Perform merges for this group
                     for file1_idx, file2_idx, output_idx in group_data["merge_pairs"]:
@@ -505,7 +505,7 @@ def check_previous_workday_files():
                             
                             if merge_csv_files(file1_path, file2_path, output_path):
                                 logger.info(f"Created previous workday file: {os.path.basename(output_path)}")
-                                print(f"Created previous workday file: {os.path.basename(output_path)}")
+                                # Removed print statement
                     
                     # Handle single file conversions for this group
                     if "single_files" in group_data:
@@ -516,11 +516,11 @@ def check_previous_workday_files():
                                 
                                 if convert_single_csv_to_xlsx(source_path, output_path):
                                     logger.info(f"Created previous workday file: {os.path.basename(output_path)}")
-                                    print(f"Created previous workday file: {os.path.basename(output_path)}")
+                                    # Removed print statement
                 else:
                     missing_files = [file for file in group_data["files"] if not os.path.exists(os.path.join(SOURCE_FOLDER, file))]
                     logger.info(f"Cannot create {group_name} output files for previous workday. Missing source files: {missing_files}")
-                    print(f"Cannot create {group_name} output files for previous workday. Missing source files: {missing_files}")
+                    # Removed print statement
             else:
                 logger.debug(f"All {group_name} output files from previous workday already exist.")
     
@@ -569,7 +569,7 @@ def check_files_for_merge():
             
             if merge_files_exist and merge_key not in processed_files_today:
                 logger.info(f"All {group_name} merge files found. Starting merge process.")
-                print(f"All {group_name} merge files found. Starting merge process.")
+                # Removed print statement
                 
                 # Mark this merge operation as processed
                 processed_files_today.add(merge_key)
@@ -616,7 +616,7 @@ def check_files_for_merge():
                             continue
                         
                         logger.info(f"Found {group_name} single file for conversion: {os.path.basename(source_path)}")
-                        print(f"Found {group_name} single file for conversion: {os.path.basename(source_path)}")
+                        # Removed print statement
                         
                         # Mark this single file operation as processed
                         processed_files_today.add(single_file_key)
@@ -724,12 +724,12 @@ def monitor_folder():
     
     # First check for previous workday's files
     logger.info("Checking previous workday files...")
-    print("Checking previous workday files...")
+    # Removed print statement
     check_previous_workday_files()
     
     # Then check if any existing files can be merged for current day
     logger.info("Checking existing files for current day...")
-    print("Checking existing files for current day...")
+    # Removed print statement
     check_files_for_merge()
     
     # Set up folder monitoring with PollingObserver

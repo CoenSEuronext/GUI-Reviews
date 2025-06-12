@@ -76,3 +76,13 @@
 2025-06-06 17:29:13 - Found 2 differences
 2025-06-06 17:30:59 - Successfully created comparison report: GIS Morning stock changes.xlsx
 2025-06-06 17:30:59 - File comparison completed successfully
+2025-06-11 16:51:19 - Starting GIS Morning Stock Changes comparison
+2025-06-11 16:51:19 - Starting file comparison...
+2025-06-11 16:51:19 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-11 16:51:24 - Successfully read 54624 rows from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-06-11 16:51:24 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-11 16:51:28 - Successfully read 54624 rows from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-06-11 16:51:28 - Found 54624 common records to compare
+2025-06-11 16:54:21 - Found 2 differences
+2025-06-11 16:56:08 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-06-11 16:56:08 - File comparison completed successfully

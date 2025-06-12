@@ -1,0 +1,332 @@
+2025-06-11 17:32:09 - INFO - Added 147 holidays to the exclusion list
+2025-06-11 17:32:09 - INFO - Starting unified monitoring system...
+2025-06-11 17:38:36 - INFO - Found 117579 files to process
+2025-06-11 17:43:42 - INFO - Added 147 holidays to the exclusion list
+2025-06-11 17:43:42 - INFO - Starting unified monitoring system...
+2025-06-11 17:43:58 - INFO - Found 117579 files to process
+2025-06-11 17:45:43 - INFO - File TTMIndexUS1_GIS_MANUAL_INDEX_20250611.csv has different size - will copy
+2025-06-11 17:45:43 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_INDEX_20250611.csv
+2025-06-11 17:45:46 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_INDEX_20250611.csv
+2025-06-11 17:51:11 - INFO - CSV file copied: TTMIndexUS1_GIS_MANUAL_INDEX_20250611.csv. Triggering CSV merger check.
+2025-06-11 17:51:19 - INFO - All SOD merge files found. Starting merge process.
+2025-06-11 17:51:19 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_STOCK_20250611.csv and TTMIndexUS1_GIS_SOD_STOCK_20250611.csv
+2025-06-11 17:51:21 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-11 17:51:30 - INFO - Set file to read-only: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-11 17:51:30 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-11 17:53:08 - INFO - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250611.csv + TTMIndexUS1_GIS_SOD_STOCK_20250611.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-11 17:53:08 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_INDEX_20250611.csv and TTMIndexUS1_GIS_SOD_INDEX_20250611.csv
+2025-06-11 17:53:08 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-11 17:53:09 - INFO - Set file to read-only: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-11 17:53:09 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-11 17:53:09 - INFO - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250611.csv + TTMIndexUS1_GIS_SOD_INDEX_20250611.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-11 17:54:43 - INFO - File TTMIndexUS1_GIS_MANUAL_STOCK_20250611.csv has different size - will copy
+2025-06-11 17:54:43 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_STOCK_20250611.csv
+2025-06-11 17:54:47 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_STOCK_20250611.csv
+2025-06-11 17:54:48 - INFO - CSV file copied: TTMIndexUS1_GIS_MANUAL_STOCK_20250611.csv. Triggering CSV merger check.
+2025-06-11 18:04:02 - INFO - Added 147 holidays to the exclusion list
+2025-06-11 18:04:02 - INFO - Starting unified monitoring system...
+2025-06-11 18:04:12 - INFO - Found 117579 files to process
+2025-06-11 18:05:59 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_INDEX_20250611.csv
+2025-06-11 18:06:01 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_INDEX_20250611.csv
+2025-06-12 15:24:33 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 15:24:33 - INFO - Starting unified monitoring system...
+2025-06-12 15:24:39 - INFO - Found 117634 files to process
+2025-06-12 15:28:23 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 15:28:23 - INFO - Starting unified monitoring system...
+2025-06-12 15:28:31 - INFO - Found 117634 files to process
+2025-06-12 15:33:23 - INFO - Initial file processing completed. Running CSV merger check.
+2025-06-12 15:33:23 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 15:33:23 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_STOCK_20250612.csv and TTMIndexUS1_GIS_SOD_STOCK_20250612.csv
+2025-06-12 15:33:24 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:33:33 - INFO - Set file to read-only: EU_SOD_US_SOD_STOCK_MERGED_20250612.xlsx
+2025-06-12 15:33:33 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_STOCK_MERGED_20250612.xlsx
+2025-06-12 15:33:33 - INFO - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250612.csv + TTMIndexUS1_GIS_SOD_STOCK_20250612.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250612.xlsx
+2025-06-12 15:33:33 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_INDEX_20250612.csv and TTMIndexUS1_GIS_SOD_INDEX_20250612.csv
+2025-06-12 15:33:34 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:33:34 - INFO - Set file to read-only: EU_SOD_US_SOD_INDEX_MERGED_20250612.xlsx
+2025-06-12 15:33:34 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_INDEX_MERGED_20250612.xlsx
+2025-06-12 15:33:34 - INFO - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250612.csv + TTMIndexUS1_GIS_SOD_INDEX_20250612.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250612.xlsx
+2025-06-12 15:33:34 - INFO - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx']
+2025-06-12 15:33:34 - INFO - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-06-12 15:33:34 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20250611.csv and TTMIndexUS1_GIS_NXTD_STOCK_20250611.csv
+2025-06-12 15:33:35 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:33:44 - INFO - Set file to read-only: EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:33:44 - INFO - Successfully merged CSV files: EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:33:44 - INFO - Created previous workday file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:33:44 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20250611.csv and TTMIndexUS1_GIS_NXTD_INDEX_20250611.csv
+2025-06-12 15:33:44 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:33:45 - INFO - Set file to read-only: EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:33:45 - INFO - Successfully merged CSV files: EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:33:45 - INFO - Created previous workday file: EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:33:45 - INFO - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx', 'EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx', 'TTMStrategy_GIS_EOD_INDEX_20250611.xlsx']
+2025-06-12 15:33:45 - INFO - Found all source files for EOD from previous workday. Creating missing output files.
+2025-06-12 15:33:45 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_STOCK_20250611.csv and TTMIndexUS1_GIS_EOD_STOCK_20250611.csv
+2025-06-12 15:33:46 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:33:56 - INFO - Set file to read-only: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_INDEX_20250611.csv and TTMIndexUS1_GIS_EOD_INDEX_20250611.csv
+2025-06-12 15:33:56 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:33:56 - INFO - Set file to read-only: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.csv to XLSX
+2025-06-12 15:33:56 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Created previous workday file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 15:33:56 - INFO - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx', 'EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx']
+2025-06-12 15:33:56 - INFO - Found all source files for SOD from previous workday. Creating missing output files.
+2025-06-12 15:33:56 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_STOCK_20250611.csv and TTMIndexUS1_GIS_SOD_STOCK_20250611.csv
+2025-06-12 15:33:57 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:34:07 - INFO - Set file to read-only: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:34:07 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:34:07 - INFO - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 15:34:07 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_INDEX_20250611.csv and TTMIndexUS1_GIS_SOD_INDEX_20250611.csv
+2025-06-12 15:34:07 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 15:34:07 - INFO - Set file to read-only: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:34:07 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:34:07 - INFO - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 15:34:08 - INFO - Running periodic CSV merger check...
+2025-06-12 15:52:30 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 15:52:32 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 15:52:32 - INFO - CSV file copied: TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv. Triggering CSV merger check.
+2025-06-12 15:52:35 - INFO - Queue empty with 1 CSV files waiting. Triggering CSV merger.
+2025-06-12 15:52:47 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 15:52:48 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 15:52:48 - INFO - CSV file copied: TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv. Triggering CSV merger check.
+2025-06-12 15:52:51 - INFO - Queue empty with 1 CSV files waiting. Triggering CSV merger.
+2025-06-12 15:55:10 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 15:55:12 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 15:55:12 - INFO - CSV file copied: TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv. Triggering CSV merger check.
+2025-06-12 15:55:14 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 15:55:16 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 15:55:16 - INFO - CSV file copied: TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv. Triggering CSV merger check.
+2025-06-12 15:55:16 - INFO - Queue processed 2 CSV files. Triggering CSV merger.
+2025-06-12 16:04:09 - INFO - Running periodic CSV merger check...
+2025-06-12 16:26:59 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 16:26:59 - INFO - Starting unified monitoring system...
+2025-06-12 16:27:05 - INFO - Found 117638 files to process
+2025-06-12 16:27:38 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 16:27:39 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 16:27:39 - INFO - CSV file copied: TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv. Triggering CSV merger check.
+2025-06-12 16:27:45 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 16:27:45 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_STOCK_20250612.csv and TTMIndexUS1_GIS_SOD_STOCK_20250612.csv
+2025-06-12 16:27:46 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:27:55 - INFO - Set file to read-only: EU_SOD_US_SOD_STOCK_MERGED_20250612.xlsx
+2025-06-12 16:27:55 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_STOCK_MERGED_20250612.xlsx
+2025-06-12 16:27:56 - INFO - Merged: TTMIndexEU1_GIS_SOD_STOCK_20250612.csv + TTMIndexUS1_GIS_SOD_STOCK_20250612.csv -> EU_SOD_US_SOD_STOCK_MERGED_20250612.xlsx
+2025-06-12 16:27:56 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_INDEX_20250612.csv and TTMIndexUS1_GIS_SOD_INDEX_20250612.csv
+2025-06-12 16:27:56 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:27:56 - INFO - Set file to read-only: EU_SOD_US_SOD_INDEX_MERGED_20250612.xlsx
+2025-06-12 16:27:56 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_INDEX_MERGED_20250612.xlsx
+2025-06-12 16:27:56 - INFO - Merged: TTMIndexEU1_GIS_SOD_INDEX_20250612.csv + TTMIndexUS1_GIS_SOD_INDEX_20250612.csv -> EU_SOD_US_SOD_INDEX_MERGED_20250612.xlsx
+2025-06-12 16:28:04 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 16:28:09 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 16:28:09 - INFO - CSV file copied: TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv. Triggering CSV merger check.
+2025-06-12 16:29:00 - INFO - Batch completed with 2 files copied, including CSV files. Triggering CSV merger.
+2025-06-12 16:30:19 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 16:30:23 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 16:30:23 - INFO - CSV file copied: TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv. Triggering CSV merger check.
+2025-06-12 16:32:17 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 16:32:19 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 16:32:19 - INFO - CSV file copied: TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv. Triggering CSV merger check.
+2025-06-12 16:36:42 - INFO - Batch completed with 2 files copied, including CSV files. Triggering CSV merger.
+2025-06-12 16:44:34 - INFO - Initial file processing completed. Running CSV merger check.
+2025-06-12 16:44:34 - INFO - Missing MANUAL output files from previous workday: ['EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx', 'EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx']
+2025-06-12 16:44:34 - INFO - Found all source files for MANUAL from previous workday. Creating missing output files.
+2025-06-12 16:44:34 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20250611.csv and TTMIndexUS1_GIS_NXTD_STOCK_20250611.csv
+2025-06-12 16:44:35 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:44:45 - INFO - Set file to read-only: EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:44:45 - INFO - Successfully merged CSV files: EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:44:45 - INFO - Created previous workday file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:44:45 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20250611.csv and TTMIndexUS1_GIS_NXTD_INDEX_20250611.csv
+2025-06-12 16:44:45 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:44:45 - INFO - Set file to read-only: EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:44:45 - INFO - Successfully merged CSV files: EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:44:45 - INFO - Created previous workday file: EU_MANUAL_US_NXTD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:44:45 - INFO - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx', 'EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx', 'TTMStrategy_GIS_EOD_INDEX_20250611.xlsx']
+2025-06-12 16:44:46 - INFO - Found all source files for EOD from previous workday. Creating missing output files.
+2025-06-12 16:44:46 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_STOCK_20250611.csv and TTMIndexUS1_GIS_EOD_STOCK_20250611.csv
+2025-06-12 16:44:46 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:44:56 - INFO - Set file to read-only: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:44:56 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:44:56 - INFO - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:44:56 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_INDEX_20250611.csv and TTMIndexUS1_GIS_EOD_INDEX_20250611.csv
+2025-06-12 16:44:56 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:44:57 - INFO - Set file to read-only: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:44:57 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:44:57 - INFO - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:44:57 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.csv to XLSX
+2025-06-12 16:44:57 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 16:44:57 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 16:44:57 - INFO - Created previous workday file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 16:44:57 - INFO - Missing SOD output files from previous workday: ['EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx', 'EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx']
+2025-06-12 16:44:57 - INFO - Found all source files for SOD from previous workday. Creating missing output files.
+2025-06-12 16:44:57 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_STOCK_20250611.csv and TTMIndexUS1_GIS_SOD_STOCK_20250611.csv
+2025-06-12 16:44:58 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:45:07 - INFO - Set file to read-only: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:45:07 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:45:07 - INFO - Created previous workday file: EU_SOD_US_SOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 16:45:07 - INFO - Merging CSV files: TTMIndexEU1_GIS_SOD_INDEX_20250611.csv and TTMIndexUS1_GIS_SOD_INDEX_20250611.csv
+2025-06-12 16:45:08 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 16:45:08 - INFO - Set file to read-only: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:45:08 - INFO - Successfully merged CSV files: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:45:08 - INFO - Created previous workday file: EU_SOD_US_SOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 16:45:09 - INFO - Running periodic CSV merger check...
+2025-06-12 17:15:09 - INFO - Running periodic CSV merger check...
+2025-06-12 17:15:09 - INFO - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx', 'EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx', 'TTMStrategy_GIS_EOD_INDEX_20250611.xlsx']
+2025-06-12 17:15:09 - INFO - Found all source files for EOD from previous workday. Creating missing output files.
+2025-06-12 17:15:09 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_STOCK_20250611.csv and TTMIndexUS1_GIS_EOD_STOCK_20250611.csv
+2025-06-12 17:15:10 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 17:15:20 - INFO - Set file to read-only: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Created previous workday file: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_INDEX_20250611.csv and TTMIndexUS1_GIS_EOD_INDEX_20250611.csv
+2025-06-12 17:15:20 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 17:15:20 - INFO - Set file to read-only: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.csv to XLSX
+2025-06-12 17:15:20 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 17:15:20 - INFO - Created previous workday file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 17:32:04 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 17:32:04 - INFO - Starting unified monitoring system...
+2025-06-12 17:32:12 - INFO - Found 117639 files to process
+2025-06-12 17:32:59 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 17:33:00 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 17:35:00 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 17:35:05 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 17:41:56 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 17:41:56 - INFO - Starting unified monitoring system...
+2025-06-12 17:42:04 - INFO - Found 117639 files to process
+2025-06-12 17:42:04 - INFO - Function process_file_batch took 0.64 seconds
+2025-06-12 17:42:26 - INFO - Function process_file_batch took 21.86 seconds
+2025-06-12 17:42:26 - INFO - Function process_file_batch took 21.88 seconds
+2025-06-12 17:42:48 - INFO - Function process_file_batch took 43.24 seconds
+2025-06-12 17:43:20 - INFO - Function process_file_batch took 54.01 seconds
+2025-06-12 17:43:32 - INFO - Function process_file_batch took 44.08 seconds
+2025-06-12 17:43:42 - INFO - Function process_file_batch took 76.26 seconds
+2025-06-12 17:44:05 - INFO - Function process_file_batch took 32.72 seconds
+2025-06-12 17:44:24 - INFO - Function process_file_batch took 42.33 seconds
+2025-06-12 17:44:29 - INFO - Function process_file_batch took 145.21 seconds
+2025-06-12 17:46:27 - INFO - Function process_file_batch took 142.08 seconds
+2025-06-12 17:46:45 - INFO - Function process_file_batch took 205.28 seconds
+2025-06-12 17:46:56 - INFO - Function compare_folders took 11.28 seconds
+2025-06-12 17:46:56 - INFO - Function process_existing_files took 299.88 seconds
+2025-06-12 17:46:57 - INFO - Running periodic CSV merger check...
+2025-06-12 17:46:57 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 17:46:57 - INFO - Function check_files_for_merge took 0.00 seconds
+2025-06-12 17:46:57 - INFO - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx', 'TTMStrategy_GIS_EOD_INDEX_20250611.xlsx']
+2025-06-12 17:46:57 - INFO - Found all source files for EOD from previous workday. Creating missing output files.
+2025-06-12 17:46:57 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_INDEX_20250611.csv and TTMIndexUS1_GIS_EOD_INDEX_20250611.csv
+2025-06-12 17:46:57 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 17:46:57 - INFO - Set file to read-only: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 17:46:57 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 17:46:57 - INFO - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 17:46:57 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.csv to XLSX
+2025-06-12 17:46:57 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 17:46:57 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 17:46:57 - INFO - Created previous workday file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 17:46:57 - INFO - Function check_previous_workday_files took 0.68 seconds
+2025-06-12 17:48:58 - INFO - Running periodic CSV merger check...
+2025-06-12 17:48:58 - INFO - Function check_files_for_merge took 0.00 seconds
+2025-06-12 17:48:58 - INFO - Function check_previous_workday_files took 0.00 seconds
+2025-06-12 17:50:58 - INFO - Running periodic CSV merger check...
+2025-06-12 17:50:58 - INFO - Function check_files_for_merge took 0.00 seconds
+2025-06-12 17:50:58 - INFO - Function check_previous_workday_files took 0.00 seconds
+2025-06-12 17:51:31 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 17:51:31 - INFO - Starting unified monitoring system...
+2025-06-12 17:51:41 - INFO - Found 117639 files to process
+2025-06-12 17:51:45 - INFO - Function process_file_batch took 3.42 seconds
+2025-06-12 17:51:48 - INFO - Function process_file_batch took 3.41 seconds
+2025-06-12 17:51:49 - INFO - Function process_file_batch took 1.16 seconds
+2025-06-12 17:51:55 - INFO - Function compare_folders took 5.44 seconds
+2025-06-12 17:51:55 - INFO - Function process_existing_files took 23.46 seconds
+2025-06-12 17:51:55 - INFO - Running periodic CSV merger check...
+2025-06-12 17:51:55 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 17:53:55 - INFO - Running periodic CSV merger check...
+2025-06-12 17:53:55 - INFO - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx', 'EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx', 'TTMStrategy_GIS_EOD_INDEX_20250611.xlsx']
+2025-06-12 17:53:55 - INFO - Found all source files for EOD from previous workday. Creating missing output files.
+2025-06-12 17:53:55 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_STOCK_20250611.csv and TTMIndexUS1_GIS_EOD_STOCK_20250611.csv
+2025-06-12 17:53:56 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 17:54:06 - INFO - Set file to read-only: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 17:54:06 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_STOCK_MERGED_20250611.xlsx
+2025-06-12 17:58:12 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 17:58:12 - INFO - Starting unified monitoring system...
+2025-06-12 17:58:23 - INFO - Found 117639 files to process
+2025-06-12 17:58:26 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 17:58:27 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 18:01:18 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 18:01:19 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 18:02:39 - INFO - Function process_file_batch took 255.82 seconds
+2025-06-12 18:10:17 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 18:10:17 - INFO - Starting unified monitoring system...
+2025-06-12 18:10:29 - INFO - Found 5 missing files:
+2025-06-12 18:10:29 - INFO - Missing file: TTMStrategy_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:10:29 - INFO - Missing file: TTMSTRATBUI_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:10:29 - INFO - Missing file: TTMIndexUS1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 18:10:29 - INFO - Missing file: TTMStrategy_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:10:29 - INFO - Missing file: TTMIndexUS1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 18:10:29 - INFO - Function compare_folders took 11.39 seconds
+2025-06-12 18:10:29 - INFO - Identified 5 files for bulk copy
+2025-06-12 18:10:29 - INFO - Starting bulk copy of 5 files
+2025-06-12 18:10:36 - INFO - Robocopy completed successfully. Return code: 1
+2025-06-12 18:10:37 - INFO - Bulk copy successful: 5 files copied and set to read-only
+2025-06-12 18:10:37 - INFO - Function bulk_copy_missing_files took 8.24 seconds
+2025-06-12 18:10:37 - INFO - Function process_existing_files_bulk took 19.63 seconds
+2025-06-12 18:13:34 - INFO - Running periodic CSV merger check...
+2025-06-12 18:13:35 - INFO - Found EOD single file for conversion: TTMStrategy_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:13:35 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20250612.csv to XLSX
+2025-06-12 18:13:35 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20250612.xlsx
+2025-06-12 18:13:35 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20250612.xlsx
+2025-06-12 18:13:35 - INFO - Converted: TTMStrategy_GIS_EOD_INDEX_20250612.csv -> TTMStrategy_GIS_EOD_INDEX_20250612.xlsx
+2025-06-12 18:13:35 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 18:13:35 - INFO - Missing EOD output files from previous workday: ['EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx', 'TTMStrategy_GIS_EOD_INDEX_20250611.xlsx']
+2025-06-12 18:13:35 - INFO - Found all source files for EOD from previous workday. Creating missing output files.
+2025-06-12 18:13:35 - INFO - Merging CSV files: TTMIndexEU1_GIS_EOD_INDEX_20250611.csv and TTMIndexUS1_GIS_EOD_INDEX_20250611.csv
+2025-06-12 18:13:35 - WARNING - Could not convert column I to numeric: indices are out-of-bounds
+2025-06-12 18:13:35 - INFO - Set file to read-only: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 18:13:35 - INFO - Successfully merged CSV files: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 18:13:35 - INFO - Created previous workday file: EU_EOD_US_EOD_INDEX_MERGED_20250611.xlsx
+2025-06-12 18:13:35 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.csv to XLSX
+2025-06-12 18:13:35 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 18:13:35 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 18:13:35 - INFO - Created previous workday file: TTMStrategy_GIS_EOD_INDEX_20250611.xlsx
+2025-06-12 18:15:31 - INFO - Starting copy of TTMRates_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:15:33 - INFO - Successfully copied TTMRates_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:15:34 - INFO - Starting copy of TTMRates_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:15:34 - INFO - Successfully copied TTMRates_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:15:36 - INFO - Running periodic CSV merger check...
+2025-06-12 18:16:16 - INFO - Starting copy of TTMIndexSSIE_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:16:18 - INFO - Successfully copied TTMIndexSSIE_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:16:20 - INFO - Starting copy of TTMIndexSSIE_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:16:22 - INFO - Successfully copied TTMIndexSSIE_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:17:36 - INFO - Running periodic CSV merger check...
+2025-06-12 18:17:47 - INFO - Starting copy of TTMIndexEU1_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:17:48 - INFO - Successfully copied TTMIndexEU1_GIS_EOD_STOCK_20250612.csv
+2025-06-12 18:18:03 - INFO - Starting copy of TTMIndexEU1_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:18:05 - INFO - Successfully copied TTMIndexEU1_GIS_EOD_INDEX_20250612.csv
+2025-06-12 18:19:37 - INFO - Running periodic CSV merger check...
+2025-06-12 18:20:30 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 18:20:30 - INFO - Starting unified monitoring system...
+2025-06-12 18:20:41 - INFO - Function compare_folders took 10.83 seconds
+2025-06-12 18:20:41 - INFO - Function process_existing_files_bulk took 10.83 seconds
+2025-06-12 18:20:41 - INFO - Running periodic CSV merger check...
+2025-06-12 18:20:41 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 18:21:42 - INFO - Added 147 holidays to the exclusion list
+2025-06-12 18:21:42 - INFO - Starting unified monitoring system...
+2025-06-12 18:21:48 - INFO - Function compare_folders took 5.78 seconds
+2025-06-12 18:21:48 - INFO - Function process_existing_files_bulk took 5.78 seconds
+2025-06-12 18:21:48 - INFO - Running periodic CSV merger check...
+2025-06-12 18:21:48 - INFO - All SOD merge files found. Starting merge process.
+2025-06-12 18:22:36 - INFO - File TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv has different size - will copy
+2025-06-12 18:22:36 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 18:22:38 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20250612.csv
+2025-06-12 18:22:53 - INFO - File TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv has different size - will copy
+2025-06-12 18:22:53 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 18:22:54 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20250612.csv
+2025-06-12 18:23:49 - INFO - Running periodic CSV merger check...
+2025-06-12 18:25:50 - INFO - Running periodic CSV merger check...
+2025-06-12 18:27:50 - INFO - Running periodic CSV merger check...
+2025-06-12 18:29:51 - INFO - Running periodic CSV merger check...
