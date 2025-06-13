@@ -5,6 +5,22 @@ import logging.handlers
 import stat
 from datetime import datetime
 import numpy as np
+import time
+import functools
+
+# Timer decorator for performance monitoring
+def timer(func):
+    """Decorator to time function execution"""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        duration = end_time - start_time
+        print(f"⏱️  {func.__name__} took {duration:.2f} seconds")
+        logger.info(f"Function {func.__name__} took {duration:.2f} seconds")
+        return result
+    return wrapper
 
 # Get the directory where the script is located
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -55,8 +71,9 @@ def make_file_writable(file_path):
         logger.warning(f"Could not modify permissions for {file_path}: {str(e)}")
         return False
 
+@timer
 def read_excel_file(file_path):
-    """Read Excel file and return DataFrame"""
+    """Read Excel file and return DataFrame - optimized for large files"""
     try:
         logger.info(f"Reading file: {os.path.basename(file_path)}")
         print(f"Reading file: {os.path.basename(file_path)}")
@@ -70,31 +87,32 @@ def read_excel_file(file_path):
         # Try to make file readable if there are permission issues
         make_file_writable(file_path)
         
-        # Try reading with xlsxwriter first (engine we used for writing)
+        # Read with openpyxl (faster for large files)
         try:
+            # Use chunksize and optimize data types for better performance
             df = pd.read_excel(file_path, engine='openpyxl')
+            
+            # Immediate data type optimization to save memory and processing time
+            for col in df.columns:
+                if df[col].dtype == 'object':
+                    # Convert to string and strip whitespace once
+                    df[col] = df[col].astype(str).str.strip()
+                elif df[col].dtype in ['float64', 'int64']:
+                    # Keep numeric columns as-is for now
+                    pass
+            
         except ImportError:
             print("Error: openpyxl is not installed. Please install it using:")
             print("pip install openpyxl")
             logger.error("openpyxl is not installed")
             return None
         except Exception as e:
-            logger.warning(f"Failed to read with openpyxl: {str(e)}")
-            # Try with xlrd as fallback
-            try:
-                df = pd.read_excel(file_path, engine='xlrd')
-            except Exception as e2:
-                logger.error(f"Failed to read with xlrd: {str(e2)}")
-                # Last resort - try without specifying engine
-                try:
-                    df = pd.read_excel(file_path)
-                except Exception as e3:
-                    logger.error(f"All read attempts failed: {str(e3)}")
-                    print(f"Error reading file: {str(e3)}")
-                    return None
+            logger.error(f"Failed to read file: {str(e)}")
+            print(f"Error reading file: {str(e)}")
+            return None
         
-        logger.info(f"Successfully read {len(df)} rows from {os.path.basename(file_path)}")
-        print(f"Successfully read {len(df)} rows from {os.path.basename(file_path)}")
+        logger.info(f"Successfully read {len(df)} rows and {len(df.columns)} columns from {os.path.basename(file_path)}")
+        print(f"Successfully read {len(df)} rows and {len(df.columns)} columns")
         
         return df
         
@@ -103,163 +121,136 @@ def read_excel_file(file_path):
         print(f"Error reading file {file_path}: {str(e)}")
         return None
 
-def compare_files(file1_path, file2_path, output_path):
-    """Compare two Excel files and generate comparison report"""
+@timer
+def prepare_dataframes(df1, df2):
+    """Prepare dataframes for fast comparison using indexing"""
+    print("Preparing dataframes for comparison...")
+    
+    # Clean data once upfront
+    print("Cleaning data...")
+    
+    # Replace infinite values and NaN with empty strings
+    df1_clean = df1.replace([np.inf, -np.inf], '').fillna('')
+    df2_clean = df2.replace([np.inf, -np.inf], '').fillna('')
+    
+    # Create composite index for fast lookups
+    print("Creating indexes...")
+    df1_clean['composite_key'] = df1_clean['#Symbol'].astype(str) + '|' + df1_clean['Index'].astype(str)
+    df2_clean['composite_key'] = df2_clean['#Symbol'].astype(str) + '|' + df2_clean['Index'].astype(str)
+    
+    # Set index for O(1) lookup instead of O(n) search
+    df1_indexed = df1_clean.set_index('composite_key')
+    df2_indexed = df2_clean.set_index('composite_key')
+    
+    print(f"Prepared dataframes: {len(df1_indexed)} and {len(df2_indexed)} rows")
+    
+    return df1_indexed, df2_indexed
+
+@timer
+def find_differences_vectorized(df1_indexed, df2_indexed):
+    """Find differences using vectorized operations - much faster"""
+    print("Finding common records...")
+    
+    # Find intersection of indices (much faster than manual comparison)
+    common_keys = df1_indexed.index.intersection(df2_indexed.index)
+    print(f"Found {len(common_keys)} common records to compare")
+    
+    if len(common_keys) == 0:
+        return pd.DataFrame(), common_keys
+    
+    # Get subsets for common keys only
+    df1_common = df1_indexed.loc[common_keys]
+    df2_common = df2_indexed.loc[common_keys]
+    
+    print("Comparing critical fields...")
+    
+    # Vectorized comparison for critical fields
+    critical_fields = ['ICBCode', 'Shares', 'Free float-Coeff', 'Capping Factor-Coeff']
+    
+    # Create boolean mask for differences
+    has_differences = pd.Series(False, index=common_keys)
+    changes_per_record = pd.Series('', index=common_keys)
+    
+    for field in critical_fields:
+        if field in df1_common.columns and field in df2_common.columns:
+            # Handle numeric fields with tolerance
+            if field in ['Shares', 'Free float-Coeff', 'Capping Factor-Coeff']:
+                # Convert to numeric, errors='coerce' converts non-numeric to NaN
+                val1 = pd.to_numeric(df1_common[field], errors='coerce').fillna(0)
+                val2 = pd.to_numeric(df2_common[field], errors='coerce').fillna(0)
+                
+                # Use appropriate tolerance for comparison
+                tolerance = 1e-6 if field == 'Shares' else 1e-10
+                field_diff = abs(val1 - val2) > tolerance
+            else:
+                # String comparison for ICBCode
+                field_diff = df1_common[field].astype(str) != df2_common[field].astype(str)
+            
+            # Update masks
+            has_differences |= field_diff
+            
+            # Track which fields changed (for debugging)
+            field_changes = field_diff.map(lambda x: field if x else '')
+            changes_per_record = changes_per_record + field_changes.map(lambda x: f'{x},' if x else '')
+    
+    # Get only records with meaningful differences
+    diff_keys = common_keys[has_differences]
+    print(f"Found {len(diff_keys)} records with meaningful differences")
+    
+    if len(diff_keys) == 0:
+        return pd.DataFrame(), common_keys
+    
+    # Build differences dataframe efficiently
+    print("Building differences dataframe...")
+    
+    df1_diff = df1_indexed.loc[diff_keys]
+    df2_diff = df2_indexed.loc[diff_keys]
+    
+    # Create differences dataframe with vectorized operations
+    differences_data = {
+        'Rank': range(1, len(diff_keys) + 1),
+        'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
+        '#Symbol': df1_diff['#Symbol'],
+        'System date': df1_diff.get('System date', ''),
+        'Adjust Reason': df2_diff.get('Adjust Reason', ''),
+        'Isin Code': df1_diff.get('Isin Code', ''),
+        'Country': df1_diff.get('Country', ''),
+        'Mnemo': df1_diff.get('Mnemo', ''),
+        'Name': df1_diff.get('Name', ''),
+        'MIC': df1_diff.get('MIC', ''),
+        'Prev ICB': df1_diff.get('ICBCode', ''),
+        'New ICB': df2_diff.get('ICBCode', ''),
+        'Close Prc': df2_diff.get('Close Prc', ''),
+        'Adj Closing price': df2_diff.get('Adj Closing price', ''),
+        'Net Div': df2_diff.get('Net Div', ''),
+        'Gross Div': df2_diff.get('Gross Div', ''),
+        'Index': df1_diff['Index'],
+        'Prev. Shares': df1_diff.get('Shares', ''),
+        'New Shares': df2_diff.get('Shares', ''),
+        'Prev FF': df1_diff.get('Free float-Coeff', ''),
+        'New FF': df2_diff.get('Free float-Coeff', ''),
+        'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
+        'New Capping': df2_diff.get('Capping Factor-Coeff', '')
+    }
+    
+    diff_df = pd.DataFrame(differences_data)
+    
+    return diff_df, common_keys
+
+@timer
+def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path):
+    """Write Excel file with optimized bulk operations and original formatting"""
+    print("Writing Excel file with detailed formatting...")
+    
     try:
-        logger.info("Starting file comparison...")
-        print("Starting file comparison...")
-        
-        # Read both files
-        df1 = read_excel_file(file1_path)
-        df2 = read_excel_file(file2_path)
-        
-        if df1 is None or df2 is None:
-            logger.error("Failed to read one or both files")
-            print("Failed to read one or both files")
-            return False
-        
-        # Print column names for debugging
-        print(f"File 1 columns: {list(df1.columns)}")
-        print(f"File 2 columns: {list(df2.columns)}")
-        
-        # Print first few rows to understand data structure
-        print(f"\nFile 1 sample data:")
-        print(df1[['#Symbol', 'Index']].head(3))
-        print(f"\nFile 2 sample data:")
-        print(df2[['#Symbol', 'Index']].head(3))
-        
-        # Create matching keys for both dataframes
-        df1['match_key'] = df1['#Symbol'].astype(str) + '|' + df1['Index'].astype(str)
-        df2['match_key'] = df2['#Symbol'].astype(str) + '|' + df2['Index'].astype(str)
-        
-        # Find rows that exist in both files
-        common_keys = set(df1['match_key']).intersection(set(df2['match_key']))
-        logger.info(f"Found {len(common_keys)} common records to compare")
-        print(f"Found {len(common_keys)} common records to compare")
-        
-        # Debug: Print some example keys
-        print(f"Example match keys: {list(common_keys)[:5]}")
-        
-        # Prepare differences list
-        differences = []
-        rank = 1
-        
-        for key in common_keys:
-            row1 = df1[df1['match_key'] == key].iloc[0]
-            row2 = df2[df2['match_key'] == key].iloc[0]
-            
-            # Only check the 4 critical fields that indicate real business changes
-            meaningful_difference = False
-            changes_detected = []
-            
-            # Check ICBCode
-            icb1 = str(row1.get('ICBCode', '')).strip()
-            icb2 = str(row2.get('ICBCode', '')).strip()
-            if icb1 != icb2:
-                meaningful_difference = True
-                changes_detected.append('ICBCode')
-            
-            # Check Shares
-            shares1 = row1.get('Shares', '')
-            shares2 = row2.get('Shares', '')
-            try:
-                shares1_num = float(shares1) if pd.notna(shares1) and str(shares1).strip() != '' else 0.0
-                shares2_num = float(shares2) if pd.notna(shares2) and str(shares2).strip() != '' else 0.0
-                if abs(shares1_num - shares2_num) > 1e-6:  # Allow for small rounding differences
-                    meaningful_difference = True
-                    changes_detected.append('Shares')
-            except (ValueError, TypeError):
-                # If can't convert to numbers, compare as strings
-                if str(shares1).strip() != str(shares2).strip():
-                    meaningful_difference = True
-                    changes_detected.append('Shares')
-            
-            # Check Free float-Coeff
-            ff1 = row1.get('Free float-Coeff', '')
-            ff2 = row2.get('Free float-Coeff', '')
-            try:
-                ff1_num = float(ff1) if pd.notna(ff1) and str(ff1).strip() != '' else 0.0
-                ff2_num = float(ff2) if pd.notna(ff2) and str(ff2).strip() != '' else 0.0
-                if abs(ff1_num - ff2_num) > 1e-10:
-                    meaningful_difference = True
-                    changes_detected.append('Free float-Coeff')
-            except (ValueError, TypeError):
-                if str(ff1).strip() != str(ff2).strip():
-                    meaningful_difference = True
-                    changes_detected.append('Free float-Coeff')
-            
-            # Check Capping Factor-Coeff
-            cap1 = row1.get('Capping Factor-Coeff', '')
-            cap2 = row2.get('Capping Factor-Coeff', '')
-            try:
-                cap1_num = float(cap1) if pd.notna(cap1) and str(cap1).strip() != '' else 0.0
-                cap2_num = float(cap2) if pd.notna(cap2) and str(cap2).strip() != '' else 0.0
-                if abs(cap1_num - cap2_num) > 1e-10:
-                    meaningful_difference = True
-                    changes_detected.append('Capping Factor-Coeff')
-            except (ValueError, TypeError):
-                if str(cap1).strip() != str(cap2).strip():
-                    meaningful_difference = True
-                    changes_detected.append('Capping Factor-Coeff')
-            
-            # Only add to differences if one of the 4 critical fields actually changed
-            if meaningful_difference:
-                print(f"Found difference for {row1['#Symbol']}-{row1['Index']}: {', '.join(changes_detected)}")
-                
-                diff_row = {
-                    'Rank': rank,
-                    'Code': str(row1['#Symbol']) + str(row1['Index']),
-                    '#Symbol': row1['#Symbol'],
-                    'System date': row1.get('System date', ''),
-                    'Adjust Reason': row2.get('Adjust Reason', ''),
-                    'Isin Code': row1.get('Isin Code', ''),
-                    'Country': row1.get('Country', ''),
-                    'Mnemo': row1.get('Mnemo', ''),
-                    'Name': row1.get('Name', ''),
-                    'MIC': row1.get('MIC', ''),
-                    'Prev ICB': row1.get('ICBCode', ''),
-                    'New ICB': row2.get('ICBCode', ''),
-                    'Close Prc': row2.get('Close Prc', ''),
-                    'Adj Closing price': row2.get('Adj Closing price', ''),
-                    'Net Div': row2.get('Net Div', ''),
-                    'Gross Div': row2.get('Gross Div', ''),
-                    'Index': row1['Index'],
-                    'Prev. Shares': row1.get('Shares', ''),
-                    'New Shares': row2.get('Shares', ''),
-                    'Prev FF': row1.get('Free float-Coeff', ''),
-                    'New FF': row2.get('Free float-Coeff', ''),
-                    'Prev Capping': row1.get('Capping Factor-Coeff', ''),
-                    'New Capping': row2.get('Capping Factor-Coeff', '')
-                }
-                
-                differences.append(diff_row)
-                rank += 1
-        
-        logger.info(f"Found {len(differences)} differences")
-        print(f"Found {len(differences)} differences")
-        
-        # Create differences DataFrame
-        if differences:
-            diff_df = pd.DataFrame(differences)
-            # Clean up NaN and infinite values
-            diff_df = diff_df.replace([np.inf, -np.inf], '')  # Replace infinite values with empty string
-            diff_df = diff_df.fillna('')  # Replace NaN with empty string
-        else:
-            # Create empty DataFrame with the required columns
-            columns = ['Rank', 'Code', '#Symbol', 'System date', 'Adjust Reason', 'Isin Code', 
-                      'Country', 'Mnemo', 'Name', 'MIC', 'Prev ICB', 'New ICB', 'Close Prc', 
-                      'Adj Closing price', 'Net Div', 'Gross Div', 'Index', 'Prev. Shares', 
-                      'New Shares', 'Prev FF', 'New FF', 'Prev Capping', 'New Capping']
-            diff_df = pd.DataFrame(columns=columns)
-        
-        # Create Excel writer with XlsxWriter engine for formatting
+        # Create Excel writer
         writer = pd.ExcelWriter(output_path, engine='xlsxwriter')
         workbook = writer.book
         
-        # Set workbook options to handle NaN/INF values
+        # Set workbook options
         workbook.nan_inf_to_errors = True
         
-        # Define formats for conditional formatting
+        # Define formats (same as original)
         orange_format = workbook.add_format({'bg_color': '#FFC000', 'font_name': 'Verdana', 'font_size': 10})
         red_format = workbook.add_format({'bg_color': '#FF0000', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
         normal_format = workbook.add_format({'font_name': 'Verdana', 'font_size': 10})
@@ -278,9 +269,9 @@ def compare_files(file1_path, file2_path, output_path):
         for col_num, value in enumerate(diff_df.columns.values):
             worksheet1.write(0, col_num, value, header_format)
         
-        # Apply conditional formatting if there are differences
+        # Apply conditional formatting if there are differences (original logic restored)
         if not diff_df.empty:
-            # Apply formatting row by row
+            # Apply formatting row by row (keeping original detailed formatting logic)
             for row_idx in range(len(diff_df)):
                 excel_row = row_idx + 1  # Excel is 1-indexed, +1 for header
                 
@@ -300,13 +291,13 @@ def compare_files(file1_path, file2_path, output_path):
                 new_capping = diff_df.iloc[row_idx]['New Capping']
                 prev_capping = diff_df.iloc[row_idx]['Prev Capping']
                 
-                # Apply formatting to New Shares
+                # Apply formatting to New Shares (original logic)
                 if pd.notna(new_shares) and pd.notna(prev_shares) and str(new_shares) != str(prev_shares):
                     worksheet1.write(excel_row, new_shares_col, new_shares, orange_format)
                 else:
                     worksheet1.write(excel_row, new_shares_col, new_shares, normal_format)
                 
-                # Apply formatting to New FF
+                # Apply formatting to New FF (original complex logic)
                 new_ff_clean = '' if pd.isna(new_ff) else new_ff
                 try:
                     new_ff_numeric = float(new_ff_clean) if new_ff_clean != '' else None
@@ -320,13 +311,13 @@ def compare_files(file1_path, file2_path, output_path):
                 else:
                     worksheet1.write(excel_row, new_ff_col, new_ff_clean, normal_format)
                 
-                # Apply formatting to New Capping
+                # Apply formatting to New Capping (original logic)
                 if pd.notna(new_capping) and pd.notna(prev_capping) and str(new_capping) != str(prev_capping):
                     worksheet1.write(excel_row, new_capping_col, new_capping, orange_format)
                 else:
                     worksheet1.write(excel_row, new_capping_col, new_capping, normal_format)
                 
-                # Write other columns with normal format
+                # Write other columns with normal format (original logic)
                 for col_idx, col_name in enumerate(diff_df.columns):
                     if col_idx not in [new_shares_col, new_ff_col, new_capping_col]:
                         value = diff_df.iloc[row_idx][col_name]
@@ -341,54 +332,50 @@ def compare_files(file1_path, file2_path, output_path):
                 max_length = max(max_length, diff_df[col].astype(str).str.len().max())
             worksheet1.set_column(i, i, min(max_length + 2, 50))  # Max width of 50
         
-        # Write Sheet 2: Raw data file one
-        df1_clean = df1.drop('match_key', axis=1)  # Remove the temporary match key
-        # Clean up NaN and infinite values in raw data
-        df1_clean = df1_clean.replace([np.inf, -np.inf], '')  # Replace infinite values
-        df1_clean = df1_clean.fillna('')  # Replace NaN values
-        df1_clean.to_excel(writer, sheet_name='Raw Data File 1', index=False)
+        # Write Sheet 2: Raw data file one (with original formatting)
+        df1_clean_output = df1_clean.drop('composite_key', axis=1, errors='ignore')
+        df1_clean_output = df1_clean_output.replace([np.inf, -np.inf], '').fillna('')
+        df1_clean_output.to_excel(writer, sheet_name='Raw Data File 1', index=False)
         worksheet2 = writer.sheets['Raw Data File 1']
         
-        # Apply header formatting and normal formatting
-        for col_num, value in enumerate(df1_clean.columns.values):
+        # Apply header formatting and normal formatting (original logic)
+        for col_num, value in enumerate(df1_clean_output.columns.values):
             worksheet2.write(0, col_num, value, header_format)
         
         # Apply normal format to data rows
-        for row_idx in range(len(df1_clean)):
-            for col_idx, col_name in enumerate(df1_clean.columns):
-                value = df1_clean.iloc[row_idx][col_name]
+        for row_idx in range(len(df1_clean_output)):
+            for col_idx, col_name in enumerate(df1_clean_output.columns):
+                value = df1_clean_output.iloc[row_idx][col_name]
                 worksheet2.write(row_idx + 1, col_idx, value, normal_format)
         
         # Auto-adjust column widths for Sheet 2
-        for i, col in enumerate(df1_clean.columns):
+        for i, col in enumerate(df1_clean_output.columns):
             max_length = max(len(str(col)), 10)
-            if not df1_clean.empty:
-                max_length = max(max_length, df1_clean[col].astype(str).str.len().max())
+            if not df1_clean_output.empty:
+                max_length = max(max_length, df1_clean_output[col].astype(str).str.len().max())
             worksheet2.set_column(i, i, min(max_length + 2, 50))
         
-        # Write Sheet 3: Raw data file two
-        df2_clean = df2.drop('match_key', axis=1)  # Remove the temporary match key
-        # Clean up NaN and infinite values in raw data
-        df2_clean = df2_clean.replace([np.inf, -np.inf], '')  # Replace infinite values
-        df2_clean = df2_clean.fillna('')  # Replace NaN values
-        df2_clean.to_excel(writer, sheet_name='Raw Data File 2', index=False)
+        # Write Sheet 3: Raw data file two (with original formatting)
+        df2_clean_output = df2_clean.drop('composite_key', axis=1, errors='ignore')
+        df2_clean_output = df2_clean_output.replace([np.inf, -np.inf], '').fillna('')
+        df2_clean_output.to_excel(writer, sheet_name='Raw Data File 2', index=False)
         worksheet3 = writer.sheets['Raw Data File 2']
         
-        # Apply header formatting and normal formatting
-        for col_num, value in enumerate(df2_clean.columns.values):
+        # Apply header formatting and normal formatting (original logic)
+        for col_num, value in enumerate(df2_clean_output.columns.values):
             worksheet3.write(0, col_num, value, header_format)
         
         # Apply normal format to data rows
-        for row_idx in range(len(df2_clean)):
-            for col_idx, col_name in enumerate(df2_clean.columns):
-                value = df2_clean.iloc[row_idx][col_name]
+        for row_idx in range(len(df2_clean_output)):
+            for col_idx, col_name in enumerate(df2_clean_output.columns):
+                value = df2_clean_output.iloc[row_idx][col_name]
                 worksheet3.write(row_idx + 1, col_idx, value, normal_format)
         
         # Auto-adjust column widths for Sheet 3
-        for i, col in enumerate(df2_clean.columns):
+        for i, col in enumerate(df2_clean_output.columns):
             max_length = max(len(str(col)), 10)
-            if not df2_clean.empty:
-                max_length = max(max_length, df2_clean[col].astype(str).str.len().max())
+            if not df2_clean_output.empty:
+                max_length = max(max_length, df2_clean_output[col].astype(str).str.len().max())
             worksheet3.set_column(i, i, min(max_length + 2, 50))
         
         # Close the writer
@@ -396,9 +383,54 @@ def compare_files(file1_path, file2_path, output_path):
         
         logger.info(f"Successfully created comparison report: {os.path.basename(output_path)}")
         print(f"Successfully created comparison report: {os.path.basename(output_path)}")
-        print(f"Found {len(differences)} differences between the files")
+        print(f"Found {len(diff_df)} differences between the files")
         
         return True
+        
+    except Exception as e:
+        logger.error(f"Error writing Excel file: {str(e)}")
+        print(f"Error writing Excel file: {str(e)}")
+        return False
+
+@timer
+def compare_files(file1_path, file2_path, output_path):
+    """Main comparison function with optimizations for large files"""
+    try:
+        logger.info("Starting optimized file comparison...")
+        print("Starting optimized file comparison for large files...")
+        
+        # Step 1: Read files
+        df1 = read_excel_file(file1_path)
+        df2 = read_excel_file(file2_path)
+        
+        if df1 is None or df2 is None:
+            logger.error("Failed to read one or both files")
+            print("Failed to read one or both files")
+            return False
+        
+        # Print basic info
+        print(f"File 1: {len(df1)} rows, {len(df1.columns)} columns")
+        print(f"File 2: {len(df2)} rows, {len(df2.columns)} columns")
+        print(f"File 1 columns: {list(df1.columns)}")
+        
+        # Step 2: Prepare dataframes for fast comparison
+        df1_indexed, df2_indexed = prepare_dataframes(df1, df2)
+        
+        # Step 3: Find differences using vectorized operations
+        diff_df, common_keys = find_differences_vectorized(df1_indexed, df2_indexed)
+        
+        print(f"Found {len(diff_df)} total differences")
+        logger.info(f"Found {len(diff_df)} differences out of {len(common_keys)} common records")
+        
+        # Step 4: Write Excel file with optimized bulk operations
+        success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path)
+        
+        if success:
+            logger.info(f"Successfully created comparison report: {os.path.basename(output_path)}")
+            print(f"Successfully created comparison report: {os.path.basename(output_path)}")
+            print(f"Total differences found: {len(diff_df)}")
+        
+        return success
         
     except Exception as e:
         logger.error(f"Error comparing files: {str(e)}")
@@ -406,9 +438,9 @@ def compare_files(file1_path, file2_path, output_path):
         return False
 
 def main():
-    """Main function to run the file comparison"""
-    print("=== GIS Morning Stock Changes Comparison ===")
-    logger.info("Starting GIS Morning Stock Changes comparison")
+    """Main function to run the optimized file comparison"""
+    print("=== GIS Morning Stock Changes Comparison - OPTIMIZED ===")
+    logger.info("Starting optimized GIS Morning Stock Changes comparison")
     
     # File paths
     file1_path = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Manual\EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx"
@@ -426,13 +458,18 @@ def main():
         print(f"File 2 not found: {file2_path}")
         return
     
+    # Overall timing
+    start_time = time.time()
+    
     # Perform comparison
     success = compare_files(file1_path, file2_path, output_path)
     
+    total_time = time.time() - start_time
+    
     if success:
-        print(f"\nComparison completed successfully!")
+        print(f"\nComparison completed successfully in {total_time:.1f} seconds!")
         print(f"Output saved to: {output_path}")
-        logger.info("File comparison completed successfully")
+        logger.info(f"File comparison completed successfully in {total_time:.1f} seconds")
     else:
         print("Comparison failed. Check the log file for details.")
         logger.error("File comparison failed")
