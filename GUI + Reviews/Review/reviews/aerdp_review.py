@@ -134,7 +134,7 @@ def run_aerdp_review(date, co_date, effective_date, index="AERDP", isin="NLIX000
         # Create Inclusion column based on both criteria
         developed_market_df['Inclusion'] = (
             (developed_market_df['Sector'] == '502010') & 
-            (developed_market_df['3 months aver. Turnover EUR'] > 4000000)
+            (developed_market_df['3 months ADTV'] > 4000000)
         )
         
         developed_market_df['Close Prc_CO'] = developed_market_df['Close Prc_CO'].fillna(0)
