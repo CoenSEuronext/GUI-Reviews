@@ -28,7 +28,7 @@ def timer(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         duration = end_time - start_time
-        print(f"⏱️  {func.__name__} took {duration:.2f} seconds")
+        print(f"  {func.__name__} took {duration:.2f} seconds")
         logger.info(f"Function {func.__name__} took {duration:.2f} seconds")
         return result
     return wrapper
@@ -80,9 +80,9 @@ SOURCE_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
 DESTINATION_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
 
 # CSV merger output paths
-MANUAL_OUTPUT_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Manual"
-EOD_OUTPUT_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\EOD"
-SOD_OUTPUT_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\SOD"
+MANUAL_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Manual"
+EOD_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\EOD"
+SOD_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\SOD"
 
 # ============================================================================
 # FILE MONITORING FUNCTIONS
@@ -652,6 +652,7 @@ def merge_csv_files(file1_path, file2_path, output_path):
         # Combine the dataframes - keeping all rows including header of second file
         merged_df = pd.concat([df1, df2])
         
+        del df1, df2
         # Convert column I to numeric if it exists (8th column, 0-indexed)
         if len(merged_df.columns) > 8:
             col_I_name = merged_df.columns[8]
@@ -739,6 +740,8 @@ def merge_csv_files(file1_path, file2_path, output_path):
         # Close the writer to save the file
         writer.close()
         
+        del merged_df
+        
         # Set the output file to read-only
         set_file_readonly(output_path)
         
@@ -756,15 +759,15 @@ def get_merge_groups(date_str):
     return {
         "MANUAL": {
             "files": [
-                f"TTMIndexEU1_GIS_MANUAL_STOCK_{date_str}.csv",
+                f"TTMIndexEU1_GIS_NXTD_STOCK_{date_str}.csv",
                 f"TTMIndexUS1_GIS_NXTD_STOCK_{date_str}.csv",
-                f"TTMIndexEU1_GIS_MANUAL_INDEX_{date_str}.csv",
+                f"TTMIndexEU1_GIS_NXTD_INDEX_{date_str}.csv",
                 f"TTMIndexUS1_GIS_NXTD_INDEX_{date_str}.csv"
             ],
             "output_dir": MANUAL_OUTPUT_FOLDER,
             "output_files": [
-                f"EU_MANUAL_US_NXTD_STOCK_MERGED_{date_str}.xlsx",
-                f"EU_MANUAL_US_NXTD_INDEX_MERGED_{date_str}.xlsx"
+                f"TTMIndexEU1_GIS_NXTD_STOCK_{date_str}.xlsx",
+                f"TTMIndexEU1_GIS_NXTD_INDEX_{date_str}.xlsx"
             ],
             "merge_pairs": [
                 (0, 1, 0),  # (file1_index, file2_index, output_index)
@@ -782,8 +785,8 @@ def get_merge_groups(date_str):
             ],
             "output_dir": EOD_OUTPUT_FOLDER,
             "output_files": [
-                f"EU_EOD_US_EOD_STOCK_MERGED_{date_str}.xlsx",
-                f"EU_EOD_US_EOD_INDEX_MERGED_{date_str}.xlsx",
+                f"TTMIndexEU1_GIS_EOD_STOCK_{date_str}.xlsx",
+                f"TTMIndexEU1_GIS_EOD_INDEX_{date_str}.xlsx",
                 f"TTMStrategy_GIS_EOD_INDEX_{date_str}.xlsx"  # Added strategy output
             ],
             "merge_pairs": [
@@ -803,8 +806,8 @@ def get_merge_groups(date_str):
             ],
             "output_dir": SOD_OUTPUT_FOLDER,
             "output_files": [
-                f"EU_SOD_US_SOD_STOCK_MERGED_{date_str}.xlsx",
-                f"EU_SOD_US_SOD_INDEX_MERGED_{date_str}.xlsx"
+                f"TTMIndexEU1_GIS_SOD_STOCK_{date_str}.xlsx",
+                f"TTMIndexEU1_GIS_SOD_INDEX_{date_str}.xlsx"
             ],
             "merge_pairs": [
                 (0, 1, 0),
@@ -814,72 +817,113 @@ def get_merge_groups(date_str):
         }
     }
 
-def check_previous_workday_files():
-    """Check if output files from the previous workday exist and create them if missing"""
+def check_previous_workday_files(days_back=30):
+    """Check if output files from the previous N workdays exist and create them if missing"""
     try:
-        # Get current date and previous workday
+        # Get current date for reference
         current_date = get_current_date_string()
-        prev_workday = get_previous_workday_date()
+        current_datetime = datetime.now()
         
-        logger.debug(f"Checking for previous workday ({prev_workday}) output files...")
+        logger.debug(f"Checking for previous {days_back} workdays output files...")
         
-        # Get merge groups for previous workday
-        prev_merge_groups = get_merge_groups(prev_workday)
+        # Limit processing to avoid performance issues
+        max_merges_per_check = 3  # Don't merge more than 3 files per cycle
+        merges_performed = 0
         
-        # For each merge group, check if output files exist
-        for group_name, group_data in prev_merge_groups.items():
-            missing_outputs = []
+        # Check each of the previous N workdays
+        for i in range(1, days_back + 1):
+            # Calculate the date to check (going backwards)
+            check_date = current_datetime - timedelta(days=i)
+            prev_workday = get_previous_workday_date(check_date)
             
-            # Check if each output file exists
-            for output_file in group_data["output_files"]:
-                output_path = os.path.join(group_data["output_dir"], output_file)
-                
-                if not os.path.exists(output_path):
-                    missing_outputs.append(output_file)
+            # Create unique key to avoid redundant daily checks
+            check_key = f"prev_check_{prev_workday}"
+            if check_key in processed_files_today:
+                continue  # Already checked this workday today
             
-            # If any output files are missing, check if source files exist to create them
-            if missing_outputs:
-                logger.info(f"Missing {group_name} output files from previous workday: {missing_outputs}")
+            # Mark as checked to avoid processing again today
+            processed_files_today.add(check_key)
+            
+            # Skip files older than 60 days to avoid processing very old data
+            workday_date = datetime.strptime(prev_workday, '%Y%m%d')
+            if (datetime.now() - workday_date).days > 60:
+                logger.debug(f"Skipping workday {prev_workday} - older than 60 days")
+                continue
+            
+            logger.debug(f"Checking workday {prev_workday} (day -{i})...")
+            
+            # Get merge groups for this previous workday
+            prev_merge_groups = get_merge_groups(prev_workday)
+            
+            # For each merge group, check if output files exist
+            for group_name, group_data in prev_merge_groups.items():
+                missing_outputs = []
                 
-                # Check if all source files for this group exist
-                source_files_exist = True
-                for file in group_data["files"]:
-                    file_path = os.path.join(DESTINATION_FOLDER, file)  # Use destination folder as source for CSV merger
-                    if not os.path.exists(file_path):
-                        source_files_exist = False
-                        break
-                
-                if source_files_exist:
-                    logger.info(f"Found all source files for {group_name} from previous workday. Creating missing output files.")
+                # Check if each output file exists
+                for output_file in group_data["output_files"]:
+                    output_path = os.path.join(group_data["output_dir"], output_file)
                     
-                    # Perform merges for this group
-                    for file1_idx, file2_idx, output_idx in group_data["merge_pairs"]:
-                        if group_data["output_files"][output_idx] in missing_outputs:
-                            file1_path = os.path.join(DESTINATION_FOLDER, group_data["files"][file1_idx])
-                            file2_path = os.path.join(DESTINATION_FOLDER, group_data["files"][file2_idx])
-                            output_path = os.path.join(group_data["output_dir"], group_data["output_files"][output_idx])
+                    if not os.path.exists(output_path):
+                        missing_outputs.append(output_file)
+                
+                # If any output files are missing, check if source files exist to create them
+                if missing_outputs:
+                    logger.info(f"Missing {group_name} output files from workday {prev_workday}: {missing_outputs}")
+                    
+                    # Check if all source files for this group exist
+                    source_files_exist = True
+                    missing_source_files = []
+                    for file in group_data["files"]:
+                        file_path = os.path.join(DESTINATION_FOLDER, file)  # Use destination folder as source for CSV merger
+                        if not os.path.exists(file_path):
+                            source_files_exist = False
+                            missing_source_files.append(file)
+                    
+                    if source_files_exist:
+                        logger.info(f"Found all source files for {group_name} from workday {prev_workday}. Creating missing output files.")
+                        
+                        # Perform merges for this group (with limit check)
+                        for file1_idx, file2_idx, output_idx in group_data["merge_pairs"]:
+                            if merges_performed >= max_merges_per_check:
+                                logger.info(f"Reached maximum merges per check ({max_merges_per_check}). Will continue next cycle.")
+                                return  # Exit early to avoid performance issues
                             
-                            if merge_csv_files(file1_path, file2_path, output_path):
-                                logger.info(f"Created previous workday file: {os.path.basename(output_path)}")
-                    
-                    # Handle single file conversions for this group
-                    if "single_files" in group_data:
-                        for source_idx, output_idx in group_data["single_files"]:
                             if group_data["output_files"][output_idx] in missing_outputs:
-                                source_path = os.path.join(DESTINATION_FOLDER, group_data["files"][source_idx])
+                                file1_path = os.path.join(DESTINATION_FOLDER, group_data["files"][file1_idx])
+                                file2_path = os.path.join(DESTINATION_FOLDER, group_data["files"][file2_idx])
                                 output_path = os.path.join(group_data["output_dir"], group_data["output_files"][output_idx])
                                 
-                                if convert_single_csv_to_xlsx(source_path, output_path):
-                                    logger.info(f"Created previous workday file: {os.path.basename(output_path)}")
+                                if merge_csv_files(file1_path, file2_path, output_path):
+                                    logger.info(f"Created previous workday file: {os.path.basename(output_path)} for {prev_workday}")
+                                    merges_performed += 1
+                        
+                        # Handle single file conversions for this group (with limit check)
+                        if "single_files" in group_data:
+                            for source_idx, output_idx in group_data["single_files"]:
+                                if merges_performed >= max_merges_per_check:
+                                    logger.info(f"Reached maximum conversions per check ({max_merges_per_check}). Will continue next cycle.")
+                                    return  # Exit early to avoid performance issues
+                                
+                                if group_data["output_files"][output_idx] in missing_outputs:
+                                    source_path = os.path.join(DESTINATION_FOLDER, group_data["files"][source_idx])
+                                    output_path = os.path.join(group_data["output_dir"], group_data["output_files"][output_idx])
+                                    
+                                    if convert_single_csv_to_xlsx(source_path, output_path):
+                                        logger.info(f"Created previous workday file: {os.path.basename(output_path)} for {prev_workday}")
+                                        merges_performed += 1
+                    else:
+                        logger.debug(f"Cannot create {group_name} output files for workday {prev_workday}. Missing source files: {missing_source_files}")
                 else:
-                    missing_files = [file for file in group_data["files"] if not os.path.exists(os.path.join(DESTINATION_FOLDER, file))]
-                    logger.info(f"Cannot create {group_name} output files for previous workday. Missing source files: {missing_files}")
-            else:
-                logger.debug(f"All {group_name} output files from previous workday already exist.")
+                    logger.debug(f"All {group_name} output files from workday {prev_workday} already exist.")
+        
+        if merges_performed > 0:
+            logger.info(f"Completed checking previous {days_back} workdays. Performed {merges_performed} merge/conversion operations.")
+        else:
+            logger.debug(f"Completed checking previous {days_back} workdays. No missing files found.")
     
     except Exception as e:
-        logger.error(f"Error checking previous workday files: {str(e)}")
-        print(f"Error checking previous workday files: {str(e)}")
+        logger.error(f"Error checking previous workdays: {str(e)}")
+        print(f"Error checking previous workdays: {str(e)}")
 
 def check_files_for_merge():
     """Check if all necessary files are available for merging"""
@@ -1169,9 +1213,9 @@ def monitor_unified():
             # Periodically check for CSV files to merge (every 2 minutes)
             logger.info("Running periodic CSV merger check...")
             check_files_for_merge()
-            check_previous_workday_files()
+            check_previous_workday_files(days_back=30)
             
-            time.sleep(120)  # Check every 2 minutes instead of 30 minutes
+            time.sleep(20)  # Check every 2 minutes instead of 30 minutes
     except KeyboardInterrupt:
         observer.stop()
         print("\n" + "=" * 80)

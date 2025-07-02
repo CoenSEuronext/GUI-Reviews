@@ -65,7 +65,7 @@ def get_mnemo_from_filename(filename):
             return mnemo
             
     # Alternative regex approach
-    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP)[_-]'
+    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP|GICP)[_-]'
     match = re.search(pattern, filename)
     if match:
         return match.group(1)
@@ -133,6 +133,21 @@ def load_excel_data(file_path, is_dataiku_file=False):
     except Exception as e:
         print(f"Error loading {file_path}: {str(e)}")
         return None
+
+def are_currencies_equivalent(currency1, currency2):
+    """Check if two currency codes represent the same currency with acceptable variations"""
+    if currency1 == currency2:
+        return True
+    
+    # Define equivalent currency pairs
+    equivalent_pairs = {
+        ('GBX', 'GBP'),  # British Pence and British Pound
+        ('GBP', 'GBX'),  # British Pound and British Pence
+        ('ILA', 'ILS'),  # Israeli shekel variations
+        ('ILS', 'ILA'),  # Israeli shekel variations
+    }
+    
+    return (currency1, currency2) in equivalent_pairs
 
 def compare_files(coen_file, dataiku_file):
     """Compare two Excel files for ISIN codes and specified fields"""
@@ -226,8 +241,18 @@ def compare_files(coen_file, dataiku_file):
                     coen_value = coen_dict.get(isin)
                     dataiku_value = dataiku_dict.get(isin)
                     
+                    # Special handling for Currency field
+                    if field == 'Currency':
+                        if not are_currencies_equivalent(coen_value, dataiku_value):
+                            mismatches += 1
+                            if len(mismatch_examples) < 5:  # Limit to 5 examples
+                                mismatch_examples.append({
+                                    'ISIN': isin,
+                                    'Coen value': coen_value,
+                                    'Dataiku value': dataiku_value
+                                })
                     # For numeric fields, use float comparison with tolerance
-                    if field in ['Number of Shares', 'Free Float']:
+                    elif field in ['Number of Shares', 'Free Float']:
                         if not compare_float_values(coen_value, dataiku_value):
                             mismatches += 1
                             if len(mismatch_examples) < 5:  # Limit to 5 examples

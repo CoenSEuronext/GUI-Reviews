@@ -1,0 +1,49 @@
+2025-06-30 16:55:11,758 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 16:55:11,759 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-06-30 16:55:11,792 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-06-30 16:55:14,207 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-06-30 16:55:21,753 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-06-30 16:55:21,841 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:55:21,841 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:55:21,841 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:55:21,848 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:55:21,848 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:55:21,849 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-06-30 16:55:21,850 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-06-30 16:55:21,850 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-06-30 16:55:21,851 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-06-30 16:55:21,852 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-06-30 16:55:21,852 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-06-30 16:55:21,853 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-06-30 16:55:21,854 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-06-30 16:55:21,854 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-06-30 16:55:21,854 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-06-30 16:55:21,855 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-06-30 16:55:21,859 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250630_165521.xlsx
+2025-06-30 16:55:22,163 - werkzeug - INFO - 10.199.43.197 - - [30/Jun/2025 16:55:22] "POST /calculate HTTP/1.1" 200 -
+2025-06-30 16:57:27,026 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-06-30 16:57:28,767 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-06-30 16:57:35,969 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-06-30 16:57:36,051 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:57:36,051 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:57:36,051 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:57:36,056 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:57:36,056 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-06-30 16:57:36,057 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-06-30 16:57:36,062 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-06-30 16:57:36,063 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-06-30 16:57:36,063 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-06-30 16:57:36,068 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250630_165736.xlsx
+2025-06-30 16:57:36,303 - werkzeug - INFO - 10.199.43.197 - - [30/Jun/2025 16:57:36] "POST /calculate HTTP/1.1" 200 -
+2025-06-30 16:58:02,233 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-06-30 16:58:02,241 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-06-30 16:58:02,241 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading

@@ -17,7 +17,7 @@ def timer(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         duration = end_time - start_time
-        print(f"⏱️  {func.__name__} took {duration:.2f} seconds")
+        print(f"  {func.__name__} took {duration:.2f} seconds")
         logger.info(f"Function {func.__name__} took {duration:.2f} seconds")
         return result
     return wrapper

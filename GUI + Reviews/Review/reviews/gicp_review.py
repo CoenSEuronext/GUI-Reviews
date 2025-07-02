@@ -81,11 +81,25 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         
         # Convert index column to string type before string operations
         developed_market_df['index'] = developed_market_df['index'].astype(str)
-        # Add EU500 exclusion
+        
+        # FIXED ISSUE 1: Correct Universe Definition
+        # The universe should consist of constituents from:
+        # - Euronext® North America 500 (excluding Toronto Stock Exchange XTSE)
+        # - Euronext® Eurozone 300
         developed_market_df['exclusion_1'] = None
+        
+        # Create proper universe mask
+        universe_mask = (
+            # Companies in EZ300 (Eurozone 300)
+            (developed_market_df['index'].str.contains('EZ300', na=False)) |
+            # Companies in NA500 (North America 500) but NOT on Toronto Stock Exchange (XTSE)
+            ((developed_market_df['index'].str.contains('NA500', na=False)) & 
+             (developed_market_df['MIC'] != 'XTSE'))
+        )
+        
+        # Apply exclusion for companies NOT in the universe
         developed_market_df['exclusion_1'] = np.where(
-            ~(developed_market_df['index'].str.contains('EZ300', na=False) | 
-            developed_market_df['index'].str.contains('NA500', na=False)),
+            ~universe_mask,
             'exclude_Area',
             None
         )
@@ -93,170 +107,116 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         # Similarly convert Subsector Code to string
         developed_market_df['Subsector Code'] = developed_market_df['Subsector Code'].astype(str)
 
-        # Add eligibility categories exclusion
+        # FIXED ISSUE 2: Correct Eligibility Screening Logic
+        # Out of the Index Universe, companies belonging to specific ICB classifications are eligible
+        # (NOT tied to specific exchanges)
         developed_market_df['exclusion_2'] = None
 
-        # Create the eligibility mask for each category
-        category_conditions = (
-            # Category 1: XPAR + Banks Super Sector (3010)
-            ((developed_market_df['MIC'] == 'XPAR') & 
-            (developed_market_df['Subsector Code'].str[:4] == '3010')) |
+        # Create the eligibility mask for ICB classifications (applied only to universe companies)
+        universe_companies_mask = developed_market_df['exclusion_1'].isna()
+        
+        eligibility_conditions = (
+            # Banks Super Sector (3010) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:4] == '3010') |
             
-            # Category 2: XPAR + Clothing and Accessories Subsector (40204020)
-            ((developed_market_df['MIC'] == 'XPAR') & 
-            (developed_market_df['Subsector Code'].str[:8] == '40204020')) |
+            # Clothing and Accessories Subsector (40204020) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:8] == '40204020') |
             
-            # Category 3: XETR + Automobiles and Parts Super Sector (4010)
-            ((developed_market_df['MIC'] == 'XETR') & 
-            (developed_market_df['Subsector Code'].str[:4] == '4010')) |
+            # Automobiles and Parts Super Sector (4010) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:4] == '4010') |
             
-            # Category 4: XETR + Industrial Goods and Services Super Sector (5020)
-            ((developed_market_df['MIC'] == 'XETR') & 
-            (developed_market_df['Subsector Code'].str[:4] == '5020')) |
+            # Industrial Goods and Services Super Sector (5020) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:4] == '5020') |
             
-            # Category 5: XAMS + Technology Hardware and Equipment Super Sector (101020)
-            ((developed_market_df['MIC'] == 'XAMS') & 
-            (developed_market_df['Subsector Code'].str[:6] == '101020')) |
+            # Technology Hardware and Equipment Sector (101020) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:6] == '101020') |
             
-            # Category 6: XNYS/XNGS + Technology Industry (10)
-            ((developed_market_df['MIC'].isin(['XNYS', 'XNGS'])) & 
-            (developed_market_df['Subsector Code'].str[:2] == '10')) |
+            # Technology Industry (10) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:2] == '10') |
             
-            # Category 7: XNYS/XNGS + Consumer Discretionary Industry (40)
-            ((developed_market_df['MIC'].isin(['XNYS', 'XNGS'])) & 
-            (developed_market_df['Subsector Code'].str[:2] == '40'))
+            # Consumer Discretionary Industry (40) - any exchange in universe
+            (developed_market_df['Subsector Code'].str[:2] == '40')
         )
 
-        # Apply the exclusion for companies that don't meet any category criteria
-        developed_market_df['exclusion_2'] = np.where(
-            ~category_conditions,
-            'exclude_category',
-            None
-        )
-        # Create a mask for non-excluded companies
+        # Apply the exclusion for universe companies that don't meet ICB eligibility criteria
+        developed_market_df.loc[universe_companies_mask & ~eligibility_conditions, 'exclusion_2'] = 'exclude_category'
+        
+        # Create a mask for non-excluded companies (in universe and eligible)
         non_excluded_mask = (
             developed_market_df['exclusion_1'].isna() & 
             developed_market_df['exclusion_2'].isna()
         )
 
-
-        # Add rank for non-excluded companies based on FFMC in EUR
-        developed_market_df['rank'] = None
-        developed_market_df.loc[non_excluded_mask, 'rank'] = (
-            developed_market_df.loc[non_excluded_mask, 'FFMC']
-            .rank(method='first', ascending=False)
-        )
-
-
+        # FIXED ISSUE 3: Correct Grouping and Selection
+        # Group 1: Companies from Euronext® Eurozone 300 (15 largest by FFMC)
+        # Group 2: Companies from Euronext® North America 500 (15 largest by FFMC)
         
-        # Define the category conditions and rank within each category
-        category_definitions = [
-            # Category 1: XPAR + Banks Super Sector (3010)
-            {
-                'mask': (
-                    (developed_market_df['MIC'] == 'XPAR') & 
-                    (developed_market_df['Subsector Code'].str[:4] == '3010') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_1'
-            },
-            # Category 2: XPAR + Clothing and Accessories Subsector (40204020)
-            {
-                'mask': (
-                    (developed_market_df['MIC'] == 'XPAR') & 
-                    (developed_market_df['Subsector Code'].str[:8] == '40204020') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_2'
-            },
-            # Category 3: XETR + Automobiles and Parts Super Sector (4010)
-            {
-                'mask': (
-                    (developed_market_df['MIC'] == 'XETR') & 
-                    (developed_market_df['Subsector Code'].str[:4] == '4010') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_3'
-            },
-            # Category 4: XETR + Industrial Goods and Services Super Sector (5020)
-            {
-                'mask': (
-                    (developed_market_df['MIC'] == 'XETR') & 
-                    (developed_market_df['Subsector Code'].str[:4] == '5020') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_4'
-            },
-            # Category 5: XAMS + Technology Hardware and Equipment Super Sector (101020)
-            {
-                'mask': (
-                    (developed_market_df['MIC'] == 'XAMS') & 
-                    (developed_market_df['Subsector Code'].str[:6] == '101020') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_5'
-            },
-            # Category 6: XNYS/XNGS + Technology Industry (10)
-            {
-                'mask': (
-                    (developed_market_df['MIC'].isin(['XNYS', 'XNGS'])) & 
-                    (developed_market_df['Subsector Code'].str[:2] == '10') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_6'
-            },
-            # Category 7: XNYS/XNGS + Consumer Discretionary Industry (40)
-            {
-                'mask': (
-                    (developed_market_df['MIC'].isin(['XNYS', 'XNGS'])) & 
-                    (developed_market_df['Subsector Code'].str[:2] == '40') &
-                    developed_market_df['exclusion_1'].isna()
-                ),
-                'name': 'Category_7'
-            }
-        ]
-
-        # Add category column to identify which category each company belongs to
+        # Add group classification for eligible companies
         developed_market_df['category'] = None
+        
+        # Group 1: EZ300 companies that are eligible
+        group1_mask = (non_excluded_mask & 
+                      developed_market_df['index'].str.contains('EZ300', na=False))
+        developed_market_df.loc[group1_mask, 'category'] = 'Group_1_EZ300'
+        
+        # Group 2: NA500 companies (excluding XTSE) that are eligible
+        group2_mask = (non_excluded_mask & 
+                      developed_market_df['index'].str.contains('NA500', na=False) &
+                      (developed_market_df['MIC'] != 'XTSE'))
+        developed_market_df.loc[group2_mask, 'category'] = 'Group_2_NA500'
 
-        # Rank within each category
-        for category in category_definitions:
-            mask = category['mask']
-            # Assign category name
-            developed_market_df.loc[mask, 'category'] = category['name']
-            # Rank within category based on market cap
-            developed_market_df.loc[mask, 'rank'] = (
-                developed_market_df.loc[mask, 'FFMC']
+        # Add rank for each group based on FFMC
+        developed_market_df['rank'] = None
+        
+        # Rank within Group 1 (EZ300)
+        group1_companies = developed_market_df['category'] == 'Group_1_EZ300'
+        if group1_companies.sum() > 0:
+            developed_market_df.loc[group1_companies, 'rank'] = (
+                developed_market_df.loc[group1_companies, 'FFMC']
                 .rank(method='first', ascending=False)
             )
-        # Define the number of companies to select from each category
-        category_selections = {
-            'Category_1': 3,  # XPAR Banks
-            'Category_2': 3,  # XPAR Clothing and Accessories
-            'Category_3': 3,  # XETR Automobiles and Parts
-            'Category_4': 3,  # XETR Industrial Goods and Services
-            'Category_5': 3,  # XAMS Technology Hardware and Equipment
-            'Category_6': 10, # XNYS/XNGS Technology
-            'Category_7': 5   # XNYS/XNGS Consumer Discretionary
-        }
+        
+        # Rank within Group 2 (NA500)
+        group2_companies = developed_market_df['category'] == 'Group_2_NA500'
+        if group2_companies.sum() > 0:
+            developed_market_df.loc[group2_companies, 'rank'] = (
+                developed_market_df.loc[group2_companies, 'FFMC']
+                .rank(method='first', ascending=False)
+            )
 
-        # Create selection column
+        # Select top 15 from each group (30 total)
         developed_market_df['selected'] = False
-
-        # Select top companies from each category
-        for category, n_select in category_selections.items():
-            category_mask = (developed_market_df['category'] == category)
-            top_n_mask = (developed_market_df['rank'] <= n_select) & category_mask
-            developed_market_df.loc[top_n_mask, 'selected'] = True
+        
+        # Select top 15 from Group 1 (EZ300)
+        group1_top15_mask = (
+            (developed_market_df['category'] == 'Group_1_EZ300') & 
+            (developed_market_df['rank'] <= 15)
+        )
+        developed_market_df.loc[group1_top15_mask, 'selected'] = True
+        
+        # Select top 15 from Group 2 (NA500)
+        group2_top15_mask = (
+            (developed_market_df['category'] == 'Group_2_NA500') & 
+            (developed_market_df['rank'] <= 15)
+        )
+        developed_market_df.loc[group2_top15_mask, 'selected'] = True
 
         # Verify total number of selected companies
         total_selected = developed_market_df['selected'].sum()
+        group1_selected = group1_top15_mask.sum()
+        group2_selected = group2_top15_mask.sum()
+        
+        logger.info(f"Selected {group1_selected} companies from Group 1 (EZ300)")
+        logger.info(f"Selected {group2_selected} companies from Group 2 (NA500)")
+        logger.info(f"Total selected: {total_selected} companies")
+        
         if total_selected != 30:
             logger.warning(f"Selected {total_selected} companies instead of expected 30")
 
         # Create selection dataframe
         selection_df = developed_market_df[developed_market_df['selected']].copy()
-        
+        selection_df.to_excel('debug_output.xlsx', index=False)
+        os.startfile('debug_output.xlsx')
         # First remove duplicates from stock_eod_df
         unique_stock_eod = (stock_eod_df[['Isin Code', 'Currency', 'Close Prc', 'FX/Index Ccy']]
                         .drop_duplicates(subset=['Isin Code', 'Currency'], keep='first'))
@@ -283,31 +243,25 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
             logger.warning(f"Missing price/FX data for {len(missing_data)} companies:")
             for _, row in missing_data.iterrows():
                 logger.warning(f"ISIN: {row['ISIN']}, Currency: {row['Currency (Local)']}")
-        # Define category weights
-        category_weights = {
-            'Category_1': 0.12,  # 12%
-            'Category_2': 0.12,
-            'Category_3': 0.12,
-            'Category_4': 0.12,
-            'Category_5': 0.12,
-            'Category_6': 0.20,  # 20%
-            'Category_7': 0.20
-        }
-
+        
+        # Apply Group-based weighting according to specification:
+        # Group 1 (EZ300): 60% weight, Group 2 (NA500): 40% weight
+        # Maximum 10% per constituent
+        
         def apply_category_capping(df, target_weight, total_mcap, max_weight=0.10):
             """
-            Apply capping within a category
+            Apply capping within a group
             
             Args:
-                df: DataFrame containing the category's constituents
-                target_weight: Target weight for the entire category (e.g., 0.12 for 12%)
+                df: DataFrame containing the group's constituents
+                target_weight: Target weight for the entire group (e.g., 0.60 for 60%)
                 total_mcap: Total market cap of all selected companies
                 max_weight: Maximum weight for any individual constituent (as % of total portfolio)
             """
             # Calculate initial weights relative to total portfolio
             df['Initial Weight'] = df['Original market cap'] / total_mcap
             
-            # Calculate the scaling factor to achieve target category weight
+            # Calculate the scaling factor to achieve target group weight
             category_weight = df['Initial Weight'].sum()
             if category_weight > 0:
                 initial_scaling = target_weight / category_weight
@@ -345,23 +299,29 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
             
             return df
 
-        # Apply capping by category
+        # Apply weighting by group (not arbitrary categories)
         total_mcap = selection_df['Original market cap'].sum()
         selection_df['Initial Weight'] = 0.0
 
-        for category, target_weight in category_weights.items():
-            category_mask = selection_df['category'] == category
-            category_df = selection_df[category_mask].copy()
-            
-            if not category_df.empty:
-                # Apply category capping with total market cap
-                category_df = apply_category_capping(category_df, target_weight, total_mcap)
-                selection_df.loc[category_mask, 'Initial Weight'] = category_df['Initial Weight']
+        # Group 1: EZ300 companies get 60% total weight
+        group1_mask = selection_df['category'] == 'Group_1_EZ300'
+        if group1_mask.sum() > 0:
+            group1_df = selection_df[group1_mask].copy()
+            group1_df = apply_category_capping(group1_df, 0.60, total_mcap)  # 60% target
+            selection_df.loc[group1_mask, 'Initial Weight'] = group1_df['Initial Weight']
 
-        # Verify category weights
-        for category, target in category_weights.items():
-            actual = selection_df[selection_df['category'] == category]['Initial Weight'].sum()
-            logger.info(f"{category} weight: {actual:.4%} (target: {target:.4%})")
+        # Group 2: NA500 companies get 40% total weight
+        group2_mask = selection_df['category'] == 'Group_2_NA500'
+        if group2_mask.sum() > 0:
+            group2_df = selection_df[group2_mask].copy()
+            group2_df = apply_category_capping(group2_df, 0.40, total_mcap)  # 40% target
+            selection_df.loc[group2_mask, 'Initial Weight'] = group2_df['Initial Weight']
+
+        # Verify group weights
+        group1_weight = selection_df[selection_df['category'] == 'Group_1_EZ300']['Initial Weight'].sum()
+        group2_weight = selection_df[selection_df['category'] == 'Group_2_NA500']['Initial Weight'].sum()
+        logger.info(f"Group 1 (EZ300) weight: {group1_weight:.4%} (target: 60.00%)")
+        logger.info(f"Group 2 (NA500) weight: {group2_weight:.4%} (target: 40.00%)")
 
         # Calculate Final Capping factor
         selection_df['Final Capping'] = (selection_df['Initial Weight'] * total_mcap) / selection_df['Original market cap']
@@ -371,9 +331,10 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
 
         # Log verification
         logger.info("\nFinal Weight Verification:")
-        for category in category_weights:
-            cat_weight = selection_df[selection_df['category'] == category]['Final Weight'].sum()
-            logger.info(f"{category} final weight: {cat_weight:.4%}")
+        group1_final_weight = selection_df[selection_df['category'] == 'Group_1_EZ300']['Final Weight'].sum()
+        group2_final_weight = selection_df[selection_df['category'] == 'Group_2_NA500']['Final Weight'].sum()
+        logger.info(f"Group 1 (EZ300) final weight: {group1_final_weight:.4%}")
+        logger.info(f"Group 2 (NA500) final weight: {group2_final_weight:.4%}")
 
         max_weight = selection_df['Final Weight'].max()
         logger.info(f"Maximum constituent weight: {max_weight:.4%}")
@@ -406,6 +367,10 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
 
         inclusion_df = analysis_results['inclusion_df']
         exclusion_df = analysis_results['exclusion_df']
+        GICP_df = GICP_df.rename(columns={
+            'ISIN': 'ISIN Code',
+            'NOSH': 'Number of Shares',
+        })
         # Save output files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')

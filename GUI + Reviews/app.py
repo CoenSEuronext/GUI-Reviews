@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import os
+import socket
 import traceback
 from Review.review_logic import run_review
 from datetime import datetime
@@ -60,12 +61,27 @@ def create_app():
                 currency=currency
             )
 
-
-            # Open Excel file if calculation was successful
+            # Open Excel file if calculation was successful and request is from local machine
             if result["status"] == "success" and auto_open:
-                output_path = result["data"].get(index_config["output_key"])
-                if output_path and os.path.exists(output_path):
-                    os.startfile(output_path)
+                # Get the user's IP address
+                user_ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.environ.get('REMOTE_ADDR'))
+                
+                # Get server's local IP
+                try:
+                    server_ip = socket.gethostbyname(socket.gethostname())
+                except:
+                    server_ip = None
+                
+                # Only auto-open if the request is from the same machine
+                is_local_request = user_ip in ['127.0.0.1', '::1', 'localhost'] or user_ip == server_ip
+                
+                if is_local_request:
+                    output_path = result["data"].get(index_config["output_key"])
+                    if output_path and os.path.exists(output_path):
+                        os.startfile(output_path)
+                        print(f"File opened automatically for local user: {user_ip}")
+                else:
+                    print(f"Auto-open skipped for remote user: {user_ip} (server IP: {server_ip})")
 
             return jsonify(result)
 
@@ -81,4 +97,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True, port=5000, use_reloader=True, threaded=True)
+    app.run(host='0.0.0.0', debug=True, port=5000, use_reloader=True, threaded=True)
