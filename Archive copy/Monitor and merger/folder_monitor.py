@@ -759,15 +759,15 @@ def get_merge_groups(date_str):
     return {
         "MANUAL": {
             "files": [
-                f"TTMIndexEU1_GIS_NXTD_STOCK_{date_str}.csv",
+                f"TTMIndexEU1_GIS_MANUAL_STOCK_{date_str}.csv",
                 f"TTMIndexUS1_GIS_NXTD_STOCK_{date_str}.csv",
-                f"TTMIndexEU1_GIS_NXTD_INDEX_{date_str}.csv",
+                f"TTMIndexEU1_GIS_MANUAL_INDEX_{date_str}.csv",
                 f"TTMIndexUS1_GIS_NXTD_INDEX_{date_str}.csv"
             ],
             "output_dir": MANUAL_OUTPUT_FOLDER,
             "output_files": [
-                f"TTMIndexEU1_GIS_NXTD_STOCK_{date_str}.xlsx",
-                f"TTMIndexEU1_GIS_NXTD_INDEX_{date_str}.xlsx"
+                f"TTMIndexEU1_GIS_MANUAL_STOCK_{date_str}.xlsx",
+                f"TTMIndexEU1_GIS_MANUAL_INDEX_{date_str}.xlsx"
             ],
             "merge_pairs": [
                 (0, 1, 0),  # (file1_index, file2_index, output_index)

@@ -1,0 +1,451 @@
+2025-07-03 14:52:23 - Starting file monitoring...
+2025-07-03 14:52:23 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:52:23 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:52:23 - File status: SOD=False, Manual=False
+2025-07-03 14:52:23 - Not all files are available yet
+2025-07-03 14:52:23 - File monitoring started successfully
+2025-07-03 14:55:23 - Periodic check for files...
+2025-07-03 14:55:23 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:55:23 - File status: SOD=False, Manual=False
+2025-07-03 14:55:23 - Not all files are available yet
+2025-07-03 14:57:47 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:57:47 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 14:57:52 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:57:52 - File status: SOD=False, Manual=False
+2025-07-03 14:57:52 - Not all files are available yet
+2025-07-03 14:57:52 - Files not ready yet or comparison failed
+2025-07-03 14:58:23 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:58:23 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 14:58:28 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:58:29 - File status: SOD=False, Manual=False
+2025-07-03 14:58:29 - Not all files are available yet
+2025-07-03 14:58:29 - Files not ready yet or comparison failed
+2025-07-03 14:59:03 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:59:03 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 14:59:08 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:59:08 - File status: SOD=False, Manual=False
+2025-07-03 14:59:08 - Not all files are available yet
+2025-07-03 14:59:08 - Files not ready yet or comparison failed
+2025-07-03 14:59:45 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:59:45 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 14:59:50 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 14:59:51 - File status: SOD=False, Manual=False
+2025-07-03 14:59:51 - Not all files are available yet
+2025-07-03 14:59:51 - Files not ready yet or comparison failed
+2025-07-03 15:00:22 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:00:22 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:00:23 - Periodic check for files...
+2025-07-03 15:00:23 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:00:23 - File status: SOD=False, Manual=False
+2025-07-03 15:00:23 - Not all files are available yet
+2025-07-03 15:00:27 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:00:27 - File status: SOD=False, Manual=False
+2025-07-03 15:00:27 - Not all files are available yet
+2025-07-03 15:00:27 - Files not ready yet or comparison failed
+2025-07-03 15:01:01 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:01:01 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:01:06 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:01:06 - File status: SOD=False, Manual=False
+2025-07-03 15:01:06 - Not all files are available yet
+2025-07-03 15:01:06 - Files not ready yet or comparison failed
+2025-07-03 15:01:43 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:01:43 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:01:49 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:01:49 - File status: SOD=False, Manual=False
+2025-07-03 15:01:49 - Not all files are available yet
+2025-07-03 15:01:49 - Files not ready yet or comparison failed
+2025-07-03 15:02:21 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:02:21 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:02:26 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:02:26 - File status: SOD=False, Manual=False
+2025-07-03 15:02:26 - Not all files are available yet
+2025-07-03 15:02:26 - Files not ready yet or comparison failed
+2025-07-03 15:02:59 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:02:59 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:03:04 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:03:05 - File status: SOD=False, Manual=False
+2025-07-03 15:03:05 - Not all files are available yet
+2025-07-03 15:03:05 - Files not ready yet or comparison failed
+2025-07-03 15:03:41 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:03:41 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:03:46 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:03:46 - File status: SOD=False, Manual=False
+2025-07-03 15:03:46 - Not all files are available yet
+2025-07-03 15:03:46 - Files not ready yet or comparison failed
+2025-07-03 15:04:17 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:04:17 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:04:22 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:04:22 - File status: SOD=False, Manual=False
+2025-07-03 15:04:22 - Not all files are available yet
+2025-07-03 15:04:22 - Files not ready yet or comparison failed
+2025-07-03 15:04:56 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:04:56 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:05:01 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:05:01 - File status: SOD=False, Manual=False
+2025-07-03 15:05:01 - Not all files are available yet
+2025-07-03 15:05:01 - Files not ready yet or comparison failed
+2025-07-03 15:05:23 - Periodic check for files...
+2025-07-03 15:05:23 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:05:23 - File status: SOD=False, Manual=False
+2025-07-03 15:05:23 - Not all files are available yet
+2025-07-03 15:05:38 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:05:38 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:05:43 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:05:43 - File status: SOD=False, Manual=False
+2025-07-03 15:05:43 - Not all files are available yet
+2025-07-03 15:05:43 - Files not ready yet or comparison failed
+2025-07-03 15:06:15 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:06:15 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:06:20 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:06:20 - File status: SOD=False, Manual=False
+2025-07-03 15:06:20 - Not all files are available yet
+2025-07-03 15:06:20 - Files not ready yet or comparison failed
+2025-07-03 15:06:53 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:06:53 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:06:58 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:06:58 - File status: SOD=False, Manual=False
+2025-07-03 15:06:58 - Not all files are available yet
+2025-07-03 15:06:58 - Files not ready yet or comparison failed
+2025-07-03 15:07:36 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:07:36 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:07:41 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:07:41 - File status: SOD=False, Manual=False
+2025-07-03 15:07:41 - Not all files are available yet
+2025-07-03 15:07:41 - Files not ready yet or comparison failed
+2025-07-03 15:08:13 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:08:13 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx'}
+2025-07-03 15:08:18 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:08:18 - File status: SOD=False, Manual=False
+2025-07-03 15:08:18 - Not all files are available yet
+2025-07-03 15:08:18 - Files not ready yet or comparison failed
+2025-07-03 15:10:24 - Periodic check for files...
+2025-07-03 15:10:24 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:10:24 - File status: SOD=False, Manual=False
+2025-07-03 15:10:24 - Not all files are available yet
+2025-07-03 15:10:38 - File monitoring stopped by user
+2025-07-03 15:10:40 - Starting file monitoring...
+2025-07-03 15:10:40 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:10:40 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:10:40 - File status: SOD=False, Manual=False
+2025-07-03 15:10:40 - Not all files are available yet
+2025-07-03 15:10:40 - File monitoring started successfully
+2025-07-03 15:11:17 - File monitoring stopped by user
+2025-07-03 15:24:54 - Starting file monitoring...
+2025-07-03 15:24:54 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:24:54 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:24:54 - File status: SOD=False, Manual=False
+2025-07-03 15:24:54 - Not all files are available yet
+2025-07-03 15:24:54 - File monitoring started successfully
+2025-07-03 15:24:54 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:24:54 - Checking for expected files: {'sod': 'TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'manual': 'TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'}
+2025-07-03 15:24:59 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:24:59 - File status: SOD=False, Manual=False
+2025-07-03 15:24:59 - Not all files are available yet
+2025-07-03 15:24:59 - Files not ready yet or comparison failed
+2025-07-03 15:25:01 - File monitoring stopped by user
+2025-07-03 15:27:08 - Starting file monitoring...
+2025-07-03 15:27:08 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:27:08 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_NXTD_STOCK_20250702.xlsx
+2025-07-03 15:27:08 - File status: SOD=False, Manual=False
+2025-07-03 15:27:08 - Not all files are available yet
+2025-07-03 15:27:08 - File monitoring started successfully
+2025-07-03 15:27:35 - File monitoring stopped by user
+2025-07-03 15:27:37 - Starting file monitoring...
+2025-07-03 15:27:37 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:27:37 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:27:37 - File status: SOD=False, Manual=False
+2025-07-03 15:27:37 - Not all files are available yet
+2025-07-03 15:27:37 - File monitoring started successfully
+2025-07-03 15:28:05 - File monitoring stopped by user
+2025-07-03 15:29:39 - Starting file monitoring...
+2025-07-03 15:29:39 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:29:39 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:29:39 - File status: SOD=True, Manual=True
+2025-07-03 15:29:39 - Both files are available, starting comparison...
+2025-07-03 15:29:39 - Starting optimized file comparison...
+2025-07-03 15:29:39 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:29:45 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:29:45 - Function read_excel_file took 5.85 seconds
+2025-07-03 15:29:45 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 15:29:51 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 15:29:51 - Function read_excel_file took 5.66 seconds
+2025-07-03 15:29:51 - Function prepare_dataframes took 0.25 seconds
+2025-07-03 15:29:51 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 15:29:51 - Found 0 differences out of 55801 common records
+2025-07-03 15:30:10 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 15:30:10 - Function write_excel_optimized took 19.16 seconds
+2025-07-03 15:30:10 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 15:30:10 - Function compare_files took 31.04 seconds
+2025-07-03 15:30:10 - File comparison completed successfully in 31.0 seconds
+2025-07-03 15:30:10 - File monitoring started successfully
+2025-07-03 15:35:10 - Periodic check for files...
+2025-07-03 15:35:10 - Expected files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:35:11 - File status: SOD=True, Manual=True
+2025-07-03 15:35:11 - Both files are available, starting comparison...
+2025-07-03 15:35:11 - Starting optimized file comparison...
+2025-07-03 15:35:11 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:35:17 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:35:17 - Function read_excel_file took 6.21 seconds
+2025-07-03 15:35:17 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 15:35:22 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 15:35:22 - Function read_excel_file took 5.01 seconds
+2025-07-03 15:35:22 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 15:35:22 - Function find_differences_vectorized took 0.09 seconds
+2025-07-03 15:35:22 - Found 0 differences out of 55801 common records
+2025-07-03 15:35:42 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 15:35:42 - Function write_excel_optimized took 19.15 seconds
+2025-07-03 15:35:42 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 15:35:42 - Function compare_files took 30.72 seconds
+2025-07-03 15:35:42 - File comparison completed successfully in 30.7 seconds
+2025-07-03 15:37:41 - File monitoring stopped by user
+2025-07-03 15:38:07 - Starting file monitoring...
+2025-07-03 15:38:07 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:38:07 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:40:16 - Starting file monitoring...
+2025-07-03 15:40:16 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:40:16 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:40:16 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:40:16 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:40:17 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:40:17 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:40:17 - Both files are available, starting comparison...
+2025-07-03 15:40:17 - Starting optimized file comparison...
+2025-07-03 15:40:17 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:40:17 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:40:17 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:40:17 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:40:17 - Failed to read one or both files
+2025-07-03 15:40:17 - Function compare_files took 0.00 seconds
+2025-07-03 15:40:17 - File comparison failed
+2025-07-03 15:40:17 - File monitoring started successfully
+2025-07-03 15:40:22 - File monitoring stopped by user
+2025-07-03 15:44:08 - Starting file monitoring...
+2025-07-03 15:44:08 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:44:08 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:44:08 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:44:08 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:44:09 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:44:09 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:44:09 - Both files are available, starting comparison...
+2025-07-03 15:44:09 - Starting optimized file comparison...
+2025-07-03 15:44:09 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:44:09 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:44:09 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:44:09 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:44:09 - Failed to read one or both files
+2025-07-03 15:44:09 - Function compare_files took 0.00 seconds
+2025-07-03 15:44:09 - File comparison failed
+2025-07-03 15:44:09 - File monitoring started successfully
+2025-07-03 15:44:27 - File monitoring stopped by user
+2025-07-03 15:44:28 - Starting file monitoring...
+2025-07-03 15:44:28 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:44:28 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:44:28 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:44:28 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:44:29 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:44:29 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:44:29 - Both files are available, starting comparison...
+2025-07-03 15:44:29 - Starting optimized file comparison...
+2025-07-03 15:44:29 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:44:29 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:44:29 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:44:29 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:44:29 - Failed to read one or both files
+2025-07-03 15:44:29 - Function compare_files took 0.00 seconds
+2025-07-03 15:44:29 - File comparison failed
+2025-07-03 15:44:29 - File monitoring started successfully
+2025-07-03 15:45:29 - Periodic check for files...
+2025-07-03 15:45:29 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:45:29 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:45:30 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:45:30 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:45:30 - Both files are available, starting comparison...
+2025-07-03 15:45:30 - Starting optimized file comparison...
+2025-07-03 15:45:30 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:45:30 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:45:30 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:45:30 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:45:30 - Failed to read one or both files
+2025-07-03 15:45:30 - Function compare_files took 0.00 seconds
+2025-07-03 15:45:30 - File comparison failed
+2025-07-03 15:45:33 - File monitoring stopped by user
+2025-07-03 15:45:35 - Starting file monitoring...
+2025-07-03 15:45:35 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:45:35 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:45:35 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:45:35 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:45:36 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:45:36 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:45:36 - Both files are available, starting comparison...
+2025-07-03 15:45:36 - Starting optimized file comparison...
+2025-07-03 15:45:36 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:45:36 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:45:36 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:45:36 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:45:36 - Failed to read one or both files
+2025-07-03 15:45:36 - Function compare_files took 0.00 seconds
+2025-07-03 15:45:36 - File comparison failed
+2025-07-03 15:45:36 - File monitoring started successfully
+2025-07-03 15:45:43 - File monitoring stopped by user
+2025-07-03 15:45:44 - Starting file monitoring...
+2025-07-03 15:45:44 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:45:44 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:45:44 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:45:44 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:45:45 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:45:45 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:45:45 - Both files are available, starting comparison...
+2025-07-03 15:45:45 - Starting optimized file comparison...
+2025-07-03 15:45:45 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:45:45 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:45:45 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:45:45 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:45:45 - Failed to read one or both files
+2025-07-03 15:45:45 - Function compare_files took 0.00 seconds
+2025-07-03 15:45:45 - File comparison failed
+2025-07-03 15:45:45 - File monitoring started successfully
+2025-07-03 15:45:55 - File monitoring stopped by user
+2025-07-03 15:46:55 - Starting file monitoring...
+2025-07-03 15:46:55 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:46:55 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:46:55 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:46:55 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:46:56 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:46:56 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:46:56 - Both files are available, starting comparison...
+2025-07-03 15:46:56 - Starting optimized file comparison...
+2025-07-03 15:46:56 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:46:56 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:46:56 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:46:56 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:46:56 - Failed to read one or both files
+2025-07-03 15:46:56 - Function compare_files took 0.01 seconds
+2025-07-03 15:46:56 - File comparison failed
+2025-07-03 15:46:56 - File monitoring started successfully
+2025-07-03 15:48:06 - File monitoring stopped by user
+2025-07-03 15:48:07 - Starting file monitoring...
+2025-07-03 15:48:07 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:48:07 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:48:07 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:48:07 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:48:08 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:48:08 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:48:08 - Both files are available, starting comparison...
+2025-07-03 15:48:08 - Starting optimized file comparison...
+2025-07-03 15:48:08 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:48:08 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:48:08 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:48:08 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:48:08 - Failed to read one or both files
+2025-07-03 15:48:08 - Function compare_files took 0.01 seconds
+2025-07-03 15:48:08 - File comparison failed
+2025-07-03 15:48:08 - File monitoring started successfully
+2025-07-03 15:50:00 - File monitoring stopped by user
+2025-07-03 15:50:01 - Starting file monitoring...
+2025-07-03 15:50:01 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:50:01 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:50:01 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:50:01 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:50:02 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:50:02 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:50:02 - Both files are available, starting comparison...
+2025-07-03 15:50:02 - Starting optimized file comparison...
+2025-07-03 15:50:02 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:50:02 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:50:02 - Error reading file ('V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\SOD\\TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx', 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\Merged files\\Manual\\TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx'): expected str, bytes or os.PathLike object, not tuple
+2025-07-03 15:50:02 - Function read_excel_file took 0.00 seconds
+2025-07-03 15:50:02 - Failed to read one or both files
+2025-07-03 15:50:02 - Function compare_files took 0.00 seconds
+2025-07-03 15:50:02 - File comparison failed
+2025-07-03 15:50:02 - File monitoring started successfully
+2025-07-03 15:54:41 - File monitoring stopped by user
+2025-07-03 15:54:42 - Starting file monitoring...
+2025-07-03 15:54:42 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:54:42 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:54:42 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:54:42 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:54:43 - STOCK file status: SOD=True, Manual=True
+2025-07-03 15:54:43 - INDEX file status: SOD=True, Manual=True
+2025-07-03 15:54:43 - Files are available, starting comparison...
+2025-07-03 15:54:43 - Processing STOCK files...
+2025-07-03 15:54:43 - Starting optimized file comparison...
+2025-07-03 15:54:43 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:54:50 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 15:54:50 - Function read_excel_file took 6.63 seconds
+2025-07-03 15:54:50 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 15:54:55 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 15:54:55 - Function read_excel_file took 5.40 seconds
+2025-07-03 15:54:56 - Function prepare_dataframes took 0.25 seconds
+2025-07-03 15:54:56 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 15:54:56 - Found 0 differences out of 55801 common records
+2025-07-03 15:55:15 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 15:55:15 - Function write_excel_optimized took 19.08 seconds
+2025-07-03 15:55:15 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 15:55:15 - Function compare_files took 31.48 seconds
+2025-07-03 15:55:15 - STOCK file comparison completed successfully in 31.5 seconds
+2025-07-03 15:55:15 - Processing INDEX files...
+2025-07-03 15:55:15 - Starting optimized file comparison...
+2025-07-03 15:55:15 - Reading file: TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:55:15 - Successfully read 1590 rows and 31 columns from TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 15:55:15 - Function read_excel_file took 0.61 seconds
+2025-07-03 15:55:15 - Reading file: TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx
+2025-07-03 15:55:16 - Successfully read 1590 rows and 31 columns from TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx
+2025-07-03 15:55:16 - Function read_excel_file took 0.59 seconds
+2025-07-03 15:55:16 - Error comparing files: 'Index'
+2025-07-03 15:55:16 - Function compare_files took 1.22 seconds
+2025-07-03 15:55:16 - INDEX file comparison failed
+2025-07-03 15:55:16 - File monitoring started successfully
+2025-07-03 16:00:16 - Periodic check for files...
+2025-07-03 16:00:16 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:00:16 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20250702.xlsx
+2025-07-03 16:00:17 - STOCK file status: SOD=True, Manual=True
+2025-07-03 16:00:17 - INDEX file status: SOD=True, Manual=True
+2025-07-03 16:00:17 - Files are available, starting comparison...
+2025-07-03 16:00:17 - Processing STOCK files...
+2025-07-03 16:00:17 - Starting optimized file comparison...
+2025-07-03 16:00:17 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:00:21 - File monitoring stopped by user
+2025-07-03 16:19:09 - Starting file monitoring...
+2025-07-03 16:19:09 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:19:09 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:19:09 - STOCK file status: SOD=True, Manual=True
+2025-07-03 16:19:09 - Files are available, starting comparison...
+2025-07-03 16:19:09 - Starting optimized file comparison...
+2025-07-03 16:19:09 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:19:15 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:19:15 - Function read_excel_file took 6.43 seconds
+2025-07-03 16:19:15 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 16:19:20 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 16:19:20 - Function read_excel_file took 5.11 seconds
+2025-07-03 16:19:21 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 16:19:21 - Function find_differences_vectorized took 0.07 seconds
+2025-07-03 16:19:21 - Found 0 differences out of 55801 common records
+2025-07-03 16:19:40 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 16:19:40 - Function write_excel_optimized took 18.84 seconds
+2025-07-03 16:19:40 - Successfully created comparison report: GIS_Stock_Changes_20250703.xlsx
+2025-07-03 16:19:40 - Function compare_files took 30.71 seconds
+2025-07-03 16:19:40 - File comparison completed successfully in 30.7 seconds
+2025-07-03 16:19:40 - File monitoring started successfully
+2025-07-03 16:19:42 - File monitoring stopped by user
+2025-07-03 16:20:18 - Starting file monitoring...
+2025-07-03 16:20:18 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:20:18 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:20:18 - STOCK file status: SOD=True, Manual=True
+2025-07-03 16:20:18 - Files are available, starting comparison...
+2025-07-03 16:20:18 - Starting optimized file comparison...
+2025-07-03 16:20:18 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:20:24 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20250702.xlsx
+2025-07-03 16:20:24 - Function read_excel_file took 6.12 seconds
+2025-07-03 16:20:24 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 16:20:29 - Successfully read 55801 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20250703.xlsx
+2025-07-03 16:20:29 - Function read_excel_file took 5.04 seconds
+2025-07-03 16:20:29 - Function prepare_dataframes took 0.28 seconds
+2025-07-03 16:20:29 - Function find_differences_vectorized took 0.08 seconds
+2025-07-03 16:20:29 - Found 0 differences out of 55801 common records
+2025-07-03 16:20:48 - Successfully created comparison report: GIS Morning Stock changes_20250703.xlsx
+2025-07-03 16:20:48 - Function write_excel_optimized took 19.04 seconds
+2025-07-03 16:20:48 - Successfully created comparison report: GIS Morning Stock changes_20250703.xlsx
+2025-07-03 16:20:48 - Function compare_files took 30.57 seconds
+2025-07-03 16:20:48 - File comparison completed successfully in 30.6 seconds
+2025-07-03 16:20:49 - File monitoring started successfully
+2025-07-03 16:20:51 - File monitoring stopped by user

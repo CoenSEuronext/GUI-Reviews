@@ -150,3 +150,285 @@
 2025-07-02 17:19:16 - Successfully created comparison report: GIS Morning stock changes.xlsx
 2025-07-02 17:19:16 - Function compare_files took 101.58 seconds
 2025-07-02 17:19:16 - File comparison completed successfully in 101.6 seconds
+2025-07-03 10:21:11 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 10:21:11 - Starting optimized file comparison...
+2025-07-03 10:21:11 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 10:21:16 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 10:21:16 - Function read_excel_file took 5.12 seconds
+2025-07-03 10:21:16 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 10:21:21 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 10:21:21 - Function read_excel_file took 4.64 seconds
+2025-07-03 10:21:21 - Function prepare_dataframes took 0.26 seconds
+2025-07-03 10:21:21 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 10:21:21 - Found 2 differences out of 54624 common records
+2025-07-03 10:22:56 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-07-03 10:22:56 - Function write_excel_optimized took 94.34 seconds
+2025-07-03 10:22:56 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-07-03 10:22:56 - Function compare_files took 104.48 seconds
+2025-07-03 10:22:56 - File comparison completed successfully in 104.5 seconds
+2025-07-03 10:26:46 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 10:26:46 - Starting optimized file comparison...
+2025-07-03 10:26:46 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 10:26:51 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 10:26:51 - Function read_excel_file took 4.92 seconds
+2025-07-03 10:26:51 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 10:26:56 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 10:26:56 - Function read_excel_file took 4.61 seconds
+2025-07-03 10:26:56 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 10:26:56 - Function find_differences_vectorized took 0.11 seconds
+2025-07-03 10:26:56 - Found 2 differences out of 54624 common records
+2025-07-03 10:28:29 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-07-03 10:28:29 - Function write_excel_optimized took 93.39 seconds
+2025-07-03 10:28:29 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-07-03 10:28:29 - Function compare_files took 103.28 seconds
+2025-07-03 10:28:29 - File comparison completed successfully in 103.3 seconds
+2025-07-03 11:41:49 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 11:41:49 - Starting optimized file comparison...
+2025-07-03 11:41:49 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 11:41:54 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 11:41:54 - Function read_excel_file took 5.12 seconds
+2025-07-03 11:41:54 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 11:41:58 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 11:41:58 - Function read_excel_file took 4.55 seconds
+2025-07-03 11:41:59 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 11:41:59 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 11:41:59 - Found 2 differences out of 54624 common records
+2025-07-03 11:43:20 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-07-03 11:43:20 - Function write_excel_optimized took 81.56 seconds
+2025-07-03 11:43:20 - Successfully created comparison report: GIS Morning stock changes.xlsx
+2025-07-03 11:43:20 - Function compare_files took 91.60 seconds
+2025-07-03 11:43:20 - File comparison completed successfully in 91.6 seconds
+2025-07-03 13:03:33 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:04:14 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:04:14 - Starting optimized file comparison...
+2025-07-03 13:04:14 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:04:19 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:04:19 - Function read_excel_file took 4.95 seconds
+2025-07-03 13:04:19 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:04:23 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:04:23 - Function read_excel_file took 4.54 seconds
+2025-07-03 13:04:23 - Function prepare_dataframes took 0.26 seconds
+2025-07-03 13:04:23 - Function find_differences_vectorized took 0.11 seconds
+2025-07-03 13:04:23 - Found 2 differences out of 54624 common records
+2025-07-03 13:04:24 - Error writing Excel file: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Check files output\\GIS Morning Stock changes.xlsx'
+2025-07-03 13:04:24 - Function write_excel_optimized took 0.06 seconds
+2025-07-03 13:04:24 - Function compare_files took 9.93 seconds
+2025-07-03 13:04:24 - File comparison failed
+2025-07-03 13:04:34 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:04:34 - Starting optimized file comparison...
+2025-07-03 13:04:34 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:04:39 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:04:39 - Function read_excel_file took 4.92 seconds
+2025-07-03 13:04:39 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:04:44 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:04:44 - Function read_excel_file took 4.53 seconds
+2025-07-03 13:04:44 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 13:04:44 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 13:04:44 - Found 2 differences out of 54624 common records
+2025-07-03 13:06:05 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:06:05 - Function write_excel_optimized took 80.81 seconds
+2025-07-03 13:06:05 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:06:05 - Function compare_files took 90.62 seconds
+2025-07-03 13:06:05 - File comparison completed successfully in 90.6 seconds
+2025-07-03 13:10:00 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:10:00 - Starting optimized file comparison...
+2025-07-03 13:10:00 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:10:05 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:10:05 - Function read_excel_file took 4.90 seconds
+2025-07-03 13:10:05 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:10:09 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:10:09 - Function read_excel_file took 4.47 seconds
+2025-07-03 13:10:09 - Function prepare_dataframes took 0.25 seconds
+2025-07-03 13:10:09 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 13:10:09 - Found 2 differences out of 54624 common records
+2025-07-03 13:10:09 - Error comparing files: name 'write_excel_optimized' is not defined
+2025-07-03 13:10:09 - Function compare_files took 9.73 seconds
+2025-07-03 13:10:09 - File comparison failed
+2025-07-03 13:10:30 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:10:30 - Starting optimized file comparison...
+2025-07-03 13:10:30 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:10:35 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:10:35 - Function read_excel_file took 4.84 seconds
+2025-07-03 13:10:35 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:10:40 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:10:40 - Function read_excel_file took 4.60 seconds
+2025-07-03 13:10:40 - Function prepare_dataframes took 0.26 seconds
+2025-07-03 13:10:40 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 13:10:40 - Found 2 differences out of 54624 common records
+2025-07-03 13:10:58 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:10:58 - Function write_excel_optimized took 18.47 seconds
+2025-07-03 13:10:58 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:10:58 - Function compare_files took 28.28 seconds
+2025-07-03 13:10:58 - File comparison completed successfully in 28.3 seconds
+2025-07-03 13:11:46 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:11:46 - Starting optimized file comparison...
+2025-07-03 13:11:46 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:11:51 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:11:51 - Function read_excel_file took 4.95 seconds
+2025-07-03 13:11:51 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:11:56 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:11:56 - Function read_excel_file took 5.05 seconds
+2025-07-03 13:11:56 - Function prepare_dataframes took 0.28 seconds
+2025-07-03 13:11:56 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 13:11:56 - Found 2 differences out of 54624 common records
+2025-07-03 13:12:16 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:12:16 - Function write_excel_optimized took 19.58 seconds
+2025-07-03 13:12:16 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:12:16 - Function compare_files took 29.99 seconds
+2025-07-03 13:12:16 - File comparison completed successfully in 30.0 seconds
+2025-07-03 13:12:41 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:12:41 - Starting optimized file comparison...
+2025-07-03 13:12:41 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:12:58 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:12:58 - Starting optimized file comparison...
+2025-07-03 13:12:58 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:13:03 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:13:03 - Function read_excel_file took 4.87 seconds
+2025-07-03 13:13:03 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:13:07 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:13:07 - Function read_excel_file took 4.52 seconds
+2025-07-03 13:13:08 - Function prepare_dataframes took 0.23 seconds
+2025-07-03 13:13:08 - Function find_differences_vectorized took 0.12 seconds
+2025-07-03 13:13:08 - Found 2 differences out of 54624 common records
+2025-07-03 13:13:26 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:13:26 - Function write_excel_optimized took 18.55 seconds
+2025-07-03 13:13:26 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:13:26 - Function compare_files took 28.29 seconds
+2025-07-03 13:13:26 - File comparison completed successfully in 28.3 seconds
+2025-07-03 13:18:09 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:18:09 - Starting optimized file comparison...
+2025-07-03 13:18:09 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:18:15 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:18:15 - Function read_excel_file took 5.10 seconds
+2025-07-03 13:18:15 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:18:19 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:18:19 - Function read_excel_file took 4.59 seconds
+2025-07-03 13:18:19 - Function prepare_dataframes took 0.25 seconds
+2025-07-03 13:18:20 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 13:18:20 - Found 2 differences out of 54624 common records
+2025-07-03 13:18:20 - Error comparing files: name 'write_excel_optimized' is not defined
+2025-07-03 13:18:20 - Function compare_files took 10.06 seconds
+2025-07-03 13:18:20 - File comparison failed
+2025-07-03 13:18:33 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:18:33 - Starting optimized file comparison...
+2025-07-03 13:18:33 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:18:38 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:18:38 - Function read_excel_file took 4.93 seconds
+2025-07-03 13:18:38 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:18:43 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:18:43 - Function read_excel_file took 4.59 seconds
+2025-07-03 13:18:43 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 13:18:43 - Function find_differences_vectorized took 0.12 seconds
+2025-07-03 13:18:43 - Found 2 differences out of 54624 common records
+2025-07-03 13:19:03 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:19:03 - Function write_excel_optimized took 19.63 seconds
+2025-07-03 13:19:03 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:19:03 - Function compare_files took 29.53 seconds
+2025-07-03 13:19:03 - File comparison completed successfully in 29.5 seconds
+2025-07-03 13:20:00 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:20:00 - Starting optimized file comparison...
+2025-07-03 13:20:00 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:20:05 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:20:05 - Function read_excel_file took 4.84 seconds
+2025-07-03 13:20:05 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:20:09 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:20:09 - Function read_excel_file took 4.53 seconds
+2025-07-03 13:20:09 - Function prepare_dataframes took 0.23 seconds
+2025-07-03 13:20:10 - Function find_differences_vectorized took 0.12 seconds
+2025-07-03 13:20:10 - Found 2 differences out of 54624 common records
+2025-07-03 13:20:29 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:20:29 - Function write_excel_optimized took 19.60 seconds
+2025-07-03 13:20:29 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:20:29 - Function compare_files took 29.33 seconds
+2025-07-03 13:20:29 - File comparison completed successfully in 29.3 seconds
+2025-07-03 13:21:56 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:21:56 - Starting optimized file comparison...
+2025-07-03 13:21:56 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:22:01 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:22:01 - Function read_excel_file took 4.94 seconds
+2025-07-03 13:22:01 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:22:05 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:22:05 - Function read_excel_file took 4.55 seconds
+2025-07-03 13:22:06 - Function prepare_dataframes took 0.23 seconds
+2025-07-03 13:22:06 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 13:22:06 - Found 2 differences out of 54624 common records
+2025-07-03 13:22:06 - Error comparing files: name 'write_excel_optimized' is not defined
+2025-07-03 13:22:06 - Function compare_files took 9.84 seconds
+2025-07-03 13:22:06 - File comparison failed
+2025-07-03 13:22:18 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 13:22:18 - Starting optimized file comparison...
+2025-07-03 13:22:18 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:22:23 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 13:22:23 - Function read_excel_file took 5.06 seconds
+2025-07-03 13:22:23 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:22:28 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 13:22:28 - Function read_excel_file took 4.64 seconds
+2025-07-03 13:22:28 - Function prepare_dataframes took 0.23 seconds
+2025-07-03 13:22:28 - Function find_differences_vectorized took 0.09 seconds
+2025-07-03 13:22:28 - Found 2 differences out of 54624 common records
+2025-07-03 13:22:46 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:22:46 - Function write_excel_optimized took 18.13 seconds
+2025-07-03 13:22:46 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 13:22:46 - Function compare_files took 28.19 seconds
+2025-07-03 13:22:46 - File comparison completed successfully in 28.2 seconds
+2025-07-03 14:06:00 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 14:06:00 - Starting optimized file comparison...
+2025-07-03 14:06:00 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:06:06 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:06:06 - Function read_excel_file took 5.22 seconds
+2025-07-03 14:06:06 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:06:10 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:06:10 - Function read_excel_file took 4.63 seconds
+2025-07-03 14:06:10 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 14:06:11 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 14:06:11 - Found 2 differences out of 54624 common records
+2025-07-03 14:06:11 - Error writing Excel file: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Check files output\\GIS Morning Stock changes.xlsx'
+2025-07-03 14:06:11 - Function write_excel_optimized took 0.07 seconds
+2025-07-03 14:06:11 - Function compare_files took 10.27 seconds
+2025-07-03 14:06:11 - File comparison failed
+2025-07-03 14:06:35 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 14:06:35 - Starting optimized file comparison...
+2025-07-03 14:06:35 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:06:40 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:06:40 - Function read_excel_file took 5.07 seconds
+2025-07-03 14:06:40 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:06:45 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:06:45 - Function read_excel_file took 4.68 seconds
+2025-07-03 14:06:45 - Function prepare_dataframes took 0.23 seconds
+2025-07-03 14:06:45 - Function find_differences_vectorized took 0.11 seconds
+2025-07-03 14:06:45 - Found 2 differences out of 54624 common records
+2025-07-03 14:07:03 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 14:07:03 - Function write_excel_optimized took 18.28 seconds
+2025-07-03 14:07:03 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 14:07:03 - Function compare_files took 28.38 seconds
+2025-07-03 14:07:03 - File comparison completed successfully in 28.4 seconds
+2025-07-03 14:08:05 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 14:08:05 - Starting optimized file comparison...
+2025-07-03 14:08:05 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:08:10 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:08:10 - Function read_excel_file took 4.96 seconds
+2025-07-03 14:08:10 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:08:15 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:08:15 - Function read_excel_file took 4.54 seconds
+2025-07-03 14:08:15 - Function prepare_dataframes took 0.25 seconds
+2025-07-03 14:08:15 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 14:08:15 - Found 2 differences out of 54624 common records
+2025-07-03 14:08:15 - Error comparing files: name 'write_excel_optimized' is not defined
+2025-07-03 14:08:15 - Function compare_files took 9.87 seconds
+2025-07-03 14:08:15 - File comparison failed
+2025-07-03 14:08:54 - Starting optimized GIS Morning Stock Changes comparison
+2025-07-03 14:08:54 - Starting optimized file comparison...
+2025-07-03 14:08:54 - Reading file: EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:08:59 - Successfully read 54624 rows and 30 columns from EU_MANUAL_US_NXTD_STOCK_MERGED_20250605.xlsx
+2025-07-03 14:08:59 - Function read_excel_file took 4.93 seconds
+2025-07-03 14:08:59 - Reading file: EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:09:04 - Successfully read 54624 rows and 30 columns from EU_SOD_US_SOD_STOCK_MERGED_20250606.xlsx
+2025-07-03 14:09:04 - Function read_excel_file took 4.57 seconds
+2025-07-03 14:09:04 - Function prepare_dataframes took 0.24 seconds
+2025-07-03 14:09:04 - Function find_differences_vectorized took 0.10 seconds
+2025-07-03 14:09:04 - Found 2 differences out of 54624 common records
+2025-07-03 14:09:23 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 14:09:23 - Function write_excel_optimized took 18.94 seconds
+2025-07-03 14:09:23 - Successfully created comparison report: GIS Morning Stock changes.xlsx
+2025-07-03 14:09:23 - Function compare_files took 28.79 seconds
+2025-07-03 14:09:23 - File comparison completed successfully in 28.8 seconds
