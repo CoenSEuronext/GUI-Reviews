@@ -1,0 +1,10 @@
+2025-07-17 14:36:26,242 - werkzeug - WARNING -  * Debugger is active!
+2025-07-17 14:36:26,242 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-17 14:36:27,603 - Review.reviews.frecp_review - INFO - Loading EOD data...
+2025-07-17 14:36:30,515 - Review.reviews.frecp_review - INFO - Loading reference data...
+2025-07-17 14:36:30,865 - Review.reviews.frecp_review - INFO - Selecting top 20 companies with lowest FFMC...
+2025-07-17 14:36:30,878 - Review.reviews.frecp_review - INFO - Saving FRECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRECP_df_20250717_143630.xlsx
+2025-07-17 14:36:31,146 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 14:36:31] "POST /calculate HTTP/1.1" 200 -
+2025-07-17 14:43:19,472 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frecp_review.py', reloading
+2025-07-17 14:43:19,482 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frecp_review.py', reloading
+2025-07-17 14:43:19,482 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frecp_review.py', reloading

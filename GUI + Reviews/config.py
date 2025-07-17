@@ -1,6 +1,6 @@
 # config.py
 # Network paths
-DLF_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
+DLF_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
 DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
 
@@ -95,6 +95,11 @@ INDEX_CONFIGS = {
         "index": "LC1EP",
         "isin": "FR0013522554",
         "output_key": "lc100_path"
+    },
+    "FRECP": {
+        "index": "FRECP",
+        "isin": "FR0013349057",
+        "output_key": "frecp_path"
     }
     # Add new indices here following the same pattern
 }

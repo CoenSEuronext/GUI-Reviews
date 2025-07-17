@@ -1,0 +1,27 @@
+2025-07-17 11:56:14,682 - werkzeug - WARNING -  * Debugger is active!
+2025-07-17 11:56:14,692 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-17 11:56:14,732 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-07-17 11:56:17,174 - Review.reviews.aexew_review - ERROR - Error during review calculation: "['Mnemo'] not found in axis"
+2025-07-17 11:56:17,184 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 26, in run_aexew_review
+    index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\data_loader.py", line 43, in load_eod_data
+    ).rename(columns={'Curr': 'Index Curr'}).drop(columns=['Mnemo'])
+                                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['Mnemo'] not found in axis"
+
+2025-07-17 11:56:17,199 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 11:56:17] "POST /calculate HTTP/1.1" 200 -
+2025-07-17 12:00:08,870 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-07-17 12:00:08,870 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

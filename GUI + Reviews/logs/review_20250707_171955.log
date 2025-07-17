@@ -1,0 +1,19 @@
+2025-07-07 17:19:56,393 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.199.43.197:5000
+2025-07-07 17:19:56,393 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 17:19:56,405 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:19:59,707 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:23:37,843 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:23:40,937 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:25:18,756 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:25:40,083 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:25:42,114 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:25:48,235 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 17:59:28,337 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 18:07:06,904 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 18:09:17,336 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 18:09:21,356 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-07 18:09:35,544 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-08 17:33:43,597 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

@@ -34,6 +34,28 @@ def load_eod_data(date, co_date, area, area2, dlf_folder):
     index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
     stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
     
+    # Add 'Index Curr' column by merging with index_eod_df
+    stock_eod_df = stock_eod_df.merge(
+        index_eod_df[['Mnemo', 'Curr']], 
+        left_on='Index', 
+        right_on='Mnemo', 
+        how='left',
+        suffixes=('', '_index')  # Keep original Mnemo, add suffix to index Mnemo
+    )
+    # Rename the 'Curr' column to 'Index Curr' and drop the temporary Mnemo column
+    stock_eod_df = stock_eod_df.rename(columns={'Curr': 'Index Curr'}).drop(columns=['Mnemo_index'])
+    
+    # Add 'Index Curr' column by merging with index_eod_df
+    stock_co_df = stock_co_df.merge(
+        index_eod_df[['Mnemo', 'Curr']], 
+        left_on='Index', 
+        right_on='Mnemo', 
+        how='left',
+        suffixes=('', '_index')  # Keep original Mnemo, add suffix to index Mnemo
+    )
+    # Rename the 'Curr' column to 'Index Curr' and drop the temporary Mnemo column
+    stock_co_df = stock_co_df.rename(columns={'Curr': 'Index Curr'}).drop(columns=['Mnemo_index'])
+    
     return index_eod_df, stock_eod_df, stock_co_df
 
 def load_reference_data(current_data_folder, required_files=None, universe_name=None, sheet_names=None):
