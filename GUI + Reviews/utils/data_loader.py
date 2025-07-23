@@ -156,6 +156,10 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         'euronext_world': {
             'filename': 'Euronext World.xlsx',
             'loader': lambda f: pd.read_excel(f)
+        },
+        'sbf_120': {
+            'filename': 'SBF120.xlsx',
+            'loader': lambda f: pd.read_excel(f, header=1)
         }
     }
     

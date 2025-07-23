@@ -131,7 +131,7 @@ def run_frecp_review(date, co_date, effective_date, index="FRECP", isin="FR00133
 
         # Perform Inclusion/Exclusion Analysis
         analysis_results = inclusion_exclusion_analysis(
-            selection_df, 
+            bottom_20_df, 
             stock_eod_df, 
             index, 
             isin_column='ISIN code'

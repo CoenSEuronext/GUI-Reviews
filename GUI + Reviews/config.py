@@ -100,6 +100,16 @@ INDEX_CONFIGS = {
         "index": "FRECP",
         "isin": "FR0013349057",
         "output_key": "frecp_path"
+    },
+    "FRN4P": {
+        "index": "FRN4P",
+        "isin": "FR0013354156",
+        "output_key": "frn4p_path"
+    },
+    "FR20P": {
+        "index": "FR20P",
+        "isin": "FR0013355948",
+        "output_key": "fr20p_path"
     }
     # Add new indices here following the same pattern
 }

@@ -37,4 +37,4 @@ Change ICB in AERDP
 
 Update all the names to follow the headers from dataiku + match it with inclusion_exclusion:
 
-Company	  ISIN Code	MIC	Number of Shares	Free Float	Capping Factor	Effective Date of Review	Currency
+- Fix Inclusion Exclusion -- Make a final df just to create the inclusion exclusion pages.
