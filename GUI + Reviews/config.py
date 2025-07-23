@@ -135,6 +135,11 @@ INDEX_CONFIGS = {
         "index": "EFMEP",
         "isin": "NL0012730451",
         "output_key": "efmep_path"
+    },
+    "ERI5P": {
+        "index": "ERI5P",
+        "isin": "NL0013217730",
+        "output_key": "eri5p_path"
     }
     # Add new indices here following the same pattern
 }

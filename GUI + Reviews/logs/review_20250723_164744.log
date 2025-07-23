@@ -1,0 +1,78 @@
+2025-07-23 16:47:44,800 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 16:47:44,800 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-23 16:47:44,829 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-07-23 16:47:48,619 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-07-23 16:47:50,038 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-07-23 16:47:50,053 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+285          VERBUND AG                 10.000000  4.490764e+09                1                        Excluded: 100 days avg turnover < €22M
+98       EDP RENOVAVEIS                 10.000000  2.721125e+09                2  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+222                RELX                  9.943431  9.337019e+10                3                                                              
+174             KPN KON                  9.943431  1.611962e+10                4                                                              
+277  UNIBAIL-RODAMCO-WE                  9.943431  9.583460e+09                5                                                              
+104              ENDESA                  9.943431  8.725176e+09                6                                                              
+216           QIAGEN NV                  9.943431  8.036393e+09                7                                                              
+170           KLEPIERRE                  9.943431  7.319263e+09                8                        Excluded: 100 days avg turnover < €22M
+120          FORTUM OYJ                  9.943431  6.763131e+09                9                                                              
+169       KION GROUP AG                  9.943431  2.946984e+09               10  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+2025-07-23 16:47:50,057 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                Company  New Sustainability Score          FFMC  Eligible_Ranking
+222                RELX                  9.943431  9.337019e+10               1.0
+174             KPN KON                  9.943431  1.611962e+10               2.0
+277  UNIBAIL-RODAMCO-WE                  9.943431  9.583460e+09               3.0
+104              ENDESA                  9.943431  8.725176e+09               4.0
+216           QIAGEN NV                  9.943431  8.036393e+09               5.0
+120          FORTUM OYJ                  9.943431  6.763131e+09               6.0
+124   FRESENIUS SE & CO                  9.859489  1.822777e+10               7.0
+237              SANOFI                  9.750000  1.018128e+11               8.0
+248   SIEMENS ENERGY AG                  9.750000  5.550806e+10               9.0
+275                 UCB                  9.750000  1.957748e+10              10.0
+2025-07-23 16:47:50,058 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-07-23 16:47:50,058 - Review.reviews.eri5p_review - INFO - Total excluded: 168 companies
+2025-07-23 16:47:50,058 - Review.reviews.eri5p_review - INFO - Eligible for selection: 132 companies
+2025-07-23 16:47:50,058 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-07-23 16:47:50,066 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20250723_164750.xlsx
+2025-07-23 16:47:50,348 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 16:47:50] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 16:52:30,242 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-07-23 16:52:32,196 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-07-23 16:52:33,441 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-07-23 16:52:33,447 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+285          VERBUND AG                 10.000000  4.490764e+09                1                        Excluded: 100 days avg turnover < €22M
+98       EDP RENOVAVEIS                 10.000000  2.721125e+09                2  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+222                RELX                  9.943431  9.337019e+10                3                                                              
+174             KPN KON                  9.943431  1.611962e+10                4                                                              
+277  UNIBAIL-RODAMCO-WE                  9.943431  9.583460e+09                5                                                              
+104              ENDESA                  9.943431  8.725176e+09                6                                                              
+216           QIAGEN NV                  9.943431  8.036393e+09                7                                                              
+170           KLEPIERRE                  9.943431  7.319263e+09                8                        Excluded: 100 days avg turnover < €22M
+120          FORTUM OYJ                  9.943431  6.763131e+09                9                                                              
+169       KION GROUP AG                  9.943431  2.946984e+09               10  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+2025-07-23 16:52:33,451 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                Company  New Sustainability Score          FFMC  Eligible_Ranking
+222                RELX                  9.943431  9.337019e+10               1.0
+174             KPN KON                  9.943431  1.611962e+10               2.0
+277  UNIBAIL-RODAMCO-WE                  9.943431  9.583460e+09               3.0
+104              ENDESA                  9.943431  8.725176e+09               4.0
+216           QIAGEN NV                  9.943431  8.036393e+09               5.0
+120          FORTUM OYJ                  9.943431  6.763131e+09               6.0
+124   FRESENIUS SE & CO                  9.859489  1.822777e+10               7.0
+237              SANOFI                  9.750000  1.018128e+11               8.0
+248   SIEMENS ENERGY AG                  9.750000  5.550806e+10               9.0
+275                 UCB                  9.750000  1.957748e+10              10.0
+2025-07-23 16:52:33,451 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-07-23 16:52:33,452 - Review.reviews.eri5p_review - INFO - Total excluded: 168 companies
+2025-07-23 16:52:33,452 - Review.reviews.eri5p_review - INFO - Eligible for selection: 132 companies
+2025-07-23 16:52:33,452 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-07-23 16:52:33,458 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20250723_165233.xlsx
+2025-07-23 16:52:33,638 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 16:52:33] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 16:52:59,967 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:52:59,967 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:52:59,967 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:53:00,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:53:00,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:53:00,260 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:53:00,261 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:53:00,366 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\types.py', reloading
+2025-07-23 16:53:00,404 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-07-23 16:53:00,407 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading

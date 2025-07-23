@@ -26,6 +26,7 @@ from .reviews.ez60p_review import run_ez60p_review
 from .reviews.ez15p_review import run_ez15p_review
 from .reviews.ezn1p_review import run_ezn1p_review
 from .reviews.efmep_review import run_efmep_review
+from .reviews.eri5p_review import run_eri5p_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -54,7 +55,8 @@ REVIEW_FUNCTIONS = {
     "EZ60P": run_ez60p_review,
     "EZ15P": run_ez15p_review,
     "EZN1P": run_ezn1p_review,
-    "EFMEP": run_efmep_review
+    "EFMEP": run_efmep_review,
+    "ERI5P": run_eri5p_review
 }
 
 def run_review(review_type, **kwargs):

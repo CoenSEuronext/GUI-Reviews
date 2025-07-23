@@ -1,0 +1,5 @@
+2025-07-23 16:13:58,994 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 16:13:58,994 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-23 16:13:59,234 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare_eia_files.py', reloading
+2025-07-23 16:13:59,254 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\__init__.py', reloading
+2025-07-23 16:13:59,271 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\subprocess.py', reloading
