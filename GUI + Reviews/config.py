@@ -110,6 +110,11 @@ INDEX_CONFIGS = {
         "index": "FR20P",
         "isin": "FR0013355948",
         "output_key": "fr20p_path"
+    },
+    "EZ40P": {
+        "index": "EZ40P",
+        "isin": "NL0012731871",
+        "output_key": "ez40p_path"
     }
     # Add new indices here following the same pattern
 }
