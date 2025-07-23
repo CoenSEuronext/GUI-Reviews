@@ -1,0 +1,11 @@
+2025-07-23 14:22:05,632 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 14:22:05,642 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-23 14:22:36,902 - Review.reviews.ez15p_review - INFO - Loading EOD data...
+2025-07-23 14:22:40,667 - Review.reviews.ez15p_review - INFO - Loading reference data...
+2025-07-23 14:22:41,746 - Review.reviews.ez15p_review - INFO - Initial universe size: 300 companies
+2025-07-23 14:22:41,746 - Review.reviews.ez15p_review - INFO - After turnover filter (>= 10M EUR): 232 companies remaining (68 excluded)
+2025-07-23 14:22:41,746 - Review.reviews.ez15p_review - INFO - Selecting top 150 companies with highest FFMC...
+2025-07-23 14:22:41,760 - Review.reviews.ez15p_review - INFO - Saving EZ15P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ15P_df_20250723_142241.xlsx
+2025-07-23 14:22:41,884 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 14:22:41] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 14:24:09,163 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading
+2025-07-23 14:24:09,163 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading

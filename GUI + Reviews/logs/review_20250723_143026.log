@@ -1,0 +1,22 @@
+2025-07-23 14:30:26,442 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.199.43.197:5000
+2025-07-23 14:30:26,442 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 14:30:26,448 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-23 14:30:27,335 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 14:30:27,337 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-23 14:30:27,364 - Review.reviews.ez15p_review - INFO - Loading EOD data...
+2025-07-23 14:30:29,653 - Review.reviews.ez15p_review - INFO - Loading reference data...
+2025-07-23 14:30:30,717 - Review.reviews.ez15p_review - INFO - Initial universe size: 300 companies
+2025-07-23 14:30:30,719 - Review.reviews.ez15p_review - INFO - After turnover filter (>= 10M EUR): 232 companies remaining (68 excluded)
+2025-07-23 14:30:30,719 - Review.reviews.ez15p_review - INFO - Selecting top 150 companies with highest FFMC...
+2025-07-23 14:30:30,719 - Review.reviews.ez15p_review - INFO - Saving EZ15P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ15P_df_20250723_143030.xlsx
+2025-07-23 14:30:30,910 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 14:30:30] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 14:31:27,071 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading
+2025-07-23 14:31:27,071 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading
+2025-07-23 14:31:27,578 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-23 14:31:41,147 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-23 15:10:02,927 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-23 15:11:03,284 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-23 15:11:38,580 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

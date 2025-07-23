@@ -115,6 +115,16 @@ INDEX_CONFIGS = {
         "index": "EZ40P",
         "isin": "NL0012731871",
         "output_key": "ez40p_path"
+    },
+    "EZ60P": {
+        "index": "EZ60P",
+        "isin": "NL0012846265",
+        "output_key": "ez60p_path"
+    },
+    "EZ15P": {
+        "index": "EZ15P",
+        "isin": "NL0012949101",
+        "output_key": "ez60p_path"
     }
     # Add new indices here following the same pattern
 }
