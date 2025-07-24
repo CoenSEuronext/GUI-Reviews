@@ -1,0 +1,15 @@
+2025-07-24 16:10:44,923 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 16:10:44,926 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-24 16:10:45,575 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-07-24 16:10:46,262 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 63 companies
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 221 companies
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 0 companies
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Total excluded: 284 companies
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Eligible for selection: 16 companies
+2025-07-24 16:10:53,725 - Review.reviews.be1p_review - INFO - Selecting top 50 companies with highest FFMC from eligible companies...
+2025-07-24 16:10:53,758 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BE1P_df_20250724_161053.xlsx
+2025-07-24 16:10:54,060 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 16:10:54] "POST /calculate HTTP/1.1" 200 -
+2025-07-24 16:15:23,901 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\be1p_review.py', reloading
+2025-07-24 16:15:23,901 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\be1p_review.py', reloading

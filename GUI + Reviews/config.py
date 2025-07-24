@@ -140,6 +140,11 @@ INDEX_CONFIGS = {
         "index": "ERI5P",
         "isin": "NL0013217730",
         "output_key": "eri5p_path"
+    },
+    "BE1P": {
+        "index": "BE1P",
+        "isin": "NLIX00005388",
+        "output_key": "be1p_path"
     }
     # Add new indices here following the same pattern
 }
