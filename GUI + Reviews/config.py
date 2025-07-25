@@ -165,6 +165,11 @@ INDEX_CONFIGS = {
         "index": "ELUXP",
         "isin": "NLIX00002930",
         "output_key": "eluxp_path"
+    },
+    "ESVEP": {
+        "index": "ESVEP",
+        "isin": "NLIX00005230",
+        "output_key": "esvep_path"
     }
     # Add new indices here following the same pattern
 }

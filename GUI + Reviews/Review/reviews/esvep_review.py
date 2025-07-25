@@ -10,7 +10,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX00005982", 
+def run_esvep_review(date, co_date, effective_date, index="ESVEP", isin="NLIX00005230", 
                    area="US", area2="EU", type="STOCK", universe="fixed_basket", 
                    feed="Reuters", currency="EUR", year=None):
 
@@ -32,36 +32,38 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
             ['ff']
         )
 
-        # Luxury Goods universe
-        luxury_goods_universe = [
-            {'Company': 'FERRARI', 'ISIN': 'NL0011585146', 'MIC': 'MTAA', 'Currency': 'EUR'},
-            {'Company': 'STELLANTIS NV', 'ISIN': 'NL00150001Q9', 'MIC': 'MTAA', 'Currency': 'EUR'},
-            {'Company': 'PANDORA A/S', 'ISIN': 'DK0060252690', 'MIC': 'XCSE', 'Currency': 'DKK'},
-            {'Company': 'BMW', 'ISIN': 'DE0005190003', 'MIC': 'XETR', 'Currency': 'EUR'},
-            {'Company': 'PORSCHE AG', 'ISIN': 'DE000PAG9113', 'MIC': 'XETR', 'Currency': 'EUR'},
-            {'Company': 'CIE FIN RICHEMONT', 'ISIN': 'CH0210483332', 'MIC': 'XSWX', 'Currency': 'CHF'},
-            {'Company': 'BRUNELLO CUCINELLI', 'ISIN': 'IT0004764699', 'MIC': 'MTAA', 'Currency': 'EUR'},
-            {'Company': 'MONCLER', 'ISIN': 'IT0004965148', 'MIC': 'MTAA', 'Currency': 'EUR'},
-            {'Company': 'BURBERRY GROUP', 'ISIN': 'GB0031743007', 'MIC': 'XLON', 'Currency': 'GBP'},
-            {'Company': "L'OREAL", 'ISIN': 'FR0000120321', 'MIC': 'XPAR', 'Currency': 'EUR'},
-            {'Company': 'LVMH', 'ISIN': 'FR0000121014', 'MIC': 'XPAR', 'Currency': 'EUR'},
-            {'Company': 'KERING', 'ISIN': 'FR0000121485', 'MIC': 'XPAR', 'Currency': 'EUR'},
-            {'Company': 'ESSILORLUXOTTICA', 'ISIN': 'FR0000121667', 'MIC': 'XPAR', 'Currency': 'EUR'},
-            {'Company': 'HERMES INTL', 'ISIN': 'FR0000052292', 'MIC': 'XPAR', 'Currency': 'EUR'},
-            {'Company': 'HUGO BOSS AG', 'ISIN': 'DE000A1PHFF7', 'MIC': 'XETR', 'Currency': 'EUR'}
+        # European Large Cap universe
+        european_large_cap_universe = [
+            {'Company': 'AIRBUS', 'ISIN': 'NL0000235190', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'ATLAS COPCO', 'ISIN': 'SE0017486889', 'MIC': 'XSTO', 'Currency': 'SEK'},
+            {'Company': 'ASML HOLDING', 'ISIN': 'NL0010273215', 'MIC': 'XAMS', 'Currency': 'EUR'},
+            {'Company': 'MERCK', 'ISIN': 'DE0006599905', 'MIC': 'XETR', 'Currency': 'EUR'},
+            {'Company': 'CARREFOUR', 'ISIN': 'FR0000120172', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'DANONE', 'ISIN': 'FR0000120644', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'ENEL', 'ISIN': 'IT0003128367', 'MIC': 'MTAA', 'Currency': 'EUR'},
+            {'Company': 'ENI', 'ISIN': 'IT0003132476', 'MIC': 'MTAA', 'Currency': 'EUR'},
+            {'Company': 'IBERDROLA', 'ISIN': 'ES0144580Y14', 'MIC': 'XMAD', 'Currency': 'EUR'},
+            {'Company': 'INFINEON TECHNOLOGIE', 'ISIN': 'DE0006231004', 'MIC': 'XETR', 'Currency': 'EUR'},
+            {'Company': 'KERRY GROUP PLC', 'ISIN': 'IE0004906560', 'MIC': 'XMSM', 'Currency': 'EUR'},
+            {'Company': 'NOVO NORDISK A/S', 'ISIN': 'DK0062498333', 'MIC': 'XCSE', 'Currency': 'DKK'},
+            {'Company': 'PRYSMIAN', 'ISIN': 'IT0004176001', 'MIC': 'MTAA', 'Currency': 'EUR'},
+            {'Company': 'RENAULT', 'ISIN': 'FR0000131906', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'SAINT GOBAIN', 'ISIN': 'FR0000125007', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'SANOFI', 'ISIN': 'FR0000120578', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'SAP', 'ISIN': 'DE0007164600', 'MIC': 'XETR', 'Currency': 'EUR'},
+            {'Company': 'SCHNEIDER ELECTRIC', 'ISIN': 'FR0000121972', 'MIC': 'XPAR', 'Currency': 'EUR'},
+            {'Company': 'SIEMENS AG', 'ISIN': 'DE0007236101', 'MIC': 'XETR', 'Currency': 'EUR'},
+            {'Company': 'THALES', 'ISIN': 'FR0000121329', 'MIC': 'XPAR', 'Currency': 'EUR'}
         ]
 
         # Convert to DataFrame when needed
-        luxury_goods_df = pd.DataFrame(luxury_goods_universe)
-
-        # Convert to DataFrame when needed
-        luxury_goods_df = pd.DataFrame(luxury_goods_universe)
+        souverainete_df = pd.DataFrame(european_large_cap_universe)
         ff_df = ref_data['ff']
 
         
         # Add the required columns to the combined dataframe
-        luxury_goods_df['Capping Factor'] = 1
-        luxury_goods_df['Effective Date of Review'] = effective_date
+        souverainete_df['Capping Factor'] = 1
+        souverainete_df['Effective Date of Review'] = effective_date
 
         # Filter symbols once
         symbols_filtered = stock_eod_df[
@@ -69,7 +71,7 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
         
         # Chain all data preparation operations using the combined dataframe
-        selection_df = (luxury_goods_df
+        selection_df = (souverainete_df
            # Initial renaming
            .rename(columns={
                'NOSH': 'Number of Shares',
@@ -124,7 +126,7 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
         selection_df["Free Float"] = selection_df["Free Float Round:"]
 
         # Select top companies from each universe based on FFMC
-        top_n = 15
+        top_n = 20
 
         # Calculate the target market cap per company (equal weighting across all 50 companies)
         target_mcap_per_company = index_mcap / top_n
@@ -134,8 +136,8 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
         selection_df['Effective Date of Review'] = effective_date
         selection_df['Unrounded NOSH'] = target_mcap_per_company / selection_df['Close Prc_EOD']
         
-        # Prepare ELUXP DataFrame
-        ELUXP_df = (
+        # Prepare ESVEP DataFrame
+        ESVEP_df = (
             selection_df[
                 ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
                 'Effective Date of Review', 'Currency']
@@ -162,12 +164,12 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
            
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            eluxp_path = os.path.join(output_dir, f'ELUXP_df_{timestamp}.xlsx')
+            esvep_path = os.path.join(output_dir, f'ESVEP_df_{timestamp}.xlsx')
            
             # Save output with multiple sheets
-            logger.info(f"Saving ELUXP output to: {eluxp_path}")
-            with pd.ExcelWriter(eluxp_path) as writer:
-                ELUXP_df.to_excel(writer, sheet_name='Index Composition', index=False)
+            logger.info(f"Saving ESVEP output to: {esvep_path}")
+            with pd.ExcelWriter(esvep_path) as writer:
+                ESVEP_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
@@ -176,7 +178,7 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
             return {
                 "status": "success",
                 "message": "Review completed successfully",
-                "data": {"eluxp_path": eluxp_path}
+                "data": {"esvep_path": esvep_path}
             }
            
         except Exception as e:

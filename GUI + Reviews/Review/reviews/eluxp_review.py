@@ -53,9 +53,6 @@ def run_eluxp_review(date, co_date, effective_date, index="ELUXP", isin="NLIX000
 
         # Convert to DataFrame when needed
         luxury_goods_df = pd.DataFrame(luxury_goods_universe)
-
-        # Convert to DataFrame when needed
-        luxury_goods_df = pd.DataFrame(luxury_goods_universe)
         ff_df = ref_data['ff']
 
         
