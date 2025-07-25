@@ -1,0 +1,31 @@
+2025-07-25 10:40:04,937 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 10:40:04,938 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 10:40:04,963 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 10:40:09,337 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 10:40:17,210 - Review.reviews.eus5p_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2025-07-25 10:40:17,210 - Review.reviews.eus5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\eus5p_review.py", line 40, in run_eus5p_review
+    north_america_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2025-07-25 10:40:17,231 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 10:40:17] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 10:40:20,906 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 10:40:22,475 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 10:40:29,185 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eus5p_review.py', reloading
+2025-07-25 10:40:29,199 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eus5p_review.py', reloading

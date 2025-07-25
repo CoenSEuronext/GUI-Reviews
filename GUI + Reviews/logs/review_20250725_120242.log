@@ -1,0 +1,6 @@
+2025-07-25 12:02:42,456 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:02:42,456 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 12:02:44,019 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 12:02:45,366 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 12:02:59,379 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eus5p_review.py', reloading
+2025-07-25 12:02:59,395 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eus5p_review.py', reloading

@@ -125,6 +125,14 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
             'filename': 'Eurozone 300.xlsx',
             'loader': lambda f: pd.read_excel(f)
         },
+        'north_america_500': {
+            'filename': 'North America 500.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'europe_500': {
+            'filename': 'Europe 500.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
         'aex_bel': {
             'filename': 'AEX BEL20.xlsx',
             'loader': lambda f: pd.read_excel(f)

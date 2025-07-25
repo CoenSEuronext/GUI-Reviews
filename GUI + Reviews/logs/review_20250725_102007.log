@@ -1,0 +1,49 @@
+2025-07-25 10:20:07,641 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 10:20:07,641 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 10:20:07,669 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 10:20:08,348 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 10:20:15,538 - Review.reviews.eus5p_review - ERROR - Error during review calculation: All objects passed were None
+2025-07-25 10:20:15,538 - Review.reviews.eus5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\eus5p_review.py", line 43, in run_eus5p_review
+    selection_df = pd.concat([eurozone_df, north_america_df],
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 382, in concat
+    op = _Concatenator(
+         ^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 541, in _clean_keys_and_objs
+    raise ValueError("All objects passed were None")
+ValueError: All objects passed were None
+
+2025-07-25 10:20:15,554 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 10:20:15] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 10:26:50,824 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 10:26:55,144 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 10:27:02,669 - Review.reviews.eus5p_review - ERROR - Error during review calculation: 'Capping Factor'
+2025-07-25 10:27:02,687 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-07-25 10:27:02,688 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-07-25 10:27:02,688 - Review.reviews.eus5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Capping Factor'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\eus5p_review.py", line 117, in run_eus5p_review
+    selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Price']
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Capping Factor'
+
+2025-07-25 10:27:02,700 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 10:27:02] "POST /calculate HTTP/1.1" 200 -

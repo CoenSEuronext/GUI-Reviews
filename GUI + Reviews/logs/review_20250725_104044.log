@@ -1,0 +1,15 @@
+2025-07-25 10:40:45,086 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 10:40:45,096 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 10:54:46,998 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 10:54:48,950 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 10:54:56,376 - Review.reviews.eus5p_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'shape'
+2025-07-25 10:54:56,380 - Review.reviews.eus5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\eus5p_review.py", line 45, in run_eus5p_review
+    logger.info(f"Eurozone DataFrame shape: {eurozone_df.shape}")
+                                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'shape'
+
+2025-07-25 10:54:56,397 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 10:54:56] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 10:54:57,695 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-07-25 10:54:58,465 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-07-25 10:55:05,399 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\be1p_review.py', reloading
