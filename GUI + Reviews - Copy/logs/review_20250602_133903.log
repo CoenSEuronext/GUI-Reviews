@@ -1,0 +1,119 @@
+2025-06-02 13:39:03,354 - werkzeug - WARNING -  * Debugger is active!
+2025-06-02 13:39:03,359 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-06-02 13:39:06,022 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-06-02 13:39:09,667 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-06-02 13:39:19,381 - Review.reviews.lc3wp_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-06-02 13:39:19,384 - Review.reviews.lc3wp_review - INFO - Adding Free Float data...
+2025-06-02 13:39:19,420 - Review.reviews.lc3wp_review - INFO - Adding ICB Subsector data...
+2025-06-02 13:39:19,442 - Review.reviews.lc3wp_review - WARNING - Removed 9314 duplicate rows from ICB data
+2025-06-02 13:39:19,458 - Review.reviews.lc3wp_review - INFO - Adding CDP Climate data...
+2025-06-02 13:39:19,462 - Review.reviews.lc3wp_review - INFO - Adding Oekom Trust & Carbon data...
+2025-06-02 13:39:19,467 - Review.reviews.lc3wp_review - INFO - Adding NACE data...
+2025-06-02 13:39:19,471 - Review.reviews.lc3wp_review - INFO - Adding EU Taxonomy flag...
+2025-06-02 13:39:19,472 - Review.reviews.lc3wp_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-06-02 13:39:19,474 - Review.reviews.lc3wp_review - INFO - Applying exclusion criteria...
+2025-06-02 13:39:19,488 - Review.reviews.lc3wp_review - INFO - Marked 149 companies (10%) with worst SG scores for exclusion
+2025-06-02 13:39:19,509 - Review.reviews.lc3wp_review - INFO - Calculating Climate Score for ranking...
+2025-06-02 13:39:19,511 - Review.reviews.lc3wp_review - INFO - Calculating median Carbon Intensity by Supersector excluding zero values...
+2025-06-02 13:39:19,517 - Review.reviews.lc3wp_review - INFO - Calculated median Carbon Intensity for 20 supersectors, excluding zero values
+2025-06-02 13:39:19,526 - Review.reviews.lc3wp_review - INFO - Created CI column combining company-specific and median carbon intensity values
+2025-06-02 13:39:19,528 - Review.reviews.lc3wp_review - INFO - Calculated WACI: 506.51344405656613
+2025-06-02 13:39:19,528 - Review.reviews.lc3wp_review - INFO - Selecting EU Taxonomy companies...
+2025-06-02 13:39:19,529 - Review.reviews.lc3wp_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-06-02 13:39:19,530 - Review.reviews.lc3wp_review - INFO - Found 979 Non-EU Taxonomy eligible companies after exclusions
+2025-06-02 13:39:19,531 - Review.reviews.lc3wp_review - INFO - STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...
+2025-06-02 13:39:19,531 - Review.reviews.lc3wp_review - INFO - Target number of Non-EU Taxonomy companies: 286
+2025-06-02 13:39:19,532 - Review.reviews.lc3wp_review - INFO - Total eligible Non-EU Taxonomy companies: 979
+2025-06-02 13:39:19,532 - Review.reviews.lc3wp_review - INFO - Total target after rounding: 295 (vs. target of 286)
+2025-06-02 13:39:19,532 - Review.reviews.lc3wp_review - INFO - Need to remove 9 companies due to rounding up
+2025-06-02 13:39:19,534 - Review.reviews.lc3wp_review - INFO - STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...
+2025-06-02 13:39:19,535 - Review.reviews.lc3wp_review - INFO - Selected 39 companies from super-sector 1010.0
+2025-06-02 13:39:19,536 - Review.reviews.lc3wp_review - INFO - Selected 12 companies from super-sector 1510.0
+2025-06-02 13:39:19,536 - Review.reviews.lc3wp_review - INFO - Selected 34 companies from super-sector 2010.0
+2025-06-02 13:39:19,537 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3010.0
+2025-06-02 13:39:19,538 - Review.reviews.lc3wp_review - INFO - Selected 21 companies from super-sector 3020.0
+2025-06-02 13:39:19,540 - Review.reviews.lc3wp_review - INFO - Selected 19 companies from super-sector 3030.0
+2025-06-02 13:39:19,541 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3510.0
+2025-06-02 13:39:19,542 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 4010.0
+2025-06-02 13:39:19,543 - Review.reviews.lc3wp_review - INFO - Selected 17 companies from super-sector 4020.0
+2025-06-02 13:39:19,544 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 4030.0
+2025-06-02 13:39:19,545 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4040.0
+2025-06-02 13:39:19,546 - Review.reviews.lc3wp_review - INFO - Selected 11 companies from super-sector 4050.0
+2025-06-02 13:39:19,547 - Review.reviews.lc3wp_review - INFO - Selected 15 companies from super-sector 4510.0
+2025-06-02 13:39:19,547 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4520.0
+2025-06-02 13:39:19,548 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5010.0
+2025-06-02 13:39:19,549 - Review.reviews.lc3wp_review - INFO - Selected 33 companies from super-sector 5020.0
+2025-06-02 13:39:19,550 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5510.0
+2025-06-02 13:39:19,551 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 5520.0
+2025-06-02 13:39:19,553 - Review.reviews.lc3wp_review - INFO - Selected 2 companies from super-sector 6510.0
+2025-06-02 13:39:19,584 - Review.reviews.lc3wp_review - INFO - Initial selection has 295 companies, need to remove 9
+2025-06-02 13:39:19,678 - Review.reviews.lc3wp_review - INFO - Removed company US38141G1040 from supersector 3020 (Climate Score: 2.75)
+2025-06-02 13:39:19,687 - Review.reviews.lc3wp_review - INFO - Removed company AU000000ANZ3 from supersector 3010 (Climate Score: 2.75)
+2025-06-02 13:39:19,704 - Review.reviews.lc3wp_review - INFO - Removed company CA0679011084 from supersector 5510 (Climate Score: 2.58973159003276)
+2025-06-02 13:39:19,712 - Review.reviews.lc3wp_review - INFO - Removed company JP3539220008 from supersector 3030 (Climate Score: 2.5)
+2025-06-02 13:39:19,718 - Review.reviews.lc3wp_review - INFO - Removed company US7475251036 from supersector 1010 (Climate Score: 2.30023900135313)
+2025-06-02 13:39:19,722 - Review.reviews.lc3wp_review - INFO - Removed company US2538681030 from supersector 3510 (Climate Score: 2.26099033267267)
+2025-06-02 13:39:19,730 - Review.reviews.lc3wp_review - INFO - Removed company JP3705200008 from supersector 4050 (Climate Score: 2.24552928645429)
+2025-06-02 13:39:19,732 - Review.reviews.lc3wp_review - INFO - Removed company DE0005552004 from supersector 5020 (Climate Score: 2.220375488488155)
+2025-06-02 13:39:19,740 - Review.reviews.lc3wp_review - INFO - Removed company US4595061015 from supersector 5520 (Climate Score: 2.2099302264427454)
+2025-06-02 13:39:19,742 - Review.reviews.lc3wp_review - INFO - Final Non-EU Taxonomy selection has 286 companies
+2025-06-02 13:39:19,742 - Review.reviews.lc3wp_review - INFO - Minimum companies per supersector: 2
+2025-06-02 13:39:19,746 - Review.reviews.lc3wp_review - INFO - Final selection contains 300 companies
+2025-06-02 13:39:19,747 - Review.reviews.lc3wp_review - INFO - - EU Taxonomy: 14
+2025-06-02 13:39:19,747 - Review.reviews.lc3wp_review - INFO - - Non-EU Taxonomy: 286
+2025-06-02 13:39:19,747 - Review.reviews.lc3wp_review - INFO - Adding PAB flag based on CDP temperature score...
+2025-06-02 13:39:19,747 - Review.reviews.lc3wp_review - INFO - Calculating liquidity constraints for all companies...
+2025-06-02 13:39:19,748 - Review.reviews.lc3wp_review - INFO - Total FFMC_WD for all companies: 11012287685759.05
+2025-06-02 13:39:19,749 - Review.reviews.lc3wp_review - INFO - Market cap based weights calculated for EU Taxonomy companies
+2025-06-02 13:39:19,750 - Review.reviews.lc3wp_review - INFO - Liquidity caps for EU Taxonomy companies - Max: 4.5040%, Min: 0.5415%, Avg: 1.7748%
+2025-06-02 13:39:19,750 - Review.reviews.lc3wp_review - INFO - Liquidity floors for EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-06-02 13:39:19,750 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for EU Taxonomy companies
+2025-06-02 13:39:19,758 - Review.reviews.lc3wp_review - INFO - Liquidity constraints have been calculated for all 300 companies
+2025-06-02 13:39:19,758 - Review.reviews.lc3wp_review - INFO - STEP 5: Implementing PAB weighting optimization procedure...
+2025-06-02 13:39:19,758 - Review.reviews.lc3wp_review - INFO - Total FFMC_WD for selected companies: 11012287685759.05
+2025-06-02 13:39:19,759 - utils.weight_optimization - INFO - Starting PAB weighting optimization procedure...
+2025-06-02 13:39:19,760 - utils.weight_optimization - INFO - Total FFMC in universe: 59026525546832.16
+2025-06-02 13:39:19,760 - utils.weight_optimization - INFO - Total FFMC in portfolio: 11012287685759.05
+2025-06-02 13:39:19,760 - utils.weight_optimization - INFO - Portfolio is 18.66% of universe FFMC
+2025-06-02 13:39:19,760 - utils.weight_optimization - INFO - Optimizing weights for 300 companies
+2025-06-02 13:39:19,760 - utils.weight_optimization - INFO - EU Taxonomy companies: 14
+2025-06-02 13:39:19,760 - utils.weight_optimization - INFO - Non-EU Taxonomy companies: 286
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Universe High Climate Impact weight: 0.5989
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Universe Paris Agreement Plan ratio: 0.8530
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Calculated weights for 20 supersectors in universe
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Base year WACI: 254.12
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Years passed: 1
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Target WACI for current year: 236.33159999999998
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Creating initial guess for optimization according to specified rules
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - EU Taxonomy pocket: 14 companies (target: 10% of total weight)
+2025-06-02 13:39:19,761 - utils.weight_optimization - INFO - Non-EU Taxonomy pocket: 286 companies (target: 90% of total weight)
+2025-06-02 13:39:19,769 - utils.weight_optimization - INFO - Initial weights - Total: 1.000000, EU: 0.100000 (10%), Non-EU: 0.900000 (90%)
+2025-06-02 13:39:19,769 - utils.weight_optimization - INFO - Initial WACI: 415.88 (targets: < 253.26 and < 236.33)
+2025-06-02 13:39:19,769 - utils.weight_optimization - INFO - Attempting optimization with factor = 2
+2025-06-02 13:39:19,769 - utils.weight_optimization - INFO - Starting optimization with 1209 constraints
+2025-06-02 13:39:27,891 - utils.weight_optimization - WARNING - Optimization failed with factor = 2: Inequality constraints incompatible
+2025-06-02 13:39:27,891 - utils.weight_optimization - INFO - Attempting optimization with factor = 3
+2025-06-02 13:39:27,892 - utils.weight_optimization - INFO - Starting optimization with 1209 constraints
+2025-06-02 13:39:35,922 - utils.weight_optimization - WARNING - Optimization failed with factor = 3: Inequality constraints incompatible
+2025-06-02 13:39:35,922 - utils.weight_optimization - INFO - Attempting optimization with factor = 4
+2025-06-02 13:39:35,922 - utils.weight_optimization - INFO - Starting optimization with 1209 constraints
+2025-06-02 13:39:44,082 - utils.weight_optimization - WARNING - Optimization failed with factor = 4: Inequality constraints incompatible
+2025-06-02 13:39:44,082 - utils.weight_optimization - INFO - Attempting optimization with factor = 5
+2025-06-02 13:39:44,082 - utils.weight_optimization - INFO - Starting optimization with 1209 constraints
+2025-06-02 13:39:52,054 - utils.weight_optimization - WARNING - Optimization failed with factor = 5: Inequality constraints incompatible
+2025-06-02 13:39:52,054 - utils.weight_optimization - ERROR - Failed to find optimal weights after trying all relaxation steps
+2025-06-02 13:39:52,054 - Review.reviews.lc3wp_review - ERROR - Optimization did not produce valid weights. Using market cap weights instead.
+2025-06-02 13:39:52,054 - Review.reviews.lc3wp_review - INFO - Calculated weighting factors based on optimized weights
+2025-06-02 13:39:52,054 - Review.reviews.lc3wp_review - INFO - Final optimized WACI: 374.19 (target: < 253.26)
+2025-06-02 13:39:52,054 - Review.reviews.lc3wp_review - WARNING - WACI reduction target not met: 374.19 > 253.26
+2025-06-02 13:39:52,063 - Review.reviews.lc3wp_review - WARNING - Achieved only 26.12% reduction vs target of 50%
+2025-06-02 13:39:52,064 - Review.reviews.lc3wp_review - INFO - EU Taxonomy pocket weight: 1.01% (target: 5-10%)
+2025-06-02 13:39:52,064 - Review.reviews.lc3wp_review - WARNING - EU Taxonomy weight constraint not met: 1.01% outside target range 5-10%
+2025-06-02 13:39:52,067 - Review.reviews.lc3wp_review - INFO - High Climate Impact section weight: 57.54% (target: >= 59.89%)
+2025-06-02 13:39:52,067 - Review.reviews.lc3wp_review - WARNING - High Climate Impact weight constraint not met: 57.54% < 59.89%
+2025-06-02 13:39:52,069 - Review.reviews.lc3wp_review - INFO - Companies with Paris Agreement Plan weight: 95.50% (target: > 85.30%)
+2025-06-02 13:39:52,069 - Review.reviews.lc3wp_review - INFO - HCI companies with Paris Agreement Plan: 93.53% (target: >= 35%)
+2025-06-02 13:39:52,069 - Review.reviews.lc3wp_review - INFO - Saving output files...
+2025-06-02 13:39:53,795 - Review.reviews.lc3wp_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC3WP_review_20250602_133952.xlsx
+2025-06-02 13:39:53,838 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 13:39:53] "POST /calculate HTTP/1.1" 200 -
+2025-06-02 13:43:44,417 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\tools\\numeric.py', reloading

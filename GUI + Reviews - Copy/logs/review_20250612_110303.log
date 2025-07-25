@@ -1,0 +1,33 @@
+2025-06-12 11:03:04,180 - werkzeug - WARNING -  * Debugger is active!
+2025-06-12 11:03:04,182 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-06-12 11:03:04,229 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-06-12 11:03:04,232 - Review.reviews.edwpt_review - ERROR - Error during review calculation: [Errno 2] No such file or directory: 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\TTMIndexUS1_GIS_EOD_INDEX_20250611.csv'
+2025-06-12 11:03:04,235 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 45, in run_edwpt_review
+    index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\data_loader.py", line 9, in load_eod_data
+    index_eod_us_df = read_semicolon_csv(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\functions.py", line 4, in read_semicolon_csv
+    return pd.read_csv(file_path, sep=';', encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'V:\\PM-Indices-IndexOperations\\General\\Daily downloadfiles\\Monthly Archive\\TTMIndexUS1_GIS_EOD_INDEX_20250611.csv'
+
+2025-06-12 11:03:04,237 - werkzeug - INFO - 127.0.0.1 - - [12/Jun/2025 11:03:04] "POST /calculate HTTP/1.1" 200 -
+2025-06-12 11:03:14,652 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\concurrent\\futures\\thread.py', reloading

@@ -1,0 +1,20 @@
+2025-06-30 16:58:14,757 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 16:58:14,757 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-06-30 16:58:27,051 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-06-30 16:58:28,924 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-06-30 16:58:36,183 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-06-30 16:58:36,240 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-06-30 16:58:36,240 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-06-30 16:58:36,250 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) weight: 60.0000% (target: 60.00%)
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - Group 2 (NA500) weight: 40.0000% (target: 40.00%)
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) final weight: 60.0000%
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - Group 2 (NA500) final weight: 40.0000%
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 9.4913%
+2025-06-30 16:58:36,280 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250630_165836.xlsx
+2025-06-30 16:58:36,603 - werkzeug - INFO - 10.199.43.197 - - [30/Jun/2025 16:58:36] "POST /calculate HTTP/1.1" 200 -
+2025-06-30 17:05:20,597 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2025-06-30 17:05:20,604 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading
+2025-06-30 17:05:20,604 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_scalars.py', reloading

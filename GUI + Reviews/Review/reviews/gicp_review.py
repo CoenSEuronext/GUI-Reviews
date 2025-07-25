@@ -215,8 +215,6 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
 
         # Create selection dataframe
         selection_df = developed_market_df[developed_market_df['selected']].copy()
-        selection_df.to_excel('debug_output.xlsx', index=False)
-        os.startfile('debug_output.xlsx')
         # First remove duplicates from stock_eod_df
         unique_stock_eod = (stock_eod_df[['Isin Code', 'Currency', 'Close Prc', 'FX/Index Ccy']]
                         .drop_duplicates(subset=['Isin Code', 'Currency'], keep='first'))

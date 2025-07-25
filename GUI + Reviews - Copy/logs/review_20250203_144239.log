@@ -1,0 +1,47 @@
+2025-02-03 14:42:39,721 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 14:42:39,723 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 14:48:05,028 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-02-03 14:48:06,899 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-02-03 14:48:07,653 - Review.reviews.bnew_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2025-02-03 14:48:07,657 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 70, in run_bnew_review
+    stock_eod_filtered.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2025-02-03 14:48:07,669 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:48:07] "POST /calculate HTTP/1.1" 200 -
+2025-02-03 14:48:11,305 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-02-03 14:48:11,929 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-02-03 14:48:12,767 - Review.reviews.bnew_review - ERROR - Error during review calculation: "['Currency'] not in index"
+2025-02-03 14:48:12,771 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 133, in run_bnew_review
+    BNEW_df = selection_df[
+              ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency'] not in index"
+
+2025-02-03 14:48:12,779 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:48:12] "POST /calculate HTTP/1.1" 200 -
+2025-02-03 14:48:37,236 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 14:48:37,237 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 14:48:38,118 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading

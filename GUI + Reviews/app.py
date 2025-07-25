@@ -5,6 +5,7 @@ import traceback
 from Review.review_logic import run_review
 from datetime import datetime
 from config import get_index_config
+from batch_processor import run_batch_reviews
 
 # Initialize configurations once at startup
 try:
@@ -92,7 +93,56 @@ def create_app():
                 "status": "error",
                 "message": str(e)
             }), 500
+    @app.route('/calculate-batch', methods=['POST'])
+    def calculate_batch():
+        """Handle multiple review calculations"""
+        try:
+            # Get form data
+            review_types = request.form.getlist('review_types[]')  # List of selected review types
+            date = request.form['date']
+            co_date = request.form['co_date']
+            effective_date = request.form['effective_date']
+            currency = request.form['currency']
+            auto_open = request.form.get('auto_open') == 'on'
+            
+            if not review_types:
+                return jsonify({
+                    "status": "error",
+                    "message": "No review types selected"
+                }), 400
 
+            # Validate effective date format
+            try:
+                effective_date = datetime.strptime(effective_date, "%d-%b-%y").strftime("%d-%b-%y")
+            except ValueError as ve:
+                raise ValueError("Effective Date must be in the format 'DD-MMM-YY'. Please correct the input.")
+
+            # Run batch reviews
+              # New module we'll create
+            
+            results = run_batch_reviews(
+                review_types=review_types,
+                date=date,
+                co_date=co_date,
+                effective_date=effective_date,
+                currency=currency,
+                auto_open=auto_open
+            )
+
+            return jsonify({
+                "status": "success",
+                "message": f"Completed {len(results)} reviews",
+                "results": results
+            })
+
+        except Exception as e:
+            print(f"Error in calculate-batch route: {str(e)}")
+            print(traceback.format_exc())
+            return jsonify({
+                "status": "error",
+                "message": str(e)
+            }), 500
+        
     return app
 
 if __name__ == '__main__':

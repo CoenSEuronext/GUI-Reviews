@@ -1,0 +1,24 @@
+2025-01-22 11:28:25,097 - werkzeug - WARNING -  * Debugger is active!
+2025-01-22 11:28:25,100 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-22 11:28:26,574 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:28:27,521 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:28:28,799 - Review.reviews.frd4p_review - ERROR - Error during review calculation: 'oekom_trustcarbon'
+2025-01-22 11:28:28,800 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 54, in run_frd4p_review
+    Oekom_TrustCarbon_df = ref_data['oekom_trustcarbon']
+                           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'oekom_trustcarbon'
+
+2025-01-22 11:28:28,804 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:28:28] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:28:30,430 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:28:30,861 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:28:31,557 - Review.reviews.frd4p_review - ERROR - Error during review calculation: 'oekom_trustcarbon'
+2025-01-22 11:28:31,558 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 54, in run_frd4p_review
+    Oekom_TrustCarbon_df = ref_data['oekom_trustcarbon']
+                           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'oekom_trustcarbon'
+
+2025-01-22 11:28:31,561 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:28:31] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:29:09,129 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-01-22 11:29:09,130 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

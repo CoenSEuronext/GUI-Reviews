@@ -1,0 +1,36 @@
+2025-01-30 19:22:05,715 - werkzeug - WARNING -  * Debugger is active!
+2025-01-30 19:22:05,717 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-30 19:22:05,920 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 19:22:08,178 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-01-30 19:22:08,930 - Review.reviews.aerdp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-30 19:22:08,931 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 60, in run_aerdp_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-30 19:22:08,937 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 19:22:08] "POST /calculate HTTP/1.1" 200 -
+2025-01-30 19:22:10,523 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 19:22:11,099 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-01-30 19:22:11,706 - Review.reviews.aerdp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-30 19:22:11,707 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 60, in run_aerdp_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-30 19:22:11,712 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 19:22:11] "POST /calculate HTTP/1.1" 200 -
+2025-01-30 19:22:28,344 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 19:22:30,018 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-01-30 19:22:37,056 - Review.reviews.aerdp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-30 19:22:37,056 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 60, in run_aerdp_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-30 19:22:37,067 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 19:22:37] "POST /calculate HTTP/1.1" 200 -
+2025-01-30 19:22:37,943 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 19:22:38,563 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-01-30 19:22:45,658 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250130_192245.xlsx
+2025-01-30 19:22:46,019 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 19:22:46] "POST /calculate HTTP/1.1" 200 -
+2025-01-30 19:27:26,722 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
+2025-01-30 19:27:26,727 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
+2025-01-30 19:27:26,728 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading

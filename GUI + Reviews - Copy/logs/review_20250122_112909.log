@@ -1,0 +1,4 @@
+2025-01-22 11:29:09,797 - werkzeug - WARNING -  * Debugger is active!
+2025-01-22 11:29:09,800 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-22 11:29:11,474 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:29:12,339 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

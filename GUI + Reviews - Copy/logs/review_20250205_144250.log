@@ -1,0 +1,19 @@
+2025-02-05 14:42:50,309 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 14:42:50,312 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 14:42:50,339 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 14:42:52,605 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 14:42:53,377 - Review.reviews.sbf80_review - ERROR - Error during review calculation: 'Current SBF80'
+2025-02-05 14:42:53,380 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-02-05 14:42:53,381 - Review.reviews.sbf80_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sbf80_review.py", line 181, in run_sbf80_review
+    buffer_companies = buffer_companies.sort_values(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 7172, in sort_values
+    keys = [self._get_label_or_level_values(x, axis=axis) for x in by]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'Current SBF80'
+
+2025-02-05 14:42:53,382 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-02-05 14:42:53,388 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 14:42:53] "POST /calculate HTTP/1.1" 200 -

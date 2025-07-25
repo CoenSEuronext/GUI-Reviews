@@ -1,0 +1,9 @@
+2025-06-11 16:19:40,061 - werkzeug - WARNING -  * Debugger is active!
+2025-06-11 16:19:40,063 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-06-11 16:20:05,239 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\shutil.py', reloading
+2025-06-11 16:20:05,295 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\handlers.py', reloading
+2025-06-11 16:20:05,319 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\__init__.py', reloading
+2025-06-11 16:20:05,325 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\queue.py', reloading
+2025-06-11 16:20:05,329 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\socket.py', reloading
+2025-06-11 16:20:05,342 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\threading.py', reloading
+2025-06-11 16:20:05,414 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\stat.py', reloading

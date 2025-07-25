@@ -1,0 +1,6 @@
+2025-03-05 14:14:45,275 - werkzeug - WARNING -  * Debugger is active!
+2025-03-05 14:14:45,277 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-05 14:14:45,334 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2025 14:14:45] "GET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1" 200 -
+2025-03-05 14:14:45,341 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2025 14:14:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-05 16:16:02,472 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\curses\\__init__.py', reloading
+2025-03-05 16:16:02,517 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_strptime.py', reloading

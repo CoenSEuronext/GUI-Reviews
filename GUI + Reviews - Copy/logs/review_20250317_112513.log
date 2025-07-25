@@ -1,0 +1,22 @@
+2025-03-17 11:25:13,734 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 11:25:13,734 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-17 11:25:14,668 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-03-17 11:25:18,139 - Review.reviews.edwpt_review - ERROR - Error during review calculation: Failed to load required reference data files
+2025-03-17 11:25:18,139 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 59, in run_edwpt_review
+    raise ValueError("Failed to load required reference data files")
+ValueError: Failed to load required reference data files
+
+2025-03-17 11:25:18,149 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 11:25:18] "POST /calculate HTTP/1.1" 200 -
+2025-03-17 11:26:24,678 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-03-17 11:26:26,984 - Review.reviews.edwpt_review - ERROR - Error during review calculation: Failed to load required reference data files
+2025-03-17 11:26:26,984 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 59, in run_edwpt_review
+    raise ValueError("Failed to load required reference data files")
+ValueError: Failed to load required reference data files
+
+2025-03-17 11:26:26,993 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 11:26:26] "POST /calculate HTTP/1.1" 200 -
+2025-03-17 11:26:35,268 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-17 11:26:35,274 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-17 11:26:35,274 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-17 11:26:36,207 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

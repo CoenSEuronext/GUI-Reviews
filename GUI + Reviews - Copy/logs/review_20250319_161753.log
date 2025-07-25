@@ -1,0 +1,26 @@
+2025-03-19 16:17:53,197 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 16:17:53,197 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 16:17:53,199 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:17:53,721 - werkzeug - WARNING -  * Debugger is active!
+2025-03-19 16:17:53,723 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-19 16:17:54,237 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-03-19 16:17:58,543 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-03-19 16:18:00,265 - Review.reviews.bnew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'drop'
+2025-03-19 16:18:00,274 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-03-19 16:18:00,274 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 36, in run_bnew_review
+    aex_bel_df = ref_data['aex_bel'].drop(columns=['Effective date of review']).rename(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'drop'
+
+2025-03-19 16:18:00,274 - werkzeug - INFO - 127.0.0.1 - - [19/Mar/2025 16:18:00] "POST /calculate HTTP/1.1" 200 -
+2025-03-19 16:18:00,427 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:24:47,366 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:24:49,414 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:24:51,310 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:27:30,210 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:27:38,008 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:27:43,511 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:27:49,261 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-19 16:28:11,929 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

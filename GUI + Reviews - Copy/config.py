@@ -1,6 +1,6 @@
 # config.py
 # Network paths
-DLF_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
+DLF_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
 DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
 
@@ -95,6 +95,81 @@ INDEX_CONFIGS = {
         "index": "LC1EP",
         "isin": "FR0013522554",
         "output_key": "lc100_path"
+    },
+    "FRECP": {
+        "index": "FRECP",
+        "isin": "FR0013349057",
+        "output_key": "frecp_path"
+    },
+    "FRN4P": {
+        "index": "FRN4P",
+        "isin": "FR0013354156",
+        "output_key": "frn4p_path"
+    },
+    "FR20P": {
+        "index": "FR20P",
+        "isin": "FR0013355948",
+        "output_key": "fr20p_path"
+    },
+    "EZ40P": {
+        "index": "EZ40P",
+        "isin": "NL0012731871",
+        "output_key": "ez40p_path"
+    },
+    "EZ60P": {
+        "index": "EZ60P",
+        "isin": "NL0012846265",
+        "output_key": "ez60p_path"
+    },
+    "EZ15P": {
+        "index": "EZ15P",
+        "isin": "NL0012949101",
+        "output_key": "ez60p_path"
+    },
+    "EZN1P": {
+        "index": "EZN1P",
+        "isin": "NL0012949143",
+        "output_key": "ezn1p_path"
+    },
+    "EFMEP": {
+        "index": "EFMEP",
+        "isin": "NL0012730451",
+        "output_key": "efmep_path"
+    },
+    "ERI5P": {
+        "index": "ERI5P",
+        "isin": "NL0013217730",
+        "output_key": "eri5p_path"
+    },
+    "BE1P": {
+        "index": "BE1P",
+        "isin": "NLIX00005388",
+        "output_key": "be1p_path"
+    },
+    "EUS5P": {
+        "index": "EUS5P",
+        "isin": "NL0013216468",
+        "output_key": "eus5p_path"
+    },
+    "EDEFP": {
+        "index": "EDEFP",
+        "isin": "NLIX00005982",
+        "output_key": "edefp_path"
+    },
+    "ETPFB": {
+        "index": "ETPFB",
+        "isin": "NLIX00006535",
+        "output_key": "etpfb_path"
+    },
+    "ELUXP": {
+        "index": "ELUXP",
+        "isin": "NLIX00002930",
+        "output_key": "eluxp_path"
+    },
+    "ESVEP": {
+        "index": "ESVEP",
+        "isin": "NLIX00005230",
+        "output_key": "esvep_path"
     }
     # Add new indices here following the same pattern
 }

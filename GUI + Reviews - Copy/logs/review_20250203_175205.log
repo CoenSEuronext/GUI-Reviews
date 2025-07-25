@@ -1,0 +1,10 @@
+2025-02-03 17:52:05,677 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:52:05,677 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:52:05,679 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 17:52:05,679 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 17:53:12,636 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:53:12] "GET / HTTP/1.1" 200 -
+2025-02-03 17:53:12,675 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:53:12] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-02-03 17:53:13,225 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:53:13] "GET / HTTP/1.1" 200 -
+2025-02-03 17:53:13,233 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:53:13] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-02-03 17:54:01,442 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:54:01] "GET / HTTP/1.1" 200 -
+2025-02-03 17:54:01,449 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:54:01] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -

@@ -1,0 +1,15 @@
+2025-01-30 16:54:17,945 - werkzeug - WARNING -  * Debugger is active!
+2025-01-30 16:54:17,947 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-30 16:54:21,412 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-01-30 16:54:22,509 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-01-30 16:54:29,237 - Review.reviews.aerdp_review - ERROR - Error during review calculation: NDFrame.to_excel() missing 1 required positional argument: 'excel_writer'
+2025-01-30 16:54:29,239 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 98, in run_aerdp_review
+    developed_market_df.to_excel(sheet_name='debug output', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: NDFrame.to_excel() missing 1 required positional argument: 'excel_writer'
+
+2025-01-30 16:54:29,239 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\util\\_decorators.py', reloading
+2025-01-30 16:54:29,260 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 16:54:29] "POST /calculate HTTP/1.1" 200 -

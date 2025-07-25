@@ -1,0 +1,15 @@
+2025-03-19 16:50:10,448 - werkzeug - WARNING -  * Debugger is active!
+2025-03-19 16:50:10,464 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-19 16:50:12,769 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-03-19 16:50:15,507 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-03-19 16:50:16,616 - Review.reviews.f4rip_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-03-19 16:50:16,616 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 40, in run_f4rip_review
+    selection_df = selection_df.rename(columns={'ISIN code': 'ISIN'})
+                   ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-03-19 16:50:16,631 - werkzeug - INFO - 127.0.0.1 - - [19/Mar/2025 16:50:16] "POST /calculate HTTP/1.1" 200 -
+2025-03-19 16:51:42,731 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-03-19 16:51:42,747 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-03-19 16:51:42,748 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading

@@ -1,0 +1,22 @@
+2025-02-03 14:32:35,676 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 14:32:35,678 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 14:32:48,482 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-02-03 14:32:50,503 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-02-03 14:32:51,347 - Review.reviews.bnew_review - ERROR - Error during review calculation: "['Currency'] not in index"
+2025-02-03 14:32:51,350 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 77, in run_bnew_review
+    stock_eod_filtered[['Isin Code', 'MIC', '#Symbol', 'Currency']],
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency'] not in index"
+
+2025-02-03 14:32:51,360 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:32:51] "POST /calculate HTTP/1.1" 200 -
+2025-02-03 14:38:48,945 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 14:38:48,951 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 14:38:48,953 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading

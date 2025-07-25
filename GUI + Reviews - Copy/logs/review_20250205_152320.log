@@ -1,0 +1,30 @@
+2025-02-05 15:23:20,499 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-05 15:23:20,500 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-05 15:23:20,506 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-05 15:23:20,960 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 15:23:20,963 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 15:23:23,952 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 15:23:25,756 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 15:23:26,503 - Review.reviews.sbf80_review - INFO - Total companies selected: 80
+2025-02-05 15:23:26,503 - Review.reviews.sbf80_review - INFO - Buffer zone selections:
+2025-02-05 15:23:26,504 - Review.reviews.sbf80_review - INFO - Rank 76.0: SOITEC - Current Constituent: True - Selected
+2025-02-05 15:23:26,504 - Review.reviews.sbf80_review - INFO - Rank 77.0: VALEO - Current Constituent: True - Selected
+2025-02-05 15:23:26,505 - Review.reviews.sbf80_review - INFO - Rank 78.0: PLUXEE - Current Constituent: True - Selected
+2025-02-05 15:23:26,505 - Review.reviews.sbf80_review - INFO - Rank 80.0: IPSOS - Current Constituent: True - Selected
+2025-02-05 15:23:26,505 - Review.reviews.sbf80_review - INFO - Rank 84.0: WORLDLINE - Current Constituent: True - Selected
+2025-02-05 15:23:26,506 - Review.reviews.sbf80_review - INFO - Rank 79.0: COFACE - Current Constituent: False - Not Selected
+2025-02-05 15:23:26,506 - Review.reviews.sbf80_review - INFO - Rank 81.0: AYVENS - Current Constituent: False - Not Selected
+2025-02-05 15:23:26,506 - Review.reviews.sbf80_review - INFO - Rank 82.0: VIRBAC - Current Constituent: False - Not Selected
+2025-02-05 15:23:26,507 - Review.reviews.sbf80_review - INFO - Rank 83.0: FORVIA - Current Constituent: False - Not Selected
+2025-02-05 15:23:26,507 - Review.reviews.sbf80_review - INFO - Rank 85.0: REMY COINTREAU - Current Constituent: False - Not Selected
+2025-02-05 15:23:26,513 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20250205_152326.xlsx
+2025-02-05 15:23:26,654 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 15:23:26] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 15:23:38,754 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 15:23:38,757 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 15:23:38,883 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-05 15:23:41,464 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-05 15:29:33,603 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-06 01:08:29,469 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-06 16:28:38,031 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-06 16:28:41,820 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

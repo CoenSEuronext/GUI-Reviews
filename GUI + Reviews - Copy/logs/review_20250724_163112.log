@@ -1,0 +1,22 @@
+2025-07-24 16:31:12,721 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 16:31:12,721 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-24 16:31:14,755 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-07-24 16:31:15,454 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-07-24 16:31:24,337 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2025-07-24 16:31:24,339 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 91 companies
+2025-07-24 16:31:24,340 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 272 companies
+2025-07-24 16:31:24,340 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 44 companies
+2025-07-24 16:31:24,340 - Review.reviews.be1p_review - INFO - Total excluded (any criteria): 282 companies
+2025-07-24 16:31:24,340 - Review.reviews.be1p_review - INFO - Eligible for selection: 18 companies
+2025-07-24 16:31:24,355 - Review.reviews.be1p_review - INFO - Selecting top 10 companies with highest FFMC from eligible companies...
+2025-07-24 16:31:24,362 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BE1P_df_20250724_163124.xlsx
+2025-07-24 16:31:24,728 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 16:31:24] "POST /calculate HTTP/1.1" 200 -
+2025-07-24 16:31:54,892 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare.py', reloading
+2025-07-24 16:31:55,190 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2025-07-24 16:31:55,190 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading
+2025-07-24 16:31:55,257 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\traceback.py', reloading
+2025-07-24 16:31:55,280 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\logging_utils.py', reloading
+2025-07-24 16:31:55,294 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\inclusion_exclusion.py', reloading
+2025-07-24 16:31:55,552 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading
+2025-07-24 16:31:55,621 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-07-24 16:31:55,621 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading

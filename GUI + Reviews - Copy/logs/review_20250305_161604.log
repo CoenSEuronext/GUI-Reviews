@@ -1,0 +1,11 @@
+2025-03-05 16:16:04,267 - werkzeug - WARNING -  * Debugger is active!
+2025-03-05 16:16:04,272 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-05 16:16:04,324 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\ascii.py', reloading
+2025-03-05 16:16:04,334 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading
+2025-03-05 16:16:04,344 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xmlrpc\\server.py', reloading
+2025-03-05 16:16:04,572 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\__init__.py', reloading
+2025-03-05 16:16:04,572 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2025-03-05 16:16:04,584 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading
+2025-03-05 16:16:04,615 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\typing.py', reloading
+2025-03-05 16:16:04,646 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\IPython\\core\\display.py', reloading
+2025-03-05 16:16:04,670 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\IPython\\testing\\skipdoctest.py', reloading

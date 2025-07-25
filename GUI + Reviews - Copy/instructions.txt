@@ -1,8 +1,16 @@
-Step 1:
+Step 1: 
+Replace Index name in new review script
+
+Step 2:
 Add to Config.py
 
-Step2:
+Step 3:
 Add the review function to review_logic.py
-1. import the review using .reviews.*****_review
-2. add it to run_review function.
+import the review using .reviews.*****_review
+Add to REVIEW_FUNCTIONS
 
+Step 4:
+Add to compare_eia_files.py
+
+Step 5:
+Add to compare.py

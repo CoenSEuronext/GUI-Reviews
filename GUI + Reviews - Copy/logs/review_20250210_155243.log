@@ -1,0 +1,11 @@
+2025-02-10 15:52:43,347 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 15:52:43,349 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-10 16:01:02,682 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\__init__.py', reloading
+2025-02-10 16:01:02,683 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\context.py', reloading
+2025-02-10 16:01:02,686 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\process.py', reloading
+2025-02-10 16:01:02,687 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\reduction.py', reloading
+2025-02-10 16:01:02,696 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\util.py', reloading
+2025-02-10 16:01:02,889 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\zoneinfo\\__init__.py', reloading
+2025-02-10 16:01:02,890 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\zoneinfo\\_tzpath.py', reloading
+2025-02-10 16:01:02,892 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\zoneinfo\\_common.py', reloading
+2025-02-10 16:01:03,110 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\secrets.py', reloading

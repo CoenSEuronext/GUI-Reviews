@@ -1,0 +1,15 @@
+2025-02-03 14:31:20,535 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 14:31:20,537 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 14:31:22,211 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-02-03 14:31:22,812 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-02-03 14:31:23,533 - Review.reviews.bnew_review - ERROR - Error during review calculation: cannot access local variable 'markets' where it is not associated with a value
+2025-02-03 14:31:23,534 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 66, in run_bnew_review
+    (stock_eod_df['MIC'].isin(markets))
+                              ^^^^^^^
+UnboundLocalError: cannot access local variable 'markets' where it is not associated with a value
+
+2025-02-03 14:31:23,541 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:31:23] "POST /calculate HTTP/1.1" 200 -
+2025-02-03 14:31:59,875 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 14:31:59,876 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 14:31:59,877 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading

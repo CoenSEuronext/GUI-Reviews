@@ -1,0 +1,76 @@
+2025-01-23 15:43:16,321 - werkzeug - WARNING -  * Debugger is active!
+2025-01-23 15:43:16,324 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-23 15:43:17,329 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-23 15:43:19,625 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-23 15:43:20,230 - Review.reviews.f4rip_review - ERROR - Error during review calculation: unsupported operand type(s) for *: 'float' and 'Categorical'
+2025-01-23 15:43:20,232 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 119, in run_f4rip_review
+    PX1_df['Shares'] = index_mcap * PX1_df['Weight'] / PX1_df['Close Prc_EOD']
+                       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2171, in __array_ufunc__
+    return arraylike.array_ufunc(self, ufunc, method, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\arraylike.py", line 276, in array_ufunc
+    result = maybe_dispatch_ufunc_to_dunder_op(self, ufunc, method, *inputs, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "ops_dispatch.pyx", line 113, in pandas._libs.ops_dispatch.maybe_dispatch_ufunc_to_dunder_op
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\ops\common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\arraylike.py", line 206, in __rmul__
+    return self._arith_method(other, roperator.rmul)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\series.py", line 6135, in _arith_method
+    return base.IndexOpsMixin._arith_method(self, other, op)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\base.py", line 1382, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\ops\array_ops.py", line 273, in arithmetic_op
+    res_values = op(left, right)
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\roperator.py", line 19, in rmul
+    return right * left
+           ~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for *: 'float' and 'Categorical'
+
+2025-01-23 15:43:20,241 - werkzeug - INFO - 127.0.0.1 - - [23/Jan/2025 15:43:20] "POST /calculate HTTP/1.1" 200 -
+2025-01-23 15:43:23,199 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-23 15:43:23,924 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-23 15:43:24,411 - Review.reviews.f4rip_review - ERROR - Error during review calculation: unsupported operand type(s) for *: 'float' and 'Categorical'
+2025-01-23 15:43:24,413 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 119, in run_f4rip_review
+    PX1_df['Shares'] = index_mcap * PX1_df['Weight'] / PX1_df['Close Prc_EOD']
+                       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2171, in __array_ufunc__
+    return arraylike.array_ufunc(self, ufunc, method, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\arraylike.py", line 276, in array_ufunc
+    result = maybe_dispatch_ufunc_to_dunder_op(self, ufunc, method, *inputs, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "ops_dispatch.pyx", line 113, in pandas._libs.ops_dispatch.maybe_dispatch_ufunc_to_dunder_op
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\ops\common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\arraylike.py", line 206, in __rmul__
+    return self._arith_method(other, roperator.rmul)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\series.py", line 6135, in _arith_method
+    return base.IndexOpsMixin._arith_method(self, other, op)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\base.py", line 1382, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\ops\array_ops.py", line 273, in arithmetic_op
+    res_values = op(left, right)
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\roperator.py", line 19, in rmul
+    return right * left
+           ~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for *: 'float' and 'Categorical'
+
+2025-01-23 15:43:24,416 - werkzeug - INFO - 127.0.0.1 - - [23/Jan/2025 15:43:24] "POST /calculate HTTP/1.1" 200 -
+2025-01-23 15:44:09,831 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\arrays\\categorical.py', reloading
+2025-01-23 15:44:09,852 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\arrays\\_mixins.py', reloading
+2025-01-23 15:44:09,859 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\strings\\object_array.py', reloading
+2025-01-23 15:44:09,865 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\strings\\base.py', reloading

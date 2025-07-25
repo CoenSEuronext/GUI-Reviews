@@ -1,0 +1,240 @@
+2025-02-07 10:46:39,696 - werkzeug - WARNING -  * Debugger is active!
+2025-02-07 10:46:39,696 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-07 10:46:46,358 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-07 10:46:47,050 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-07 10:46:47,066 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-07 10:46:47,066 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 44, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-07 10:46:47,074 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:46:47] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:46:47,807 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-07 10:46:48,473 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-07 10:46:48,473 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2025-02-07 10:46:48,490 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexew_review.py", line 44, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+
+2025-02-07 10:46:48,495 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:46:48] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:46:53,823 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-02-07 10:46:54,423 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-02-07 10:47:01,409 - Review.reviews.aerdp_review - ERROR - Error during review calculation: '3 months aver. Turnover EUR'
+2025-02-07 10:47:01,409 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: '3 months aver. Turnover EUR'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 136, in run_aerdp_review
+    (developed_market_df['3 months aver. Turnover EUR'] > 4000000)
+     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: '3 months aver. Turnover EUR'
+
+2025-02-07 10:47:01,430 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:47:01] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:47:08,607 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-02-07 10:47:11,035 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-02-07 10:47:17,990 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-02-07 10:47:18,073 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-02-07 10:47:18,073 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-02-07 10:47:18,089 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-02-07 10:47:18,089 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-02-07 10:47:18,089 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-02-07 10:47:18,090 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-02-07 10:47:18,090 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-02-07 10:47:18,090 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-02-07 10:47:18,090 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-02-07 10:47:18,093 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-02-07 10:47:18,093 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-02-07 10:47:18,094 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-02-07 10:47:18,094 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-02-07 10:47:18,095 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-02-07 10:47:18,095 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-02-07 10:47:18,095 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-02-07 10:47:18,098 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250207_104718.xlsx
+2025-02-07 10:47:18,673 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:47:18] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:47:27,461 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-07 10:47:29,192 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-07 10:47:29,853 - Review.reviews.sbf80_review - INFO - Total companies selected: 80
+2025-02-07 10:47:29,854 - Review.reviews.sbf80_review - INFO - Buffer zone selections:
+2025-02-07 10:47:29,854 - Review.reviews.sbf80_review - INFO - Rank 76.0: SOITEC - Current Constituent: True - Selected
+2025-02-07 10:47:29,855 - Review.reviews.sbf80_review - INFO - Rank 77.0: VALEO - Current Constituent: True - Selected
+2025-02-07 10:47:29,855 - Review.reviews.sbf80_review - INFO - Rank 78.0: PLUXEE - Current Constituent: True - Selected
+2025-02-07 10:47:29,855 - Review.reviews.sbf80_review - INFO - Rank 80.0: IPSOS - Current Constituent: True - Selected
+2025-02-07 10:47:29,856 - Review.reviews.sbf80_review - INFO - Rank 84.0: WORLDLINE - Current Constituent: True - Selected
+2025-02-07 10:47:29,856 - Review.reviews.sbf80_review - INFO - Rank 79.0: COFACE - Current Constituent: False - Not Selected
+2025-02-07 10:47:29,856 - Review.reviews.sbf80_review - INFO - Rank 81.0: AYVENS - Current Constituent: False - Not Selected
+2025-02-07 10:47:29,856 - Review.reviews.sbf80_review - INFO - Rank 82.0: VIRBAC - Current Constituent: False - Not Selected
+2025-02-07 10:47:29,856 - Review.reviews.sbf80_review - INFO - Rank 83.0: FORVIA - Current Constituent: False - Not Selected
+2025-02-07 10:47:29,856 - Review.reviews.sbf80_review - INFO - Rank 85.0: REMY COINTREAU - Current Constituent: False - Not Selected
+2025-02-07 10:47:29,865 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20250207_104729.xlsx
+2025-02-07 10:47:29,950 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:47:29] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:47:57,923 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:47:57] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:47:58,492 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:47:58] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:48:02,801 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:48:02] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:48:05,627 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-02-07 10:48:10,707 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-02-07 10:48:10,707 - Review.reviews.edwpt_review - INFO - Total companies selected: 5446
+2025-02-07 10:48:10,707 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-02-07 10:48:10,740 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-02-07 10:48:10,742 - Review.reviews.edwpt_review - INFO - Total companies selected: 1327
+2025-02-07 10:48:10,743 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.67%
+2025-02-07 10:48:10,759 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-02-07 10:48:10,760 - Review.reviews.edwpt_review - INFO - Total companies selected: 494
+2025-02-07 10:48:10,761 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.51%
+2025-02-07 10:48:10,774 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-02-07 10:48:10,774 - Review.reviews.edwpt_review - INFO - Total companies selected: 1909
+2025-02-07 10:48:10,774 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.13%
+2025-02-07 10:48:10,792 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-02-07 10:48:10,793 - Review.reviews.edwpt_review - INFO - Total companies selected: 1764
+2025-02-07 10:48:10,794 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.18%
+2025-02-07 10:48:10,805 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-02-07 10:48:10,807 - Review.reviews.edwpt_review - INFO - Total companies selected: 1563
+2025-02-07 10:48:10,808 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2025-02-07 10:48:10,816 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-02-07 10:48:10,817 - Review.reviews.edwpt_review - INFO - Total companies selected: 320
+2025-02-07 10:48:10,818 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.04%
+2025-02-07 10:48:10,830 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-02-07 10:48:10,831 - Review.reviews.edwpt_review - INFO - Total companies selected: 1481
+2025-02-07 10:48:10,832 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-02-07 10:48:10,841 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-02-07 10:48:10,843 - Review.reviews.edwpt_review - INFO - Total companies selected: 1414
+2025-02-07 10:48:10,844 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-02-07 10:48:10,849 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-02-07 10:48:10,850 - Review.reviews.edwpt_review - INFO - Total companies selected: 74
+2025-02-07 10:48:10,852 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.05%
+2025-02-07 10:48:10,860 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-02-07 10:48:10,861 - Review.reviews.edwpt_review - INFO - Total companies selected: 320
+2025-02-07 10:48:10,863 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-02-07 10:48:10,869 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-02-07 10:48:10,871 - Review.reviews.edwpt_review - INFO - Total companies selected: 230
+2025-02-07 10:48:10,872 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-02-07 10:48:10,876 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-02-07 10:48:10,876 - Review.reviews.edwpt_review - INFO - Total companies selected: 5446
+2025-02-07 10:48:10,887 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-02-07 10:48:10,889 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-02-07 10:48:10,890 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  1.337544e+09                1
+BATS     3  1.962934e+10                1
+MERK     2  2.803735e+08                2
+MTAA   246  5.292374e+11               85
+WBAH    26  5.370078e+10               17
+XAMS    79  1.157401e+12               44
+XASX   886  1.442942e+12              283
+XBRU    58  1.938564e+11               34
+XCSE   107  6.350474e+11               36
+XESM     2  1.794035e+09                2
+XETR   227  1.472409e+12              106
+XHEL   127  2.061674e+11               49
+XHKG   209  3.465502e+11               69
+XLIS    18  3.541669e+10               11
+XLON   872  2.336733e+12              320
+XMAD    99  4.808796e+11               41
+XMSM    14  5.274635e+10               10
+XNGM    47  4.908139e+08                1
+XNGS  2628  2.418978e+13              773
+XNYS  1736  2.534917e+13             1143
+XNZE    52  6.656698e+10               35
+XOSL   245  1.738210e+11              125
+XPAR   351  1.866583e+12               94
+XSES   118  2.570802e+11               62
+XSTO   648  7.073552e+11              222
+XSWX   148  1.669679e+12               86
+XTAE   275  1.399417e+11              150
+XTKS  3711  4.991981e+12             1414
+XTSE   491  2.080540e+12              230
+2025-02-07 10:48:10,910 - Review.reviews.edwpt_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250207_104810.xlsx
+2025-02-07 10:48:11,154 - Review.reviews.edwpt_review - INFO - 
+EDWPT Changes Summary:
+2025-02-07 10:48:11,170 - Review.reviews.edwpt_review - INFO - Inclusions: 5446
+2025-02-07 10:48:11,170 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,224 - Review.reviews.edwpt_review - INFO - 
+DEUPT Changes Summary:
+2025-02-07 10:48:11,224 - Review.reviews.edwpt_review - INFO - Inclusions: 1327
+2025-02-07 10:48:11,224 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,261 - Review.reviews.edwpt_review - INFO - 
+DEZPT Changes Summary:
+2025-02-07 10:48:11,261 - Review.reviews.edwpt_review - INFO - Inclusions: 494
+2025-02-07 10:48:11,261 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,356 - Review.reviews.edwpt_review - INFO - 
+DAPPT Changes Summary:
+2025-02-07 10:48:11,357 - Review.reviews.edwpt_review - INFO - Inclusions: 1909
+2025-02-07 10:48:11,357 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,441 - Review.reviews.edwpt_review - INFO - 
+DNAPT Changes Summary:
+2025-02-07 10:48:11,441 - Review.reviews.edwpt_review - INFO - Inclusions: 1764
+2025-02-07 10:48:11,442 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,543 - Review.reviews.edwpt_review - INFO - 
+DASPT Changes Summary:
+2025-02-07 10:48:11,544 - Review.reviews.edwpt_review - INFO - Inclusions: 1563
+2025-02-07 10:48:11,544 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,565 - Review.reviews.edwpt_review - INFO - 
+DPAPT Changes Summary:
+2025-02-07 10:48:11,565 - Review.reviews.edwpt_review - INFO - Inclusions: 320
+2025-02-07 10:48:11,565 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,634 - Review.reviews.edwpt_review - INFO - 
+EUSPT Changes Summary:
+2025-02-07 10:48:11,635 - Review.reviews.edwpt_review - INFO - Inclusions: 1481
+2025-02-07 10:48:11,635 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,693 - Review.reviews.edwpt_review - INFO - 
+EJPPT Changes Summary:
+2025-02-07 10:48:11,693 - Review.reviews.edwpt_review - INFO - Inclusions: 1414
+2025-02-07 10:48:11,693 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,707 - Review.reviews.edwpt_review - INFO - 
+ECHPT Changes Summary:
+2025-02-07 10:48:11,707 - Review.reviews.edwpt_review - INFO - Inclusions: 74
+2025-02-07 10:48:11,707 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,724 - Review.reviews.edwpt_review - INFO - 
+EUKPT Changes Summary:
+2025-02-07 10:48:11,724 - Review.reviews.edwpt_review - INFO - Inclusions: 320
+2025-02-07 10:48:11,724 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:11,755 - Review.reviews.edwpt_review - INFO - 
+CANPT Changes Summary:
+2025-02-07 10:48:11,755 - Review.reviews.edwpt_review - INFO - Inclusions: 230
+2025-02-07 10:48:11,756 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-02-07 10:48:15,819 - Review.reviews.edwpt_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250207_104810.xlsx
+2025-02-07 10:48:15,890 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:48:15] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:48:42,059 - Review.reviews.clew_review - INFO - Loading EOD data...
+2025-02-07 10:48:43,827 - Review.reviews.clew_review - INFO - Loading reference data...
+2025-02-07 10:48:43,880 - Review.reviews.clew_review - INFO - Saving CLEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLEW_df_20250207_104843.xlsx
+2025-02-07 10:48:43,949 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:48:43] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:48:54,707 - Review.reviews.cacew_review - INFO - Loading EOD data...
+2025-02-07 10:48:56,164 - Review.reviews.cacew_review - INFO - Loading reference data...
+2025-02-07 10:48:56,207 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20250207_104856.xlsx
+2025-02-07 10:48:56,274 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2025 10:48:56] "POST /calculate HTTP/1.1" 200 -
+2025-02-07 10:50:24,855 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-02-07 10:50:24,857 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-02-07 10:50:24,861 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2025-02-07 10:50:24,908 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-02-07 10:50:24,943 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading

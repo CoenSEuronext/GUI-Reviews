@@ -1,0 +1,29 @@
+2025-01-22 09:42:55,872 - werkzeug - WARNING -  * Debugger is active!
+2025-01-22 09:42:55,875 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-22 09:42:57,627 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-01-22 09:42:58,073 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-01-22 09:43:04,802 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-01-22 09:43:04,898 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-01-22 09:43:04,899 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-01-22 09:43:04,900 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-01-22 09:43:04,900 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-01-22 09:43:04,901 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-01-22 09:43:04,901 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-01-22 09:43:04,902 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-01-22 09:43:04,902 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-01-22 09:43:04,903 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-01-22 09:43:04,904 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-01-22 09:43:04,904 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-01-22 09:43:04,905 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-01-22 09:43:04,905 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-01-22 09:43:04,906 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-01-22 09:43:04,906 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-01-22 09:43:04,907 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-01-22 09:43:04,907 - Review.reviews.gicp_review - INFO - Adding capping analysis columns...
+2025-01-22 09:43:04,919 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250122_094304.xlsx
+2025-01-22 09:43:05,603 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 09:43:05] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 09:44:34,820 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-01-22 09:44:34,821 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-01-22 09:44:34,823 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-01-22 09:44:34,824 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading

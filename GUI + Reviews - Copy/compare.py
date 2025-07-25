@@ -65,7 +65,7 @@ def get_mnemo_from_filename(filename):
             return mnemo
             
     # Alternative regex approach
-    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP)[_-]'
+    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP|GICP|FRECP|FRN4P|FR20P|EZ40P|EFMEP|EZ15P|EZN1P|EUS5P|ERI5P|BE1P|EDEFP|EZ60P)[_-]'
     match = re.search(pattern, filename)
     if match:
         return match.group(1)
@@ -477,8 +477,8 @@ def create_excel_report(results, output_path):
 
 def main():
     # Set folder paths
-    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202503\Review 202503\Coen"
-    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202503\Review 202503\Dataiku"
+    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202506\Review 202506\Coen"
+    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202506\Review 202506\Dataiku"
     
     # Set output folder path
     output_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review Comparison"

@@ -1,0 +1,13 @@
+2025-01-20 10:28:08,777 - werkzeug - WARNING -  * Debugger is active!
+2025-01-20 10:28:08,781 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-20 10:28:10,037 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-20 10:28:11,607 - Review.reviews.edwpt_review - ERROR - Error during review calculation: name 'EDWPT_' is not defined
+2025-01-20 10:28:11,609 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 265, in run_edwpt_review
+    EDWPT_
+NameError: name 'EDWPT_' is not defined. Did you mean: 'EDWPT_df'?
+
+2025-01-20 10:28:11,611 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2025 10:28:11] "POST /calculate HTTP/1.1" 200 -
+2025-01-20 10:28:24,971 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-20 10:28:24,972 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-20 10:28:24,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

@@ -1,0 +1,4 @@
+2025-02-03 10:57:00,853 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 10:57:00,855 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 10:59:40,817 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py', reloading
+2025-02-03 10:59:40,956 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\__init__.py', reloading

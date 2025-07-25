@@ -1,0 +1,5 @@
+2025-04-04 12:06:51,198 - werkzeug - WARNING -  * Debugger is active!
+2025-04-04 12:06:51,201 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-04 12:13:21,986 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-04-04 12:13:21,986 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-04-04 12:13:21,986 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading

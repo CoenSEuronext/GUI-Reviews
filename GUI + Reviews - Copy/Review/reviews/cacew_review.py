@@ -87,6 +87,7 @@ def run_cacew_review(date, co_date, effective_date, index="CACEW", isin="QS00111
         selection_df['Rounded NOSH'] = selection_df['Unrounded NOSH'].round()
         selection_df['Capping Factor'] = 1
         selection_df['Free Float'] = 1
+        selection_df['FFMC'] = selection_df['Capping'] * selection_df['Number of shares'] * selection_df['Free Float'] * selection_df['Close Prc_EOD']
         # Add Effective Date
         selection_df['Effective Date of Review'] = effective_date
         selection_df['Currency'] = currency

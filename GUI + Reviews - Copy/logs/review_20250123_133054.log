@@ -1,0 +1,37 @@
+2025-01-23 13:30:54,619 - werkzeug - WARNING -  * Debugger is active!
+2025-01-23 13:30:54,621 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-23 13:30:54,645 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-23 13:30:58,292 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-23 13:30:58,587 - Review.reviews.f4rip_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-23 13:30:58,588 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 60, in run_f4rip_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-23 13:30:58,593 - werkzeug - INFO - 127.0.0.1 - - [23/Jan/2025 13:30:58] "POST /calculate HTTP/1.1" 200 -
+2025-01-23 13:31:08,991 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-23 13:31:10,036 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-23 13:31:10,482 - Review.reviews.f4rip_review - ERROR - Error during review calculation: 'Isin'
+2025-01-23 13:31:10,491 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py', reloading
+2025-01-23 13:31:10,493 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 72, in run_f4rip_review
+    PX1_df = PX1_df.merge(
+             ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'Isin'
+
+2025-01-23 13:31:10,494 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-01-23 13:31:10,501 - werkzeug - INFO - 127.0.0.1 - - [23/Jan/2025 13:31:10] "POST /calculate HTTP/1.1" 200 -

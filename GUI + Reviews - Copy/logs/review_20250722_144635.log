@@ -1,0 +1,28 @@
+2025-07-22 14:46:36,026 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 14:46:36,026 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-22 14:46:36,210 - Review.reviews.frn4p_review - INFO - Loading EOD data...
+2025-07-22 14:46:36,879 - Review.reviews.frn4p_review - INFO - Loading reference data...
+2025-07-22 14:46:38,397 - Review.reviews.frn4p_review - ERROR - Error during review calculation: 'ISIN code'
+2025-07-22 14:46:38,401 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py', reloading
+2025-07-22 14:46:38,403 - Review.reviews.frn4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frn4p_review.py", line 53, in run_frn4p_review
+    .merge(
+     ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'ISIN code'
+
+2025-07-22 14:46:38,403 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-07-22 14:46:38,408 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 14:46:38] "POST /calculate HTTP/1.1" 200 -

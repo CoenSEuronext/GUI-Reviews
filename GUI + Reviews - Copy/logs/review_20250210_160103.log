@@ -1,0 +1,20 @@
+2025-02-10 16:01:03,758 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 16:01:03,760 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-10 16:16:32,777 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\abc.py', reloading
+2025-02-10 16:16:32,923 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\ast.py', reloading
+2025-02-10 16:16:33,082 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\__init__.py', reloading
+2025-02-10 16:16:33,099 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\coroutines.py', reloading
+2025-02-10 16:16:33,100 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\events.py', reloading
+2025-02-10 16:16:33,109 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\exceptions.py', reloading
+2025-02-10 16:16:33,109 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\futures.py', reloading
+2025-02-10 16:16:33,113 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\locks.py', reloading
+2025-02-10 16:16:33,117 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\protocols.py', reloading
+2025-02-10 16:16:33,121 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\queues.py', reloading
+2025-02-10 16:16:33,123 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\streams.py', reloading
+2025-02-10 16:16:33,129 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\subprocess.py', reloading
+2025-02-10 16:16:33,132 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\tasks.py', reloading
+2025-02-10 16:16:33,142 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\taskgroups.py', reloading
+2025-02-10 16:16:33,144 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\timeouts.py', reloading
+2025-02-10 16:16:33,146 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\threads.py', reloading
+2025-02-10 16:16:33,146 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\transports.py', reloading
+2025-02-10 16:16:33,149 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\asyncio\\windows_events.py', reloading

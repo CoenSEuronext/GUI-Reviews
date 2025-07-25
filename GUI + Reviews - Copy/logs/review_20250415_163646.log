@@ -1,0 +1,27 @@
+2025-04-15 16:36:46,092 - werkzeug - WARNING -  * Debugger is active!
+2025-04-15 16:36:46,095 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-15 16:36:46,360 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\pydoc.py', reloading
+2025-04-15 16:36:46,416 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\pdb.py', reloading
+2025-04-15 16:36:46,426 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\cmd.py', reloading
+2025-04-15 16:36:46,430 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\bdb.py', reloading
+2025-04-15 16:36:46,458 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\getopt.py', reloading
+2025-04-15 16:36:46,508 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\sqlite3\\__init__.py', reloading
+2025-04-15 16:36:46,509 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\sqlite3\\dbapi2.py', reloading
+2025-04-15 16:36:46,593 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\__init__.py', reloading
+2025-04-15 16:36:46,595 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\domreg.py', reloading
+2025-04-15 16:36:46,596 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\minidom.py', reloading
+2025-04-15 16:36:46,610 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\minicompat.py', reloading
+2025-04-15 16:36:46,611 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\xmlbuilder.py', reloading
+2025-04-15 16:36:46,615 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\NodeFilter.py', reloading
+2025-04-15 16:36:46,670 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\dom\\expatbuilder.py', reloading
+2025-04-15 16:36:46,811 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\pydoc_data\\topics.py', reloading
+2025-04-15 16:36:46,871 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\concurrent\\futures\\thread.py', reloading
+2025-04-15 16:36:46,898 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\cProfile.py', reloading
+2025-04-15 16:36:46,902 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\profile.py', reloading
+2025-04-15 16:36:46,906 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\pstats.py', reloading
+2025-04-15 16:36:46,932 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\timeit.py', reloading
+2025-04-15 16:36:47,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\IPython\\display.py', reloading
+2025-04-15 16:36:47,023 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\IPython\\core\\display_functions.py', reloading
+2025-04-15 16:36:47,033 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\IPython\\lib\\display.py', reloading
+2025-04-15 16:36:47,087 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\ascii.py', reloading
+2025-04-15 16:36:47,100 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xmlrpc\\server.py', reloading

@@ -1,0 +1,6 @@
+2025-04-11 15:44:00,234 - werkzeug - WARNING -  * Debugger is active!
+2025-04-11 15:44:00,244 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-11 15:44:01,262 - Review.reviews.lc1ep_review - INFO - Loading EOD data...
+2025-04-11 15:44:04,392 - Review.reviews.lc1ep_review - INFO - Loading reference data...
+2025-04-11 15:44:04,482 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading
+2025-04-11 15:44:04,482 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading

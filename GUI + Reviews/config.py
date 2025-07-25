@@ -173,10 +173,31 @@ INDEX_CONFIGS = {
     }
     # Add new indices here following the same pattern
 }
+BATCH_CONFIG = {
+    "max_concurrent_reviews": 3,  # Adjust based on your system capacity
+    "timeout_minutes": 30,        # Timeout for individual reviews
+    "retry_attempts": 1,          # Number of retry attempts for failed reviews
+    "progress_update_interval": 1 # Seconds between progress updates
+}
 
+# Group configurations for common batch operations
+REVIEW_GROUPS = {
+    "french_indices": ["FRI4P", "FRD4P", "FRECP", "FRN4P", "FR20P"],
+    "dutch_indices": ["EDWP", "EDWPT", "GICP", "AERDP", "BNEW"],
+    "eurozone_indices": ["EZ40P", "EZ60P", "EZ15P", "EZN1P"],
+    "sustainability_indices": ["AEXEW", "CACEW", "CLEW"],
+    "all_indices": list(INDEX_CONFIGS.keys())
+}
 def get_index_config(review_type):
     """Get configuration for a specific review type"""
     review_type = review_type.upper()
     if review_type not in INDEX_CONFIGS:
         raise ValueError(f"Unknown review type: {review_type}")
     return INDEX_CONFIGS[review_type]
+def get_batch_config():
+    """Get batch processing configuration"""
+    return BATCH_CONFIG
+
+def get_review_group(group_name):
+    """Get a predefined group of reviews"""
+    return REVIEW_GROUPS.get(group_name, [])

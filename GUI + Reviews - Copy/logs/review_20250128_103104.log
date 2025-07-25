@@ -1,0 +1,25 @@
+2025-01-28 10:31:04,312 - werkzeug - WARNING -  * Debugger is active!
+2025-01-28 10:31:04,315 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-28 10:31:18,689 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-01-28 10:31:20,450 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-01-28 10:31:27,146 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-01-28 10:31:27,229 - Review.reviews.gicp_review - INFO - Category_1 weight: 12.0000% (target: 12.0000%)
+2025-01-28 10:31:27,230 - Review.reviews.gicp_review - INFO - Category_2 weight: 12.0000% (target: 12.0000%)
+2025-01-28 10:31:27,231 - Review.reviews.gicp_review - INFO - Category_3 weight: 12.0000% (target: 12.0000%)
+2025-01-28 10:31:27,231 - Review.reviews.gicp_review - INFO - Category_4 weight: 12.0000% (target: 12.0000%)
+2025-01-28 10:31:27,232 - Review.reviews.gicp_review - INFO - Category_5 weight: 12.0000% (target: 12.0000%)
+2025-01-28 10:31:27,232 - Review.reviews.gicp_review - INFO - Category_6 weight: 20.0000% (target: 20.0000%)
+2025-01-28 10:31:27,233 - Review.reviews.gicp_review - INFO - Category_7 weight: 20.0000% (target: 20.0000%)
+2025-01-28 10:31:27,234 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-01-28 10:31:27,234 - Review.reviews.gicp_review - INFO - Category_1 final weight: 12.0000%
+2025-01-28 10:31:27,235 - Review.reviews.gicp_review - INFO - Category_2 final weight: 12.0000%
+2025-01-28 10:31:27,235 - Review.reviews.gicp_review - INFO - Category_3 final weight: 12.0000%
+2025-01-28 10:31:27,236 - Review.reviews.gicp_review - INFO - Category_4 final weight: 12.0000%
+2025-01-28 10:31:27,236 - Review.reviews.gicp_review - INFO - Category_5 final weight: 12.0000%
+2025-01-28 10:31:27,236 - Review.reviews.gicp_review - INFO - Category_6 final weight: 20.0000%
+2025-01-28 10:31:27,237 - Review.reviews.gicp_review - INFO - Category_7 final weight: 20.0000%
+2025-01-28 10:31:27,237 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.0000%
+2025-01-28 10:31:27,241 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250128_103127.xlsx
+2025-01-28 10:31:27,575 - werkzeug - INFO - 127.0.0.1 - - [28/Jan/2025 10:31:27] "POST /calculate HTTP/1.1" 200 -
+2025-01-28 10:41:42,847 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\os.py', reloading

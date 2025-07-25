@@ -1,0 +1,11 @@
+2025-02-04 15:32:37,850 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 15:32:37,852 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-04 15:32:40,362 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\ops\\__init__.py', reloading
+2025-02-04 15:32:40,363 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\ops\\common.py', reloading
+2025-02-04 15:32:40,375 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\textwrap.py', reloading
+2025-02-04 15:32:40,382 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\__init__.py', reloading
+2025-02-04 15:32:40,386 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\_parser.py', reloading
+2025-02-04 15:32:40,401 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\_constants.py', reloading
+2025-02-04 15:32:40,471 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\_compiler.py', reloading
+2025-02-04 15:32:40,762 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\plotting\\__init__.py', reloading
+2025-02-04 15:32:40,764 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\plotting\\_core.py', reloading

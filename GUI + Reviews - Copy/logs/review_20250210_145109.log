@@ -1,0 +1,172 @@
+2025-02-10 14:51:09,045 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 14:51:09,047 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-10 14:51:20,066 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-02-10 14:51:25,758 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-02-10 14:51:25,759 - Review.reviews.edwp_review - INFO - Total companies selected: 5446
+2025-02-10 14:51:25,761 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.84%
+2025-02-10 14:51:25,788 - Review.reviews.edwp_review - INFO - 
+DEUP Selection Summary:
+2025-02-10 14:51:25,790 - Review.reviews.edwp_review - INFO - Total companies selected: 1327
+2025-02-10 14:51:25,791 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.67%
+2025-02-10 14:51:25,810 - Review.reviews.edwp_review - INFO - 
+DEZP Selection Summary:
+2025-02-10 14:51:25,811 - Review.reviews.edwp_review - INFO - Total companies selected: 494
+2025-02-10 14:51:25,812 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.51%
+2025-02-10 14:51:25,829 - Review.reviews.edwp_review - INFO - 
+DAPPR Selection Summary:
+2025-02-10 14:51:25,830 - Review.reviews.edwp_review - INFO - Total companies selected: 1909
+2025-02-10 14:51:25,832 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.13%
+2025-02-10 14:51:25,845 - Review.reviews.edwp_review - INFO - 
+DNAP Selection Summary:
+2025-02-10 14:51:25,847 - Review.reviews.edwp_review - INFO - Total companies selected: 1764
+2025-02-10 14:51:25,848 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.18%
+2025-02-10 14:51:25,861 - Review.reviews.edwp_review - INFO - 
+DASP Selection Summary:
+2025-02-10 14:51:25,863 - Review.reviews.edwp_review - INFO - Total companies selected: 1563
+2025-02-10 14:51:25,864 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.07%
+2025-02-10 14:51:25,871 - Review.reviews.edwp_review - INFO - 
+DPAP Selection Summary:
+2025-02-10 14:51:25,872 - Review.reviews.edwp_review - INFO - Total companies selected: 320
+2025-02-10 14:51:25,873 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.04%
+2025-02-10 14:51:25,885 - Review.reviews.edwp_review - INFO - 
+EUSP Selection Summary:
+2025-02-10 14:51:25,886 - Review.reviews.edwp_review - INFO - Total companies selected: 1481
+2025-02-10 14:51:25,887 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.00%
+2025-02-10 14:51:25,898 - Review.reviews.edwp_review - INFO - 
+EJPP Selection Summary:
+2025-02-10 14:51:25,900 - Review.reviews.edwp_review - INFO - Total companies selected: 1414
+2025-02-10 14:51:25,901 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.00%
+2025-02-10 14:51:25,906 - Review.reviews.edwp_review - INFO - 
+ECHP Selection Summary:
+2025-02-10 14:51:25,906 - Review.reviews.edwp_review - INFO - Total companies selected: 74
+2025-02-10 14:51:25,907 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.05%
+2025-02-10 14:51:25,913 - Review.reviews.edwp_review - INFO - 
+EUKP Selection Summary:
+2025-02-10 14:51:25,915 - Review.reviews.edwp_review - INFO - Total companies selected: 320
+2025-02-10 14:51:25,916 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.01%
+2025-02-10 14:51:25,921 - Review.reviews.edwp_review - INFO - 
+CANP Selection Summary:
+2025-02-10 14:51:25,922 - Review.reviews.edwp_review - INFO - Total companies selected: 230
+2025-02-10 14:51:25,923 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.02%
+2025-02-10 14:51:25,932 - Review.reviews.edwp_review - INFO - 
+Global Selection Summary:
+2025-02-10 14:51:25,933 - Review.reviews.edwp_review - INFO - Total companies selected: 5446
+2025-02-10 14:51:25,935 - Review.reviews.edwp_review - INFO - Total FFMC covered: 98.84%
+2025-02-10 14:51:25,938 - Review.reviews.edwp_review - INFO - 
+MIC-level Summary:
+2025-02-10 14:51:25,938 - Review.reviews.edwp_review - INFO -       ISIN          FFMC  EDWP_selection
+MIC                                     
+ALXP     1  1.337544e+09               1
+BATS     3  1.962934e+10               1
+MERK     2  2.803735e+08               2
+MTAA   246  5.292374e+11              85
+WBAH    26  5.370078e+10              17
+XAMS    79  1.157401e+12              44
+XASX   886  1.442942e+12             283
+XBRU    58  1.938564e+11              34
+XCSE   107  6.350474e+11              36
+XESM     2  1.794035e+09               2
+XETR   227  1.472409e+12             106
+XHEL   127  2.061674e+11              49
+XHKG   209  3.465502e+11              69
+XLIS    18  3.541669e+10              11
+XLON   872  2.336733e+12             320
+XMAD    99  4.808796e+11              41
+XMSM    14  5.274635e+10              10
+XNGM    47  4.908139e+08               1
+XNGS  2628  2.418978e+13             773
+XNYS  1736  2.534917e+13            1143
+XNZE    52  6.656698e+10              35
+XOSL   245  1.738210e+11             125
+XPAR   351  1.866583e+12              94
+XSES   118  2.570802e+11              62
+XSTO   648  7.073552e+11             222
+XSWX   148  1.669679e+12              86
+XTAE   275  1.399417e+11             150
+XTKS  3711  4.991981e+12            1414
+XTSE   491  2.080540e+12             230
+2025-02-10 14:51:25,956 - Review.reviews.edwp_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20250210_145125.xlsx
+2025-02-10 14:51:26,229 - Review.reviews.edwp_review - INFO - 
+EDWP Changes Summary:
+2025-02-10 14:51:26,229 - Review.reviews.edwp_review - INFO - Inclusions: 65
+2025-02-10 14:51:26,229 - Review.reviews.edwp_review - INFO - Exclusions: 1352
+2025-02-10 14:51:26,387 - Review.reviews.edwp_review - INFO - 
+DEUP Changes Summary:
+2025-02-10 14:51:26,387 - Review.reviews.edwp_review - INFO - Inclusions: 23
+2025-02-10 14:51:26,388 - Review.reviews.edwp_review - INFO - Exclusions: 5429
+2025-02-10 14:51:26,530 - Review.reviews.edwp_review - INFO - 
+DEZP Changes Summary:
+2025-02-10 14:51:26,531 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-02-10 14:51:26,531 - Review.reviews.edwp_review - INFO - Exclusions: 6241
+2025-02-10 14:51:26,731 - Review.reviews.edwp_review - INFO - 
+DAPPR Changes Summary:
+2025-02-10 14:51:26,732 - Review.reviews.edwp_review - INFO - Inclusions: 17
+2025-02-10 14:51:26,732 - Review.reviews.edwp_review - INFO - Exclusions: 4841
+2025-02-10 14:51:26,902 - Review.reviews.edwp_review - INFO - 
+DNAP Changes Summary:
+2025-02-10 14:51:26,903 - Review.reviews.edwp_review - INFO - Inclusions: 21
+2025-02-10 14:51:26,903 - Review.reviews.edwp_review - INFO - Exclusions: 4990
+2025-02-10 14:51:27,102 - Review.reviews.edwp_review - INFO - 
+DASP Changes Summary:
+2025-02-10 14:51:27,102 - Review.reviews.edwp_review - INFO - Inclusions: 10
+2025-02-10 14:51:27,102 - Review.reviews.edwp_review - INFO - Exclusions: 5180
+2025-02-10 14:51:27,243 - Review.reviews.edwp_review - INFO - 
+DPAP Changes Summary:
+2025-02-10 14:51:27,244 - Review.reviews.edwp_review - INFO - Inclusions: 5
+2025-02-10 14:51:27,244 - Review.reviews.edwp_review - INFO - Exclusions: 6418
+2025-02-10 14:51:27,406 - Review.reviews.edwp_review - INFO - 
+EUSP Changes Summary:
+2025-02-10 14:51:27,406 - Review.reviews.edwp_review - INFO - Inclusions: 14
+2025-02-10 14:51:27,406 - Review.reviews.edwp_review - INFO - Exclusions: 5266
+2025-02-10 14:51:27,606 - Review.reviews.edwp_review - INFO - 
+EJPP Changes Summary:
+2025-02-10 14:51:27,606 - Review.reviews.edwp_review - INFO - Inclusions: 9
+2025-02-10 14:51:27,606 - Review.reviews.edwp_review - INFO - Exclusions: 5328
+2025-02-10 14:51:27,741 - Review.reviews.edwp_review - INFO - 
+ECHP Changes Summary:
+2025-02-10 14:51:27,742 - Review.reviews.edwp_review - INFO - Inclusions: 0
+2025-02-10 14:51:27,742 - Review.reviews.edwp_review - INFO - Exclusions: 6659
+2025-02-10 14:51:27,881 - Review.reviews.edwp_review - INFO - 
+EUKP Changes Summary:
+2025-02-10 14:51:27,882 - Review.reviews.edwp_review - INFO - Inclusions: 9
+2025-02-10 14:51:27,882 - Review.reviews.edwp_review - INFO - Exclusions: 6422
+2025-02-10 14:51:28,017 - Review.reviews.edwp_review - INFO - 
+CANP Changes Summary:
+2025-02-10 14:51:28,017 - Review.reviews.edwp_review - INFO - Inclusions: 6
+2025-02-10 14:51:28,017 - Review.reviews.edwp_review - INFO - Exclusions: 6509
+2025-02-10 14:51:32,481 - Review.reviews.edwp_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20250210_145125.xlsx
+2025-02-10 14:51:32,613 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 14:51:32] "POST /calculate HTTP/1.1" 200 -
+2025-02-10 14:52:28,981 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-02-10 14:52:30,884 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-02-10 14:52:37,889 - Review.reviews.aerdp_review - ERROR - Error during review calculation: '3 months aver. Turnover EUR'
+2025-02-10 14:52:37,894 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: '3 months aver. Turnover EUR'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 137, in run_aerdp_review
+    (developed_market_df['3 months aver. Turnover EUR'] > 4000000)
+     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: '3 months aver. Turnover EUR'
+
+2025-02-10 14:52:37,908 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 14:52:37] "POST /calculate HTTP/1.1" 200 -
+2025-02-10 14:52:41,835 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-02-10 14:52:43,991 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-02-10 14:52:44,047 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250210_145244.xlsx
+2025-02-10 14:52:44,114 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 14:52:44] "POST /calculate HTTP/1.1" 200 -
+2025-02-10 14:54:56,713 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading
+2025-02-10 14:54:56,714 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading

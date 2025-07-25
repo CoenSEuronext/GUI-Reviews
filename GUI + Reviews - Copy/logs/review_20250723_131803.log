@@ -1,0 +1,38 @@
+2025-07-23 13:18:03,799 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 13:18:03,799 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-23 13:18:03,828 - Review.reviews.ez40p_review - INFO - Loading EOD data...
+2025-07-23 13:18:04,607 - Review.reviews.ez40p_review - INFO - Loading reference data...
+2025-07-23 13:18:05,657 - Review.reviews.ez40p_review - INFO - Selecting top 40 companies with highest FFMC...
+2025-07-23 13:18:05,663 - Review.reviews.ez40p_review - ERROR - Error during review calculation: "['Company', 'Capping Factor'] not in index"
+2025-07-23 13:18:05,663 - Review.reviews.ez40p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ez40p_review.py", line 111, in run_ez40p_review
+    top_40_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Company', 'Capping Factor'] not in index"
+
+2025-07-23 13:18:05,672 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 13:18:05] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 13:18:55,373 - Review.reviews.ez40p_review - INFO - Loading EOD data...
+2025-07-23 13:18:57,390 - Review.reviews.ez40p_review - INFO - Loading reference data...
+2025-07-23 13:18:58,241 - Review.reviews.ez40p_review - INFO - Selecting top 40 companies with highest FFMC...
+2025-07-23 13:18:58,243 - Review.reviews.ez40p_review - ERROR - Error during review calculation: "['Company', 'Capping Factor'] not in index"
+2025-07-23 13:18:58,243 - Review.reviews.ez40p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ez40p_review.py", line 111, in run_ez40p_review
+    top_40_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Company', 'Capping Factor'] not in index"
+
+2025-07-23 13:18:58,248 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 13:18:58] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 13:19:01,144 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez40p_review.py', reloading
+2025-07-23 13:19:01,144 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez40p_review.py', reloading

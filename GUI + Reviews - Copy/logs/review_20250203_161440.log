@@ -1,0 +1,46 @@
+2025-02-03 16:14:40,364 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 16:14:40,365 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 16:14:40,373 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-03 16:14:40,888 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 16:14:40,890 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-03 16:14:41,527 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:14:41] "GET / HTTP/1.1" 200 -
+2025-02-03 16:14:41,546 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:14:41] "[33mGET /api/placeholder/400/320 HTTP/1.1[0m" 404 -
+2025-02-03 16:16:39,602 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:16:39] "GET / HTTP/1.1" 200 -
+2025-02-03 16:17:33,958 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:17:33] "GET / HTTP/1.1" 200 -
+2025-02-03 16:17:33,964 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:17:33] "[33mGET /api/placeholder/800/400 HTTP/1.1[0m" 404 -
+2025-02-03 16:17:35,505 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:17:35] "GET / HTTP/1.1" 200 -
+2025-02-03 16:17:35,512 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:17:35] "[33mGET /api/placeholder/800/400 HTTP/1.1[0m" 404 -
+2025-02-03 16:18:59,320 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:18:59] "GET / HTTP/1.1" 200 -
+2025-02-03 16:18:59,328 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:18:59] "[33mGET /api/placeholder/200/80 HTTP/1.1[0m" 404 -
+2025-02-03 16:19:00,347 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:19:00] "GET / HTTP/1.1" 200 -
+2025-02-03 16:19:00,355 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:19:00] "[33mGET /api/placeholder/200/80 HTTP/1.1[0m" 404 -
+2025-02-03 16:21:10,432 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:21:10] "GET / HTTP/1.1" 200 -
+2025-02-03 16:21:10,441 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:21:10] "[33mGET /GUI%20+%20Reviews/Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:21:24,586 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:21:24] "[33mGET /docs/user-manual.pdf HTTP/1.1[0m" 404 -
+2025-02-03 16:22:03,934 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:22:03] "GET / HTTP/1.1" 200 -
+2025-02-03 16:22:06,005 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:22:06] "GET / HTTP/1.1" 200 -
+2025-02-03 16:22:08,225 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:22:08] "GET / HTTP/1.1" 200 -
+2025-02-03 16:22:15,692 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:22:15] "GET / HTTP/1.1" 200 -
+2025-02-03 16:22:15,698 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:22:15] "[33mGET /api/placeholder/200/80 HTTP/1.1[0m" 404 -
+2025-02-03 16:23:45,571 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:23:45] "GET / HTTP/1.1" 200 -
+2025-02-03 16:23:47,089 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:23:47] "[33mGET /docs/methodology.pdf HTTP/1.1[0m" 404 -
+2025-02-03 16:24:16,502 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:24:16] "GET / HTTP/1.1" 200 -
+2025-02-03 16:27:01,834 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:27:01] "GET / HTTP/1.1" 200 -
+2025-02-03 16:27:02,752 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:27:02] "GET / HTTP/1.1" 200 -
+2025-02-03 16:27:03,344 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:27:03] "GET / HTTP/1.1" 200 -
+2025-02-03 16:28:44,849 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:44] "GET / HTTP/1.1" 200 -
+2025-02-03 16:28:44,857 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:44] "[33mGET /Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:28:45,603 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:45] "GET / HTTP/1.1" 200 -
+2025-02-03 16:28:45,610 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:45] "[33mGET /Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:28:46,162 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:46] "GET / HTTP/1.1" 200 -
+2025-02-03 16:28:46,174 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:46] "[33mGET /Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:28:46,178 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:46] "[33mGET /Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:28:46,359 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:46] "GET / HTTP/1.1" 200 -
+2025-02-03 16:28:46,364 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:46] "[33mGET /Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:28:46,368 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:28:46] "[33mGET /Euronext_Logo-RGB_colour.png HTTP/1.1[0m" 404 -
+2025-02-03 16:30:49,179 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-02-03 16:30:50,059 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-03 16:34:23,783 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-03 17:48:03,831 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-02-03 17:52:05,171 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

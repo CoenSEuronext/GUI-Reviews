@@ -1,0 +1,9 @@
+2025-07-23 13:24:33,859 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 13:24:33,859 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-23 13:24:34,757 - Review.reviews.ez40p_review - INFO - Loading EOD data...
+2025-07-23 13:24:38,570 - Review.reviews.ez40p_review - INFO - Loading reference data...
+2025-07-23 13:24:39,597 - Review.reviews.ez40p_review - INFO - Selecting top 40 companies with highest FFMC...
+2025-07-23 13:24:39,613 - Review.reviews.ez40p_review - INFO - Saving EZ40P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ40P_df_20250723_132439.xlsx
+2025-07-23 13:24:39,859 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 13:24:39] "POST /calculate HTTP/1.1" 200 -
+2025-07-23 13:25:33,622 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez40p_review.py', reloading
+2025-07-23 13:25:33,623 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez40p_review.py', reloading

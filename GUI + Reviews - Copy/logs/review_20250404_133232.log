@@ -1,0 +1,4 @@
+2025-04-04 13:32:32,550 - werkzeug - WARNING -  * Debugger is active!
+2025-04-04 13:32:32,551 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-04 13:34:57,167 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-04-04 13:34:57,177 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading

@@ -1,0 +1,46 @@
+2025-06-18 18:51:40,528 - werkzeug - WARNING -  * Debugger is active!
+2025-06-18 18:51:40,531 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-06-18 18:51:41,066 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-06-18 18:51:42,960 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-06-18 18:51:50,388 - Review.reviews.aerdp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-06-18 18:51:50,389 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aerdp_review.py", line 60, in run_aerdp_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-06-18 18:51:50,410 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:51:50] "POST /calculate HTTP/1.1" 200 -
+2025-06-18 18:51:51,065 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-06-18 18:51:51,880 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-06-18 18:51:59,325 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250618_185159.xlsx
+2025-06-18 18:51:59,771 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:51:59] "POST /calculate HTTP/1.1" 200 -
+2025-06-18 18:52:37,456 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-06-18 18:52:39,194 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-06-18 18:52:41,107 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20250618_185241.xlsx
+2025-06-18 18:52:41,183 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:52:41] "POST /calculate HTTP/1.1" 200 -
+2025-06-18 18:52:43,738 - Review.reviews.cacew_review - INFO - Loading EOD data...
+2025-06-18 18:52:44,465 - Review.reviews.cacew_review - INFO - Loading reference data...
+2025-06-18 18:52:44,542 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20250618_185244.xlsx
+2025-06-18 18:52:44,595 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:52:44] "POST /calculate HTTP/1.1" 200 -
+2025-06-18 18:52:52,699 - Review.reviews.clew_review - INFO - Loading EOD data...
+2025-06-18 18:52:53,306 - Review.reviews.clew_review - INFO - Loading reference data...
+2025-06-18 18:52:53,360 - Review.reviews.clew_review - INFO - Saving CLEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLEW_df_20250618_185253.xlsx
+2025-06-18 18:52:53,419 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:52:53] "POST /calculate HTTP/1.1" 200 -
+2025-06-18 18:53:03,530 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-06-18 18:53:04,245 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-06-18 18:53:05,387 - Review.reviews.f4rip_review - ERROR - Error during review calculation: "['Currency'] not in index"
+2025-06-18 18:53:05,390 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 138, in run_f4rip_review
+    F4RIP_df = selection_df[
+               ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency'] not in index"
+
+2025-06-18 18:53:05,396 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:53:05] "POST /calculate HTTP/1.1" 200 -
+2025-06-18 18:53:27,161 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2025-06-18 18:53:27,544 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\__init__.py', reloading

@@ -1,0 +1,13 @@
+2025-01-23 14:56:54,404 - werkzeug - WARNING -  * Debugger is active!
+2025-01-23 14:56:54,406 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-23 14:56:55,721 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-23 14:56:56,638 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-23 14:56:57,292 - Review.reviews.f4rip_review - INFO - Saving F4RIP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\F4RIP_df_20250123_145657.xlsx
+2025-01-23 14:56:57,357 - werkzeug - INFO - 127.0.0.1 - - [23/Jan/2025 14:56:57] "POST /calculate HTTP/1.1" 200 -
+2025-01-23 14:57:03,129 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-23 14:57:03,887 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-23 14:57:04,345 - Review.reviews.f4rip_review - INFO - Saving F4RIP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\F4RIP_df_20250123_145704.xlsx
+2025-01-23 14:57:04,457 - werkzeug - INFO - 127.0.0.1 - - [23/Jan/2025 14:57:04] "POST /calculate HTTP/1.1" 200 -
+2025-01-23 15:05:16,658 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-01-23 15:05:16,664 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-01-23 15:05:16,665 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading

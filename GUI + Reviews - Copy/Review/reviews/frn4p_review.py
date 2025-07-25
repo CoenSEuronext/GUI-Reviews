@@ -1,0 +1,187 @@
+import pandas as pd
+import numpy as np
+from datetime import datetime
+import os
+import traceback
+from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
+from utils.logging_utils import setup_logging
+from utils.data_loader import load_eod_data, load_reference_data
+from utils.inclusion_exclusion import inclusion_exclusion_analysis
+
+logger = setup_logging(__name__)
+
+def run_frn4p_review(date, co_date, effective_date, index="FRN4P", isin="FR0013349057", 
+                   area="US", area2="EU", type="STOCK", universe="cac_family", 
+                   feed="Reuters", currency="EUR", year=None):
+
+    try:
+        # Simplify year extraction
+        year = year or str(datetime.strptime(date, '%Y%m%d').year)
+
+        # Set data folder for current month
+        current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
+
+        # Load data with error handling
+        logger.info("Loading EOD data...")
+        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+
+        logger.info("Loading reference data...")
+        
+        ref_data = load_reference_data(
+            current_data_folder,
+            ['sbf_120', 'master_report', 'ff']
+        )
+        selection_df = ref_data['sbf_120']
+        master_report_df = ref_data['master_report']
+        ff_df = ref_data['ff']
+        selection_df['Capping'] = 1  
+        selection_df['Effective Date of Review'] = effective_date
+        # Filter symbols once
+        symbols_filtered = stock_eod_df[
+            stock_eod_df['#Symbol'].str.len() == 12
+        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
+
+        # Chain all data preparation operations
+        selection_df = (ref_data['sbf_120']
+           # Initial renaming
+           .rename(columns={
+               'Name': 'Company',
+               'NOSH': 'Number of Shares',
+               'ISIN': 'ISIN code',
+            })
+            # Merge symbols
+            .merge(
+                symbols_filtered,
+                left_on='ISIN code',
+                right_on='Isin Code',
+                how='left'
+            )
+            .drop('Isin Code', axis=1)
+            # Merge FX data
+            .merge(
+                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol',
+                how='left'
+            )
+            # Merge EOD prices
+            .merge(
+                stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol',
+                how='left',
+                suffixes=('', '_EOD')
+            )
+            # Merge CO prices
+            .merge(
+                stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol',
+                how='left',
+                suffixes=('_EOD', '_CO')
+            )
+            # Merge master report data
+            .merge(
+                master_report_df[['ISIN', 'MIC of MoR', 'Number of issued shares']].drop_duplicates(subset=['ISIN', 'MIC of MoR'], keep='first'),
+                left_on=['ISIN code', 'MIC'],
+                right_on=['ISIN', 'MIC of MoR'], 
+                how='left'
+            )
+            .drop(['ISIN', 'MIC of MoR'], axis=1)
+            # Merge FF data for Free Float Round
+            .merge(
+                ff_df[['ISIN Code:', 'Free Float Round:']].drop_duplicates(subset='ISIN Code:', keep='first'),
+                left_on='ISIN code',
+                right_on='ISIN Code:',
+                how='left'
+            )
+            .drop('ISIN Code:', axis=1)
+        )
+
+        # Validate data loading
+        if any(df is None for df in [selection_df]):
+            raise ValueError("Failed to load one or more required reference data files")
+        index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+        
+        # Use the merged Free Float Round value, fallback to original Free Float if not available
+        selection_df["Free Float"] = selection_df["Free Float Round:"]
+        selection_df['FFMC'] = selection_df['Capping'] * selection_df['Number of issued shares'] * selection_df['Free Float'] * selection_df['Close Prc_CO']
+        
+        # Sort by FFMC and select companies ranked 41-80 (instead of bottom 20)
+        top_n = 40  # Still using 40 companies, but now ranked 41-80
+        logger.info(f"Selecting companies ranked 41-80 by FFMC (40 companies total)...")
+
+        # Sort the entire selection_df by FFMC in ascending order
+        selection_df_sorted = selection_df.sort_values('FFMC', ascending=True).reset_index(drop=True)
+
+        # Select companies ranked 41-80 (using 0-based indexing, so positions 40-79)
+        companies_41_to_80_df = selection_df_sorted.iloc[40:80].copy()
+
+        # Calculate the target market cap per company (equal weighting)
+        target_mcap_per_company = index_mcap / top_n
+        companies_41_to_80_df['Unrounded NOSH'] = target_mcap_per_company / companies_41_to_80_df['Close Prc_EOD']
+        companies_41_to_80_df['Rounded NOSH'] = companies_41_to_80_df['Unrounded NOSH'].round()
+        companies_41_to_80_df['Capping Factor'] = 1
+        companies_41_to_80_df['Free Float'] = 1
+        companies_41_to_80_df['Effective Date of Review'] = effective_date
+        companies_41_to_80_df['Currency'] = currency
+
+        # Update the calculation for the full selection_df as well
+        selection_df['Unrounded NOSH'] = target_mcap_per_company / selection_df['Close Prc_EOD']
+
+        # Prepare FRN4P DataFrame (using the new selection)
+        FRN4P_df = (
+            companies_41_to_80_df[
+                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
+                'Effective Date of Review', 'Currency']
+            ]
+            .rename(columns={'Rounded NOSH': 'Number of Shares'})
+            .rename(columns={'ISIN code': 'ISIN Code'})
+            .sort_values('Company')
+        )
+
+        # Update the inclusion/exclusion analysis to use the new selection
+        analysis_results = inclusion_exclusion_analysis(
+            companies_41_to_80_df,  # Changed from selection_df to companies_41_to_80_df
+            stock_eod_df, 
+            index, 
+            isin_column='ISIN code'
+        )
+        inclusion_df = analysis_results['inclusion_df']
+        exclusion_df = analysis_results['exclusion_df']
+
+        # Save output files
+        try:
+            output_dir = os.path.join(os.getcwd(), 'output')
+            os.makedirs(output_dir, exist_ok=True)
+           
+            # Create filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            frn4p_path = os.path.join(output_dir, f'FRN4P_df_{timestamp}.xlsx')
+           
+            # Save output with multiple sheets
+            logger.info(f"Saving FRN4P output to: {frn4p_path}")
+            with pd.ExcelWriter(frn4p_path) as writer:
+                FRN4P_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
+                exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
+                selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                pd.DataFrame({'Index Market Cap': [index_mcap]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
+
+            return {
+                "status": "success",
+                "message": "Review completed successfully",
+                "data": {"frn4p_path": frn4p_path}
+            }
+           
+        except Exception as e:
+            error_msg = f"Error saving output file: {str(e)}"
+            logger.error(error_msg)
+            return {"status": "error", "message": error_msg, "data": None}
+   
+    except Exception as e:
+        logger.error(f"Error during review calculation: {str(e)}")
+        logger.error(traceback.format_exc())
+        return {
+            "status": "error",
+            "message": f"Error during review calculation: {str(e)}",
+            "traceback": traceback.format_exc(),
+            "data": None
+        }

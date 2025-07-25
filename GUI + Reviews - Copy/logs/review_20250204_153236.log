@@ -1,0 +1,16 @@
+2025-02-04 15:32:36,271 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 15:32:36,273 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-04 15:32:36,311 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\groupby\\__init__.py', reloading
+2025-02-04 15:32:36,312 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\groupby\\generic.py', reloading
+2025-02-04 15:32:36,332 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\groupby\\groupby.py', reloading
+2025-02-04 15:32:36,381 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\_typing.py', reloading
+2025-02-04 15:32:36,396 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\groupby\\indexing.py', reloading
+2025-02-04 15:32:36,419 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\groupby\\grouper.py', reloading
+2025-02-04 15:32:36,576 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\apply.py', reloading
+2025-02-04 15:32:36,856 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\dtypes\\cast.py', reloading
+2025-02-04 15:32:37,029 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\multi.py', reloading
+2025-02-04 15:32:37,065 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\dtypes\\common.py', reloading
+2025-02-04 15:32:37,100 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\dtypes\\concat.py', reloading
+2025-02-04 15:32:37,162 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\__init__.py', reloading
+2025-02-04 15:32:37,163 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\api.py', reloading
+2025-02-04 15:32:37,165 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\__init__.py', reloading

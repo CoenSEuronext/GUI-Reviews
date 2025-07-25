@@ -1,0 +1,227 @@
+2025-03-06 10:46:02,153 - werkzeug - WARNING -  * Debugger is active!
+2025-03-06 10:46:02,156 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-03-06 10:46:03,289 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-03-06 10:46:09,327 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-03-06 10:46:09,328 - Review.reviews.edwpt_review - INFO - Total companies selected: 5446
+2025-03-06 10:46:09,330 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-03-06 10:46:09,356 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-03-06 10:46:09,363 - Review.reviews.edwpt_review - INFO - Total companies selected: 1327
+2025-03-06 10:46:09,365 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.67%
+2025-03-06 10:46:09,381 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-03-06 10:46:09,382 - Review.reviews.edwpt_review - INFO - Total companies selected: 494
+2025-03-06 10:46:09,383 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.51%
+2025-03-06 10:46:09,399 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-03-06 10:46:09,401 - Review.reviews.edwpt_review - INFO - Total companies selected: 1909
+2025-03-06 10:46:09,402 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.13%
+2025-03-06 10:46:09,415 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-03-06 10:46:09,417 - Review.reviews.edwpt_review - INFO - Total companies selected: 1764
+2025-03-06 10:46:09,418 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.18%
+2025-03-06 10:46:09,430 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-03-06 10:46:09,431 - Review.reviews.edwpt_review - INFO - Total companies selected: 1563
+2025-03-06 10:46:09,432 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2025-03-06 10:46:09,440 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-03-06 10:46:09,440 - Review.reviews.edwpt_review - INFO - Total companies selected: 320
+2025-03-06 10:46:09,441 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.04%
+2025-03-06 10:46:09,452 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-03-06 10:46:09,453 - Review.reviews.edwpt_review - INFO - Total companies selected: 1481
+2025-03-06 10:46:09,454 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-03-06 10:46:09,464 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-03-06 10:46:09,465 - Review.reviews.edwpt_review - INFO - Total companies selected: 1414
+2025-03-06 10:46:09,467 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-03-06 10:46:09,472 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-03-06 10:46:09,472 - Review.reviews.edwpt_review - INFO - Total companies selected: 74
+2025-03-06 10:46:09,473 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.05%
+2025-03-06 10:46:09,478 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-03-06 10:46:09,479 - Review.reviews.edwpt_review - INFO - Total companies selected: 320
+2025-03-06 10:46:09,480 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-03-06 10:46:09,486 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-03-06 10:46:09,487 - Review.reviews.edwpt_review - INFO - Total companies selected: 230
+2025-03-06 10:46:09,488 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-03-06 10:46:09,499 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-03-06 10:46:09,500 - Review.reviews.edwpt_review - INFO - Total companies selected: 5446
+2025-03-06 10:46:09,502 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-03-06 10:46:09,505 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-03-06 10:46:09,505 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  1.337544e+09                1
+BATS     3  1.962934e+10                1
+MERK     2  2.803735e+08                2
+MTAA   246  5.292374e+11               85
+WBAH    26  5.370078e+10               17
+XAMS    79  1.157401e+12               44
+XASX   886  1.442942e+12              283
+XBRU    58  1.938564e+11               34
+XCSE   107  6.350474e+11               36
+XESM     2  1.794035e+09                2
+XETR   227  1.472409e+12              106
+XHEL   127  2.061674e+11               49
+XHKG   209  3.465502e+11               69
+XLIS    18  3.541669e+10               11
+XLON   872  2.336733e+12              320
+XMAD    99  4.808796e+11               41
+XMSM    14  5.274635e+10               10
+XNGM    47  4.908139e+08                1
+XNGS  2628  2.418978e+13              773
+XNYS  1736  2.534917e+13             1143
+XNZE    52  6.656698e+10               35
+XOSL   245  1.738210e+11              125
+XPAR   351  1.866583e+12               94
+XSES   118  2.570802e+11               62
+XSTO   648  7.073552e+11              222
+XSWX   148  1.669679e+12               86
+XTAE   275  1.399417e+11              150
+XTKS  3711  4.991981e+12             1414
+XTSE   491  2.080540e+12              230
+2025-03-06 10:46:09,524 - Review.reviews.edwpt_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250306_104609.xlsx
+2025-03-06 10:46:09,739 - Review.reviews.edwpt_review - INFO - Selected companies for EDWPT: 5446
+2025-03-06 10:46:09,742 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=EDWPT: 0
+2025-03-06 10:46:09,742 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:09,742 - Review.reviews.edwpt_review - INFO - Inclusions for EDWPT: 5446
+2025-03-06 10:46:09,742 - Review.reviews.edwpt_review - INFO - Exclusions for EDWPT: 0
+2025-03-06 10:46:09,746 - Review.reviews.edwpt_review - INFO - Final inclusions count: 5446
+2025-03-06 10:46:09,747 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:09,815 - Review.reviews.edwpt_review - INFO - 
+EDWPT Changes Summary:
+2025-03-06 10:46:09,816 - Review.reviews.edwpt_review - INFO - Inclusions: 5446
+2025-03-06 10:46:09,817 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:09,859 - Review.reviews.edwpt_review - INFO - Selected companies for DEUPT: 1327
+2025-03-06 10:46:09,861 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=DEUPT: 0
+2025-03-06 10:46:09,861 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:09,861 - Review.reviews.edwpt_review - INFO - Inclusions for DEUPT: 1327
+2025-03-06 10:46:09,862 - Review.reviews.edwpt_review - INFO - Exclusions for DEUPT: 0
+2025-03-06 10:46:09,865 - Review.reviews.edwpt_review - INFO - Final inclusions count: 1327
+2025-03-06 10:46:09,866 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:09,883 - Review.reviews.edwpt_review - INFO - 
+DEUPT Changes Summary:
+2025-03-06 10:46:09,884 - Review.reviews.edwpt_review - INFO - Inclusions: 1327
+2025-03-06 10:46:09,884 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:09,902 - Review.reviews.edwpt_review - INFO - Selected companies for DEZPT: 494
+2025-03-06 10:46:09,904 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=DEZPT: 0
+2025-03-06 10:46:09,904 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:09,904 - Review.reviews.edwpt_review - INFO - Inclusions for DEZPT: 494
+2025-03-06 10:46:09,904 - Review.reviews.edwpt_review - INFO - Exclusions for DEZPT: 0
+2025-03-06 10:46:09,907 - Review.reviews.edwpt_review - INFO - Final inclusions count: 494
+2025-03-06 10:46:09,907 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:09,914 - Review.reviews.edwpt_review - INFO - 
+DEZPT Changes Summary:
+2025-03-06 10:46:09,914 - Review.reviews.edwpt_review - INFO - Inclusions: 494
+2025-03-06 10:46:09,914 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:09,975 - Review.reviews.edwpt_review - INFO - Selected companies for DAPPT: 1909
+2025-03-06 10:46:09,978 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=DAPPT: 0
+2025-03-06 10:46:09,978 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:09,979 - Review.reviews.edwpt_review - INFO - Inclusions for DAPPT: 1909
+2025-03-06 10:46:09,979 - Review.reviews.edwpt_review - INFO - Exclusions for DAPPT: 0
+2025-03-06 10:46:09,982 - Review.reviews.edwpt_review - INFO - Final inclusions count: 1909
+2025-03-06 10:46:09,982 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,010 - Review.reviews.edwpt_review - INFO - 
+DAPPT Changes Summary:
+2025-03-06 10:46:10,010 - Review.reviews.edwpt_review - INFO - Inclusions: 1909
+2025-03-06 10:46:10,010 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,098 - Review.reviews.edwpt_review - INFO - Selected companies for DNAPT: 1764
+2025-03-06 10:46:10,100 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=DNAPT: 0
+2025-03-06 10:46:10,100 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,100 - Review.reviews.edwpt_review - INFO - Inclusions for DNAPT: 1764
+2025-03-06 10:46:10,101 - Review.reviews.edwpt_review - INFO - Exclusions for DNAPT: 0
+2025-03-06 10:46:10,104 - Review.reviews.edwpt_review - INFO - Final inclusions count: 1764
+2025-03-06 10:46:10,104 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,128 - Review.reviews.edwpt_review - INFO - 
+DNAPT Changes Summary:
+2025-03-06 10:46:10,129 - Review.reviews.edwpt_review - INFO - Inclusions: 1764
+2025-03-06 10:46:10,129 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,184 - Review.reviews.edwpt_review - INFO - Selected companies for DASPT: 1563
+2025-03-06 10:46:10,186 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=DASPT: 0
+2025-03-06 10:46:10,187 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,187 - Review.reviews.edwpt_review - INFO - Inclusions for DASPT: 1563
+2025-03-06 10:46:10,187 - Review.reviews.edwpt_review - INFO - Exclusions for DASPT: 0
+2025-03-06 10:46:10,190 - Review.reviews.edwpt_review - INFO - Final inclusions count: 1563
+2025-03-06 10:46:10,190 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,210 - Review.reviews.edwpt_review - INFO - 
+DASPT Changes Summary:
+2025-03-06 10:46:10,210 - Review.reviews.edwpt_review - INFO - Inclusions: 1563
+2025-03-06 10:46:10,210 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,224 - Review.reviews.edwpt_review - INFO - Selected companies for DPAPT: 320
+2025-03-06 10:46:10,226 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=DPAPT: 0
+2025-03-06 10:46:10,227 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,227 - Review.reviews.edwpt_review - INFO - Inclusions for DPAPT: 320
+2025-03-06 10:46:10,227 - Review.reviews.edwpt_review - INFO - Exclusions for DPAPT: 0
+2025-03-06 10:46:10,230 - Review.reviews.edwpt_review - INFO - Final inclusions count: 320
+2025-03-06 10:46:10,230 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,235 - Review.reviews.edwpt_review - INFO - 
+DPAPT Changes Summary:
+2025-03-06 10:46:10,236 - Review.reviews.edwpt_review - INFO - Inclusions: 320
+2025-03-06 10:46:10,236 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,286 - Review.reviews.edwpt_review - INFO - Selected companies for EUSPT: 1481
+2025-03-06 10:46:10,288 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=EUSPT: 0
+2025-03-06 10:46:10,289 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,289 - Review.reviews.edwpt_review - INFO - Inclusions for EUSPT: 1481
+2025-03-06 10:46:10,289 - Review.reviews.edwpt_review - INFO - Exclusions for EUSPT: 0
+2025-03-06 10:46:10,292 - Review.reviews.edwpt_review - INFO - Final inclusions count: 1481
+2025-03-06 10:46:10,292 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,310 - Review.reviews.edwpt_review - INFO - 
+EUSPT Changes Summary:
+2025-03-06 10:46:10,311 - Review.reviews.edwpt_review - INFO - Inclusions: 1481
+2025-03-06 10:46:10,311 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,356 - Review.reviews.edwpt_review - INFO - Selected companies for EJPPT: 1414
+2025-03-06 10:46:10,358 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=EJPPT: 0
+2025-03-06 10:46:10,359 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,359 - Review.reviews.edwpt_review - INFO - Inclusions for EJPPT: 1414
+2025-03-06 10:46:10,359 - Review.reviews.edwpt_review - INFO - Exclusions for EJPPT: 0
+2025-03-06 10:46:10,363 - Review.reviews.edwpt_review - INFO - Final inclusions count: 1414
+2025-03-06 10:46:10,363 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,381 - Review.reviews.edwpt_review - INFO - 
+EJPPT Changes Summary:
+2025-03-06 10:46:10,382 - Review.reviews.edwpt_review - INFO - Inclusions: 1414
+2025-03-06 10:46:10,382 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,386 - Review.reviews.edwpt_review - INFO - Selected companies for ECHPT: 74
+2025-03-06 10:46:10,388 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=ECHPT: 0
+2025-03-06 10:46:10,388 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,388 - Review.reviews.edwpt_review - INFO - Inclusions for ECHPT: 74
+2025-03-06 10:46:10,388 - Review.reviews.edwpt_review - INFO - Exclusions for ECHPT: 0
+2025-03-06 10:46:10,391 - Review.reviews.edwpt_review - INFO - Final inclusions count: 74
+2025-03-06 10:46:10,391 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,392 - Review.reviews.edwpt_review - INFO - 
+ECHPT Changes Summary:
+2025-03-06 10:46:10,393 - Review.reviews.edwpt_review - INFO - Inclusions: 74
+2025-03-06 10:46:10,393 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,403 - Review.reviews.edwpt_review - INFO - Selected companies for EUKPT: 320
+2025-03-06 10:46:10,406 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=EUKPT: 0
+2025-03-06 10:46:10,406 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,406 - Review.reviews.edwpt_review - INFO - Inclusions for EUKPT: 320
+2025-03-06 10:46:10,406 - Review.reviews.edwpt_review - INFO - Exclusions for EUKPT: 0
+2025-03-06 10:46:10,409 - Review.reviews.edwpt_review - INFO - Final inclusions count: 320
+2025-03-06 10:46:10,409 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,413 - Review.reviews.edwpt_review - INFO - 
+EUKPT Changes Summary:
+2025-03-06 10:46:10,414 - Review.reviews.edwpt_review - INFO - Inclusions: 320
+2025-03-06 10:46:10,414 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:10,422 - Review.reviews.edwpt_review - INFO - Selected companies for CANPT: 230
+2025-03-06 10:46:10,425 - Review.reviews.edwpt_review - INFO - Companies in stock_eod_df with MIC=CANPT: 0
+2025-03-06 10:46:10,425 - Review.reviews.edwpt_review - INFO - Unique ISINs in current constituents: 0
+2025-03-06 10:46:10,425 - Review.reviews.edwpt_review - INFO - Inclusions for CANPT: 230
+2025-03-06 10:46:10,425 - Review.reviews.edwpt_review - INFO - Exclusions for CANPT: 0
+2025-03-06 10:46:10,427 - Review.reviews.edwpt_review - INFO - Final inclusions count: 230
+2025-03-06 10:46:10,427 - Review.reviews.edwpt_review - INFO - Final exclusions count: 0
+2025-03-06 10:46:10,431 - Review.reviews.edwpt_review - INFO - 
+CANPT Changes Summary:
+2025-03-06 10:46:10,431 - Review.reviews.edwpt_review - INFO - Inclusions: 230
+2025-03-06 10:46:10,432 - Review.reviews.edwpt_review - INFO - Exclusions: 0
+2025-03-06 10:46:14,579 - Review.reviews.edwpt_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250306_104609.xlsx
+2025-03-06 10:46:14,704 - werkzeug - INFO - 127.0.0.1 - - [06/Mar/2025 10:46:14] "POST /calculate HTTP/1.1" 200 -
+2025-03-06 10:48:32,328 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-06 10:48:32,334 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-06 10:48:32,335 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-03-06 10:48:32,335 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

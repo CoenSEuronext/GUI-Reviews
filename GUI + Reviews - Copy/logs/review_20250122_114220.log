@@ -1,0 +1,285 @@
+2025-01-22 11:42:20,036 - werkzeug - WARNING -  * Debugger is active!
+2025-01-22 11:42:20,039 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-22 11:42:21,150 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:42:21] "GET / HTTP/1.1" 200 -
+2025-01-22 11:42:26,188 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:42:27,180 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:42:34,783 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: AS, group size: 45
+2025-01-22 11:42:34,784 - Review.reviews.frd4p_review - INFO - Companies in group: 45, to exclude: 8
+2025-01-22 11:42:34,784 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: EU, group size: 20
+2025-01-22 11:42:34,785 - Review.reviews.frd4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-01-22 11:42:34,785 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: NA, group size: 72
+2025-01-22 11:42:34,785 - Review.reviews.frd4p_review - INFO - Companies in group: 72, to exclude: 14
+2025-01-22 11:42:34,786 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: AS, group size: 12
+2025-01-22 11:42:34,786 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:42:34,786 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: EU, group size: 17
+2025-01-22 11:42:34,787 - Review.reviews.frd4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-01-22 11:42:34,787 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: NA, group size: 10
+2025-01-22 11:42:34,787 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-01-22 11:42:34,788 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: AS, group size: 31
+2025-01-22 11:42:34,788 - Review.reviews.frd4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-01-22 11:42:34,788 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: EU, group size: 47
+2025-01-22 11:42:34,789 - Review.reviews.frd4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-01-22 11:42:34,789 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: NA, group size: 48
+2025-01-22 11:42:34,790 - Review.reviews.frd4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-01-22 11:42:34,790 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: AS, group size: 29
+2025-01-22 11:42:34,791 - Review.reviews.frd4p_review - INFO - Companies in group: 29, to exclude: 5
+2025-01-22 11:42:34,791 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: EU, group size: 40
+2025-01-22 11:42:34,792 - Review.reviews.frd4p_review - INFO - Companies in group: 40, to exclude: 7
+2025-01-22 11:42:34,792 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: NA, group size: 21
+2025-01-22 11:42:34,793 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-01-22 11:42:34,793 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: AS, group size: 15
+2025-01-22 11:42:34,794 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-01-22 11:42:34,794 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: EU, group size: 30
+2025-01-22 11:42:34,795 - Review.reviews.frd4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-01-22 11:42:34,795 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: NA, group size: 32
+2025-01-22 11:42:34,796 - Review.reviews.frd4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-01-22 11:42:34,796 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: AS, group size: 14
+2025-01-22 11:42:34,797 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:42:34,797 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: EU, group size: 30
+2025-01-22 11:42:34,798 - Review.reviews.frd4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-01-22 11:42:34,798 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: NA, group size: 23
+2025-01-22 11:42:34,799 - Review.reviews.frd4p_review - INFO - Companies in group: 23, to exclude: 4
+2025-01-22 11:42:34,799 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: AS, group size: 47
+2025-01-22 11:42:34,800 - Review.reviews.frd4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-01-22 11:42:34,800 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: EU, group size: 21
+2025-01-22 11:42:34,801 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-01-22 11:42:34,801 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: NA, group size: 22
+2025-01-22 11:42:34,802 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-01-22 11:42:34,802 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: AS, group size: 15
+2025-01-22 11:42:34,803 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-01-22 11:42:34,803 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: EU, group size: 12
+2025-01-22 11:42:34,803 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:42:34,804 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-01-22 11:42:34,804 - Review.reviews.frd4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-01-22 11:42:34,805 - Review.reviews.frd4p_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-01-22 11:42:34,805 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: AS, group size: 28
+2025-01-22 11:42:34,805 - Review.reviews.frd4p_review - INFO - Companies in group: 28, to exclude: 5
+2025-01-22 11:42:34,806 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: EU, group size: 22
+2025-01-22 11:42:34,806 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-01-22 11:42:34,807 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: NA, group size: 16
+2025-01-22 11:42:34,807 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-01-22 11:42:34,808 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: AS, group size: 7
+2025-01-22 11:42:34,808 - Review.reviews.frd4p_review - INFO - Companies in group: 7, to exclude: 1
+2025-01-22 11:42:34,809 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: EU, group size: 8
+2025-01-22 11:42:34,809 - Review.reviews.frd4p_review - INFO - Companies in group: 8, to exclude: 1
+2025-01-22 11:42:34,810 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: NA, group size: 7
+2025-01-22 11:42:34,810 - Review.reviews.frd4p_review - INFO - Companies in group: 7, to exclude: 1
+2025-01-22 11:42:34,811 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: AS, group size: 14
+2025-01-22 11:42:34,811 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:42:34,811 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: EU, group size: 10
+2025-01-22 11:42:34,812 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-01-22 11:42:34,812 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: NA, group size: 18
+2025-01-22 11:42:34,813 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:42:34,814 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-01-22 11:42:34,814 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-01-22 11:42:34,815 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: EU, group size: 13
+2025-01-22 11:42:34,815 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-01-22 11:42:34,816 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: NA, group size: 21
+2025-01-22 11:42:34,816 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-01-22 11:42:34,817 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: AS, group size: 24
+2025-01-22 11:42:34,817 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-01-22 11:42:34,817 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: EU, group size: 27
+2025-01-22 11:42:34,818 - Review.reviews.frd4p_review - INFO - Companies in group: 27, to exclude: 5
+2025-01-22 11:42:34,818 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: NA, group size: 16
+2025-01-22 11:42:34,818 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-01-22 11:42:34,819 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: AS, group size: 14
+2025-01-22 11:42:34,819 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:42:34,819 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: EU, group size: 13
+2025-01-22 11:42:34,820 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-01-22 11:42:34,820 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-01-22 11:42:34,820 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:42:34,821 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: AS, group size: 18
+2025-01-22 11:42:34,821 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:42:34,822 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: EU, group size: 24
+2025-01-22 11:42:34,822 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-01-22 11:42:34,822 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: NA, group size: 14
+2025-01-22 11:42:34,823 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:42:34,823 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: AS, group size: 100
+2025-01-22 11:42:34,823 - Review.reviews.frd4p_review - INFO - Companies in group: 100, to exclude: 19
+2025-01-22 11:42:34,823 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: EU, group size: 91
+2025-01-22 11:42:34,824 - Review.reviews.frd4p_review - INFO - Companies in group: 91, to exclude: 18
+2025-01-22 11:42:34,824 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: NA, group size: 81
+2025-01-22 11:42:34,825 - Review.reviews.frd4p_review - INFO - Companies in group: 81, to exclude: 16
+2025-01-22 11:42:34,825 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: AS, group size: 18
+2025-01-22 11:42:34,825 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:42:34,825 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: EU, group size: 13
+2025-01-22 11:42:34,826 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-01-22 11:42:34,826 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: NA, group size: 12
+2025-01-22 11:42:34,826 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:42:34,827 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: AS, group size: 18
+2025-01-22 11:42:34,827 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:42:34,827 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: EU, group size: 16
+2025-01-22 11:42:34,828 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-01-22 11:42:34,828 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: NA, group size: 6
+2025-01-22 11:42:34,828 - Review.reviews.frd4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-01-22 11:42:34,828 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: AS, group size: 10
+2025-01-22 11:42:34,829 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-01-22 11:42:34,829 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: EU, group size: 20
+2025-01-22 11:42:34,830 - Review.reviews.frd4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-01-22 11:42:34,830 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: NA, group size: 34
+2025-01-22 11:42:34,831 - Review.reviews.frd4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-01-22 11:42:34,831 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: AS, group size: 22
+2025-01-22 11:42:34,832 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-01-22 11:42:34,832 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: EU, group size: 26
+2025-01-22 11:42:34,832 - Review.reviews.frd4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-01-22 11:42:34,833 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: NA, group size: 31
+2025-01-22 11:42:34,833 - Review.reviews.frd4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-01-22 11:42:47,023 - Review.reviews.frd4p_review - INFO - Checking IsinCode FRIX00003031 in index_eod_df
+2025-01-22 11:42:47,024 - Review.reviews.frd4p_review - INFO - Found 1 matching rows
+2025-01-22 11:42:47,033 - Review.reviews.frd4p_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRD4P_df_20250122_114247.xlsx
+2025-01-22 11:42:47,332 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:42:47] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:43:53,538 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:43:54,448 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:43:54,452 - Review.reviews.frd4p_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-22 11:43:54,459 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 61, in run_frd4p_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-22 11:43:54,462 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:43:54] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:44:03,920 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:44:04,389 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:44:04,394 - Review.reviews.frd4p_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-22 11:44:04,395 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 61, in run_frd4p_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-22 11:44:04,399 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:44:04] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:44:40,872 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:44:41,951 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:44:49,506 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: AS, group size: 45
+2025-01-22 11:44:49,507 - Review.reviews.frd4p_review - INFO - Companies in group: 45, to exclude: 8
+2025-01-22 11:44:49,507 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: EU, group size: 20
+2025-01-22 11:44:49,508 - Review.reviews.frd4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-01-22 11:44:49,508 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: NA, group size: 72
+2025-01-22 11:44:49,509 - Review.reviews.frd4p_review - INFO - Companies in group: 72, to exclude: 14
+2025-01-22 11:44:49,509 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: AS, group size: 12
+2025-01-22 11:44:49,509 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:44:49,509 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: EU, group size: 17
+2025-01-22 11:44:49,510 - Review.reviews.frd4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-01-22 11:44:49,510 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: NA, group size: 10
+2025-01-22 11:44:49,510 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-01-22 11:44:49,510 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: AS, group size: 31
+2025-01-22 11:44:49,511 - Review.reviews.frd4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-01-22 11:44:49,511 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: EU, group size: 47
+2025-01-22 11:44:49,511 - Review.reviews.frd4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-01-22 11:44:49,512 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: NA, group size: 48
+2025-01-22 11:44:49,512 - Review.reviews.frd4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-01-22 11:44:49,513 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: AS, group size: 29
+2025-01-22 11:44:49,513 - Review.reviews.frd4p_review - INFO - Companies in group: 29, to exclude: 5
+2025-01-22 11:44:49,513 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: EU, group size: 40
+2025-01-22 11:44:49,514 - Review.reviews.frd4p_review - INFO - Companies in group: 40, to exclude: 7
+2025-01-22 11:44:49,514 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: NA, group size: 21
+2025-01-22 11:44:49,514 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-01-22 11:44:49,515 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: AS, group size: 15
+2025-01-22 11:44:49,515 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-01-22 11:44:49,516 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: EU, group size: 30
+2025-01-22 11:44:49,516 - Review.reviews.frd4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-01-22 11:44:49,516 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: NA, group size: 32
+2025-01-22 11:44:49,516 - Review.reviews.frd4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-01-22 11:44:49,517 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: AS, group size: 14
+2025-01-22 11:44:49,517 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:44:49,517 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: EU, group size: 30
+2025-01-22 11:44:49,518 - Review.reviews.frd4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-01-22 11:44:49,518 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: NA, group size: 23
+2025-01-22 11:44:49,519 - Review.reviews.frd4p_review - INFO - Companies in group: 23, to exclude: 4
+2025-01-22 11:44:49,519 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: AS, group size: 47
+2025-01-22 11:44:49,520 - Review.reviews.frd4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-01-22 11:44:49,520 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: EU, group size: 21
+2025-01-22 11:44:49,520 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-01-22 11:44:49,521 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: NA, group size: 22
+2025-01-22 11:44:49,521 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-01-22 11:44:49,521 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: AS, group size: 15
+2025-01-22 11:44:49,521 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-01-22 11:44:49,522 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: EU, group size: 12
+2025-01-22 11:44:49,522 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:44:49,522 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-01-22 11:44:49,523 - Review.reviews.frd4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-01-22 11:44:49,523 - Review.reviews.frd4p_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-01-22 11:44:49,523 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: AS, group size: 28
+2025-01-22 11:44:49,523 - Review.reviews.frd4p_review - INFO - Companies in group: 28, to exclude: 5
+2025-01-22 11:44:49,524 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: EU, group size: 22
+2025-01-22 11:44:49,524 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-01-22 11:44:49,524 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: NA, group size: 16
+2025-01-22 11:44:49,525 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-01-22 11:44:49,525 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: AS, group size: 7
+2025-01-22 11:44:49,525 - Review.reviews.frd4p_review - INFO - Companies in group: 7, to exclude: 1
+2025-01-22 11:44:49,525 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: EU, group size: 8
+2025-01-22 11:44:49,526 - Review.reviews.frd4p_review - INFO - Companies in group: 8, to exclude: 1
+2025-01-22 11:44:49,526 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: NA, group size: 7
+2025-01-22 11:44:49,526 - Review.reviews.frd4p_review - INFO - Companies in group: 7, to exclude: 1
+2025-01-22 11:44:49,526 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: AS, group size: 14
+2025-01-22 11:44:49,527 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:44:49,527 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: EU, group size: 10
+2025-01-22 11:44:49,527 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-01-22 11:44:49,528 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: NA, group size: 18
+2025-01-22 11:44:49,528 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:44:49,528 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-01-22 11:44:49,529 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-01-22 11:44:49,529 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: EU, group size: 13
+2025-01-22 11:44:49,529 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-01-22 11:44:49,529 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: NA, group size: 21
+2025-01-22 11:44:49,530 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-01-22 11:44:49,530 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: AS, group size: 24
+2025-01-22 11:44:49,530 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-01-22 11:44:49,530 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: EU, group size: 27
+2025-01-22 11:44:49,531 - Review.reviews.frd4p_review - INFO - Companies in group: 27, to exclude: 5
+2025-01-22 11:44:49,531 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: NA, group size: 16
+2025-01-22 11:44:49,531 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-01-22 11:44:49,532 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: AS, group size: 14
+2025-01-22 11:44:49,532 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:44:49,532 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: EU, group size: 13
+2025-01-22 11:44:49,533 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-01-22 11:44:49,533 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-01-22 11:44:49,534 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:44:49,534 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: AS, group size: 18
+2025-01-22 11:44:49,534 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:44:49,534 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: EU, group size: 24
+2025-01-22 11:44:49,535 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-01-22 11:44:49,535 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: NA, group size: 14
+2025-01-22 11:44:49,535 - Review.reviews.frd4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-01-22 11:44:49,535 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: AS, group size: 100
+2025-01-22 11:44:49,536 - Review.reviews.frd4p_review - INFO - Companies in group: 100, to exclude: 19
+2025-01-22 11:44:49,536 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: EU, group size: 91
+2025-01-22 11:44:49,536 - Review.reviews.frd4p_review - INFO - Companies in group: 91, to exclude: 18
+2025-01-22 11:44:49,537 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: NA, group size: 81
+2025-01-22 11:44:49,537 - Review.reviews.frd4p_review - INFO - Companies in group: 81, to exclude: 16
+2025-01-22 11:44:49,537 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: AS, group size: 18
+2025-01-22 11:44:49,538 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:44:49,538 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: EU, group size: 13
+2025-01-22 11:44:49,538 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-01-22 11:44:49,538 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: NA, group size: 12
+2025-01-22 11:44:49,539 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-01-22 11:44:49,539 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: AS, group size: 18
+2025-01-22 11:44:49,539 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-01-22 11:44:49,539 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: EU, group size: 16
+2025-01-22 11:44:49,540 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-01-22 11:44:49,540 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: NA, group size: 6
+2025-01-22 11:44:49,540 - Review.reviews.frd4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-01-22 11:44:49,540 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: AS, group size: 10
+2025-01-22 11:44:49,541 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-01-22 11:44:49,541 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: EU, group size: 20
+2025-01-22 11:44:49,541 - Review.reviews.frd4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-01-22 11:44:49,541 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: NA, group size: 34
+2025-01-22 11:44:49,542 - Review.reviews.frd4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-01-22 11:44:49,542 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: AS, group size: 22
+2025-01-22 11:44:49,542 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-01-22 11:44:49,543 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: EU, group size: 26
+2025-01-22 11:44:49,543 - Review.reviews.frd4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-01-22 11:44:49,543 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: NA, group size: 31
+2025-01-22 11:44:49,543 - Review.reviews.frd4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-01-22 11:45:01,672 - Review.reviews.frd4p_review - INFO - Checking IsinCode FRIX00003031 in index_eod_df
+2025-01-22 11:45:01,673 - Review.reviews.frd4p_review - INFO - Found 1 matching rows
+2025-01-22 11:45:01,682 - Review.reviews.frd4p_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRD4P_df_20250122_114501.xlsx
+2025-01-22 11:45:02,393 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:45:02] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:45:22,944 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-01-22 11:45:24,052 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-01-22 11:45:24,057 - Review.reviews.frd4p_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-01-22 11:45:24,057 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 61, in run_frd4p_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-01-22 11:45:24,060 - werkzeug - INFO - 127.0.0.1 - - [22/Jan/2025 11:45:24] "POST /calculate HTTP/1.1" 200 -
+2025-01-22 11:45:36,394 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\ntpath.py', reloading

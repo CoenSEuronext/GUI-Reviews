@@ -1,0 +1,43 @@
+2025-07-25 15:45:58,104 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 15:45:58,104 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 15:45:58,141 - Review.reviews.fri4p_review - INFO - Loading EOD data...
+2025-07-25 15:45:58,143 - Review.reviews.frn4p_review - INFO - Loading EOD data...
+2025-07-25 15:45:58,143 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-07-25 15:45:59,255 - Review.reviews.frn4p_review - INFO - Loading reference data...
+2025-07-25 15:45:59,270 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-07-25 15:45:59,292 - Review.reviews.fri4p_review - INFO - Loading reference data...
+2025-07-25 15:46:05,527 - Review.reviews.frn4p_review - INFO - Selecting companies ranked 41-80 by FFMC (40 companies total)...
+2025-07-25 15:46:05,560 - Review.reviews.frn4p_review - INFO - Saving FRN4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRN4P_df_20250725_154605.xlsx
+2025-07-25 15:46:08,387 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:46:08] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 15:46:17,972 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-07-25 15:46:18,250 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-07-25 15:46:18,254 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-07-25 15:46:18,254 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-07-25 15:46:18,264 - Review.reviews.gicp_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2025-07-25 15:46:18,276 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-07-25 15:46:18,290 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\util\\_decorators.py', reloading
+2025-07-25 15:46:18,306 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\formats\\excel.py', reloading
+2025-07-25 15:46:18,321 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_xlsxwriter.py', reloading
+2025-07-25 15:46:18,341 - Review.reviews.gicp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\gicp_review.py", line 218, in run_gicp_review
+    selection_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2025-07-25 15:46:18,343 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\common.py', reloading
+2025-07-25 15:46:18,375 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:46:18] "POST /calculate HTTP/1.1" 200 -

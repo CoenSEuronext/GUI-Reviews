@@ -1,0 +1,12 @@
+2025-07-25 13:43:03,061 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 13:43:03,061 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 13:49:00,866 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edefp_review.py', reloading
+2025-07-25 13:49:01,528 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py', reloading
+2025-07-25 13:49:01,528 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py', reloading
+2025-07-25 13:49:01,539 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\__init__.py', reloading
+2025-07-25 13:49:01,539 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-07-25 13:49:01,539 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\subprocess.py', reloading
+2025-07-25 13:49:01,540 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-07-25 13:49:01,541 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\os.py', reloading
+2025-07-25 13:49:01,545 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\series.py', reloading
+2025-07-25 13:49:01,546 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\arraylike.py', reloading

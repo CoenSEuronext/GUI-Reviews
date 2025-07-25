@@ -1,0 +1,44 @@
+2025-01-20 09:58:27,319 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 09:58:27,319 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-20 09:58:27,326 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 09:58:27,764 - werkzeug - WARNING -  * Debugger is active!
+2025-01-20 09:58:27,767 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-20 09:58:29,185 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2025 09:58:29] "GET / HTTP/1.1" 200 -
+2025-01-20 09:58:34,634 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-20 09:58:36,322 - Review.reviews.edwpt_review - INFO - Saving EDWPT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250120_095836.xlsx
+2025-01-20 09:58:40,040 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2025 09:58:40] "POST /calculate HTTP/1.1" 200 -
+2025-01-20 10:00:13,150 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2025 10:00:13] "GET / HTTP/1.1" 200 -
+2025-01-20 10:18:19,844 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-20 10:18:21,715 - Review.reviews.edwpt_review - INFO - Saving EDWPT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250120_101821.xlsx
+2025-01-20 10:18:25,313 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2025 10:18:25] "POST /calculate HTTP/1.1" 200 -
+2025-01-20 10:22:39,777 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-20 10:22:39,784 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-20 10:22:39,786 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-20 10:22:40,691 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:23:13,664 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:24:23,660 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:28:08,266 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:28:25,241 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:28:26,852 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:29:09,046 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:30:18,623 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:30:20,212 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:31:31,013 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:31:34,885 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:31:47,642 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:31:54,825 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:32:43,231 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:32:57,051 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:32:58,614 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:38:06,138 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:38:07,842 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:54:19,390 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:54:24,178 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:55:01,858 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:56:09,972 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 10:56:11,603 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 11:04:05,260 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 11:04:06,876 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 11:51:08,702 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-01-20 11:51:28,650 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

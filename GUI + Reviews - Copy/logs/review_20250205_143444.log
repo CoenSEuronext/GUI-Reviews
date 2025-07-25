@@ -1,0 +1,16 @@
+2025-02-05 14:34:44,989 - werkzeug - WARNING -  * Debugger is active!
+2025-02-05 14:34:44,991 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-02-05 14:34:45,446 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-02-05 14:34:47,813 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-02-05 14:34:48,552 - Review.reviews.sbf80_review - INFO - TESTING - Original selection_df length: 120
+2025-02-05 14:34:48,552 - Review.reviews.sbf80_review - INFO - TESTING - Artificially removing ISIN: LU1598757687
+2025-02-05 14:34:48,553 - Review.reviews.sbf80_review - INFO - TESTING - Removing company: ARCELORMITTAL SA
+2025-02-05 14:34:48,554 - Review.reviews.sbf80_review - INFO - TESTING - Selection_df length after removal: 119
+2025-02-05 14:34:48,554 - Review.reviews.sbf80_review - INFO - Found 1 companies in SBF80 not in selection_df
+2025-02-05 14:34:48,581 - Review.reviews.sbf80_review - INFO - Found 1 companies in SBF80 not in selection_df
+2025-02-05 14:34:48,594 - Review.reviews.sbf80_review - INFO - Added missing company: ARCELORMITTAL SA (LU1598757687)
+2025-02-05 14:34:48,599 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20250205_143448.xlsx
+2025-02-05 14:34:48,742 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 14:34:48] "POST /calculate HTTP/1.1" 200 -
+2025-02-05 14:37:04,225 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 14:37:04,225 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-02-05 14:37:04,226 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading

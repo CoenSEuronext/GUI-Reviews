@@ -1,0 +1,154 @@
+2025-04-14 09:29:06,737 - werkzeug - WARNING -  * Debugger is active!
+2025-04-14 09:29:06,753 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-14 09:29:08,039 - Review.reviews.lc1ep_review - INFO - Loading EOD data...
+2025-04-14 09:29:08,686 - Review.reviews.lc1ep_review - INFO - Loading reference data...
+2025-04-14 09:29:18,522 - Review.reviews.lc1ep_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-14 09:29:18,522 - Review.reviews.lc1ep_review - INFO - Filtering universe for EZ300 companies...
+2025-04-14 09:29:18,536 - Review.reviews.lc1ep_review - INFO - Universe size after EZ300 filter: 300
+2025-04-14 09:29:18,537 - Review.reviews.lc1ep_review - INFO - Adding Free Float data...
+2025-04-14 09:29:18,541 - Review.reviews.lc1ep_review - INFO - Adding ICB Subsector data...
+2025-04-14 09:29:18,555 - Review.reviews.lc1ep_review - WARNING - Removed 9315 duplicate rows from ICB data
+2025-04-14 09:29:18,671 - Review.reviews.lc1ep_review - INFO - Debug file saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\debug\universe_df_after_nace_20250414_092918.xlsx
+2025-04-14 09:29:18,671 - Review.reviews.lc1ep_review - INFO - Adding CDP Climate data...
+2025-04-14 09:29:18,677 - Review.reviews.lc1ep_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-14 09:29:18,680 - Review.reviews.lc1ep_review - INFO - Adding NACE data...
+2025-04-14 09:29:18,682 - Review.reviews.lc1ep_review - INFO - Adding EU Taxonomy flag...
+2025-04-14 09:29:18,683 - Review.reviews.lc1ep_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-14 09:29:18,684 - Review.reviews.lc1ep_review - INFO - Applying exclusion criteria...
+2025-04-14 09:29:18,692 - Review.reviews.lc1ep_review - INFO - Marked 30 companies (10%) with worst SG scores for exclusion
+2025-04-14 09:29:18,706 - Review.reviews.lc1ep_review - INFO - Calculating Climate Score for ranking...
+2025-04-14 09:29:18,716 - Review.reviews.lc1ep_review - INFO - Selecting EU Taxonomy companies...
+2025-04-14 09:29:18,718 - Review.reviews.lc1ep_review - INFO - Found 13 EU Taxonomy companies after exclusions
+2025-04-14 09:29:18,719 - Review.reviews.lc1ep_review - INFO - Found 170 Non-EU Taxonomy eligible companies after exclusions
+2025-04-14 09:29:18,719 - Review.reviews.lc1ep_review - INFO - STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...
+2025-04-14 09:29:18,719 - Review.reviews.lc1ep_review - INFO - Target number of Non-EU Taxonomy companies: 87
+2025-04-14 09:29:18,720 - Review.reviews.lc1ep_review - INFO - Total eligible Non-EU Taxonomy companies: 170
+2025-04-14 09:29:18,723 - Review.reviews.lc1ep_review - INFO - Total target after rounding: 100 (vs. target of 87)
+2025-04-14 09:29:18,723 - Review.reviews.lc1ep_review - INFO - Need to remove 13 companies due to rounding up
+2025-04-14 09:29:18,723 - Review.reviews.lc1ep_review - INFO - STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...
+2025-04-14 09:29:18,728 - Review.reviews.lc1ep_review - INFO - Selected 7 companies from super-sector 1010.0
+2025-04-14 09:29:18,729 - Review.reviews.lc1ep_review - INFO - Selected 6 companies from super-sector 1510.0
+2025-04-14 09:29:18,730 - Review.reviews.lc1ep_review - INFO - Selected 12 companies from super-sector 2010.0
+2025-04-14 09:29:18,731 - Review.reviews.lc1ep_review - INFO - Selected 14 companies from super-sector 3010.0
+2025-04-14 09:29:18,732 - Review.reviews.lc1ep_review - INFO - Selected 6 companies from super-sector 3020.0
+2025-04-14 09:29:18,732 - Review.reviews.lc1ep_review - INFO - Selected 7 companies from super-sector 3030.0
+2025-04-14 09:29:18,733 - Review.reviews.lc1ep_review - INFO - Selected 6 companies from super-sector 3510.0
+2025-04-14 09:29:18,734 - Review.reviews.lc1ep_review - INFO - Selected 4 companies from super-sector 4010.0
+2025-04-14 09:29:18,734 - Review.reviews.lc1ep_review - INFO - Selected 7 companies from super-sector 4020.0
+2025-04-14 09:29:18,735 - Review.reviews.lc1ep_review - INFO - Selected 3 companies from super-sector 4030.0
+2025-04-14 09:29:18,735 - Review.reviews.lc1ep_review - INFO - Selected 2 companies from super-sector 4040.0
+2025-04-14 09:29:18,735 - Review.reviews.lc1ep_review - INFO - Selected 4 companies from super-sector 4050.0
+2025-04-14 09:29:18,737 - Review.reviews.lc1ep_review - INFO - Selected 5 companies from super-sector 4510.0
+2025-04-14 09:29:18,738 - Review.reviews.lc1ep_review - INFO - Selected 3 companies from super-sector 4520.0
+2025-04-14 09:29:18,738 - Review.reviews.lc1ep_review - INFO - Selected 1 companies from super-sector 5010.0
+2025-04-14 09:29:18,739 - Review.reviews.lc1ep_review - INFO - Selected 8 companies from super-sector 5020.0
+2025-04-14 09:29:18,740 - Review.reviews.lc1ep_review - INFO - Selected 2 companies from super-sector 5510.0
+2025-04-14 09:29:18,742 - Review.reviews.lc1ep_review - INFO - Selected 3 companies from super-sector 5520.0
+2025-04-14 09:29:18,747 - Review.reviews.lc1ep_review - INFO - Initial selection has 100 companies, need to remove 13
+2025-04-14 09:29:18,755 - Review.reviews.lc1ep_review - INFO - Removed company DE000A40KY26 from supersector 5520.0 (Climate Score: 3.205)
+2025-04-14 09:29:18,756 - Review.reviews.lc1ep_review - INFO - Removed company FR0000121121 from supersector 3020.0 (Climate Score: 3.07)
+2025-04-14 09:29:18,766 - Review.reviews.lc1ep_review - INFO - Removed company NL0011872643 from supersector 3030.0 (Climate Score: 3.07)
+2025-04-14 09:29:18,773 - Review.reviews.lc1ep_review - INFO - Removed company ES0113679I37 from supersector 3010.0 (Climate Score: 3.01)
+2025-04-14 09:29:18,778 - Review.reviews.lc1ep_review - INFO - Removed company NL0000226223 from supersector 1010.0 (Climate Score: 2.883797265501265)
+2025-04-14 09:29:18,782 - Review.reviews.lc1ep_review - INFO - Removed company DE000A0LD6E6 from supersector 2010.0 (Climate Score: 2.5)
+2025-04-14 09:29:18,785 - Review.reviews.lc1ep_review - INFO - Removed company FR0000120404 from supersector 4050.0 (Climate Score: 2.3914062194480947)
+2025-04-14 09:29:18,806 - Review.reviews.lc1ep_review - INFO - Removed company NL0011585146 from supersector 4010.0 (Climate Score: 2.28839766789769)
+2025-04-14 09:29:18,822 - Review.reviews.lc1ep_review - INFO - Removed company FR0000121964 from supersector 3510.0 (Climate Score: 2.2473576022587802)
+2025-04-14 09:29:18,827 - Review.reviews.lc1ep_review - INFO - Removed company NL0015435975 from supersector 4510.0 (Climate Score: 2.1748496808315148)
+2025-04-14 09:29:18,829 - Review.reviews.lc1ep_review - INFO - Removed company FR0010340141 from supersector 5020.0 (Climate Score: 2.12430874805632)
+2025-04-14 09:29:18,829 - Review.reviews.lc1ep_review - INFO - Removed company IT0004965148 from supersector 4020.0 (Climate Score: 2.123478195218075)
+2025-04-14 09:29:18,836 - Review.reviews.lc1ep_review - INFO - Removed company DE0005557508 from supersector 1510.0 (Climate Score: 2.1226730906349953)
+2025-04-14 09:29:18,838 - Review.reviews.lc1ep_review - INFO - Final Non-EU Taxonomy selection has 87 companies
+2025-04-14 09:29:18,839 - Review.reviews.lc1ep_review - INFO - Minimum companies per supersector: 1
+2025-04-14 09:29:18,839 - Review.reviews.lc1ep_review - WARNING - Some supersectors have fewer than 2 companies! Minimum is 1
+2025-04-14 09:29:18,840 - Review.reviews.lc1ep_review - INFO - Final selection contains 100 companies
+2025-04-14 09:29:18,840 - Review.reviews.lc1ep_review - INFO - - EU Taxonomy: 13
+2025-04-14 09:29:18,840 - Review.reviews.lc1ep_review - INFO - - Non-EU Taxonomy: 87
+2025-04-14 09:29:18,840 - Review.reviews.lc1ep_review - INFO - Adding PAB flag based on CDP temperature score...
+2025-04-14 09:29:18,842 - Review.reviews.lc1ep_review - INFO - Calculating liquidity constraints for all companies...
+2025-04-14 09:29:18,842 - Review.reviews.lc1ep_review - INFO - Total FFMC for all companies: 3419351350544.22
+2025-04-14 09:29:18,843 - Review.reviews.lc1ep_review - INFO - Market cap based weights calculated for EU Taxonomy companies
+2025-04-14 09:29:18,844 - Review.reviews.lc1ep_review - INFO - Liquidity caps for EU Taxonomy companies - Max: 5.8531%, Min: 0.6085%, Avg: 1.6520%
+2025-04-14 09:29:18,844 - Review.reviews.lc1ep_review - INFO - Liquidity floors for EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-14 09:29:18,845 - Review.reviews.lc1ep_review - INFO - No liquidity issues found for EU Taxonomy companies
+2025-04-14 09:29:18,847 - Review.reviews.lc1ep_review - INFO - Liquidity caps for Non-EU Taxonomy companies - Max: 10.0000%, Min: 0.1883%, Avg: 2.5933%
+2025-04-14 09:29:18,847 - Review.reviews.lc1ep_review - INFO - Liquidity floors for Non-EU Taxonomy companies - Max: 2.0982%, Min: 0.0000%, Avg: 0.0891%
+2025-04-14 09:29:18,849 - Review.reviews.lc1ep_review - INFO - No liquidity issues found for Non-EU Taxonomy companies
+2025-04-14 09:29:18,851 - Review.reviews.lc1ep_review - INFO - Liquidity constraints have been calculated for all 100 companies
+2025-04-14 09:29:18,852 - Review.reviews.lc1ep_review - INFO - Saving output files...
+2025-04-14 09:29:19,194 - Review.reviews.lc1ep_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC1EP_review_20250414_092918.xlsx
+2025-04-14 09:29:19,227 - werkzeug - INFO - 127.0.0.1 - - [14/Apr/2025 09:29:19] "POST /calculate HTTP/1.1" 200 -
+2025-04-14 09:29:22,240 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-04-14 09:29:25,847 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-04-14 09:29:35,764 - Review.reviews.lc3wp_review - WARNING - Removed 18750 duplicate rows from cdp_climate_df
+2025-04-14 09:29:35,764 - Review.reviews.lc3wp_review - INFO - Adding Free Float data...
+2025-04-14 09:29:35,779 - Review.reviews.lc3wp_review - INFO - Adding ICB Subsector data...
+2025-04-14 09:29:35,789 - Review.reviews.lc3wp_review - WARNING - Removed 9315 duplicate rows from ICB data
+2025-04-14 09:29:35,952 - Review.reviews.lc3wp_review - INFO - Debug file saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\debug\universe_df_after_nace_20250414_092935.xlsx
+2025-04-14 09:29:35,952 - Review.reviews.lc3wp_review - INFO - Adding CDP Climate data...
+2025-04-14 09:29:35,952 - Review.reviews.lc3wp_review - INFO - Adding Oekom Trust & Carbon data...
+2025-04-14 09:29:35,952 - Review.reviews.lc3wp_review - INFO - Adding NACE data...
+2025-04-14 09:29:35,965 - Review.reviews.lc3wp_review - INFO - Adding EU Taxonomy flag...
+2025-04-14 09:29:35,965 - Review.reviews.lc3wp_review - INFO - Checking GAFI lists and Non-fiscally cooperative countries...
+2025-04-14 09:29:35,967 - Review.reviews.lc3wp_review - INFO - Applying exclusion criteria...
+2025-04-14 09:29:35,977 - Review.reviews.lc3wp_review - INFO - Marked 149 companies (10%) with worst SG scores for exclusion
+2025-04-14 09:29:35,995 - Review.reviews.lc3wp_review - INFO - Calculating Climate Score for ranking...
+2025-04-14 09:29:36,002 - Review.reviews.lc3wp_review - INFO - Selecting EU Taxonomy companies...
+2025-04-14 09:29:36,003 - Review.reviews.lc3wp_review - INFO - Found 14 EU Taxonomy companies after exclusions
+2025-04-14 09:29:36,006 - Review.reviews.lc3wp_review - INFO - Found 979 Non-EU Taxonomy eligible companies after exclusions
+2025-04-14 09:29:36,006 - Review.reviews.lc3wp_review - INFO - STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...
+2025-04-14 09:29:36,006 - Review.reviews.lc3wp_review - INFO - Target number of Non-EU Taxonomy companies: 286
+2025-04-14 09:29:36,008 - Review.reviews.lc3wp_review - INFO - Total eligible Non-EU Taxonomy companies: 979
+2025-04-14 09:29:36,009 - Review.reviews.lc3wp_review - INFO - Total target after rounding: 295 (vs. target of 286)
+2025-04-14 09:29:36,009 - Review.reviews.lc3wp_review - INFO - Need to remove 9 companies due to rounding up
+2025-04-14 09:29:36,010 - Review.reviews.lc3wp_review - INFO - STEP 4b: Selecting Non-EU Taxonomy companies based on climate score...
+2025-04-14 09:29:36,011 - Review.reviews.lc3wp_review - INFO - Selected 39 companies from super-sector 1010.0
+2025-04-14 09:29:36,011 - Review.reviews.lc3wp_review - INFO - Selected 12 companies from super-sector 1510.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 34 companies from super-sector 2010.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3010.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 21 companies from super-sector 3020.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 19 companies from super-sector 3030.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 24 companies from super-sector 3510.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 4010.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 17 companies from super-sector 4020.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 4030.0
+2025-04-14 09:29:36,012 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4040.0
+2025-04-14 09:29:36,018 - Review.reviews.lc3wp_review - INFO - Selected 11 companies from super-sector 4050.0
+2025-04-14 09:29:36,018 - Review.reviews.lc3wp_review - INFO - Selected 15 companies from super-sector 4510.0
+2025-04-14 09:29:36,019 - Review.reviews.lc3wp_review - INFO - Selected 8 companies from super-sector 4520.0
+2025-04-14 09:29:36,020 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5010.0
+2025-04-14 09:29:36,020 - Review.reviews.lc3wp_review - INFO - Selected 33 companies from super-sector 5020.0
+2025-04-14 09:29:36,021 - Review.reviews.lc3wp_review - INFO - Selected 6 companies from super-sector 5510.0
+2025-04-14 09:29:36,022 - Review.reviews.lc3wp_review - INFO - Selected 5 companies from super-sector 5520.0
+2025-04-14 09:29:36,023 - Review.reviews.lc3wp_review - INFO - Selected 2 companies from super-sector 6510.0
+2025-04-14 09:29:36,045 - Review.reviews.lc3wp_review - INFO - Initial selection has 295 companies, need to remove 9
+2025-04-14 09:29:36,061 - Review.reviews.lc3wp_review - INFO - Removed company US0640581007 from supersector 3020.0 (Climate Score: 2.75)
+2025-04-14 09:29:36,069 - Review.reviews.lc3wp_review - INFO - Removed company CA0641491075 from supersector 3010.0 (Climate Score: 2.75)
+2025-04-14 09:29:36,072 - Review.reviews.lc3wp_review - INFO - Removed company CA0679011084 from supersector 5510.0 (Climate Score: 2.58973159003276)
+2025-04-14 09:29:36,080 - Review.reviews.lc3wp_review - INFO - Removed company JP3539220008 from supersector 3030.0 (Climate Score: 2.5)
+2025-04-14 09:29:36,083 - Review.reviews.lc3wp_review - INFO - Removed company US7475251036 from supersector 1010.0 (Climate Score: 2.30023900135313)
+2025-04-14 09:29:36,092 - Review.reviews.lc3wp_review - INFO - Removed company US2538681030 from supersector 3510.0 (Climate Score: 2.26099033267267)
+2025-04-14 09:29:36,094 - Review.reviews.lc3wp_review - INFO - Removed company JP3705200008 from supersector 4050.0 (Climate Score: 2.24552928645429)
+2025-04-14 09:29:36,094 - Review.reviews.lc3wp_review - INFO - Removed company DE0005552004 from supersector 5020.0 (Climate Score: 2.220375488488155)
+2025-04-14 09:29:36,105 - Review.reviews.lc3wp_review - INFO - Removed company US4595061015 from supersector 5520.0 (Climate Score: 2.2099302264427454)
+2025-04-14 09:29:36,108 - Review.reviews.lc3wp_review - INFO - Final Non-EU Taxonomy selection has 286 companies
+2025-04-14 09:29:36,109 - Review.reviews.lc3wp_review - INFO - Minimum companies per supersector: 2
+2025-04-14 09:29:36,112 - Review.reviews.lc3wp_review - INFO - Final selection contains 300 companies
+2025-04-14 09:29:36,112 - Review.reviews.lc3wp_review - INFO - - EU Taxonomy: 14
+2025-04-14 09:29:36,112 - Review.reviews.lc3wp_review - INFO - - Non-EU Taxonomy: 286
+2025-04-14 09:29:36,112 - Review.reviews.lc3wp_review - INFO - Adding PAB flag based on CDP temperature score...
+2025-04-14 09:29:36,114 - Review.reviews.lc3wp_review - INFO - Calculating liquidity constraints for all companies...
+2025-04-14 09:29:36,114 - Review.reviews.lc3wp_review - INFO - Total FFMC for all companies: 13217633905658.58
+2025-04-14 09:29:36,115 - Review.reviews.lc3wp_review - INFO - Market cap based weights calculated for EU Taxonomy companies
+2025-04-14 09:29:36,116 - Review.reviews.lc3wp_review - INFO - Liquidity caps for EU Taxonomy companies - Max: 4.7006%, Min: 0.5367%, Avg: 1.7463%
+2025-04-14 09:29:36,116 - Review.reviews.lc3wp_review - INFO - Liquidity floors for EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-14 09:29:36,117 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for EU Taxonomy companies
+2025-04-14 09:29:36,119 - Review.reviews.lc3wp_review - INFO - Liquidity caps for Non-EU Taxonomy companies - Max: 10.0000%, Min: 0.1494%, Avg: 3.7389%
+2025-04-14 09:29:36,121 - Review.reviews.lc3wp_review - INFO - Liquidity floors for Non-EU Taxonomy companies - Max: 0.0000%, Min: 0.0000%, Avg: 0.0000%
+2025-04-14 09:29:36,121 - Review.reviews.lc3wp_review - INFO - No liquidity issues found for Non-EU Taxonomy companies
+2025-04-14 09:29:36,124 - Review.reviews.lc3wp_review - INFO - Liquidity constraints have been calculated for all 300 companies
+2025-04-14 09:29:36,125 - Review.reviews.lc3wp_review - INFO - Saving output files...
+2025-04-14 09:29:37,583 - Review.reviews.lc3wp_review - INFO - Results saved to C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\LC3WP_review_20250414_092936.xlsx
+2025-04-14 09:29:37,621 - werkzeug - INFO - 127.0.0.1 - - [14/Apr/2025 09:29:37] "POST /calculate HTTP/1.1" 200 -
+2025-04-14 10:19:59,035 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc1ep_review.py', reloading
+2025-04-14 10:19:59,046 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc1ep_review.py', reloading

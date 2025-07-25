@@ -1,0 +1,21 @@
+2025-01-17 10:32:08,474 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 10:32:08,475 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-17 10:32:15,174 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 10:32:15] "GET / HTTP/1.1" 200 -
+2025-01-17 10:32:19,116 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-17 10:32:20,564 - Review.reviews.edwpt_review - ERROR - Error during review calculation: "['Mcap in EUR'] not in index"
+2025-01-17 10:32:20,574 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-01-17 10:32:20,583 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 128, in run_edwpt_review
+    universe_df = full_universe_df[list(column_mapping.values())]  # Select columns using current names
+                  ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Mcap in EUR'] not in index"
+
+2025-01-17 10:32:20,583 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-01-17 10:32:20,592 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 10:32:20] "POST /calculate HTTP/1.1" 200 -

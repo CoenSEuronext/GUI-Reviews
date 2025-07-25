@@ -1,0 +1,21 @@
+2025-01-24 14:10:28,732 - werkzeug - WARNING -  * Debugger is active!
+2025-01-24 14:10:28,735 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-24 14:10:28,967 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-01-24 14:10:31,306 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-01-24 14:10:31,920 - Review.reviews.f4rip_review - ERROR - Error during review calculation: "['Company'] not in index"
+2025-01-24 14:10:31,924 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-01-24 14:10:31,926 - Review.reviews.f4rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\f4rip_review.py", line 186, in run_f4rip_review
+    inclusion_df = selection_df[selection_df['Inclusion'] == 1][[
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Company'] not in index"
+
+2025-01-24 14:10:31,926 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-01-24 14:10:31,932 - werkzeug - INFO - 127.0.0.1 - - [24/Jan/2025 14:10:31] "POST /calculate HTTP/1.1" 200 -

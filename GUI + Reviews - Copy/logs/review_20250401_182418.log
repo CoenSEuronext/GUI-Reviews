@@ -1,0 +1,144 @@
+2025-04-01 18:24:18,410 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 18:24:18,410 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-04-01 18:24:20,094 - Review.reviews.wifrp_review - INFO - Loading EOD data...
+2025-04-01 18:24:23,625 - Review.reviews.wifrp_review - INFO - Loading reference data...
+2025-04-01 18:24:31,638 - Review.reviews.wifrp_review - INFO - Filtering universe to exclude Euronext Paris (XPAR) listings...
+2025-04-01 18:24:31,646 - Review.reviews.wifrp_review - INFO - Adding Free Float data...
+2025-04-01 18:24:31,646 - Review.reviews.wifrp_review - INFO - Applying exclusion criteria...
+2025-04-01 18:24:31,691 - Review.reviews.wifrp_review - WARNING - Removed 9316 duplicate rows from ICB data
+2025-04-01 18:24:31,692 - Review.reviews.wifrp_review - INFO - Merging ICB data with 'Supersector Code' column
+2025-04-01 18:24:31,713 - Review.reviews.wifrp_review - INFO - Processing sector: 1010.0, region: AS, group size: 46
+2025-04-01 18:24:31,714 - Review.reviews.wifrp_review - INFO - Companies in group: 46, to exclude: 9
+2025-04-01 18:24:31,714 - Review.reviews.wifrp_review - INFO - Processing sector: 1010.0, region: EU, group size: 20
+2025-04-01 18:24:31,715 - Review.reviews.wifrp_review - INFO - Companies in group: 20, to exclude: 3
+2025-04-01 18:24:31,715 - Review.reviews.wifrp_review - INFO - Processing sector: 1010.0, region: NA, group size: 83
+2025-04-01 18:24:31,715 - Review.reviews.wifrp_review - INFO - Companies in group: 83, to exclude: 16
+2025-04-01 18:24:31,716 - Review.reviews.wifrp_review - INFO - Processing sector: 1510.0, region: AS, group size: 12
+2025-04-01 18:24:31,716 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-01 18:24:31,716 - Review.reviews.wifrp_review - INFO - Processing sector: 1510.0, region: EU, group size: 18
+2025-04-01 18:24:31,716 - Review.reviews.wifrp_review - INFO - Companies in group: 18, to exclude: 3
+2025-04-01 18:24:31,716 - Review.reviews.wifrp_review - INFO - Processing sector: 1510.0, region: NA, group size: 10
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Processing sector: 2010.0, region: AS, group size: 30
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Companies in group: 30, to exclude: 5
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Processing sector: 2010.0, region: EU, group size: 42
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Companies in group: 42, to exclude: 8
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Processing sector: 2010.0, region: NA, group size: 46
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Companies in group: 46, to exclude: 9
+2025-04-01 18:24:31,717 - Review.reviews.wifrp_review - INFO - Processing sector: 3010.0, region: AS, group size: 30
+2025-04-01 18:24:31,719 - Review.reviews.wifrp_review - INFO - Companies in group: 30, to exclude: 5
+2025-04-01 18:24:31,719 - Review.reviews.wifrp_review - INFO - Processing sector: 3010.0, region: EU, group size: 43
+2025-04-01 18:24:31,719 - Review.reviews.wifrp_review - INFO - Companies in group: 43, to exclude: 8
+2025-04-01 18:24:31,720 - Review.reviews.wifrp_review - INFO - Processing sector: 3010.0, region: NA, group size: 21
+2025-04-01 18:24:31,720 - Review.reviews.wifrp_review - INFO - Companies in group: 21, to exclude: 4
+2025-04-01 18:24:31,720 - Review.reviews.wifrp_review - INFO - Processing sector: 3020.0, region: AS, group size: 17
+2025-04-01 18:24:31,720 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,721 - Review.reviews.wifrp_review - INFO - Processing sector: 3020.0, region: EU, group size: 31
+2025-04-01 18:24:31,721 - Review.reviews.wifrp_review - INFO - Companies in group: 31, to exclude: 6
+2025-04-01 18:24:31,721 - Review.reviews.wifrp_review - INFO - Processing sector: 3020.0, region: NA, group size: 32
+2025-04-01 18:24:31,721 - Review.reviews.wifrp_review - INFO - Companies in group: 32, to exclude: 6
+2025-04-01 18:24:31,722 - Review.reviews.wifrp_review - INFO - Processing sector: 3030.0, region: AS, group size: 13
+2025-04-01 18:24:31,722 - Review.reviews.wifrp_review - INFO - Companies in group: 13, to exclude: 2
+2025-04-01 18:24:31,722 - Review.reviews.wifrp_review - INFO - Processing sector: 3030.0, region: EU, group size: 30
+2025-04-01 18:24:31,722 - Review.reviews.wifrp_review - INFO - Companies in group: 30, to exclude: 5
+2025-04-01 18:24:31,723 - Review.reviews.wifrp_review - INFO - Processing sector: 3030.0, region: NA, group size: 23
+2025-04-01 18:24:31,723 - Review.reviews.wifrp_review - INFO - Companies in group: 23, to exclude: 4
+2025-04-01 18:24:31,723 - Review.reviews.wifrp_review - INFO - Processing sector: 3510.0, region: AS, group size: 48
+2025-04-01 18:24:31,724 - Review.reviews.wifrp_review - INFO - Companies in group: 48, to exclude: 9
+2025-04-01 18:24:31,724 - Review.reviews.wifrp_review - INFO - Processing sector: 3510.0, region: EU, group size: 21
+2025-04-01 18:24:31,725 - Review.reviews.wifrp_review - INFO - Companies in group: 21, to exclude: 4
+2025-04-01 18:24:31,725 - Review.reviews.wifrp_review - INFO - Processing sector: 3510.0, region: NA, group size: 22
+2025-04-01 18:24:31,726 - Review.reviews.wifrp_review - INFO - Companies in group: 22, to exclude: 4
+2025-04-01 18:24:31,727 - Review.reviews.wifrp_review - INFO - Processing sector: 4010.0, region: AS, group size: 15
+2025-04-01 18:24:31,727 - Review.reviews.wifrp_review - INFO - Companies in group: 15, to exclude: 2
+2025-04-01 18:24:31,727 - Review.reviews.wifrp_review - INFO - Processing sector: 4010.0, region: EU, group size: 10
+2025-04-01 18:24:31,728 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-01 18:24:31,728 - Review.reviews.wifrp_review - INFO - Processing sector: 4010.0, region: NA, group size: 4
+2025-04-01 18:24:31,730 - Review.reviews.wifrp_review - INFO - Companies in group: 4, to exclude: 0
+2025-04-01 18:24:31,730 - Review.reviews.wifrp_review - WARNING - No companies to exclude for sector 4010.0 and region NA
+2025-04-01 18:24:31,730 - Review.reviews.wifrp_review - INFO - Processing sector: 4020.0, region: AS, group size: 29
+2025-04-01 18:24:31,730 - Review.reviews.wifrp_review - INFO - Companies in group: 29, to exclude: 5
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4020.0, region: EU, group size: 21
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 21, to exclude: 4
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4020.0, region: NA, group size: 17
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4030.0, region: AS, group size: 6
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 6, to exclude: 1
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4030.0, region: EU, group size: 8
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 8, to exclude: 1
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4030.0, region: NA, group size: 6
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 6, to exclude: 1
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4040.0, region: AS, group size: 13
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 13, to exclude: 2
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4040.0, region: EU, group size: 10
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4040.0, region: NA, group size: 20
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 20, to exclude: 3
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4050.0, region: AS, group size: 19
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 19, to exclude: 3
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Processing sector: 4050.0, region: EU, group size: 10
+2025-04-01 18:24:31,731 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-01 18:24:31,736 - Review.reviews.wifrp_review - INFO - Processing sector: 4050.0, region: NA, group size: 19
+2025-04-01 18:24:31,736 - Review.reviews.wifrp_review - INFO - Companies in group: 19, to exclude: 3
+2025-04-01 18:24:31,736 - Review.reviews.wifrp_review - INFO - Processing sector: 4510.0, region: AS, group size: 25
+2025-04-01 18:24:31,736 - Review.reviews.wifrp_review - INFO - Companies in group: 25, to exclude: 4
+2025-04-01 18:24:31,737 - Review.reviews.wifrp_review - INFO - Processing sector: 4510.0, region: EU, group size: 24
+2025-04-01 18:24:31,737 - Review.reviews.wifrp_review - INFO - Companies in group: 24, to exclude: 4
+2025-04-01 18:24:31,737 - Review.reviews.wifrp_review - INFO - Processing sector: 4510.0, region: NA, group size: 17
+2025-04-01 18:24:31,737 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,737 - Review.reviews.wifrp_review - INFO - Processing sector: 4520.0, region: AS, group size: 16
+2025-04-01 18:24:31,738 - Review.reviews.wifrp_review - INFO - Companies in group: 16, to exclude: 3
+2025-04-01 18:24:31,738 - Review.reviews.wifrp_review - INFO - Processing sector: 4520.0, region: EU, group size: 11
+2025-04-01 18:24:31,738 - Review.reviews.wifrp_review - INFO - Companies in group: 11, to exclude: 2
+2025-04-01 18:24:31,739 - Review.reviews.wifrp_review - INFO - Processing sector: 4520.0, region: NA, group size: 12
+2025-04-01 18:24:31,739 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-01 18:24:31,739 - Review.reviews.wifrp_review - INFO - Processing sector: 5010.0, region: AS, group size: 17
+2025-04-01 18:24:31,739 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,740 - Review.reviews.wifrp_review - INFO - Processing sector: 5010.0, region: EU, group size: 22
+2025-04-01 18:24:31,740 - Review.reviews.wifrp_review - INFO - Companies in group: 22, to exclude: 4
+2025-04-01 18:24:31,741 - Review.reviews.wifrp_review - INFO - Processing sector: 5010.0, region: NA, group size: 10
+2025-04-01 18:24:31,741 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-01 18:24:31,741 - Review.reviews.wifrp_review - INFO - Processing sector: 5020.0, region: AS, group size: 95
+2025-04-01 18:24:31,742 - Review.reviews.wifrp_review - INFO - Companies in group: 95, to exclude: 18
+2025-04-01 18:24:31,742 - Review.reviews.wifrp_review - INFO - Processing sector: 5020.0, region: EU, group size: 81
+2025-04-01 18:24:31,744 - Review.reviews.wifrp_review - INFO - Companies in group: 81, to exclude: 16
+2025-04-01 18:24:31,744 - Review.reviews.wifrp_review - INFO - Processing sector: 5020.0, region: NA, group size: 75
+2025-04-01 18:24:31,745 - Review.reviews.wifrp_review - INFO - Companies in group: 75, to exclude: 14
+2025-04-01 18:24:31,745 - Review.reviews.wifrp_review - INFO - Processing sector: 5510.0, region: AS, group size: 20
+2025-04-01 18:24:31,746 - Review.reviews.wifrp_review - INFO - Companies in group: 20, to exclude: 3
+2025-04-01 18:24:31,746 - Review.reviews.wifrp_review - INFO - Processing sector: 5510.0, region: EU, group size: 16
+2025-04-01 18:24:31,746 - Review.reviews.wifrp_review - INFO - Companies in group: 16, to exclude: 3
+2025-04-01 18:24:31,746 - Review.reviews.wifrp_review - INFO - Processing sector: 5510.0, region: NA, group size: 12
+2025-04-01 18:24:31,747 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-04-01 18:24:31,747 - Review.reviews.wifrp_review - INFO - Processing sector: 5520.0, region: AS, group size: 17
+2025-04-01 18:24:31,747 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,747 - Review.reviews.wifrp_review - INFO - Processing sector: 5520.0, region: EU, group size: 17
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Processing sector: 5520.0, region: NA, group size: 6
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Companies in group: 6, to exclude: 1
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Processing sector: 6010.0, region: AS, group size: 10
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Processing sector: 6010.0, region: EU, group size: 17
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Processing sector: 6010.0, region: NA, group size: 34
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Companies in group: 34, to exclude: 6
+2025-04-01 18:24:31,748 - Review.reviews.wifrp_review - INFO - Processing sector: 6510.0, region: AS, group size: 22
+2025-04-01 18:24:31,751 - Review.reviews.wifrp_review - INFO - Companies in group: 22, to exclude: 4
+2025-04-01 18:24:31,751 - Review.reviews.wifrp_review - INFO - Processing sector: 6510.0, region: EU, group size: 23
+2025-04-01 18:24:31,751 - Review.reviews.wifrp_review - INFO - Companies in group: 23, to exclude: 4
+2025-04-01 18:24:31,752 - Review.reviews.wifrp_review - INFO - Processing sector: 6510.0, region: NA, group size: 31
+2025-04-01 18:24:31,752 - Review.reviews.wifrp_review - INFO - Companies in group: 31, to exclude: 6
+2025-04-01 18:24:31,753 - Review.reviews.wifrp_review - INFO - Calculating FFMC for all companies in universe using cut-off date data (stock_co_df)...
+2025-04-01 18:24:31,753 - Review.reviews.wifrp_review - WARNING - Cannot get all required data from stock_co_df. Missing columns: ['FX/Index']
+2025-04-01 18:24:31,753 - Review.reviews.wifrp_review - INFO - Using Mcap in EUR to calculate FFMC
+2025-04-01 18:24:31,754 - Review.reviews.wifrp_review - INFO - Creating rank based on FFMC...
+2025-04-01 18:24:31,754 - Review.reviews.wifrp_review - INFO - Found 20 valid exclusion columns: ['exclusion_1', 'exclusion_2', 'exclusion_3', 'exclusion_4', 'exclusion_5', 'exclusion_6', 'exclusion_7', 'exclusion_8', 'exclusion_9', 'exclusion_10', 'exclusion_11', 'exclusion_12', 'exclusion_13', 'exclusion_14', 'exclusion_15', 'exclusion_16', 'exclusion_17', 'exclusion_18', 'exclusion_19', 'exclusion_20']
+2025-04-01 18:24:31,768 - Review.reviews.wifrp_review - INFO - Selecting eligible companies...
+2025-04-01 18:24:31,769 - Review.reviews.wifrp_review - INFO - Selecting top 40 companies by FFMC...
+2025-04-01 18:24:31,770 - Review.reviews.wifrp_review - INFO - Calculating weights and capping factors using the most recent pricing data...
+2025-04-01 18:24:31,770 - Review.reviews.wifrp_review - WARNING - Cannot get EOD data from stock_eod_df. Using FFMC from cut-off date for weighting.
+2025-04-01 18:24:31,773 - Review.reviews.wifrp_review - INFO - Creating final output dataframe...
+2025-04-01 18:24:31,774 - Review.reviews.wifrp_review - INFO - Saving WIFRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\WIFRP_df_20250401_182431.xlsx
+2025-04-01 18:24:32,357 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 18:24:32] "POST /calculate HTTP/1.1" 200 -
+2025-04-01 18:51:56,100 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-04-01 18:51:56,100 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
