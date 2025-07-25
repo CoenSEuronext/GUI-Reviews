@@ -29,6 +29,9 @@ from .reviews.efmep_review import run_efmep_review
 from .reviews.eri5p_review import run_eri5p_review
 from .reviews.be1p_review import run_be1p_review
 from .reviews.eus5p_review import run_eus5p_review
+from .reviews.edefp_review import run_edefp_review
+from .reviews.etpfb_review import run_etpfb_review
+from .reviews.eluxp_review import run_eluxp_review
 
 # Dictionary mapping review types to their corresponding functions
 REVIEW_FUNCTIONS = {
@@ -60,7 +63,10 @@ REVIEW_FUNCTIONS = {
     "EFMEP": run_efmep_review,
     "ERI5P": run_eri5p_review,
     "BE1P": run_be1p_review,
-    "EUS5P": run_eus5p_review
+    "EUS5P": run_eus5p_review,
+    "EDEFP": run_edefp_review,
+    "ETPFB": run_etpfb_review,
+    "ELUXP": run_eluxp_review
 }
 
 def run_review(review_type, **kwargs):

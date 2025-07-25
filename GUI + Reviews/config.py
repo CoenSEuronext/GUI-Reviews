@@ -150,6 +150,21 @@ INDEX_CONFIGS = {
         "index": "EUS5P",
         "isin": "NL0013216468",
         "output_key": "eus5p_path"
+    },
+    "EDEFP": {
+        "index": "EDEFP",
+        "isin": "NLIX00005982",
+        "output_key": "edefp_path"
+    },
+    "ETPFB": {
+        "index": "ETPFB",
+        "isin": "NLIX00006535",
+        "output_key": "etpfb_path"
+    },
+    "ELUXP": {
+        "index": "ELUXP",
+        "isin": "NLIX00002930",
+        "output_key": "eluxp_path"
     }
     # Add new indices here following the same pattern
 }
