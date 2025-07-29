@@ -1,0 +1,19 @@
+2025-07-29 15:24:55,707 - werkzeug - WARNING -  * Debugger is active!
+2025-07-29 15:24:55,714 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-29 15:25:03,364 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-07-29 15:25:07,259 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-07-29 15:25:14,813 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-07-29 15:25:14,868 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-07-29 15:25:14,868 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-07-29 15:25:14,868 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-07-29 15:25:14,916 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) weight: 60.0000% (target: 60.00%)
+2025-07-29 15:25:14,916 - Review.reviews.gicp_review - INFO - Group 2 (NA500) weight: 40.0000% (target: 40.00%)
+2025-07-29 15:25:14,916 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-07-29 15:25:14,929 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) final weight: 60.0000%
+2025-07-29 15:25:14,929 - Review.reviews.gicp_review - INFO - Group 2 (NA500) final weight: 40.0000%
+2025-07-29 15:25:14,930 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 9.7845%
+2025-07-29 15:25:14,930 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250729_152514.xlsx
+2025-07-29 15:25:15,276 - werkzeug - INFO - 127.0.0.1 - - [29/Jul/2025 15:25:15] "POST /calculate HTTP/1.1" 200 -
+2025-07-29 15:28:08,416 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-07-29 15:28:08,416 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
