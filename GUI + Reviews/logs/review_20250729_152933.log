@@ -15,3 +15,4 @@ Final Weight Verification:
 2025-07-29 15:29:44,635 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 9.7845%
 2025-07-29 15:29:44,635 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250729_152944.xlsx
 2025-07-29 15:29:45,028 - werkzeug - INFO - 127.0.0.1 - - [29/Jul/2025 15:29:45] "POST /calculate HTTP/1.1" 200 -
+2025-07-29 15:29:59,441 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading

@@ -339,6 +339,9 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
             how='left'
         )
 
+        # Add this line:
+        selection_df['Job_score_3Y'] = pd.to_numeric(selection_df['Job_score_3Y'], errors='coerce').fillna(0)
+
         def select_top_stocks(df, mic_type, n_stocks):
             if mic_type == 'XPAR':
                 filtered_df = df[df['MIC'] == 'XPAR'].copy()
@@ -533,6 +536,8 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
                     # Write each DataFrame to a different sheet
                     FRD4P_df.to_excel(writer, sheet_name='Index Composition', index=False)
                     developed_market_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                    final_selection_df.to_excel(writer, sheet_name='Selection', index=False)
+                    full_selection_df.to_excel(writer, sheet_name='Full Selection', index=False)
                 
             return {
                 "status": "success",
