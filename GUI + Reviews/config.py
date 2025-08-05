@@ -170,6 +170,11 @@ INDEX_CONFIGS = {
         "index": "ESVEP",
         "isin": "NLIX00005230",
         "output_key": "esvep_path"
+    },
+    "SECTORIAL": {
+        "index": "SECTORIAL",
+        "isin": "SECTORIAL",
+        "output_key": "sectorial_path"
     }
     # Add new indices here following the same pattern
 }
