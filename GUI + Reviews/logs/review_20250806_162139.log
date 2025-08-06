@@ -1,0 +1,8 @@
+2025-08-06 16:21:40,304 - werkzeug - WARNING -  * Debugger is active!
+2025-08-06 16:21:40,305 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-06 16:23:42,435 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py', reloading
+2025-08-06 16:23:42,435 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_openpyxl.py', reloading
+2025-08-06 16:23:42,441 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\openpyxl\\workbook\\workbook.py', reloading
+2025-08-06 16:23:42,442 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\openpyxl\\writer\\excel.py', reloading
+2025-08-06 16:23:42,445 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\openpyxl\\worksheet\\_writer.py', reloading
+2025-08-06 16:23:42,448 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\openpyxl\\cell\\_writer.py', reloading
