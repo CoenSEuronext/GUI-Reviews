@@ -280,7 +280,7 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                     # Run inclusion/exclusion analysis for this specific index
                     analysis_results = inclusion_exclusion_analysis(
                         group_df,                # New selected companies
-                        current_index_df,        # Current index constituents
+                        stock_eod_df,        # Current index constituents
                         group_name,
                         isin_column='ISIN Code'
                     )

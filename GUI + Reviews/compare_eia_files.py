@@ -134,6 +134,21 @@ def load_excel_data(file_path, is_dataiku_file=False):
         print(f"Error loading {file_path}: {str(e)}")
         return None
 
+def get_company_mapping(df):
+    """Extract ISIN to Company name mapping from DataFrame"""
+    company_mapping = {}
+    
+    # Only try 'Company' column
+    if 'Company' in df.columns and 'ISIN Code' in df.columns:
+        # Create mapping from ISIN to Company
+        for _, row in df.iterrows():
+            isin = row['ISIN Code']
+            company = row['Company']
+            if pd.notna(isin) and pd.notna(company):
+                company_mapping[isin] = str(company)
+    
+    return company_mapping
+
 def are_currencies_equivalent(currency1, currency2):
     """Check if two currency codes represent the same currency with acceptable variations"""
     if currency1 == currency2:
@@ -171,6 +186,10 @@ def compare_files(coen_file, dataiku_file):
             'status': 'ERROR',
             'message': f"Missing 'ISIN Code' column: Coen: {'ISIN Code' in coen_df.columns}, Dataiku: {'ISIN Code' in dataiku_df.columns}"
         }
+    
+    # Get company mappings from both files
+    coen_companies = get_company_mapping(coen_df)
+    dataiku_companies = get_company_mapping(dataiku_df)
     
     # Rest of the function remains the same...
     # Get the set of ISIN codes from each file
@@ -340,7 +359,11 @@ def compare_files(coen_file, dataiku_file):
         'dataiku_only': list(dataiku_only)[:5],  # First 5 ISINs only in Dataiku
         'coen_only_count': len(coen_only),
         'dataiku_only_count': len(dataiku_only),
-        'field_results': field_results
+        'field_results': field_results,
+        'coen_only_full': list(coen_only),  # Full list for ISIN differences sheet
+        'dataiku_only_full': list(dataiku_only),  # Full list for ISIN differences sheet
+        'coen_companies': coen_companies,  # Company mappings
+        'dataiku_companies': dataiku_companies  # Company mappings
     }
     
     return result
@@ -481,21 +504,31 @@ def create_excel_report(results, output_path):
             column_width = max(len(str(column)), field_mismatch_df[column].astype(str).map(len).max())
             mismatch_sheet.set_column(i, i, column_width + 2)
     
-    # ISIN Differences Sheet - ISINs that appear in only one of the files
+    # ISIN Differences Sheet - ISINs that appear in only one of the files (with Company names)
     isin_diff_data = []
     for mnemo, result in results.items():
         if result['status'] == 'SUCCESS' and not result['same_isins']:
-            for isin in result['coen_only']:
+            # Get company mappings
+            coen_companies = result.get('coen_companies', {})
+            dataiku_companies = result.get('dataiku_companies', {})
+            
+            # Add ISINs that are only in Coen
+            for isin in result.get('coen_only_full', []):
+                company_name = coen_companies.get(isin, 'N/A')
                 isin_diff_data.append({
                     'Mnemo': mnemo,
                     'ISIN': isin,
+                    'Company': company_name,
                     'Present In': 'Coen Only'
                 })
             
-            for isin in result['dataiku_only']:
+            # Add ISINs that are only in Dataiku
+            for isin in result.get('dataiku_only_full', []):
+                company_name = dataiku_companies.get(isin, 'N/A')
                 isin_diff_data.append({
                     'Mnemo': mnemo,
                     'ISIN': isin,
+                    'Company': company_name,
                     'Present In': 'Dataiku Only'
                 })
     

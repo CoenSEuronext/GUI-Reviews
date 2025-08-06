@@ -1,0 +1,109 @@
+2025-08-06 13:58:06,914 - werkzeug - WARNING -  * Debugger is active!
+2025-08-06 13:58:06,914 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-06 13:58:06,953 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-08-06 13:58:12,847 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-08-06 13:58:12,847 - Review.reviews.edwpt_review - INFO - Total companies selected: 5296
+2025-08-06 13:58:12,847 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.83%
+2025-08-06 13:58:12,890 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-08-06 13:58:12,891 - Review.reviews.edwpt_review - INFO - Total companies selected: 1283
+2025-08-06 13:58:12,892 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.67%
+2025-08-06 13:58:12,904 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-08-06 13:58:12,904 - Review.reviews.edwpt_review - INFO - Total companies selected: 497
+2025-08-06 13:58:12,904 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.51%
+2025-08-06 13:58:12,921 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-08-06 13:58:12,921 - Review.reviews.edwpt_review - INFO - Total companies selected: 1903
+2025-08-06 13:58:12,930 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.14%
+2025-08-06 13:58:12,935 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-08-06 13:58:12,935 - Review.reviews.edwpt_review - INFO - Total companies selected: 1657
+2025-08-06 13:58:12,944 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.16%
+2025-08-06 13:58:12,949 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-08-06 13:58:12,961 - Review.reviews.edwpt_review - INFO - Total companies selected: 1561
+2025-08-06 13:58:12,961 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.08%
+2025-08-06 13:58:12,967 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-08-06 13:58:12,967 - Review.reviews.edwpt_review - INFO - Total companies selected: 316
+2025-08-06 13:58:12,972 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.06%
+2025-08-06 13:58:12,984 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-08-06 13:58:12,985 - Review.reviews.edwpt_review - INFO - Total companies selected: 1394
+2025-08-06 13:58:12,987 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-08-06 13:58:12,988 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-08-06 13:58:12,997 - Review.reviews.edwpt_review - INFO - Total companies selected: 1402
+2025-08-06 13:58:12,999 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-08-06 13:58:13,003 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-08-06 13:58:13,003 - Review.reviews.edwpt_review - INFO - Total companies selected: 78
+2025-08-06 13:58:13,006 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.08%
+2025-08-06 13:58:13,013 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-08-06 13:58:13,014 - Review.reviews.edwpt_review - INFO - Total companies selected: 284
+2025-08-06 13:58:13,016 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-08-06 13:58:13,021 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-08-06 13:58:13,024 - Review.reviews.edwpt_review - INFO - Total companies selected: 217
+2025-08-06 13:58:13,024 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-08-06 13:58:13,036 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-08-06 13:58:13,036 - Review.reviews.edwpt_review - INFO - Total companies selected: 5296
+2025-08-06 13:58:13,038 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.83%
+2025-08-06 13:58:13,038 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-08-06 13:58:13,038 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  9.511262e+08                1
+BATS     1  2.137557e+10                1
+MERK     2  1.978810e+08                2
+MTAA   236  6.038823e+11               80
+NEOE     1  4.727061e+07                0
+WBAH    28  6.580410e+10               20
+XAMS    81  1.178277e+12               48
+XASX   883  1.433442e+12              278
+XBRU    64  2.101693e+11               35
+XCSE    99  4.205086e+11               35
+XESM     2  1.651506e+09                2
+XETR   227  1.833541e+12              105
+XHEL   134  2.182358e+11               50
+XHKG   245  4.615411e+11               76
+XLIS    16  3.591813e+10               12
+XLON   833  2.369042e+12              284
+XMAD    96  5.998798e+11               43
+XMSM    13  5.991251e+10                9
+XNGM    56  1.209690e+09                3
+XNGS  2665  2.517485e+13              736
+XNYS  1721  2.495432e+13             1089
+XNZE    53  5.806349e+10               35
+XOSL   228  1.778157e+11              110
+XPAR   345  1.894325e+12               92
+XSES   130  2.924063e+11               63
+XSTO   623  6.989421e+11              215
+XSWX   160  1.691898e+12               88
+XTAE   281  1.782428e+11              165
+XTKS  3667  5.008343e+12             1402
+XTSE   490  2.238620e+12              217
+2025-08-06 13:58:13,070 - Review.reviews.edwpt_review - INFO - Saving main output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250806_135813.xlsx
+2025-08-06 13:58:13,397 - Review.reviews.edwpt_review - ERROR - Error saving output file: "['Name'] not in index"
+2025-08-06 13:58:13,412 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 315, in run_edwpt_review
+    inclusions_df, exclusions_df = analyze_changes(
+                                   ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 180, in analyze_changes
+    inclusions_df = universe_df[
+                    ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Name'] not in index"
+
+2025-08-06 13:58:13,412 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-08-06 13:58:13,419 - werkzeug - INFO - 127.0.0.1 - - [06/Aug/2025 13:58:13] "POST /calculate HTTP/1.1" 200 -
