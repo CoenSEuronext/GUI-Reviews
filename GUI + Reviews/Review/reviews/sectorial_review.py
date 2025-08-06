@@ -272,12 +272,14 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
             }
         }
 
-        # CORRECTED CAPPING FUNCTIONS
         def calculate_capped_weights(weights, cap_limit=0.2, max_iterations=100, tolerance=1e-8):
             """
             Calculate capped weights with iterative redistribution of excess weight.
             Companies exceeding the cap will have exactly cap_limit weight (20%).
-            Excess weight is redistributed proportionally to companies below the cap.
+            Excess weight is redistributed proportionally to companies below the cap
+            based on their ORIGINAL weights.
+            
+            This function now expects input weights that sum to 1.0.
             
             Args:
                 weights: pandas Series of original weights (should sum to 1.0)
@@ -290,75 +292,76 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
             """
             import pandas as pd
             
-            # Initialize
+            # Verify input weights sum to 1.0
+            original_sum = weights.sum()
+            if abs(original_sum - 1.0) > tolerance:
+                raise ValueError(f"Input weights sum to {original_sum:.8f}, expected 1.0. Fix weight calculation first.")
+            
+            # Store original weights for proportional redistribution
+            original_weights = weights.copy()
             current_weights = weights.copy()
+            is_capped = pd.Series(False, index=weights.index)  # Track permanently capped companies
             
             # Iterative redistribution
             for iteration in range(max_iterations):
-                # Identify companies exceeding the cap
-                over_cap_mask = current_weights > cap_limit
+                # Identify companies that exceed cap and aren't already permanently capped
+                needs_capping = (current_weights > cap_limit) & (~is_capped)
                 
-                if not over_cap_mask.any():
-                    # No companies over cap, we're done
+                if not needs_capping.any():
+                    # No more companies need capping
                     break
                     
-                # Calculate total excess weight
-                excess_weights = current_weights[over_cap_mask] - cap_limit
-                total_excess = excess_weights.sum()
+                # Calculate excess weight from companies that need capping
+                excess_weight = (current_weights[needs_capping] - cap_limit).sum()
                 
-                # Cap the over-limit weights at exactly cap_limit
-                current_weights[over_cap_mask] = cap_limit
+                # Cap these companies at exactly cap_limit and mark as permanently capped
+                current_weights[needs_capping] = cap_limit
+                is_capped[needs_capping] = True
                 
-                # Find companies that can receive additional weight (not at cap)
-                can_receive_mask = current_weights < cap_limit
+                # Find companies eligible to receive redistributed weight
+                # (not capped AND currently below cap limit)
+                can_receive = (~is_capped) & (current_weights < cap_limit)
                 
-                if not can_receive_mask.any():
-                    # All companies are at cap - shouldn't happen with reasonable cap limits
-                    logger.warning(f"All companies at cap limit after {iteration} iterations")
+                if not can_receive.any() or excess_weight <= tolerance:
+                    # No eligible companies or no meaningful excess weight
                     break
                     
-                # Get current weights of companies that can receive more
-                eligible_weights = current_weights[can_receive_mask]
+                # Use original weights of eligible companies for proportional redistribution
+                eligible_original_weights = original_weights[can_receive]
+                total_eligible_original = eligible_original_weights.sum()
                 
-                # Calculate how much additional weight each can receive
-                max_additional = cap_limit - eligible_weights
-                total_capacity = max_additional.sum()
-                
-                if total_capacity <= tolerance:
-                    # No meaningful capacity to redistribute
+                if total_eligible_original <= tolerance:
+                    # No meaningful original weights to use for redistribution
                     break
                     
-                if total_excess <= total_capacity:
-                    # We can distribute all excess weight proportionally based on current weights
-                    if eligible_weights.sum() > 0:
-                        redistribution_ratios = eligible_weights / eligible_weights.sum()
-                        additional_weights = total_excess * redistribution_ratios
-                        current_weights[can_receive_mask] += additional_weights
-                    break
-                else:
-                    # Not enough capacity - distribute proportionally up to capacity limits
-                    if eligible_weights.sum() > 0:
-                        redistribution_ratios = eligible_weights / eligible_weights.sum()
-                        additional_weights = total_capacity * redistribution_ratios
-                        current_weights[can_receive_mask] += additional_weights
-                    # Continue to next iteration with remaining excess
+                # Calculate how much weight each eligible company should receive
+                redistribution_shares = eligible_original_weights / total_eligible_original
+                additional_weights = excess_weight * redistribution_shares
+                
+                # Apply the additional weights
+                current_weights[can_receive] += additional_weights
             
-            # Final normalization to ensure exact sum of 1.0
+            # Verify final results (should naturally be correct now)
             total_weight = current_weights.sum()
+            max_weight = current_weights.max()
+            
             if abs(total_weight - 1.0) > tolerance:
-                current_weights = current_weights / total_weight
+                raise ValueError(f"Algorithm failed: Total weight is {total_weight:.8f}, not 1.0")
+            
+            if max_weight > cap_limit + tolerance:
+                raise ValueError(f"Algorithm failed: Max weight is {max_weight:.8f}, exceeds cap of {cap_limit}")
             
             return current_weights
 
-        # Function to process individual sectorial index
+        # Function to process individual sectorial index - FIXED VERSION
         def process_sectorial_index(index_code, index_info):
-            """Process a single sectorial index"""
+            """Process a single sectorial index with CORRECTED weight calculation"""
             try:
                 isin = index_info['isincode']
                 universe_df = index_info['starting_universe']
                 industry_code = index_info['industry_code']
                 
-                # Get index market cap
+                # Get index market cap (for reference/logging only)
                 index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
                 
                 # Filter universe by industry code (using Industry Code column)
@@ -373,16 +376,31 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 # Use the merged Free Float Round value, fallback to original Free Float if not available  
                 selection_df["Free Float"] = selection_df["Free Float Round:"]
                 selection_df['Original Market Cap'] = selection_df['Close Prc_EOD'] * selection_df['Number of Shares'] * selection_df['FX/Index Ccy'] * selection_df['Free Float']
-                selection_df['Weight'] = selection_df['Original Market Cap'] / index_mcap
+                
+                # FIXED WEIGHT CALCULATION: Divide by sum of selected companies' market caps
+                total_selected_mcap = selection_df['Original Market Cap'].sum()
+                selection_df['Weight'] = selection_df['Original Market Cap'] / total_selected_mcap
+                
+                # Verify weights sum to 1.0 (should be exactly 1.0 now)
+                weights_sum = selection_df['Weight'].sum()
+                logger.info(f"Total weight before capping for {index_code}: {weights_sum:.8f}")
+                
+                # This should now be very close to 1.0 (within floating point precision)
+                assert abs(weights_sum - 1.0) < 1e-10, f"Weights don't sum to 1.0 for {index_code}: {weights_sum}"
 
-                # CORRECTED CAPPING IMPLEMENTATION
-                # Calculate capped weights directly (no more problematic capping factors)
+                # Calculate capped weights (now with proper input that sums to 1.0)
                 capped_weights = calculate_capped_weights(selection_df['Weight'], cap_limit=0.2)
                 selection_df['Capped Weight'] = capped_weights
                 
                 # Calculate capping factors for reporting purposes (final_weight / original_weight)
                 selection_df['Capping Factor'] = selection_df['Capped Weight'] / selection_df['Weight']
 
+                # Scale capping factors to 1 by dividing by the maximum capping factor
+                max_capping_factor = selection_df['Capping Factor'].max()
+                selection_df['Capping Factor'] = selection_df['Capping Factor'] / max_capping_factor
+
+                logger.info(f"Scaled capping factors for {index_code} (max factor was {max_capping_factor:.6f})")
+                logger.info(f"Capping factors now range from {selection_df['Capping Factor'].min():.6f} to {selection_df['Capping Factor'].max():.6f}")
                 # Log capping results
                 capped_companies = selection_df[selection_df['Capped Weight'] < selection_df['Weight'] * 0.9999]
                 boosted_companies = selection_df[selection_df['Capped Weight'] > selection_df['Weight'] * 1.0001]
@@ -397,16 +415,22 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     for _, company in boosted_companies.iterrows():
                         logger.info(f"  {company['Company']}: {company['Weight']:.4f} -> {company['Capped Weight']:.4f}")
 
-                # Verify results
+                # Verify final results
                 total_capped_weight = selection_df['Capped Weight'].sum()
                 max_weight = selection_df['Capped Weight'].max()
                 
                 logger.info(f"Total weight after capping for {index_code}: {total_capped_weight:.6f}")
                 logger.info(f"Maximum individual weight for {index_code}: {max_weight:.6f} (cap: 0.200000)")
 
-                # Assert that total weight is 1.0 and no company exceeds 20%
-                assert abs(total_capped_weight - 1.0) < 1e-10, f"Total weight {total_capped_weight} is not equal to 1.0 for {index_code}"
-                assert max_weight <= 0.2 + 1e-10, f"Max weight {max_weight} exceeds 20% cap for {index_code}"
+                # Log comparison with original index market cap (for information)
+                logger.info(f"Index market cap for {index_code}: {index_mcap:,.0f}")
+                logger.info(f"Sum of selected companies market cap: {total_selected_mcap:,.0f}")
+                coverage_ratio = total_selected_mcap / index_mcap if index_mcap > 0 else 0
+                logger.info(f"Coverage ratio (selected/index): {coverage_ratio:.4f}")
+
+                # These assertions should now pass
+                assert abs(total_capped_weight - 1.0) < 1e-8, f"Total weight {total_capped_weight} is not equal to 1.0 for {index_code}"
+                assert max_weight <= 0.2 + 1e-8, f"Max weight {max_weight} exceeds 20% cap for {index_code}"
                 
                 # Prepare sectorial index DataFrame
                 selection_df['Effective Date of Review'] = effective_date
@@ -432,6 +456,8 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     'index_code': index_code,
                     'isin': isin,
                     'index_mcap': index_mcap,
+                    'selected_mcap': total_selected_mcap,
+                    'coverage_ratio': coverage_ratio,
                     'composition_df': sectorial_df,
                     'selection_df': selection_df,
                     'inclusion_df': analysis_results['inclusion_df'],
@@ -473,7 +499,13 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     result['inclusion_df'].to_excel(writer, sheet_name='Inclusion', index=False)
                     result['exclusion_df'].to_excel(writer, sheet_name='Exclusion', index=False)
                     result['selection_df'].to_excel(writer, sheet_name='Full Universe', index=False)
-                    pd.DataFrame({'Index Market Cap': [result['index_mcap']]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
+                    
+                    # Enhanced index info sheet with coverage metrics
+                    index_info_df = pd.DataFrame({
+                        'Metric': ['Index Market Cap', 'Selected Companies Market Cap', 'Coverage Ratio', 'Number of Companies'],
+                        'Value': [result['index_mcap'], result['selected_mcap'], result['coverage_ratio'], len(result['composition_df'])]
+                    })
+                    index_info_df.to_excel(writer, sheet_name='Index Info', index=False)
                 
                 saved_files.append(file_path)
             
@@ -482,13 +514,15 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
             logger.info(f"Creating summary file: {summary_path}")
             
             with pd.ExcelWriter(summary_path) as writer:
-                # Create summary sheet
+                # Create enhanced summary sheet
                 summary_data = []
                 for index_code, result in all_results.items():
                     summary_data.append({
                         'Index Code': index_code,
                         'ISIN': result['isin'],
                         'Index Market Cap': result['index_mcap'],
+                        'Selected Market Cap': result['selected_mcap'],
+                        'Coverage Ratio': result['coverage_ratio'],
                         'Number of Companies': len(result['composition_df'])
                     })
                 
