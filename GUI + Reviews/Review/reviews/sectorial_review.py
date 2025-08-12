@@ -531,7 +531,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 
                 # Add individual composition sheets (limited to first 10 due to Excel sheet limits)
                 for i, (index_code, result) in enumerate(all_results.items()):
-                    if i < 10:  # Excel has a limit on number of sheets
+                    if i < 35:  # Excel has a limit on number of sheets
                         result['composition_df'].to_excel(writer, sheet_name=f'{index_code}_Comp', index=False)
 
             return {
