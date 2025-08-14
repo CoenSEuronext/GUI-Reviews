@@ -38,3 +38,12 @@ Change ICB in AERDP
 Update all the names to follow the headers from dataiku + match it with inclusion_exclusion:
 
 - Fix Inclusion Exclusion -- Make a final df just to create the inclusion exclusion pages.
+
+Currently not working:
+EGSPP
+ESVEP
+F4RIP
+LC100
+LC1EP
+LC3WP
+SBF80
