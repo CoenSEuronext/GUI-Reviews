@@ -1,5 +1,0 @@
-2024-12-18 16:01:38,399 - werkzeug - WARNING -  * Debugger is active!
-2024-12-18 16:01:38,401 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2024-12-18 16:02:05,747 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 16:02:05] "[35m[1mPOST /calculate HTTP/1.1[0m" 500 -
-2024-12-18 16:05:51,093 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\FRI4P\\app.py', reloading
-2024-12-18 16:05:51,094 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\FRI4P\\app.py', reloading
