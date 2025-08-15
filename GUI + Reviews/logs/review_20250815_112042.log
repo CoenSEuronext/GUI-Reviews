@@ -1,0 +1,13 @@
+2025-08-15 11:20:42,604 - werkzeug - WARNING -  * Debugger is active!
+2025-08-15 11:20:42,610 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-15 11:20:42,639 - Review.reviews.dwrep_review - INFO - Loading EOD data...
+2025-08-15 11:20:44,420 - Review.reviews.dwrep_review - INFO - Loading reference data...
+2025-08-15 11:20:52,847 - Review.reviews.dwrep_review - INFO - Creating eligible companies dataframe...
+2025-08-15 11:20:52,847 - Review.reviews.dwrep_review - INFO - Total eligible companies: 4861
+2025-08-15 11:20:52,853 - Review.reviews.dwrep_review - INFO - Total eligible FFMC: 69,334,758,064,566.27
+2025-08-15 11:20:52,853 - Review.reviews.dwrep_review - INFO - Weight sum check: 1.000000
+2025-08-15 11:20:52,860 - Review.reviews.dwrep_review - INFO - Saving DWREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DWREP_df_20250815_112052.xlsx
+2025-08-15 11:20:55,403 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 11:20:55] "POST /calculate HTTP/1.1" 200 -
+2025-08-15 11:21:43,788 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
+2025-08-15 11:21:43,789 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
+2025-08-15 11:21:43,789 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading

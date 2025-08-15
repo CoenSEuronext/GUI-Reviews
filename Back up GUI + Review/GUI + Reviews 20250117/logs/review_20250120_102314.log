@@ -1,0 +1,5 @@
+2025-01-20 10:23:14,136 - werkzeug - WARNING -  * Debugger is active!
+2025-01-20 10:23:14,138 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-20 10:24:22,775 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\ntpath.py', reloading
+2025-01-20 10:24:23,092 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\os.py', reloading
+2025-01-20 10:24:23,433 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\__init__.py', reloading

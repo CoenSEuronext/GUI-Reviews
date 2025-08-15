@@ -1,0 +1,13 @@
+2025-08-15 13:45:40,670 - werkzeug - WARNING -  * Debugger is active!
+2025-08-15 13:45:40,672 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-15 13:45:43,785 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-08-15 13:45:48,356 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-08-15 13:45:56,576 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-08-15 13:45:56,576 - Review.reviews.derep_review - INFO - Total eligible companies: 399
+2025-08-15 13:45:56,576 - Review.reviews.derep_review - INFO - Total eligible FFMC: 1,903,789,901,913.42
+2025-08-15 13:45:56,576 - Review.reviews.derep_review - INFO - Weight sum check: 1.000000
+2025-08-15 13:45:56,591 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250815_134556.xlsx
+2025-08-15 13:45:57,813 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 13:45:57] "POST /calculate HTTP/1.1" 200 -
+2025-08-15 13:46:11,029 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading
+2025-08-15 13:46:11,033 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading
+2025-08-15 13:46:11,034 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading

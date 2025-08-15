@@ -175,6 +175,26 @@ INDEX_CONFIGS = {
         "index": "SECTORIAL",
         "isin": "SECTORIAL",
         "output_key": "sectorial_path"
+    },
+    "DWREP": {
+        "index": "DWREP",
+        "isin": "NLIX00004894",
+        "output_key": "dwrep_path"
+    },
+    "DEREP": {
+        "index": "DEREP",
+        "isin": "NLIX00004860",
+        "output_key": "derep_path"
+    },
+    "DAREP": {
+        "index": "DAREP",
+        "isin": "NLIX00004837",
+        "output_key": "darep_path"
+    },
+    "EUREP": {
+        "index": "EUREP",
+        "isin": "NLIX00004803",
+        "output_key": "eurep_path"
     }
     # Add new indices here following the same pattern
 }

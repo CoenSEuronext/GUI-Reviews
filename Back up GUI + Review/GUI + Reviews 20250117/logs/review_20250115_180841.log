@@ -1,0 +1,14 @@
+2025-01-15 18:08:41,850 - werkzeug - WARNING -  * Debugger is active!
+2025-01-15 18:08:41,853 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-01-15 18:08:49,490 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-01-15 18:08:50,991 - Review.reviews.edwpt_review - ERROR - Error during review calculation: either both or neither of x and y should be given
+2025-01-15 18:08:50,992 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 137, in run_edwpt_review
+    universe_df['EDWPT_selection'] = np.where(
+                                     ^^^^^^^^^
+ValueError: either both or neither of x and y should be given
+
+2025-01-15 18:08:51,007 - werkzeug - INFO - 127.0.0.1 - - [15/Jan/2025 18:08:51] "POST /calculate HTTP/1.1" 200 -
+2025-01-15 18:08:59,322 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-15 18:08:59,326 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-01-15 18:08:59,328 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

@@ -1,0 +1,28 @@
+2025-08-15 14:11:19,983 - werkzeug - WARNING -  * Debugger is active!
+2025-08-15 14:11:19,990 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-15 14:13:13,442 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-08-15 14:13:15,191 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-08-15 14:13:22,775 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-08-15 14:13:22,790 - Review.reviews.derep_review - INFO - Total eligible companies: 93
+2025-08-15 14:13:22,790 - Review.reviews.derep_review - INFO - Total eligible FFMC: 6,060,540,156,558.59
+2025-08-15 14:13:22,792 - Review.reviews.derep_review - INFO - Weight sum check: 1.000000
+2025-08-15 14:13:22,792 - Review.reviews.derep_review - INFO - Maximum capping factor: 1.000000
+2025-08-15 14:13:22,792 - Review.reviews.derep_review - INFO - Minimum capping factor: 0.690118
+2025-08-15 14:13:22,792 - Review.reviews.derep_review - INFO - Companies with capping applied: 72
+2025-08-15 14:13:22,794 - Review.reviews.derep_review - INFO - Average capping factor for capped companies: 0.9957
+2025-08-15 14:13:22,796 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250815_141322.xlsx
+2025-08-15 14:13:23,225 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 14:13:23] "POST /calculate HTTP/1.1" 200 -
+2025-08-15 14:15:14,263 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-08-15 14:15:18,021 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Total eligible companies: 93
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Total eligible FFMC: 6,060,540,156,151.76
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Weight sum check: 1.000000
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Maximum capping factor: 1.000000
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Minimum capping factor: 0.690118
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Companies with capping applied: 84
+2025-08-15 14:15:26,811 - Review.reviews.derep_review - INFO - Average capping factor for capped companies: 0.9963
+2025-08-15 14:15:26,823 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250815_141526.xlsx
+2025-08-15 14:15:27,244 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 14:15:27] "POST /calculate HTTP/1.1" 200 -
+2025-08-15 14:15:59,629 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading
+2025-08-15 14:15:59,629 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading

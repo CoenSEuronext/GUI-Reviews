@@ -168,6 +168,22 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         'sbf_120': {
             'filename': 'SBF120.xlsx',
             'loader': lambda f: pd.read_excel(f, header=1)
+        },
+        'edwpt': {
+            'filename': 'EDWPT.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'euspt': {
+            'filename': 'EUSPT.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'deupt': {
+            'filename': 'DEUPT.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'dappt': {
+            'filename': 'DAPPT.xlsx',
+            'loader': lambda f: pd.read_excel(f)
         }
     }
     
