@@ -40,6 +40,10 @@ from .reviews.dwrep_review import run_dwrep_review
 from .reviews.derep_review import run_derep_review
 from .reviews.darep_review import run_darep_review
 from .reviews.eurep_review import run_eurep_review
+from .reviews.gsfbp_review import run_gsfbp_review
+from .reviews.eesf_review import run_eesf_review
+from .reviews.etsep_review import run_etsep_review
+from .reviews.eltfp_review import run_eltfp_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -83,7 +87,11 @@ REVIEW_FUNCTIONS = {
     "DWREP": run_dwrep_review,
     "DEREP": run_derep_review,
     "DAREP": run_darep_review,    
-    "EUREP": run_eurep_review
+    "EUREP": run_eurep_review,
+    "GSFBP": run_gsfbp_review,
+    "EESF": run_eesf_review,
+    "ETSEP": run_etsep_review,
+    "ELTFP": run_eltfp_review
 }
 
 def run_review(review_type, **kwargs):

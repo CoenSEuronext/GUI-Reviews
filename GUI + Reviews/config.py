@@ -195,6 +195,26 @@ INDEX_CONFIGS = {
         "index": "EUREP",
         "isin": "NLIX00004803",
         "output_key": "eurep_path"
+    },
+    "GSFBP": {
+        "index": "GSFBP",
+        "isin": "NLIX00005735",
+        "output_key": "gsfbp_path"
+    },
+    "EESF": {
+        "index": "EESF",
+        "isin": "NLIX00006170",
+        "output_key": "eesf_path"
+    },
+    "ETSEP": {
+        "index": "ETSEP",
+        "isin": "NLIX00007095",
+        "output_key": "etsep_path"
+    },
+    "ELTFP": {
+        "index": "ELTFP",
+        "isin": "NLIX00007327",
+        "output_key": "eltfp_path"
     }
     # Add new indices here following the same pattern
 }
