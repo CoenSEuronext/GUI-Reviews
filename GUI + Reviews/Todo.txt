@@ -37,9 +37,8 @@ Update all the names to follow the headers from dataiku + match it with inclusio
 
 Currently not working:
 EGSPP
-ESVEP
-F4RIP
 LC100
 LC1EP
 LC3WP
 SBF80
+AERDP

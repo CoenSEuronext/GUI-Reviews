@@ -138,6 +138,7 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         ].rename(columns={
             'Capping': 'Final Capping',
             'Shares': 'Number of Shares',
+            'ISIN': 'ISIN Code'
         })
 
         F4RIP_df = F4RIP_df.sort_values('Company')
