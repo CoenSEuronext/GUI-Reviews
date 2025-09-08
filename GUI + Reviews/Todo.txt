@@ -1,17 +1,5 @@
-Add Inclusion Exclusion to the reviews
 Seperate CSS/JS from HTML
 
-
-FRI4P:
-Make sure all variables that are calculated end up in Full Universe files
-Exclusion - Inclusion
-
-
-
-EDWPT/EDWP:
-Create all the outputs in one script, retrieve the actual output + inclusion + exclusion from that same script
-Exclusion - Inclusion
-move functions.py
 
 
 Create an empty review and copy the rulebook into claude to code a base
@@ -19,9 +7,6 @@ Create an empty review and copy the rulebook into claude to code a base
 Make selection_df the uniform choice for the name of the selection
 
 Integrate co_date everywhere
-
-check if the renaming should be done in fri4P to get inclusion/exclusion to work
-GICP Capping check before making the other macro
 
 modularize index_mcap reference
 

@@ -220,6 +220,11 @@ INDEX_CONFIGS = {
         "index": "ELECP",
         "isin": "NLIX00007517",
         "output_key": "elecp_path"
+    },
+    "EUADP": {
+        "index": "EUADP",
+        "isin": "NLIX00005818",
+        "output_key": "euadp_path"
     }
     # Add new indices here following the same pattern
 }
