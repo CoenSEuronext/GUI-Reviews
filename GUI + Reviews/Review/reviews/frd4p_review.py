@@ -7,6 +7,7 @@ from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
+from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
@@ -521,6 +522,15 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
         })
         FRD4P_df = FRD4P_df.sort_values('Company')
 
+                # Perform Inclusion/Exclusion Analysis
+        analysis_results = inclusion_exclusion_analysis(
+            FRD4P_df, 
+            stock_eod_df, 
+            index, 
+            isin_column='ISIN Code'
+        )
+        inclusion_df = analysis_results['inclusion_df']
+        exclusion_df = analysis_results['exclusion_df']
         # Save output files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
@@ -535,6 +545,8 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
             with pd.ExcelWriter(frd4p_path) as writer:
                     # Write each DataFrame to a different sheet
                     FRD4P_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                    inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
+                    exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                     developed_market_df.to_excel(writer, sheet_name='Full Universe', index=False)
                     final_selection_df.to_excel(writer, sheet_name='Selection', index=False)
                     full_selection_df.to_excel(writer, sheet_name='Full Selection', index=False)

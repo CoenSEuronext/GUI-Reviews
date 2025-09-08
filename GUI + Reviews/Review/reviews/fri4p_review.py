@@ -312,6 +312,8 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
             how='left'
         )
 
+        selection_df['Job_score_3Y'] = pd.to_numeric(selection_df['Job_score_3Y'], errors='coerce').fillna(0)
+        
         def select_top_stocks(df, mic_type, n_stocks):
             if mic_type == 'XPAR':
                 filtered_df = df[df['MIC'] == 'XPAR'].copy()
@@ -491,10 +493,10 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
         FRI4P_df = FRI4P_df.sort_values('Company')
         
         analysis_results = inclusion_exclusion_analysis(
-            selection_df, 
+            FRI4P_df, 
             stock_eod_df, 
             index, 
-            isin_column='ISIN'
+            isin_column='ISIN Code'
         )
 
         inclusion_df = analysis_results['inclusion_df']
@@ -516,7 +518,7 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
                     inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                     exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                     developed_market_df.to_excel(writer, sheet_name='Full Universe', index=False)
-                
+                    final_selection_df.to_excel(writer, sheet_name='Final Selection', index=False)                
             return {
                 "status": "success",
                 "message": "Review completed successfully",

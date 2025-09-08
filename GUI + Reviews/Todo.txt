@@ -1,16 +1,12 @@
 Add Inclusion Exclusion to the reviews
 Seperate CSS/JS from HTML
 
-FRD4P:
-Make sure all variables that are calculated end up in Full Universe files
-Exclusion - Inclusion
 
 FRI4P:
 Make sure all variables that are calculated end up in Full Universe files
 Exclusion - Inclusion
 
-GICP: 
-Exclusion - Inclusion
+
 
 EDWPT/EDWP:
 Create all the outputs in one script, retrieve the actual output + inclusion + exclusion from that same script

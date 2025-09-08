@@ -1,0 +1,680 @@
+2025-09-08 14:22:18,070 - werkzeug - WARNING -  * Debugger is active!
+2025-09-08 14:22:18,086 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-08 14:22:19,425 - Review.reviews.sectorial_review - INFO - Loading EOD data...
+2025-09-08 14:22:21,632 - Review.reviews.sectorial_review - INFO - Loading reference data...
+2025-09-08 14:22:29,656 - Review.reviews.sectorial_review - INFO - Processing all 30 sectorial indices...
+2025-09-08 14:22:29,656 - Review.reviews.sectorial_review - INFO - Processing TECHP...
+2025-09-08 14:22:29,658 - Review.reviews.sectorial_review - INFO - Total weight before capping for TECHP: 1.00000000
+2025-09-08 14:22:29,671 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TECHP (max factor was 1.553070)
+2025-09-08 14:22:29,671 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.394037 to 1.000000
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in TECHP:
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   ASML HOLDING: 0.2869 -> 0.2000
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   SAP: 0.3268 -> 0.2000
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO - Boosted 17 companies due to redistribution in TECHP:
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   ALTEN: 0.0023 -> 0.0036
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   AMADEUS IT GROUP: 0.0346 -> 0.0537
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   ASM INTERNATIONAL: 0.0267 -> 0.0415
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   BE SEMICONDUCTOR: 0.0101 -> 0.0157
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   BECHTLE AG: 0.0033 -> 0.0052
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   CAPGEMINI: 0.0239 -> 0.0372
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   DASSAULT SYSTEMES: 0.0232 -> 0.0361
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   INDRA SISTEMAS SA: 0.0031 -> 0.0048
+2025-09-08 14:22:29,676 - Review.reviews.sectorial_review - INFO -   INFINEON TECHNOLOGIE: 0.0499 -> 0.0775
+2025-09-08 14:22:29,679 - Review.reviews.sectorial_review - INFO -   JUST EAT TAKEAWAY: 0.0036 -> 0.0055
+2025-09-08 14:22:29,679 - Review.reviews.sectorial_review - INFO -   NEMETSCHEK SE: 0.0093 -> 0.0145
+2025-09-08 14:22:29,679 - Review.reviews.sectorial_review - INFO -   PROSUS: 0.0667 -> 0.1036
+2025-09-08 14:22:29,679 - Review.reviews.sectorial_review - INFO -   RELX: 0.0955 -> 0.1483
+2025-09-08 14:22:29,679 - Review.reviews.sectorial_review - INFO -   REPLY: 0.0039 -> 0.0060
+2025-09-08 14:22:29,679 - Review.reviews.sectorial_review - INFO -   SCOUT24 SE: 0.0091 -> 0.0141
+2025-09-08 14:22:29,680 - Review.reviews.sectorial_review - INFO -   SOPRA STERIA GROUP: 0.0035 -> 0.0054
+2025-09-08 14:22:29,680 - Review.reviews.sectorial_review - INFO -   STMICROELECTRONICS: 0.0176 -> 0.0274
+2025-09-08 14:22:29,680 - Review.reviews.sectorial_review - INFO - Total weight after capping for TECHP: 1.000000
+2025-09-08 14:22:29,680 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TECHP: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,680 - Review.reviews.sectorial_review - INFO - Index market cap for TECHP: 442,686,852,174
+2025-09-08 14:22:29,681 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 914,372,896,405
+2025-09-08 14:22:29,681 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 2.0655
+2025-09-08 14:22:29,685 - Review.reviews.sectorial_review - INFO - Processing ENRGP...
+2025-09-08 14:22:29,686 - Review.reviews.sectorial_review - INFO - Total weight before capping for ENRGP: 1.00000000
+2025-09-08 14:22:29,691 - Review.reviews.sectorial_review - INFO - Scaled capping factors for ENRGP (max factor was 1.800823)
+2025-09-08 14:22:29,692 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.274951 to 1.000000
+2025-09-08 14:22:29,693 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in ENRGP:
+2025-09-08 14:22:29,693 - Review.reviews.sectorial_review - INFO -   SHELL PLC: 0.4039 -> 0.2000
+2025-09-08 14:22:29,694 - Review.reviews.sectorial_review - INFO -   TOTALENERGIES: 0.2442 -> 0.2000
+2025-09-08 14:22:29,694 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in ENRGP:
+2025-09-08 14:22:29,694 - Review.reviews.sectorial_review - INFO -   ENAGAS: 0.0072 -> 0.0130
+2025-09-08 14:22:29,694 - Review.reviews.sectorial_review - INFO -   ENI: 0.0671 -> 0.1209
+2025-09-08 14:22:29,694 - Review.reviews.sectorial_review - INFO -   GALP ENERGIA-NOM: 0.0143 -> 0.0257
+2025-09-08 14:22:29,694 - Review.reviews.sectorial_review - INFO -   GTT: 0.0126 -> 0.0227
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   NESTE OIL OYJ: 0.0100 -> 0.0180
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   NORDEX SE: 0.0049 -> 0.0088
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   OMV AG: 0.0143 -> 0.0258
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   REPSOL: 0.0314 -> 0.0566
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   SAIPEM: 0.0067 -> 0.0120
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   SBM OFFSHORE: 0.0061 -> 0.0111
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   SIEMENS ENERGY AG: 0.1297 -> 0.2000
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   SNAM: 0.0228 -> 0.0411
+2025-09-08 14:22:29,695 - Review.reviews.sectorial_review - INFO -   TECHNIP ENERGIES: 0.0100 -> 0.0180
+2025-09-08 14:22:29,696 - Review.reviews.sectorial_review - INFO -   TENARIS: 0.0092 -> 0.0165
+2025-09-08 14:22:29,696 - Review.reviews.sectorial_review - INFO -   VALLOUREC: 0.0055 -> 0.0098
+2025-09-08 14:22:29,696 - Review.reviews.sectorial_review - INFO - Total weight after capping for ENRGP: 1.000000
+2025-09-08 14:22:29,696 - Review.reviews.sectorial_review - INFO - Maximum individual weight for ENRGP: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,696 - Review.reviews.sectorial_review - INFO - Index market cap for ENRGP: 249,197,003,744
+2025-09-08 14:22:29,696 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 464,318,837,962
+2025-09-08 14:22:29,697 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.8633
+2025-09-08 14:22:29,700 - Review.reviews.sectorial_review - INFO - Processing UTIL...
+2025-09-08 14:22:29,702 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTIL: 1.00000000
+2025-09-08 14:22:29,705 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTIL (max factor was 1.103607)
+2025-09-08 14:22:29,705 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.658747 to 1.000000
+2025-09-08 14:22:29,705 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UTIL:
+2025-09-08 14:22:29,706 - Review.reviews.sectorial_review - INFO -   IBERDROLA: 0.2751 -> 0.2000
+2025-09-08 14:22:29,706 - Review.reviews.sectorial_review - INFO - Boosted 17 companies due to redistribution in UTIL:
+2025-09-08 14:22:29,706 - Review.reviews.sectorial_review - INFO -   A2A: 0.0105 -> 0.0116
+2025-09-08 14:22:29,706 - Review.reviews.sectorial_review - INFO -   E.ON SE: 0.1007 -> 0.1112
+2025-09-08 14:22:29,706 - Review.reviews.sectorial_review - INFO -   EDP: 0.0310 -> 0.0342
+2025-09-08 14:22:29,707 - Review.reviews.sectorial_review - INFO -   EDP RENOVAVEIS: 0.0088 -> 0.0097
+2025-09-08 14:22:29,707 - Review.reviews.sectorial_review - INFO -   ELIA GROUP: 0.0136 -> 0.0150
+2025-09-08 14:22:29,707 - Review.reviews.sectorial_review - INFO -   ENDESA: 0.0248 -> 0.0274
+2025-09-08 14:22:29,708 - Review.reviews.sectorial_review - INFO -   ENEL: 0.1775 -> 0.1959
+2025-09-08 14:22:29,708 - Review.reviews.sectorial_review - INFO -   ENGIE: 0.1041 -> 0.1149
+2025-09-08 14:22:29,708 - Review.reviews.sectorial_review - INFO -   FORTUM OYJ: 0.0208 -> 0.0229
+2025-09-08 14:22:29,709 - Review.reviews.sectorial_review - INFO -   HERA: 0.0102 -> 0.0112
+2025-09-08 14:22:29,709 - Review.reviews.sectorial_review - INFO -   ITALGAS: 0.0124 -> 0.0137
+2025-09-08 14:22:29,709 - Review.reviews.sectorial_review - INFO -   NATURGY ENERGY GROUP: 0.0113 -> 0.0125
+2025-09-08 14:22:29,709 - Review.reviews.sectorial_review - INFO -   REDEIA CORP: 0.0215 -> 0.0237
+2025-09-08 14:22:29,710 - Review.reviews.sectorial_review - INFO -   RWE AG: 0.0694 -> 0.0766
+2025-09-08 14:22:29,710 - Review.reviews.sectorial_review - INFO -   TERNA: 0.0365 -> 0.0403
+2025-09-08 14:22:29,710 - Review.reviews.sectorial_review - INFO -   VEOLIA ENVIRON.: 0.0582 -> 0.0643
+2025-09-08 14:22:29,710 - Review.reviews.sectorial_review - INFO -   VERBUND AG: 0.0135 -> 0.0149
+2025-09-08 14:22:29,710 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTIL: 1.000000
+2025-09-08 14:22:29,711 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTIL: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,711 - Review.reviews.sectorial_review - INFO - Index market cap for UTIL: 312,595,367,459
+2025-09-08 14:22:29,711 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 342,285,805,735
+2025-09-08 14:22:29,711 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0950
+2025-09-08 14:22:29,715 - Review.reviews.sectorial_review - INFO - Processing BASM...
+2025-09-08 14:22:29,717 - Review.reviews.sectorial_review - INFO - Total weight before capping for BASM: 1.00000000
+2025-09-08 14:22:29,722 - Review.reviews.sectorial_review - INFO - Scaled capping factors for BASM (max factor was 1.576600)
+2025-09-08 14:22:29,722 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.278716 to 1.000000
+2025-09-08 14:22:29,723 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in BASM:
+2025-09-08 14:22:29,723 - Review.reviews.sectorial_review - INFO -   AIR LIQUIDE: 0.4551 -> 0.2000
+2025-09-08 14:22:29,723 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in BASM:
+2025-09-08 14:22:29,723 - Review.reviews.sectorial_review - INFO -   AKZO NOBEL: 0.0427 -> 0.0674
+2025-09-08 14:22:29,724 - Review.reviews.sectorial_review - INFO -   ARCELORMITTAL SA: 0.0490 -> 0.0772
+2025-09-08 14:22:29,724 - Review.reviews.sectorial_review - INFO -   ARKEMA: 0.0149 -> 0.0234
+2025-09-08 14:22:29,724 - Review.reviews.sectorial_review - INFO -   BASF: 0.1643 -> 0.2000
+2025-09-08 14:22:29,725 - Review.reviews.sectorial_review - INFO -   BRENNTAG SE: 0.0316 -> 0.0498
+2025-09-08 14:22:29,725 - Review.reviews.sectorial_review - INFO -   EVONIK INDUSTRIES AG: 0.0207 -> 0.0326
+2025-09-08 14:22:29,725 - Review.reviews.sectorial_review - INFO -   FUCHS SE PREF: 0.0133 -> 0.0210
+2025-09-08 14:22:29,725 - Review.reviews.sectorial_review - INFO -   IMCD: 0.0291 -> 0.0459
+2025-09-08 14:22:29,726 - Review.reviews.sectorial_review - INFO -   K S AG: 0.0097 -> 0.0153
+2025-09-08 14:22:29,726 - Review.reviews.sectorial_review - INFO -   LANXESS AG: 0.0096 -> 0.0151
+2025-09-08 14:22:29,726 - Review.reviews.sectorial_review - INFO -   STORA ENSO OYJ: 0.0221 -> 0.0349
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO -   SYENSQO: 0.0214 -> 0.0338
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO -   SYMRISE AG: 0.0535 -> 0.0844
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO -   UPM-KYMMENE OYJ: 0.0525 -> 0.0827
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO -   VOESTALPINE AG: 0.0105 -> 0.0165
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO - Total weight after capping for BASM: 1.000000
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO - Maximum individual weight for BASM: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,727 - Review.reviews.sectorial_review - INFO - Index market cap for BASM: 162,527,159,027
+2025-09-08 14:22:29,728 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 231,608,342,923
+2025-09-08 14:22:29,728 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.4250
+2025-09-08 14:22:29,732 - Review.reviews.sectorial_review - INFO - Processing FINA...
+2025-09-08 14:22:29,734 - Review.reviews.sectorial_review - INFO - Total weight before capping for FINA: 1.00000000
+2025-09-08 14:22:29,735 - Review.reviews.sectorial_review - INFO - Scaled capping factors for FINA (max factor was 1.000000)
+2025-09-08 14:22:29,735 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,736 - Review.reviews.sectorial_review - INFO - Total weight after capping for FINA: 1.000000
+2025-09-08 14:22:29,736 - Review.reviews.sectorial_review - INFO - Maximum individual weight for FINA: 0.096242 (cap: 0.200000)
+2025-09-08 14:22:29,736 - Review.reviews.sectorial_review - INFO - Index market cap for FINA: 1,365,020,337,192
+2025-09-08 14:22:29,736 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,359,415,178,793
+2025-09-08 14:22:29,737 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9959
+2025-09-08 14:22:29,740 - Review.reviews.sectorial_review - INFO - Processing CSTA...
+2025-09-08 14:22:29,742 - Review.reviews.sectorial_review - INFO - Total weight before capping for CSTA: 1.00000000
+2025-09-08 14:22:29,745 - Review.reviews.sectorial_review - INFO - Scaled capping factors for CSTA (max factor was 1.243625)
+2025-09-08 14:22:29,745 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.450832 to 1.000000
+2025-09-08 14:22:29,747 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in CSTA:
+2025-09-08 14:22:29,747 - Review.reviews.sectorial_review - INFO -   UNILEVER: 0.3567 -> 0.2000
+2025-09-08 14:22:29,747 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in CSTA:
+2025-09-08 14:22:29,747 - Review.reviews.sectorial_review - INFO -   AB INBEV: 0.1517 -> 0.1887
+2025-09-08 14:22:29,748 - Review.reviews.sectorial_review - INFO -   AHOLD DEL: 0.0810 -> 0.1008
+2025-09-08 14:22:29,748 - Review.reviews.sectorial_review - INFO -   BEIERSDORF AG: 0.0271 -> 0.0337
+2025-09-08 14:22:29,748 - Review.reviews.sectorial_review - INFO -   CAMPARI: 0.0087 -> 0.0108
+2025-09-08 14:22:29,748 - Review.reviews.sectorial_review - INFO -   CARREFOUR: 0.0184 -> 0.0229
+2025-09-08 14:22:29,748 - Review.reviews.sectorial_review - INFO -   DANONE: 0.1153 -> 0.1434
+2025-09-08 14:22:29,748 - Review.reviews.sectorial_review - INFO -   DSM FIRMENICH AG: 0.0507 -> 0.0631
+2025-09-08 14:22:29,749 - Review.reviews.sectorial_review - INFO -   GLANBIA PLC: 0.0060 -> 0.0075
+2025-09-08 14:22:29,749 - Review.reviews.sectorial_review - INFO -   HEINEKEN: 0.0543 -> 0.0675
+2025-09-08 14:22:29,749 - Review.reviews.sectorial_review - INFO -   J.MARTINS,SGPS: 0.0150 -> 0.0186
+2025-09-08 14:22:29,749 - Review.reviews.sectorial_review - INFO -   JDE PEET'S: 0.0084 -> 0.0105
+2025-09-08 14:22:29,749 - Review.reviews.sectorial_review - INFO -   KERRY GROUP PLC: 0.0395 -> 0.0491
+2025-09-08 14:22:29,749 - Review.reviews.sectorial_review - INFO -   KESKO B: 0.0139 -> 0.0173
+2025-09-08 14:22:29,750 - Review.reviews.sectorial_review - INFO -   LOTUS BAKERIES: 0.0086 -> 0.0107
+2025-09-08 14:22:29,750 - Review.reviews.sectorial_review - INFO -   PERNOD RICARD: 0.0445 -> 0.0554
+2025-09-08 14:22:29,750 - Review.reviews.sectorial_review - INFO - Total weight after capping for CSTA: 1.000000
+2025-09-08 14:22:29,750 - Review.reviews.sectorial_review - INFO - Maximum individual weight for CSTA: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,750 - Review.reviews.sectorial_review - INFO - Index market cap for CSTA: 322,771,747,445
+2025-09-08 14:22:29,750 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 401,075,393,464
+2025-09-08 14:22:29,751 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.2426
+2025-09-08 14:22:29,755 - Review.reviews.sectorial_review - INFO - Processing TELEP...
+2025-09-08 14:22:29,756 - Review.reviews.sectorial_review - INFO - Total weight before capping for TELEP: 1.00000000
+2025-09-08 14:22:29,760 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TELEP (max factor was 1.586471)
+2025-09-08 14:22:29,760 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.254301 to 1.000000
+2025-09-08 14:22:29,762 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TELEP:
+2025-09-08 14:22:29,762 - Review.reviews.sectorial_review - INFO -   DEUTSCHE TELEKOM AG: 0.4957 -> 0.2000
+2025-09-08 14:22:29,762 - Review.reviews.sectorial_review - INFO - Boosted 9 companies due to redistribution in TELEP:
+2025-09-08 14:22:29,762 - Review.reviews.sectorial_review - INFO -   CELLNEX TELECOM: 0.0857 -> 0.1359
+2025-09-08 14:22:29,762 - Review.reviews.sectorial_review - INFO -   ELISA OYJ: 0.0298 -> 0.0473
+2025-09-08 14:22:29,763 - Review.reviews.sectorial_review - INFO -   FREENET AG: 0.0139 -> 0.0221
+2025-09-08 14:22:29,763 - Review.reviews.sectorial_review - INFO -   INWIT: 0.0122 -> 0.0194
+2025-09-08 14:22:29,763 - Review.reviews.sectorial_review - INFO -   KPN KON: 0.0695 -> 0.1103
+2025-09-08 14:22:29,763 - Review.reviews.sectorial_review - INFO -   NOKIA: 0.1012 -> 0.1606
+2025-09-08 14:22:29,763 - Review.reviews.sectorial_review - INFO -   ORANGE: 0.0956 -> 0.1516
+2025-09-08 14:22:29,764 - Review.reviews.sectorial_review - INFO -   TELECOM ITALIA: 0.0181 -> 0.0287
+2025-09-08 14:22:29,764 - Review.reviews.sectorial_review - INFO -   TELEFONICA: 0.0782 -> 0.1241
+2025-09-08 14:22:29,764 - Review.reviews.sectorial_review - INFO - Total weight after capping for TELEP: 1.000000
+2025-09-08 14:22:29,764 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TELEP: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,764 - Review.reviews.sectorial_review - INFO - Index market cap for TELEP: 143,355,772,186
+2025-09-08 14:22:29,765 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 230,620,731,247
+2025-09-08 14:22:29,765 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.6087
+2025-09-08 14:22:29,769 - Review.reviews.sectorial_review - INFO - Processing HEAC...
+2025-09-08 14:22:29,771 - Review.reviews.sectorial_review - INFO - Total weight before capping for HEAC: 1.00000000
+2025-09-08 14:22:29,773 - Review.reviews.sectorial_review - INFO - Scaled capping factors for HEAC (max factor was 1.098936)
+2025-09-08 14:22:29,774 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.730151 to 1.000000
+2025-09-08 14:22:29,774 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in HEAC:
+2025-09-08 14:22:29,775 - Review.reviews.sectorial_review - INFO -   ESSILORLUXOTTICA: 0.2048 -> 0.2000
+2025-09-08 14:22:29,775 - Review.reviews.sectorial_review - INFO -   SANOFI: 0.2493 -> 0.2000
+2025-09-08 14:22:29,775 - Review.reviews.sectorial_review - INFO - Boosted 20 companies due to redistribution in HEAC:
+2025-09-08 14:22:29,775 - Review.reviews.sectorial_review - INFO -   AMPLIFON: 0.0074 -> 0.0082
+2025-09-08 14:22:29,775 - Review.reviews.sectorial_review - INFO -   ARGENX SE: 0.0767 -> 0.0843
+2025-09-08 14:22:29,776 - Review.reviews.sectorial_review - INFO -   BAYER AG: 0.0709 -> 0.0780
+2025-09-08 14:22:29,776 - Review.reviews.sectorial_review - INFO -   BIOMERIEUX: 0.0150 -> 0.0165
+2025-09-08 14:22:29,776 - Review.reviews.sectorial_review - INFO -   DIASORIN: 0.0063 -> 0.0069
+2025-09-08 14:22:29,776 - Review.reviews.sectorial_review - INFO -   EUROFINS SCIENT.: 0.0191 -> 0.0210
+2025-09-08 14:22:29,776 - Review.reviews.sectorial_review - INFO -   FRESENIUS MEDICAL: 0.0258 -> 0.0284
+2025-09-08 14:22:29,777 - Review.reviews.sectorial_review - INFO -   FRESENIUS SE & CO: 0.0483 -> 0.0531
+2025-09-08 14:22:29,777 - Review.reviews.sectorial_review - INFO -   GRIFOLS SA: 0.0083 -> 0.0092
+2025-09-08 14:22:29,777 - Review.reviews.sectorial_review - INFO -   IPSEN: 0.0092 -> 0.0101
+2025-09-08 14:22:29,778 - Review.reviews.sectorial_review - INFO -   MERCK KGA: 0.0385 -> 0.0423
+2025-09-08 14:22:29,778 - Review.reviews.sectorial_review - INFO -   ORION OYJ CLASS B: 0.0182 -> 0.0200
+2025-09-08 14:22:29,778 - Review.reviews.sectorial_review - INFO -   PHILIPS KON: 0.0390 -> 0.0428
+2025-09-08 14:22:29,778 - Review.reviews.sectorial_review - INFO -   QIAGEN NV: 0.0234 -> 0.0257
+2025-09-08 14:22:29,778 - Review.reviews.sectorial_review - INFO -   RECORDATI ORD: 0.0166 -> 0.0182
+2025-09-08 14:22:29,778 - Review.reviews.sectorial_review - INFO -   SARTORIUS AG PREF: 0.0135 -> 0.0149
+2025-09-08 14:22:29,780 - Review.reviews.sectorial_review - INFO -   SARTORIUS STED BIO: 0.0154 -> 0.0169
+2025-09-08 14:22:29,780 - Review.reviews.sectorial_review - INFO -   SIEMENS HEALTHINEERS: 0.0344 -> 0.0378
+2025-09-08 14:22:29,780 - Review.reviews.sectorial_review - INFO -   TUBIZE-FIN: 0.0068 -> 0.0074
+2025-09-08 14:22:29,780 - Review.reviews.sectorial_review - INFO -   UCB: 0.0532 -> 0.0584
+2025-09-08 14:22:29,780 - Review.reviews.sectorial_review - INFO - Total weight after capping for HEAC: 1.000000
+2025-09-08 14:22:29,781 - Review.reviews.sectorial_review - INFO - Maximum individual weight for HEAC: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,781 - Review.reviews.sectorial_review - INFO - Index market cap for HEAC: 328,003,035,876
+2025-09-08 14:22:29,781 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 376,150,432,812
+2025-09-08 14:22:29,781 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1468
+2025-09-08 14:22:29,785 - Review.reviews.sectorial_review - INFO - Processing INDU...
+2025-09-08 14:22:29,786 - Review.reviews.sectorial_review - INFO - Total weight before capping for INDU: 1.00000000
+2025-09-08 14:22:29,787 - Review.reviews.sectorial_review - INFO - Scaled capping factors for INDU (max factor was 1.000000)
+2025-09-08 14:22:29,787 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,788 - Review.reviews.sectorial_review - INFO - Total weight after capping for INDU: 1.000000
+2025-09-08 14:22:29,788 - Review.reviews.sectorial_review - INFO - Maximum individual weight for INDU: 0.129168 (cap: 0.200000)
+2025-09-08 14:22:29,788 - Review.reviews.sectorial_review - INFO - Index market cap for INDU: 1,170,257,222,559
+2025-09-08 14:22:29,788 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,342,433,103,650
+2025-09-08 14:22:29,789 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1471
+2025-09-08 14:22:29,793 - Review.reviews.sectorial_review - INFO - Processing CDIS...
+2025-09-08 14:22:29,795 - Review.reviews.sectorial_review - INFO - Total weight before capping for CDIS: 1.00000000
+2025-09-08 14:22:29,796 - Review.reviews.sectorial_review - INFO - Scaled capping factors for CDIS (max factor was 1.000000)
+2025-09-08 14:22:29,797 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,797 - Review.reviews.sectorial_review - INFO - Total weight after capping for CDIS: 1.000000
+2025-09-08 14:22:29,798 - Review.reviews.sectorial_review - INFO - Maximum individual weight for CDIS: 0.147633 (cap: 0.200000)
+2025-09-08 14:22:29,798 - Review.reviews.sectorial_review - INFO - Index market cap for CDIS: 845,421,314,380
+2025-09-08 14:22:29,798 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 780,365,698,582
+2025-09-08 14:22:29,798 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9230
+2025-09-08 14:22:29,801 - Review.reviews.sectorial_review - INFO - Processing TBMA...
+2025-09-08 14:22:29,803 - Review.reviews.sectorial_review - INFO - Total weight before capping for TBMA: 1.00000000
+2025-09-08 14:22:29,804 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TBMA (max factor was 1.000000)
+2025-09-08 14:22:29,804 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,805 - Review.reviews.sectorial_review - INFO - Total weight after capping for TBMA: 1.000000
+2025-09-08 14:22:29,805 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TBMA: 0.191415 (cap: 0.200000)
+2025-09-08 14:22:29,805 - Review.reviews.sectorial_review - INFO - Index market cap for TBMA: 1,005,433,073,948
+2025-09-08 14:22:29,805 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 983,288,870,038
+2025-09-08 14:22:29,805 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9780
+2025-09-08 14:22:29,812 - Review.reviews.sectorial_review - INFO - Processing TCDI...
+2025-09-08 14:22:29,815 - Review.reviews.sectorial_review - INFO - Total weight before capping for TCDI: 1.00000000
+2025-09-08 14:22:29,819 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TCDI (max factor was 1.040818)
+2025-09-08 14:22:29,820 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.830503 to 1.000000
+2025-09-08 14:22:29,820 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TCDI:
+2025-09-08 14:22:29,820 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2314 -> 0.2000
+2025-09-08 14:22:29,821 - Review.reviews.sectorial_review - INFO - Boosted 122 companies due to redistribution in TCDI:
+2025-09-08 14:22:29,821 - Review.reviews.sectorial_review - INFO -   ACCOR: 0.0012 -> 0.0012
+2025-09-08 14:22:29,821 - Review.reviews.sectorial_review - INFO -   ADIDAS AG: 0.0046 -> 0.0048
+2025-09-08 14:22:29,821 - Review.reviews.sectorial_review - INFO -   AIRBNB INC. CLASS A: 0.0065 -> 0.0068
+2025-09-08 14:22:29,821 - Review.reviews.sectorial_review - INFO -   AUTO1 GROUP SE: 0.0005 -> 0.0005
+2025-09-08 14:22:29,822 - Review.reviews.sectorial_review - INFO -   AUTOZONE INC.: 0.0068 -> 0.0071
+2025-09-08 14:22:29,822 - Review.reviews.sectorial_review - INFO -   AVOLTA AG: 0.0006 -> 0.0006
+2025-09-08 14:22:29,822 - Review.reviews.sectorial_review - INFO -   B&M EUROP. VALUE RET: 0.0004 -> 0.0004
+2025-09-08 14:22:29,822 - Review.reviews.sectorial_review - INFO -   BARRATT REDROW PLC: 0.0010 -> 0.0010
+2025-09-08 14:22:29,822 - Review.reviews.sectorial_review - INFO -   BELLWAY P.L.C.: 0.0005 -> 0.0005
+2025-09-08 14:22:29,822 - Review.reviews.sectorial_review - INFO -   BERKELEY GROUP HLD: 0.0006 -> 0.0007
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   BMW: 0.0028 -> 0.0029
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   BOLLORE: 0.0004 -> 0.0004
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   BOOKING HOLDINGS INC: 0.0194 -> 0.0202
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   BRUNELLO CUCINELLI: 0.0004 -> 0.0005
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   BURBERRY GROUP: 0.0006 -> 0.0006
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   CARNIVAL CORPORATION: 0.0028 -> 0.0029
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   CARVANA CO: 0.0045 -> 0.0047
+2025-09-08 14:22:29,823 - Review.reviews.sectorial_review - INFO -   CHIPOTLE MEX. GRILL: 0.0078 -> 0.0081
+2025-09-08 14:22:29,824 - Review.reviews.sectorial_review - INFO -   CIE FIN RICHEMONT: 0.0112 -> 0.0117
+2025-09-08 14:22:29,824 - Review.reviews.sectorial_review - INFO -   COMPASS GROUP PLC: 0.0066 -> 0.0069
+2025-09-08 14:22:29,824 - Review.reviews.sectorial_review - INFO -   CONTINENTAL AG: 0.0011 -> 0.0011
+2025-09-08 14:22:29,825 - Review.reviews.sectorial_review - INFO -   COPART INC.: 0.0047 -> 0.0049
+2025-09-08 14:22:29,825 - Review.reviews.sectorial_review - INFO -   COSTCO WHOLES. CORP.: 0.0489 -> 0.0509
+2025-09-08 14:22:29,825 - Review.reviews.sectorial_review - INFO -   COUPANG INC. CLASS A: 0.0042 -> 0.0044
+2025-09-08 14:22:29,826 - Review.reviews.sectorial_review - INFO -   CTS EVENTIM AG: 0.0008 -> 0.0008
+2025-09-08 14:22:29,826 - Review.reviews.sectorial_review - INFO -   D.R. HORTON INC.: 0.0039 -> 0.0041
+2025-09-08 14:22:29,826 - Review.reviews.sectorial_review - INFO -   DARDEN RESTAURANTS: 0.0030 -> 0.0031
+2025-09-08 14:22:29,827 - Review.reviews.sectorial_review - INFO -   DELIVERY HERO SE: 0.0006 -> 0.0007
+2025-09-08 14:22:29,827 - Review.reviews.sectorial_review - INFO -   DELTA AIR LINES INC.: 0.0035 -> 0.0036
+2025-09-08 14:22:29,827 - Review.reviews.sectorial_review - INFO -   D'IETEREN GROUP: 0.0005 -> 0.0005
+2025-09-08 14:22:29,827 - Review.reviews.sectorial_review - INFO -   DOLLAR GENERAL CORP.: 0.0028 -> 0.0029
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   DOLLAR TREE INC.: 0.0022 -> 0.0023
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   DRAFTKINGS. INC. A: 0.0021 -> 0.0022
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   DUOLINGO INC CLASS A: 0.0021 -> 0.0022
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   EASYJET: 0.0005 -> 0.0005
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   EBAY INC.: 0.0040 -> 0.0042
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   ELECTRONIC ARTS INC.: 0.0038 -> 0.0040
+2025-09-08 14:22:29,828 - Review.reviews.sectorial_review - INFO -   ENTAIN PLC: 0.0008 -> 0.0008
+2025-09-08 14:22:29,829 - Review.reviews.sectorial_review - INFO -   EVOLUTION AB: 0.0012 -> 0.0013
+2025-09-08 14:22:29,829 - Review.reviews.sectorial_review - INFO -   EXPEDIA GROUP INC.: 0.0022 -> 0.0023
+2025-09-08 14:22:29,829 - Review.reviews.sectorial_review - INFO -   FDJ UNITED: 0.0005 -> 0.0005
+2025-09-08 14:22:29,829 - Review.reviews.sectorial_review - INFO -   FERRARI: 0.0066 -> 0.0069
+2025-09-08 14:22:29,829 - Review.reviews.sectorial_review - INFO -   FLUTTER ENTERTAINMEN: 0.0051 -> 0.0053
+2025-09-08 14:22:29,830 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0046 -> 0.0048
+2025-09-08 14:22:29,830 - Review.reviews.sectorial_review - INFO -   GAMES WORKSHOP GROUP: 0.0008 -> 0.0009
+2025-09-08 14:22:29,831 - Review.reviews.sectorial_review - INFO -   GARMIN LTD.: 0.0036 -> 0.0038
+2025-09-08 14:22:29,831 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0052 -> 0.0054
+2025-09-08 14:22:29,831 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0019 -> 0.0019
+2025-09-08 14:22:29,831 - Review.reviews.sectorial_review - INFO -   HENKEL AG & CO PREF: 0.0014 -> 0.0014
+2025-09-08 14:22:29,831 - Review.reviews.sectorial_review - INFO -   HENNES & MAURITZ AB: 0.0008 -> 0.0008
+2025-09-08 14:22:29,832 - Review.reviews.sectorial_review - INFO -   HERMES INTL: 0.0094 -> 0.0098
+2025-09-08 14:22:29,832 - Review.reviews.sectorial_review - INFO -   HILTON WORLDWIDE: 0.0066 -> 0.0069
+2025-09-08 14:22:29,832 - Review.reviews.sectorial_review - INFO -   HOME DEPOT INC: 0.0391 -> 0.0407
+2025-09-08 14:22:29,832 - Review.reviews.sectorial_review - INFO -   HOWDEN JOINERY GROUP: 0.0007 -> 0.0008
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   INDITEX: 0.0073 -> 0.0076
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   INFORMA: 0.0016 -> 0.0016
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   INTERCONTINENTAL HTL: 0.0019 -> 0.0019
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   INTL CONS AIRLINES: 0.0017 -> 0.0018
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   ITV: 0.0004 -> 0.0004
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   JET2 PLC: 0.0005 -> 0.0005
+2025-09-08 14:22:29,833 - Review.reviews.sectorial_review - INFO -   KERING: 0.0018 -> 0.0019
+2025-09-08 14:22:29,834 - Review.reviews.sectorial_review - INFO -   KINGFISHER: 0.0006 -> 0.0007
+2025-09-08 14:22:29,834 - Review.reviews.sectorial_review - INFO -   LENNAR CORP A: 0.0027 -> 0.0028
+2025-09-08 14:22:29,834 - Review.reviews.sectorial_review - INFO -   LIBERTY MEDIA CORP.: 0.0025 -> 0.0026
+2025-09-08 14:22:29,834 - Review.reviews.sectorial_review - INFO -   LIVE NATION ENTERT: 0.0027 -> 0.0028
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   L'OREAL: 0.0115 -> 0.0120
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   LOTTOMATICA GROUP: 0.0006 -> 0.0006
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   LOWE'S COMPANIES INC: 0.0134 -> 0.0139
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   LUFTHANSA: 0.0009 -> 0.0009
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   LULULEMON ATHLETICA: 0.0027 -> 0.0029
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   LVMH: 0.0150 -> 0.0156
+2025-09-08 14:22:29,835 - Review.reviews.sectorial_review - INFO -   MARRIOTT INTERN. INC: 0.0067 -> 0.0070
+2025-09-08 14:22:29,836 - Review.reviews.sectorial_review - INFO -   MCDONALD'S CORP: 0.0236 -> 0.0245
+2025-09-08 14:22:29,836 - Review.reviews.sectorial_review - INFO -   MERCADOLIBRE INC.: 0.0130 -> 0.0135
+2025-09-08 14:22:29,836 - Review.reviews.sectorial_review - INFO -   MERCEDES-BENZ GROUP: 0.0046 -> 0.0048
+2025-09-08 14:22:29,836 - Review.reviews.sectorial_review - INFO -   MICHELIN: 0.0030 -> 0.0031
+2025-09-08 14:22:29,836 - Review.reviews.sectorial_review - INFO -   MONCLER: 0.0016 -> 0.0016
+2025-09-08 14:22:29,838 - Review.reviews.sectorial_review - INFO -   NETFLIX INC.: 0.0586 -> 0.0609
+2025-09-08 14:22:29,838 - Review.reviews.sectorial_review - INFO -   NEXT: 0.0021 -> 0.0022
+2025-09-08 14:22:29,838 - Review.reviews.sectorial_review - INFO -   NIKE INC: 0.0080 -> 0.0083
+2025-09-08 14:22:29,838 - Review.reviews.sectorial_review - INFO -   NVR INC.: 0.0023 -> 0.0024
+2025-09-08 14:22:29,838 - Review.reviews.sectorial_review - INFO -   O'REILLY AUTOMOTIVE: 0.0086 -> 0.0089
+2025-09-08 14:22:29,838 - Review.reviews.sectorial_review - INFO -   PANDORA A/S: 0.0015 -> 0.0016
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   PEARSON: 0.0009 -> 0.0009
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   PERSIMMON: 0.0007 -> 0.0007
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   PORSCHE AG: 0.0006 -> 0.0006
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   PORSCHE PREF: 0.0007 -> 0.0007
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   PUBLICIS GROUPE SA: 0.0030 -> 0.0031
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   PULTEGROUP INC: 0.0022 -> 0.0023
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   RENAULT: 0.0010 -> 0.0011
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   ROBLOX CORP. - A: 0.0072 -> 0.0075
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   ROLLINS. INC.: 0.0020 -> 0.0021
+2025-09-08 14:22:29,839 - Review.reviews.sectorial_review - INFO -   ROSS STORES INC.: 0.0048 -> 0.0050
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   ROYAL CARIBBEAN: 0.0076 -> 0.0079
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   RYANAIR HOLD. PLC: 0.0032 -> 0.0034
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   SODEXO: 0.0006 -> 0.0006
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   SPOTIFY TECHNOLOGY: 0.0124 -> 0.0129
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   STARBUCKS CORP.: 0.0117 -> 0.0122
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   STELLANTIS: 0.0022 -> 0.0023
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   SWATCH GROUP-BR: 0.0005 -> 0.0006
+2025-09-08 14:22:29,840 - Review.reviews.sectorial_review - INFO -   TAKE-TWO INTERACTIVE: 0.0045 -> 0.0047
+2025-09-08 14:22:29,841 - Review.reviews.sectorial_review - INFO -   TARGET CORPORATION: 0.0049 -> 0.0051
+2025-09-08 14:22:29,841 - Review.reviews.sectorial_review - INFO -   TAYLOR WIMPEY PLC: 0.0006 -> 0.0007
+2025-09-08 14:22:29,841 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.0975 -> 0.1015
+2025-09-08 14:22:29,842 - Review.reviews.sectorial_review - INFO -   THE WALT DISNEY COMP: 0.0239 -> 0.0249
+2025-09-08 14:22:29,842 - Review.reviews.sectorial_review - INFO -   TJX COMPANIES INC: 0.0155 -> 0.0161
+2025-09-08 14:22:29,842 - Review.reviews.sectorial_review - INFO -   TRACTOR SUPPLY COMP.: 0.0030 -> 0.0032
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   TRADE DESK INC.: 0.0034 -> 0.0036
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   TUI AG: 0.0004 -> 0.0004
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   UBER TECHNOLOGIES: 0.0200 -> 0.0208
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   ULTA BEAUTY INC: 0.0024 -> 0.0025
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   UMG: 0.0035 -> 0.0037
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   UNITED AIRLINES HLD: 0.0027 -> 0.0028
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   VOLKSWAGEN PREF: 0.0024 -> 0.0025
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   WALMART INC: 0.0468 -> 0.0487
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   WARNER BROS DISCOVER: 0.0027 -> 0.0028
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   WHITBREAD: 0.0007 -> 0.0008
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   WILLIAMS-SONOMA.: 0.0021 -> 0.0022
+2025-09-08 14:22:29,843 - Review.reviews.sectorial_review - INFO -   WOLTERS KLUWER: 0.0044 -> 0.0046
+2025-09-08 14:22:29,846 - Review.reviews.sectorial_review - INFO -   WPP: 0.0008 -> 0.0009
+2025-09-08 14:22:29,846 - Review.reviews.sectorial_review - INFO -   YUM! BRANDS INC.: 0.0044 -> 0.0046
+2025-09-08 14:22:29,846 - Review.reviews.sectorial_review - INFO -   ZALANDO SE: 0.0009 -> 0.0009
+2025-09-08 14:22:29,847 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCDI: 1.000000
+2025-09-08 14:22:29,847 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TCDI: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,847 - Review.reviews.sectorial_review - INFO - Index market cap for TCDI: 7,547,617,478,141
+2025-09-08 14:22:29,847 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,695,953,714,272
+2025-09-08 14:22:29,847 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0197
+2025-09-08 14:22:29,851 - Review.reviews.sectorial_review - INFO - Processing TCST...
+2025-09-08 14:22:29,853 - Review.reviews.sectorial_review - INFO - Total weight before capping for TCST: 1.00000000
+2025-09-08 14:22:29,853 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TCST (max factor was 1.000000)
+2025-09-08 14:22:29,854 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,855 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCST: 1.000000
+2025-09-08 14:22:29,855 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TCST: 0.114617 (cap: 0.200000)
+2025-09-08 14:22:29,855 - Review.reviews.sectorial_review - INFO - Index market cap for TCST: 2,802,389,748,916
+2025-09-08 14:22:29,855 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,813,055,099,211
+2025-09-08 14:22:29,855 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0038
+2025-09-08 14:22:29,860 - Review.reviews.sectorial_review - INFO - Processing TENR...
+2025-09-08 14:22:29,862 - Review.reviews.sectorial_review - INFO - Total weight before capping for TENR: 1.00000000
+2025-09-08 14:22:29,863 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TENR (max factor was 1.000000)
+2025-09-08 14:22:29,863 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,864 - Review.reviews.sectorial_review - INFO - Total weight after capping for TENR: 1.000000
+2025-09-08 14:22:29,864 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TENR: 0.197613 (cap: 0.200000)
+2025-09-08 14:22:29,864 - Review.reviews.sectorial_review - INFO - Index market cap for TENR: 2,156,560,828,065
+2025-09-08 14:22:29,864 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,156,823,404,015
+2025-09-08 14:22:29,864 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0001
+2025-09-08 14:22:29,868 - Review.reviews.sectorial_review - INFO - Processing TFINP...
+2025-09-08 14:22:29,870 - Review.reviews.sectorial_review - INFO - Total weight before capping for TFINP: 1.00000000
+2025-09-08 14:22:29,870 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TFINP (max factor was 1.000000)
+2025-09-08 14:22:29,871 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,871 - Review.reviews.sectorial_review - INFO - Total weight after capping for TFINP: 1.000000
+2025-09-08 14:22:29,871 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TFINP: 0.091205 (cap: 0.200000)
+2025-09-08 14:22:29,871 - Review.reviews.sectorial_review - INFO - Index market cap for TFINP: 7,055,921,968,840
+2025-09-08 14:22:29,872 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,124,568,217,220
+2025-09-08 14:22:29,872 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0097
+2025-09-08 14:22:29,877 - Review.reviews.sectorial_review - INFO - Processing THEC...
+2025-09-08 14:22:29,879 - Review.reviews.sectorial_review - INFO - Total weight before capping for THEC: 1.00000000
+2025-09-08 14:22:29,880 - Review.reviews.sectorial_review - INFO - Scaled capping factors for THEC (max factor was 1.000000)
+2025-09-08 14:22:29,880 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,881 - Review.reviews.sectorial_review - INFO - Total weight after capping for THEC: 1.000000
+2025-09-08 14:22:29,881 - Review.reviews.sectorial_review - INFO - Maximum individual weight for THEC: 0.096142 (cap: 0.200000)
+2025-09-08 14:22:29,881 - Review.reviews.sectorial_review - INFO - Index market cap for THEC: 5,497,759,769,675
+2025-09-08 14:22:29,881 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 5,413,220,026,084
+2025-09-08 14:22:29,881 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9846
+2025-09-08 14:22:29,885 - Review.reviews.sectorial_review - INFO - Processing TIND...
+2025-09-08 14:22:29,887 - Review.reviews.sectorial_review - INFO - Total weight before capping for TIND: 1.00000000
+2025-09-08 14:22:29,887 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TIND (max factor was 1.000000)
+2025-09-08 14:22:29,888 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,888 - Review.reviews.sectorial_review - INFO - Total weight after capping for TIND: 1.000000
+2025-09-08 14:22:29,889 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TIND: 0.070661 (cap: 0.200000)
+2025-09-08 14:22:29,889 - Review.reviews.sectorial_review - INFO - Index market cap for TIND: 7,292,931,646,775
+2025-09-08 14:22:29,889 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,516,953,171,863
+2025-09-08 14:22:29,889 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0307
+2025-09-08 14:22:29,894 - Review.reviews.sectorial_review - INFO - Processing TTEC...
+2025-09-08 14:22:29,896 - Review.reviews.sectorial_review - INFO - Total weight before capping for TTEC: 1.00000000
+2025-09-08 14:22:29,897 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TTEC (max factor was 1.000000)
+2025-09-08 14:22:29,897 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,898 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEC: 1.000000
+2025-09-08 14:22:29,898 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TTEC: 0.175007 (cap: 0.200000)
+2025-09-08 14:22:29,898 - Review.reviews.sectorial_review - INFO - Index market cap for TTEC: 17,535,399,559,767
+2025-09-08 14:22:29,898 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 17,612,883,376,464
+2025-09-08 14:22:29,898 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0044
+2025-09-08 14:22:29,901 - Review.reviews.sectorial_review - INFO - Processing TTEL...
+2025-09-08 14:22:29,904 - Review.reviews.sectorial_review - INFO - Total weight before capping for TTEL: 1.00000000
+2025-09-08 14:22:29,905 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TTEL (max factor was 1.000000)
+2025-09-08 14:22:29,905 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,906 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEL: 1.000000
+2025-09-08 14:22:29,906 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TTEL: 0.181273 (cap: 0.200000)
+2025-09-08 14:22:29,906 - Review.reviews.sectorial_review - INFO - Index market cap for TTEL: 1,237,123,327,903
+2025-09-08 14:22:29,906 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,238,110,298,899
+2025-09-08 14:22:29,906 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0008
+2025-09-08 14:22:29,912 - Review.reviews.sectorial_review - INFO - Processing TUTI...
+2025-09-08 14:22:29,914 - Review.reviews.sectorial_review - INFO - Total weight before capping for TUTI: 1.00000000
+2025-09-08 14:22:29,915 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TUTI (max factor was 1.000000)
+2025-09-08 14:22:29,916 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,916 - Review.reviews.sectorial_review - INFO - Total weight after capping for TUTI: 1.000000
+2025-09-08 14:22:29,916 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TUTI: 0.079992 (cap: 0.200000)
+2025-09-08 14:22:29,917 - Review.reviews.sectorial_review - INFO - Index market cap for TUTI: 1,593,542,012,027
+2025-09-08 14:22:29,917 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,604,356,310,994
+2025-09-08 14:22:29,917 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0068
+2025-09-08 14:22:29,921 - Review.reviews.sectorial_review - INFO - Processing UUTI...
+2025-09-08 14:22:29,922 - Review.reviews.sectorial_review - INFO - Total weight before capping for UUTI: 1.00000000
+2025-09-08 14:22:29,923 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UUTI (max factor was 1.000000)
+2025-09-08 14:22:29,923 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,925 - Review.reviews.sectorial_review - INFO - Total weight after capping for UUTI: 1.000000
+2025-09-08 14:22:29,925 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UUTI: 0.112422 (cap: 0.200000)
+2025-09-08 14:22:29,925 - Review.reviews.sectorial_review - INFO - Index market cap for UUTI: 1,137,701,516,868
+2025-09-08 14:22:29,925 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,141,562,170,221
+2025-09-08 14:22:29,926 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0034
+2025-09-08 14:22:29,935 - Review.reviews.sectorial_review - INFO - Processing UTEL...
+2025-09-08 14:22:29,936 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTEL: 1.00000000
+2025-09-08 14:22:29,939 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTEL (max factor was 1.058957)
+2025-09-08 14:22:29,939 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.772329 to 1.000000
+2025-09-08 14:22:29,940 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UTEL:
+2025-09-08 14:22:29,940 - Review.reviews.sectorial_review - INFO -   CISCO SYSTEMS INC: 0.2445 -> 0.2000
+2025-09-08 14:22:29,940 - Review.reviews.sectorial_review - INFO - Boosted 7 companies due to redistribution in UTEL:
+2025-09-08 14:22:29,940 - Review.reviews.sectorial_review - INFO -   ARISTA NETWORKS INC.: 0.0852 -> 0.0902
+2025-09-08 14:22:29,941 - Review.reviews.sectorial_review - INFO -   AT&T INC: 0.1881 -> 0.1992
+2025-09-08 14:22:29,941 - Review.reviews.sectorial_review - INFO -   CHARTER COM. CLASS A: 0.0347 -> 0.0367
+2025-09-08 14:22:29,941 - Review.reviews.sectorial_review - INFO -   COMCAST: 0.1216 -> 0.1287
+2025-09-08 14:22:29,942 - Review.reviews.sectorial_review - INFO -   MOTOROLA SOLUTIONS: 0.0641 -> 0.0679
+2025-09-08 14:22:29,942 - Review.reviews.sectorial_review - INFO -   T-MOBILE US INC.: 0.0951 -> 0.1007
+2025-09-08 14:22:29,942 - Review.reviews.sectorial_review - INFO -   VERIZON: 0.1668 -> 0.1766
+2025-09-08 14:22:29,942 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEL: 1.000000
+2025-09-08 14:22:29,942 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTEL: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:29,943 - Review.reviews.sectorial_review - INFO - Index market cap for UTEL: 888,550,467,976
+2025-09-08 14:22:29,943 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 917,787,604,540
+2025-09-08 14:22:29,943 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0329
+2025-09-08 14:22:29,947 - Review.reviews.sectorial_review - INFO - Processing UTEC...
+2025-09-08 14:22:29,949 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTEC: 1.00000000
+2025-09-08 14:22:29,950 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTEC (max factor was 1.000000)
+2025-09-08 14:22:29,950 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,951 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEC: 1.000000
+2025-09-08 14:22:29,951 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTEC: 0.185273 (cap: 0.200000)
+2025-09-08 14:22:29,951 - Review.reviews.sectorial_review - INFO - Index market cap for UTEC: 16,657,724,711,123
+2025-09-08 14:22:29,951 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 16,636,942,617,628
+2025-09-08 14:22:29,951 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9988
+2025-09-08 14:22:29,955 - Review.reviews.sectorial_review - INFO - Processing UIND...
+2025-09-08 14:22:29,957 - Review.reviews.sectorial_review - INFO - Total weight before capping for UIND: 1.00000000
+2025-09-08 14:22:29,958 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UIND (max factor was 1.000000)
+2025-09-08 14:22:29,959 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,961 - Review.reviews.sectorial_review - INFO - Total weight after capping for UIND: 1.000000
+2025-09-08 14:22:29,961 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UIND: 0.100113 (cap: 0.200000)
+2025-09-08 14:22:29,961 - Review.reviews.sectorial_review - INFO - Index market cap for UIND: 5,254,835,111,129
+2025-09-08 14:22:29,961 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 5,305,539,577,785
+2025-09-08 14:22:29,961 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0096
+2025-09-08 14:22:29,970 - Review.reviews.sectorial_review - INFO - Processing UHEC...
+2025-09-08 14:22:29,973 - Review.reviews.sectorial_review - INFO - Total weight before capping for UHEC: 1.00000000
+2025-09-08 14:22:29,975 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UHEC (max factor was 1.000000)
+2025-09-08 14:22:29,976 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,977 - Review.reviews.sectorial_review - INFO - Total weight after capping for UHEC: 1.000000
+2025-09-08 14:22:29,978 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UHEC: 0.133300 (cap: 0.200000)
+2025-09-08 14:22:29,978 - Review.reviews.sectorial_review - INFO - Index market cap for UHEC: 3,971,975,287,053
+2025-09-08 14:22:29,979 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 3,904,272,147,223
+2025-09-08 14:22:29,979 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9830
+2025-09-08 14:22:29,983 - Review.reviews.sectorial_review - INFO - Processing UFIN...
+2025-09-08 14:22:29,985 - Review.reviews.sectorial_review - INFO - Total weight before capping for UFIN: 1.00000000
+2025-09-08 14:22:29,985 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UFIN (max factor was 1.000000)
+2025-09-08 14:22:29,986 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:29,987 - Review.reviews.sectorial_review - INFO - Total weight after capping for UFIN: 1.000000
+2025-09-08 14:22:29,987 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UFIN: 0.138578 (cap: 0.200000)
+2025-09-08 14:22:29,987 - Review.reviews.sectorial_review - INFO - Index market cap for UFIN: 4,607,995,566,348
+2025-09-08 14:22:29,987 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 4,689,051,978,555
+2025-09-08 14:22:29,987 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0176
+2025-09-08 14:22:29,993 - Review.reviews.sectorial_review - INFO - Processing UENR...
+2025-09-08 14:22:29,995 - Review.reviews.sectorial_review - INFO - Total weight before capping for UENR: 1.00000000
+2025-09-08 14:22:30,002 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UENR (max factor was 1.095357)
+2025-09-08 14:22:30,003 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.677147 to 1.000000
+2025-09-08 14:22:30,004 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UENR:
+2025-09-08 14:22:30,004 - Review.reviews.sectorial_review - INFO -   EXXON MOBIL: 0.2696 -> 0.2000
+2025-09-08 14:22:30,005 - Review.reviews.sectorial_review - INFO - Boosted 26 companies due to redistribution in UENR:
+2025-09-08 14:22:30,005 - Review.reviews.sectorial_review - INFO -   BAKER HUGHES COMPANY: 0.0215 -> 0.0236
+2025-09-08 14:22:30,005 - Review.reviews.sectorial_review - INFO -   CHENIERE ENERGY: 0.0287 -> 0.0315
+2025-09-08 14:22:30,006 - Review.reviews.sectorial_review - INFO -   CHEVRON CORPORATION: 0.1355 -> 0.1485
+2025-09-08 14:22:30,006 - Review.reviews.sectorial_review - INFO -   CONOCOPHILLIPS: 0.0662 -> 0.0725
+2025-09-08 14:22:30,006 - Review.reviews.sectorial_review - INFO -   COTERRA ENERGY INC.: 0.0112 -> 0.0122
+2025-09-08 14:22:30,007 - Review.reviews.sectorial_review - INFO -   DEVON ENERGY CORP: 0.0122 -> 0.0134
+2025-09-08 14:22:30,007 - Review.reviews.sectorial_review - INFO -   DIAMONDBACK ENERGY: 0.0159 -> 0.0175
+2025-09-08 14:22:30,007 - Review.reviews.sectorial_review - INFO -   ENERGY TRANSFER L.P.: 0.0321 -> 0.0351
+2025-09-08 14:22:30,008 - Review.reviews.sectorial_review - INFO -   ENTERPRISE PRODUCTS: 0.0260 -> 0.0285
+2025-09-08 14:22:30,008 - Review.reviews.sectorial_review - INFO -   EOG RESOURCES INC.: 0.0373 -> 0.0409
+2025-09-08 14:22:30,008 - Review.reviews.sectorial_review - INFO -   EQT CORPORATION: 0.0193 -> 0.0212
+2025-09-08 14:22:30,010 - Review.reviews.sectorial_review - INFO -   EXPAND ENERGY: 0.0156 -> 0.0171
+2025-09-08 14:22:30,010 - Review.reviews.sectorial_review - INFO -   FIRST SOLAR INC: 0.0085 -> 0.0093
+2025-09-08 14:22:30,011 - Review.reviews.sectorial_review - INFO -   HALLIBURTON COMPANY: 0.0109 -> 0.0119
+2025-09-08 14:22:30,011 - Review.reviews.sectorial_review - INFO -   HESS CORPORATION: 0.0233 -> 0.0255
+2025-09-08 14:22:30,011 - Review.reviews.sectorial_review - INFO -   KINDER MORGAN INC.: 0.0285 -> 0.0312
+2025-09-08 14:22:30,012 - Review.reviews.sectorial_review - INFO -   MARATHON PETROLEUM: 0.0287 -> 0.0314
+2025-09-08 14:22:30,012 - Review.reviews.sectorial_review - INFO -   MPLX LP: 0.0101 -> 0.0111
+2025-09-08 14:22:30,012 - Review.reviews.sectorial_review - INFO -   OCCIDENTAL PETROLEUM: 0.0186 -> 0.0204
+2025-09-08 14:22:30,012 - Review.reviews.sectorial_review - INFO -   ONEOK INC.: 0.0279 -> 0.0306
+2025-09-08 14:22:30,012 - Review.reviews.sectorial_review - INFO -   PHILLIPS 66: 0.0278 -> 0.0305
+2025-09-08 14:22:30,012 - Review.reviews.sectorial_review - INFO -   SCHLUMBERGER LTD: 0.0269 -> 0.0295
+2025-09-08 14:22:30,013 - Review.reviews.sectorial_review - INFO -   TARGA RESOURCES CORP: 0.0202 -> 0.0221
+2025-09-08 14:22:30,013 - Review.reviews.sectorial_review - INFO -   TEXAS PACIFIC LAND: 0.0137 -> 0.0150
+2025-09-08 14:22:30,013 - Review.reviews.sectorial_review - INFO -   VALERO ENERGY CORP.: 0.0244 -> 0.0267
+2025-09-08 14:22:30,013 - Review.reviews.sectorial_review - INFO -   WILLIAMS COMPANIES: 0.0392 -> 0.0429
+2025-09-08 14:22:30,014 - Review.reviews.sectorial_review - INFO - Total weight after capping for UENR: 1.000000
+2025-09-08 14:22:30,014 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UENR: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:30,014 - Review.reviews.sectorial_review - INFO - Index market cap for UENR: 1,435,763,477,766
+2025-09-08 14:22:30,014 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,580,658,953,059
+2025-09-08 14:22:30,014 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1009
+2025-09-08 14:22:30,025 - Review.reviews.sectorial_review - INFO - Processing UCST...
+2025-09-08 14:22:30,027 - Review.reviews.sectorial_review - INFO - Total weight before capping for UCST: 1.00000000
+2025-09-08 14:22:30,028 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UCST (max factor was 1.000000)
+2025-09-08 14:22:30,029 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-08 14:22:30,029 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCST: 1.000000
+2025-09-08 14:22:30,030 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UCST: 0.173182 (cap: 0.200000)
+2025-09-08 14:22:30,030 - Review.reviews.sectorial_review - INFO - Index market cap for UCST: 1,849,113,662,290
+2025-09-08 14:22:30,030 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,861,759,569,837
+2025-09-08 14:22:30,030 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0068
+2025-09-08 14:22:30,032 - Review.reviews.sectorial_review - INFO - Processing UCDI...
+2025-09-08 14:22:30,032 - Review.reviews.sectorial_review - INFO - Total weight before capping for UCDI: 1.00000000
+2025-09-08 14:22:30,043 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UCDI (max factor was 1.094815)
+2025-09-08 14:22:30,043 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.678392 to 1.000000
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UCDI:
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2693 -> 0.2000
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO - Boosted 59 companies due to redistribution in UCDI:
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO -   AIRBNB INC. CLASS A: 0.0076 -> 0.0083
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO -   AUTOZONE INC.: 0.0079 -> 0.0087
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO -   BOOKING HOLDINGS INC: 0.0226 -> 0.0248
+2025-09-08 14:22:30,046 - Review.reviews.sectorial_review - INFO -   CARNIVAL CORPORATION: 0.0032 -> 0.0035
+2025-09-08 14:22:30,049 - Review.reviews.sectorial_review - INFO -   CARVANA CO: 0.0052 -> 0.0057
+2025-09-08 14:22:30,049 - Review.reviews.sectorial_review - INFO -   CHIPOTLE MEX. GRILL: 0.0091 -> 0.0099
+2025-09-08 14:22:30,049 - Review.reviews.sectorial_review - INFO -   COPART INC.: 0.0055 -> 0.0060
+2025-09-08 14:22:30,049 - Review.reviews.sectorial_review - INFO -   COSTCO WHOLES. CORP.: 0.0569 -> 0.0623
+2025-09-08 14:22:30,050 - Review.reviews.sectorial_review - INFO -   COUPANG INC. CLASS A: 0.0049 -> 0.0054
+2025-09-08 14:22:30,050 - Review.reviews.sectorial_review - INFO -   D.R. HORTON INC.: 0.0046 -> 0.0050
+2025-09-08 14:22:30,050 - Review.reviews.sectorial_review - INFO -   DARDEN RESTAURANTS: 0.0035 -> 0.0038
+2025-09-08 14:22:30,051 - Review.reviews.sectorial_review - INFO -   DELTA AIR LINES INC.: 0.0041 -> 0.0044
+2025-09-08 14:22:30,051 - Review.reviews.sectorial_review - INFO -   DOLLAR GENERAL CORP.: 0.0033 -> 0.0036
+2025-09-08 14:22:30,051 - Review.reviews.sectorial_review - INFO -   DOLLAR TREE INC.: 0.0026 -> 0.0028
+2025-09-08 14:22:30,052 - Review.reviews.sectorial_review - INFO -   DRAFTKINGS. INC. A: 0.0025 -> 0.0027
+2025-09-08 14:22:30,052 - Review.reviews.sectorial_review - INFO -   DUOLINGO INC CLASS A: 0.0025 -> 0.0027
+2025-09-08 14:22:30,052 - Review.reviews.sectorial_review - INFO -   EBAY INC.: 0.0047 -> 0.0051
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   ELECTRONIC ARTS INC.: 0.0045 -> 0.0049
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   EXPEDIA GROUP INC.: 0.0026 -> 0.0028
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   FLUTTER ENTERTAINMEN: 0.0060 -> 0.0065
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0053 -> 0.0058
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   GARMIN LTD.: 0.0042 -> 0.0046
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0061 -> 0.0067
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0022 -> 0.0024
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   HILTON WORLDWIDE: 0.0077 -> 0.0084
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   HOME DEPOT INC: 0.0455 -> 0.0498
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   LENNAR CORP A: 0.0032 -> 0.0035
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   LIBERTY MEDIA CORP.: 0.0029 -> 0.0032
+2025-09-08 14:22:30,053 - Review.reviews.sectorial_review - INFO -   LIVE NATION ENTERT: 0.0031 -> 0.0034
+2025-09-08 14:22:30,056 - Review.reviews.sectorial_review - INFO -   LOWE'S COMPANIES INC: 0.0156 -> 0.0170
+2025-09-08 14:22:30,056 - Review.reviews.sectorial_review - INFO -   LULULEMON ATHLETICA: 0.0032 -> 0.0035
+2025-09-08 14:22:30,056 - Review.reviews.sectorial_review - INFO -   MARRIOTT INTERN. INC: 0.0078 -> 0.0086
+2025-09-08 14:22:30,056 - Review.reviews.sectorial_review - INFO -   MCDONALD'S CORP: 0.0274 -> 0.0300
+2025-09-08 14:22:30,056 - Review.reviews.sectorial_review - INFO -   MERCADOLIBRE INC.: 0.0151 -> 0.0165
+2025-09-08 14:22:30,056 - Review.reviews.sectorial_review - INFO -   NETFLIX INC.: 0.0682 -> 0.0746
+2025-09-08 14:22:30,058 - Review.reviews.sectorial_review - INFO -   NIKE INC: 0.0093 -> 0.0102
+2025-09-08 14:22:30,058 - Review.reviews.sectorial_review - INFO -   NVR INC.: 0.0027 -> 0.0029
+2025-09-08 14:22:30,058 - Review.reviews.sectorial_review - INFO -   O'REILLY AUTOMOTIVE: 0.0100 -> 0.0109
+2025-09-08 14:22:30,059 - Review.reviews.sectorial_review - INFO -   PULTEGROUP INC: 0.0026 -> 0.0028
+2025-09-08 14:22:30,059 - Review.reviews.sectorial_review - INFO -   ROBLOX CORP. - A: 0.0084 -> 0.0092
+2025-09-08 14:22:30,059 - Review.reviews.sectorial_review - INFO -   ROLLINS. INC.: 0.0023 -> 0.0026
+2025-09-08 14:22:30,060 - Review.reviews.sectorial_review - INFO -   ROSS STORES INC.: 0.0056 -> 0.0061
+2025-09-08 14:22:30,060 - Review.reviews.sectorial_review - INFO -   ROYAL CARIBBEAN: 0.0089 -> 0.0097
+2025-09-08 14:22:30,060 - Review.reviews.sectorial_review - INFO -   SPOTIFY TECHNOLOGY: 0.0145 -> 0.0158
+2025-09-08 14:22:30,060 - Review.reviews.sectorial_review - INFO -   STARBUCKS CORP.: 0.0137 -> 0.0149
+2025-09-08 14:22:30,060 - Review.reviews.sectorial_review - INFO -   TAKE-TWO INTERACTIVE: 0.0053 -> 0.0058
+2025-09-08 14:22:30,061 - Review.reviews.sectorial_review - INFO -   TARGET CORPORATION: 0.0057 -> 0.0062
+2025-09-08 14:22:30,061 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.1135 -> 0.1242
+2025-09-08 14:22:30,062 - Review.reviews.sectorial_review - INFO -   THE WALT DISNEY COMP: 0.0279 -> 0.0305
+2025-09-08 14:22:30,062 - Review.reviews.sectorial_review - INFO -   TJX COMPANIES INC: 0.0180 -> 0.0197
+2025-09-08 14:22:30,062 - Review.reviews.sectorial_review - INFO -   TRACTOR SUPPLY COMP.: 0.0035 -> 0.0039
+2025-09-08 14:22:30,062 - Review.reviews.sectorial_review - INFO -   TRADE DESK INC.: 0.0040 -> 0.0044
+2025-09-08 14:22:30,063 - Review.reviews.sectorial_review - INFO -   UBER TECHNOLOGIES: 0.0233 -> 0.0255
+2025-09-08 14:22:30,064 - Review.reviews.sectorial_review - INFO -   ULTA BEAUTY INC: 0.0028 -> 0.0031
+2025-09-08 14:22:30,064 - Review.reviews.sectorial_review - INFO -   UNITED AIRLINES HLD: 0.0032 -> 0.0035
+2025-09-08 14:22:30,064 - Review.reviews.sectorial_review - INFO -   WALMART INC: 0.0544 -> 0.0596
+2025-09-08 14:22:30,064 - Review.reviews.sectorial_review - INFO -   WARNER BROS DISCOVER: 0.0031 -> 0.0034
+2025-09-08 14:22:30,064 - Review.reviews.sectorial_review - INFO -   WILLIAMS-SONOMA.: 0.0024 -> 0.0026
+2025-09-08 14:22:30,065 - Review.reviews.sectorial_review - INFO -   YUM! BRANDS INC.: 0.0051 -> 0.0056
+2025-09-08 14:22:30,065 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCDI: 1.000000
+2025-09-08 14:22:30,065 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UCDI: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:30,066 - Review.reviews.sectorial_review - INFO - Index market cap for UCDI: 6,066,409,683,975
+2025-09-08 14:22:30,066 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 6,612,533,254,690
+2025-09-08 14:22:30,066 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0900
+2025-09-08 14:22:30,066 - Review.reviews.sectorial_review - INFO - Processing UBMA...
+2025-09-08 14:22:30,073 - Review.reviews.sectorial_review - INFO - Total weight before capping for UBMA: 1.00000000
+2025-09-08 14:22:30,076 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UBMA (max factor was 1.217921)
+2025-09-08 14:22:30,076 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.478560 to 1.000000
+2025-09-08 14:22:30,076 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UBMA:
+2025-09-08 14:22:30,081 - Review.reviews.sectorial_review - INFO -   LINDE PLC: 0.3431 -> 0.2000
+2025-09-08 14:22:30,081 - Review.reviews.sectorial_review - INFO - Boosted 10 companies due to redistribution in UBMA:
+2025-09-08 14:22:30,082 - Review.reviews.sectorial_review - INFO -   AIR PROD & CHEMICALS: 0.0975 -> 0.1188
+2025-09-08 14:22:30,082 - Review.reviews.sectorial_review - INFO -   ANGLOGOLD ASHANTI: 0.0385 -> 0.0469
+2025-09-08 14:22:30,082 - Review.reviews.sectorial_review - INFO -   ECOLAB INC: 0.1055 -> 0.1285
+2025-09-08 14:22:30,083 - Review.reviews.sectorial_review - INFO -   FASTENAL COMPANY: 0.0754 -> 0.0918
+2025-09-08 14:22:30,083 - Review.reviews.sectorial_review - INFO -   FREEPORT-MCMORAN: 0.0940 -> 0.1145
+2025-09-08 14:22:30,083 - Review.reviews.sectorial_review - INFO -   INTERNATIONAL PAPER: 0.0383 -> 0.0467
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO -   INTL FLAVORS & FRAGR: 0.0304 -> 0.0370
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO -   NEWMONT COR: 0.1030 -> 0.1255
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO -   NUCOR CORPORATION: 0.0446 -> 0.0543
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO -   STEEL DYNAMICS INC.: 0.0297 -> 0.0362
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO - Total weight after capping for UBMA: 1.000000
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UBMA: 0.200000 (cap: 0.200000)
+2025-09-08 14:22:30,084 - Review.reviews.sectorial_review - INFO - Index market cap for UBMA: 456,647,802,213
+2025-09-08 14:22:30,085 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 548,507,031,723
+2025-09-08 14:22:30,086 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.2012
+2025-09-08 14:22:30,093 - Review.reviews.sectorial_review - INFO - Saving TECHP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TECHP_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,146 - Review.reviews.sectorial_review - INFO - Saving ENRGP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENRGP_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,182 - Review.reviews.sectorial_review - INFO - Saving UTIL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTIL_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,210 - Review.reviews.sectorial_review - INFO - Saving BASM output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BASM_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,247 - Review.reviews.sectorial_review - INFO - Saving FINA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FINA_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,286 - Review.reviews.sectorial_review - INFO - Saving CSTA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CSTA_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,312 - Review.reviews.sectorial_review - INFO - Saving TELEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TELEP_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,343 - Review.reviews.sectorial_review - INFO - Saving HEAC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\HEAC_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,376 - Review.reviews.sectorial_review - INFO - Saving INDU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\INDU_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,431 - Review.reviews.sectorial_review - INFO - Saving CDIS output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CDIS_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,476 - Review.reviews.sectorial_review - INFO - Saving TBMA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TBMA_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,519 - Review.reviews.sectorial_review - INFO - Saving TCDI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TCDI_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,585 - Review.reviews.sectorial_review - INFO - Saving TCST output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TCST_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,620 - Review.reviews.sectorial_review - INFO - Saving TENR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TENR_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,652 - Review.reviews.sectorial_review - INFO - Saving TFINP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TFINP_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,757 - Review.reviews.sectorial_review - INFO - Saving THEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\THEC_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,820 - Review.reviews.sectorial_review - INFO - Saving TIND output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TIND_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:30,955 - Review.reviews.sectorial_review - INFO - Saving TTEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TTEC_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,059 - Review.reviews.sectorial_review - INFO - Saving TTEL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TTEL_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,102 - Review.reviews.sectorial_review - INFO - Saving TUTI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TUTI_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,137 - Review.reviews.sectorial_review - INFO - Saving UUTI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UUTI_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,173 - Review.reviews.sectorial_review - INFO - Saving UTEL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTEL_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,217 - Review.reviews.sectorial_review - INFO - Saving UTEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTEC_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,287 - Review.reviews.sectorial_review - INFO - Saving UIND output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UIND_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,346 - Review.reviews.sectorial_review - INFO - Saving UHEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UHEC_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,385 - Review.reviews.sectorial_review - INFO - Saving UFIN output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UFIN_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,424 - Review.reviews.sectorial_review - INFO - Saving UENR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UENR_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,456 - Review.reviews.sectorial_review - INFO - Saving UCST output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UCST_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,490 - Review.reviews.sectorial_review - INFO - Saving UCDI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UCDI_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,542 - Review.reviews.sectorial_review - INFO - Saving UBMA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UBMA_sectorial_20250908_142230.xlsx
+2025-09-08 14:22:31,577 - Review.reviews.sectorial_review - INFO - Creating summary file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\All_Sectorial_Summary_20250908_142230.xlsx
+2025-09-08 14:22:31,916 - werkzeug - INFO - 127.0.0.1 - - [08/Sep/2025 14:22:31] "POST /calculate HTTP/1.1" 200 -
+2025-09-08 14:23:13,244 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-09-08 14:23:13,244 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
