@@ -44,6 +44,7 @@ from .reviews.gsfbp_review import run_gsfbp_review
 from .reviews.eesf_review import run_eesf_review
 from .reviews.etsep_review import run_etsep_review
 from .reviews.eltfp_review import run_eltfp_review
+from .reviews.elecp_review import run_elecp_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -91,7 +92,8 @@ REVIEW_FUNCTIONS = {
     "GSFBP": run_gsfbp_review,
     "EESF": run_eesf_review,
     "ETSEP": run_etsep_review,
-    "ELTFP": run_eltfp_review
+    "ELTFP": run_eltfp_review,
+    "ELECP": run_elecp_review
 }
 
 def run_review(review_type, **kwargs):

@@ -215,6 +215,11 @@ INDEX_CONFIGS = {
         "index": "ELTFP",
         "isin": "NLIX00007327",
         "output_key": "eltfp_path"
+    },
+    "ELECP": {
+        "index": "ELECP",
+        "isin": "NLIX00007517",
+        "output_key": "elecp_path"
     }
     # Add new indices here following the same pattern
 }

@@ -633,8 +633,11 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
         ].copy()
 
         logger.info(f"Found {len(non_eu_taxonomy_eligible)} Non-EU Taxonomy eligible companies after exclusions")
-
-
+        # Add ranking within supersector (by climate_score ascending, then FFMC_CO descending for ties)
+        non_eu_taxonomy_eligible = non_eu_taxonomy_eligible.sort_values(['Supersector Code', 'climate_score', 'FFMC_CO'], 
+                                                                    ascending=[True, True, False])
+        non_eu_taxonomy_eligible['Supersector_Rank'] = non_eu_taxonomy_eligible.groupby('Supersector Code').cumcount() + 1
+        
         # STEP 4a: Determination of the target number of Non-EU Taxonomy companies within each ICB super-sector
         logger.info("STEP 4a: Determining target number of Non-EU Taxonomy companies per super-sector...")
 
@@ -695,7 +698,7 @@ def run_lc3wp_review(date, co_date, effective_date, index="LC3WP", isin="FR00135
             # Sort by climate score (lowest/best first), and then by FFMC_CO (highest first) to break ties
             supersector_companies = supersector_companies.sort_values(['climate_score', 'FFMC_CO'], 
                                                                     ascending=[True, False])
-            
+            supersector_companies['Supersector_Rank'] = range(1, len(supersector_companies) + 1)
             # Select the top N companies (using int)
             selected = supersector_companies.head(target_count)
             

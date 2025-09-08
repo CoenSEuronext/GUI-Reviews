@@ -118,7 +118,7 @@ def run_derep_review(date, co_date, effective_date, index="DEREP", isin="NLIX000
         eligible_df = selection_df[
             (selection_df['exclusion_icb'] == False)
         ].copy()
-        eligible_df['FFMC_WD'] = eligible_df['Close Prc_EOD'] * eligible_df['Number of Shares'] * eligible_df['Free Float'] * eligible_df['FX/Index Ccy']
+        eligible_df['FFMC_WD'] = eligible_df['Close Prc_EOD'] * eligible_df['Number of Shares'] * eligible_df['Free Float']
         
         # Calculate total FFMC for eligible companies
         total_eligible_ffmc = eligible_df['FFMC_WD'].sum()

@@ -1,0 +1,15 @@
+2025-08-18 13:37:13,880 - werkzeug - WARNING -  * Debugger is active!
+2025-08-18 13:37:13,880 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-18 13:42:58,565 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 13:42:58] "GET / HTTP/1.1" 200 -
+2025-08-18 13:42:58,661 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 13:42:58] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-08-18 13:42:58,670 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 13:42:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-18 13:43:07,203 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-08-18 13:43:11,768 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-08-18 13:43:23,485 - Review.reviews.lc3wp_review - ERROR - Error during review calculation: Failed to load cdp_climate_df from reference data
+2025-08-18 13:43:23,485 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading
+2025-08-18 13:43:23,485 - Review.reviews.lc3wp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc3wp_review.py", line 79, in run_lc3wp_review
+    raise ValueError(f"Failed to load {df_name} from reference data")
+ValueError: Failed to load cdp_climate_df from reference data
+
+2025-08-18 13:43:23,520 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 13:43:23] "POST /calculate HTTP/1.1" 200 -
