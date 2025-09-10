@@ -242,6 +242,12 @@
             color: #856404;
         }
 
+        .result-started {
+            background-color: #cce5ff;
+            border-left-color: #007bff;
+            color: #004085;
+        }
+
         .progress-container {
             margin-top: 10px;
             background-color: var(--gray-2);
@@ -322,6 +328,17 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        .task-status {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .status-pending { color: #6c757d; }
+        .status-running { color: #ffc107; }
+        .status-completed { color: var(--primary-color); }
+        .status-failed { color: #dc3545; }
+        .status-cancelled { color: #6c757d; }
     </style>
 </head>
 <body>
@@ -447,6 +464,8 @@
 
         let currentMode = 'single';
         let selectedReviews = new Set();
+        let currentTaskId = null;
+        let statusCheckInterval = null;
 
         function initializeApp() {
             populateReviewTypes();
@@ -585,69 +604,39 @@
                 return;
             }
 
+            // Clear any existing status check
+            if (statusCheckInterval) {
+                clearInterval(statusCheckInterval);
+                statusCheckInterval = null;
+            }
+
             submitBtn.disabled = true;
             resultDiv.style.display = 'block';
             resultDiv.innerHTML = '';
 
-            if (currentMode === 'single') {
-                await runSingleReview();
-            } else {
-                await runMultipleReviews();
-            }
-
-            submitBtn.disabled = false;
-        }
-
-        async function runSingleReview() {
-            const submitBtn = document.getElementById('submitBtn');
-            const resultDiv = document.getElementById('result');
-            
-            submitBtn.innerHTML = '<span class="spinner"></span>Calculating...';
-            
             try {
-                const formData = new FormData(document.getElementById('calculatorForm'));
-                const response = await fetch('/calculate', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const data = await response.json();
-                
-                resultDiv.innerHTML = `
-                    <div class="result-item result-${data.status === 'success' ? 'success' : 'error'}">
-                        <h3>${data.status === 'success' ? 'Success!' : 'Error'}</h3>
-                        <p>${data.message}</p>
-                        ${data.duration_seconds ? `<small>Completed in ${data.duration_seconds.toFixed(1)} seconds</small>` : ''}
-                    </div>
-                `;
+                // Start the task
+                const taskId = await startTask();
+                if (taskId) {
+                    currentTaskId = taskId;
+                    // Start checking status
+                    startStatusChecking(taskId);
+                }
             } catch (error) {
-                resultDiv.innerHTML = `
-                    <div class="result-item result-error">
-                        <h3>Error</h3>
-                        <p>An error occurred while calculating the index.</p>
-                    </div>
-                `;
-            } finally {
-                submitBtn.textContent = 'Calculate Index';
+                displayError('Failed to start task: ' + error.message);
+                submitBtn.disabled = false;
             }
         }
 
-        async function runMultipleReviews() {
+        async function startTask() {
+            const formData = new FormData();
             const submitBtn = document.getElementById('submitBtn');
-            const resultDiv = document.getElementById('result');
-            const reviewsArray = Array.from(selectedReviews);
             
-            submitBtn.innerHTML = '<span class="spinner"></span>Calculating...';
-            
-            try {
-                const formData = new FormData();
-                
-                // Add all selected review types
-                reviewsArray.forEach(reviewType => {
-                    formData.append('review_types[]', reviewType);
-                });
-                
-                // Add common parameters
+            submitBtn.innerHTML = '<span class="spinner"></span>Starting task...';
+
+            if (currentMode === 'single') {
+                // Single review
+                formData.append('review_type', document.getElementById('review_type').value);
                 formData.append('date', document.getElementById('date').value);
                 formData.append('co_date', document.getElementById('co_date').value);
                 formData.append('effective_date', document.getElementById('effective_date').value);
@@ -657,17 +646,35 @@
                     formData.append('auto_open', 'on');
                 }
 
-                // Create progress tracking elements for sequential processing
-                resultDiv.innerHTML = `
-                    <div class="progress-container">
-                        <div class="progress-bar" id="progressBar"></div>
-                    </div>
-                    <div class="progress-text" id="progressText">Starting sequential processing of ${reviewsArray.length} reviews...</div>
-                    <div id="reviewResults"></div>
-                `;
-
-                console.log('Starting sequential batch processing...');
+                const response = await fetch('/calculate', {
+                    method: 'POST',
+                    body: formData
+                });
                 
+                const data = await response.json();
+                
+                if (data.status === 'started') {
+                    displayTaskStarted(data);
+                    return data.task_id;
+                } else {
+                    displayError(data.message);
+                    return null;
+                }
+            } else {
+                // Multiple reviews
+                Array.from(selectedReviews).forEach(reviewType => {
+                    formData.append('review_types[]', reviewType);
+                });
+                
+                formData.append('date', document.getElementById('date').value);
+                formData.append('co_date', document.getElementById('co_date').value);
+                formData.append('effective_date', document.getElementById('effective_date').value);
+                formData.append('currency', document.getElementById('currency').value);
+                
+                if (document.getElementById('auto_open').checked) {
+                    formData.append('auto_open', 'on');
+                }
+
                 const response = await fetch('/calculate-batch', {
                     method: 'POST',
                     body: formData
@@ -675,138 +682,144 @@
                 
                 const data = await response.json();
                 
-                if (data.status === 'success') {
-                    displayBatchResults(data.results || data.data);
+                if (data.status === 'started') {
+                    displayTaskStarted(data);
+                    return data.task_id;
                 } else {
                     displayError(data.message);
+                    return null;
                 }
-                
-            } catch (error) {
-                console.error('Error in batch processing:', error);
-                displayError('An error occurred during batch processing.');
-            } finally {
-                submitBtn.textContent = 'Calculate Selected Indices';
             }
         }
 
-        async function runMultipleReviewsFallback(reviewsArray) {
-            const progressBar = document.getElementById('progressBar');
-            const progressText = document.getElementById('progressText');
-            const reviewResults = document.getElementById('reviewResults');
-            
-            let completed = 0;
-            const total = reviewsArray.length;
-            const results = [];
-
-            // Run reviews in parallel with concurrency limit
-            const concurrencyLimit = 3;
-            
-            for (let i = 0; i < reviewsArray.length; i += concurrencyLimit) {
-                const batch = reviewsArray.slice(i, i + concurrencyLimit);
-                const batchPromises = batch.map(reviewType => runSingleReviewType(reviewType));
-                
-                try {
-                    const batchResults = await Promise.allSettled(batchPromises);
+        function displayTaskStarted(data) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <div class="result-item result-started">
+                    <h3>Task Started</h3>
+                    <p>${data.message}</p>
+                    <p><small>Task ID: ${data.task_id}</small></p>
                     
-                    batchResults.forEach((result, index) => {
-                        const reviewType = batch[index];
-                        completed++;
-                        
-                        // Update progress
-                        const progress = (completed / total) * 100;
-                        progressBar.style.width = `${progress}%`;
-                        progressText.textContent = `Completed ${completed} of ${total} reviews`;
-                        
-                        // Add result
-                        const resultData = result.status === 'fulfilled' ? result.value : { status: 'error', message: 'Request failed' };
-                        
-                        const resultItem = document.createElement('div');
-                        resultItem.className = `result-item result-${resultData.status === 'success' ? 'success' : 'error'}`;
-                        const duration = resultData.duration_seconds ? ` (${resultData.duration_seconds.toFixed(1)}s)` : '';
-                        resultItem.innerHTML = `
-                            <h4>${reviewType}${duration}</h4>
-                            <p>${resultData.message}</p>
-                        `;
-                        reviewResults.appendChild(resultItem);
-                        
-                        results.push({ reviewType, ...resultData });
-                    });
-                } catch (error) {
-                    console.error('Batch processing error:', error);
-                }
-            }
-
-            const successful = results.filter(r => r.status === 'success').length;
-            const failed = results.filter(r => r.status === 'error').length;
-            progressText.textContent = `All reviews completed (${successful} successful, ${failed} failed)`;
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Initializing...</div>
+                    
+                    <div class="task-status" id="taskStatus">
+                        Status: <span class="status-pending">Pending</span>
+                    </div>
+                    
+                    <div id="taskResults"></div>
+                </div>
+            `;
         }
 
-        function displayBatchResults(results) {
-            const reviewResults = document.getElementById('reviewResults');
-            const progressText = document.getElementById('progressText');
+        function startStatusChecking(taskId) {
+            // Check status immediately
+            checkTaskStatus(taskId);
+            
+            // Then check every 2 seconds
+            statusCheckInterval = setInterval(() => {
+                checkTaskStatus(taskId);
+            }, 2000);
+        }
+
+        async function checkTaskStatus(taskId) {
+            try {
+                const response = await fetch(`/task-status/${taskId}`);
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    updateTaskDisplay(data.task);
+                    
+                    // Stop checking if task is complete
+                    if (['completed', 'failed', 'cancelled'].includes(data.task.status)) {
+                        if (statusCheckInterval) {
+                            clearInterval(statusCheckInterval);
+                            statusCheckInterval = null;
+                        }
+                        // Re-enable submit button
+                        const submitBtn = document.getElementById('submitBtn');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = currentMode === 'single' ? 'Calculate Index' : 'Calculate Selected Indices';
+                    }
+                }
+            } catch (error) {
+                console.error('Error checking task status:', error);
+            }
+        }
+
+        function updateTaskDisplay(task) {
             const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const taskStatus = document.getElementById('taskStatus');
+            const taskResults = document.getElementById('taskResults');
             
-            // Update progress to 100%
-            progressBar.style.width = '100%';
+            if (progressBar) {
+                progressBar.style.width = `${task.progress}%`;
+            }
             
-            const successful = results.filter(r => r.status === 'success').length;
-            const failed = results.filter(r => r.status === 'error').length;
+            if (progressText) {
+                progressText.textContent = task.message;
+            }
             
-            progressText.textContent = `Completed: ${successful} successful, ${failed} failed`;
+            if (taskStatus) {
+                taskStatus.innerHTML = `Status: <span class="status-${task.status}">${task.status.charAt(0).toUpperCase() + task.status.slice(1)}</span>`;
+            }
             
-            // Clear existing results
-            reviewResults.innerHTML = '';
-            
-            // Sort results by status (successful first)
-            results.sort((a, b) => {
-                if (a.status === 'success' && b.status === 'error') return -1;
-                if (a.status === 'error' && b.status === 'success') return 1;
-                return a.review_type.localeCompare(b.review_type);
-            });
-            
-            results.forEach(result => {
-                const resultItem = document.createElement('div');
-                resultItem.className = `result-item result-${result.status === 'success' ? 'success' : 'error'}`;
-                
-                const duration = result.duration_seconds ? ` (${result.duration_seconds.toFixed(1)}s)` : '';
-                
-                resultItem.innerHTML = `
-                    <h4>${result.review_type}${duration}</h4>
-                    <p>${result.message}</p>
-                    ${result.completed_at ? `<small>Completed at: ${new Date(result.completed_at).toLocaleTimeString()}</small>` : ''}
+            // Show results when completed
+            if (task.status === 'completed' && task.result_data && taskResults) {
+                displayTaskResults(task, taskResults);
+            } else if (task.status === 'failed' && taskResults) {
+                taskResults.innerHTML = `
+                    <div class="result-item result-error">
+                        <h4>Task Failed</h4>
+                        <p>${task.error || 'Unknown error occurred'}</p>
+                    </div>
                 `;
+            }
+        }
+
+        function displayTaskResults(task, container) {
+            if (task.task_type === 'single') {
+                container.innerHTML = `
+                    <div class="result-item result-success">
+                        <h4>Review Completed Successfully</h4>
+                        <p>${task.message}</p>
+                        ${task.duration_seconds ? `<small>Completed in ${task.duration_seconds.toFixed(1)} seconds</small>` : ''}
+                    </div>
+                `;
+            } else if (task.task_type === 'batch' && task.result_data.results) {
+                let html = '<h4>Batch Review Results</h4>';
                 
-                reviewResults.appendChild(resultItem);
-            });
+                const summary = task.result_data.summary;
+                html += `<p>Summary: ${summary.successful}/${summary.total} reviews completed successfully</p>`;
+                
+                task.result_data.results.forEach(result => {
+                    const statusClass = result.status === 'success' ? 'result-success' : 'result-error';
+                    const duration = result.duration_seconds ? ` (${result.duration_seconds.toFixed(1)}s)` : '';
+                    
+                    html += `
+                        <div class="result-item ${statusClass}">
+                            <h5>${result.review_type}${duration}</h5>
+                            <p>${result.message}</p>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
         }
 
         function displayError(message) {
             const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
             resultDiv.innerHTML = `
                 <div class="result-item result-error">
                     <h3>Error</h3>
                     <p>${message}</p>
                 </div>
             `;
-        }
-
-        async function runSingleReviewType(reviewType) {
-            const formData = new FormData();
-            formData.append('review_type', reviewType);
-            formData.append('date', document.getElementById('date').value);
-            formData.append('co_date', document.getElementById('co_date').value);
-            formData.append('effective_date', document.getElementById('effective_date').value);
-            formData.append('currency', document.getElementById('currency').value);
-            if (document.getElementById('auto_open').checked) {
-                formData.append('auto_open', 'on');
-            }
-
-            const response = await fetch('/calculate', {
-                method: 'POST',
-                body: formData
-            });
-            
-            return await response.json();
         }
 
         // Initialize the app when DOM is loaded

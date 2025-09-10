@@ -1,0 +1,177 @@
+2025-09-10 13:50:34,060 - werkzeug - WARNING -  * Debugger is active!
+2025-09-10 13:50:34,062 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-10 13:51:20,552 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:51:20] "GET / HTTP/1.1" 200 -
+2025-09-10 13:51:20,606 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:51:20] "GET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1" 200 -
+2025-09-10 13:51:20,970 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:51:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-10 13:51:30,815 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:51:30] "GET / HTTP/1.1" 200 -
+2025-09-10 13:51:30,840 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:51:30] "GET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1" 200 -
+2025-09-10 13:51:31,221 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:51:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-10 13:52:09,152 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:09] "[35m[1mPOST /calculate HTTP/1.1[0m" 500 -
+2025-09-10 13:52:22,675 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:22] "GET / HTTP/1.1" 200 -
+2025-09-10 13:52:22,691 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:22] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-10 13:52:38,313 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:38] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 13:52:38,313 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 13:52:38,335 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:38] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:40,343 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:40] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:42,348 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:42] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:42,783 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 13:52:44,378 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:44] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:46,405 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:46] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:48,346 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:48] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:50,329 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:50] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:52:50,367 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_135250.xlsx
+2025-09-10 13:52:52,340 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:52:52] "GET /task-status/c30a2e26-0dde-42ca-8e0b-817b37e1cc2b HTTP/1.1" 200 -
+2025-09-10 13:54:01,627 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:01] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 13:54:01,627 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 13:54:01,647 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:01] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:01,723 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:01] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 13:54:01,723 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-09-10 13:54:01,744 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:01] "GET /task-status/701b8b51-3fe1-4c90-a8d3-dcf70be76756 HTTP/1.1" 200 -
+2025-09-10 13:54:03,652 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:03] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:03,758 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:03] "GET /task-status/701b8b51-3fe1-4c90-a8d3-dcf70be76756 HTTP/1.1" 200 -
+2025-09-10 13:54:05,664 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:05] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:05,755 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:05] "GET /task-status/701b8b51-3fe1-4c90-a8d3-dcf70be76756 HTTP/1.1" 200 -
+2025-09-10 13:54:06,136 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-09-10 13:54:06,136 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 13:54:07,699 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:07] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:07,756 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:07] "GET /task-status/701b8b51-3fe1-4c90-a8d3-dcf70be76756 HTTP/1.1" 200 -
+2025-09-10 13:54:09,679 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:09] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:09,756 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:09] "GET /task-status/701b8b51-3fe1-4c90-a8d3-dcf70be76756 HTTP/1.1" 200 -
+2025-09-10 13:54:09,874 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20250910_135409.xlsx
+2025-09-10 13:54:11,640 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:11] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:11,822 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:11] "GET /task-status/701b8b51-3fe1-4c90-a8d3-dcf70be76756 HTTP/1.1" 200 -
+2025-09-10 13:54:13,652 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:13] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:15,309 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_135415.xlsx
+2025-09-10 13:54:15,640 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:15] "GET /task-status/cf5ed881-09aa-441f-a586-bf135cdb5a82 HTTP/1.1" 200 -
+2025-09-10 13:54:44,344 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:44] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-10 13:54:44,344 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-09-10 13:54:44,367 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:44] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:44,789 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:44] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-10 13:54:44,789 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 13:54:44,804 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:44] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:46,387 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:46] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:46,424 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 13:54:46,424 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-09-10 13:54:46,899 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:46] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:48,384 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:48] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:48,826 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:48] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:49,934 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20250910_135449.xlsx
+2025-09-10 13:54:50,379 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:50] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:50,815 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:50] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:50,910 - Review.reviews.cacew_review - INFO - Loading EOD data...
+2025-09-10 13:54:52,382 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:52] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:52,689 - Review.reviews.cacew_review - INFO - Loading reference data...
+2025-09-10 13:54:52,821 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:52] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:53,017 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20250910_135453.xlsx
+2025-09-10 13:54:53,546 - Review.reviews.clew_review - INFO - Loading EOD data...
+2025-09-10 13:54:54,398 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:54] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:54,850 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:54] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:55,410 - Review.reviews.clew_review - INFO - Loading reference data...
+2025-09-10 13:54:55,928 - Review.reviews.clew_review - INFO - Saving CLEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLEW_df_20250910_135455.xlsx
+2025-09-10 13:54:56,053 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_135456.xlsx
+2025-09-10 13:54:56,346 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-09-10 13:54:56,376 - werkzeug - INFO - 10.199.43.57 - - [10/Sep/2025 13:54:56] "GET /task-status/db3fd92b-696b-417c-b69f-9af0a85a5977 HTTP/1.1" 200 -
+2025-09-10 13:54:56,806 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:56] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:54:57,092 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-09-10 13:54:57,123 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250910_135457.xlsx
+2025-09-10 13:54:57,155 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-09-10 13:54:57,818 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-09-10 13:54:58,822 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:54:58] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:55:00,825 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:55:00] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:55:02,816 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:55:02] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:55:04,843 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:55:04] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 91 companies
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 272 companies
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 44 companies
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Total excluded (any criteria): 282 companies
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Eligible for selection: 18 companies
+2025-09-10 13:55:05,051 - Review.reviews.be1p_review - INFO - Selecting top 10 companies with highest FFMC from eligible companies...
+2025-09-10 13:55:05,073 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BE1P_df_20250910_135505.xlsx
+2025-09-10 13:55:06,814 - werkzeug - INFO - 10.199.43.193 - - [10/Sep/2025 13:55:06] "GET /task-status/c1661164-d723-43bd-b9dc-4f301b39ec36 HTTP/1.1" 200 -
+2025-09-10 14:11:45,513 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:45] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:11:45,513 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:11:45,522 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:45] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:47,538 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:47] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:49,521 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:49] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:49,952 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:11:51,519 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:51] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:53,525 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:53] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:55,530 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:55] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:57,601 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:57] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:11:57,958 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141157.xlsx
+2025-09-10 14:11:59,537 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:11:59] "GET /task-status/0923272e-8ffc-4037-8da7-5613d9526f7a HTTP/1.1" 200 -
+2025-09-10 14:13:36,308 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:36] "GET / HTTP/1.1" 200 -
+2025-09-10 14:13:36,318 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:36] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-10 14:13:39,923 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:39] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:13:39,923 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:13:39,923 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:39] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:41,934 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:41] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:43,929 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:43] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:44,316 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:13:45,934 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:45] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:47,933 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:47] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:49,935 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:49] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:51,939 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:51] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:53,021 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141353.xlsx
+2025-09-10 14:13:53,928 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:53] "GET /task-status/d58a0f63-3639-479a-a565-b03a8321aa06 HTTP/1.1" 200 -
+2025-09-10 14:13:56,827 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:13:56,827 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:56] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:13:56,835 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:56] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:13:58,265 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:13:58,851 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:13:58] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:14:00,852 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:00] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:14:02,851 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:02] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:14:04,847 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:04] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:14:06,551 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141406.xlsx
+2025-09-10 14:14:06,845 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:06] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:14:08,849 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:08] "GET /task-status/e5ef8235-3add-475a-8a1d-7b44969e1af0 HTTP/1.1" 200 -
+2025-09-10 14:14:27,850 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:27] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:14:27,850 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:14:27,854 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:27] "GET /task-status/dbd80fb0-4543-49a0-a890-5a7498cb2e7d HTTP/1.1" 200 -
+2025-09-10 14:14:29,861 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:29] "GET /task-status/dbd80fb0-4543-49a0-a890-5a7498cb2e7d HTTP/1.1" 200 -
+2025-09-10 14:14:31,863 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:31] "GET /task-status/dbd80fb0-4543-49a0-a890-5a7498cb2e7d HTTP/1.1" 200 -
+2025-09-10 14:14:32,184 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:14:33,622 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:33] "GET / HTTP/1.1" 200 -
+2025-09-10 14:14:33,682 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:33] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-10 14:14:37,711 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:37] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:14:37,711 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:14:37,721 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:37] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:14:39,474 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:14:39,734 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:39] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:14:40,948 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141440.xlsx
+2025-09-10 14:14:41,725 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:41] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:14:43,723 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:43] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:14:45,728 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:45] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:14:47,728 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:47] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:14:48,444 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141448.xlsx
+2025-09-10 14:14:49,718 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:14:49] "GET /task-status/aea200f4-839e-44e8-a5a8-f3a22f6499c4 HTTP/1.1" 200 -
+2025-09-10 14:15:44,819 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:44] "GET / HTTP/1.1" 200 -
+2025-09-10 14:15:44,828 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:44] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-10 14:15:49,420 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:49] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:15:49,420 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:15:49,420 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:49] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:15:51,427 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:51] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:15:53,427 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:53] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:15:53,777 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:15:55,478 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:55] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:15:57,433 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:57] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:15:59,432 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:15:59] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:16:01,427 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:01] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:16:02,400 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141602.xlsx
+2025-09-10 14:16:03,428 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:03] "GET /task-status/a03724f2-c953-4085-94cd-bc12653258bc HTTP/1.1" 200 -
+2025-09-10 14:16:45,053 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:45] "GET / HTTP/1.1" 200 -
+2025-09-10 14:16:45,060 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:45] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-10 14:16:48,345 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:48] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:16:48,345 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:16:48,352 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:48] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:16:50,284 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:16:50,367 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:50] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:16:52,367 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:52] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:16:54,360 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:54] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:16:56,360 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:56] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:16:58,343 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_141658.xlsx
+2025-09-10 14:16:58,428 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:16:58] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:17:00,360 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:17:00] "GET /task-status/69f8e213-c265-452b-b48a-0bcef0fd1584 HTTP/1.1" 200 -
+2025-09-10 14:17:29,904 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare_eia_files.py', reloading
+2025-09-10 14:17:30,672 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare.py', reloading
