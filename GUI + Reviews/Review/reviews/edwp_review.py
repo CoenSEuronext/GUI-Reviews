@@ -12,7 +12,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 logger = setup_logging(__name__)
 
 def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX00001577", 
-                    area="US", area2="EU", type="STOCK", universe="98% Universe", 
+                    area="US", area2="EU", type="STOCK", universe="98_universe", 
                     feed="Reuters", currency="EUR", year=None):
     """
     Run the index review calculation
@@ -47,13 +47,13 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
 
         ref_data = load_reference_data(
             current_data_folder, 
-            required_files=['ff', 'universe'],
-            universe_name=universe  # This will be "85% Universe" by default
+            required_files=['ff', '98_universe'],
+            universe_name=universe 
         )
 
         # Get the DataFrames from ref_data
         ff_df = ref_data.get('ff')
-        full_universe_df = ref_data.get('universe')
+        full_universe_df = ref_data.get('98_universe')
 
         # Add validation
         if ff_df is None or full_universe_df is None:

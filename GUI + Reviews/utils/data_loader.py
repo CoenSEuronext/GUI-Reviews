@@ -89,9 +89,9 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
             'filename': 'ICB.xlsx',
             'loader': lambda f: pd.read_excel(f, header=3)
         },
-        'universe': {
-            'filename': f"{universe_name}.xlsx" if universe_name else "98% Universe.xlsx",
-            'loader': lambda f: pd.read_excel(f)
+        '98_universe': {
+            'filename': 'universe_investable_final_ffmc.csv',
+            'loader': lambda f: read_semicolon_csv(f, encoding="latin1")
         },
         'emerging_market': {
             'filename': 'Emerging Market.xlsx',

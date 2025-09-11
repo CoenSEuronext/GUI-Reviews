@@ -1,0 +1,8 @@
+2025-09-11 15:50:57,372 - werkzeug - WARNING -  * Debugger is active!
+2025-09-11 15:50:57,375 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-11 15:50:57,400 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:50:57] "[33mGET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1[0m" 404 -
+2025-09-11 15:50:58,451 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:50:58] "[33mGET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1[0m" 404 -
+2025-09-11 15:51:00,450 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:51:00] "[33mGET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1[0m" 404 -
+2025-09-11 15:51:02,183 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-09-11 15:51:02,184 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-09-11 15:51:02,453 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:51:02] "[33mGET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1[0m" 404 -

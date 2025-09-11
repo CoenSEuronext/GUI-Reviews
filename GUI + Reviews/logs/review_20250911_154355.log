@@ -1,0 +1,18 @@
+2025-09-11 15:43:55,715 - werkzeug - WARNING -  * Debugger is active!
+2025-09-11 15:43:55,717 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-11 15:43:56,128 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:43:56] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:43:58,136 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:43:58] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:00,137 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:00] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:02,126 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:02] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:04,126 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:04] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:06,131 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:06] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:08,127 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:08] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:10,126 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:10] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:12,134 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:12] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:14,137 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:14] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:16,132 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:16] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:18,131 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:18] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:20,125 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:20] "[33mGET /task-status/5ab981ce-bf05-49bb-916e-e0872d701666 HTTP/1.1[0m" 404 -
+2025-09-11 15:44:20,320 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\unicode_escape.py', reloading
+2025-09-11 15:44:20,323 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:20] "GET / HTTP/1.1" 200 -
+2025-09-11 15:44:20,371 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:44:20] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
