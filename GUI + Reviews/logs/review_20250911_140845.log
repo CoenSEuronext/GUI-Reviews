@@ -1,0 +1,335 @@
+2025-09-11 14:08:46,089 - werkzeug - WARNING -  * Debugger is active!
+2025-09-11 14:08:46,091 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-11 14:08:46,119 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:08:46] "[33mGET /task-status/fb4bb276-1651-49e0-bdea-00bd1fe60f0e HTTP/1.1[0m" 404 -
+2025-09-11 14:08:47,591 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:08:47] "[33mGET /task-status/fb4bb276-1651-49e0-bdea-00bd1fe60f0e HTTP/1.1[0m" 404 -
+2025-09-11 14:08:49,593 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:08:49] "[33mGET /task-status/fb4bb276-1651-49e0-bdea-00bd1fe60f0e HTTP/1.1[0m" 404 -
+2025-09-11 14:08:50,865 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:08:50] "GET / HTTP/1.1" 200 -
+2025-09-11 14:08:50,907 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:08:50] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-11 14:09:00,372 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:00] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-11 14:09:00,372 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-09-11 14:09:00,377 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:00] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:02,390 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:02] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:04,381 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:04] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:06,386 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:06] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:08,390 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:08] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:08,493 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-09-11 14:09:08,494 - Review.reviews.edwp_review - INFO - Total companies selected: 1581
+2025-09-11 14:09:08,496 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.85%
+2025-09-11 14:09:08,533 - Review.reviews.edwp_review - INFO - 
+DEUP Selection Summary:
+2025-09-11 14:09:08,533 - Review.reviews.edwp_review - INFO - Total companies selected: 438
+2025-09-11 14:09:08,534 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.56%
+2025-09-11 14:09:08,554 - Review.reviews.edwp_review - INFO - 
+DEZP Selection Summary:
+2025-09-11 14:09:08,554 - Review.reviews.edwp_review - INFO - Total companies selected: 179
+2025-09-11 14:09:08,555 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.01%
+2025-09-11 14:09:08,577 - Review.reviews.edwp_review - INFO - 
+DAPPR Selection Summary:
+2025-09-11 14:09:08,578 - Review.reviews.edwp_review - INFO - Total companies selected: 505
+2025-09-11 14:09:08,579 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.83%
+2025-09-11 14:09:08,595 - Review.reviews.edwp_review - INFO - 
+DNAP Selection Summary:
+2025-09-11 14:09:08,596 - Review.reviews.edwp_review - INFO - Total companies selected: 459
+2025-09-11 14:09:08,597 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.81%
+2025-09-11 14:09:08,610 - Review.reviews.edwp_review - INFO - 
+DASP Selection Summary:
+2025-09-11 14:09:08,612 - Review.reviews.edwp_review - INFO - Total companies selected: 402
+2025-09-11 14:09:08,613 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.55%
+2025-09-11 14:09:08,623 - Review.reviews.edwp_review - INFO - 
+DPAP Selection Summary:
+2025-09-11 14:09:08,624 - Review.reviews.edwp_review - INFO - Total companies selected: 97
+2025-09-11 14:09:08,625 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.96%
+2025-09-11 14:09:08,634 - Review.reviews.edwp_review - INFO - 
+EUSP Selection Summary:
+2025-09-11 14:09:08,636 - Review.reviews.edwp_review - INFO - Total companies selected: 363
+2025-09-11 14:09:08,638 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.03%
+2025-09-11 14:09:08,648 - Review.reviews.edwp_review - INFO - 
+EJPP Selection Summary:
+2025-09-11 14:09:08,649 - Review.reviews.edwp_review - INFO - Total companies selected: 342
+2025-09-11 14:09:08,650 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.01%
+2025-09-11 14:09:08,658 - Review.reviews.edwp_review - INFO - 
+ECHP Selection Summary:
+2025-09-11 14:09:08,659 - Review.reviews.edwp_review - INFO - Total companies selected: 25
+2025-09-11 14:09:08,660 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.01%
+2025-09-11 14:09:08,666 - Review.reviews.edwp_review - INFO - 
+EUKP Selection Summary:
+2025-09-11 14:09:08,667 - Review.reviews.edwp_review - INFO - Total companies selected: 79
+2025-09-11 14:09:08,668 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.17%
+2025-09-11 14:09:08,676 - Review.reviews.edwp_review - INFO - 
+CANP Selection Summary:
+2025-09-11 14:09:08,677 - Review.reviews.edwp_review - INFO - Total companies selected: 74
+2025-09-11 14:09:08,678 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.16%
+2025-09-11 14:09:08,689 - Review.reviews.edwp_review - INFO - 
+Global Selection Summary:
+2025-09-11 14:09:08,690 - Review.reviews.edwp_review - INFO - Total companies selected: 1581
+2025-09-11 14:09:08,692 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.85%
+2025-09-11 14:09:08,695 - Review.reviews.edwp_review - INFO - 
+MIC-level Summary:
+2025-09-11 14:09:08,695 - Review.reviews.edwp_review - INFO -       ISIN          FFMC  EDWP_selection
+MIC                                     
+ALXP     1  9.883261e+08               0
+BATS     1  2.199535e+10               1
+DSME     1  1.942100e+07               0
+FSME     2  4.560935e+08               0
+MERK     2  2.434286e+08               0
+MTAA   242  6.616828e+11              25
+NEOE     1  4.880961e+07               0
+SSME    16  5.302860e+09               0
+WBAH    29  7.279940e+10               8
+XAMS    81  1.180872e+12              18
+XASE     3  7.511585e+09               0
+XASX   896  1.503481e+12              77
+XBRU    64  2.218685e+11              15
+XCSE    98  3.906898e+11              15
+XESM     2  1.791636e+09               0
+XETR   231  1.834892e+12              32
+XHEL   131  2.273515e+11              16
+XHKG   266  5.355683e+11              24
+XLIS    17  4.001595e+10               5
+XLON   832  2.475530e+12              79
+XMAD    97  6.461406e+11              13
+XMSM    13  5.930509e+10               5
+XNCM    34  9.657971e+10               0
+XNGM    61  1.481313e+09               0
+XNGS  2560  2.783051e+13             180
+XNMS    63  1.747475e+11               2
+XNYS  1715  2.615317e+13             364
+XNZE    54  5.751231e+10              15
+XOSL   227  1.836013e+11              40
+XPAR   348  1.965679e+12              30
+XSES   144  3.156131e+11              26
+XSTO   606  7.184752e+11              73
+XSWX   158  1.679296e+12              27
+XTAE   285  2.310484e+11              75
+XTKS  3667  5.319129e+12             342
+XTSE   495  2.317030e+12              74
+2025-09-11 14:09:08,714 - Review.reviews.edwp_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20250911_140908.xlsx
+2025-09-11 14:09:08,800 - Review.reviews.edwp_review - INFO - 
+EDWP Changes Summary:
+2025-09-11 14:09:08,801 - Review.reviews.edwp_review - INFO - Inclusions: 97
+2025-09-11 14:09:08,801 - Review.reviews.edwp_review - INFO - Exclusions: 56
+2025-09-11 14:09:08,824 - Review.reviews.edwp_review - INFO - 
+DEUP Changes Summary:
+2025-09-11 14:09:08,824 - Review.reviews.edwp_review - INFO - Inclusions: 16
+2025-09-11 14:09:08,825 - Review.reviews.edwp_review - INFO - Exclusions: 14
+2025-09-11 14:09:08,839 - Review.reviews.edwp_review - INFO - 
+DEZP Changes Summary:
+2025-09-11 14:09:08,839 - Review.reviews.edwp_review - INFO - Inclusions: 7
+2025-09-11 14:09:08,840 - Review.reviews.edwp_review - INFO - Exclusions: 7
+2025-09-11 14:09:08,864 - Review.reviews.edwp_review - INFO - 
+DAPPR Changes Summary:
+2025-09-11 14:09:08,865 - Review.reviews.edwp_review - INFO - Inclusions: 25
+2025-09-11 14:09:08,865 - Review.reviews.edwp_review - INFO - Exclusions: 10
+2025-09-11 14:09:08,892 - Review.reviews.edwp_review - INFO - 
+DNAP Changes Summary:
+2025-09-11 14:09:08,892 - Review.reviews.edwp_review - INFO - Inclusions: 25
+2025-09-11 14:09:08,892 - Review.reviews.edwp_review - INFO - Exclusions: 17
+2025-09-11 14:09:08,957 - Review.reviews.edwp_review - INFO - 
+DASP Changes Summary:
+2025-09-11 14:09:08,957 - Review.reviews.edwp_review - INFO - Inclusions: 20
+2025-09-11 14:09:08,957 - Review.reviews.edwp_review - INFO - Exclusions: 8
+2025-09-11 14:09:08,968 - Review.reviews.edwp_review - INFO - 
+DPAP Changes Summary:
+2025-09-11 14:09:08,969 - Review.reviews.edwp_review - INFO - Inclusions: 5
+2025-09-11 14:09:08,969 - Review.reviews.edwp_review - INFO - Exclusions: 1
+2025-09-11 14:09:08,992 - Review.reviews.edwp_review - INFO - 
+EUSP Changes Summary:
+2025-09-11 14:09:08,993 - Review.reviews.edwp_review - INFO - Inclusions: 18
+2025-09-11 14:09:08,993 - Review.reviews.edwp_review - INFO - Exclusions: 17
+2025-09-11 14:09:09,014 - Review.reviews.edwp_review - INFO - 
+EJPP Changes Summary:
+2025-09-11 14:09:09,014 - Review.reviews.edwp_review - INFO - Inclusions: 12
+2025-09-11 14:09:09,014 - Review.reviews.edwp_review - INFO - Exclusions: 8
+2025-09-11 14:09:09,023 - Review.reviews.edwp_review - INFO - 
+ECHP Changes Summary:
+2025-09-11 14:09:09,024 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-09-11 14:09:09,024 - Review.reviews.edwp_review - INFO - Exclusions: 3
+2025-09-11 14:09:09,034 - Review.reviews.edwp_review - INFO - 
+EUKP Changes Summary:
+2025-09-11 14:09:09,034 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-09-11 14:09:09,034 - Review.reviews.edwp_review - INFO - Exclusions: 5
+2025-09-11 14:09:09,047 - Review.reviews.edwp_review - INFO - 
+CANP Changes Summary:
+2025-09-11 14:09:09,047 - Review.reviews.edwp_review - INFO - Inclusions: 5
+2025-09-11 14:09:09,047 - Review.reviews.edwp_review - INFO - Exclusions: 1
+2025-09-11 14:09:10,424 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:10] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:12,383 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:12] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:13,407 - Review.reviews.edwp_review - INFO - Saving individual composition file for EDWP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,535 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEUP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,572 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEZP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,596 - Review.reviews.edwp_review - INFO - Saving individual composition file for DAPPR to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPR_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,642 - Review.reviews.edwp_review - INFO - Saving individual composition file for DNAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,685 - Review.reviews.edwp_review - INFO - Saving individual composition file for DASP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,722 - Review.reviews.edwp_review - INFO - Saving individual composition file for DPAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,744 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUSP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,790 - Review.reviews.edwp_review - INFO - Saving individual composition file for EJPP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,837 - Review.reviews.edwp_review - INFO - Saving individual composition file for ECHP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,854 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUKP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,873 - Review.reviews.edwp_review - INFO - Saving individual composition file for CANP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANP_Composition_20250911_140908.xlsx
+2025-09-11 14:09:13,894 - Review.reviews.edwp_review - INFO - Individual composition files saved: 12
+2025-09-11 14:09:13,913 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-09-11 14:09:14,378 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:14] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:16,387 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:16] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:18,397 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:18] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:19,177 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-09-11 14:09:19,179 - Review.reviews.edwpt_review - INFO - Total companies selected: 5401
+2025-09-11 14:09:19,182 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-09-11 14:09:19,214 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-09-11 14:09:19,215 - Review.reviews.edwpt_review - INFO - Total companies selected: 1297
+2025-09-11 14:09:19,216 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.66%
+2025-09-11 14:09:19,241 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-09-11 14:09:19,242 - Review.reviews.edwpt_review - INFO - Total companies selected: 503
+2025-09-11 14:09:19,243 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.47%
+2025-09-11 14:09:19,267 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-09-11 14:09:19,268 - Review.reviews.edwpt_review - INFO - Total companies selected: 1941
+2025-09-11 14:09:19,269 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.11%
+2025-09-11 14:09:19,288 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-09-11 14:09:19,290 - Review.reviews.edwpt_review - INFO - Total companies selected: 1694
+2025-09-11 14:09:19,291 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.17%
+2025-09-11 14:09:19,309 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-09-11 14:09:19,311 - Review.reviews.edwpt_review - INFO - Total companies selected: 1598
+2025-09-11 14:09:19,312 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.09%
+2025-09-11 14:09:19,322 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-09-11 14:09:19,323 - Review.reviews.edwpt_review - INFO - Total companies selected: 332
+2025-09-11 14:09:19,324 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2025-09-11 14:09:19,336 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-09-11 14:09:19,338 - Review.reviews.edwpt_review - INFO - Total companies selected: 1418
+2025-09-11 14:09:19,339 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-09-11 14:09:19,350 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-09-11 14:09:19,351 - Review.reviews.edwpt_review - INFO - Total companies selected: 1413
+2025-09-11 14:09:19,353 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-09-11 14:09:19,360 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-09-11 14:09:19,360 - Review.reviews.edwpt_review - INFO - Total companies selected: 79
+2025-09-11 14:09:19,361 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.06%
+2025-09-11 14:09:19,368 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-09-11 14:09:19,369 - Review.reviews.edwpt_review - INFO - Total companies selected: 279
+2025-09-11 14:09:19,371 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-09-11 14:09:19,378 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-09-11 14:09:19,380 - Review.reviews.edwpt_review - INFO - Total companies selected: 225
+2025-09-11 14:09:19,381 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-09-11 14:09:19,394 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-09-11 14:09:19,395 - Review.reviews.edwpt_review - INFO - Total companies selected: 5401
+2025-09-11 14:09:19,397 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-09-11 14:09:19,400 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-09-11 14:09:19,401 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  9.883261e+08                1
+BATS     1  2.199535e+10                1
+DSME     1  1.942100e+07                0
+FSME     2  4.560935e+08                2
+MERK     2  2.434286e+08                2
+MTAA   242  6.616828e+11               81
+NEOE     1  4.880961e+07                0
+SSME    16  5.302860e+09               14
+WBAH    29  7.279940e+10               19
+XAMS    81  1.180872e+12               47
+XASE     3  7.511585e+09                3
+XASX   896  1.503481e+12              292
+XBRU    64  2.218685e+11               35
+XCSE    98  3.906898e+11               36
+XESM     2  1.791636e+09                2
+XETR   231  1.834892e+12              102
+XHEL   131  2.273515e+11               49
+XHKG   266  5.355683e+11               85
+XLIS    17  4.001595e+10               12
+XLON   832  2.475530e+12              279
+XMAD    97  6.461406e+11               43
+XMSM    13  5.930509e+10               10
+XNCM    34  9.657971e+10               30
+XNGM    61  1.481313e+09                4
+XNGS  2560  2.783051e+13              672
+XNMS    63  1.747475e+11               60
+XNYS  1715  2.615317e+13             1093
+XNZE    54  5.751231e+10               36
+XOSL   227  1.836013e+11              112
+XPAR   348  1.965679e+12               94
+XSES   144  3.156131e+11               75
+XSTO   606  7.184752e+11              209
+XSWX   158  1.679296e+12               93
+XTAE   285  2.310484e+11              170
+XTKS  3667  5.319129e+12             1413
+XTSE   495  2.317030e+12              225
+2025-09-11 14:09:19,434 - Review.reviews.edwpt_review - INFO - Saving main output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250911_140919.xlsx
+2025-09-11 14:09:19,705 - Review.reviews.edwpt_review - INFO - 
+EDWPT Changes Summary:
+2025-09-11 14:09:19,706 - Review.reviews.edwpt_review - INFO - Inclusions: 267
+2025-09-11 14:09:19,706 - Review.reviews.edwpt_review - INFO - Exclusions: 121
+2025-09-11 14:09:19,763 - Review.reviews.edwpt_review - INFO - 
+DEUPT Changes Summary:
+2025-09-11 14:09:19,763 - Review.reviews.edwpt_review - INFO - Inclusions: 58
+2025-09-11 14:09:19,763 - Review.reviews.edwpt_review - INFO - Exclusions: 38
+2025-09-11 14:09:19,789 - Review.reviews.edwpt_review - INFO - 
+DEZPT Changes Summary:
+2025-09-11 14:09:19,790 - Review.reviews.edwpt_review - INFO - Inclusions: 22
+2025-09-11 14:09:19,790 - Review.reviews.edwpt_review - INFO - Exclusions: 15
+2025-09-11 14:09:19,867 - Review.reviews.edwpt_review - INFO - 
+DAPPT Changes Summary:
+2025-09-11 14:09:19,867 - Review.reviews.edwpt_review - INFO - Inclusions: 89
+2025-09-11 14:09:19,868 - Review.reviews.edwpt_review - INFO - Exclusions: 40
+2025-09-11 14:09:19,945 - Review.reviews.edwpt_review - INFO - 
+DNAPT Changes Summary:
+2025-09-11 14:09:19,946 - Review.reviews.edwpt_review - INFO - Inclusions: 89
+2025-09-11 14:09:19,946 - Review.reviews.edwpt_review - INFO - Exclusions: 32
+2025-09-11 14:09:20,012 - Review.reviews.edwpt_review - INFO - 
+DASPT Changes Summary:
+2025-09-11 14:09:20,014 - Review.reviews.edwpt_review - INFO - Inclusions: 74
+2025-09-11 14:09:20,014 - Review.reviews.edwpt_review - INFO - Exclusions: 28
+2025-09-11 14:09:20,042 - Review.reviews.edwpt_review - INFO - 
+DPAPT Changes Summary:
+2025-09-11 14:09:20,042 - Review.reviews.edwpt_review - INFO - Inclusions: 26
+2025-09-11 14:09:20,042 - Review.reviews.edwpt_review - INFO - Exclusions: 8
+2025-09-11 14:09:20,127 - Review.reviews.edwpt_review - INFO - 
+EUSPT Changes Summary:
+2025-09-11 14:09:20,127 - Review.reviews.edwpt_review - INFO - Inclusions: 75
+2025-09-11 14:09:20,128 - Review.reviews.edwpt_review - INFO - Exclusions: 38
+2025-09-11 14:09:20,249 - Review.reviews.edwpt_review - INFO - 
+EJPPT Changes Summary:
+2025-09-11 14:09:20,249 - Review.reviews.edwpt_review - INFO - Inclusions: 46
+2025-09-11 14:09:20,249 - Review.reviews.edwpt_review - INFO - Exclusions: 27
+2025-09-11 14:09:20,261 - Review.reviews.edwpt_review - INFO - 
+ECHPT Changes Summary:
+2025-09-11 14:09:20,261 - Review.reviews.edwpt_review - INFO - Inclusions: 1
+2025-09-11 14:09:20,261 - Review.reviews.edwpt_review - INFO - Exclusions: 1
+2025-09-11 14:09:20,286 - Review.reviews.edwpt_review - INFO - 
+EUKPT Changes Summary:
+2025-09-11 14:09:20,286 - Review.reviews.edwpt_review - INFO - Inclusions: 12
+2025-09-11 14:09:20,287 - Review.reviews.edwpt_review - INFO - Exclusions: 13
+2025-09-11 14:09:20,312 - Review.reviews.edwpt_review - INFO - 
+CANPT Changes Summary:
+2025-09-11 14:09:20,312 - Review.reviews.edwpt_review - INFO - Inclusions: 14
+2025-09-11 14:09:20,312 - Review.reviews.edwpt_review - INFO - Exclusions: 2
+2025-09-11 14:09:20,514 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:20] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:22,449 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:22] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:24,391 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:24] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:25,233 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EDWPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:25,561 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEUPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:25,650 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEZPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:25,692 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DAPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:25,814 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DNAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:25,962 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DASPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,062 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DPAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,094 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUSPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,207 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EJPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,311 - Review.reviews.edwpt_review - INFO - Saving individual composition file for ECHPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,331 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUKPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,363 - Review.reviews.edwpt_review - INFO - Saving individual composition file for CANPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANPT_Composition_20250911_140919.xlsx
+2025-09-11 14:09:26,378 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:26] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:09:26,394 - Review.reviews.edwpt_review - INFO - Main file successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250911_140919.xlsx
+2025-09-11 14:09:26,395 - Review.reviews.edwpt_review - INFO - Individual composition files saved: 12
+2025-09-11 14:09:28,378 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 14:09:28] "GET /task-status/a3521e5e-49f8-4e3a-b971-ecbc7f174345 HTTP/1.1" 200 -
+2025-09-11 14:13:13,635 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare_eia_files.py', reloading
