@@ -1,0 +1,6 @@
+2025-09-12 14:42:41,310 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 14:42:41,313 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 14:42:41,349 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:42:41] "GET /task-status/b8ba52c1-6fa6-421a-ae96-cf9a40304c16 HTTP/1.1" 200 -
+2025-09-12 14:43:51,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 14:43:51,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 14:43:51,937 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading

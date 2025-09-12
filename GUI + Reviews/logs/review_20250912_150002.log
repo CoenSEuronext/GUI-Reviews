@@ -1,0 +1,23 @@
+2025-09-12 15:00:02,848 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 15:00:02,850 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 15:00:02,876 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:02] "GET /task-status/e642344f-c5b4-4a4e-b63b-a02ffa449bbd HTTP/1.1" 200 -
+2025-09-12 15:00:03,434 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:03] "POST /calculate HTTP/1.1" 200 -
+2025-09-12 15:00:03,435 - Review.reviews.euadp_review - INFO - Loading EOD data...
+2025-09-12 15:00:03,441 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:03] "GET /task-status/cd837488-7d0c-49d3-8a9c-fbb9c07145b1 HTTP/1.1" 200 -
+2025-09-12 15:00:04,176 - Review.reviews.euadp_review - INFO - Loading reference data...
+2025-09-12 15:00:05,453 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:05] "GET /task-status/cd837488-7d0c-49d3-8a9c-fbb9c07145b1 HTTP/1.1" 200 -
+2025-09-12 15:00:07,461 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:07] "GET /task-status/cd837488-7d0c-49d3-8a9c-fbb9c07145b1 HTTP/1.1" 200 -
+2025-09-12 15:00:09,447 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:09] "GET /task-status/cd837488-7d0c-49d3-8a9c-fbb9c07145b1 HTTP/1.1" 200 -
+2025-09-12 15:00:11,458 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:11] "GET /task-status/cd837488-7d0c-49d3-8a9c-fbb9c07145b1 HTTP/1.1" 200 -
+2025-09-12 15:00:12,394 - Review.reviews.euadp_review - INFO - Calculating initial weights...
+2025-09-12 15:00:12,395 - Review.reviews.euadp_review - INFO - Total FFMC of non-excluded companies: €532,038,682,679
+2025-09-12 15:00:12,395 - Review.reviews.euadp_review - INFO - Applying weight capping...
+2025-09-12 15:00:12,422 - Review.reviews.euadp_review - INFO - Total capped weights sum: 1.000000
+2025-09-12 15:00:12,424 - Review.reviews.euadp_review - INFO - Selected top 50 companies with total weight: 1.000000
+2025-09-12 15:00:12,428 - Review.reviews.euadp_review - INFO - Performing inclusion/exclusion analysis...
+2025-09-12 15:00:12,431 - Review.reviews.euadp_review - INFO - Saving EUADP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUADP_df_20250912_150012.xlsx
+2025-09-12 15:00:12,742 - Review.reviews.euadp_review - INFO - EUADP review completed successfully
+2025-09-12 15:00:13,452 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 15:00:13] "GET /task-status/cd837488-7d0c-49d3-8a9c-fbb9c07145b1 HTTP/1.1" 200 -
+2025-09-12 15:01:03,542 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 15:01:03,542 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 15:01:03,547 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading

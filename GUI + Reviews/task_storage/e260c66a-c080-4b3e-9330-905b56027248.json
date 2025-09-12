@@ -1,0 +1,24 @@
+{
+  "task_id": "e260c66a-c080-4b3e-9330-905b56027248",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-09-12T14:47:03.288489",
+  "started_at": "2025-09-12T14:47:03.291490",
+  "completed_at": "2025-09-12T14:47:14.288138",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "EUADP",
+  "parameters": {
+    "date": "20250617",
+    "co_date": "20250523",
+    "effective_date": "23-Jun-25",
+    "index": "EUADP",
+    "isin": "NLIX00005818",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

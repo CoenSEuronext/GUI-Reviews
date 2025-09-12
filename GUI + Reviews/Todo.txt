@@ -27,3 +27,7 @@ LC1EP
 LC3WP
 SBF80
 AERDP
+
+Modularize the date in the folders of the Compare files
+
+Insert the correct Fx/Index Ccy fetch in all reviews.

@@ -4,7 +4,7 @@ import socket
 import traceback
 from datetime import datetime
 from config import get_index_config
-from task_manager import task_manager
+from enhanced_task_manager import task_manager
 
 # Initialize configurations once at startup
 try:

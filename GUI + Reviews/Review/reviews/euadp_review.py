@@ -7,11 +7,13 @@ from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
 from utils.inclusion_exclusion import inclusion_exclusion_analysis
+from utils.capping_standard import calculate_capped_weights
+
 
 logger = setup_logging(__name__)
 
 def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL0012949143", 
-                   area="US", area2="EU", type="STOCK", universe="DEUPT", 
+                   area="US", area2="EU", type="STOCK", universe="deupt", 
                    feed="Reuters", currency="EUR", year=None):
 
     try:
@@ -39,8 +41,8 @@ def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL00129
         symbols_filtered = stock_eod_df[
             stock_eod_df['#Symbol'].str.len() < 12
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
-        selection_df['Capping Factor'] = 1
         selection_df['Effective Date of Review'] = effective_date
+        
         # Chain all data preparation operations
         selection_df = (ref_data[universe]
            # Initial renaming
@@ -59,7 +61,7 @@ def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL00129
             .drop('Isin Code', axis=1)
             # Merge FX data
             .merge(
-                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
                 on='#Symbol',
                 how='left'
             )
@@ -87,167 +89,122 @@ def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL00129
             .drop('ISIN Code:', axis=1)
             # Merge Oekom Opinion data
             .merge(
-                oekom_score_df[['ISIN', 'Opinion', 'New Sustainability Score']].drop_duplicates(subset='ISIN', keep='first'),
+                icb_df[['ISIN Code', 'Subsector Code']].drop_duplicates(subset='ISIN Code', keep='first'),
                 left_on='ISIN code',
-                right_on='ISIN',
+                right_on='ISIN Code',
                 how='left'
             )
-            .drop('ISIN', axis=1)
+            .drop('ISIN Code', axis=1)
         )
 
         # Validate data loading
         if any(df is None for df in [selection_df]):
             raise ValueError("Failed to load one or more required reference data files")
+        
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
         
         # Use the merged Free Float Round value, fallback to original Free Float if not available
-        selection_df["Free Float"] = selection_df["Free Float Round:"]
-        selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Price']
+        selection_df["Free Float"] = selection_df["Free Float Round:"].fillna(selection_df.get("Free Float", 0))
+        selection_df['FFMC'] = selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Price (EUR) ']
+        selection_df['FFMC_CO'] = selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Close Prc_CO'] * selection_df['FX/Index Ccy']
+        selection_df['FFMC_EOD'] = selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Close Prc_EOD'] * selection_df['FX/Index Ccy']
         
         # Add exclusion filters with separate columns
-        selection_df['FFMC_Exclusion'] = selection_df['FFMC'] < 3000000000  # Below €3B
-        selection_df['Turnover_Exclusion'] = selection_df['100 days aver. turn EUR'] < 22000000  # Below €22M
-        selection_df['Opinion_Exclusion'] = selection_df['Opinion'].isin(['negative', 'risk'])  # Opinion is negative or risk
+        selection_df['FFMC_Exclusion'] = selection_df['FFMC'] < 2000000000  # Below €2B
+        selection_df['Turnover_Exclusion'] = selection_df['3M AVG Turnover EUR'] < 1000000  # Below €1M
+        selection_df['ICB_Exclusion'] = selection_df['Subsector Code'].astype(str).str[:6] != '502010'
+        
+        # Create combined exclusion flag
+        selection_df['Is_Excluded'] = (selection_df['FFMC_Exclusion'] | 
+                                     selection_df['Turnover_Exclusion'] | 
+                                     selection_df['ICB_Exclusion'])
         
         # Create individual exclusion reason columns
         selection_df['FFMC_Exclusion_Reason'] = selection_df['FFMC_Exclusion'].apply(
-            lambda x: 'Excluded: FFMC < €3B' if x else ''
+            lambda x: 'Excluded: FFMC < €2B' if x else ''
         )
         selection_df['Turnover_Exclusion_Reason'] = selection_df['Turnover_Exclusion'].apply(
-            lambda x: 'Excluded: 100 days avg turnover < €22M' if x else ''
+            lambda x: 'Excluded: 100 days avg turnover < €1M' if x else ''
         )
-        selection_df['Opinion_Exclusion_Reason'] = selection_df['Opinion_Exclusion'].apply(
-            lambda x: 'Excluded: Opinion negative/risk' if x else ''
+        selection_df['ICB_Exclusion_Reason'] = selection_df['ICB_Exclusion'].apply(
+            lambda x: 'Excluded: ICB Subsector Code not 502010' if x else ''
         )
-        
         # Create summary exclusion reason column
         selection_df['All_Exclusion_Reasons'] = selection_df.apply(
             lambda row: '; '.join(filter(None, [
                 row['FFMC_Exclusion_Reason'], 
-                row['Turnover_Exclusion_Reason'], 
-                row['Opinion_Exclusion_Reason']
+                row['Turnover_Exclusion_Reason'],
+                row['ICB_Exclusion_Reason']
             ])),
             axis=1
         )
-        selection_df = selection_df.drop(columns=['FFMC_Exclusion'])
-        selection_df = selection_df.drop(columns=['Turnover_Exclusion'])
-        selection_df = selection_df.drop(columns=['Opinion_Exclusion'])
         
-        # FIXED RANKING LOGIC
-        # Handle missing values before ranking to avoid issues
-        selection_df['New Sustainability Score'] = pd.to_numeric(selection_df['New Sustainability Score'], errors='coerce')
-        selection_df['FFMC'] = pd.to_numeric(selection_df['FFMC'], errors='coerce')
+        # Clean up temporary exclusion columns
+        selection_df = selection_df.drop(columns=['FFMC_Exclusion', 'Turnover_Exclusion', 'ICB_Exclusion'])
         
-# Fill NaN values with very low values so they rank last
-        selection_df['New Sustainability Score'] = selection_df['New Sustainability Score'].fillna(-999999)
-        selection_df['FFMC'] = selection_df['FFMC'].fillna(-999999)
+        # Calculate initial weights for non-excluded companies
+        logger.info("Calculating initial weights...")
+        non_excluded_df = selection_df[~selection_df['Is_Excluded']].copy()
         
-        # Add ranking columns for all companies - FIXED VERSION
-        # Sort by Sustainability Score descending (higher is better), then by FFMC descending (higher is better)
-        selection_df_sorted = selection_df.sort_values(
-            ['New Sustainability Score', 'FFMC'], 
-            ascending=[False, False]  # Both False means higher values get rank 1, 2, 3...
-        ).reset_index(drop=True)
+        if len(non_excluded_df) == 0:
+            raise ValueError("No companies remaining after applying exclusion criteria")
         
-        # Use pandas rank method for more robust ranking (handles ties properly)
-        selection_df['Overall_Ranking'] = selection_df[['New Sustainability Score', 'FFMC']].apply(
-            lambda x: (-x['New Sustainability Score'], -x['FFMC']), axis=1
-        ).rank(method='min').astype(int)
+        # Calculate total FFMC of non-excluded companies
+        total_ffmc_non_excluded = non_excluded_df['FFMC_EOD'].sum()
+        logger.info(f"Total FFMC of non-excluded companies: €{total_ffmc_non_excluded:,.0f}")
         
-        # Alternative more explicit approach using sort_values and reset_index
-        temp_df = selection_df.copy()
-        temp_df = temp_df.sort_values(['New Sustainability Score', 'FFMC'], ascending=[False, False])
-        temp_df['Overall_Ranking_Alt'] = range(1, len(temp_df) + 1)
+        # Calculate initial weights (FFMC / Total FFMC)
+        initial_weights = non_excluded_df['FFMC_EOD'] / total_ffmc_non_excluded
         
-        # Merge back the alternative ranking for verification
-        selection_df = selection_df.merge(
-            temp_df[['ISIN code', 'Overall_Ranking_Alt']],
-            on='ISIN code',
-            how='left'
-        )
+        # Apply capping to weights
+        logger.info("Applying weight capping...")
+        capped_weights = calculate_capped_weights(initial_weights, cap_limit=0.1)
         
-        # Use the alternative ranking as the main one (more reliable)
-        selection_df['Overall_Ranking'] = selection_df['Overall_Ranking_Alt']
-        selection_df = selection_df.drop(columns=['Overall_Ranking_Alt'])
+        # Calculate capping factors for non-excluded companies
+        capping_factors = capped_weights / initial_weights
         
-        # Add ranking columns for eligible companies only - FIXED VERSION
-        eligible_companies = selection_df[selection_df['All_Exclusion_Reasons'] == ''].copy()
+        # Verify weights sum to 1
+        total_capped_weight = capped_weights.sum()
+        logger.info(f"Total capped weights sum: {total_capped_weight:.6f}")
         
-        if len(eligible_companies) > 0:
-            # Sort eligible companies properly
-            eligible_sorted = eligible_companies.sort_values(
-                ['New Sustainability Score', 'FFMC'], 
-                ascending=[False, False]
-            ).reset_index(drop=True)
-            eligible_sorted['Eligible_Ranking'] = range(1, len(eligible_sorted) + 1)
-            
-            # Merge the eligible ranking back to the original dataframe
-            selection_df = selection_df.merge(
-                eligible_sorted[['ISIN code', 'Eligible_Ranking']],
-                on='ISIN code',
-                how='left'
-            )
-        else:
-            selection_df['Eligible_Ranking'] = np.nan
+        if abs(total_capped_weight - 1.0) > 1e-6:
+            logger.warning(f"Capped weights do not sum to 1.0: {total_capped_weight}")
         
-        # Log ranking validation info
-        logger.info("Ranking validation:")
-        top_10_overall = selection_df.nsmallest(10, 'Overall_Ranking')[['Company', 'New Sustainability Score', 'FFMC', 'Overall_Ranking', 'All_Exclusion_Reasons']]
-        logger.info(f"Top 10 companies by overall ranking:\n{top_10_overall.to_string()}")
+        # Initialize weight columns for all companies in selection_df
+        selection_df['Initial_Weight'] = 0.0
+        selection_df['Capped_Weight'] = 0.0
+        selection_df['Capping_Factor'] = 0.0
         
-        if len(eligible_companies) > 0:
-            top_10_eligible = selection_df[selection_df['All_Exclusion_Reasons'] == ''].nsmallest(10, 'Eligible_Ranking')[['Company', 'New Sustainability Score', 'FFMC', 'Eligible_Ranking']]
-            logger.info(f"Top 10 eligible companies:\n{top_10_eligible.to_string()}")
+        # Set weights for non-excluded companies
+        non_excluded_mask = ~selection_df['Is_Excluded']
+        selection_df.loc[non_excluded_mask, 'Initial_Weight'] = initial_weights
+        selection_df.loc[non_excluded_mask, 'Capped_Weight'] = capped_weights
+        selection_df.loc[non_excluded_mask, 'Capping_Factor'] = capping_factors
         
-        # Log exclusion statistics
-        initial_count = len(selection_df)
-        excluded_count = len(selection_df[selection_df['All_Exclusion_Reasons'] != ''])
-        eligible_count = initial_count - excluded_count
+        # Calculate Final_Capping = Capping_Factor / max(Capping_Factor)
+        max_capping_factor = selection_df['Capping_Factor'].max()
+        selection_df['Final_Capping'] = (selection_df['Capping_Factor'] / max_capping_factor).round(14) if max_capping_factor > 0 else 0
         
-        logger.info(f"Total universe: {initial_count} companies")
-        logger.info(f"Total excluded: {excluded_count} companies")
-        logger.info(f"Eligible for selection: {eligible_count} companies")
-                
-        # Filter only eligible companies for top selection
-        eligible_df = selection_df[selection_df['All_Exclusion_Reasons'] == ''].copy()
+        # Get top 50 companies by capped weight
+        top_50_df = selection_df[~selection_df['Is_Excluded']].nlargest(50, 'Capped_Weight').copy()
         
-        # Select top 50 companies using the eligible ranking
-        top_n = 50
-        logger.info(f"Selecting top {top_n} companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...")
+        logger.info(f"Selected top 50 companies")
         
-        if len(eligible_df) >= top_n:
-            top_50_eligible = eligible_df.nsmallest(top_n, 'Eligible_Ranking').copy()
-        else:
-            logger.warning(f"Only {len(eligible_df)} eligible companies available, selecting all of them instead of {top_n}")
-            top_50_eligible = eligible_df.copy()
-        
-        companies_51_150 = top_50_eligible.copy()
-        # Create top_50_df by merging back with full selection_df to preserve all columns including exclusion info
-        top_50_df = selection_df[selection_df['ISIN code'].isin(companies_51_150['ISIN code'])].copy()
-        
-        # Calculate the target market cap per company (equal weighting)
-        target_mcap_per_company = index_mcap / len(top_50_df)  # Use actual number of selected companies
-        top_50_df['Unrounded NOSH'] = target_mcap_per_company / top_50_df['Close Prc_EOD']
-        top_50_df['Rounded NOSH'] = top_50_df['Unrounded NOSH'].round()
-        top_50_df['Free Float'] = 1
-        top_50_df['Effective Date of Review'] = effective_date
-        top_50_df['Currency'] = currency
-        selection_df['Unrounded NOSH'] = target_mcap_per_company / selection_df['Close Prc_EOD']
-        
-        # Prepare EUADP DataFrame
+        # Prepare EUADP DataFrame from selection_df (top 50 non-excluded companies)
         EUADP_df = (
             top_50_df[
-                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
-                'Effective Date of Review', 'Currency']
+                ['Company', 'ISIN code', 'MIC', 'Number of Shares', 'Free Float', 'Final_Capping', 
+                'Effective Date of Review', 'Currency (Local)']
             ]
-            .rename(columns={'Rounded NOSH': 'Number of Shares'})
-            .rename(columns={'ISIN code': 'ISIN Code'})
+            .rename(columns={'ISIN code': 'ISIN Code', 'Final_Capping': 'Capping Factor', 'Currency (Local)': 'Currency'})
             .sort_values('Company')
+            .reset_index(drop=True)
         )
 
         # Perform Inclusion/Exclusion Analysis
+        logger.info("Performing inclusion/exclusion analysis...")
         analysis_results = inclusion_exclusion_analysis(
-            top_50_df, 
+            selection_df, 
             stock_eod_df, 
             index, 
             isin_column='ISIN code'
@@ -273,10 +230,17 @@ def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL00129
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
                 pd.DataFrame({'Index Market Cap': [index_mcap]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
 
+            logger.info("EUADP review completed successfully")
             return {
                 "status": "success",
                 "message": "Review completed successfully",
-                "data": {"euadp_path": euadp_path}
+                "data": {
+                    "euadp_path": euadp_path,
+                    "total_companies": len(selection_df),
+                    "non_excluded_companies": len(non_excluded_df),
+                    "top_50_companies": len(top_50_df),
+                    "total_ffmc": total_ffmc_non_excluded
+                }
             }
            
         except Exception as e:

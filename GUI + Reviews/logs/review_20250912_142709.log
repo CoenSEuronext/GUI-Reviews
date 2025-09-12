@@ -1,0 +1,12 @@
+2025-09-12 14:27:09,727 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 14:27:09,729 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 14:27:09,755 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:09] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:11,137 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:11] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:13,139 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:13] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:15,141 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:15] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:17,148 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:17] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:19,140 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:19] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:21,139 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:21] "[33mGET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1[0m" 404 -
+2025-09-12 14:27:22,751 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:22] "GET / HTTP/1.1" 200 -
+2025-09-12 14:27:22,787 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:22] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-12 14:29:03,343 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\batch_processor.py', reloading

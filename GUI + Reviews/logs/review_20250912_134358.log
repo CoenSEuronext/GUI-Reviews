@@ -1,0 +1,13 @@
+2025-09-12 13:43:58,633 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 13:43:58,634 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 13:43:58,664 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:43:58] "[33mGET /task-status/45233b15-7b88-4e84-bb8d-449346130957 HTTP/1.1[0m" 404 -
+2025-09-12 13:44:00,044 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:44:00] "[33mGET /task-status/45233b15-7b88-4e84-bb8d-449346130957 HTTP/1.1[0m" 404 -
+2025-09-12 13:44:02,043 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:44:02] "[33mGET /task-status/45233b15-7b88-4e84-bb8d-449346130957 HTTP/1.1[0m" 404 -
+2025-09-12 13:44:04,045 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:44:04] "[33mGET /task-status/45233b15-7b88-4e84-bb8d-449346130957 HTTP/1.1[0m" 404 -
+2025-09-12 13:44:06,044 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:44:06] "[33mGET /task-status/45233b15-7b88-4e84-bb8d-449346130957 HTTP/1.1[0m" 404 -
+2025-09-12 13:44:06,066 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:44:06] "GET / HTTP/1.1" 200 -
+2025-09-12 13:44:06,106 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:44:06] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-12 13:53:16,694 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 13:53:16,696 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 13:53:16,698 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 13:53:16,700 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
