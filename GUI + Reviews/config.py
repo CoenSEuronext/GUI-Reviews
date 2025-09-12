@@ -230,6 +230,11 @@ INDEX_CONFIGS = {
         "index": "EEFAP",
         "isin": "NLIX00008051",
         "output_key": "eefap_path"
+    },
+    "EES2": {
+        "index": "EES2",
+        "isin": "NLIX00007053",
+        "output_key": "ees2_path"
     }
     # Add new indices here following the same pattern
 }
