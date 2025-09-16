@@ -1,0 +1,24 @@
+{
+  "task_id": "b4813167-2783-41eb-8f97-347c900b4752",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-09-16T20:00:12.297150",
+  "started_at": "2025-09-16T20:00:12.297150",
+  "completed_at": "2025-09-16T20:00:15.404141",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'MIC'",
+  "error": "Error during review calculation: 'MIC'",
+  "result_data": null,
+  "review_type": "BNEW",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "BNEW",
+    "isin": "NL0011376116",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 3.104056
+}

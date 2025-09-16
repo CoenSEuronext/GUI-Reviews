@@ -1,0 +1,24 @@
+2025-09-16 20:03:52,681 - werkzeug - WARNING -  * Debugger is active!
+2025-09-16 20:03:52,681 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-16 20:03:54,586 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 20:03:54] "POST /calculate HTTP/1.1" 200 -
+2025-09-16 20:03:54,596 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-09-16 20:03:54,597 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 20:03:54] "GET /task-status/84f76b66-b53a-421b-9c62-c50f97dda6dc HTTP/1.1" 200 -
+2025-09-16 20:03:56,613 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 20:03:56] "GET /task-status/84f76b66-b53a-421b-9c62-c50f97dda6dc HTTP/1.1" 200 -
+2025-09-16 20:03:56,963 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-09-16 20:03:58,296 - Review.reviews.bnew_review - ERROR - Error during review calculation: "['Currency'] not in index"
+2025-09-16 20:03:58,312 - Review.reviews.bnew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\bnew_review.py", line 136, in run_bnew_review
+    BNEW_df = selection_df[
+              ^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency'] not in index"
+
+2025-09-16 20:03:58,615 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 20:03:58] "GET /task-status/84f76b66-b53a-421b-9c62-c50f97dda6dc HTTP/1.1" 200 -
+2025-09-16 20:04:05,824 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-09-16 20:04:05,824 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
