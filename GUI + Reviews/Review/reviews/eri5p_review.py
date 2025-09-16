@@ -59,7 +59,7 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
             .drop('Isin Code', axis=1)
             # Merge FX data
             .merge(
-                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
                 on='#Symbol',
                 how='left'
             )

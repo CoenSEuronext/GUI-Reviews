@@ -353,13 +353,28 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
             
             return current_weights
 
-        # Function to process individual sectorial index - FIXED VERSION
-        def process_sectorial_index(index_code, index_info):
+        # Modify the process_sectorial_index function to include the appropriate DLF DataFrame
+
+        def process_sectorial_index(index_code, index_info, na500_dlf, transatlantic_dlf, ez300_dlf):
             """Process a single sectorial index with CORRECTED weight calculation"""
             try:
                 isin = index_info['isincode']
                 universe_df = index_info['starting_universe']
                 industry_code = index_info['industry_code']
+                
+                # Determine which DLF to use based on the starting universe
+                if universe_df is na500_selection_df:
+                    dlf_df = na500_dlf
+                    dlf_name = "NA500_DLF"
+                elif universe_df is transatlantic_selection_df:
+                    dlf_df = transatlantic_dlf
+                    dlf_name = "Transatlantic_DLF"
+                elif universe_df is ez300_selection_df:
+                    dlf_df = ez300_dlf
+                    dlf_name = "EZ300_DLF"
+                else:
+                    dlf_df = None
+                    dlf_name = "Unknown_DLF"
                 
                 # Get index market cap (for reference/logging only)
                 index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
@@ -401,6 +416,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
 
                 logger.info(f"Scaled capping factors for {index_code} (max factor was {max_capping_factor:.6f})")
                 logger.info(f"Capping factors now range from {selection_df['Capping Factor'].min():.6f} to {selection_df['Capping Factor'].max():.6f}")
+                
                 # Log capping results
                 capped_companies = selection_df[selection_df['Capped Weight'] < selection_df['Weight'] * 0.9999]
                 boosted_companies = selection_df[selection_df['Capped Weight'] > selection_df['Weight'] * 1.0001]
@@ -461,30 +477,33 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     'composition_df': sectorial_df,
                     'selection_df': selection_df,
                     'inclusion_df': analysis_results['inclusion_df'],
-                    'exclusion_df': analysis_results['exclusion_df']
+                    'exclusion_df': analysis_results['exclusion_df'],
+                    'dlf_df': dlf_df,  # Add the appropriate DLF DataFrame
+                    'dlf_name': dlf_name  # Add the DLF name for sheet naming
                 }
                 
             except Exception as e:
                 logger.error(f"Error processing {index_code}: {str(e)}")
                 return None
 
-        # Process all sectorial indices
+        # Modify the main processing loop to pass the DLF DataFrames
         logger.info("Processing all 30 sectorial indices...")
         all_results = {}
-        
+
         for index_code, index_info in sectorial_indices.items():
             logger.info(f"Processing {index_code}...")
-            result = process_sectorial_index(index_code, index_info)
+            result = process_sectorial_index(index_code, index_info, 
+                                        na500_selection_df, transatlantic_selection_df, ez300_selection_df)
             if result:
                 all_results[index_code] = result
             else:
                 logger.warning(f"Failed to process {index_code}")
 
-        # Save all results to Excel files
+        # Modify the Excel saving section to include DLF DataFrames
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
             os.makedirs(output_dir, exist_ok=True)
-           
+        
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             
@@ -500,16 +519,22 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     result['exclusion_df'].to_excel(writer, sheet_name='Exclusion', index=False)
                     result['selection_df'].to_excel(writer, sheet_name='Full Universe', index=False)
                     
+                    # Add the appropriate DLF DataFrame
+                    if result['dlf_df'] is not None:
+                        result['dlf_df'].to_excel(writer, sheet_name=result['dlf_name'], index=False)
+                        logger.info(f"Added {result['dlf_name']} sheet to {index_code}")
+                    
                     # Enhanced index info sheet with coverage metrics
                     index_info_df = pd.DataFrame({
-                        'Metric': ['Index Market Cap', 'Selected Companies Market Cap', 'Coverage Ratio', 'Number of Companies'],
-                        'Value': [result['index_mcap'], result['selected_mcap'], result['coverage_ratio'], len(result['composition_df'])]
+                        'Metric': ['Index Market Cap', 'Selected Companies Market Cap', 'Coverage Ratio', 'Number of Companies', 'DLF Universe'],
+                        'Value': [result['index_mcap'], result['selected_mcap'], result['coverage_ratio'], 
+                                len(result['composition_df']), result['dlf_name']]
                     })
                     index_info_df.to_excel(writer, sheet_name='Index Info', index=False)
                 
                 saved_files.append(file_path)
             
-            # Create summary file with all indices
+            # Create summary file with all indices (modified to include DLF info)
             summary_path = os.path.join(output_dir, f'All_Sectorial_Summary_{timestamp}.xlsx')
             logger.info(f"Creating summary file: {summary_path}")
             
@@ -520,6 +545,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     summary_data.append({
                         'Index Code': index_code,
                         'ISIN': result['isin'],
+                        'DLF Universe': result['dlf_name'],
                         'Index Market Cap': result['index_mcap'],
                         'Selected Market Cap': result['selected_mcap'],
                         'Coverage Ratio': result['coverage_ratio'],
@@ -529,7 +555,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 summary_df = pd.DataFrame(summary_data)
                 summary_df.to_excel(writer, sheet_name='Summary', index=False)
                 
-                # Add individual composition sheets (limited to first 10 due to Excel sheet limits)
+                # Add individual composition sheets (limited to first 35 due to Excel sheet limits)
                 for i, (index_code, result) in enumerate(all_results.items()):
                     if i < 35:  # Excel has a limit on number of sheets
                         result['composition_df'].to_excel(writer, sheet_name=f'{index_code}_Comp', index=False)
@@ -543,7 +569,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     "processed_indices": list(all_results.keys())
                 }
             }
-           
+        
         except Exception as e:
             error_msg = f"Error saving output files: {str(e)}"
             logger.error(error_msg)

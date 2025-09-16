@@ -48,6 +48,7 @@ from .reviews.elecp_review import run_elecp_review
 from .reviews.euadp_review import run_euadp_review
 from .reviews.eefap_review import run_eefap_review
 from .reviews.ees2_review import run_ees2_review
+from .reviews.efesp_review import run_efesp_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -99,7 +100,8 @@ REVIEW_FUNCTIONS = {
     "ELECP": run_elecp_review,
     "EUADP": run_euadp_review,
     "EEFAP": run_eefap_review,
-    "EES2": run_ees2_review
+    "EES2": run_ees2_review,
+    "EFESP": run_efesp_review
 }
 
 def run_review(review_type, **kwargs):

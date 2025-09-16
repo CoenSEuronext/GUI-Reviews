@@ -410,10 +410,9 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
             ).drop('ISIN', axis=1)
             
             # Companies with layoff_score_3m > 0
-            universe_df[f'exclusion_{exclusion_count}'] = None
             universe_df[f'exclusion_{exclusion_count}'] = np.where(
-                (universe_df['layoff_score_3m'] > 0),
-                'exclude_layoffs',
+                (universe_df['layoff_score_3m'] > 0) | (universe_df['layoff_score_3m'].isna()),
+                'exclude_layoffs_or_missing_score',
                 None
             )
             exclusion_count += 1

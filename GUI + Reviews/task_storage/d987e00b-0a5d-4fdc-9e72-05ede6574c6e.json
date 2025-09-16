@@ -1,0 +1,24 @@
+{
+  "task_id": "d987e00b-0a5d-4fdc-9e72-05ede6574c6e",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-09-16T10:28:40.628104",
+  "started_at": "2025-09-16T10:28:40.628104",
+  "completed_at": "2025-09-16T10:28:51.021710",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: \"['Currency'] not in index\"",
+  "error": "Error during review calculation: \"['Currency'] not in index\"",
+  "result_data": null,
+  "review_type": "EUS5P",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EUS5P",
+    "isin": "NL0013216468",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 10.393606
+}

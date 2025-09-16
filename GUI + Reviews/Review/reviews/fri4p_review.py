@@ -302,8 +302,16 @@ def run_fri4p_review(date, co_date, effective_date, index="FRI4P", isin="FRIX000
             developed_market_df[exclusion_columns].isna().all(axis=1)
         ].copy()
         
+        # Deduplicate sesamm_df before merging to prevent duplicate rows
+        sesamm_df_clean = sesamm_df[['ISIN', 'Job_score_3Y']].drop_duplicates(subset=['ISIN'], keep='first')
+        
+        # Log the deduplication results
+        logger.info(f"sesamm_df: {len(sesamm_df)} rows -> {len(sesamm_df_clean)} unique ISINs after deduplication")
+        if len(sesamm_df) != len(sesamm_df_clean):
+            logger.warning(f"Removed {len(sesamm_df) - len(sesamm_df_clean)} duplicate ISIN records from sesamm_df")
+        
         selection_df = selection_df.merge(
-            sesamm_df[['ISIN', 'Job_score_3Y']],
+            sesamm_df_clean,
             on='ISIN',
             how='left'
         ).merge(

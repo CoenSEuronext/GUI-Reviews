@@ -93,7 +93,7 @@ def run_ezn1p_review(date, co_date, effective_date, index="EZN1P", isin="NL00129
         
         # Use the merged Free Float Round value, fallback to original Free Float if not available
         selection_df["Free Float"] = selection_df["Free Float Round:"]
-        selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Price']
+        selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Close Prc_CO']
         
         # Add exclusion flag column
         selection_df['Turnover_Exclusion'] = selection_df['12 month aver. turnover EUR'] < 10000000

@@ -186,7 +186,7 @@ def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL00129
         selection_df['Final_Capping'] = (selection_df['Capping_Factor'] / max_capping_factor).round(14) if max_capping_factor > 0 else 0
         
         # Get top 50 companies by capped weight
-        top_50_df = selection_df[~selection_df['Is_Excluded']].nlargest(50, 'Capped_Weight').copy()
+        top_50_df = selection_df[~selection_df['Is_Excluded']].copy()
         
         logger.info(f"Selected top 50 companies")
         
@@ -228,6 +228,7 @@ def run_euadp_review(date, co_date, effective_date, index="EUADP", isin="NL00129
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                top_50_df.to_excel(writer, sheet_name='Selection', index=False)
                 pd.DataFrame({'Index Market Cap': [index_mcap]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
 
             logger.info("EUADP review completed successfully")

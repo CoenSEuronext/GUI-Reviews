@@ -157,6 +157,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
                     inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                     exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                     selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                    aex_bel_df.to_excel(writer, sheet_name='AEX BEL', index=False)
                     index_mcap_df = pd.DataFrame({'Index Market Cap': [index_mcap]})
                     index_mcap_df.to_excel(writer, sheet_name='Index Market Cap', index=False)
 

@@ -1,0 +1,13 @@
+2025-09-15 09:37:16,243 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 09:37:16,245 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 09:37:16,768 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 09:37:16] "GET /task-status/91f80a35-1cb2-4de4-9102-a31bf49e7324 HTTP/1.1" 200 -
+2025-09-15 09:37:18,880 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 09:37:18] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-15 09:37:18,882 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-09-15 09:37:18,885 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 09:37:18] "GET /task-status/54e0f6b4-4473-4c56-9b91-fbd4fd6d9837 HTTP/1.1" 200 -
+2025-09-15 09:37:20,889 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 09:37:20] "GET /task-status/54e0f6b4-4473-4c56-9b91-fbd4fd6d9837 HTTP/1.1" 200 -
+2025-09-15 09:37:21,545 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-09-15 09:37:21,579 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
+2025-09-15 09:37:21,590 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
+2025-09-15 09:37:21,593 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading
+2025-09-15 09:37:21,859 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250915_093721.xlsx
+2025-09-15 09:37:22,047 - Review.reviews.be1p_review - INFO - Loading EOD data...

@@ -1,0 +1,26 @@
+{
+  "task_id": "84a8511a-f63f-4493-b612-7757716f154f",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-15T19:59:18.868159",
+  "started_at": "2025-09-15T19:59:18.897201",
+  "completed_at": "2025-09-15T19:59:23.269255",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "elecp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ELECP_df_20250915_195923.xlsx"
+  },
+  "review_type": "ELECP",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ELECP",
+    "isin": "NLIX00007517",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 4.365607
+}

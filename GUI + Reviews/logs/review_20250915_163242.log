@@ -1,0 +1,21 @@
+2025-09-15 16:32:43,472 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 16:32:43,474 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 16:33:31,148 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:31] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 16:33:31,150 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-09-15 16:33:31,156 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:31] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:32,987 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-09-15 16:33:33,158 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:33] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:35,167 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:35] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:37,175 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:37] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:39,172 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:39] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:41,259 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:41] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:43,177 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:43] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:33:44,746 - Review.reviews.frd4p_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-09-15 16:33:44,747 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 60, in run_frd4p_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-09-15 16:33:45,172 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 16:33:45] "GET /task-status/32b99b41-4408-4ec6-82b6-0019deefbb69 HTTP/1.1" 200 -
+2025-09-15 16:35:21,819 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-09-15 16:35:21,820 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading

@@ -56,8 +56,26 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
         nace_df = ref_data['nace']
         sesamm_df = ref_data['sesamm']
         
-        if any(df is None for df in [ff_df, developed_market_df, icb_df, Oekom_TrustCarbon_df, nace_df, sesamm_df]):
-            raise ValueError("Failed to load one or more required reference data files")
+        failed_files = []
+        file_mappings = {
+            'ff_df': 'ff',
+            'developed_market_df': 'developed_market', 
+            'icb_df': 'icb',
+            'Oekom_TrustCarbon_df': 'oekom_trustcarbon',
+            'nace_df': 'nace',
+            'sesamm_df': 'sesamm'
+        }
+
+        for df_name, file_key in file_mappings.items():
+            df_value = ref_data[file_key]
+            if df_value is None:
+                failed_files.append(f"{file_key} (assigned to {df_name})")
+
+        if failed_files:
+            failed_files_str = ", ".join(failed_files)
+            error_msg = f"Failed to load the following reference data files: {failed_files_str}"
+            logger.error(error_msg)
+            raise ValueError(error_msg) 
         
         # Add Free Float data
         developed_market_df = developed_market_df.merge(

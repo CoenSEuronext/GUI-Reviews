@@ -1,0 +1,3 @@
+2025-09-15 19:50:07,377 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 19:50:07,377 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 19:57:45,568 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading

@@ -1,0 +1,15 @@
+2025-09-16 10:43:22,604 - werkzeug - WARNING -  * Debugger is active!
+2025-09-16 10:43:22,604 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-16 10:43:22,643 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:22] "POST /calculate HTTP/1.1" 200 -
+2025-09-16 10:43:22,647 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-09-16 10:43:22,647 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:22] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -
+2025-09-16 10:43:24,655 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:24] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -
+2025-09-16 10:43:25,421 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-09-16 10:43:26,656 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:26] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -
+2025-09-16 10:43:28,651 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:28] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -
+2025-09-16 10:43:30,654 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:30] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -
+2025-09-16 10:43:32,655 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:32] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -
+2025-09-16 10:43:33,281 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-09-16 10:43:33,288 - Review.reviews.derep_review - INFO - Companies with capping applied: 0
+2025-09-16 10:43:33,308 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250916_104333.xlsx
+2025-09-16 10:43:34,656 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:43:34] "GET /task-status/54f74071-2691-4e7f-b968-703451304e2e HTTP/1.1" 200 -

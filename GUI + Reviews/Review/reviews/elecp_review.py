@@ -10,7 +10,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_elecp_review(date, co_date, effective_date, index="ELECP", isin="NLIX00007095", 
+def run_elecp_review(date, co_date, effective_date, index="ELECP", isin="NLIX00007541", 
                    area="US", area2="EU", type="STOCK", universe="fixed_basket", 
                    feed="Reuters", currency="EUR", year=None):
 
@@ -37,7 +37,7 @@ def run_elecp_review(date, co_date, effective_date, index="ELECP", isin="NLIX000
         elecp_universe = [
             {'Company': 'NEXTRACKER INC. CLASS A', 'ISIN': 'US65290E1010', 'MIC': 'XNGS', 'Currency': 'USD'},
             {'Company': 'CAMECO CORPORATION', 'ISIN': 'CA13321L1085', 'MIC': 'XTSE', 'Currency': 'CAD'},
-            {'Company': 'TECK RESOURCES LTD', 'ISIN': 'CA8787422044', 'MIC': 'XTSE', 'Currency': 'CAD'},
+            {'Company': 'ANGLO AMERICAN PLC', 'ISIN': 'GB00BTK05J60', 'MIC': 'XLON', 'Currency': 'GBP'},
             {'Company': 'FIRST SOLAR INC', 'ISIN': 'US3364331070', 'MIC': 'XNGS', 'Currency': 'USD'},
             {'Company': 'CONSTELLATION ENERGY', 'ISIN': 'US21037T1097', 'MIC': 'XNGS', 'Currency': 'USD'},
             {'Company': 'VISTRA CORP', 'ISIN': 'US92840M1027', 'MIC': 'XNYS', 'Currency': 'USD'},
@@ -125,7 +125,6 @@ def run_elecp_review(date, co_date, effective_date, index="ELECP", isin="NLIX000
         selection_df['Rounded NOSH'] = selection_df['Unrounded NOSH'].round()
         selection_df['Free Float'] = 1
         selection_df['Effective Date of Review'] = effective_date
-        selection_df['Unrounded NOSH'] = target_mcap_per_company / selection_df['Close Prc_EOD']
         
         # Prepare ELECP DataFrame
         ELECP_df = (

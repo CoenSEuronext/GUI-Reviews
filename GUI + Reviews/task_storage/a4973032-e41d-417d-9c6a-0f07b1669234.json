@@ -1,0 +1,24 @@
+{
+  "task_id": "a4973032-e41d-417d-9c6a-0f07b1669234",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-09-16T19:34:15.624986",
+  "started_at": "2025-09-16T19:34:15.624986",
+  "completed_at": "2025-09-16T19:34:18.651692",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "EFESP",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EFESP",
+    "isin": "NLIX00006584",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

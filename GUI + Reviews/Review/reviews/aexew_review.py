@@ -83,7 +83,7 @@ def run_aexew_review(date, co_date, effective_date, index="AEXEW", isin="QS00111
         
         # Find index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
-        selection_df['Unrounded NOSH'] = (index_mcap / 25)/ selection_df['Close Prc_EOD']
+        selection_df['Unrounded NOSH'] = (index_mcap /30)/ selection_df['Close Prc_EOD']
         selection_df['Rounded NOSH'] = selection_df['Unrounded NOSH'].round()
         selection_df['Capping Factor'] = 1
         selection_df['Free Float'] = 1

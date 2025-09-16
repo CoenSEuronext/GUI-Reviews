@@ -218,7 +218,7 @@ INDEX_CONFIGS = {
     },
     "ELECP": {
         "index": "ELECP",
-        "isin": "NLIX00007517",
+        "isin": "NLIX00007541",
         "output_key": "elecp_path"
     },
     "EUADP": {
@@ -235,6 +235,11 @@ INDEX_CONFIGS = {
         "index": "EES2",
         "isin": "NLIX00007053",
         "output_key": "ees2_path"
+    },
+    "EFESP": {
+        "index": "EFESP",
+        "isin": "NLIX00006584",
+        "output_key": "efesp_path"
     }
     # Add new indices here following the same pattern
 }

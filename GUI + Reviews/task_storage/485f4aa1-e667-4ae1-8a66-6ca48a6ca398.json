@@ -1,0 +1,26 @@
+{
+  "task_id": "485f4aa1-e667-4ae1-8a66-6ca48a6ca398",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-15T17:19:19.892285",
+  "started_at": "2025-09-15T17:19:19.892285",
+  "completed_at": "2025-09-15T17:19:21.608746",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ezn1p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZN1P_df_20250915_171921.xlsx"
+  },
+  "review_type": "EZN1P",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZN1P",
+    "isin": "NL0012949143",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.716461
+}

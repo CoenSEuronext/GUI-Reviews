@@ -1,0 +1,10 @@
+2025-09-16 10:51:57,593 - werkzeug - WARNING -  * Debugger is active!
+2025-09-16 10:51:57,602 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-16 10:52:08,161 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:52:08] "POST /calculate HTTP/1.1" 200 -
+2025-09-16 10:52:08,161 - Review.reviews.eesf_review - INFO - Loading EOD data...
+2025-09-16 10:52:08,161 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:52:08] "GET /task-status/13b2b5da-5f88-4da3-8d03-aeb6cd1831ce HTTP/1.1" 200 -
+2025-09-16 10:52:10,172 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:52:10] "GET /task-status/13b2b5da-5f88-4da3-8d03-aeb6cd1831ce HTTP/1.1" 200 -
+2025-09-16 10:52:12,183 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:52:12] "GET /task-status/13b2b5da-5f88-4da3-8d03-aeb6cd1831ce HTTP/1.1" 200 -
+2025-09-16 10:52:13,026 - Review.reviews.eesf_review - INFO - Loading reference data...
+2025-09-16 10:52:13,826 - Review.reviews.eesf_review - INFO - Saving EESF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESF_df_20250916_105213.xlsx
+2025-09-16 10:52:14,171 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:52:14] "GET /task-status/13b2b5da-5f88-4da3-8d03-aeb6cd1831ce HTTP/1.1" 200 -
