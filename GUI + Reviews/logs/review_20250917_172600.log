@@ -1,0 +1,14 @@
+2025-09-17 17:26:01,340 - werkzeug - WARNING -  * Debugger is active!
+2025-09-17 17:26:01,342 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-17 17:26:01,980 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:01] "POST /calculate HTTP/1.1" 200 -
+2025-09-17 17:26:01,981 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-09-17 17:26:01,987 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:01] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:03,993 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:03] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:05,994 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:05] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:06,711 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-09-17 17:26:07,999 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:07] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:09,996 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:09] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:12,003 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:12] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:13,992 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 17:26:13] "GET /task-status/374b78c4-09be-402c-8bbd-80f7b18d5f4a HTTP/1.1" 200 -
+2025-09-17 17:26:14,899 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-09-17 17:26:14,900 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading

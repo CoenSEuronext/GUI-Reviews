@@ -1,0 +1,1731 @@
+2025-09-17 09:02:21,898 - werkzeug - WARNING -  * Debugger is active!
+2025-09-17 09:02:21,899 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-17 09:02:22,561 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:22] "GET /task-status/fe6fcd3b-78ab-4aaf-b186-a38eb9cd56a8 HTTP/1.1" 200 -
+2025-09-17 09:02:24,944 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:24] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-17 09:02:24,946 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-09-17 09:02:24,946 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:24] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:25,712 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-09-17 09:02:25,877 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250917_090225.xlsx
+2025-09-17 09:02:25,928 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-09-17 09:02:26,694 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-09-17 09:02:26,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:26] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:28,967 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:28] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:30,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:30] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:32,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:32] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:34,376 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2025-09-17 09:02:34,377 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 93 companies
+2025-09-17 09:02:34,377 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 273 companies
+2025-09-17 09:02:34,377 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 69 companies
+2025-09-17 09:02:34,377 - Review.reviews.be1p_review - INFO - Total excluded (any criteria): 283 companies
+2025-09-17 09:02:34,378 - Review.reviews.be1p_review - INFO - Eligible for selection: 17 companies
+2025-09-17 09:02:34,378 - Review.reviews.be1p_review - INFO - Selecting top 10 companies with highest FFMC from eligible companies...
+2025-09-17 09:02:34,398 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BE1P_df_20250917_090234.xlsx
+2025-09-17 09:02:34,496 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-09-17 09:02:34,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:34] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:35,310 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-09-17 09:02:36,726 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20250917_090236.xlsx
+2025-09-17 09:02:36,768 - Review.reviews.cacew_review - INFO - Loading EOD data...
+2025-09-17 09:02:36,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:36] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:37,532 - Review.reviews.cacew_review - INFO - Loading reference data...
+2025-09-17 09:02:37,606 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20250917_090237.xlsx
+2025-09-17 09:02:37,633 - Review.reviews.clew_review - INFO - Loading EOD data...
+2025-09-17 09:02:38,378 - Review.reviews.clew_review - INFO - Loading reference data...
+2025-09-17 09:02:38,431 - Review.reviews.clew_review - INFO - Saving CLEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLEW_df_20250917_090238.xlsx
+2025-09-17 09:02:38,473 - Review.reviews.darep_review - INFO - Loading EOD data...
+2025-09-17 09:02:38,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:38] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:39,196 - Review.reviews.darep_review - INFO - Loading reference data...
+2025-09-17 09:02:40,972 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:40] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:42,974 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:42] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:44,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:44] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:46,966 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:46] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:47,070 - Review.reviews.darep_review - INFO - Creating eligible companies dataframe...
+2025-09-17 09:02:47,070 - Review.reviews.darep_review - INFO - Companies with capping applied: 0
+2025-09-17 09:02:47,078 - Review.reviews.darep_review - INFO - Saving DAREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAREP_df_20250917_090247.xlsx
+2025-09-17 09:02:47,445 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-09-17 09:02:48,301 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-09-17 09:02:48,966 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:48] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:50,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:50] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:52,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:52] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:54,988 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:54] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:55,828 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-09-17 09:02:55,844 - Review.reviews.derep_review - INFO - Companies with capping applied: 0
+2025-09-17 09:02:55,845 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250917_090255.xlsx
+2025-09-17 09:02:56,078 - Review.reviews.dwrep_review - INFO - Loading EOD data...
+2025-09-17 09:02:56,797 - Review.reviews.dwrep_review - INFO - Loading reference data...
+2025-09-17 09:02:56,978 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:56] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:02:59,012 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:02:59] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:00,961 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:00] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:02,978 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:02] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:04,501 - Review.reviews.dwrep_review - INFO - Creating eligible companies dataframe...
+2025-09-17 09:03:04,510 - Review.reviews.dwrep_review - INFO - Total eligible companies: 398
+2025-09-17 09:03:04,510 - Review.reviews.dwrep_review - INFO - Total eligible FFMC: 1,923,360,251,744.86
+2025-09-17 09:03:04,511 - Review.reviews.dwrep_review - INFO - Weight sum check: 1.000000
+2025-09-17 09:03:04,512 - Review.reviews.dwrep_review - INFO - Saving DWREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DWREP_df_20250917_090304.xlsx
+2025-09-17 09:03:05,010 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:05] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:05,431 - Review.reviews.edefp_review - INFO - Loading EOD data...
+2025-09-17 09:03:06,281 - Review.reviews.edefp_review - INFO - Loading reference data...
+2025-09-17 09:03:06,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:06] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:06,980 - Review.reviews.edefp_review - INFO - Saving EDEFP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDEFP_df_20250917_090306.xlsx
+2025-09-17 09:03:07,006 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-09-17 09:03:08,562 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-09-17 09:03:08,562 - Review.reviews.edwp_review - INFO - Total companies selected: 1579
+2025-09-17 09:03:08,562 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.84%
+2025-09-17 09:03:08,601 - Review.reviews.edwp_review - INFO - 
+DEUP Selection Summary:
+2025-09-17 09:03:08,601 - Review.reviews.edwp_review - INFO - Total companies selected: 437
+2025-09-17 09:03:08,604 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.55%
+2025-09-17 09:03:08,620 - Review.reviews.edwp_review - INFO - 
+DEZP Selection Summary:
+2025-09-17 09:03:08,620 - Review.reviews.edwp_review - INFO - Total companies selected: 179
+2025-09-17 09:03:08,625 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.05%
+2025-09-17 09:03:08,636 - Review.reviews.edwp_review - INFO - 
+DAPPR Selection Summary:
+2025-09-17 09:03:08,636 - Review.reviews.edwp_review - INFO - Total companies selected: 504
+2025-09-17 09:03:08,642 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.82%
+2025-09-17 09:03:08,647 - Review.reviews.edwp_review - INFO - 
+DNAP Selection Summary:
+2025-09-17 09:03:08,647 - Review.reviews.edwp_review - INFO - Total companies selected: 459
+2025-09-17 09:03:08,657 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.81%
+2025-09-17 09:03:08,669 - Review.reviews.edwp_review - INFO - 
+DASP Selection Summary:
+2025-09-17 09:03:08,669 - Review.reviews.edwp_review - INFO - Total companies selected: 402
+2025-09-17 09:03:08,673 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.55%
+2025-09-17 09:03:08,681 - Review.reviews.edwp_review - INFO - 
+DPAP Selection Summary:
+2025-09-17 09:03:08,682 - Review.reviews.edwp_review - INFO - Total companies selected: 97
+2025-09-17 09:03:08,683 - Review.reviews.edwp_review - INFO - Total FFMC covered: 86.08%
+2025-09-17 09:03:08,685 - Review.reviews.edwp_review - INFO - 
+EUSP Selection Summary:
+2025-09-17 09:03:08,685 - Review.reviews.edwp_review - INFO - Total companies selected: 363
+2025-09-17 09:03:08,694 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.03%
+2025-09-17 09:03:08,699 - Review.reviews.edwp_review - INFO - 
+EJPP Selection Summary:
+2025-09-17 09:03:08,699 - Review.reviews.edwp_review - INFO - Total companies selected: 342
+2025-09-17 09:03:08,705 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.01%
+2025-09-17 09:03:08,710 - Review.reviews.edwp_review - INFO - 
+ECHP Selection Summary:
+2025-09-17 09:03:08,711 - Review.reviews.edwp_review - INFO - Total companies selected: 25
+2025-09-17 09:03:08,711 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.01%
+2025-09-17 09:03:08,717 - Review.reviews.edwp_review - INFO - 
+EUKP Selection Summary:
+2025-09-17 09:03:08,717 - Review.reviews.edwp_review - INFO - Total companies selected: 78
+2025-09-17 09:03:08,721 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.03%
+2025-09-17 09:03:08,726 - Review.reviews.edwp_review - INFO - 
+CANP Selection Summary:
+2025-09-17 09:03:08,726 - Review.reviews.edwp_review - INFO - Total companies selected: 74
+2025-09-17 09:03:08,726 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.16%
+2025-09-17 09:03:08,731 - Review.reviews.edwp_review - INFO - 
+Global Selection Summary:
+2025-09-17 09:03:08,731 - Review.reviews.edwp_review - INFO - Total companies selected: 1579
+2025-09-17 09:03:08,740 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.84%
+2025-09-17 09:03:08,743 - Review.reviews.edwp_review - INFO - 
+MIC-level Summary:
+2025-09-17 09:03:08,743 - Review.reviews.edwp_review - INFO -       ISIN          FFMC  EDWP_selection
+MIC                                     
+ALXP     1  9.883261e+08               0
+BATS     1  2.199535e+10               1
+DSME     1  1.942100e+07               0
+FSME     2  4.560935e+08               0
+MERK     2  2.434286e+08               0
+MTAA   241  6.503120e+11              25
+NEOE     1  4.880961e+07               0
+SSME    16  5.302860e+09               0
+WBAH    29  7.279940e+10               8
+XAMS    81  1.180809e+12              18
+XASE     3  7.511585e+09               0
+XASX   895  1.497465e+12              77
+XBRU    64  2.218685e+11              15
+XCSE    98  3.906898e+11              15
+XESM     2  1.791636e+09               0
+XETR   231  1.834892e+12              32
+XHEL   131  2.273515e+11              16
+XHKG   266  5.355683e+11              24
+XLIS    17  4.001595e+10               5
+XLON   831  2.473792e+12              78
+XMAD    97  6.461406e+11              13
+XMSM    13  5.930509e+10               5
+XNCM    34  9.657971e+10               0
+XNGM    61  1.481313e+09               0
+XNGS  2560  2.783051e+13             180
+XNMS    63  1.747475e+11               2
+XNYS  1715  2.615317e+13             363
+XNZE    54  5.744470e+10              15
+XOSL   227  1.835840e+11              40
+XPAR   348  1.965676e+12              30
+XSES   144  3.156131e+11              26
+XSTO   606  7.184752e+11              73
+XSWX   158  1.679296e+12              27
+XTAE   285  2.310484e+11              75
+XTKS  3667  5.319129e+12             342
+XTSE   495  2.317030e+12              74
+2025-09-17 09:03:08,763 - Review.reviews.edwp_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20250917_090308.xlsx
+2025-09-17 09:03:08,853 - Review.reviews.edwp_review - INFO - 
+EDWP Changes Summary:
+2025-09-17 09:03:08,853 - Review.reviews.edwp_review - INFO - Inclusions: 98
+2025-09-17 09:03:08,853 - Review.reviews.edwp_review - INFO - Exclusions: 58
+2025-09-17 09:03:08,867 - Review.reviews.edwp_review - INFO - 
+DEUP Changes Summary:
+2025-09-17 09:03:08,867 - Review.reviews.edwp_review - INFO - Inclusions: 17
+2025-09-17 09:03:08,867 - Review.reviews.edwp_review - INFO - Exclusions: 15
+2025-09-17 09:03:08,878 - Review.reviews.edwp_review - INFO - 
+DEZP Changes Summary:
+2025-09-17 09:03:08,878 - Review.reviews.edwp_review - INFO - Inclusions: 8
+2025-09-17 09:03:08,878 - Review.reviews.edwp_review - INFO - Exclusions: 7
+2025-09-17 09:03:08,908 - Review.reviews.edwp_review - INFO - 
+DAPPR Changes Summary:
+2025-09-17 09:03:08,908 - Review.reviews.edwp_review - INFO - Inclusions: 25
+2025-09-17 09:03:08,911 - Review.reviews.edwp_review - INFO - Exclusions: 11
+2025-09-17 09:03:08,934 - Review.reviews.edwp_review - INFO - 
+DNAP Changes Summary:
+2025-09-17 09:03:08,934 - Review.reviews.edwp_review - INFO - Inclusions: 25
+2025-09-17 09:03:08,935 - Review.reviews.edwp_review - INFO - Exclusions: 17
+2025-09-17 09:03:08,951 - Review.reviews.edwp_review - INFO - 
+DASP Changes Summary:
+2025-09-17 09:03:08,951 - Review.reviews.edwp_review - INFO - Inclusions: 20
+2025-09-17 09:03:08,951 - Review.reviews.edwp_review - INFO - Exclusions: 8
+2025-09-17 09:03:08,965 - Review.reviews.edwp_review - INFO - 
+DPAP Changes Summary:
+2025-09-17 09:03:08,966 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:08] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:08,966 - Review.reviews.edwp_review - INFO - Inclusions: 6
+2025-09-17 09:03:08,966 - Review.reviews.edwp_review - INFO - Exclusions: 2
+2025-09-17 09:03:08,986 - Review.reviews.edwp_review - INFO - 
+EUSP Changes Summary:
+2025-09-17 09:03:08,986 - Review.reviews.edwp_review - INFO - Inclusions: 18
+2025-09-17 09:03:08,986 - Review.reviews.edwp_review - INFO - Exclusions: 17
+2025-09-17 09:03:09,001 - Review.reviews.edwp_review - INFO - 
+EJPP Changes Summary:
+2025-09-17 09:03:09,001 - Review.reviews.edwp_review - INFO - Inclusions: 12
+2025-09-17 09:03:09,001 - Review.reviews.edwp_review - INFO - Exclusions: 8
+2025-09-17 09:03:09,014 - Review.reviews.edwp_review - INFO - 
+ECHP Changes Summary:
+2025-09-17 09:03:09,014 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-09-17 09:03:09,014 - Review.reviews.edwp_review - INFO - Exclusions: 3
+2025-09-17 09:03:09,018 - Review.reviews.edwp_review - INFO - 
+EUKP Changes Summary:
+2025-09-17 09:03:09,018 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-09-17 09:03:09,018 - Review.reviews.edwp_review - INFO - Exclusions: 6
+2025-09-17 09:03:09,031 - Review.reviews.edwp_review - INFO - 
+CANP Changes Summary:
+2025-09-17 09:03:09,031 - Review.reviews.edwp_review - INFO - Inclusions: 5
+2025-09-17 09:03:09,031 - Review.reviews.edwp_review - INFO - Exclusions: 1
+2025-09-17 09:03:11,061 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:11] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:12,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:12] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:13,029 - Review.reviews.edwp_review - INFO - Saving individual composition file for EDWP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,145 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEUP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,185 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEZP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,201 - Review.reviews.edwp_review - INFO - Saving individual composition file for DAPPR to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPR_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,235 - Review.reviews.edwp_review - INFO - Saving individual composition file for DNAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,279 - Review.reviews.edwp_review - INFO - Saving individual composition file for DASP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,315 - Review.reviews.edwp_review - INFO - Saving individual composition file for DPAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,334 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUSP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,364 - Review.reviews.edwp_review - INFO - Saving individual composition file for EJPP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,385 - Review.reviews.edwp_review - INFO - Saving individual composition file for ECHP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,397 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUKP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,417 - Review.reviews.edwp_review - INFO - Saving individual composition file for CANP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANP_Composition_20250917_090308.xlsx
+2025-09-17 09:03:13,431 - Review.reviews.edwp_review - INFO - Individual composition files saved: 12
+2025-09-17 09:03:13,456 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-09-17 09:03:14,913 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-09-17 09:03:14,913 - Review.reviews.edwpt_review - INFO - Total companies selected: 5398
+2025-09-17 09:03:14,913 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-09-17 09:03:14,945 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-09-17 09:03:14,947 - Review.reviews.edwpt_review - INFO - Total companies selected: 1294
+2025-09-17 09:03:14,949 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.66%
+2025-09-17 09:03:14,967 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:14] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:14,969 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-09-17 09:03:14,974 - Review.reviews.edwpt_review - INFO - Total companies selected: 502
+2025-09-17 09:03:14,975 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.47%
+2025-09-17 09:03:14,995 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-09-17 09:03:14,997 - Review.reviews.edwpt_review - INFO - Total companies selected: 1940
+2025-09-17 09:03:14,999 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.11%
+2025-09-17 09:03:15,011 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-09-17 09:03:15,014 - Review.reviews.edwpt_review - INFO - Total companies selected: 1694
+2025-09-17 09:03:15,016 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.17%
+2025-09-17 09:03:15,030 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-09-17 09:03:15,031 - Review.reviews.edwpt_review - INFO - Total companies selected: 1598
+2025-09-17 09:03:15,031 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.09%
+2025-09-17 09:03:15,048 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-09-17 09:03:15,048 - Review.reviews.edwpt_review - INFO - Total companies selected: 332
+2025-09-17 09:03:15,051 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2025-09-17 09:03:15,062 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-09-17 09:03:15,063 - Review.reviews.edwpt_review - INFO - Total companies selected: 1418
+2025-09-17 09:03:15,064 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-09-17 09:03:15,066 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-09-17 09:03:15,066 - Review.reviews.edwpt_review - INFO - Total companies selected: 1413
+2025-09-17 09:03:15,076 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-09-17 09:03:15,081 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-09-17 09:03:15,081 - Review.reviews.edwpt_review - INFO - Total companies selected: 79
+2025-09-17 09:03:15,081 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.06%
+2025-09-17 09:03:15,089 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-09-17 09:03:15,089 - Review.reviews.edwpt_review - INFO - Total companies selected: 278
+2025-09-17 09:03:15,091 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-09-17 09:03:15,096 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-09-17 09:03:15,097 - Review.reviews.edwpt_review - INFO - Total companies selected: 225
+2025-09-17 09:03:15,098 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-09-17 09:03:15,103 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-09-17 09:03:15,103 - Review.reviews.edwpt_review - INFO - Total companies selected: 5398
+2025-09-17 09:03:15,109 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.84%
+2025-09-17 09:03:15,113 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-09-17 09:03:15,113 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  9.883261e+08                1
+BATS     1  2.199535e+10                1
+DSME     1  1.942100e+07                0
+FSME     2  4.560935e+08                2
+MERK     2  2.434286e+08                2
+MTAA   241  6.503120e+11               80
+NEOE     1  4.880961e+07                0
+SSME    16  5.302860e+09               14
+WBAH    29  7.279940e+10               19
+XAMS    81  1.180809e+12               47
+XASE     3  7.511585e+09                3
+XASX   895  1.497465e+12              292
+XBRU    64  2.218685e+11               35
+XCSE    98  3.906898e+11               36
+XESM     2  1.791636e+09                2
+XETR   231  1.834892e+12              102
+XHEL   131  2.273515e+11               49
+XHKG   266  5.355683e+11               85
+XLIS    17  4.001595e+10               12
+XLON   831  2.473792e+12              278
+XMAD    97  6.461406e+11               43
+XMSM    13  5.930509e+10               10
+XNCM    34  9.657971e+10               30
+XNGM    61  1.481313e+09                4
+XNGS  2560  2.783051e+13              672
+XNMS    63  1.747475e+11               60
+XNYS  1715  2.615317e+13             1093
+XNZE    54  5.744470e+10               36
+XOSL   227  1.835840e+11              111
+XPAR   348  1.965676e+12               94
+XSES   144  3.156131e+11               75
+XSTO   606  7.184752e+11              209
+XSWX   158  1.679296e+12               93
+XTAE   285  2.310484e+11              170
+XTKS  3667  5.319129e+12             1413
+XTSE   495  2.317030e+12              225
+2025-09-17 09:03:15,131 - Review.reviews.edwpt_review - INFO - Saving main output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250917_090315.xlsx
+2025-09-17 09:03:15,328 - Review.reviews.edwpt_review - INFO - 
+EDWPT Changes Summary:
+2025-09-17 09:03:15,328 - Review.reviews.edwpt_review - INFO - Inclusions: 269
+2025-09-17 09:03:15,328 - Review.reviews.edwpt_review - INFO - Exclusions: 121
+2025-09-17 09:03:15,421 - Review.reviews.edwpt_review - INFO - 
+DEUPT Changes Summary:
+2025-09-17 09:03:15,421 - Review.reviews.edwpt_review - INFO - Inclusions: 58
+2025-09-17 09:03:15,421 - Review.reviews.edwpt_review - INFO - Exclusions: 39
+2025-09-17 09:03:15,445 - Review.reviews.edwpt_review - INFO - 
+DEZPT Changes Summary:
+2025-09-17 09:03:15,445 - Review.reviews.edwpt_review - INFO - Inclusions: 22
+2025-09-17 09:03:15,445 - Review.reviews.edwpt_review - INFO - Exclusions: 15
+2025-09-17 09:03:15,514 - Review.reviews.edwpt_review - INFO - 
+DAPPT Changes Summary:
+2025-09-17 09:03:15,514 - Review.reviews.edwpt_review - INFO - Inclusions: 90
+2025-09-17 09:03:15,514 - Review.reviews.edwpt_review - INFO - Exclusions: 41
+2025-09-17 09:03:15,587 - Review.reviews.edwpt_review - INFO - 
+DNAPT Changes Summary:
+2025-09-17 09:03:15,587 - Review.reviews.edwpt_review - INFO - Inclusions: 89
+2025-09-17 09:03:15,590 - Review.reviews.edwpt_review - INFO - Exclusions: 31
+2025-09-17 09:03:15,646 - Review.reviews.edwpt_review - INFO - 
+DASPT Changes Summary:
+2025-09-17 09:03:15,646 - Review.reviews.edwpt_review - INFO - Inclusions: 74
+2025-09-17 09:03:15,646 - Review.reviews.edwpt_review - INFO - Exclusions: 28
+2025-09-17 09:03:15,668 - Review.reviews.edwpt_review - INFO - 
+DPAPT Changes Summary:
+2025-09-17 09:03:15,668 - Review.reviews.edwpt_review - INFO - Inclusions: 28
+2025-09-17 09:03:15,668 - Review.reviews.edwpt_review - INFO - Exclusions: 9
+2025-09-17 09:03:15,714 - Review.reviews.edwpt_review - INFO - 
+EUSPT Changes Summary:
+2025-09-17 09:03:15,727 - Review.reviews.edwpt_review - INFO - Inclusions: 75
+2025-09-17 09:03:15,727 - Review.reviews.edwpt_review - INFO - Exclusions: 37
+2025-09-17 09:03:15,780 - Review.reviews.edwpt_review - INFO - 
+EJPPT Changes Summary:
+2025-09-17 09:03:15,780 - Review.reviews.edwpt_review - INFO - Inclusions: 46
+2025-09-17 09:03:15,780 - Review.reviews.edwpt_review - INFO - Exclusions: 27
+2025-09-17 09:03:15,788 - Review.reviews.edwpt_review - INFO - 
+ECHPT Changes Summary:
+2025-09-17 09:03:15,788 - Review.reviews.edwpt_review - INFO - Inclusions: 1
+2025-09-17 09:03:15,788 - Review.reviews.edwpt_review - INFO - Exclusions: 1
+2025-09-17 09:03:15,829 - Review.reviews.edwpt_review - INFO - 
+EUKPT Changes Summary:
+2025-09-17 09:03:15,829 - Review.reviews.edwpt_review - INFO - Inclusions: 12
+2025-09-17 09:03:15,829 - Review.reviews.edwpt_review - INFO - Exclusions: 13
+2025-09-17 09:03:15,848 - Review.reviews.edwpt_review - INFO - 
+CANPT Changes Summary:
+2025-09-17 09:03:15,848 - Review.reviews.edwpt_review - INFO - Inclusions: 14
+2025-09-17 09:03:15,848 - Review.reviews.edwpt_review - INFO - Exclusions: 2
+2025-09-17 09:03:17,078 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:17] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:18,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:18] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:20,129 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EDWPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,429 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEUPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,514 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEZPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,545 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DAPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,664 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DNAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,779 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DASPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,879 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DPAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,913 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUSPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:20,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:20] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:20,998 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EJPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:21,079 - Review.reviews.edwpt_review - INFO - Saving individual composition file for ECHPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:21,099 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUKPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:21,125 - Review.reviews.edwpt_review - INFO - Saving individual composition file for CANPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANPT_Composition_20250917_090315.xlsx
+2025-09-17 09:03:21,151 - Review.reviews.edwpt_review - INFO - Main file successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20250917_090315.xlsx
+2025-09-17 09:03:21,151 - Review.reviews.edwpt_review - INFO - Individual composition files saved: 12
+2025-09-17 09:03:21,168 - Review.reviews.eefap_review - INFO - Loading EOD data...
+2025-09-17 09:03:22,045 - Review.reviews.eefap_review - INFO - Loading reference data...
+2025-09-17 09:03:22,679 - Review.reviews.eefap_review - INFO - Saving EEFAP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEFAP_df_20250917_090322.xlsx
+2025-09-17 09:03:22,700 - Review.reviews.ees2_review - INFO - Loading EOD data...
+2025-09-17 09:03:22,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:22] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:23,429 - Review.reviews.ees2_review - INFO - Loading reference data...
+2025-09-17 09:03:24,106 - Review.reviews.ees2_review - INFO - Saving EES2 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EES2_df_20250917_090324.xlsx
+2025-09-17 09:03:24,134 - Review.reviews.eesf_review - INFO - Loading EOD data...
+2025-09-17 09:03:24,846 - Review.reviews.eesf_review - INFO - Loading reference data...
+2025-09-17 09:03:24,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:24] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:25,529 - Review.reviews.eesf_review - INFO - Saving EESF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESF_df_20250917_090325.xlsx
+2025-09-17 09:03:25,598 - Review.reviews.efesp_review - INFO - Loading EOD data...
+2025-09-17 09:03:26,312 - Review.reviews.efesp_review - INFO - Loading reference data...
+2025-09-17 09:03:26,967 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:26] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:28,979 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:28] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:30,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:30] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:32,979 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:32] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:33,665 - Review.reviews.efesp_review - INFO - Creating eligible companies dataframe...
+2025-09-17 09:03:33,665 - Review.reviews.efesp_review - INFO - Group 1 (ICB 501010): 5 selected out of 21 companies
+2025-09-17 09:03:33,665 - Review.reviews.efesp_review - INFO - Group 2 (ICB 502010): 5 selected out of 15 companies
+2025-09-17 09:03:33,665 - Review.reviews.efesp_review - INFO - Group 3 (ICB 502040): 5 selected out of 16 companies
+2025-09-17 09:03:33,678 - Review.reviews.efesp_review - INFO - Group 4 (ICB 502020): 5 selected out of 13 companies
+2025-09-17 09:03:33,678 - Review.reviews.efesp_review - INFO - Group 5 (ICB 101010): 5 selected out of 15 companies
+2025-09-17 09:03:33,679 - Review.reviews.efesp_review - INFO - Group 6 (ICB 502060): 5 selected out of 11 companies
+2025-09-17 09:03:33,682 - Review.reviews.efesp_review - INFO - Total eligible companies: 91
+2025-09-17 09:03:33,682 - Review.reviews.efesp_review - INFO - Total selected companies: 30
+2025-09-17 09:03:33,682 - Review.reviews.efesp_review - INFO - Total selected FFMC: 1,693,853,084,959.09
+2025-09-17 09:03:33,682 - Review.reviews.efesp_review - INFO - Weight sum check for selected companies: 1.000000
+2025-09-17 09:03:33,694 - Review.reviews.efesp_review - INFO - Saving EFESP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EFESP_df_20250917_090333.xlsx
+2025-09-17 09:03:33,962 - Review.reviews.efmep_review - INFO - Loading EOD data...
+2025-09-17 09:03:34,843 - Review.reviews.efmep_review - INFO - Loading reference data...
+2025-09-17 09:03:34,969 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:34] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:35,546 - Review.reviews.efmep_review - INFO - Total universe: 300 companies
+2025-09-17 09:03:35,546 - Review.reviews.efmep_review - INFO - Excluded by MIC filter: 64 companies
+2025-09-17 09:03:35,546 - Review.reviews.efmep_review - INFO - Eligible for selection: 236 companies
+2025-09-17 09:03:35,546 - Review.reviews.efmep_review - INFO - Selecting top 50 companies with highest FFMC from eligible companies...
+2025-09-17 09:03:35,563 - Review.reviews.efmep_review - INFO - Saving EFMEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EFMEP_df_20250917_090335.xlsx
+2025-09-17 09:03:36,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:36] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:38,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:38] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:40,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:40] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:42,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:42] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:44,996 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:44] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:46,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:46] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:48,995 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:48] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 1010.0, area: AS, group size: 46
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 1010.0, area: EU, group size: 22
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 22, to exclude: 4
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 1010.0, area: NA, group size: 86
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 86, to exclude: 17
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 1510.0, area: AS, group size: 12
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 1510.0, area: EU, group size: 18
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 1510.0, area: NA, group size: 10
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 2010.0, area: AS, group size: 30
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 30, to exclude: 5
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 2010.0, area: EU, group size: 45
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Companies in group: 45, to exclude: 8
+2025-09-17 09:03:49,584 - Review.reviews.egspp_review - INFO - Processing sector: 2010.0, area: NA, group size: 44
+2025-09-17 09:03:49,595 - Review.reviews.egspp_review - INFO - Companies in group: 44, to exclude: 8
+2025-09-17 09:03:49,595 - Review.reviews.egspp_review - INFO - Processing sector: 3010.0, area: AS, group size: 32
+2025-09-17 09:03:49,595 - Review.reviews.egspp_review - INFO - Companies in group: 32, to exclude: 6
+2025-09-17 09:03:49,596 - Review.reviews.egspp_review - INFO - Processing sector: 3010.0, area: EU, group size: 45
+2025-09-17 09:03:49,596 - Review.reviews.egspp_review - INFO - Companies in group: 45, to exclude: 8
+2025-09-17 09:03:49,596 - Review.reviews.egspp_review - INFO - Processing sector: 3010.0, area: NA, group size: 20
+2025-09-17 09:03:49,597 - Review.reviews.egspp_review - INFO - Companies in group: 20, to exclude: 3
+2025-09-17 09:03:49,597 - Review.reviews.egspp_review - INFO - Processing sector: 3020.0, area: AS, group size: 17
+2025-09-17 09:03:49,597 - Review.reviews.egspp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:03:49,598 - Review.reviews.egspp_review - INFO - Processing sector: 3020.0, area: EU, group size: 28
+2025-09-17 09:03:49,598 - Review.reviews.egspp_review - INFO - Companies in group: 28, to exclude: 5
+2025-09-17 09:03:49,598 - Review.reviews.egspp_review - INFO - Processing sector: 3020.0, area: NA, group size: 32
+2025-09-17 09:03:49,599 - Review.reviews.egspp_review - INFO - Companies in group: 32, to exclude: 6
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 3030.0, area: AS, group size: 14
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 14, to exclude: 2
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 3030.0, area: EU, group size: 29
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 29, to exclude: 5
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 3030.0, area: NA, group size: 23
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 3510.0, area: AS, group size: 46
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 3510.0, area: EU, group size: 23
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 3510.0, area: NA, group size: 19
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 4010.0, area: AS, group size: 16
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 16, to exclude: 3
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 4010.0, area: EU, group size: 12
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Companies in group: 4, to exclude: 0
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-09-17 09:03:49,600 - Review.reviews.egspp_review - INFO - Processing sector: 4020.0, area: AS, group size: 25
+2025-09-17 09:03:49,605 - Review.reviews.egspp_review - INFO - Companies in group: 25, to exclude: 4
+2025-09-17 09:03:49,605 - Review.reviews.egspp_review - INFO - Processing sector: 4020.0, area: EU, group size: 20
+2025-09-17 09:03:49,605 - Review.reviews.egspp_review - INFO - Companies in group: 20, to exclude: 3
+2025-09-17 09:03:49,605 - Review.reviews.egspp_review - INFO - Processing sector: 4020.0, area: NA, group size: 18
+2025-09-17 09:03:49,605 - Review.reviews.egspp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:03:49,605 - Review.reviews.egspp_review - INFO - Processing sector: 4030.0, area: AS, group size: 6
+2025-09-17 09:03:49,607 - Review.reviews.egspp_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:03:49,607 - Review.reviews.egspp_review - INFO - Processing sector: 4030.0, area: EU, group size: 7
+2025-09-17 09:03:49,607 - Review.reviews.egspp_review - INFO - Companies in group: 7, to exclude: 1
+2025-09-17 09:03:49,607 - Review.reviews.egspp_review - INFO - Processing sector: 4030.0, area: NA, group size: 6
+2025-09-17 09:03:49,607 - Review.reviews.egspp_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:03:49,608 - Review.reviews.egspp_review - INFO - Processing sector: 4040.0, area: AS, group size: 13
+2025-09-17 09:03:49,608 - Review.reviews.egspp_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:03:49,608 - Review.reviews.egspp_review - INFO - Processing sector: 4040.0, area: EU, group size: 8
+2025-09-17 09:03:49,608 - Review.reviews.egspp_review - INFO - Companies in group: 8, to exclude: 1
+2025-09-17 09:03:49,608 - Review.reviews.egspp_review - INFO - Processing sector: 4040.0, area: NA, group size: 21
+2025-09-17 09:03:49,608 - Review.reviews.egspp_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:03:49,609 - Review.reviews.egspp_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-09-17 09:03:49,609 - Review.reviews.egspp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:03:49,609 - Review.reviews.egspp_review - INFO - Processing sector: 4050.0, area: EU, group size: 13
+2025-09-17 09:03:49,609 - Review.reviews.egspp_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:03:49,609 - Review.reviews.egspp_review - INFO - Processing sector: 4050.0, area: NA, group size: 18
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Processing sector: 4510.0, area: AS, group size: 24
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Processing sector: 4510.0, area: EU, group size: 23
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Processing sector: 4510.0, area: NA, group size: 17
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:03:49,610 - Review.reviews.egspp_review - INFO - Processing sector: 4520.0, area: AS, group size: 17
+2025-09-17 09:03:49,611 - Review.reviews.egspp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:03:49,611 - Review.reviews.egspp_review - INFO - Processing sector: 4520.0, area: EU, group size: 13
+2025-09-17 09:03:49,612 - Review.reviews.egspp_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:03:49,612 - Review.reviews.egspp_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-09-17 09:03:49,612 - Review.reviews.egspp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:03:49,613 - Review.reviews.egspp_review - INFO - Processing sector: 5010.0, area: AS, group size: 19
+2025-09-17 09:03:49,613 - Review.reviews.egspp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:03:49,613 - Review.reviews.egspp_review - INFO - Processing sector: 5010.0, area: EU, group size: 26
+2025-09-17 09:03:49,613 - Review.reviews.egspp_review - INFO - Companies in group: 26, to exclude: 5
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Processing sector: 5010.0, area: NA, group size: 11
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Companies in group: 11, to exclude: 2
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Processing sector: 5020.0, area: AS, group size: 92
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Companies in group: 92, to exclude: 18
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Processing sector: 5020.0, area: EU, group size: 94
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Companies in group: 94, to exclude: 18
+2025-09-17 09:03:49,614 - Review.reviews.egspp_review - INFO - Processing sector: 5020.0, area: NA, group size: 79
+2025-09-17 09:03:49,617 - Review.reviews.egspp_review - INFO - Companies in group: 79, to exclude: 15
+2025-09-17 09:03:49,617 - Review.reviews.egspp_review - INFO - Processing sector: 5510.0, area: AS, group size: 24
+2025-09-17 09:03:49,617 - Review.reviews.egspp_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:03:49,617 - Review.reviews.egspp_review - INFO - Processing sector: 5510.0, area: EU, group size: 15
+2025-09-17 09:03:49,617 - Review.reviews.egspp_review - INFO - Companies in group: 15, to exclude: 2
+2025-09-17 09:03:49,618 - Review.reviews.egspp_review - INFO - Processing sector: 5510.0, area: NA, group size: 12
+2025-09-17 09:03:49,618 - Review.reviews.egspp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:03:49,618 - Review.reviews.egspp_review - INFO - Processing sector: 5520.0, area: AS, group size: 17
+2025-09-17 09:03:49,618 - Review.reviews.egspp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:03:49,619 - Review.reviews.egspp_review - INFO - Processing sector: 5520.0, area: EU, group size: 14
+2025-09-17 09:03:49,619 - Review.reviews.egspp_review - INFO - Companies in group: 14, to exclude: 2
+2025-09-17 09:03:49,619 - Review.reviews.egspp_review - INFO - Processing sector: 5520.0, area: NA, group size: 4
+2025-09-17 09:03:49,620 - Review.reviews.egspp_review - INFO - Companies in group: 4, to exclude: 0
+2025-09-17 09:03:49,620 - Review.reviews.egspp_review - WARNING - No companies to exclude for sector 5520.0 and area NA
+2025-09-17 09:03:49,620 - Review.reviews.egspp_review - INFO - Processing sector: 6010.0, area: AS, group size: 10
+2025-09-17 09:03:49,620 - Review.reviews.egspp_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:03:49,620 - Review.reviews.egspp_review - INFO - Processing sector: 6010.0, area: EU, group size: 19
+2025-09-17 09:03:49,620 - Review.reviews.egspp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Processing sector: 6010.0, area: NA, group size: 33
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Companies in group: 33, to exclude: 6
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Processing sector: 6510.0, area: AS, group size: 21
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Processing sector: 6510.0, area: EU, group size: 26
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Companies in group: 26, to exclude: 5
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Processing sector: 6510.0, area: NA, group size: 31
+2025-09-17 09:03:49,621 - Review.reviews.egspp_review - INFO - Companies in group: 31, to exclude: 6
+2025-09-17 09:03:50,966 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:50] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:52,965 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:52] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:54,967 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:54] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:56,979 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:56] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:03:58,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:03:58] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:00,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:00] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:02,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:02] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:04,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:04] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:05,746 - Review.reviews.egspp_review - INFO - Checking IsinCode FRIX00003031 in index_eod_df
+2025-09-17 09:04:05,746 - Review.reviews.egspp_review - INFO - Found 1 matching rows
+2025-09-17 09:04:05,763 - Review.reviews.egspp_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRD4P_df_20250917_090405.xlsx
+2025-09-17 09:04:06,046 - Review.reviews.elecp_review - INFO - Loading EOD data...
+2025-09-17 09:04:06,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:06] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:07,887 - Review.reviews.elecp_review - INFO - Loading reference data...
+2025-09-17 09:04:08,513 - Review.reviews.elecp_review - INFO - Saving ELECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELECP_df_20250917_090408.xlsx
+2025-09-17 09:04:08,550 - Review.reviews.eltfp_review - INFO - Loading EOD data...
+2025-09-17 09:04:08,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:08] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:09,248 - Review.reviews.eltfp_review - INFO - Loading reference data...
+2025-09-17 09:04:09,928 - Review.reviews.eltfp_review - INFO - Saving ELTFP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELTFP_df_20250917_090409.xlsx
+2025-09-17 09:04:09,962 - Review.reviews.eluxp_review - INFO - Loading EOD data...
+2025-09-17 09:04:10,663 - Review.reviews.eluxp_review - INFO - Loading reference data...
+2025-09-17 09:04:10,996 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:10] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:11,321 - Review.reviews.eluxp_review - INFO - Saving ELUXP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUXP_df_20250917_090411.xlsx
+2025-09-17 09:04:11,354 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-09-17 09:04:12,059 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-09-17 09:04:12,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:12] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:13,164 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-09-17 09:04:13,164 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                  Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+286            VERBUND AG                 10.000000  4.320531e+09                1                        Excluded: 100 days avg turnover < €22M
+100        EDP RENOVAVEIS                 10.000000  3.373816e+09                2                        Excluded: 100 days avg turnover < €22M
+37             AURUBIS AG                 10.000000  2.638060e+09                3  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+221                  RELX                  9.947917  7.891460e+10                4                                                              
+232          SAINT GOBAIN                  9.947917  4.408928e+10                5                                                              
+177               KPN KON                  9.947917  1.579684e+10                6                                                              
+248  SIEMENS HEALTHINEERS                  9.947917  1.353036e+10                7                                                              
+277    UNIBAIL-RODAMCO-WE                  9.947917  1.116521e+10                8                                                              
+215             QIAGEN NV                  9.947917  9.214458e+09                9                        Excluded: 100 days avg turnover < €22M
+106                ENDESA                  9.947917  8.490133e+09               10                                                              
+2025-09-17 09:04:13,172 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+221                  RELX                  9.947917  7.891460e+10               1.0
+232          SAINT GOBAIN                  9.947917  4.408928e+10               2.0
+177               KPN KON                  9.947917  1.579684e+10               3.0
+248  SIEMENS HEALTHINEERS                  9.947917  1.353036e+10               4.0
+277    UNIBAIL-RODAMCO-WE                  9.947917  1.116521e+10               5.0
+106                ENDESA                  9.947917  8.490133e+09               6.0
+235                SANOFI                  9.750000  1.018468e+11               7.0
+274                   UCB                  9.750000  2.494438e+10               8.0
+127     FRESENIUS SE & CO                  9.750000  2.014559e+10               9.0
+265            TELEFONICA                  9.750000  1.713806e+10              10.0
+2025-09-17 09:04:13,172 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-09-17 09:04:13,172 - Review.reviews.eri5p_review - INFO - Total excluded: 173 companies
+2025-09-17 09:04:13,172 - Review.reviews.eri5p_review - INFO - Eligible for selection: 127 companies
+2025-09-17 09:04:13,172 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-09-17 09:04:13,183 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20250917_090413.xlsx
+2025-09-17 09:04:13,274 - Review.reviews.esvep_review - INFO - Loading EOD data...
+2025-09-17 09:04:13,985 - Review.reviews.esvep_review - INFO - Loading reference data...
+2025-09-17 09:04:14,630 - Review.reviews.esvep_review - INFO - Saving ESVEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ESVEP_df_20250917_090414.xlsx
+2025-09-17 09:04:14,657 - Review.reviews.etpfb_review - INFO - Loading EOD data...
+2025-09-17 09:04:14,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:14] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:15,347 - Review.reviews.etpfb_review - INFO - Loading reference data...
+2025-09-17 09:04:16,030 - Review.reviews.etpfb_review - INFO - Saving ETPFB output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ETPFB_df_20250917_090416.xlsx
+2025-09-17 09:04:16,064 - Review.reviews.etsep_review - INFO - Loading EOD data...
+2025-09-17 09:04:16,813 - Review.reviews.etsep_review - INFO - Loading reference data...
+2025-09-17 09:04:16,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:16] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:17,502 - Review.reviews.etsep_review - INFO - Saving ETSEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ETSEP_df_20250917_090417.xlsx
+2025-09-17 09:04:17,533 - Review.reviews.euadp_review - INFO - Loading EOD data...
+2025-09-17 09:04:18,296 - Review.reviews.euadp_review - INFO - Loading reference data...
+2025-09-17 09:04:18,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:18] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:20,962 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:20] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:22,996 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:22] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:24,979 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:24] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:25,584 - Review.reviews.euadp_review - INFO - Calculating initial weights...
+2025-09-17 09:04:25,584 - Review.reviews.euadp_review - INFO - Total FFMC of non-excluded companies: €595,924,115,693
+2025-09-17 09:04:25,584 - Review.reviews.euadp_review - INFO - Applying weight capping...
+2025-09-17 09:04:25,584 - Review.reviews.euadp_review - INFO - Total capped weights sum: 1.000000
+2025-09-17 09:04:25,607 - Review.reviews.euadp_review - INFO - Selected top 50 companies
+2025-09-17 09:04:25,609 - Review.reviews.euadp_review - INFO - Performing inclusion/exclusion analysis...
+2025-09-17 09:04:25,613 - Review.reviews.euadp_review - INFO - Saving EUADP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUADP_df_20250917_090425.xlsx
+2025-09-17 09:04:25,947 - Review.reviews.euadp_review - INFO - EUADP review completed successfully
+2025-09-17 09:04:25,973 - Review.reviews.eurep_review - INFO - Loading EOD data...
+2025-09-17 09:04:26,683 - Review.reviews.eurep_review - INFO - Loading reference data...
+2025-09-17 09:04:26,996 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:26] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:28,979 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:28] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:31,018 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:31] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:32,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:32] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:34,130 - Review.reviews.eurep_review - INFO - Creating eligible companies dataframe...
+2025-09-17 09:04:34,147 - Review.reviews.eurep_review - INFO - Companies with capping applied: 0
+2025-09-17 09:04:34,147 - Review.reviews.eurep_review - INFO - Saving EUREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUREP_df_20250917_090434.xlsx
+2025-09-17 09:04:34,430 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-09-17 09:04:34,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:34] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:35,246 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-09-17 09:04:36,997 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:36] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:38,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:38] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:40,996 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:40] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:42,519 - Review.reviews.eus5p_review - INFO - Eurozone companies (EZ300): 300
+2025-09-17 09:04:42,519 - Review.reviews.eus5p_review - INFO - North America companies (NA500, excluding XTSE): 458
+2025-09-17 09:04:42,629 - Review.reviews.eus5p_review - INFO - Saving EUS5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUS5P_df_20250917_090442.xlsx
+2025-09-17 09:04:42,796 - Review.reviews.ez15p_review - INFO - Loading EOD data...
+2025-09-17 09:04:42,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:42] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:43,514 - Review.reviews.ez15p_review - INFO - Loading reference data...
+2025-09-17 09:04:44,247 - Review.reviews.ez15p_review - INFO - Total universe: 300 companies
+2025-09-17 09:04:44,247 - Review.reviews.ez15p_review - INFO - Excluded by turnover filter: 67 companies
+2025-09-17 09:04:44,247 - Review.reviews.ez15p_review - INFO - Eligible for selection: 233 companies
+2025-09-17 09:04:44,247 - Review.reviews.ez15p_review - INFO - Selecting top 150 companies with highest FFMC from eligible companies...
+2025-09-17 09:04:44,247 - Review.reviews.ez15p_review - INFO - Saving EZ15P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ15P_df_20250917_090444.xlsx
+2025-09-17 09:04:44,396 - Review.reviews.ez40p_review - INFO - Loading EOD data...
+2025-09-17 09:04:44,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:44] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:45,115 - Review.reviews.ez40p_review - INFO - Loading reference data...
+2025-09-17 09:04:45,842 - Review.reviews.ez40p_review - INFO - Selecting top 40 companies with highest FFMC...
+2025-09-17 09:04:45,848 - Review.reviews.ez40p_review - INFO - Saving EZ40P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ40P_df_20250917_090445.xlsx
+2025-09-17 09:04:45,932 - Review.reviews.ez60p_review - INFO - Loading EOD data...
+2025-09-17 09:04:46,719 - Review.reviews.ez60p_review - INFO - Loading reference data...
+2025-09-17 09:04:46,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:46] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:47,496 - Review.reviews.ez60p_review - INFO - Selecting top 60 companies with highest FFMC...
+2025-09-17 09:04:47,497 - Review.reviews.ez60p_review - INFO - Saving EZ60P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ60P_df_20250917_090447.xlsx
+2025-09-17 09:04:47,599 - Review.reviews.ezn1p_review - INFO - Loading EOD data...
+2025-09-17 09:04:48,297 - Review.reviews.ezn1p_review - INFO - Loading reference data...
+2025-09-17 09:04:48,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:48] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:49,016 - Review.reviews.ezn1p_review - INFO - Total universe: 300 companies
+2025-09-17 09:04:49,016 - Review.reviews.ezn1p_review - INFO - Excluded by turnover filter: 67 companies
+2025-09-17 09:04:49,016 - Review.reviews.ezn1p_review - INFO - Eligible for selection: 233 companies
+2025-09-17 09:04:49,016 - Review.reviews.ezn1p_review - INFO - Selecting top 150 companies with highest FFMC from eligible companies...
+2025-09-17 09:04:49,030 - Review.reviews.ezn1p_review - INFO - Saving EZN1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZN1P_df_20250917_090449.xlsx
+2025-09-17 09:04:49,118 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-09-17 09:04:49,839 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-09-17 09:04:50,252 - Review.reviews.f4rip_review - INFO - Saving F4RIP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\F4RIP_df_20250917_090450.xlsx
+2025-09-17 09:04:50,281 - Review.reviews.fr20p_review - INFO - Loading EOD data...
+2025-09-17 09:04:50,969 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:50] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:50,985 - Review.reviews.fr20p_review - INFO - Loading reference data...
+2025-09-17 09:04:52,197 - Review.reviews.fr20p_review - INFO - Selecting top 20 companies with highest FFMC...
+2025-09-17 09:04:52,197 - Review.reviews.fr20p_review - INFO - Saving FR20P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FR20P_df_20250917_090452.xlsx
+2025-09-17 09:04:52,237 - Review.reviews.frecp_review - INFO - Loading EOD data...
+2025-09-17 09:04:52,949 - Review.reviews.frecp_review - INFO - Loading reference data...
+2025-09-17 09:04:52,968 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:52] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:54,180 - Review.reviews.frecp_review - INFO - Selecting top 20 companies with lowest FFMC...
+2025-09-17 09:04:54,197 - Review.reviews.frecp_review - INFO - Saving FRECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRECP_df_20250917_090454.xlsx
+2025-09-17 09:04:54,237 - Review.reviews.fri4p_review - INFO - Loading EOD data...
+2025-09-17 09:04:54,967 - Review.reviews.fri4p_review - INFO - Loading reference data...
+2025-09-17 09:04:54,969 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:54] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:56,974 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:56] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:04:58,954 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:04:58] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:00,967 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:00] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:02,997 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:02] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:04,997 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:04] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: AS, group size: 46
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: EU, group size: 24
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: NA, group size: 86
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 86, to exclude: 17
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: AS, group size: 12
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: EU, group size: 20
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: NA, group size: 10
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: AS, group size: 30
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: EU, group size: 47
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: NA, group size: 44
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 44, to exclude: 8
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: AS, group size: 32
+2025-09-17 09:05:05,480 - Review.reviews.fri4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-09-17 09:05:05,496 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: EU, group size: 46
+2025-09-17 09:05:05,496 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:05:05,497 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: NA, group size: 20
+2025-09-17 09:05:05,497 - Review.reviews.fri4p_review - INFO - Companies in group: 20, to exclude: 3
+2025-09-17 09:05:05,497 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: AS, group size: 17
+2025-09-17 09:05:05,498 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:05:05,498 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: EU, group size: 34
+2025-09-17 09:05:05,499 - Review.reviews.fri4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-09-17 09:05:05,499 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: NA, group size: 32
+2025-09-17 09:05:05,499 - Review.reviews.fri4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-09-17 09:05:05,499 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: AS, group size: 14
+2025-09-17 09:05:05,499 - Review.reviews.fri4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-09-17 09:05:05,499 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: EU, group size: 30
+2025-09-17 09:05:05,500 - Review.reviews.fri4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-09-17 09:05:05,500 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: NA, group size: 23
+2025-09-17 09:05:05,500 - Review.reviews.fri4p_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:05:05,500 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: AS, group size: 46
+2025-09-17 09:05:05,500 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:05:05,501 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: EU, group size: 26
+2025-09-17 09:05:05,501 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-09-17 09:05:05,502 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: NA, group size: 19
+2025-09-17 09:05:05,502 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:05:05,502 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: AS, group size: 16
+2025-09-17 09:05:05,502 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-09-17 09:05:05,502 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: EU, group size: 13
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: AS, group size: 25
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: EU, group size: 21
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: NA, group size: 18
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: AS, group size: 6
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: EU, group size: 9
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 9, to exclude: 1
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: NA, group size: 6
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: AS, group size: 13
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: EU, group size: 9
+2025-09-17 09:05:05,503 - Review.reviews.fri4p_review - INFO - Companies in group: 9, to exclude: 1
+2025-09-17 09:05:05,507 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: NA, group size: 21
+2025-09-17 09:05:05,507 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:05:05,507 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-09-17 09:05:05,507 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:05:05,507 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: EU, group size: 14
+2025-09-17 09:05:05,509 - Review.reviews.fri4p_review - INFO - Companies in group: 14, to exclude: 2
+2025-09-17 09:05:05,509 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: NA, group size: 18
+2025-09-17 09:05:05,509 - Review.reviews.fri4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:05:05,509 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: AS, group size: 24
+2025-09-17 09:05:05,509 - Review.reviews.fri4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:05:05,509 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: EU, group size: 25
+2025-09-17 09:05:05,510 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-09-17 09:05:05,510 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: NA, group size: 17
+2025-09-17 09:05:05,510 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:05:05,510 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: AS, group size: 17
+2025-09-17 09:05:05,510 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:05:05,510 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: EU, group size: 13
+2025-09-17 09:05:05,511 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:05:05,511 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-09-17 09:05:05,511 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:05:05,511 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: AS, group size: 19
+2025-09-17 09:05:05,512 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:05:05,512 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: EU, group size: 28
+2025-09-17 09:05:05,512 - Review.reviews.fri4p_review - INFO - Companies in group: 28, to exclude: 5
+2025-09-17 09:05:05,512 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: NA, group size: 11
+2025-09-17 09:05:05,512 - Review.reviews.fri4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-09-17 09:05:05,512 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: AS, group size: 92
+2025-09-17 09:05:05,513 - Review.reviews.fri4p_review - INFO - Companies in group: 92, to exclude: 18
+2025-09-17 09:05:05,513 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: EU, group size: 98
+2025-09-17 09:05:05,513 - Review.reviews.fri4p_review - INFO - Companies in group: 98, to exclude: 19
+2025-09-17 09:05:05,513 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: NA, group size: 79
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Companies in group: 79, to exclude: 15
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: AS, group size: 24
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: EU, group size: 16
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: NA, group size: 12
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:05:05,514 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: AS, group size: 17
+2025-09-17 09:05:05,517 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:05:05,517 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: EU, group size: 17
+2025-09-17 09:05:05,517 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:05:05,517 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: NA, group size: 4
+2025-09-17 09:05:05,518 - Review.reviews.fri4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-09-17 09:05:05,518 - Review.reviews.fri4p_review - WARNING - No companies to exclude for sector 5520.0 and area NA
+2025-09-17 09:05:05,518 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: AS, group size: 10
+2025-09-17 09:05:05,518 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:05:05,518 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: EU, group size: 22
+2025-09-17 09:05:05,519 - Review.reviews.fri4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-09-17 09:05:05,519 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: NA, group size: 33
+2025-09-17 09:05:05,519 - Review.reviews.fri4p_review - INFO - Companies in group: 33, to exclude: 6
+2025-09-17 09:05:05,519 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: AS, group size: 21
+2025-09-17 09:05:05,520 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:05:05,520 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: EU, group size: 26
+2025-09-17 09:05:05,520 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-09-17 09:05:05,520 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: NA, group size: 31
+2025-09-17 09:05:05,520 - Review.reviews.fri4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-09-17 09:05:05,522 - Review.reviews.fri4p_review - INFO - sesamm_df: 1636 rows -> 1626 unique ISINs after deduplication
+2025-09-17 09:05:05,522 - Review.reviews.fri4p_review - WARNING - Removed 10 duplicate ISIN records from sesamm_df
+2025-09-17 09:05:06,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:06] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:08,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:08] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:10,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:10] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:12,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:12] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:14,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:14] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:16,963 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:16] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:18,970 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:18] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:20,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:20] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:21,015 - Review.reviews.fri4p_review - INFO - Checking IsinCode FRIX00003643 in index_eod_df
+2025-09-17 09:05:21,015 - Review.reviews.fri4p_review - INFO - Found 1 matching rows
+2025-09-17 09:05:21,039 - Review.reviews.fri4p_review - INFO - Saving FRI4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRI4P_df_20250917_090521.xlsx
+2025-09-17 09:05:21,315 - Review.reviews.frn4p_review - INFO - Loading EOD data...
+2025-09-17 09:05:22,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:22] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:23,248 - Review.reviews.frn4p_review - INFO - Loading reference data...
+2025-09-17 09:05:24,430 - Review.reviews.frn4p_review - INFO - Selecting companies ranked 41-80 by FFMC (40 companies total)...
+2025-09-17 09:05:24,447 - Review.reviews.frn4p_review - INFO - Saving FRN4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRN4P_df_20250917_090524.xlsx
+2025-09-17 09:05:24,487 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-09-17 09:05:24,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:24] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:25,173 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-09-17 09:05:26,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:26] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:28,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:28] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:30,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:30] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:32,280 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-09-17 09:05:32,334 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-09-17 09:05:32,334 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-09-17 09:05:32,334 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-09-17 09:05:32,386 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) weight: 60.0000% (target: 60.00%)
+2025-09-17 09:05:32,386 - Review.reviews.gicp_review - INFO - Group 2 (NA500) weight: 40.0000% (target: 40.00%)
+2025-09-17 09:05:32,386 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-09-17 09:05:32,386 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) final weight: 60.0000%
+2025-09-17 09:05:32,386 - Review.reviews.gicp_review - INFO - Group 2 (NA500) final weight: 40.0000%
+2025-09-17 09:05:32,386 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 9.0769%
+2025-09-17 09:05:32,397 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250917_090532.xlsx
+2025-09-17 09:05:32,614 - Review.reviews.gsfbp_review - INFO - Loading EOD data...
+2025-09-17 09:05:32,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:32] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:33,431 - Review.reviews.gsfbp_review - INFO - Loading reference data...
+2025-09-17 09:05:34,117 - Review.reviews.gsfbp_review - INFO - Saving GSFBP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GSFBP_df_20250917_090534.xlsx
+2025-09-17 09:05:34,148 - Review.reviews.sectorial_review - INFO - Loading EOD data...
+2025-09-17 09:05:34,861 - Review.reviews.sectorial_review - INFO - Loading reference data...
+2025-09-17 09:05:34,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:34] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:36,998 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:36] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:38,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:38] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:40,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:40] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:42,131 - Review.reviews.sectorial_review - INFO - Processing all 30 sectorial indices...
+2025-09-17 09:05:42,131 - Review.reviews.sectorial_review - INFO - Processing TECHP...
+2025-09-17 09:05:42,131 - Review.reviews.sectorial_review - INFO - Total weight before capping for TECHP: 1.00000000
+2025-09-17 09:05:42,131 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TECHP (max factor was 1.549967)
+2025-09-17 09:05:42,131 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.380658 to 1.000000
+2025-09-17 09:05:42,146 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in TECHP:
+2025-09-17 09:05:42,146 - Review.reviews.sectorial_review - INFO -   ASML HOLDING: 0.3390 -> 0.2000
+2025-09-17 09:05:42,146 - Review.reviews.sectorial_review - INFO -   SAP: 0.2739 -> 0.2000
+2025-09-17 09:05:42,146 - Review.reviews.sectorial_review - INFO - Boosted 16 companies due to redistribution in TECHP:
+2025-09-17 09:05:42,147 - Review.reviews.sectorial_review - INFO -   AMADEUS IT GROUP: 0.0357 -> 0.0553
+2025-09-17 09:05:42,147 - Review.reviews.sectorial_review - INFO -   ASM INTERNATIONAL: 0.0251 -> 0.0389
+2025-09-17 09:05:42,147 - Review.reviews.sectorial_review - INFO -   BE SEMICONDUCTOR: 0.0100 -> 0.0155
+2025-09-17 09:05:42,147 - Review.reviews.sectorial_review - INFO -   BECHTLE AG: 0.0036 -> 0.0055
+2025-09-17 09:05:42,147 - Review.reviews.sectorial_review - INFO -   CAPGEMINI: 0.0210 -> 0.0326
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   DASSAULT SYSTEMES: 0.0216 -> 0.0335
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   INDRA SISTEMAS SA: 0.0032 -> 0.0050
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   INFINEON TECHNOLOGIE: 0.0494 -> 0.0766
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   JUST EAT TAKEAWAY: 0.0042 -> 0.0065
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   NEMETSCHEK SE: 0.0086 -> 0.0133
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   PROSUS: 0.0839 -> 0.1301
+2025-09-17 09:05:42,148 - Review.reviews.sectorial_review - INFO -   RELX: 0.0883 -> 0.1369
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO -   REPLY: 0.0034 -> 0.0052
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO -   SCOUT24 SE: 0.0092 -> 0.0142
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO -   SOPRA STERIA GROUP: 0.0027 -> 0.0042
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO -   STMICROELECTRONICS: 0.0171 -> 0.0265
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO - Total weight after capping for TECHP: 1.000000
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TECHP: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO - Index market cap for TECHP: 558,066,968,513
+2025-09-17 09:05:42,149 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 851,493,690,977
+2025-09-17 09:05:42,150 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.5258
+2025-09-17 09:05:42,150 - Review.reviews.sectorial_review - INFO - Processing ENRGP...
+2025-09-17 09:05:42,150 - Review.reviews.sectorial_review - INFO - Total weight before capping for ENRGP: 1.00000000
+2025-09-17 09:05:42,159 - Review.reviews.sectorial_review - INFO - Scaled capping factors for ENRGP (max factor was 1.661232)
+2025-09-17 09:05:42,159 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.307479 to 1.000000
+2025-09-17 09:05:42,160 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in ENRGP:
+2025-09-17 09:05:42,160 - Review.reviews.sectorial_review - INFO -   SHELL PLC: 0.3915 -> 0.2000
+2025-09-17 09:05:42,160 - Review.reviews.sectorial_review - INFO -   TOTALENERGIES: 0.2307 -> 0.2000
+2025-09-17 09:05:42,160 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in ENRGP:
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   ENAGAS: 0.0067 -> 0.0111
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   ENI: 0.0706 -> 0.1173
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   GALP ENERGIA-NOM: 0.0145 -> 0.0241
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   GTT: 0.0125 -> 0.0207
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   NESTE OIL OYJ: 0.0157 -> 0.0260
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   NORDEX SE: 0.0056 -> 0.0093
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   OMV AG: 0.0146 -> 0.0242
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   REPSOL: 0.0368 -> 0.0612
+2025-09-17 09:05:42,161 - Review.reviews.sectorial_review - INFO -   SAIPEM: 0.0066 -> 0.0109
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO -   SBM OFFSHORE: 0.0057 -> 0.0095
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO -   SIEMENS ENERGY AG: 0.1369 -> 0.2000
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO -   SNAM: 0.0219 -> 0.0364
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO -   TECHNIP ENERGIES: 0.0119 -> 0.0197
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO -   TENARIS: 0.0123 -> 0.0205
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO -   VALLOUREC: 0.0055 -> 0.0091
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO - Total weight after capping for ENRGP: 1.000000
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO - Maximum individual weight for ENRGP: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO - Index market cap for ENRGP: 264,045,272,125
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 466,556,478,091
+2025-09-17 09:05:42,162 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.7670
+2025-09-17 09:05:42,167 - Review.reviews.sectorial_review - INFO - Processing UTIL...
+2025-09-17 09:05:42,169 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTIL: 1.00000000
+2025-09-17 09:05:42,171 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTIL (max factor was 1.110422)
+2025-09-17 09:05:42,171 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.644283 to 1.000000
+2025-09-17 09:05:42,172 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UTIL:
+2025-09-17 09:05:42,172 - Review.reviews.sectorial_review - INFO -   IBERDROLA: 0.2796 -> 0.2000
+2025-09-17 09:05:42,172 - Review.reviews.sectorial_review - INFO - Boosted 17 companies due to redistribution in UTIL:
+2025-09-17 09:05:42,172 - Review.reviews.sectorial_review - INFO -   A2A: 0.0100 -> 0.0111
+2025-09-17 09:05:42,172 - Review.reviews.sectorial_review - INFO -   E.ON SE: 0.1044 -> 0.1159
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   EDP: 0.0334 -> 0.0370
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   EDP RENOVAVEIS: 0.0092 -> 0.0102
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   ELIA GROUP: 0.0139 -> 0.0154
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   ENDESA: 0.0250 -> 0.0278
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   ENEL: 0.1773 -> 0.1969
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   ENGIE: 0.0979 -> 0.1087
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   FORTUM OYJ: 0.0206 -> 0.0228
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   HERA: 0.0090 -> 0.0100
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   ITALGAS: 0.0136 -> 0.0151
+2025-09-17 09:05:42,173 - Review.reviews.sectorial_review - INFO -   NATURGY ENERGY GROUP: 0.0111 -> 0.0124
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO -   REDEIA CORP: 0.0199 -> 0.0221
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO -   RWE AG: 0.0709 -> 0.0787
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO -   TERNA: 0.0351 -> 0.0389
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO -   VEOLIA ENVIRON.: 0.0570 -> 0.0633
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO -   VERBUND AG: 0.0122 -> 0.0136
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTIL: 1.000000
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTIL: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO - Index market cap for UTIL: 302,155,474,930
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 336,518,858,919
+2025-09-17 09:05:42,174 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1137
+2025-09-17 09:05:42,177 - Review.reviews.sectorial_review - INFO - Processing BASM...
+2025-09-17 09:05:42,179 - Review.reviews.sectorial_review - INFO - Total weight before capping for BASM: 1.00000000
+2025-09-17 09:05:42,184 - Review.reviews.sectorial_review - INFO - Scaled capping factors for BASM (max factor was 1.601963)
+2025-09-17 09:05:42,185 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.276786 to 1.000000
+2025-09-17 09:05:42,186 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in BASM:
+2025-09-17 09:05:42,186 - Review.reviews.sectorial_review - INFO -   AIR LIQUIDE: 0.4511 -> 0.2000
+2025-09-17 09:05:42,186 - Review.reviews.sectorial_review - INFO - Boosted 14 companies due to redistribution in BASM:
+2025-09-17 09:05:42,186 - Review.reviews.sectorial_review - INFO -   AKZO NOBEL: 0.0465 -> 0.0745
+2025-09-17 09:05:42,186 - Review.reviews.sectorial_review - INFO -   ARCELORMITTAL SA: 0.0560 -> 0.0897
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   ARKEMA: 0.0150 -> 0.0240
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   AURUBIS AG: 0.0117 -> 0.0187
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   BASF: 0.1744 -> 0.2000
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   BRENNTAG SE: 0.0276 -> 0.0442
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   EVONIK INDUSTRIES AG: 0.0181 -> 0.0291
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   IMCD: 0.0230 -> 0.0368
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   STORA ENSO OYJ: 0.0270 -> 0.0432
+2025-09-17 09:05:42,187 - Review.reviews.sectorial_review - INFO -   SYENSQO: 0.0233 -> 0.0374
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO -   SYMRISE AG: 0.0460 -> 0.0737
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO -   UMICORE: 0.0106 -> 0.0169
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO -   UPM-KYMMENE OYJ: 0.0560 -> 0.0897
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO -   VOESTALPINE AG: 0.0138 -> 0.0221
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO - Total weight after capping for BASM: 1.000000
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO - Maximum individual weight for BASM: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO - Index market cap for BASM: 142,904,640,118
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 223,769,562,416
+2025-09-17 09:05:42,188 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.5659
+2025-09-17 09:05:42,191 - Review.reviews.sectorial_review - INFO - Processing FINA...
+2025-09-17 09:05:42,193 - Review.reviews.sectorial_review - INFO - Total weight before capping for FINA: 1.00000000
+2025-09-17 09:05:42,194 - Review.reviews.sectorial_review - INFO - Scaled capping factors for FINA (max factor was 1.000000)
+2025-09-17 09:05:42,194 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,195 - Review.reviews.sectorial_review - INFO - Total weight after capping for FINA: 1.000000
+2025-09-17 09:05:42,195 - Review.reviews.sectorial_review - INFO - Maximum individual weight for FINA: 0.091500 (cap: 0.200000)
+2025-09-17 09:05:42,195 - Review.reviews.sectorial_review - INFO - Index market cap for FINA: 1,491,387,978,251
+2025-09-17 09:05:42,195 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,462,796,636,570
+2025-09-17 09:05:42,195 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9808
+2025-09-17 09:05:42,200 - Review.reviews.sectorial_review - INFO - Processing CSTA...
+2025-09-17 09:05:42,201 - Review.reviews.sectorial_review - INFO - Total weight before capping for CSTA: 1.00000000
+2025-09-17 09:05:42,204 - Review.reviews.sectorial_review - INFO - Scaled capping factors for CSTA (max factor was 1.274180)
+2025-09-17 09:05:42,204 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.421781 to 1.000000
+2025-09-17 09:05:42,205 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in CSTA:
+2025-09-17 09:05:42,205 - Review.reviews.sectorial_review - INFO -   UNILEVER: 0.3721 -> 0.2000
+2025-09-17 09:05:42,205 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in CSTA:
+2025-09-17 09:05:42,205 - Review.reviews.sectorial_review - INFO -   AB INBEV: 0.1302 -> 0.1659
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   AHOLD DEL: 0.0821 -> 0.1046
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   BEIERSDORF AG: 0.0210 -> 0.0268
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   CAMPARI: 0.0094 -> 0.0119
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   CARREFOUR: 0.0202 -> 0.0258
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   DANONE: 0.1292 -> 0.1646
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   DSM FIRMENICH AG: 0.0447 -> 0.0569
+2025-09-17 09:05:42,206 - Review.reviews.sectorial_review - INFO -   GLANBIA PLC: 0.0071 -> 0.0090
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   HEINEKEN: 0.0507 -> 0.0646
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   J.MARTINS,SGPS: 0.0162 -> 0.0206
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   JDE PEET'S: 0.0122 -> 0.0156
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   KERRY GROUP PLC: 0.0341 -> 0.0435
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   KESKO B: 0.0135 -> 0.0172
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   LOTUS BAKERIES: 0.0089 -> 0.0113
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO -   PERNOD RICARD: 0.0484 -> 0.0616
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO - Total weight after capping for CSTA: 1.000000
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO - Maximum individual weight for CSTA: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,208 - Review.reviews.sectorial_review - INFO - Index market cap for CSTA: 297,112,859,569
+2025-09-17 09:05:42,209 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 372,258,818,860
+2025-09-17 09:05:42,209 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.2529
+2025-09-17 09:05:42,212 - Review.reviews.sectorial_review - INFO - Processing TELEP...
+2025-09-17 09:05:42,213 - Review.reviews.sectorial_review - INFO - Total weight before capping for TELEP: 1.00000000
+2025-09-17 09:05:42,217 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TELEP (max factor was 1.519323)
+2025-09-17 09:05:42,217 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.278039 to 1.000000
+2025-09-17 09:05:42,217 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TELEP:
+2025-09-17 09:05:42,217 - Review.reviews.sectorial_review - INFO -   DEUTSCHE TELEKOM AG: 0.4734 -> 0.2000
+2025-09-17 09:05:42,217 - Review.reviews.sectorial_review - INFO - Boosted 9 companies due to redistribution in TELEP:
+2025-09-17 09:05:42,217 - Review.reviews.sectorial_review - INFO -   CELLNEX TELECOM: 0.0827 -> 0.1256
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   ELISA OYJ: 0.0328 -> 0.0498
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   FREENET AG: 0.0154 -> 0.0234
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   INWIT: 0.0132 -> 0.0200
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   KPN KON: 0.0761 -> 0.1157
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   NOKIA: 0.0933 -> 0.1417
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   ORANGE: 0.1109 -> 0.1685
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   TELECOM ITALIA: 0.0238 -> 0.0362
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO -   TELEFONICA: 0.0784 -> 0.1191
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO - Total weight after capping for TELEP: 1.000000
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TELEP: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO - Index market cap for TELEP: 141,130,435,965
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 213,147,156,631
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.5103
+2025-09-17 09:05:42,219 - Review.reviews.sectorial_review - INFO - Processing HEAC...
+2025-09-17 09:05:42,225 - Review.reviews.sectorial_review - INFO - Total weight before capping for HEAC: 1.00000000
+2025-09-17 09:05:42,228 - Review.reviews.sectorial_review - INFO - Scaled capping factors for HEAC (max factor was 1.081632)
+2025-09-17 09:05:42,228 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.811512 to 1.000000
+2025-09-17 09:05:42,228 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in HEAC:
+2025-09-17 09:05:42,228 - Review.reviews.sectorial_review - INFO -   ESSILORLUXOTTICA: 0.2174 -> 0.2000
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   SANOFI: 0.2279 -> 0.2000
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO - Boosted 20 companies due to redistribution in HEAC:
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   ABIVAX: 0.0077 -> 0.0083
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   AMPLIFON: 0.0049 -> 0.0053
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   ARGENX SE: 0.0956 -> 0.1035
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   BAYER AG: 0.0656 -> 0.0709
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   BIOMERIEUX: 0.0133 -> 0.0144
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   DIASORIN: 0.0049 -> 0.0053
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   EUROFINS SCIENT.: 0.0184 -> 0.0199
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   FRESENIUS MEDICAL: 0.0217 -> 0.0235
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   FRESENIUS SE & CO: 0.0493 -> 0.0534
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   GRIFOLS SA: 0.0090 -> 0.0097
+2025-09-17 09:05:42,229 - Review.reviews.sectorial_review - INFO -   IPSEN: 0.0097 -> 0.0105
+2025-09-17 09:05:42,231 - Review.reviews.sectorial_review - INFO -   MERCK KGA: 0.0341 -> 0.0369
+2025-09-17 09:05:42,231 - Review.reviews.sectorial_review - INFO -   ORION OYJ CLASS B: 0.0178 -> 0.0192
+2025-09-17 09:05:42,231 - Review.reviews.sectorial_review - INFO -   PHILIPS KON: 0.0452 -> 0.0489
+2025-09-17 09:05:42,231 - Review.reviews.sectorial_review - INFO -   QIAGEN NV: 0.0206 -> 0.0222
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO -   RECORDATI ORD: 0.0151 -> 0.0163
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO -   SARTORIUS AG PREF: 0.0119 -> 0.0129
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO -   SARTORIUS STED BIO: 0.0127 -> 0.0137
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO -   SIEMENS HEALTHINEERS: 0.0333 -> 0.0360
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO -   UCB: 0.0639 -> 0.0691
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO - Total weight after capping for HEAC: 1.000000
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO - Maximum individual weight for HEAC: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO - Index market cap for HEAC: 364,115,079,055
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 403,482,958,519
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1081
+2025-09-17 09:05:42,232 - Review.reviews.sectorial_review - INFO - Processing INDU...
+2025-09-17 09:05:42,238 - Review.reviews.sectorial_review - INFO - Total weight before capping for INDU: 1.00000000
+2025-09-17 09:05:42,239 - Review.reviews.sectorial_review - INFO - Scaled capping factors for INDU (max factor was 1.000000)
+2025-09-17 09:05:42,239 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,239 - Review.reviews.sectorial_review - INFO - Total weight after capping for INDU: 1.000000
+2025-09-17 09:05:42,240 - Review.reviews.sectorial_review - INFO - Maximum individual weight for INDU: 0.135100 (cap: 0.200000)
+2025-09-17 09:05:42,240 - Review.reviews.sectorial_review - INFO - Index market cap for INDU: 1,246,772,124,438
+2025-09-17 09:05:42,240 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,271,635,885,600
+2025-09-17 09:05:42,240 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0199
+2025-09-17 09:05:42,243 - Review.reviews.sectorial_review - INFO - Processing CDIS...
+2025-09-17 09:05:42,245 - Review.reviews.sectorial_review - INFO - Total weight before capping for CDIS: 1.00000000
+2025-09-17 09:05:42,246 - Review.reviews.sectorial_review - INFO - Scaled capping factors for CDIS (max factor was 1.000000)
+2025-09-17 09:05:42,246 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,247 - Review.reviews.sectorial_review - INFO - Total weight after capping for CDIS: 1.000000
+2025-09-17 09:05:42,247 - Review.reviews.sectorial_review - INFO - Maximum individual weight for CDIS: 0.172293 (cap: 0.200000)
+2025-09-17 09:05:42,247 - Review.reviews.sectorial_review - INFO - Index market cap for CDIS: 783,053,664,733
+2025-09-17 09:05:42,247 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 736,889,533,769
+2025-09-17 09:05:42,247 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9410
+2025-09-17 09:05:42,250 - Review.reviews.sectorial_review - INFO - Processing TBMA...
+2025-09-17 09:05:42,253 - Review.reviews.sectorial_review - INFO - Total weight before capping for TBMA: 1.00000000
+2025-09-17 09:05:42,254 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TBMA (max factor was 1.000000)
+2025-09-17 09:05:42,255 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,255 - Review.reviews.sectorial_review - INFO - Total weight after capping for TBMA: 1.000000
+2025-09-17 09:05:42,255 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TBMA: 0.185871 (cap: 0.200000)
+2025-09-17 09:05:42,255 - Review.reviews.sectorial_review - INFO - Index market cap for TBMA: 1,016,970,166,577
+2025-09-17 09:05:42,255 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,003,549,261,859
+2025-09-17 09:05:42,255 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9868
+2025-09-17 09:05:42,258 - Review.reviews.sectorial_review - INFO - Processing TCDI...
+2025-09-17 09:05:42,260 - Review.reviews.sectorial_review - INFO - Total weight before capping for TCDI: 1.00000000
+2025-09-17 09:05:42,263 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TCDI (max factor was 1.039183)
+2025-09-17 09:05:42,263 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.836179 to 1.000000
+2025-09-17 09:05:42,264 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TCDI:
+2025-09-17 09:05:42,264 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2302 -> 0.2000
+2025-09-17 09:05:42,264 - Review.reviews.sectorial_review - INFO - Boosted 121 companies due to redistribution in TCDI:
+2025-09-17 09:05:42,265 - Review.reviews.sectorial_review - INFO -   ACCOR: 0.0010 -> 0.0011
+2025-09-17 09:05:42,265 - Review.reviews.sectorial_review - INFO -   ADIDAS AG: 0.0036 -> 0.0038
+2025-09-17 09:05:42,265 - Review.reviews.sectorial_review - INFO -   AIRBNB INC. CLASS A: 0.0053 -> 0.0056
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   AUTO1 GROUP SE: 0.0004 -> 0.0005
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   AUTOZONE INC.: 0.0072 -> 0.0075
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   AVOLTA AG: 0.0006 -> 0.0006
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   BARRATT REDROW PLC: 0.0007 -> 0.0007
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   BELLWAY P.L.C.: 0.0004 -> 0.0004
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   BERKELEY GROUP HLD: 0.0005 -> 0.0005
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   BMW: 0.0028 -> 0.0029
+2025-09-17 09:05:42,266 - Review.reviews.sectorial_review - INFO -   BOOKING HOLDINGS INC: 0.0182 -> 0.0189
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   BRUNELLO CUCINELLI: 0.0004 -> 0.0004
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   BURBERRY GROUP: 0.0005 -> 0.0006
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   BURLINGTON STORES: 0.0017 -> 0.0018
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   CARNIVAL CORPORATION: 0.0034 -> 0.0035
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   CARVANA CO: 0.0052 -> 0.0054
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   CHIPOTLE MEX. GRILL: 0.0054 -> 0.0056
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   CIE FIN RICHEMONT: 0.0106 -> 0.0110
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   COMPASS GROUP PLC: 0.0061 -> 0.0063
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   CONTINENTAL AG: 0.0010 -> 0.0010
+2025-09-17 09:05:42,267 - Review.reviews.sectorial_review - INFO -   COPART INC.: 0.0042 -> 0.0043
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   COSTCO WHOLES. CORP.: 0.0433 -> 0.0450
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   COUPANG INC. CLASS A: 0.0045 -> 0.0047
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   CTS EVENTIM AG: 0.0006 -> 0.0006
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   D.R. HORTON INC.: 0.0050 -> 0.0052
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   DARDEN RESTAURANTS: 0.0025 -> 0.0026
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   DELIVERY HERO SE: 0.0007 -> 0.0007
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   DELTA AIR LINES INC.: 0.0039 -> 0.0040
+2025-09-17 09:05:42,268 - Review.reviews.sectorial_review - INFO -   D'IETEREN GROUP: 0.0004 -> 0.0004
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   DOLLAR GENERAL CORP.: 0.0023 -> 0.0024
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   DOLLAR TREE INC.: 0.0019 -> 0.0020
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   DRAFTKINGS. INC. A: 0.0022 -> 0.0023
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   EASYJET: 0.0004 -> 0.0004
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   EBAY INC.: 0.0042 -> 0.0043
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   ELECTRONIC ARTS INC.: 0.0040 -> 0.0041
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   ENTAIN PLC: 0.0007 -> 0.0008
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   ESTEE LAUDER COS INC: 0.0021 -> 0.0022
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   EVOLUTION AB: 0.0013 -> 0.0014
+2025-09-17 09:05:42,269 - Review.reviews.sectorial_review - INFO -   EXPEDIA GROUP INC.: 0.0027 -> 0.0028
+2025-09-17 09:05:42,270 - Review.reviews.sectorial_review - INFO -   FDJ UNITED: 0.0004 -> 0.0004
+2025-09-17 09:05:42,270 - Review.reviews.sectorial_review - INFO -   FERRARI: 0.0057 -> 0.0060
+2025-09-17 09:05:42,270 - Review.reviews.sectorial_review - INFO -   FLUTTER ENTERTAINMEN: 0.0051 -> 0.0052
+2025-09-17 09:05:42,270 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0046 -> 0.0048
+2025-09-17 09:05:42,270 - Review.reviews.sectorial_review - INFO -   GAMES WORKSHOP GROUP: 0.0007 -> 0.0007
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   GARMIN LTD.: 0.0040 -> 0.0041
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0057 -> 0.0059
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0020 -> 0.0021
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   HENKEL AG & CO PREF: 0.0014 -> 0.0015
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   HENNES & MAURITZ AB: 0.0008 -> 0.0009
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   HERMES INTL: 0.0081 -> 0.0085
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   HILTON WORLDWIDE: 0.0066 -> 0.0069
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   HOME DEPOT INC: 0.0430 -> 0.0446
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   HOWDEN JOINERY GROUP: 0.0006 -> 0.0007
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   INDITEX: 0.0060 -> 0.0062
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   INFORMA: 0.0016 -> 0.0017
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   INTERCONTINENTAL HTL: 0.0018 -> 0.0019
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   INTL CONS AIRLINES: 0.0017 -> 0.0018
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   ITV: 0.0004 -> 0.0004
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   KERING: 0.0024 -> 0.0025
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   KINGFISHER: 0.0005 -> 0.0005
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LENNAR CORP A: 0.0031 -> 0.0032
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LIBERTY MEDIA CORP.: 0.0023 -> 0.0024
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LIVE NATION ENTERT: 0.0028 -> 0.0029
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   L'OREAL: 0.0110 -> 0.0114
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LOTTOMATICA GROUP: 0.0007 -> 0.0007
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LOWE'S COMPANIES INC: 0.0155 -> 0.0161
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LUFTHANSA: 0.0009 -> 0.0010
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LULULEMON ATHLETICA: 0.0017 -> 0.0018
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   LVMH: 0.0154 -> 0.0160
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   MARRIOTT INTERN. INC: 0.0063 -> 0.0066
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   MCDONALD'S CORP: 0.0222 -> 0.0230
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   MERCADOLIBRE INC.: 0.0118 -> 0.0123
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   MERCEDES-BENZ GROUP: 0.0045 -> 0.0047
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   MICHELIN: 0.0027 -> 0.0028
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   MONCLER: 0.0013 -> 0.0014
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   NETFLIX INC.: 0.0523 -> 0.0543
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   NEXT: 0.0018 -> 0.0019
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   NIKE INC: 0.0089 -> 0.0092
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   NVR INC.: 0.0024 -> 0.0025
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   O'REILLY AUTOMOTIVE: 0.0092 -> 0.0095
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PANDORA A/S: 0.0011 -> 0.0011
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PEARSON: 0.0008 -> 0.0008
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PERSIMMON: 0.0005 -> 0.0005
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PORSCHE AG: 0.0006 -> 0.0006
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PORSCHE PREF: 0.0007 -> 0.0007
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PUBLICIS GROUPE SA: 0.0024 -> 0.0025
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   PULTEGROUP INC: 0.0027 -> 0.0028
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   RENAULT: 0.0008 -> 0.0008
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   ROBLOX CORP. - A: 0.0090 -> 0.0093
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   ROLLINS. INC.: 0.0018 -> 0.0019
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   ROSS STORES INC.: 0.0049 -> 0.0051
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   ROYAL CARIBBEAN: 0.0085 -> 0.0088
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   RYANAIR HOLD. PLC: 0.0030 -> 0.0032
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   SODEXO: 0.0005 -> 0.0005
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   SOMNIGROUP INT: 0.0018 -> 0.0019
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   SPOTIFY TECHNOLOGY: 0.0111 -> 0.0116
+2025-09-17 09:05:42,271 - Review.reviews.sectorial_review - INFO -   STARBUCKS CORP.: 0.0098 -> 0.0102
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   STELLANTIS NV: 0.0020 -> 0.0021
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   SWATCH GROUP-BR: 0.0006 -> 0.0006
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   TAKE-TWO INTERACTIVE: 0.0044 -> 0.0046
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   TAPESTRY INC.: 0.0023 -> 0.0024
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   TARGET CORPORATION: 0.0042 -> 0.0043
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   TAYLOR WIMPEY PLC: 0.0005 -> 0.0005
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.1184 -> 0.1231
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   THE WALT DISNEY COMP: 0.0212 -> 0.0221
+2025-09-17 09:05:42,276 - Review.reviews.sectorial_review - INFO -   TJX COMPANIES INC: 0.0160 -> 0.0166
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   TRACTOR SUPPLY COMP.: 0.0032 -> 0.0033
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   TRADE DESK INC.: 0.0020 -> 0.0021
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   TUI AG: 0.0004 -> 0.0005
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   UBER TECHNOLOGIES: 0.0209 -> 0.0217
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   ULTA BEAUTY INC: 0.0024 -> 0.0025
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   UMG: 0.0033 -> 0.0034
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   UNITED AIRLINES HLD: 0.0035 -> 0.0036
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   VOLKSWAGEN PREF: 0.0025 -> 0.0026
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   WALMART INC: 0.0465 -> 0.0483
+2025-09-17 09:05:42,277 - Review.reviews.sectorial_review - INFO -   WARNER BROS DISCOVER: 0.0046 -> 0.0048
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO -   WHITBREAD: 0.0008 -> 0.0008
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO -   WILLIAMS-SONOMA.: 0.0023 -> 0.0024
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO -   WPP: 0.0006 -> 0.0006
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO -   YUM! BRANDS INC.: 0.0042 -> 0.0044
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO -   ZALANDO SE: 0.0007 -> 0.0008
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCDI: 1.000000
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TCDI: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO - Index market cap for TCDI: 7,894,441,907,987
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 8,235,279,917,180
+2025-09-17 09:05:42,278 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0432
+2025-09-17 09:05:42,282 - Review.reviews.sectorial_review - INFO - Processing TCST...
+2025-09-17 09:05:42,284 - Review.reviews.sectorial_review - INFO - Total weight before capping for TCST: 1.00000000
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TCST (max factor was 1.000000)
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCST: 1.000000
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TCST: 0.116449 (cap: 0.200000)
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Index market cap for TCST: 2,684,130,764,635
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,682,394,672,246
+2025-09-17 09:05:42,286 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9994
+2025-09-17 09:05:42,290 - Review.reviews.sectorial_review - INFO - Processing TENR...
+2025-09-17 09:05:42,292 - Review.reviews.sectorial_review - INFO - Total weight before capping for TENR: 1.00000000
+2025-09-17 09:05:42,293 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TENR (max factor was 1.000000)
+2025-09-17 09:05:42,293 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,294 - Review.reviews.sectorial_review - INFO - Total weight after capping for TENR: 1.000000
+2025-09-17 09:05:42,294 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TENR: 0.193385 (cap: 0.200000)
+2025-09-17 09:05:42,294 - Review.reviews.sectorial_review - INFO - Index market cap for TENR: 2,134,649,124,358
+2025-09-17 09:05:42,294 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,133,109,298,379
+2025-09-17 09:05:42,294 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9993
+2025-09-17 09:05:42,297 - Review.reviews.sectorial_review - INFO - Processing TFINP...
+2025-09-17 09:05:42,299 - Review.reviews.sectorial_review - INFO - Total weight before capping for TFINP: 1.00000000
+2025-09-17 09:05:42,300 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TFINP (max factor was 1.000000)
+2025-09-17 09:05:42,300 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,301 - Review.reviews.sectorial_review - INFO - Total weight after capping for TFINP: 1.000000
+2025-09-17 09:05:42,301 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TFINP: 0.095253 (cap: 0.200000)
+2025-09-17 09:05:42,301 - Review.reviews.sectorial_review - INFO - Index market cap for TFINP: 7,562,611,574,989
+2025-09-17 09:05:42,301 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,530,967,525,192
+2025-09-17 09:05:42,301 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9958
+2025-09-17 09:05:42,304 - Review.reviews.sectorial_review - INFO - Processing THEC...
+2025-09-17 09:05:42,306 - Review.reviews.sectorial_review - INFO - Total weight before capping for THEC: 1.00000000
+2025-09-17 09:05:42,308 - Review.reviews.sectorial_review - INFO - Scaled capping factors for THEC (max factor was 1.000000)
+2025-09-17 09:05:42,308 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,308 - Review.reviews.sectorial_review - INFO - Total weight after capping for THEC: 1.000000
+2025-09-17 09:05:42,309 - Review.reviews.sectorial_review - INFO - Maximum individual weight for THEC: 0.095287 (cap: 0.200000)
+2025-09-17 09:05:42,309 - Review.reviews.sectorial_review - INFO - Index market cap for THEC: 5,394,106,147,014
+2025-09-17 09:05:42,309 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 5,447,444,563,073
+2025-09-17 09:05:42,309 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0099
+2025-09-17 09:05:42,312 - Review.reviews.sectorial_review - INFO - Processing TIND...
+2025-09-17 09:05:42,313 - Review.reviews.sectorial_review - INFO - Total weight before capping for TIND: 1.00000000
+2025-09-17 09:05:42,315 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TIND (max factor was 1.000000)
+2025-09-17 09:05:42,315 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,315 - Review.reviews.sectorial_review - INFO - Total weight after capping for TIND: 1.000000
+2025-09-17 09:05:42,315 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TIND: 0.064350 (cap: 0.200000)
+2025-09-17 09:05:42,316 - Review.reviews.sectorial_review - INFO - Index market cap for TIND: 7,525,113,899,750
+2025-09-17 09:05:42,316 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,573,384,844,530
+2025-09-17 09:05:42,316 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0064
+2025-09-17 09:05:42,318 - Review.reviews.sectorial_review - INFO - Processing TTEC...
+2025-09-17 09:05:42,322 - Review.reviews.sectorial_review - INFO - Total weight before capping for TTEC: 1.00000000
+2025-09-17 09:05:42,323 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TTEC (max factor was 1.000000)
+2025-09-17 09:05:42,323 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,324 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEC: 1.000000
+2025-09-17 09:05:42,324 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TTEC: 0.180791 (cap: 0.200000)
+2025-09-17 09:05:42,324 - Review.reviews.sectorial_review - INFO - Index market cap for TTEC: 19,840,448,483,324
+2025-09-17 09:05:42,324 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 19,914,162,799,970
+2025-09-17 09:05:42,324 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0037
+2025-09-17 09:05:42,328 - Review.reviews.sectorial_review - INFO - Processing TTEL...
+2025-09-17 09:05:42,329 - Review.reviews.sectorial_review - INFO - Total weight before capping for TTEL: 1.00000000
+2025-09-17 09:05:42,330 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TTEL (max factor was 1.000000)
+2025-09-17 09:05:42,331 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,332 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEL: 1.000000
+2025-09-17 09:05:42,332 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TTEL: 0.178836 (cap: 0.200000)
+2025-09-17 09:05:42,332 - Review.reviews.sectorial_review - INFO - Index market cap for TTEL: 1,276,104,838,111
+2025-09-17 09:05:42,332 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,250,460,674,136
+2025-09-17 09:05:42,333 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9799
+2025-09-17 09:05:42,335 - Review.reviews.sectorial_review - INFO - Processing TUTI...
+2025-09-17 09:05:42,338 - Review.reviews.sectorial_review - INFO - Total weight before capping for TUTI: 1.00000000
+2025-09-17 09:05:42,339 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TUTI (max factor was 1.000000)
+2025-09-17 09:05:42,339 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,340 - Review.reviews.sectorial_review - INFO - Total weight after capping for TUTI: 1.000000
+2025-09-17 09:05:42,340 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TUTI: 0.075713 (cap: 0.200000)
+2025-09-17 09:05:42,340 - Review.reviews.sectorial_review - INFO - Index market cap for TUTI: 1,591,960,098,351
+2025-09-17 09:05:42,340 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,602,504,935,678
+2025-09-17 09:05:42,340 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0066
+2025-09-17 09:05:42,343 - Review.reviews.sectorial_review - INFO - Processing UUTI...
+2025-09-17 09:05:42,346 - Review.reviews.sectorial_review - INFO - Total weight before capping for UUTI: 1.00000000
+2025-09-17 09:05:42,347 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UUTI (max factor was 1.000000)
+2025-09-17 09:05:42,347 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,349 - Review.reviews.sectorial_review - INFO - Total weight after capping for UUTI: 1.000000
+2025-09-17 09:05:42,349 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UUTI: 0.105901 (cap: 0.200000)
+2025-09-17 09:05:42,349 - Review.reviews.sectorial_review - INFO - Index market cap for UUTI: 1,145,902,060,182
+2025-09-17 09:05:42,349 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,145,688,847,669
+2025-09-17 09:05:42,349 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9998
+2025-09-17 09:05:42,351 - Review.reviews.sectorial_review - INFO - Processing UTEL...
+2025-09-17 09:05:42,356 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTEL: 1.00000000
+2025-09-17 09:05:42,359 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTEL (max factor was 1.048280)
+2025-09-17 09:05:42,359 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.805541 to 1.000000
+2025-09-17 09:05:42,360 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UTEL:
+2025-09-17 09:05:42,360 - Review.reviews.sectorial_review - INFO -   CISCO SYSTEMS INC: 0.2368 -> 0.2000
+2025-09-17 09:05:42,360 - Review.reviews.sectorial_review - INFO - Boosted 7 companies due to redistribution in UTEL:
+2025-09-17 09:05:42,360 - Review.reviews.sectorial_review - INFO -   ARISTA NETWORKS INC.: 0.1277 -> 0.1339
+2025-09-17 09:05:42,360 - Review.reviews.sectorial_review - INFO -   AT&T INC: 0.1874 -> 0.1965
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO -   CHARTER COM. CLASS A: 0.0223 -> 0.0234
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO -   COMCAST: 0.1063 -> 0.1114
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO -   MOTOROLA SOLUTIONS: 0.0710 -> 0.0744
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO -   T-MOBILE US INC.: 0.0836 -> 0.0877
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO -   VERIZON: 0.1648 -> 0.1728
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEL: 1.000000
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTEL: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO - Index market cap for UTEL: 908,219,991,131
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 944,189,523,862
+2025-09-17 09:05:42,361 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0396
+2025-09-17 09:05:42,365 - Review.reviews.sectorial_review - INFO - Processing UTEC...
+2025-09-17 09:05:42,367 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTEC: 1.00000000
+2025-09-17 09:05:42,368 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTEC (max factor was 1.000000)
+2025-09-17 09:05:42,368 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,369 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEC: 1.000000
+2025-09-17 09:05:42,369 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTEC: 0.189402 (cap: 0.200000)
+2025-09-17 09:05:42,369 - Review.reviews.sectorial_review - INFO - Index market cap for UTEC: 18,913,464,672,522
+2025-09-17 09:05:42,370 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 19,008,800,608,315
+2025-09-17 09:05:42,370 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0050
+2025-09-17 09:05:42,372 - Review.reviews.sectorial_review - INFO - Processing UIND...
+2025-09-17 09:05:42,376 - Review.reviews.sectorial_review - INFO - Total weight before capping for UIND: 1.00000000
+2025-09-17 09:05:42,377 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UIND (max factor was 1.000000)
+2025-09-17 09:05:42,377 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,378 - Review.reviews.sectorial_review - INFO - Total weight after capping for UIND: 1.000000
+2025-09-17 09:05:42,378 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UIND: 0.090454 (cap: 0.200000)
+2025-09-17 09:05:42,378 - Review.reviews.sectorial_review - INFO - Index market cap for UIND: 5,346,773,635,311
+2025-09-17 09:05:42,378 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 5,387,809,113,034
+2025-09-17 09:05:42,378 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0077
+2025-09-17 09:05:42,383 - Review.reviews.sectorial_review - INFO - Processing UHEC...
+2025-09-17 09:05:42,384 - Review.reviews.sectorial_review - INFO - Total weight before capping for UHEC: 1.00000000
+2025-09-17 09:05:42,385 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UHEC (max factor was 1.000000)
+2025-09-17 09:05:42,385 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,386 - Review.reviews.sectorial_review - INFO - Total weight after capping for UHEC: 1.000000
+2025-09-17 09:05:42,386 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UHEC: 0.131096 (cap: 0.200000)
+2025-09-17 09:05:42,386 - Review.reviews.sectorial_review - INFO - Index market cap for UHEC: 3,915,868,822,525
+2025-09-17 09:05:42,386 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 3,959,454,251,810
+2025-09-17 09:05:42,386 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0111
+2025-09-17 09:05:42,388 - Review.reviews.sectorial_review - INFO - Processing UFIN...
+2025-09-17 09:05:42,391 - Review.reviews.sectorial_review - INFO - Total weight before capping for UFIN: 1.00000000
+2025-09-17 09:05:42,392 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UFIN (max factor was 1.000000)
+2025-09-17 09:05:42,392 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,393 - Review.reviews.sectorial_review - INFO - Total weight after capping for UFIN: 1.000000
+2025-09-17 09:05:42,393 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UFIN: 0.145289 (cap: 0.200000)
+2025-09-17 09:05:42,393 - Review.reviews.sectorial_review - INFO - Index market cap for UFIN: 4,936,049,312,591
+2025-09-17 09:05:42,393 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 4,937,360,426,909
+2025-09-17 09:05:42,393 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0003
+2025-09-17 09:05:42,398 - Review.reviews.sectorial_review - INFO - Processing UENR...
+2025-09-17 09:05:42,400 - Review.reviews.sectorial_review - INFO - Total weight before capping for UENR: 1.00000000
+2025-09-17 09:05:42,403 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UENR (max factor was 1.089453)
+2025-09-17 09:05:42,403 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.690957 to 1.000000
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UENR:
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   EXXON MOBIL: 0.2657 -> 0.2000
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Boosted 25 companies due to redistribution in UENR:
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   BAKER HUGHES COMPANY: 0.0253 -> 0.0276
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   CHENIERE ENERGY: 0.0281 -> 0.0306
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   CHEVRON CORPORATION: 0.1686 -> 0.1837
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   CONOCOPHILLIPS: 0.0642 -> 0.0699
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   COTERRA ENERGY INC.: 0.0102 -> 0.0111
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   DEVON ENERGY CORP: 0.0121 -> 0.0131
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   DIAMONDBACK ENERGY: 0.0142 -> 0.0154
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   ENERGY TRANSFER L.P.: 0.0312 -> 0.0339
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   ENTERPRISE PRODUCTS: 0.0262 -> 0.0285
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   EOG RESOURCES INC.: 0.0359 -> 0.0391
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   EQT CORPORATION: 0.0169 -> 0.0185
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   EXPAND ENERGY: 0.0126 -> 0.0137
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   FIRST SOLAR INC: 0.0120 -> 0.0130
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   HALLIBURTON COMPANY: 0.0104 -> 0.0113
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   KINDER MORGAN INC.: 0.0279 -> 0.0304
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   MARATHON PETROLEUM: 0.0302 -> 0.0329
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   MPLX LP: 0.0099 -> 0.0108
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   OCCIDENTAL PETROLEUM: 0.0192 -> 0.0209
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   ONEOK INC.: 0.0248 -> 0.0271
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   PHILLIPS 66: 0.0292 -> 0.0318
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   SCHLUMBERGER LTD: 0.0287 -> 0.0313
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   TARGA RESOURCES CORP: 0.0191 -> 0.0208
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   TEXAS PACIFIC LAND: 0.0117 -> 0.0127
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   VALERO ENERGY CORP.: 0.0275 -> 0.0299
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO -   WILLIAMS COMPANIES: 0.0385 -> 0.0419
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Total weight after capping for UENR: 1.000000
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UENR: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Index market cap for UENR: 1,422,668,439,981
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,552,624,525,991
+2025-09-17 09:05:42,404 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0913
+2025-09-17 09:05:42,412 - Review.reviews.sectorial_review - INFO - Processing UCST...
+2025-09-17 09:05:42,414 - Review.reviews.sectorial_review - INFO - Total weight before capping for UCST: 1.00000000
+2025-09-17 09:05:42,415 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UCST (max factor was 1.000000)
+2025-09-17 09:05:42,415 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2025-09-17 09:05:42,415 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCST: 1.000000
+2025-09-17 09:05:42,416 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UCST: 0.176570 (cap: 0.200000)
+2025-09-17 09:05:42,416 - Review.reviews.sectorial_review - INFO - Index market cap for UCST: 1,778,466,751,785
+2025-09-17 09:05:42,416 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,769,052,475,066
+2025-09-17 09:05:42,416 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9947
+2025-09-17 09:05:42,420 - Review.reviews.sectorial_review - INFO - Processing UCDI...
+2025-09-17 09:05:42,422 - Review.reviews.sectorial_review - INFO - Total weight before capping for UCDI: 1.00000000
+2025-09-17 09:05:42,424 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UCDI (max factor was 1.085666)
+2025-09-17 09:05:42,425 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.700118 to 1.000000
+2025-09-17 09:05:42,425 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UCDI:
+2025-09-17 09:05:42,426 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2631 -> 0.2000
+2025-09-17 09:05:42,426 - Review.reviews.sectorial_review - INFO - Boosted 62 companies due to redistribution in UCDI:
+2025-09-17 09:05:42,426 - Review.reviews.sectorial_review - INFO -   AIRBNB INC. CLASS A: 0.0061 -> 0.0066
+2025-09-17 09:05:42,426 - Review.reviews.sectorial_review - INFO -   AUTOZONE INC.: 0.0083 -> 0.0090
+2025-09-17 09:05:42,426 - Review.reviews.sectorial_review - INFO -   BOOKING HOLDINGS INC: 0.0208 -> 0.0226
+2025-09-17 09:05:42,426 - Review.reviews.sectorial_review - INFO -   BURLINGTON STORES: 0.0020 -> 0.0021
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   CARNIVAL CORPORATION: 0.0038 -> 0.0042
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   CARVANA CO: 0.0059 -> 0.0064
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   CHIPOTLE MEX. GRILL: 0.0062 -> 0.0067
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   COPART INC.: 0.0047 -> 0.0052
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   COSTCO WHOLES. CORP.: 0.0495 -> 0.0537
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   COUPANG INC. CLASS A: 0.0052 -> 0.0056
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   D.R. HORTON INC.: 0.0057 -> 0.0062
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   DARDEN RESTAURANTS: 0.0029 -> 0.0031
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   DELTA AIR LINES INC.: 0.0044 -> 0.0048
+2025-09-17 09:05:42,428 - Review.reviews.sectorial_review - INFO -   DOLLAR GENERAL CORP.: 0.0027 -> 0.0029
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   DOLLAR TREE INC.: 0.0022 -> 0.0024
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   DRAFTKINGS. INC. A: 0.0025 -> 0.0027
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   EBAY INC.: 0.0048 -> 0.0052
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   ELECTRONIC ARTS INC.: 0.0045 -> 0.0049
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   ESTEE LAUDER COS INC: 0.0024 -> 0.0026
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   EXPEDIA GROUP INC.: 0.0031 -> 0.0034
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   FLUTTER ENTERTAINMEN: 0.0058 -> 0.0063
+2025-09-17 09:05:42,429 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0053 -> 0.0058
+2025-09-17 09:05:42,430 - Review.reviews.sectorial_review - INFO -   GARMIN LTD.: 0.0045 -> 0.0049
+2025-09-17 09:05:42,430 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0065 -> 0.0071
+2025-09-17 09:05:42,430 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0023 -> 0.0025
+2025-09-17 09:05:42,430 - Review.reviews.sectorial_review - INFO -   HILTON WORLDWIDE: 0.0075 -> 0.0082
+2025-09-17 09:05:42,430 - Review.reviews.sectorial_review - INFO -   HOME DEPOT INC: 0.0491 -> 0.0533
+2025-09-17 09:05:42,431 - Review.reviews.sectorial_review - INFO -   LENNAR CORP A: 0.0036 -> 0.0039
+2025-09-17 09:05:42,431 - Review.reviews.sectorial_review - INFO -   LIBERTY MEDIA CORP.: 0.0026 -> 0.0029
+2025-09-17 09:05:42,432 - Review.reviews.sectorial_review - INFO -   LIVE NATION ENTERT: 0.0032 -> 0.0035
+2025-09-17 09:05:42,432 - Review.reviews.sectorial_review - INFO -   LOWE'S COMPANIES INC: 0.0178 -> 0.0193
+2025-09-17 09:05:42,432 - Review.reviews.sectorial_review - INFO -   LULULEMON ATHLETICA: 0.0020 -> 0.0021
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   MARRIOTT INTERN. INC: 0.0072 -> 0.0079
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   MCDONALD'S CORP: 0.0253 -> 0.0275
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   MERCADOLIBRE INC.: 0.0135 -> 0.0146
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   NETFLIX INC.: 0.0597 -> 0.0649
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   NIKE INC: 0.0101 -> 0.0110
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   NVR INC.: 0.0028 -> 0.0030
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   O'REILLY AUTOMOTIVE: 0.0105 -> 0.0114
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   PULTEGROUP INC: 0.0031 -> 0.0034
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   ROBLOX CORP. - A: 0.0103 -> 0.0111
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   ROLLINS. INC.: 0.0020 -> 0.0022
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   ROSS STORES INC.: 0.0056 -> 0.0061
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   ROYAL CARIBBEAN: 0.0097 -> 0.0106
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   SOMNIGROUP INT: 0.0021 -> 0.0023
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   SPOTIFY TECHNOLOGY: 0.0127 -> 0.0138
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   STARBUCKS CORP.: 0.0112 -> 0.0122
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TAKE-TWO INTERACTIVE: 0.0051 -> 0.0055
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TAPESTRY INC.: 0.0027 -> 0.0029
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TARGET CORPORATION: 0.0048 -> 0.0052
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.1354 -> 0.1470
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   THE WALT DISNEY COMP: 0.0243 -> 0.0263
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TJX COMPANIES INC: 0.0182 -> 0.0198
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TRACTOR SUPPLY COMP.: 0.0037 -> 0.0040
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   TRADE DESK INC.: 0.0023 -> 0.0025
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   UBER TECHNOLOGIES: 0.0239 -> 0.0259
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   ULTA BEAUTY INC: 0.0028 -> 0.0030
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   UNITED AIRLINES HLD: 0.0040 -> 0.0043
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   WALMART INC: 0.0532 -> 0.0577
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   WARNER BROS DISCOVER: 0.0053 -> 0.0057
+2025-09-17 09:05:42,433 - Review.reviews.sectorial_review - INFO -   WILLIAMS-SONOMA.: 0.0027 -> 0.0029
+2025-09-17 09:05:42,438 - Review.reviews.sectorial_review - INFO -   YUM! BRANDS INC.: 0.0048 -> 0.0052
+2025-09-17 09:05:42,438 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCDI: 1.000000
+2025-09-17 09:05:42,438 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UCDI: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,438 - Review.reviews.sectorial_review - INFO - Index market cap for UCDI: 6,526,776,336,746
+2025-09-17 09:05:42,438 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,203,678,020,000
+2025-09-17 09:05:42,438 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1037
+2025-09-17 09:05:42,442 - Review.reviews.sectorial_review - INFO - Processing UBMA...
+2025-09-17 09:05:42,443 - Review.reviews.sectorial_review - INFO - Total weight before capping for UBMA: 1.00000000
+2025-09-17 09:05:42,446 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UBMA (max factor was 1.195954)
+2025-09-17 09:05:42,446 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.505110 to 1.000000
+2025-09-17 09:05:42,447 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UBMA:
+2025-09-17 09:05:42,447 - Review.reviews.sectorial_review - INFO -   LINDE PLC: 0.3311 -> 0.2000
+2025-09-17 09:05:42,448 - Review.reviews.sectorial_review - INFO - Boosted 9 companies due to redistribution in UBMA:
+2025-09-17 09:05:42,448 - Review.reviews.sectorial_review - INFO -   AIR PROD & CHEMICALS: 0.0950 -> 0.1136
+2025-09-17 09:05:42,448 - Review.reviews.sectorial_review - INFO -   ANGLOGOLD ASHANTI: 0.0495 -> 0.0592
+2025-09-17 09:05:42,449 - Review.reviews.sectorial_review - INFO -   ECOLAB INC: 0.1009 -> 0.1207
+2025-09-17 09:05:42,449 - Review.reviews.sectorial_review - INFO -   FASTENAL COMPANY: 0.0812 -> 0.0971
+2025-09-17 09:05:42,449 - Review.reviews.sectorial_review - INFO -   FREEPORT-MCMORAN: 0.0974 -> 0.1165
+2025-09-17 09:05:42,450 - Review.reviews.sectorial_review - INFO -   INTERNATIONAL PAPER: 0.0366 -> 0.0437
+2025-09-17 09:05:42,450 - Review.reviews.sectorial_review - INFO -   NEWMONT COR: 0.1300 -> 0.1555
+2025-09-17 09:05:42,450 - Review.reviews.sectorial_review - INFO -   NUCOR CORPORATION: 0.0491 -> 0.0588
+2025-09-17 09:05:42,450 - Review.reviews.sectorial_review - INFO -   STEEL DYNAMICS INC.: 0.0293 -> 0.0350
+2025-09-17 09:05:42,450 - Review.reviews.sectorial_review - INFO - Total weight after capping for UBMA: 1.000000
+2025-09-17 09:05:42,450 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UBMA: 0.200000 (cap: 0.200000)
+2025-09-17 09:05:42,451 - Review.reviews.sectorial_review - INFO - Index market cap for UBMA: 481,640,173,858
+2025-09-17 09:05:42,451 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 563,405,971,604
+2025-09-17 09:05:42,451 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1698
+2025-09-17 09:05:42,455 - Review.reviews.sectorial_review - INFO - Saving TECHP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TECHP_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,486 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to TECHP
+2025-09-17 09:05:42,516 - Review.reviews.sectorial_review - INFO - Saving ENRGP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENRGP_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,549 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to ENRGP
+2025-09-17 09:05:42,586 - Review.reviews.sectorial_review - INFO - Saving UTIL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTIL_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,616 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to UTIL
+2025-09-17 09:05:42,652 - Review.reviews.sectorial_review - INFO - Saving BASM output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BASM_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,681 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to BASM
+2025-09-17 09:05:42,715 - Review.reviews.sectorial_review - INFO - Saving FINA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FINA_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,748 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to FINA
+2025-09-17 09:05:42,785 - Review.reviews.sectorial_review - INFO - Saving CSTA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CSTA_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,845 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to CSTA
+2025-09-17 09:05:42,877 - Review.reviews.sectorial_review - INFO - Saving TELEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TELEP_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,903 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to TELEP
+2025-09-17 09:05:42,936 - Review.reviews.sectorial_review - INFO - Saving HEAC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\HEAC_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:42,967 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to HEAC
+2025-09-17 09:05:42,967 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:42] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:43,003 - Review.reviews.sectorial_review - INFO - Saving INDU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\INDU_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:43,033 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to INDU
+2025-09-17 09:05:43,073 - Review.reviews.sectorial_review - INFO - Saving CDIS output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CDIS_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:43,098 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to CDIS
+2025-09-17 09:05:43,138 - Review.reviews.sectorial_review - INFO - Saving TBMA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TBMA_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:43,225 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TBMA
+2025-09-17 09:05:43,296 - Review.reviews.sectorial_review - INFO - Saving TCDI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TCDI_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:43,399 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TCDI
+2025-09-17 09:05:43,514 - Review.reviews.sectorial_review - INFO - Saving TCST output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TCST_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:43,631 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TCST
+2025-09-17 09:05:43,747 - Review.reviews.sectorial_review - INFO - Saving TENR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TENR_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:43,836 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TENR
+2025-09-17 09:05:43,948 - Review.reviews.sectorial_review - INFO - Saving TFINP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TFINP_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:44,053 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TFINP
+2025-09-17 09:05:44,187 - Review.reviews.sectorial_review - INFO - Saving THEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\THEC_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:44,281 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to THEC
+2025-09-17 09:05:44,418 - Review.reviews.sectorial_review - INFO - Saving TIND output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TIND_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:44,564 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TIND
+2025-09-17 09:05:44,698 - Review.reviews.sectorial_review - INFO - Saving TTEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TTEC_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:44,798 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TTEC
+2025-09-17 09:05:44,939 - Review.reviews.sectorial_review - INFO - Saving TTEL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TTEL_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,030 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:45] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:45,031 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TTEL
+2025-09-17 09:05:45,181 - Review.reviews.sectorial_review - INFO - Saving TUTI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TUTI_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,264 - Review.reviews.sectorial_review - INFO - Added Transatlantic_DLF sheet to TUTI
+2025-09-17 09:05:45,400 - Review.reviews.sectorial_review - INFO - Saving UUTI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UUTI_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,483 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UUTI
+2025-09-17 09:05:45,515 - Review.reviews.sectorial_review - INFO - Saving UTEL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTEL_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,564 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UTEL
+2025-09-17 09:05:45,625 - Review.reviews.sectorial_review - INFO - Saving UTEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTEC_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,683 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UTEC
+2025-09-17 09:05:45,735 - Review.reviews.sectorial_review - INFO - Saving UIND output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UIND_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,791 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UIND
+2025-09-17 09:05:45,832 - Review.reviews.sectorial_review - INFO - Saving UHEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UHEC_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,884 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UHEC
+2025-09-17 09:05:45,914 - Review.reviews.sectorial_review - INFO - Saving UFIN output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UFIN_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:45,978 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UFIN
+2025-09-17 09:05:46,015 - Review.reviews.sectorial_review - INFO - Saving UENR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UENR_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:46,068 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UENR
+2025-09-17 09:05:46,098 - Review.reviews.sectorial_review - INFO - Saving UCST output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UCST_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:46,149 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UCST
+2025-09-17 09:05:46,184 - Review.reviews.sectorial_review - INFO - Saving UCDI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UCDI_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:46,269 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UCDI
+2025-09-17 09:05:46,301 - Review.reviews.sectorial_review - INFO - Saving UBMA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UBMA_sectorial_20250917_090542.xlsx
+2025-09-17 09:05:46,349 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UBMA
+2025-09-17 09:05:46,398 - Review.reviews.sectorial_review - INFO - Creating summary file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\All_Sectorial_Summary_20250917_090542.xlsx
+2025-09-17 09:05:46,532 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2025-09-17 09:05:46,965 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:46] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:48,398 - Review.reviews.ses5p_review - INFO - Loading reference data...
+2025-09-17 09:05:48,968 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:48] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:50,972 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:50] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:52,979 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:52] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:54,964 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:54] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:55,631 - Review.reviews.ses5p_review - INFO - Saving SES5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SES5P_df_20250917_090555.xlsx
+2025-09-17 09:05:55,731 - Review.reviews.wifrp_review - INFO - Loading EOD data...
+2025-09-17 09:05:56,430 - Review.reviews.wifrp_review - INFO - Loading reference data...
+2025-09-17 09:05:56,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:56] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:05:58,969 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:05:58] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:06:00,968 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:06:00] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:06:02,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:06:02] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:06:04,981 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:06:04] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:06:06,748 - Review.reviews.wifrp_review - WARNING - Removed 2 duplicate rows from Oekom data
+2025-09-17 09:06:06,748 - Review.reviews.wifrp_review - WARNING - Removed 10 duplicate rows from SESAMm data
+2025-09-17 09:06:06,748 - Review.reviews.wifrp_review - INFO - Adding Index_Currency to stock_eod_df by looking up Index in index_eod_df...
+2025-09-17 09:06:06,748 - Review.reviews.wifrp_review - INFO - Added Index_Currency to stock_eod_df. Found 60141 matches.
+2025-09-17 09:06:06,757 - Review.reviews.wifrp_review - INFO - Added Index_Currency to stock_co_df. Found 59772 matches.
+2025-09-17 09:06:06,758 - Review.reviews.wifrp_review - INFO - Filtering universe to exclude Euronext Paris (XPAR) listings...
+2025-09-17 09:06:06,760 - Review.reviews.wifrp_review - INFO - Adding Free Float data...
+2025-09-17 09:06:06,760 - Review.reviews.wifrp_review - INFO - Applying exclusion criteria...
+2025-09-17 09:06:06,799 - Review.reviews.wifrp_review - WARNING - Removed 9446 duplicate rows from ICB data
+2025-09-17 09:06:06,799 - Review.reviews.wifrp_review - INFO - Merging ICB data with 'Supersector Code' column
+2025-09-17 09:06:06,821 - Review.reviews.wifrp_review - INFO - Processing sector: 1010.0, region: AS, group size: 46
+2025-09-17 09:06:06,821 - Review.reviews.wifrp_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:06:06,821 - Review.reviews.wifrp_review - INFO - Processing sector: 1010.0, region: EU, group size: 20
+2025-09-17 09:06:06,824 - Review.reviews.wifrp_review - INFO - Companies in group: 20, to exclude: 3
+2025-09-17 09:06:06,824 - Review.reviews.wifrp_review - INFO - Processing sector: 1010.0, region: NA, group size: 86
+2025-09-17 09:06:06,824 - Review.reviews.wifrp_review - INFO - Companies in group: 86, to exclude: 17
+2025-09-17 09:06:06,825 - Review.reviews.wifrp_review - INFO - Processing sector: 1510.0, region: AS, group size: 12
+2025-09-17 09:06:06,825 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:06:06,825 - Review.reviews.wifrp_review - INFO - Processing sector: 1510.0, region: EU, group size: 18
+2025-09-17 09:06:06,825 - Review.reviews.wifrp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:06:06,825 - Review.reviews.wifrp_review - INFO - Processing sector: 1510.0, region: NA, group size: 10
+2025-09-17 09:06:06,826 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:06:06,826 - Review.reviews.wifrp_review - INFO - Processing sector: 2010.0, region: AS, group size: 30
+2025-09-17 09:06:06,826 - Review.reviews.wifrp_review - INFO - Companies in group: 30, to exclude: 5
+2025-09-17 09:06:06,826 - Review.reviews.wifrp_review - INFO - Processing sector: 2010.0, region: EU, group size: 40
+2025-09-17 09:06:06,826 - Review.reviews.wifrp_review - INFO - Companies in group: 40, to exclude: 7
+2025-09-17 09:06:06,826 - Review.reviews.wifrp_review - INFO - Processing sector: 2010.0, region: NA, group size: 44
+2025-09-17 09:06:06,827 - Review.reviews.wifrp_review - INFO - Companies in group: 44, to exclude: 8
+2025-09-17 09:06:06,827 - Review.reviews.wifrp_review - INFO - Processing sector: 3010.0, region: AS, group size: 32
+2025-09-17 09:06:06,827 - Review.reviews.wifrp_review - INFO - Companies in group: 32, to exclude: 6
+2025-09-17 09:06:06,827 - Review.reviews.wifrp_review - INFO - Processing sector: 3010.0, region: EU, group size: 43
+2025-09-17 09:06:06,827 - Review.reviews.wifrp_review - INFO - Companies in group: 43, to exclude: 8
+2025-09-17 09:06:06,827 - Review.reviews.wifrp_review - INFO - Processing sector: 3010.0, region: NA, group size: 20
+2025-09-17 09:06:06,828 - Review.reviews.wifrp_review - INFO - Companies in group: 20, to exclude: 3
+2025-09-17 09:06:06,828 - Review.reviews.wifrp_review - INFO - Processing sector: 3020.0, region: AS, group size: 17
+2025-09-17 09:06:06,836 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:06:06,836 - Review.reviews.wifrp_review - INFO - Processing sector: 3020.0, region: EU, group size: 30
+2025-09-17 09:06:06,838 - Review.reviews.wifrp_review - INFO - Companies in group: 30, to exclude: 5
+2025-09-17 09:06:06,838 - Review.reviews.wifrp_review - INFO - Processing sector: 3020.0, region: NA, group size: 32
+2025-09-17 09:06:06,838 - Review.reviews.wifrp_review - INFO - Companies in group: 32, to exclude: 6
+2025-09-17 09:06:06,838 - Review.reviews.wifrp_review - INFO - Processing sector: 3030.0, region: AS, group size: 14
+2025-09-17 09:06:06,839 - Review.reviews.wifrp_review - INFO - Companies in group: 14, to exclude: 2
+2025-09-17 09:06:06,839 - Review.reviews.wifrp_review - INFO - Processing sector: 3030.0, region: EU, group size: 28
+2025-09-17 09:06:06,839 - Review.reviews.wifrp_review - INFO - Companies in group: 28, to exclude: 5
+2025-09-17 09:06:06,839 - Review.reviews.wifrp_review - INFO - Processing sector: 3030.0, region: NA, group size: 23
+2025-09-17 09:06:06,839 - Review.reviews.wifrp_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:06:06,840 - Review.reviews.wifrp_review - INFO - Processing sector: 3510.0, region: AS, group size: 46
+2025-09-17 09:06:06,840 - Review.reviews.wifrp_review - INFO - Companies in group: 46, to exclude: 9
+2025-09-17 09:06:06,840 - Review.reviews.wifrp_review - INFO - Processing sector: 3510.0, region: EU, group size: 22
+2025-09-17 09:06:06,840 - Review.reviews.wifrp_review - INFO - Companies in group: 22, to exclude: 4
+2025-09-17 09:06:06,840 - Review.reviews.wifrp_review - INFO - Processing sector: 3510.0, region: NA, group size: 19
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4010.0, region: AS, group size: 16
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 16, to exclude: 3
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4010.0, region: EU, group size: 10
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4010.0, region: NA, group size: 4
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 4, to exclude: 0
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - WARNING - No companies to exclude for sector 4010.0 and region NA
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4020.0, region: AS, group size: 25
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 25, to exclude: 4
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4020.0, region: EU, group size: 16
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 16, to exclude: 3
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4020.0, region: NA, group size: 18
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4030.0, region: AS, group size: 6
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4030.0, region: EU, group size: 6
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4030.0, region: NA, group size: 6
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 6, to exclude: 1
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4040.0, region: AS, group size: 13
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 13, to exclude: 2
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4040.0, region: EU, group size: 8
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 8, to exclude: 1
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4040.0, region: NA, group size: 21
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:06:06,842 - Review.reviews.wifrp_review - INFO - Processing sector: 4050.0, region: AS, group size: 19
+2025-09-17 09:06:06,847 - Review.reviews.wifrp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:06:06,847 - Review.reviews.wifrp_review - INFO - Processing sector: 4050.0, region: EU, group size: 10
+2025-09-17 09:06:06,847 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:06:06,848 - Review.reviews.wifrp_review - INFO - Processing sector: 4050.0, region: NA, group size: 18
+2025-09-17 09:06:06,848 - Review.reviews.wifrp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:06:06,848 - Review.reviews.wifrp_review - INFO - Processing sector: 4510.0, region: AS, group size: 24
+2025-09-17 09:06:06,849 - Review.reviews.wifrp_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:06:06,849 - Review.reviews.wifrp_review - INFO - Processing sector: 4510.0, region: EU, group size: 23
+2025-09-17 09:06:06,849 - Review.reviews.wifrp_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:06:06,849 - Review.reviews.wifrp_review - INFO - Processing sector: 4510.0, region: NA, group size: 17
+2025-09-17 09:06:06,850 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:06:06,850 - Review.reviews.wifrp_review - INFO - Processing sector: 4520.0, region: AS, group size: 17
+2025-09-17 09:06:06,850 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:06:06,850 - Review.reviews.wifrp_review - INFO - Processing sector: 4520.0, region: EU, group size: 12
+2025-09-17 09:06:06,850 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:06:06,851 - Review.reviews.wifrp_review - INFO - Processing sector: 4520.0, region: NA, group size: 12
+2025-09-17 09:06:06,851 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:06:06,851 - Review.reviews.wifrp_review - INFO - Processing sector: 5010.0, region: AS, group size: 19
+2025-09-17 09:06:06,851 - Review.reviews.wifrp_review - INFO - Companies in group: 19, to exclude: 3
+2025-09-17 09:06:06,851 - Review.reviews.wifrp_review - INFO - Processing sector: 5010.0, region: EU, group size: 23
+2025-09-17 09:06:06,852 - Review.reviews.wifrp_review - INFO - Companies in group: 23, to exclude: 4
+2025-09-17 09:06:06,852 - Review.reviews.wifrp_review - INFO - Processing sector: 5010.0, region: NA, group size: 11
+2025-09-17 09:06:06,853 - Review.reviews.wifrp_review - INFO - Companies in group: 11, to exclude: 2
+2025-09-17 09:06:06,853 - Review.reviews.wifrp_review - INFO - Processing sector: 5020.0, region: AS, group size: 92
+2025-09-17 09:06:06,853 - Review.reviews.wifrp_review - INFO - Companies in group: 92, to exclude: 18
+2025-09-17 09:06:06,853 - Review.reviews.wifrp_review - INFO - Processing sector: 5020.0, region: EU, group size: 83
+2025-09-17 09:06:06,853 - Review.reviews.wifrp_review - INFO - Companies in group: 83, to exclude: 16
+2025-09-17 09:06:06,854 - Review.reviews.wifrp_review - INFO - Processing sector: 5020.0, region: NA, group size: 79
+2025-09-17 09:06:06,854 - Review.reviews.wifrp_review - INFO - Companies in group: 79, to exclude: 15
+2025-09-17 09:06:06,854 - Review.reviews.wifrp_review - INFO - Processing sector: 5510.0, region: AS, group size: 24
+2025-09-17 09:06:06,854 - Review.reviews.wifrp_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:06:06,854 - Review.reviews.wifrp_review - INFO - Processing sector: 5510.0, region: EU, group size: 16
+2025-09-17 09:06:06,855 - Review.reviews.wifrp_review - INFO - Companies in group: 16, to exclude: 3
+2025-09-17 09:06:06,855 - Review.reviews.wifrp_review - INFO - Processing sector: 5510.0, region: NA, group size: 12
+2025-09-17 09:06:06,855 - Review.reviews.wifrp_review - INFO - Companies in group: 12, to exclude: 2
+2025-09-17 09:06:06,856 - Review.reviews.wifrp_review - INFO - Processing sector: 5520.0, region: AS, group size: 17
+2025-09-17 09:06:06,856 - Review.reviews.wifrp_review - INFO - Companies in group: 17, to exclude: 3
+2025-09-17 09:06:06,856 - Review.reviews.wifrp_review - INFO - Processing sector: 5520.0, region: EU, group size: 15
+2025-09-17 09:06:06,856 - Review.reviews.wifrp_review - INFO - Companies in group: 15, to exclude: 2
+2025-09-17 09:06:06,856 - Review.reviews.wifrp_review - INFO - Processing sector: 5520.0, region: NA, group size: 4
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - INFO - Companies in group: 4, to exclude: 0
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - WARNING - No companies to exclude for sector 5520.0 and region NA
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - INFO - Processing sector: 6010.0, region: AS, group size: 10
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - INFO - Companies in group: 10, to exclude: 1
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - INFO - Processing sector: 6010.0, region: EU, group size: 18
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - INFO - Companies in group: 18, to exclude: 3
+2025-09-17 09:06:06,857 - Review.reviews.wifrp_review - INFO - Processing sector: 6010.0, region: NA, group size: 33
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Companies in group: 33, to exclude: 6
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Processing sector: 6510.0, region: AS, group size: 21
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Companies in group: 21, to exclude: 4
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Processing sector: 6510.0, region: EU, group size: 24
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Companies in group: 24, to exclude: 4
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Processing sector: 6510.0, region: NA, group size: 31
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Companies in group: 31, to exclude: 6
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Calculating FFMC for all companies in universe...
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Using Mcap in EUR to calculate FFMC
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Creating rank based on FFMC...
+2025-09-17 09:06:06,858 - Review.reviews.wifrp_review - INFO - Found 20 valid exclusion columns: ['exclusion_1', 'exclusion_2', 'exclusion_3', 'exclusion_4', 'exclusion_5', 'exclusion_6', 'exclusion_7', 'exclusion_8', 'exclusion_9', 'exclusion_10', 'exclusion_11', 'exclusion_12', 'exclusion_13', 'exclusion_14', 'exclusion_15', 'exclusion_16', 'exclusion_17', 'exclusion_18', 'exclusion_19', 'exclusion_20']
+2025-09-17 09:06:06,872 - Review.reviews.wifrp_review - INFO - Selecting eligible companies...
+2025-09-17 09:06:06,877 - Review.reviews.wifrp_review - INFO - Selecting top 40 companies by FFMC...
+2025-09-17 09:06:06,878 - Review.reviews.wifrp_review - INFO - Adding Symbol column to final_selection...
+2025-09-17 09:06:07,014 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:06:07] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -
+2025-09-17 09:06:07,748 - Review.reviews.wifrp_review - INFO - Added Symbol to 40 companies out of 40
+2025-09-17 09:06:07,748 - Review.reviews.wifrp_review - INFO - Calculating weights and capping factors using the most recent pricing data...
+2025-09-17 09:06:07,748 - Review.reviews.wifrp_review - INFO - Found 1397 records with Index_Currency='EUR' for selected Symbols
+2025-09-17 09:06:07,767 - Review.reviews.wifrp_review - INFO - Calculating post-capping weights...
+2025-09-17 09:06:07,780 - Review.reviews.wifrp_review - INFO - Creating final output dataframe...
+2025-09-17 09:06:07,785 - Review.reviews.wifrp_review - INFO - Saving WIFRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\WIFRP_df_20250917_090607.xlsx
+2025-09-17 09:06:08,966 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 09:06:08] "GET /task-status/bfefc115-becf-4af6-8b23-45d347874107 HTTP/1.1" 200 -

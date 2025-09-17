@@ -77,13 +77,49 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
             logger.error(error_msg)
             raise ValueError(error_msg) 
         
-        # Add Free Float data
+
+        # Replace the entire chained merge section with this more explicit approach:
+
+        # Filter symbols once for efficiency
+        symbols_filtered = stock_eod_df[
+            stock_eod_df['#Symbol'].str.len() < 12
+        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
+
+        # Step 1: Merge Free Float data
         developed_market_df = developed_market_df.merge(
             ff_df[['ISIN Code:', 'Free Float Round:']],
             left_on='ISIN',
             right_on='ISIN Code:',
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+
+        # Step 2: Merge symbols
+        developed_market_df = developed_market_df.merge(
+            symbols_filtered,
+            left_on='ISIN',
+            right_on='Isin Code',
+            how='left'
+        ).drop('Isin Code', axis=1)
+
+        # Step 3: Merge FX data
+        fx_data = stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first')
+        developed_market_df = developed_market_df.merge(fx_data, on='#Symbol', how='left')
+
+        # Step 4: Merge EOD prices
+        eod_prices = stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first').rename(columns={'Close Prc': 'Close Prc_EOD'})
+        developed_market_df = developed_market_df.merge(eod_prices, on='#Symbol', how='left')
+
+        # Step 5: Merge CO prices
+        co_prices = stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first').rename(columns={'Close Prc': 'Close Prc_CO'})
+        developed_market_df = developed_market_df.merge(co_prices, on='#Symbol', how='left')
+
+        # Calculate market cap columns right after the merges
+        developed_market_df['Price in Index Currency'] = developed_market_df['Close Prc_EOD'] * developed_market_df['FX/Index Ccy']
+        developed_market_df['Original market cap'] = (
+            developed_market_df['Price in Index Currency'] * 
+            developed_market_df['NOSH'] * 
+            developed_market_df['Free Float']
+        )
         
         # Add Flag for XPAR or NON Xpar MIC
         developed_market_df['XPAR Flag'] = developed_market_df['MIC'].apply(lambda x: 1 if x == 'XPAR' else 0)
@@ -386,74 +422,6 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
         full_selection_df = pd.concat([xpar_selected_25, noxpar_selected_25])
         final_selection_df = pd.concat([xpar_selected_20, noxpar_selected_20])
 
-        def get_index_currency(row, index_df):
-            mask = index_df['Mnemo'] == row['Index']
-            matches = index_df[mask]
-            if not matches.empty:
-                return matches.iloc[0]['Curr']
-            return None
-
-        # Add Index Currency column to stock_eod_df
-        stock_eod_df['Index Currency'] = stock_eod_df.apply(
-            lambda row: get_index_currency(row, index_eod_df), axis=1
-        )
-        stock_eod_df['ISIN/Index'] = stock_eod_df['Isin Code'] + stock_eod_df['Index']
-        stock_eod_df['id5'] = stock_eod_df['#Symbol'] + stock_eod_df['Index Currency']
-        stock_eod_df['Reuters/Optiq'] = stock_eod_df['#Symbol'].str.len().apply(
-            lambda x: 'Reuters' if x < 12 else 'Optiq'
-        )
-
-        def get_stock_info(row, stock_df, target_currency):
-            mask = (stock_df['Isin Code'] == row['ISIN']) & \
-                   (stock_df['MIC'] == row['MIC']) & \
-                   (stock_df['Reuters/Optiq'] == 'Reuters')
-            
-            matches = stock_df[mask]
-            
-            if not matches.empty:
-                first_match = matches.iloc[0]
-                lookup_id5 = f"{first_match['#Symbol']}{target_currency}"
-                
-                fx_mask = stock_df['id5'] == lookup_id5
-                fx_matches = stock_df[fx_mask]
-                
-                fx_rate = fx_matches.iloc[0]['FX/Index Ccy'] if not fx_matches.empty else None
-                
-                return pd.Series({
-                    'Symbol': first_match['#Symbol'],
-                    'Price': first_match['Close Prc'],
-                    'FX Rate': fx_rate
-                })
-            return pd.Series({'Symbol': None, 'Price': None, 'FX Rate': None})
-
-        # Add Symbol, Price, and FX Rate columns
-        xpar_selected_20[['Symbol', 'Price', 'FX Rate']] = xpar_selected_20.apply(
-            lambda row: get_stock_info(row, stock_eod_df, currency), axis=1
-        )
-        noxpar_selected_20[['Symbol', 'Price', 'FX Rate']] = noxpar_selected_20.apply(
-            lambda row: get_stock_info(row, stock_eod_df, currency), axis=1
-        )
-
-        def get_free_float(row, ff_dataframe):
-            mask = ff_dataframe['ISIN Code:'] == row['ISIN']
-            matches = ff_dataframe[mask]
-            if not matches.empty:
-                return matches.iloc[0]['Free Float Round:']
-            return None
-
-        # Add Free Float columns
-        xpar_selected_20['Free Float'] = xpar_selected_20.apply(
-            lambda row: get_free_float(row, ff_df), axis=1
-        )
-        noxpar_selected_20['Free Float'] = noxpar_selected_20.apply(
-            lambda row: get_free_float(row, ff_df), axis=1
-        )
-
-        # Calculate Price in Index Currency and Original market cap
-        xpar_selected_20['Price in Index Currency'] = xpar_selected_20['Price'] * xpar_selected_20['FX Rate']
-        noxpar_selected_20['Price in Index Currency'] = noxpar_selected_20['Price'] * noxpar_selected_20['FX Rate']
-        xpar_selected_20['Original market cap'] = xpar_selected_20['Price in Index Currency'] * xpar_selected_20['NOSH'] * xpar_selected_20['Free Float']
-        noxpar_selected_20['Original market cap'] = noxpar_selected_20['Price in Index Currency'] * noxpar_selected_20['NOSH'] * noxpar_selected_20['Free Float']
 
         def apply_capping(df, step, cap_threshold=0.2, final_step=False):
             current_step = step
@@ -514,6 +482,9 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
 
         # Combine final selections
         final_selection_df = pd.concat([xpar_selected_20, noxpar_selected_20])
+
+        # Remove the old get_stock_info and get_free_float functions and their calls
+        # as they're now replaced by the chained merge approach above
         max_capping = final_selection_df['Final Capping'].max()
         final_selection_df['Final Capping'] = (final_selection_df['Final Capping'] / max_capping).round(14)
         final_selection_df['Effective Date of Review'] = effective_date
@@ -528,17 +499,13 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
             'Final Capping',
             'Effective Date of Review',
             'Currency (Local)'
-        ]].copy()
-
-        # Rename columns and sort
-        FRD4P_df = FRD4P_df.rename(columns={
+        ]].copy().rename(columns={
             'Name': 'Company',
             'ISIN': 'ISIN Code',
             'NOSH': 'Number of Shares',
             'Final Capping': 'Capping Factor',
-            'Currency (Local)': 'Currency',
-        })
-        FRD4P_df = FRD4P_df.sort_values('Company')
+            'Currency (Local)': 'Currency'
+        }).sort_values('Company')
 
                 # Perform Inclusion/Exclusion Analysis
         analysis_results = inclusion_exclusion_analysis(

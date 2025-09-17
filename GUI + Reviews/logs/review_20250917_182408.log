@@ -1,0 +1,27 @@
+2025-09-17 18:24:08,996 - werkzeug - WARNING -  * Debugger is active!
+2025-09-17 18:24:09,012 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-17 18:24:09,033 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:09] "GET /task-status/e1a2a76f-342e-447a-a4b1-4065968121ef HTTP/1.1" 200 -
+2025-09-17 18:24:11,646 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:11] "POST /calculate HTTP/1.1" 200 -
+2025-09-17 18:24:11,646 - Review.reviews.efesp_review - INFO - Loading EOD data...
+2025-09-17 18:24:11,646 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:11] "GET /task-status/47e3287c-692a-4444-9007-d67c1bed7797 HTTP/1.1" 200 -
+2025-09-17 18:24:12,362 - Review.reviews.efesp_review - INFO - Loading reference data...
+2025-09-17 18:24:13,670 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:13] "GET /task-status/47e3287c-692a-4444-9007-d67c1bed7797 HTTP/1.1" 200 -
+2025-09-17 18:24:15,654 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:15] "GET /task-status/47e3287c-692a-4444-9007-d67c1bed7797 HTTP/1.1" 200 -
+2025-09-17 18:24:17,729 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:17] "GET /task-status/47e3287c-692a-4444-9007-d67c1bed7797 HTTP/1.1" 200 -
+2025-09-17 18:24:19,668 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:19] "GET /task-status/47e3287c-692a-4444-9007-d67c1bed7797 HTTP/1.1" 200 -
+2025-09-17 18:24:20,231 - Review.reviews.efesp_review - INFO - Creating eligible companies dataframe...
+2025-09-17 18:24:20,242 - Review.reviews.efesp_review - INFO - Group 1 (ICB 501010): 5 selected out of 21 companies
+2025-09-17 18:24:20,244 - Review.reviews.efesp_review - INFO - Group 2 (ICB 502010): 5 selected out of 15 companies
+2025-09-17 18:24:20,245 - Review.reviews.efesp_review - INFO - Group 3 (ICB 502040): 5 selected out of 16 companies
+2025-09-17 18:24:20,245 - Review.reviews.efesp_review - INFO - Group 4 (ICB 502020): 5 selected out of 13 companies
+2025-09-17 18:24:20,246 - Review.reviews.efesp_review - INFO - Group 5 (ICB 101010): 5 selected out of 15 companies
+2025-09-17 18:24:20,246 - Review.reviews.efesp_review - INFO - Group 6 (ICB 502060): 5 selected out of 11 companies
+2025-09-17 18:24:20,256 - Review.reviews.efesp_review - INFO - Total eligible companies: 91
+2025-09-17 18:24:20,256 - Review.reviews.efesp_review - INFO - Total selected companies: 30
+2025-09-17 18:24:20,256 - Review.reviews.efesp_review - INFO - Total selected FFMC: 1,694,690,476,050.24
+2025-09-17 18:24:20,256 - Review.reviews.efesp_review - INFO - Weight sum check for selected companies: 1.000000
+2025-09-17 18:24:20,260 - Review.reviews.efesp_review - INFO - Saving EFESP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EFESP_df_20250917_182420.xlsx
+2025-09-17 18:24:21,662 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:21] "GET /task-status/47e3287c-692a-4444-9007-d67c1bed7797 HTTP/1.1" 200 -
+2025-09-17 18:24:32,823 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2025-09-17 18:24:32,830 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading
+2025-09-17 18:24:32,851 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_scalars.py', reloading

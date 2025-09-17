@@ -4,56 +4,77 @@ from Review.functions import read_semicolon_csv
 import os
 
 def load_eod_data(date, co_date, area, area2, dlf_folder):
-    """Load and combine EOD data from different areas"""
-    # Load EOD data
-    index_eod_us_df = read_semicolon_csv(
-        os.path.join(dlf_folder, f"TTMIndex{area}1_GIS_EOD_INDEX_{date}.csv"), 
-        encoding="latin1"
-    )
-    stock_eod_us_df = read_semicolon_csv(
-        os.path.join(dlf_folder, f"TTMIndex{area}1_GIS_EOD_STOCK_{date}.csv"), 
-        encoding="latin1"
-    )
-    index_eod_eu_df = read_semicolon_csv(
-        os.path.join(dlf_folder, f"TTMIndex{area2}1_GIS_EOD_INDEX_{date}.csv"), 
-        encoding="latin1"
-    )
-    stock_eod_eu_df = read_semicolon_csv(
-        os.path.join(dlf_folder, f"TTMIndex{area2}1_GIS_EOD_STOCK_{date}.csv"), 
-        encoding="latin1"
-    )
-    stock_co_eu_df = read_semicolon_csv(
-        os.path.join(dlf_folder, f"TTMIndex{area2}1_GIS_EOD_STOCK_{co_date}.csv"), 
-        encoding="latin1"
-    )
-    stock_co_us_df = read_semicolon_csv(
-        os.path.join(dlf_folder, f"TTMIndex{area}1_GIS_EOD_STOCK_{co_date}.csv"), 
-        encoding="latin1"
-    )    
-    stock_co_df = pd.concat([stock_co_eu_df, stock_co_us_df], ignore_index=True)
-    index_eod_df = pd.concat([index_eod_us_df, index_eod_eu_df], ignore_index=True)
-    stock_eod_df = pd.concat([stock_eod_us_df, stock_eod_eu_df], ignore_index=True)
+    """Load and combine EOD data from different areas, handling missing files gracefully"""
     
-    # Add 'Index Curr' column by merging with index_eod_df
+    def safe_load_csv(file_path, description):
+        """Safely load CSV file, return None if file doesn't exist"""
+        try:
+            if os.path.exists(file_path):
+                return read_semicolon_csv(file_path, encoding="latin1")
+            else:
+                print(f"Warning: {description} file not found: {file_path}")
+                return None
+        except Exception as e:
+            print(f"Error loading {description}: {str(e)}")
+            return None
+    
+    # Define file paths
+    files_to_load = {
+        'index_eod_us': os.path.join(dlf_folder, f"TTMIndex{area}1_GIS_EOD_INDEX_{date}.csv"),
+        'stock_eod_us': os.path.join(dlf_folder, f"TTMIndex{area}1_GIS_EOD_STOCK_{date}.csv"),
+        'index_eod_eu': os.path.join(dlf_folder, f"TTMIndex{area2}1_GIS_EOD_INDEX_{date}.csv"),
+        'stock_eod_eu': os.path.join(dlf_folder, f"TTMIndex{area2}1_GIS_EOD_STOCK_{date}.csv"),
+        'stock_co_us': os.path.join(dlf_folder, f"TTMIndex{area}1_GIS_EOD_STOCK_{co_date}.csv"),
+        'stock_co_eu': os.path.join(dlf_folder, f"TTMIndex{area2}1_GIS_EOD_STOCK_{co_date}.csv")
+    }
+    
+    # Load all files
+    loaded_data = {}
+    for key, file_path in files_to_load.items():
+        loaded_data[key] = safe_load_csv(file_path, key.replace('_', ' ').title())
+    
+    # Combine INDEX files (need at least one)
+    index_dfs = [df for df in [loaded_data['index_eod_us'], loaded_data['index_eod_eu']] if df is not None]
+    if not index_dfs:
+        raise ValueError("No index EOD files found! At least one index file is required.")
+    
+    index_eod_df = pd.concat(index_dfs, ignore_index=True) if len(index_dfs) > 1 else index_dfs[0]
+    print(f"Loaded index data from {len(index_dfs)} file(s)")
+    
+    # Combine STOCK EOD files (need at least one)
+    stock_eod_dfs = [df for df in [loaded_data['stock_eod_us'], loaded_data['stock_eod_eu']] if df is not None]
+    if not stock_eod_dfs:
+        raise ValueError("No stock EOD files found! At least one stock EOD file is required.")
+    
+    stock_eod_df = pd.concat(stock_eod_dfs, ignore_index=True) if len(stock_eod_dfs) > 1 else stock_eod_dfs[0]
+    print(f"Loaded stock EOD data from {len(stock_eod_dfs)} file(s)")
+    
+    # Combine STOCK CO files (need at least one)
+    stock_co_dfs = [df for df in [loaded_data['stock_co_us'], loaded_data['stock_co_eu']] if df is not None]
+    if not stock_co_dfs:
+        raise ValueError("No stock CO files found! At least one stock CO file is required.")
+    
+    stock_co_df = pd.concat(stock_co_dfs, ignore_index=True) if len(stock_co_dfs) > 1 else stock_co_dfs[0]
+    print(f"Loaded stock CO data from {len(stock_co_dfs)} file(s)")
+    
+    # Add 'Index Curr' column to stock_eod_df by merging with index_eod_df
     stock_eod_df = stock_eod_df.merge(
         index_eod_df[['Mnemo', 'Curr']], 
         left_on='Index', 
         right_on='Mnemo', 
         how='left',
-        suffixes=('', '_index')  # Keep original Mnemo, add suffix to index Mnemo
+        suffixes=('', '_index')
     )
-    # Rename the 'Curr' column to 'Index Curr' and drop the temporary Mnemo column
     stock_eod_df = stock_eod_df.rename(columns={'Curr': 'Index Curr'}).drop(columns=['Mnemo_index'])
     
-    # Add 'Index Curr' column by merging with index_eod_df
+    # Add 'Index Curr' column to stock_co_df by merging with index_eod_df
     stock_co_df = stock_co_df.merge(
         index_eod_df[['Mnemo', 'Curr']], 
         left_on='Index', 
         right_on='Mnemo', 
         how='left',
-        suffixes=('', '_index')  # Keep original Mnemo, add suffix to index Mnemo
+        suffixes=('', '_index')
     )
-    # Rename the 'Curr' column to 'Index Curr' and drop the temporary Mnemo column
     stock_co_df = stock_co_df.rename(columns={'Curr': 'Index Curr'}).drop(columns=['Mnemo_index'])
     
     return index_eod_df, stock_eod_df, stock_co_df

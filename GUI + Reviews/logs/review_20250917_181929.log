@@ -1,0 +1,39 @@
+2025-09-17 18:19:30,124 - werkzeug - WARNING -  * Debugger is active!
+2025-09-17 18:19:30,126 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-17 18:19:30,949 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:30] "GET /task-status/16fb260b-3ce4-4f52-b120-0dcc163aec81 HTTP/1.1" 200 -
+2025-09-17 18:19:33,074 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:33] "POST /calculate HTTP/1.1" 200 -
+2025-09-17 18:19:33,074 - Review.reviews.efesp_review - INFO - Loading EOD data...
+2025-09-17 18:19:33,074 - werkzeug - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:33] "GET /task-status/98f082fe-55f7-481a-82ca-52f1c887b278 HTTP/1.1" 200 -
+2025-09-17 18:19:33,074 - Review.reviews.efesp_review - ERROR - Error during review calculation: [Errno 2] No such file or directory: '\\\\pbgfshqa08601v\\gis_ttm\\Archive\\TTMIndexUS1_GIS_EOD_INDEX_20250917.csv'
+2025-09-17 18:19:33,081 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efesp_review.py', reloading
+2025-09-17 18:19:33,081 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-09-17 18:19:33,082 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading
+2025-09-17 18:19:33,083 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\parsers\\readers.py', reloading
+2025-09-17 18:19:33,085 - Review.reviews.efesp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\efesp_review.py", line 27, in run_efesp_review
+    index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\data_loader.py", line 9, in load_eod_data
+    index_eod_us_df = read_semicolon_csv(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\functions.py", line 4, in read_semicolon_csv
+    return pd.read_csv(file_path, sep=';', encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '\\\\pbgfshqa08601v\\gis_ttm\\Archive\\TTMIndexUS1_GIS_EOD_INDEX_20250917.csv'
+
+2025-09-17 18:19:33,085 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\common.py', reloading
