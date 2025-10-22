@@ -1,0 +1,35 @@
+2025-07-25 15:46:20,323 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 15:46:20,323 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 15:46:20,364 - Review.reviews.lc100_review - INFO - Loading EOD data...
+2025-07-25 15:46:20,366 - Review.reviews.lc1ep_review - INFO - Loading EOD data...
+2025-07-25 15:46:20,366 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
+2025-07-25 15:46:22,499 - Review.reviews.lc3wp_review - INFO - Loading reference data...
+2025-07-25 15:46:22,499 - Review.reviews.lc1ep_review - INFO - Loading reference data...
+2025-07-25 15:46:22,540 - Review.reviews.lc100_review - INFO - Loading reference data...
+2025-07-25 15:46:51,158 - Review.reviews.lc3wp_review - ERROR - Error during review calculation: Failed to load cdp_climate_df from reference data
+2025-07-25 15:46:51,173 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading
+2025-07-25 15:46:51,178 - Review.reviews.lc3wp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc3wp_review.py", line 79, in run_lc3wp_review
+    raise ValueError(f"Failed to load {df_name} from reference data")
+ValueError: Failed to load cdp_climate_df from reference data
+
+2025-07-25 15:46:51,211 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:46:51] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 15:46:51,278 - Review.reviews.lc1ep_review - ERROR - Error during review calculation: Failed to load cdp_climate_df from reference data
+2025-07-25 15:46:51,279 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc1ep_review.py', reloading
+2025-07-25 15:46:51,292 - Review.reviews.lc1ep_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc1ep_review.py", line 77, in run_lc1ep_review
+    raise ValueError(f"Failed to load {df_name} from reference data")
+ValueError: Failed to load cdp_climate_df from reference data
+
+2025-07-25 15:46:51,329 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:46:51] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 15:46:52,139 - Review.reviews.lc100_review - ERROR - Error during review calculation: Failed to load cdp_climate_df from reference data
+2025-07-25 15:46:52,139 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading
+2025-07-25 15:46:52,139 - Review.reviews.lc100_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\lc100_review.py", line 77, in run_lc100_review
+    raise ValueError(f"Failed to load {df_name} from reference data")
+ValueError: Failed to load cdp_climate_df from reference data
+
+2025-07-25 15:46:52,174 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:46:52] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 15:46:52,174 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-07-25 15:46:52,182 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2025-07-25 15:46:52,183 - Review.reviews.wifrp_review - INFO - Loading EOD data...

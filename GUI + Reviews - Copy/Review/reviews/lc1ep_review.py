@@ -187,15 +187,15 @@ def run_lc1ep_review(date, co_date, effective_date, index="LC1EP", isin="FR00135
             how='left'
         )
         
-        # Simple debug code to output universe_df to Excel
-        debug_dir = os.path.join(os.getcwd(), 'debug')
-        os.makedirs(debug_dir, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        debug_path = os.path.join(debug_dir, f'universe_df_after_nace_{timestamp}.xlsx')
+        # # Simple debug code to output universe_df to Excel
+        # debug_dir = os.path.join(os.getcwd(), 'debug')
+        # os.makedirs(debug_dir, exist_ok=True)
+        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # debug_path = os.path.join(debug_dir, f'universe_df_after_nace_{timestamp}.xlsx')
 
-        # Save universe_df to Excel
-        universe_df.to_excel(debug_path, index=False)
-        logger.info(f"Debug file saved to {debug_path}")
+        # # Save universe_df to Excel
+        # universe_df.to_excel(debug_path, index=False)
+        # logger.info(f"Debug file saved to {debug_path}")
         
         # Add CDP Climate data
         logger.info("Adding CDP Climate data...")

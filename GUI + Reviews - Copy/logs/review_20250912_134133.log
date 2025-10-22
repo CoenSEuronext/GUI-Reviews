@@ -1,0 +1,24 @@
+2025-09-12 13:41:33,507 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 13:41:33,509 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 13:41:33,538 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:33] "GET / HTTP/1.1" 200 -
+2025-09-12 13:41:33,572 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:33] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-12 13:41:44,427 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:44] "POST /calculate HTTP/1.1" 200 -
+2025-09-12 13:41:44,428 - Review.reviews.euadp_review - INFO - Loading EOD data...
+2025-09-12 13:41:44,434 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:44] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:46,438 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:46] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:48,442 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:48] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:48,796 - Review.reviews.euadp_review - INFO - Loading reference data...
+2025-09-12 13:41:50,454 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:50] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:52,442 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:52] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:54,440 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:54] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:56,510 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:56] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:41:56,662 - Review.reviews.euadp_review - ERROR - Error during review calculation: 'DEUPT'
+2025-09-12 13:41:56,664 - Review.reviews.euadp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\euadp_review.py", line 34, in run_euadp_review
+    selection_df = ref_data[universe]
+                   ~~~~~~~~^^^^^^^^^^
+KeyError: 'DEUPT'
+
+2025-09-12 13:41:58,438 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:41:58] "GET /task-status/190619b6-aa3c-4093-8c7a-6d32d96416fd HTTP/1.1" 200 -
+2025-09-12 13:42:17,344 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 13:42:17,344 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading

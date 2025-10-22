@@ -7,7 +7,6 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Euronext Index Calculator</title>
-    <!-- Add the Barlow font import here -->
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap" rel="stylesheet">
     <style>
         .logo {
@@ -33,7 +32,7 @@
         
         body {
             font-family: 'Barlow', Arial, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: rgba(0, 141, 127, 0.75);
@@ -57,6 +56,31 @@
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 30px;
+        }
+
+        .mode-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            background-color: var(--gray-2);
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .mode-btn.active {
+            background-color: var(--primary-color);
+            color: white;
         }
 
         .form-group {
@@ -85,6 +109,76 @@
             box-shadow: 0 0 0 2px rgba(0, 141, 127, 0.2);
         }
 
+        .multi-select-container {
+            border: 1px solid var(--gray-1);
+            border-radius: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: white;
+        }
+
+        .select-all-controls {
+            padding: 10px;
+            border-bottom: 1px solid var(--gray-1);
+            background-color: var(--gray-2);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .select-all-btn {
+            padding: 5px 10px;
+            border: 1px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .select-all-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .review-option {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .review-option:hover {
+            background-color: rgba(0, 141, 127, 0.05);
+        }
+
+        .review-option:last-child {
+            border-bottom: none;
+        }
+
+        .review-option input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .review-info {
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 500;
+            color: var(--secondary-color-1);
+        }
+
+        .review-details {
+            font-size: 12px;
+            color: #666;
+        }
+
         button {
             background-color: var(--primary-color);
             color: white;
@@ -106,25 +200,6 @@
             cursor: not-allowed;
         }
 
-        #result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 4px;
-            display: none;
-        }
-
-        .success {
-            background-color: rgba(0, 141, 127, 0.1);
-            border: 1px solid var(--primary-color);
-            color: var(--secondary-color-1);
-        }
-
-        .error {
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-            color: #721c24;
-        }
-
         .checkbox-label {
             display: flex;
             align-items: center;
@@ -135,6 +210,63 @@
         input[type="checkbox"] {
             width: auto;
             margin: 0;
+        }
+
+        #result {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .result-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border-left: 4px solid;
+        }
+
+        .result-success {
+            background-color: rgba(0, 141, 127, 0.1);
+            border-left-color: var(--primary-color);
+            color: var(--secondary-color-1);
+        }
+
+        .result-error {
+            background-color: #f8d7da;
+            border-left-color: #dc3545;
+            color: #721c24;
+        }
+
+        .result-running {
+            background-color: #fff3cd;
+            border-left-color: #ffc107;
+            color: #856404;
+        }
+
+        .result-started {
+            background-color: #cce5ff;
+            border-left-color: #007bff;
+            color: #004085;
+        }
+
+        .progress-container {
+            margin-top: 10px;
+            background-color: var(--gray-2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 14px;
+            color: var(--secondary-color-1);
         }
 
         .document-section {
@@ -171,6 +303,42 @@
             width: 20px;
             height: 20px;
         }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading state styles */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .task-status {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .status-pending { color: #6c757d; }
+        .status-running { color: #ffc107; }
+        .status-completed { color: var(--primary-color); }
+        .status-failed { color: #dc3545; }
+        .status-cancelled { color: #6c757d; }
     </style>
 </head>
 <body>
@@ -178,37 +346,63 @@
     <div class="container">
         <h1>Euronext Index Calculator</h1>
         
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="single">Single Review</button>
+            <button class="mode-btn" data-mode="multiple">Multiple Reviews</button>
+        </div>
+
         <form id="calculatorForm">
-            <div class="form-group">
-                <label for="review_type">Review Type:</label>
-                <select id="review_type" name="review_type">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
+            <!-- Single review mode -->
+            <div id="single-mode">
+                <div class="form-group">
+                    <label for="review_type">Review Type:</label>
+                    <select id="review_type" name="review_type">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="index">Index:</label>
+                    <input type="text" id="index" name="index" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="isin">ISIN:</label>
+                    <input type="text" id="isin" name="isin" readonly>
+                </div>
             </div>
 
+            <!-- Multiple review mode -->
+            <div id="multiple-mode" class="hidden">
+                <div class="form-group">
+                    <label>Select Reviews to Run:</label>
+                    <div class="multi-select-container">
+                        <div class="select-all-controls">
+                            <button type="button" class="select-all-btn" id="selectAll">Select All</button>
+                            <button type="button" class="select-all-btn" id="selectNone">Select None</button>
+                            <span id="selectionCount">0 selected</span>
+                        </div>
+                        <div id="reviewOptions">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common fields -->
             <div class="form-group">
                 <label for="date">Calculation Date (YYYYMMDD):</label>
                 <input type="text" id="date" name="date" required pattern="\d{8}" placeholder="20241217">
             </div>
 
             <div class="form-group">
-                <label for="date">Cut off Date (YYYYMMDD):</label>
+                <label for="co_date">Cut off Date (YYYYMMDD):</label>
                 <input type="text" id="co_date" name="co_date" required pattern="\d{8}" placeholder="20241122">
             </div>
 
             <div class="form-group">
                 <label for="effective_date">Effective Date (DD-MMM-YY):</label>
                 <input type="text" id="effective_date" name="effective_date" required placeholder="23-Dec-24">
-            </div>
-
-            <div class="form-group">
-                <label for="index">Index:</label>
-                <input type="text" id="index" name="index" readonly>
-            </div>
-
-            <div class="form-group">
-                <label for="isin">ISIN:</label>
-                <input type="text" id="isin" name="isin" readonly>
             </div>
 
             <div class="form-group">
@@ -220,12 +414,14 @@
                     <option value="JPY">JPY</option>
                 </select>
             </div>
+
             <div class="form-group">
                 <label class="checkbox-label">
                     <input type="checkbox" id="auto_open" name="auto_open">
-                    Automatically open output file
+                    Automatically open output files
                 </label>
             </div>
+
             <button type="submit" id="submitBtn">Calculate Index</button>
         </form>
 
@@ -263,7 +459,61 @@
     </div>
 
     <script>
+        // Get the configurations from Flask backend
         const configs = {{ INDEX_CONFIGS|tojson|safe }};
+
+        let currentMode = 'single';
+        let selectedReviews = new Set();
+        let currentTaskId = null;
+        let statusCheckInterval = null;
+
+        function initializeApp() {
+            populateReviewTypes();
+            populateMultiSelectOptions();
+            setupEventListeners();
+            updateIndexAndIsin();
+        }
+
+        function setupEventListeners() {
+            // Mode switcher
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.addEventListener('click', () => switchMode(btn.dataset.mode));
+            });
+
+            // Review type change for single mode
+            document.getElementById('review_type').addEventListener('change', updateIndexAndIsin);
+
+            // Multi-select controls
+            document.getElementById('selectAll').addEventListener('click', selectAllReviews);
+            document.getElementById('selectNone').addEventListener('click', selectNoReviews);
+
+            // Form submission
+            document.getElementById('calculatorForm').addEventListener('submit', handleFormSubmit);
+
+            // Handle checkbox clicks without triggering row click
+            document.addEventListener('click', function(e) {
+                if (e.target.type === 'checkbox' && e.target.dataset.review) {
+                    e.stopPropagation();
+                }
+            });
+        }
+
+        function switchMode(mode) {
+            currentMode = mode;
+            
+            // Update button states
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.mode === mode);
+            });
+
+            // Show/hide appropriate sections
+            document.getElementById('single-mode').classList.toggle('hidden', mode !== 'single');
+            document.getElementById('multiple-mode').classList.toggle('hidden', mode !== 'multiple');
+
+            // Update submit button text
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.textContent = mode === 'single' ? 'Calculate Index' : 'Calculate Selected Indices';
+        }
 
         function populateReviewTypes() {
             const selectElement = document.getElementById('review_type');
@@ -275,13 +525,66 @@
                 option.textContent = `${reviewType} Review`;
                 selectElement.appendChild(option);
             });
+        }
 
-            updateIndexAndIsin();
+        function populateMultiSelectOptions() {
+            const container = document.getElementById('reviewOptions');
+            container.innerHTML = '';
+
+            Object.entries(configs).forEach(([reviewType, config]) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'review-option';
+                optionDiv.onclick = () => toggleReviewSelection(reviewType);
+
+                optionDiv.innerHTML = `
+                    <input type="checkbox" id="review_${reviewType}" data-review="${reviewType}" onclick="event.stopPropagation();">
+                    <div class="review-info">
+                        <div class="review-name">${reviewType} Review</div>
+                        <div class="review-details">Index: ${config.index} | ISIN: ${config.isin}</div>
+                    </div>
+                `;
+
+                container.appendChild(optionDiv);
+            });
+
+            updateSelectionCount();
+        }
+
+        function toggleReviewSelection(reviewType) {
+            const checkbox = document.getElementById(`review_${reviewType}`);
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                selectedReviews.add(reviewType);
+            } else {
+                selectedReviews.delete(reviewType);
+            }
+            
+            updateSelectionCount();
+        }
+
+        function selectAllReviews() {
+            Object.keys(configs).forEach(reviewType => {
+                selectedReviews.add(reviewType);
+                document.getElementById(`review_${reviewType}`).checked = true;
+            });
+            updateSelectionCount();
+        }
+
+        function selectNoReviews() {
+            selectedReviews.clear();
+            Object.keys(configs).forEach(reviewType => {
+                document.getElementById(`review_${reviewType}`).checked = false;
+            });
+            updateSelectionCount();
+        }
+
+        function updateSelectionCount() {
+            document.getElementById('selectionCount').textContent = `${selectedReviews.size} selected`;
         }
 
         function updateIndexAndIsin() {
             const reviewType = document.getElementById('review_type').value;
-            const configs = {{ INDEX_CONFIGS|tojson|safe }};
             const config = configs[reviewType];
             
             if (config) {
@@ -290,26 +593,59 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            populateReviewTypes();
-        });
-
-        document.getElementById('review_type').addEventListener('change', updateIndexAndIsin);
-
-        document.getElementById('calculatorForm').addEventListener('submit', async function(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
             const resultDiv = document.getElementById('result');
             
+            if (currentMode === 'multiple' && selectedReviews.size === 0) {
+                alert('Please select at least one review to run.');
+                return;
+            }
+
+            // Clear any existing status check
+            if (statusCheckInterval) {
+                clearInterval(statusCheckInterval);
+                statusCheckInterval = null;
+            }
+
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Calculating...';
             resultDiv.style.display = 'block';
-            resultDiv.className = '';
-            resultDiv.innerHTML = 'Processing your request...';
-            
+            resultDiv.innerHTML = '';
+
             try {
-                const formData = new FormData(this);
+                // Start the task
+                const taskId = await startTask();
+                if (taskId) {
+                    currentTaskId = taskId;
+                    // Start checking status
+                    startStatusChecking(taskId);
+                }
+            } catch (error) {
+                displayError('Failed to start task: ' + error.message);
+                submitBtn.disabled = false;
+            }
+        }
+
+        async function startTask() {
+            const formData = new FormData();
+            const submitBtn = document.getElementById('submitBtn');
+            
+            submitBtn.innerHTML = '<span class="spinner"></span>Starting task...';
+
+            if (currentMode === 'single') {
+                // Single review
+                formData.append('review_type', document.getElementById('review_type').value);
+                formData.append('date', document.getElementById('date').value);
+                formData.append('co_date', document.getElementById('co_date').value);
+                formData.append('effective_date', document.getElementById('effective_date').value);
+                formData.append('currency', document.getElementById('currency').value);
+                
+                if (document.getElementById('auto_open').checked) {
+                    formData.append('auto_open', 'on');
+                }
+
                 const response = await fetch('/calculate', {
                     method: 'POST',
                     body: formData
@@ -317,22 +653,177 @@
                 
                 const data = await response.json();
                 
-                resultDiv.className = data.status === 'success' ? 'success' : 'error';
-                resultDiv.innerHTML = `
-                    <h3>${data.status === 'success' ? 'Success!' : 'Error'}</h3>
-                    <p>${data.message}</p>
-                `;
-            } catch (error) {
-                resultDiv.className = 'error';
-                resultDiv.innerHTML = `
-                    <h3>Error</h3>
-                    <p>An error occurred while calculating the index.</p>
-                `;
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Calculate Index';
+                if (data.status === 'started') {
+                    displayTaskStarted(data);
+                    return data.task_id;
+                } else {
+                    displayError(data.message);
+                    return null;
+                }
+            } else {
+                // Multiple reviews
+                Array.from(selectedReviews).forEach(reviewType => {
+                    formData.append('review_types[]', reviewType);
+                });
+                
+                formData.append('date', document.getElementById('date').value);
+                formData.append('co_date', document.getElementById('co_date').value);
+                formData.append('effective_date', document.getElementById('effective_date').value);
+                formData.append('currency', document.getElementById('currency').value);
+                
+                if (document.getElementById('auto_open').checked) {
+                    formData.append('auto_open', 'on');
+                }
+
+                const response = await fetch('/calculate-batch', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'started') {
+                    displayTaskStarted(data);
+                    return data.task_id;
+                } else {
+                    displayError(data.message);
+                    return null;
+                }
             }
-        });
+        }
+
+        function displayTaskStarted(data) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <div class="result-item result-started">
+                    <h3>Task Started</h3>
+                    <p>${data.message}</p>
+                    <p><small>Task ID: ${data.task_id}</small></p>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Initializing...</div>
+                    
+                    <div class="task-status" id="taskStatus">
+                        Status: <span class="status-pending">Pending</span>
+                    </div>
+                    
+                    <div id="taskResults"></div>
+                </div>
+            `;
+        }
+
+        function startStatusChecking(taskId) {
+            // Check status immediately
+            checkTaskStatus(taskId);
+            
+            // Then check every 2 seconds
+            statusCheckInterval = setInterval(() => {
+                checkTaskStatus(taskId);
+            }, 2000);
+        }
+
+        async function checkTaskStatus(taskId) {
+            try {
+                const response = await fetch(`/task-status/${taskId}`);
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    updateTaskDisplay(data.task);
+                    
+                    // Stop checking if task is complete
+                    if (['completed', 'failed', 'cancelled'].includes(data.task.status)) {
+                        if (statusCheckInterval) {
+                            clearInterval(statusCheckInterval);
+                            statusCheckInterval = null;
+                        }
+                        // Re-enable submit button
+                        const submitBtn = document.getElementById('submitBtn');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = currentMode === 'single' ? 'Calculate Index' : 'Calculate Selected Indices';
+                    }
+                }
+            } catch (error) {
+                console.error('Error checking task status:', error);
+            }
+        }
+
+        function updateTaskDisplay(task) {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const taskStatus = document.getElementById('taskStatus');
+            const taskResults = document.getElementById('taskResults');
+            
+            if (progressBar) {
+                progressBar.style.width = `${task.progress}%`;
+            }
+            
+            if (progressText) {
+                progressText.textContent = task.message;
+            }
+            
+            if (taskStatus) {
+                taskStatus.innerHTML = `Status: <span class="status-${task.status}">${task.status.charAt(0).toUpperCase() + task.status.slice(1)}</span>`;
+            }
+            
+            // Show results when completed
+            if (task.status === 'completed' && task.result_data && taskResults) {
+                displayTaskResults(task, taskResults);
+            } else if (task.status === 'failed' && taskResults) {
+                taskResults.innerHTML = `
+                    <div class="result-item result-error">
+                        <h4>Task Failed</h4>
+                        <p>${task.error || 'Unknown error occurred'}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function displayTaskResults(task, container) {
+            if (task.task_type === 'single') {
+                container.innerHTML = `
+                    <div class="result-item result-success">
+                        <h4>Review Completed Successfully</h4>
+                        <p>${task.message}</p>
+                        ${task.duration_seconds ? `<small>Completed in ${task.duration_seconds.toFixed(1)} seconds</small>` : ''}
+                    </div>
+                `;
+            } else if (task.task_type === 'batch' && task.result_data.results) {
+                let html = '<h4>Batch Review Results</h4>';
+                
+                const summary = task.result_data.summary;
+                html += `<p>Summary: ${summary.successful}/${summary.total} reviews completed successfully</p>`;
+                
+                task.result_data.results.forEach(result => {
+                    const statusClass = result.status === 'success' ? 'result-success' : 'result-error';
+                    const duration = result.duration_seconds ? ` (${result.duration_seconds.toFixed(1)}s)` : '';
+                    
+                    html += `
+                        <div class="result-item ${statusClass}">
+                            <h5>${result.review_type}${duration}</h5>
+                            <p>${result.message}</p>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+        }
+
+        function displayError(message) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <div class="result-item result-error">
+                    <h3>Error</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeApp);
     </script>
 </body>
 </html>

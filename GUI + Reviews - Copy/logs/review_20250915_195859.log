@@ -1,0 +1,22 @@
+2025-09-15 19:58:59,918 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 19:58:59,920 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 19:59:07,420 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:07] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 19:59:07,435 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-09-15 19:59:07,438 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:07] "GET /task-status/2d864ca1-090f-4894-be24-c996c3324b8a HTTP/1.1" 200 -
+2025-09-15 19:59:09,438 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:09] "GET /task-status/2d864ca1-090f-4894-be24-c996c3324b8a HTTP/1.1" 200 -
+2025-09-15 19:59:10,139 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:10] "GET / HTTP/1.1" 200 -
+2025-09-15 19:59:10,205 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:10] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-15 19:59:12,169 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-09-15 19:59:18,897 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:18] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 19:59:18,907 - Review.reviews.elecp_review - INFO - Loading EOD data...
+2025-09-15 19:59:18,907 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:18] "GET /task-status/84a8511a-f63f-4493-b612-7757716f154f HTTP/1.1" 200 -
+2025-09-15 19:59:20,952 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:20] "GET /task-status/84a8511a-f63f-4493-b612-7757716f154f HTTP/1.1" 200 -
+2025-09-15 19:59:21,786 - Review.reviews.elecp_review - INFO - Loading reference data...
+2025-09-15 19:59:22,511 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-09-15 19:59:22,520 - Review.reviews.derep_review - INFO - Companies with capping applied: 0
+2025-09-15 19:59:22,540 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250915_195922.xlsx
+2025-09-15 19:59:22,936 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:22] "GET /task-status/84a8511a-f63f-4493-b612-7757716f154f HTTP/1.1" 200 -
+2025-09-15 19:59:23,178 - Review.reviews.elecp_review - INFO - Saving ELECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELECP_df_20250915_195923.xlsx
+2025-09-15 19:59:24,919 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:59:24] "GET /task-status/84a8511a-f63f-4493-b612-7757716f154f HTTP/1.1" 200 -
+2025-09-15 20:02:05,256 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\series.py', reloading
+2025-09-15 20:02:05,307 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\arraylike.py', reloading

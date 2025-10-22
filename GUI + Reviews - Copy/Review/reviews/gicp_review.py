@@ -215,19 +215,35 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
 
         # Create selection dataframe
         selection_df = developed_market_df[developed_market_df['selected']].copy()
-        selection_df.to_excel('debug_output.xlsx', index=False)
-        os.startfile('debug_output.xlsx')
-        # First remove duplicates from stock_eod_df
-        unique_stock_eod = (stock_eod_df[['Isin Code', 'Currency', 'Close Prc', 'FX/Index Ccy']]
-                        .drop_duplicates(subset=['Isin Code', 'Currency'], keep='first'))
 
-        # Then merge with selection_df
-        selection_df = selection_df.merge(
-            unique_stock_eod,
-            left_on=['ISIN', 'Currency (Local)'],
-            right_on=['Isin Code', 'Currency'],
-            how='left'
-        ).drop(['Isin Code', 'Currency'], axis=1)
+        # Filter symbols (length < 12) and get unique symbols per ISIN
+        symbols_filtered = stock_eod_df[
+            stock_eod_df['#Symbol'].str.len() < 12
+        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
+
+        # Chain all data preparation operations using the symbol-based approach
+        selection_df = (selection_df
+            # Merge symbols first
+            .merge(
+                symbols_filtered,
+                left_on='ISIN',
+                right_on='Isin Code',
+                how='left'
+            )
+            .drop('Isin Code', axis=1)
+            # Merge FX data using symbols and currency filter
+            .merge(
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol',
+                how='left'
+            )
+            # Merge EOD prices using symbols
+            .merge(
+                stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
+                on='#Symbol',
+                how='left'
+            )
+        )
 
         # Now calculate Original market cap using the merged data
         selection_df['Original market cap'] = (
@@ -238,35 +254,42 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         )
 
         # Add logging to check if all matches were found
-        missing_data = selection_df[selection_df['Close Prc'].isna()]
-        if not missing_data.empty:
-            logger.warning(f"Missing price/FX data for {len(missing_data)} companies:")
-            for _, row in missing_data.iterrows():
-                logger.warning(f"ISIN: {row['ISIN']}, Currency: {row['Currency (Local)']}")
+        missing_symbols = selection_df[selection_df['#Symbol'].isna()]
+        if not missing_symbols.empty:
+            logger.warning(f"Missing symbols for {len(missing_symbols)} companies:")
+            for _, row in missing_symbols.iterrows():
+                logger.warning(f"ISIN: {row['ISIN']}, Company: {row['Company']}")
+
+        missing_fx_data = selection_df[selection_df['FX/Index Ccy'].isna()]
+        if not missing_fx_data.empty:
+            logger.warning(f"Missing FX data for {len(missing_fx_data)} companies:")
+            for _, row in missing_fx_data.iterrows():
+                logger.warning(f"Symbol: {row['#Symbol']}, ISIN: {row['ISIN']}")
+
+        missing_price_data = selection_df[selection_df['Close Prc'].isna()]
+        if not missing_price_data.empty:
+            logger.warning(f"Missing price data for {len(missing_price_data)} companies:")
+            for _, row in missing_price_data.iterrows():
+                logger.warning(f"Symbol: {row['#Symbol']}, ISIN: {row['ISIN']}")
         
         # Apply Group-based weighting according to specification:
         # Group 1 (EZ300): 60% weight, Group 2 (NA500): 40% weight
-        # Maximum 10% per constituent
+        # Maximum 20% per constituent within each group
         
-        def apply_category_capping(df, target_weight, total_mcap, max_weight=0.10):
+        def apply_category_capping(df, target_weight, max_weight=0.20):
             """
             Apply capping within a group
             
             Args:
                 df: DataFrame containing the group's constituents
                 target_weight: Target weight for the entire group (e.g., 0.60 for 60%)
-                total_mcap: Total market cap of all selected companies
-                max_weight: Maximum weight for any individual constituent (as % of total portfolio)
+                max_weight: Maximum weight for any individual constituent within the group (default 20%)
             """
-            # Calculate initial weights relative to total portfolio
-            df['Initial Weight'] = df['Original market cap'] / total_mcap
+            # Step 1: Calculate initial weights within the group based on market cap
+            group_mcap = df['Original market cap'].sum()
+            df['Group Weight'] = df['Original market cap'] / group_mcap
             
-            # Calculate the scaling factor to achieve target group weight
-            category_weight = df['Initial Weight'].sum()
-            if category_weight > 0:
-                initial_scaling = target_weight / category_weight
-                df['Initial Weight'] *= initial_scaling
-            
+            # Step 2: Apply capping and redistribution within the group
             iteration = 0
             weights_changed = True
             max_iterations = 100
@@ -274,32 +297,35 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
             while weights_changed and iteration < max_iterations:
                 weights_changed = False
                 
-                # Identify constituents exceeding max weight
-                capped_constituents = df['Initial Weight'] > max_weight
+                # Identify constituents exceeding max weight within the group
+                capped_constituents = df['Group Weight'] > max_weight
                 n_capped = capped_constituents.sum()
                 
                 if n_capped > 0:
+                    # Calculate excess weight to redistribute
+                    excess_weight = (df.loc[capped_constituents, 'Group Weight'] - max_weight).sum()
+                    
                     # Cap the exceeding constituents
-                    df.loc[capped_constituents, 'Initial Weight'] = max_weight
+                    df.loc[capped_constituents, 'Group Weight'] = max_weight
                     
-                    # Calculate remaining weight to distribute
-                    remaining_target = target_weight - (max_weight * n_capped)
+                    # Redistribute excess to uncapped constituents proportionally
+                    uncapped = ~capped_constituents
+                    uncapped_sum = df.loc[uncapped, 'Group Weight'].sum()
                     
-                    if remaining_target > 0:
-                        # Redistribute excess to uncapped constituents proportionally
-                        uncapped = ~capped_constituents
-                        uncapped_sum = df.loc[uncapped, 'Initial Weight'].sum()
-                        
-                        if uncapped_sum > 0:
-                            scaling_factor = remaining_target / uncapped_sum
-                            df.loc[uncapped, 'Initial Weight'] *= scaling_factor
-                            weights_changed = True
+                    if uncapped_sum > 0 and excess_weight > 0:
+                        # Distribute excess proportionally to uncapped constituents
+                        redistribution_factor = excess_weight / uncapped_sum
+                        df.loc[uncapped, 'Group Weight'] *= (1 + redistribution_factor)
+                        weights_changed = True
                 
                 iteration += 1
             
+            # Step 3: Scale the group weights to achieve target portfolio weight
+            df['Initial Weight'] = df['Group Weight'] * target_weight
+            
             return df
 
-        # Apply weighting by group (not arbitrary categories)
+        # Apply weighting by group
         total_mcap = selection_df['Original market cap'].sum()
         selection_df['Initial Weight'] = 0.0
 
@@ -307,14 +333,14 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         group1_mask = selection_df['category'] == 'Group_1_EZ300'
         if group1_mask.sum() > 0:
             group1_df = selection_df[group1_mask].copy()
-            group1_df = apply_category_capping(group1_df, 0.60, total_mcap)  # 60% target
+            group1_df = apply_category_capping(group1_df, 0.60, max_weight=0.20)  # 60% target, 20% max per constituent
             selection_df.loc[group1_mask, 'Initial Weight'] = group1_df['Initial Weight']
 
         # Group 2: NA500 companies get 40% total weight
         group2_mask = selection_df['category'] == 'Group_2_NA500'
         if group2_mask.sum() > 0:
             group2_df = selection_df[group2_mask].copy()
-            group2_df = apply_category_capping(group2_df, 0.40, total_mcap)  # 40% target
+            group2_df = apply_category_capping(group2_df, 0.40, max_weight=0.20)  # 40% target, 20% max per constituent
             selection_df.loc[group2_mask, 'Initial Weight'] = group2_df['Initial Weight']
 
         # Verify group weights
@@ -323,12 +349,12 @@ def run_gicp_review(date, co_date, effective_date, index="GICP", isin="NLIX00005
         logger.info(f"Group 1 (EZ300) weight: {group1_weight:.4%} (target: 60.00%)")
         logger.info(f"Group 2 (NA500) weight: {group2_weight:.4%} (target: 40.00%)")
 
-        # Calculate Final Capping factor
-        selection_df['Final Capping'] = (selection_df['Initial Weight'] * total_mcap) / selection_df['Original market cap']
+        # Calculate Capping factor
+        selection_df['Capping'] = (selection_df['Initial Weight'] * total_mcap) / selection_df['Original market cap']
 
         # Verify final weights
-        selection_df['Final Weight'] = (selection_df['Original market cap'] * selection_df['Final Capping']) / (selection_df['Original market cap'] * selection_df['Final Capping']).sum()
-
+        selection_df['Final Weight'] = (selection_df['Original market cap'] * selection_df['Capping']) / (selection_df['Original market cap'] * selection_df['Capping']).sum()
+        selection_df['Final Capping'] = (selection_df['Capping'] / selection_df['Capping'].max()).round(14)
         # Log verification
         logger.info("\nFinal Weight Verification:")
         group1_final_weight = selection_df[selection_df['category'] == 'Group_1_EZ300']['Final Weight'].sum()

@@ -1,0 +1,15 @@
+2025-09-16 10:31:01,954 - werkzeug - WARNING -  * Debugger is active!
+2025-09-16 10:31:01,954 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-16 10:31:05,642 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:05] "POST /calculate HTTP/1.1" 200 -
+2025-09-16 10:31:05,644 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-09-16 10:31:05,646 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:05] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -
+2025-09-16 10:31:07,652 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:07] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -
+2025-09-16 10:31:09,656 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:09] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -
+2025-09-16 10:31:09,743 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-09-16 10:31:11,659 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:11] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -
+2025-09-16 10:31:13,693 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:13] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -
+2025-09-16 10:31:15,653 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:15] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -
+2025-09-16 10:31:16,993 - Review.reviews.eus5p_review - INFO - Eurozone companies (EZ300): 300
+2025-09-16 10:31:16,993 - Review.reviews.eus5p_review - INFO - North America companies (NA500, excluding XTSE): 458
+2025-09-16 10:31:17,093 - Review.reviews.eus5p_review - INFO - Saving EUS5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUS5P_df_20250916_103117.xlsx
+2025-09-16 10:31:17,653 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:31:17] "GET /task-status/350e503e-ea5a-4e23-b06f-1e799e69461c HTTP/1.1" 200 -

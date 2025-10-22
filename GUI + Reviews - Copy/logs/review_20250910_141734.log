@@ -1,0 +1,28 @@
+2025-09-10 14:17:35,283 - werkzeug - WARNING -  * Debugger is active!
+2025-09-10 14:17:35,286 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-10 14:19:55,259 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:19:55] "GET / HTTP/1.1" 200 -
+2025-09-10 14:19:55,292 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:19:55] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-10 14:19:59,053 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:19:59] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 14:19:59,053 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2025-09-10 14:19:59,063 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:19:59] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 14:20:01,066 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:01] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 14:20:01,624 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2025-09-10 14:20:03,086 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:03] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 14:20:05,109 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:05] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 14:20:07,115 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:07] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 14:20:09,076 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:09] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 14:20:09,665 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250910_142009.xlsx
+2025-09-10 14:20:11,066 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:11] "GET /task-status/7eb82397-9a6e-4682-a2ca-c77a614e653a HTTP/1.1" 200 -
+2025-09-10 16:48:47,219 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 16:48:47] "POST /calculate HTTP/1.1" 200 -
+2025-09-10 16:48:47,219 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-09-10 16:48:47,228 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 16:48:47] "GET /task-status/53a6102e-2261-47d8-8f1c-0a52dd0bec80 HTTP/1.1" 200 -
+2025-09-10 16:48:49,226 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 16:48:49] "GET /task-status/53a6102e-2261-47d8-8f1c-0a52dd0bec80 HTTP/1.1" 200 -
+2025-09-10 16:48:51,226 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 16:48:51] "GET /task-status/53a6102e-2261-47d8-8f1c-0a52dd0bec80 HTTP/1.1" 200 -
+2025-09-10 16:48:52,861 - Review.reviews.edwpt_review - ERROR - Error during review calculation: Failed to load required reference data files
+2025-09-10 16:48:52,861 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
+2025-09-10 16:48:52,861 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 60, in run_edwpt_review
+    raise ValueError("Failed to load required reference data files")
+ValueError: Failed to load required reference data files
+
+2025-09-10 16:48:53,228 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 16:48:53] "GET /task-status/53a6102e-2261-47d8-8f1c-0a52dd0bec80 HTTP/1.1" 200 -

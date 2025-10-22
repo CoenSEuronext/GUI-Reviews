@@ -1,0 +1,12 @@
+2025-08-15 14:17:51,061 - werkzeug - WARNING -  * Debugger is active!
+2025-08-15 14:17:51,063 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-15 14:17:52,104 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-08-15 14:17:52,790 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-08-15 14:18:00,448 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-08-15 14:18:00,469 - Review.reviews.derep_review - INFO - Companies with capping applied: 84
+2025-08-15 14:18:00,470 - Review.reviews.derep_review - INFO - Average capping factor for capped companies: 0.9963
+2025-08-15 14:18:00,472 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250815_141800.xlsx
+2025-08-15 14:18:00,903 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 14:18:00] "POST /calculate HTTP/1.1" 200 -
+2025-08-15 14:19:53,136 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
+2025-08-15 14:19:53,136 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
+2025-08-15 14:19:53,136 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading

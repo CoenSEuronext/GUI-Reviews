@@ -58,6 +58,22 @@ HOLIDAYS = [
     "20440101", "20440415", "20440418", "20440501", "20441225", "20441226", "20441231"
 ]
 
+# Comparison configurations
+COMPARISON_CONFIGS = {
+    'stock': {
+        'file_suffix': 'STOCK',
+        'key_fields': ['#Symbol', 'Index'],
+        'output_filename': 'GIS Morning Stock changes_{date}.xlsx',
+        'comparison_function': 'find_differences_vectorized_morning_stock'
+    },
+    'index': {
+        'file_suffix': 'INDEX',
+        'key_fields': ['#Symbol'],
+        'output_filename': 'GIS Morning Index changes_{date}.xlsx',
+        'comparison_function': 'find_differences_vectorized_morning_index'
+    }
+}
+
 # Timer decorator for performance monitoring
 def timer(func):
     """Decorator to time function execution"""
@@ -80,7 +96,7 @@ log_file = os.path.join(script_dir, 'file_monitor.log')
 try:
     handler = logging.handlers.RotatingFileHandler(
         log_file,
-        maxBytes=10*1024*1024,  # 10MB
+        maxBytes=10*1024*1024,
         backupCount=5,
         encoding='utf-8'
     )
@@ -106,7 +122,6 @@ MONITOR_FOLDERS = {
 
 OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output"
 
-# Create output directory if it doesn't exist
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
     logger.info(f"Created output directory: {OUTPUT_DIR}")
@@ -116,23 +131,18 @@ def get_previous_workday(date=None):
     if date is None:
         date = datetime.now()
     
-    # Go back one day
     prev_day = date - timedelta(days=1)
     
-    # Keep going back until we find a workday
     while True:
-        # Check if it's a weekend
-        if prev_day.weekday() >= 5:  # Saturday = 5, Sunday = 6
+        if prev_day.weekday() >= 5:
             prev_day = prev_day - timedelta(days=1)
             continue
         
-        # Check if it's a holiday
         date_str = prev_day.strftime("%Y%m%d")
         if date_str in HOLIDAYS:
             prev_day = prev_day - timedelta(days=1)
             continue
         
-        # It's a workday
         break
     
     return prev_day
@@ -142,25 +152,21 @@ def get_current_workday(date=None):
     if date is None:
         date = datetime.now()
     
-    # If today is not a workday, get the previous workday
     while True:
-        # Check if it's a weekend
-        if date.weekday() >= 5:  # Saturday = 5, Sunday = 6
+        if date.weekday() >= 5:
             date = date - timedelta(days=1)
             continue
         
-        # Check if it's a holiday
         date_str = date.strftime("%Y%m%d")
         if date_str in HOLIDAYS:
             date = date - timedelta(days=1)
             continue
         
-        # It's a workday
         break
     
     return date
 
-def get_expected_filenames():
+def get_expected_filenames(comparison_type='stock'):
     """Get the expected filenames for today's comparison"""
     current_workday = get_current_workday()
     previous_workday = get_previous_workday()
@@ -168,12 +174,15 @@ def get_expected_filenames():
     sod_date = current_workday.strftime("%Y%m%d")
     manual_date = previous_workday.strftime("%Y%m%d")
     
+    config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+    file_suffix = config['file_suffix']
+    
     expected_files = {
-        'sod': f"TTMIndexEU1_GIS_SOD_STOCK_{sod_date}.xlsx",
-        'manual': f"TTMIndexEU1_GIS_MANUAL_STOCK_{manual_date}.xlsx"
+        'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.xlsx",
+        'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.xlsx"
     }
     
-    logger.info(f"Expected STOCK files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
+    logger.info(f"Expected {file_suffix} files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
     
     return expected_files
 
@@ -189,26 +198,23 @@ def file_exists_and_ready(filepath):
     except (IOError, OSError):
         return False
 
-def check_files_available():
+def check_files_available(comparison_type='stock'):
     """Check if both expected files are available"""
-    expected_files = get_expected_filenames()
+    expected_files = get_expected_filenames(comparison_type)
     
-    # Check STOCK files
-    stock_sod_path = os.path.join(MONITOR_FOLDERS['sod'], expected_files['sod'])
-    stock_manual_path = os.path.join(MONITOR_FOLDERS['manual'], expected_files['manual'])
+    sod_path = os.path.join(MONITOR_FOLDERS['sod'], expected_files['sod'])
+    manual_path = os.path.join(MONITOR_FOLDERS['manual'], expected_files['manual'])
     
-    # Check if files are ready
-    stock_sod_ready = file_exists_and_ready(stock_sod_path)
-    stock_manual_ready = file_exists_and_ready(stock_manual_path)
+    sod_ready = file_exists_and_ready(sod_path)
+    manual_ready = file_exists_and_ready(manual_path)
     
-    logger.info(f"STOCK file status: SOD={stock_sod_ready}, Manual={stock_manual_ready}")
+    logger.info(f"{comparison_type.upper()} file status: SOD={sod_ready}, Manual={manual_ready}")
     
-    # Return file availability status and paths
-    if stock_sod_ready and stock_manual_ready:
+    if sod_ready and manual_ready:
         return {
             'available': True,
-            'sod_path': stock_sod_path,
-            'manual_path': stock_manual_path
+            'sod_path': sod_path,
+            'manual_path': manual_path
         }
     else:
         return {
@@ -264,13 +270,13 @@ def read_excel_file(file_path):
         return None
 
 @timer
-def prepare_dataframes(df1, df2):
+def prepare_dataframes(df1, df2, key_fields):
     """Prepare dataframes for fast comparison using indexing"""
     df1_clean = df1.replace([np.inf, -np.inf], '').fillna('')
     df2_clean = df2.replace([np.inf, -np.inf], '').fillna('')
     
-    df1_clean['composite_key'] = df1_clean['#Symbol'].astype(str) + '|' + df1_clean['Index'].astype(str)
-    df2_clean['composite_key'] = df2_clean['#Symbol'].astype(str) + '|' + df2_clean['Index'].astype(str)
+    df1_clean['composite_key'] = df1_clean[key_fields].astype(str).agg('|'.join, axis=1)
+    df2_clean['composite_key'] = df2_clean[key_fields].astype(str).agg('|'.join, axis=1)
     
     df1_indexed = df1_clean.set_index('composite_key')
     df2_indexed = df2_clean.set_index('composite_key')
@@ -278,8 +284,8 @@ def prepare_dataframes(df1, df2):
     return df1_indexed, df2_indexed
 
 @timer
-def find_differences_vectorized(df1_indexed, df2_indexed):
-    """Find differences using vectorized operations - much faster"""
+def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
+    """Find differences for morning stock comparison - vectorized operations"""
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
     if len(common_keys) == 0:
@@ -317,8 +323,8 @@ def find_differences_vectorized(df1_indexed, df2_indexed):
         'Rank': range(1, len(diff_keys) + 1),
         'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
         '#Symbol': df1_diff['#Symbol'],
-        'System date': df1_diff.get('System date', ''),
-        'Adjust Reason': df2_diff.get('Adjust Reason', ''),
+        'Sys date': df1_diff.get('System date', ''),
+        'Adj. Rsn': df2_diff.get('Adjust Reason', ''),
         'Isin Code': df1_diff.get('Isin Code', ''),
         'Country': df1_diff.get('Country', ''),
         'Mnemo': df1_diff.get('Mnemo', ''),
@@ -343,6 +349,64 @@ def find_differences_vectorized(df1_indexed, df2_indexed):
     
     return diff_df, common_keys
 
+@timer
+def find_differences_vectorized_morning_index(df1_indexed, df2_indexed):
+    """Find differences for morning index comparison - vectorized operations"""
+    common_keys = df1_indexed.index.intersection(df2_indexed.index)
+    
+    if len(common_keys) == 0:
+        return pd.DataFrame(), common_keys
+    
+    df1_common = df1_indexed.loc[common_keys]
+    df2_common = df2_indexed.loc[common_keys]
+    
+    critical_fields = ['Divisor', 't0 IV', 't0 IV unround', 'Mkt Cap', 'Nr of components']
+    
+    has_differences = pd.Series(False, index=common_keys)
+    
+    for field in critical_fields:
+        if field in df1_common.columns and field in df2_common.columns:
+            val1 = pd.to_numeric(df1_common[field], errors='coerce').fillna(0)
+            val2 = pd.to_numeric(df2_common[field], errors='coerce').fillna(0)
+            
+            tolerance = 1e-10
+            field_diff = abs(val1 - val2) > tolerance
+            
+            has_differences |= field_diff
+    
+    diff_keys = common_keys[has_differences]
+    
+    if len(diff_keys) == 0:
+        return pd.DataFrame(), common_keys
+    
+    df1_diff = df1_indexed.loc[diff_keys]
+    df2_diff = df2_indexed.loc[diff_keys]
+    
+    differences_data = {
+        'Rank': range(1, len(diff_keys) + 1),
+        '#Symbol': df2_diff['#Symbol'],
+        'Sys Date': df2_diff.get('System Date', ''),
+        'IsinCode': df2_diff.get('IsinCode', ''),
+        'Cntry': df2_diff.get('Country', ''),
+        'Mnemo': df2_diff.get('Mnemo', ''),
+        'Name': df2_diff.get('Name', ''),
+        'MIC': df2_diff.get('MIC', ''),
+        'Prev Divisor': df1_diff.get('Divisor', ''),
+        'New Divisor': df2_diff.get('Divisor', ''),
+        'Prev t0 IV': df1_diff.get('t0 IV', ''),
+        't0 IV   SOD': df2_diff.get('t0 IV', ''),
+        'Prev t0 IV unround': df1_diff.get('t0 IV unround', ''),
+        't0 IV unround': df2_diff.get('t0 IV unround', ''),
+        'Prev Mkt Cap': df1_diff.get('Mkt Cap', ''),
+        'New Mkt Cap': df2_diff.get('Mkt Cap', ''),
+        'Prev Nr of comp': df1_diff.get('Nr of components', ''),
+        'Nr of comp': df2_diff.get('Nr of components', '')
+    }
+    
+    diff_df = pd.DataFrame(differences_data)
+    
+    return diff_df, common_keys
+
 def excel_column_name(col_index):
     """Convert column index to Excel column name (A, B, ..., Z, AA, AB, ...)"""
     result = ""
@@ -354,7 +418,7 @@ def excel_column_name(col_index):
     return result
 
 @timer
-def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path):
+def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison_type='stock'):
     """Write Excel file with optimized bulk operations and formatting"""
     try:
         writer = pd.ExcelWriter(output_path, engine='xlsxwriter')
@@ -374,39 +438,71 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path):
         # Sheet 1: Differences
         if not diff_df.empty:
             diff_df_formatted = diff_df.copy()
-            diff_df_formatted['_shares_changed'] = False
-            diff_df_formatted['_ff_red'] = False
-            diff_df_formatted['_ff_orange'] = False
-            diff_df_formatted['_capping_changed'] = False
             
-            for idx in range(len(diff_df)):
-                new_shares = diff_df.iloc[idx]['New Shares']
-                prev_shares = diff_df.iloc[idx]['Prev. Shares']
-                diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_shares_changed')] = (
-                    pd.notna(new_shares) and pd.notna(prev_shares) and str(new_shares) != str(prev_shares)
-                )
+            # Apply formatting based on comparison type
+            if comparison_type == 'stock':
+                diff_df_formatted['_shares_changed'] = False
+                diff_df_formatted['_ff_red'] = False
+                diff_df_formatted['_ff_orange'] = False
+                diff_df_formatted['_capping_changed'] = False
                 
-                new_ff = diff_df.iloc[idx]['New FF']
-                prev_ff = diff_df.iloc[idx]['Prev FF']
-                new_ff_clean = '' if pd.isna(new_ff) else new_ff
-                try:
-                    new_ff_numeric = float(new_ff_clean) if new_ff_clean != '' else None
-                except (ValueError, TypeError):
-                    new_ff_numeric = None
+                for idx in range(len(diff_df)):
+                    new_shares = diff_df.iloc[idx]['New Shares']
+                    prev_shares = diff_df.iloc[idx]['Prev. Shares']
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_shares_changed')] = (
+                        pd.notna(new_shares) and pd.notna(prev_shares) and str(new_shares) != str(prev_shares)
+                    )
+                    
+                    new_ff = diff_df.iloc[idx]['New FF']
+                    prev_ff = diff_df.iloc[idx]['Prev FF']
+                    new_ff_clean = '' if pd.isna(new_ff) else new_ff
+                    try:
+                        new_ff_numeric = float(new_ff_clean) if new_ff_clean != '' else None
+                    except (ValueError, TypeError):
+                        new_ff_numeric = None
+                    
+                    ff_red = new_ff_clean == '' or new_ff_numeric is None or (new_ff_numeric is not None and new_ff_numeric > 1)
+                    ff_orange = not ff_red and pd.notna(new_ff) and pd.notna(prev_ff) and str(new_ff).strip() != str(prev_ff).strip()
+                    
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_red')] = ff_red
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_orange')] = ff_orange
+                    
+                    new_capping = diff_df.iloc[idx]['New Capping']
+                    prev_capping = diff_df.iloc[idx]['Prev Capping']
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_capping_changed')] = (
+                        pd.notna(new_capping) and pd.notna(prev_capping) and str(new_capping) != str(prev_capping)
+                    )
                 
-                ff_red = new_ff_clean == '' or new_ff_numeric is None or (new_ff_numeric is not None and new_ff_numeric > 1)
-                ff_orange = not ff_red and pd.notna(new_ff) and pd.notna(prev_ff) and str(new_ff).strip() != str(prev_ff).strip()
-                
-                diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_red')] = ff_red
-                diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_orange')] = ff_orange
-                
-                new_capping = diff_df.iloc[idx]['New Capping']
-                prev_capping = diff_df.iloc[idx]['Prev Capping']
-                diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_capping_changed')] = (
-                    pd.notna(new_capping) and pd.notna(prev_capping) and str(new_capping) != str(prev_capping)
-                )
+                diff_df_main = diff_df_formatted.drop(['_shares_changed', '_ff_red', '_ff_orange', '_capping_changed'], axis=1)
             
-            diff_df_main = diff_df_formatted.drop(['_shares_changed', '_ff_red', '_ff_orange', '_capping_changed'], axis=1)
+            elif comparison_type == 'index':
+                diff_df_formatted['_divisor_changed'] = False
+                diff_df_formatted['_t0iv_changed'] = False
+                diff_df_formatted['_t0iv_unround_changed'] = False
+                diff_df_formatted['_mktcap_changed'] = False
+                diff_df_formatted['_nrcomp_changed'] = False
+                
+                for idx in range(len(diff_df)):
+                    for field_pair, flag_col in [
+                        (('Prev Divisor', 'New Divisor'), '_divisor_changed'),
+                        (('Prev t0 IV', 't0 IV   SOD'), '_t0iv_changed'),
+                        (('Prev t0 IV unround', 't0 IV unround'), '_t0iv_unround_changed'),
+                        (('Prev Mkt Cap', 'New Mkt Cap'), '_mktcap_changed'),
+                        (('Prev Nr of comp', 'Nr of comp'), '_nrcomp_changed')
+                    ]:
+                        prev_val = diff_df.iloc[idx][field_pair[0]]
+                        new_val = diff_df.iloc[idx][field_pair[1]]
+                        diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc(flag_col)] = (
+                            pd.notna(new_val) and pd.notna(prev_val) and str(new_val) != str(prev_val)
+                        )
+                
+                diff_df_main = diff_df_formatted.drop([
+                    '_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', 
+                    '_mktcap_changed', '_nrcomp_changed'
+                ], axis=1)
+            else:
+                diff_df_main = diff_df_formatted
+            
             diff_df_main.to_excel(writer, sheet_name='Differences', index=False, startrow=4, header=False)
             
             worksheet1 = writer.sheets['Differences']
@@ -421,10 +517,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path):
             data_start_row = 4
             data_end_row = data_start_row + len(diff_df) - 1
             
-            new_shares_col = diff_df.columns.get_loc('New Shares')
-            new_ff_col = diff_df.columns.get_loc('New FF')
-            new_capping_col = diff_df.columns.get_loc('New Capping')
-            
+            # Apply conditional formatting
             for col_idx in range(len(diff_df.columns)):
                 col_name = excel_column_name(col_idx)
                 col_range = f"{col_name}{data_start_row + 1}:{col_name}{data_end_row + 1}"
@@ -433,19 +526,44 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path):
                     'format': normal_format
                 })
             
-            for row_idx in range(len(diff_df)):
-                excel_row = row_idx + data_start_row
+            # Apply specific cell formatting based on comparison type
+            if comparison_type == 'stock':
+                new_shares_col = diff_df.columns.get_loc('New Shares')
+                new_ff_col = diff_df.columns.get_loc('New FF')
+                new_capping_col = diff_df.columns.get_loc('New Capping')
                 
-                if diff_df_formatted.iloc[row_idx]['_shares_changed']:
-                    worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], orange_format)
+                for row_idx in range(len(diff_df)):
+                    excel_row = row_idx + data_start_row
+                    
+                    if diff_df_formatted.iloc[row_idx]['_shares_changed']:
+                        worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], orange_format)
+                    
+                    if diff_df_formatted.iloc[row_idx]['_ff_red']:
+                        worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], red_format)
+                    elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
+                        worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], orange_format)
+                    
+                    if diff_df_formatted.iloc[row_idx]['_capping_changed']:
+                        worksheet1.write(excel_row, new_capping_col, diff_df.iloc[row_idx]['New Capping'], orange_format)
+            
+            elif comparison_type == 'index':
+                field_cols = {
+                    'New Divisor': diff_df.columns.get_loc('New Divisor'),
+                    't0 IV   SOD': diff_df.columns.get_loc('t0 IV   SOD'),
+                    't0 IV unround': diff_df.columns.get_loc('t0 IV unround'),
+                    'New Mkt Cap': diff_df.columns.get_loc('New Mkt Cap'),
+                    'Nr of comp': diff_df.columns.get_loc('Nr of comp')
+                }
                 
-                if diff_df_formatted.iloc[row_idx]['_ff_red']:
-                    worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], red_format)
-                elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
-                    worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], orange_format)
+                flag_cols = ['_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', '_mktcap_changed', '_nrcomp_changed']
+                output_cols = ['New Divisor', 't0 IV   SOD', 't0 IV unround', 'New Mkt Cap', 'Nr of comp']
                 
-                if diff_df_formatted.iloc[row_idx]['_capping_changed']:
-                    worksheet1.write(excel_row, new_capping_col, diff_df.iloc[row_idx]['New Capping'], orange_format)
+                for row_idx in range(len(diff_df)):
+                    excel_row = row_idx + data_start_row
+                    
+                    for flag_col, output_col in zip(flag_cols, output_cols):
+                        if diff_df_formatted.iloc[row_idx][flag_col]:
+                            worksheet1.write(excel_row, field_cols[output_col], diff_df.iloc[row_idx][output_col], orange_format)
         
         else:
             worksheet1 = workbook.add_worksheet('Differences')
@@ -546,10 +664,10 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path):
         return False
 
 @timer
-def compare_files(file1_path, file2_path, output_path):
+def compare_files(file1_path, file2_path, output_path, comparison_type='stock'):
     """Main comparison function with optimizations for large files"""
     try:
-        logger.info("Starting optimized file comparison...")
+        logger.info(f"Starting {comparison_type} file comparison...")
         
         df1 = read_excel_file(file1_path)
         df2 = read_excel_file(file2_path)
@@ -558,12 +676,24 @@ def compare_files(file1_path, file2_path, output_path):
             logger.error("Failed to read one or both files")
             return False
         
-        df1_indexed, df2_indexed = prepare_dataframes(df1, df2)
-        diff_df, common_keys = find_differences_vectorized(df1_indexed, df2_indexed)
+        config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+        key_fields = config['key_fields']
+        
+        df1_indexed, df2_indexed = prepare_dataframes(df1, df2, key_fields)
+        
+        # Call the appropriate comparison function
+        comparison_function_name = config['comparison_function']
+        if comparison_function_name == 'find_differences_vectorized_morning_stock':
+            diff_df, common_keys = find_differences_vectorized_morning_stock(df1_indexed, df2_indexed)
+        elif comparison_function_name == 'find_differences_vectorized_morning_index':
+            diff_df, common_keys = find_differences_vectorized_morning_index(df1_indexed, df2_indexed)
+        else:
+            logger.error(f"Unknown comparison function: {comparison_function_name}")
+            return False
         
         logger.info(f"Found {len(diff_df)} differences out of {len(common_keys)} common records")
         
-        success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path)
+        success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path, comparison_type)
         
         if success:
             logger.info(f"Successfully created comparison report: {os.path.basename(output_path)}")
@@ -576,16 +706,17 @@ def compare_files(file1_path, file2_path, output_path):
         print(f"Error comparing files: {str(e)}")
         return False
 
-def perform_comparison():
+def perform_comparison(comparison_type='stock'):
     """Perform the file comparison when files are available"""
     try:
-        file_status = check_files_available()
+        file_status = check_files_available(comparison_type)
         
         if file_status['available']:
-            logger.info("Files are available, starting comparison...")
+            logger.info(f"{comparison_type.upper()} files are available, starting comparison...")
             
             current_date = datetime.now().strftime("%Y%m%d")
-            output_filename = f"GIS Morning Stock changes_{current_date}.xlsx"
+            config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+            output_filename = config['output_filename'].format(date=current_date)
             output_path = os.path.join(OUTPUT_DIR, output_filename)
             
             start_time = time.time()
@@ -593,91 +724,119 @@ def perform_comparison():
             success = compare_files(
                 file_status['manual_path'], 
                 file_status['sod_path'], 
-                output_path
+                output_path,
+                comparison_type
             )
             
             total_time = time.time() - start_time
             
             if success:
-                print(f"Comparison completed successfully in {total_time:.1f} seconds!")
+                print(f"{comparison_type.upper()} comparison completed successfully in {total_time:.1f} seconds!")
                 print(f"Output saved to: {output_path}")
-                logger.info(f"File comparison completed successfully in {total_time:.1f} seconds")
+                logger.info(f"{comparison_type.upper()} file comparison completed successfully in {total_time:.1f} seconds")
                 return True
             else:
-                print("Comparison failed. Check the log file for details.")
-                logger.error("File comparison failed")
+                print(f"{comparison_type.upper()} comparison failed. Check the log file for details.")
+                logger.error(f"{comparison_type.upper()} file comparison failed")
                 return False
         else:
-            logger.info("Files are not available yet")
+            logger.info(f"{comparison_type.upper()} files are not available yet")
             return False
     
     except Exception as e:
-        logger.error(f"Error performing comparison: {str(e)}")
-        print(f"Error performing comparison: {str(e)}")
+        logger.error(f"Error performing {comparison_type} comparison: {str(e)}")
+        print(f"Error performing {comparison_type} comparison: {str(e)}")
         return False
+
+def perform_all_comparisons():
+    """Perform all configured comparisons"""
+    results = {}
+    for comparison_type in COMPARISON_CONFIGS.keys():
+        logger.info(f"Attempting {comparison_type.upper()} comparison...")
+        print(f"\n=== {comparison_type.upper()} Comparison ===")
+        results[comparison_type] = perform_comparison(comparison_type)
+    
+    return results
 
 class FileMonitorHandler(FileSystemEventHandler):
     """Handle file system events for monitoring"""
     
     def __init__(self):
-        self.last_check = 0
-        self.check_interval = 30  # Check every 30 seconds minimum
+        self.last_check = {}
+        self.check_interval = 30
         
     def on_created(self, event):
         """Handle file creation events"""
         if event.is_directory:
             return
         
-        self.check_and_process()
+        self.check_and_process(event.src_path)
     
     def on_modified(self, event):
         """Handle file modification events"""
         if event.is_directory:
             return
         
-        self.check_and_process()
+        self.check_and_process(event.src_path)
     
-    def check_and_process(self):
+    def check_and_process(self, file_path):
         """Check if files are available and process them"""
         current_time = time.time()
         
-        # Avoid checking too frequently
-        if current_time - self.last_check < self.check_interval:
+        # Determine which comparison type based on filename
+        filename = os.path.basename(file_path)
+        comparison_type = None
+        
+        for comp_type, config in COMPARISON_CONFIGS.items():
+            if config['file_suffix'] in filename:
+                comparison_type = comp_type
+                break
+        
+        if comparison_type is None:
             return
         
-        self.last_check = current_time
+        # Avoid checking too frequently for each comparison type
+        if comparison_type in self.last_check:
+            if current_time - self.last_check[comparison_type] < self.check_interval:
+                return
+        
+        self.last_check[comparison_type] = current_time
         
         # Wait a bit for file to be completely written
         time.sleep(5)
         
-        if perform_comparison():
-            logger.info("Comparison completed successfully!")
-            print("Comparison completed successfully!")
+        if perform_comparison(comparison_type):
+            logger.info(f"{comparison_type.upper()} comparison completed successfully!")
+            print(f"{comparison_type.upper()} comparison completed successfully!")
         else:
-            logger.info("Files not ready yet or comparison failed")
+            logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
 
 def start_monitoring():
     """Start monitoring the specified folders"""
     logger.info("Starting file monitoring...")
-    print("=== GIS Stock Changes File Monitor ===")
+    print("=== GIS Changes File Monitor ===")
     print("Monitoring folders for file changes...")
     
-    # Display expected files
-    expected_files = get_expected_filenames()
-    print(f"Looking for STOCK files:")
-    print(f"  Manual: {expected_files['manual']}")
-    print(f"  SOD: {expected_files['sod']}")
-    print(f"Folders:")
+    # Display expected files for all comparison types
+    for comparison_type in COMPARISON_CONFIGS.keys():
+        expected_files = get_expected_filenames(comparison_type)
+        print(f"\nLooking for {comparison_type.upper()} files:")
+        print(f"  Manual: {expected_files['manual']}")
+        print(f"  SOD: {expected_files['sod']}")
+    
+    print(f"\nFolders:")
     print(f"  Manual: {MONITOR_FOLDERS['manual']}")
     print(f"  SOD: {MONITOR_FOLDERS['sod']}")
     print()
     
     # Check if files already exist
     print("Checking if files already exist...")
-    if perform_comparison():
-        print("Initial comparison completed!")
+    results = perform_all_comparisons()
+    
+    if any(results.values()):
+        print("\nSome comparisons completed!")
     else:
-        print("Files not available yet, starting monitoring...")
+        print("\nNo files available yet, starting monitoring...")
     
     # Set up file monitors
     event_handler = FileMonitorHandler()
@@ -694,13 +853,13 @@ def start_monitoring():
         
         try:
             while True:
-                time.sleep(60)  # Check every minute
+                time.sleep(60)
                 
                 # Periodic check in case file events were missed
                 current_time = datetime.now()
-                if current_time.minute % 5 == 0:  # Every 5 minutes
+                if current_time.minute % 5 == 0:
                     logger.info("Periodic check for files...")
-                    perform_comparison()
+                    perform_all_comparisons()
                 
         except KeyboardInterrupt:
             observer.stop()
@@ -725,50 +884,85 @@ def polling_mode():
     try:
         while True:
             logger.info("Polling for files...")
-            if perform_comparison():
-                logger.info("Comparison completed successfully!")
-                print("Comparison completed successfully!")
+            results = perform_all_comparisons()
+            
+            if any(results.values()):
+                logger.info("Some comparisons completed successfully!")
+                print("Some comparisons completed successfully!")
                 
                 # After successful comparison, wait longer before next check
                 print("Waiting 30 minutes before next check...")
-                time.sleep(30 * 60)  # Wait 30 minutes
+                time.sleep(30 * 60)
             else:
                 # Files not ready, check again in 2 minutes
-                time.sleep(2 * 60)  # Wait 2 minutes
+                time.sleep(2 * 60)
                 
     except KeyboardInterrupt:
         logger.info("Polling stopped by user")
         print("\nPolling stopped.")
 
-def manual_check():
+def manual_check(comparison_type=None):
     """Perform a manual check and comparison"""
     print("=== Manual File Check ===")
-    expected_files = get_expected_filenames()
     
-    print(f"Expected STOCK files:")
-    print(f"  Manual: {expected_files['manual']}")
-    print(f"  SOD: {expected_files['sod']}")
-    print()
-    
-    file_status = check_files_available()
-    
-    print(f"File availability status:")
-    print(f"  STOCK files available: {file_status['available']}")
-    print()
-    
-    if file_status['available']:
-        print("Files are available! Starting comparison...")
-        return perform_comparison()
+    if comparison_type:
+        # Check specific comparison type
+        expected_files = get_expected_filenames(comparison_type)
+        
+        print(f"\nExpected {comparison_type.upper()} files:")
+        print(f"  Manual: {expected_files['manual']}")
+        print(f"  SOD: {expected_files['sod']}")
+        print()
+        
+        file_status = check_files_available(comparison_type)
+        
+        print(f"File availability status:")
+        print(f"  {comparison_type.upper()} files available: {file_status['available']}")
+        print()
+        
+        if file_status['available']:
+            print(f"Files are available! Starting {comparison_type.upper()} comparison...")
+            return perform_comparison(comparison_type)
+        else:
+            print("Files are not available.")
+            return False
     else:
-        print("Files are not available.")
-        return False
+        # Check all comparison types
+        for comp_type in COMPARISON_CONFIGS.keys():
+            expected_files = get_expected_filenames(comp_type)
+            
+            print(f"\nExpected {comp_type.upper()} files:")
+            print(f"  Manual: {expected_files['manual']}")
+            print(f"  SOD: {expected_files['sod']}")
+        
+        print()
+        results = perform_all_comparisons()
+        
+        print(f"\nResults:")
+        for comp_type, success in results.items():
+            status = "Success" if success else "Failed/Not Available"
+            print(f"  {comp_type.upper()}: {status}")
+        
+        return any(results.values())
 
 if __name__ == "__main__":
     import sys
     
-    if len(sys.argv) > 1 and sys.argv[1] == "--check":
-        # Manual check mode
-        manual_check()
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "--check":
+            # Manual check mode
+            comparison_type = sys.argv[2] if len(sys.argv) > 2 else None
+            manual_check(comparison_type)
+        elif sys.argv[1] in COMPARISON_CONFIGS.keys():
+            # Run specific comparison
+            perform_comparison(sys.argv[1])
+        else:
+            print("Usage:")
+            print("  python script.py                    - Start monitoring mode")
+            print("  python script.py --check            - Manual check all comparisons")
+            print("  python script.py --check <type>     - Manual check specific comparison")
+            print("  python script.py <type>             - Run specific comparison once")
+            print(f"  Available types: {', '.join(COMPARISON_CONFIGS.keys())}")
     else:
         # Start monitoring mode
         start_monitoring()

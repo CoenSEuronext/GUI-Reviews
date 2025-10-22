@@ -11,7 +11,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 logger = setup_logging(__name__)
 
 def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376116", 
-                    area="US", area2="EU", type="STOCK", universe="Developed Market", 
+                    area="US", area2="EU", type="STOCK", universe="aex_bel", 
                     feed="Reuters", currency="EUR", year=None):
     try:
         # Simplify year extraction
@@ -52,12 +52,21 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
         ][['Isin Code', 'MIC', '#Symbol']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first')
         
         # Perform multi-stage merging with reduced redundancy
+        # Perform multi-stage merging with reduced redundancy
         aex_bel_df = (aex_bel_df
-            # Merge filtered symbols
-            .merge(stock_eod_filtered, left_on=['ISIN'], right_on=['Isin Code'], how='left')
+            # Skip the MIC merge since MIC already exists in aex_bel_df
+            # .merge(stock_eod_filtered, left_on=['ISIN'], right_on=['Isin Code'], how='left')
+            # .drop('Isin Code', axis=1)
+            
+            # Merge Close Prices - need to get #Symbol first
+            .merge(
+                stock_eod_filtered[['Isin Code', 'MIC', '#Symbol']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first'),
+                left_on=['ISIN', 'MIC'],
+                right_on=['Isin Code', 'MIC'],
+                how='left'
+            )
             .drop('Isin Code', axis=1)
             
-            # Merge Close Prices
             .merge(
                 stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'), 
                 on='#Symbol', 
@@ -71,14 +80,16 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
                 suffixes=('_EOD', '_CO')
             )
             
-            # Merge Currency Data
+            # Merge Currency Data - only get FX/Index Ccy since Currency already exists
             .merge(
-                stock_eod_df[['Isin Code', 'MIC', 'Currency', 'FX/Index Ccy']]
+                stock_eod_df[['Isin Code', 'MIC', 'FX/Index Ccy']]
                 .drop_duplicates(subset=['Isin Code', 'MIC'], keep='first'),
                 left_on=['ISIN', 'MIC'],
                 right_on=['Isin Code', 'MIC'],
-                how='left'
+                how='left',
+                suffixes=('', '_stock')  # Add suffix to avoid conflicts
             )
+            .drop('Isin Code', axis=1)
             
             # Merge Turnover Data
             .merge(
@@ -99,7 +110,8 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
             .drop('ISIN Code:', axis=1)
             .rename(columns={'Free Float Round:': 'Free Float'})
         )
-        
+        aex_bel_df.to_excel('debug_output.xlsx', index=False)
+        os.startfile('debug_output.xlsx')
         # Calculate Price in Index Currency
         aex_bel_df['Price in index currency'] = aex_bel_df['Close Prc_EOD'] * (
             aex_bel_df['FX/Index Ccy'] if 'FX/Index Ccy' in aex_bel_df.columns else 1.0
@@ -157,6 +169,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
                     inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                     exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                     selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                    aex_bel_df.to_excel(writer, sheet_name='AEX BEL', index=False)
                     index_mcap_df = pd.DataFrame({'Index Market Cap': [index_mcap]})
                     index_mcap_df.to_excel(writer, sheet_name='Index Market Cap', index=False)
 

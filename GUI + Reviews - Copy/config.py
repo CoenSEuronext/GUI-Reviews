@@ -170,13 +170,104 @@ INDEX_CONFIGS = {
         "index": "ESVEP",
         "isin": "NLIX00005230",
         "output_key": "esvep_path"
+    },
+    "SECTORIAL": {
+        "index": "SECTORIAL",
+        "isin": "SECTORIAL",
+        "output_key": "sectorial_path"
+    },
+    "DWREP": {
+        "index": "DWREP",
+        "isin": "NLIX00004894",
+        "output_key": "dwrep_path"
+    },
+    "DEREP": {
+        "index": "DEREP",
+        "isin": "NLIX00004860",
+        "output_key": "derep_path"
+    },
+    "DAREP": {
+        "index": "DAREP",
+        "isin": "NLIX00004837",
+        "output_key": "darep_path"
+    },
+    "EUREP": {
+        "index": "EUREP",
+        "isin": "NLIX00004803",
+        "output_key": "eurep_path"
+    },
+    "GSFBP": {
+        "index": "GSFBP",
+        "isin": "NLIX00005735",
+        "output_key": "gsfbp_path"
+    },
+    "EESF": {
+        "index": "EESF",
+        "isin": "NLIX00006170",
+        "output_key": "eesf_path"
+    },
+    "ETSEP": {
+        "index": "ETSEP",
+        "isin": "NLIX00007095",
+        "output_key": "etsep_path"
+    },
+    "ELTFP": {
+        "index": "ELTFP",
+        "isin": "NLIX00007327",
+        "output_key": "eltfp_path"
+    },
+    "ELECP": {
+        "index": "ELECP",
+        "isin": "NLIX00007541",
+        "output_key": "elecp_path"
+    },
+    "EUADP": {
+        "index": "EUADP",
+        "isin": "NLIX00005818",
+        "output_key": "euadp_path"
+    },
+    "EEFAP": {
+        "index": "EEFAP",
+        "isin": "NLIX00008051",
+        "output_key": "eefap_path"
+    },
+    "EES2": {
+        "index": "EES2",
+        "isin": "NLIX00007053",
+        "output_key": "ees2_path"
+    },
+    "EFESP": {
+        "index": "EFESP",
+        "isin": "NLIX00006584",
+        "output_key": "efesp_path"
     }
     # Add new indices here following the same pattern
 }
+BATCH_CONFIG = {
+    "max_concurrent_reviews": 3,  # Adjust based on your system capacity
+    "timeout_minutes": 30,        # Timeout for individual reviews
+    "retry_attempts": 1,          # Number of retry attempts for failed reviews
+    "progress_update_interval": 1 # Seconds between progress updates
+}
 
+# Group configurations for common batch operations
+REVIEW_GROUPS = {
+    "french_indices": ["FRI4P", "FRD4P", "FRECP", "FRN4P", "FR20P"],
+    "dutch_indices": ["EDWP", "EDWPT", "GICP", "AERDP", "BNEW"],
+    "eurozone_indices": ["EZ40P", "EZ60P", "EZ15P", "EZN1P"],
+    "sustainability_indices": ["AEXEW", "CACEW", "CLEW"],
+    "all_indices": list(INDEX_CONFIGS.keys())
+}
 def get_index_config(review_type):
     """Get configuration for a specific review type"""
     review_type = review_type.upper()
     if review_type not in INDEX_CONFIGS:
         raise ValueError(f"Unknown review type: {review_type}")
     return INDEX_CONFIGS[review_type]
+def get_batch_config():
+    """Get batch processing configuration"""
+    return BATCH_CONFIG
+
+def get_review_group(group_name):
+    """Get a predefined group of reviews"""
+    return REVIEW_GROUPS.get(group_name, [])

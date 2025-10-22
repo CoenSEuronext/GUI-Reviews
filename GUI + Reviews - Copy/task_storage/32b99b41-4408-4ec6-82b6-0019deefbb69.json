@@ -1,0 +1,24 @@
+{
+  "task_id": "32b99b41-4408-4ec6-82b6-0019deefbb69",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-09-15T16:33:31.146588",
+  "started_at": "2025-09-15T16:33:31.148594",
+  "completed_at": "2025-09-15T16:33:44.773493",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: Failed to load one or more required reference data files",
+  "error": "Error during review calculation: Failed to load one or more required reference data files",
+  "result_data": null,
+  "review_type": "FRD4P",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "FRD4P",
+    "isin": "FRIX00003031",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.623837
+}

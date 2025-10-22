@@ -34,8 +34,7 @@ def run_frn4p_review(date, co_date, effective_date, index="FRN4P", isin="FR00133
         selection_df = ref_data['sbf_120']
         master_report_df = ref_data['master_report']
         ff_df = ref_data['ff']
-        selection_df['Capping'] = 1  
-        selection_df['Effective Date of Review'] = effective_date
+
         # Filter symbols once
         symbols_filtered = stock_eod_df[
             stock_eod_df['#Symbol'].str.len() == 12
@@ -99,7 +98,7 @@ def run_frn4p_review(date, co_date, effective_date, index="FRN4P", isin="FR00133
         if any(df is None for df in [selection_df]):
             raise ValueError("Failed to load one or more required reference data files")
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
-        
+        selection_df['Capping'] = 1  
         # Use the merged Free Float Round value, fallback to original Free Float if not available
         selection_df["Free Float"] = selection_df["Free Float Round:"]
         selection_df['FFMC'] = selection_df['Capping'] * selection_df['Number of issued shares'] * selection_df['Free Float'] * selection_df['Close Prc_CO']

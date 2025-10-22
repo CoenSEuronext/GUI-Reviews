@@ -1,0 +1,22 @@
+2025-07-25 16:49:21,144 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 16:49:21,144 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 16:49:21,166 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-07-25 16:49:25,014 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-07-25 16:49:32,744 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-07-25 16:49:32,797 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-07-25 16:49:32,797 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-07-25 16:49:32,798 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-07-25 16:49:32,826 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) weight: 60.0000% (target: 60.00%)
+2025-07-25 16:49:32,826 - Review.reviews.gicp_review - INFO - Group 2 (NA500) weight: 40.0000% (target: 40.00%)
+2025-07-25 16:49:32,827 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-07-25 16:49:32,827 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) final weight: 60.0000%
+2025-07-25 16:49:32,827 - Review.reviews.gicp_review - INFO - Group 2 (NA500) final weight: 40.0000%
+2025-07-25 16:49:32,828 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 9.4913%
+2025-07-25 16:49:32,832 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20250725_164932.xlsx
+2025-07-25 16:49:33,194 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 16:49:33] "POST /calculate HTTP/1.1" 200 -
+2025-07-25 16:51:23,103 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-07-25 16:51:23,110 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2025-07-25 16:51:23,120 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-07-25 16:51:23,123 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2025-07-25 16:51:23,220 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading

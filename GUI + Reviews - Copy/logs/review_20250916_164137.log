@@ -1,0 +1,14 @@
+2025-09-16 16:41:37,519 - werkzeug - WARNING -  * Debugger is active!
+2025-09-16 16:41:37,519 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-16 16:41:40,670 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 16:41:40] "POST /calculate HTTP/1.1" 200 -
+2025-09-16 16:41:40,672 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-09-16 16:41:40,676 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 16:41:40] "GET /task-status/218565a0-ad1a-445d-ad08-5cac8a41157f HTTP/1.1" 200 -
+2025-09-16 16:41:42,686 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 16:41:42] "GET /task-status/218565a0-ad1a-445d-ad08-5cac8a41157f HTTP/1.1" 200 -
+2025-09-16 16:41:43,935 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-09-16 16:41:44,686 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 16:41:44] "GET /task-status/218565a0-ad1a-445d-ad08-5cac8a41157f HTTP/1.1" 200 -
+2025-09-16 16:41:45,326 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20250916_164145.xlsx
+2025-09-16 16:41:46,689 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 16:41:46] "GET /task-status/218565a0-ad1a-445d-ad08-5cac8a41157f HTTP/1.1" 200 -
+2025-09-16 18:02:38,298 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
+2025-09-16 18:02:38,307 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\darep_review.py', reloading
+2025-09-16 18:02:38,307 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-09-16 18:02:38,307 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

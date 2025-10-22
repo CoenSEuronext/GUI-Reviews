@@ -1,0 +1,12 @@
+2025-09-15 20:04:31,538 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 20:04:31,540 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 20:04:31,575 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 20:04:31] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 20:04:31,577 - Review.reviews.elecp_review - INFO - Loading EOD data...
+2025-09-15 20:04:31,581 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 20:04:31] "GET /task-status/cce338e0-c0db-42e9-b0f2-c77c86db2cc2 HTTP/1.1" 200 -
+2025-09-15 20:04:33,589 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 20:04:33] "GET /task-status/cce338e0-c0db-42e9-b0f2-c77c86db2cc2 HTTP/1.1" 200 -
+2025-09-15 20:04:35,590 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 20:04:35] "GET /task-status/cce338e0-c0db-42e9-b0f2-c77c86db2cc2 HTTP/1.1" 200 -
+2025-09-15 20:04:36,273 - Review.reviews.elecp_review - INFO - Loading reference data...
+2025-09-15 20:04:37,104 - Review.reviews.elecp_review - INFO - Saving ELECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELECP_df_20250915_200437.xlsx
+2025-09-15 20:04:37,588 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 20:04:37] "GET /task-status/cce338e0-c0db-42e9-b0f2-c77c86db2cc2 HTTP/1.1" 200 -
+2025-09-15 20:04:43,758 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-09-15 20:04:43,758 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

@@ -11,7 +11,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 logger = setup_logging(__name__)
 
 def run_eus5p_review(date, co_date, effective_date, index="EUS5P", isin="NL0012949143", 
-                   area="US", area2="EU", type="STOCK", universe="eurozone_300", 
+                   area="US", area2="EU", type="STOCK", universe="developed_market", 
                    feed="Reuters", currency="EUR", year=None):
 
     try:
@@ -29,43 +29,32 @@ def run_eus5p_review(date, co_date, effective_date, index="EUS5P", isin="NL00129
         
         ref_data = load_reference_data(
             current_data_folder,
-            [universe, 'north_america_500', 'ff', 'icb']
+            [universe, 'ff', 'icb']
         )
 
         # Get the individual dataframes
-        eurozone_df = ref_data[universe]  # eurozone_300
-        north_america_df = ref_data['north_america_500']
+        developed_market_df = ref_data[universe]  # developed_market
         ff_df = ref_data['ff']
         icb_df = ref_data['icb']
 
-        eurozone_cols = set(eurozone_df.columns)
-        north_america_cols = set(north_america_df.columns)
-        common_cols = eurozone_cols.intersection(north_america_cols)
-        eurozone_only_cols = eurozone_cols - north_america_cols
-        north_america_only_cols = north_america_cols - eurozone_cols
+        # Filter developed_market for EZ300 companies (including EU500;EZ300)
+        eurozone_df = developed_market_df[
+            (developed_market_df['index'] == 'EZ300') | 
+            (developed_market_df['index'] == 'EU500;EZ300')
+        ].copy()
+        
+        # Filter developed_market for NA500 companies (excluding XTSE)
+        north_america_df = developed_market_df[
+            (developed_market_df['index'] == 'NA500') & 
+            (developed_market_df['MIC'] != 'XTSE')
+        ].copy()
 
-        logger.info(f"Common columns ({len(common_cols)}): {sorted(common_cols)}")
-        if eurozone_only_cols:
-            logger.info(f"Eurozone-only columns ({len(eurozone_only_cols)}): {sorted(eurozone_only_cols)}")
-        if north_america_only_cols:
-            logger.info(f"North America-only columns ({len(north_america_only_cols)}): {sorted(north_america_only_cols)}")
+        logger.info(f"Eurozone companies (EZ300): {len(eurozone_df)}")
+        logger.info(f"North America companies (NA500, excluding XTSE): {len(north_america_df)}")
 
-        # Method 1: Explicit column alignment with additional north_america columns
-        # Get all unique columns from both DataFrames, preserving eurozone order first
-        all_columns = list(eurozone_df.columns) + [col for col in north_america_df.columns if col not in eurozone_df.columns]
-
-        logger.info(f"Final column order will be: {all_columns}")
-        logger.info(f"Total columns in combined DataFrame: {len(all_columns)}")
-
-        # Align eurozone_df to have all columns (missing ones filled with NaN)
-        eurozone_aligned = eurozone_df.reindex(columns=all_columns)
-
-        # Align north_america_df to have all columns (missing ones filled with NaN)
-        north_america_aligned = north_america_df.reindex(columns=all_columns)
-
-        # Now concatenate with identical column structures
-        combined_universe_df = pd.concat([eurozone_aligned, north_america_aligned], 
-                                    ignore_index=True, sort=False)
+        # Combine the filtered universes
+        combined_universe_df = pd.concat([eurozone_df, north_america_df], 
+                                        ignore_index=True, sort=False)
 
         # Add source flag column to identify origin of each row
         source_flags = ['EZ300'] * len(eurozone_df) + ['NA500'] * len(north_america_df)
@@ -194,10 +183,11 @@ def run_eus5p_review(date, co_date, effective_date, index="EUS5P", isin="NL00129
         EUS5P_df = (
             top_companies_df[
                 ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
-                'Effective Date of Review', 'Currency']
+                'Effective Date of Review', 'Currency (Local)']
             ]
             .rename(columns={'Rounded NOSH': 'Number of Shares'})
             .rename(columns={'ISIN code': 'ISIN Code'})
+            .rename(columns={'Currency (Local)': 'Currency'})
             .sort_values('Company')  # Sort by Universe first, then by Company name
         )
 

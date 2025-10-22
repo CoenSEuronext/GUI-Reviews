@@ -1,0 +1,34 @@
+2025-09-12 14:57:32,634 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 14:57:32,637 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 14:57:33,783 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:33] "POST /calculate HTTP/1.1" 200 -
+2025-09-12 14:57:33,785 - Review.reviews.euadp_review - INFO - Loading EOD data...
+2025-09-12 14:57:33,788 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:33] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:35,793 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:35] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:37,644 - Review.reviews.euadp_review - INFO - Loading reference data...
+2025-09-12 14:57:37,803 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:37] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:39,807 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:39] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:41,836 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:41] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:43,808 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:43] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:45,855 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:45] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:46,157 - Review.reviews.euadp_review - INFO - Calculating initial weights...
+2025-09-12 14:57:46,158 - Review.reviews.euadp_review - INFO - Total FFMC of non-excluded companies: €532,038,682,679
+2025-09-12 14:57:46,158 - Review.reviews.euadp_review - INFO - Applying weight capping...
+2025-09-12 14:57:46,164 - Review.reviews.euadp_review - INFO - Total capped weights sum: 1.000000
+2025-09-12 14:57:46,165 - Review.reviews.euadp_review - INFO - Selected top 50 companies with total weight: 1.000000
+2025-09-12 14:57:46,589 - Review.reviews.euadp_review - ERROR - Error during review calculation: "['Currency (Local) '] not in index"
+2025-09-12 14:57:46,593 - Review.reviews.euadp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\euadp_review.py", line 203, in run_euadp_review
+    top_50_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency (Local) '] not in index"
+
+2025-09-12 14:57:47,791 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:57:47] "GET /task-status/d9bdc635-c7a8-4bf1-9609-96411935e686 HTTP/1.1" 200 -
+2025-09-12 14:57:59,674 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 14:57:59,674 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 14:57:59,681 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading

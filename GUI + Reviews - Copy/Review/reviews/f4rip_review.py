@@ -28,19 +28,17 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         logger.info("Loading reference data...")
         ref_data = load_reference_data(
             current_data_folder,
-            ['ff', 'oekom_score', 'cac_family'],
+            ['oekom_score', 'cac_family'],
             sheet_names={'cac_family': 'PX1'}
         )
         
         # Extract the needed DataFrames
-        ff_df = ref_data.get('ff')
         selection_df = ref_data.get('cac_family')
         oekom_score_df = ref_data.get('oekom_score')
+
         
         # Check if any required data is missing and handle explicitly
         missing_data = []
-        if ff_df is None:
-            missing_data.append("FF.xlsx")
         if selection_df is None:
             missing_data.append("CAC Family.xlsx (sheet: PX1)")
         if oekom_score_df is None:
@@ -58,6 +56,13 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
         
         # Now we can safely rename columns since we've verified selection_df is not None
         selection_df = selection_df.rename(columns={'ISIN code': 'ISIN'})
+        # Add Currency from stock_eod_df by matching ISIN and MIC
+        selection_df = selection_df.merge(
+            stock_eod_df[['Isin Code', 'MIC', 'Currency']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first'),
+            left_on=['ISIN', 'MIC'],
+            right_on=['Isin Code', 'MIC'],
+            how='left'
+        ).drop('Isin Code', axis=1)
         
         # The rest of the function remains unchanged
         symbols_filtered = stock_eod_df[
@@ -122,25 +127,18 @@ def run_f4rip_review(date, co_date, effective_date, index="F4RIP", isin="FR00133
          
         # Find index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == 'FR0013376209', 'Mkt Cap'].iloc[0]
-        ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
-        selection_df['Shares'] = index_mcap * selection_df['Weight'] / selection_df['Close Prc_EOD']
-
-        # Add Free Float data
-        selection_df = selection_df.merge(
-            ff_df[['ISIN Code:', 'Free Float Round:']],
-            left_on='ISIN',
-            right_on='ISIN Code:',
-            how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
+        selection_df['Shares'] = (index_mcap * selection_df['Weight'] / selection_df['Close Prc_EOD']).round(0)
         
         selection_df['Effective Date of Review'] = effective_date
-
+        selection_df['Free Float'] = 1  # Assuming Free Float is always 1 for F4RIP
         F4RIP_df = selection_df[
-            ['Company', 'ISIN', 'MIC', 'Number of shares', 
+            ['Company', 'ISIN', 'MIC', 'Shares', 
             'Free Float', 'Capping', 
             'Effective Date of Review', 'Currency']
         ].rename(columns={
             'Capping': 'Final Capping',
+            'Shares': 'Number of Shares',
+            'ISIN': 'ISIN Code'
         })
 
         F4RIP_df = F4RIP_df.sort_values('Company')

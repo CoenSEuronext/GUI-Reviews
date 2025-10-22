@@ -19,11 +19,11 @@ def inclusion_exclusion_analysis(selection_df, stock_eod_df, index, isin_column=
     # Identify ISINs in stock_eod_df
     isin_set = set(filtered_stock_eod_df['Isin Code'])
     
-    # Mark inclusion/exclusion in selection_df
-    selection_df['Inclusion'] = selection_df[isin_column].apply(lambda x: x not in isin_set)
+    # Create inclusion mask without modifying the original DataFrame
+    inclusion_mask = selection_df[isin_column].apply(lambda x: x not in isin_set)
     
     # Prepare inclusion DataFrame
-    inclusion_df = selection_df[selection_df['Inclusion']][[
+    inclusion_df = selection_df[inclusion_mask][[
         'Company', 
         isin_column, 
         'MIC'

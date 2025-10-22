@@ -1,0 +1,26 @@
+{
+  "task_id": "2c5cfb73-768a-4a9f-802c-a5be831f0128",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-15T18:56:37.656252",
+  "started_at": "2025-09-15T18:56:37.667379",
+  "completed_at": "2025-09-15T18:56:43.457546",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "eri5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ERI5P_df_20250915_185643.xlsx"
+  },
+  "review_type": "ERI5P",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ERI5P",
+    "isin": "NL0013217730",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.790167
+}

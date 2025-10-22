@@ -1,0 +1,14 @@
+2025-09-12 14:26:54,511 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 14:26:54,513 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 14:26:55,131 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:26:55] "POST /calculate HTTP/1.1" 200 -
+2025-09-12 14:26:55,131 - Review.reviews.euadp_review - INFO - Loading EOD data...
+2025-09-12 14:26:55,136 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:26:55] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:26:57,137 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:26:57] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:26:59,144 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:26:59] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:27:01,141 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:01] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:27:01,962 - Review.reviews.euadp_review - INFO - Loading reference data...
+2025-09-12 14:27:03,151 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:03] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:27:05,150 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:05] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:27:07,147 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 14:27:07] "GET /task-status/e07f4b1e-ec8d-4982-8466-dce4f66b8479 HTTP/1.1" 200 -
+2025-09-12 14:27:07,449 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-09-12 14:27:07,451 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading

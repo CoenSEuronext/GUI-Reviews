@@ -1,0 +1,26 @@
+{
+  "task_id": "9d4ecfa6-3ee2-4675-8212-24d6674660be",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-10-06T13:13:19.923616",
+  "started_at": "2025-10-06T13:13:19.925594",
+  "completed_at": "2025-10-06T13:13:31.320351",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "aexew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\AEXEW_df_20251006_131331.xlsx"
+  },
+  "review_type": "AEXEW",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "AEXEW",
+    "isin": "QS0011159744",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 11.392757
+}

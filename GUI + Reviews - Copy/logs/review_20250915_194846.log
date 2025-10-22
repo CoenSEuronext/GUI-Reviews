@@ -1,0 +1,18 @@
+2025-09-15 19:48:46,914 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 19:48:46,916 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 19:48:46,944 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:46] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 19:48:46,947 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-09-15 19:48:46,950 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:46] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:48,964 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:48] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:50,963 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:50] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:51,663 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-09-15 19:48:52,973 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:52] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:54,963 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:54] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:56,967 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:56] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:58,963 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:48:58] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:48:59,114 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-09-15 19:48:59,116 - Review.reviews.derep_review - INFO - Companies with capping applied: 0
+2025-09-15 19:48:59,123 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20250915_194859.xlsx
+2025-09-15 19:49:00,951 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:49:00] "GET /task-status/3b50781b-4af4-460f-bed9-57ca36548074 HTTP/1.1" 200 -
+2025-09-15 19:49:59,681 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading
+2025-09-15 19:49:59,681 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading

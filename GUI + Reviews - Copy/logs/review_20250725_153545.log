@@ -1,0 +1,8 @@
+2025-07-25 15:35:45,964 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 15:35:45,964 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-07-25 15:35:59,056 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:35:59] "[35m[1mPOST /calculate-batch HTTP/1.1[0m" 500 -
+2025-07-25 15:36:00,684 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:36:00] "[35m[1mPOST /calculate-batch HTTP/1.1[0m" 500 -
+2025-07-25 15:36:01,869 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 15:36:01] "[35m[1mPOST /calculate-batch HTTP/1.1[0m" 500 -
+2025-07-25 15:37:06,734 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\app.py', reloading
+2025-07-25 15:37:06,734 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\app.py', reloading
+2025-07-25 15:37:06,734 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\app.py', reloading

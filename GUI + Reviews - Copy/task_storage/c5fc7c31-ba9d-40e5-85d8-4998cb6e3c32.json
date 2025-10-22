@@ -1,0 +1,28 @@
+{
+  "task_id": "c5fc7c31-ba9d-40e5-85d8-4998cb6e3c32",
+  "task_type": "batch",
+  "status": "failed",
+  "created_at": "2025-09-15T16:26:28.847332",
+  "started_at": "2025-09-15T16:26:28.847332",
+  "completed_at": "2025-09-15T16:27:02.726926",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": null,
+  "parameters": {
+    "review_types": [
+      "FRN4P",
+      "FRI4P",
+      "FRECP",
+      "FRD4P"
+    ],
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "currency": "EUR",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

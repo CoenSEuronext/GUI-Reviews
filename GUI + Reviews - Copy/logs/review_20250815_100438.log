@@ -1,0 +1,19 @@
+2025-08-15 10:04:38,726 - werkzeug - WARNING -  * Debugger is active!
+2025-08-15 10:04:38,728 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-15 10:04:46,096 - Review.reviews.dwrep_review - INFO - Loading EOD data...
+2025-08-15 10:04:46,895 - Review.reviews.dwrep_review - INFO - Loading reference data...
+2025-08-15 10:04:54,995 - Review.reviews.dwrep_review - ERROR - Error during review calculation: "['Rounded NOSH', 'Capping Factor'] not in index"
+2025-08-15 10:04:55,011 - Review.reviews.dwrep_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\dwrep_review.py", line 107, in run_dwrep_review
+    selection_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Rounded NOSH', 'Capping Factor'] not in index"
+
+2025-08-15 10:04:55,011 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-08-15 10:04:55,033 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 10:04:55] "POST /calculate HTTP/1.1" 200 -

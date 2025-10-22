@@ -1,0 +1,26 @@
+{
+  "task_id": "437694a4-3ef8-49fe-b66b-65ac5bc4cbcd",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-16T10:29:09.275307",
+  "started_at": "2025-09-16T10:29:09.275307",
+  "completed_at": "2025-09-16T10:29:18.274133",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "eus5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EUS5P_df_20250916_102918.xlsx"
+  },
+  "review_type": "EUS5P",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EUS5P",
+    "isin": "NL0013216468",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 8.998826
+}

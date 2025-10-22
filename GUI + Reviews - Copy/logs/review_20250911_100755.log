@@ -1,0 +1,31 @@
+2025-09-11 10:07:56,134 - werkzeug - WARNING -  * Debugger is active!
+2025-09-11 10:07:56,137 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-11 10:07:56,503 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:07:56] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:07:58,504 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:07:58] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:00,508 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:00] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:02,501 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:02] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:04,500 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:04] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:06,508 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:06] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:08,511 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:08] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:10,501 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:10] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:12,512 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:12] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:14,501 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:14] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:16,510 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:16] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:18,505 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:18] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:20,509 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:20] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:22,505 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:22] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:24,507 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:24] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:26,501 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:26] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:28,502 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:28] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:30,499 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:30] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:32,500 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:32] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:34,507 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:34] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:36,503 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:36] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:38,507 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:38] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:40,501 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:40] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:42,505 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:42] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:44,506 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:44] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:46,512 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:46] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:48,506 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:48] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:50,505 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:50] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -
+2025-09-11 10:08:52,506 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:08:52] "[33mGET /task-status/888a196a-ed4f-4458-947f-d4ef66c9a895 HTTP/1.1[0m" 404 -

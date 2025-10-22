@@ -1,0 +1,4 @@
+2025-09-15 09:34:25,921 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 09:34:25,925 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 09:36:48,623 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\unicode_escape.py', reloading
+2025-09-15 09:36:48,627 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 09:36:48] "GET / HTTP/1.1" 200 -

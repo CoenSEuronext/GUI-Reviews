@@ -1,0 +1,158 @@
+2025-08-05 17:08:00,793 - werkzeug - WARNING -  * Debugger is active!
+2025-08-05 17:08:00,793 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-05 17:08:01,783 - Review.reviews.sectorial_review - INFO - Loading EOD data...
+2025-08-05 17:08:03,546 - Review.reviews.sectorial_review - INFO - Loading reference data...
+2025-08-05 17:08:11,713 - Review.reviews.sectorial_review - INFO - Processing all 30 sectorial indices...
+2025-08-05 17:08:11,713 - Review.reviews.sectorial_review - INFO - Processing TECHP...
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - INFO - Applied capping to 2 companies in TECHP
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - INFO -   ASML HOLDING: 0.5925 -> 0.2000 (CF: 0.3376)
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - INFO -   SAP: 0.6750 -> 0.2000 (CF: 0.2963)
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - INFO - Total weight after capping for TECHP: 1.488438
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - ERROR - Error processing TECHP: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - WARNING - Failed to process TECHP
+2025-08-05 17:08:11,814 - Review.reviews.sectorial_review - INFO - Processing ENRGP...
+2025-08-05 17:08:11,877 - Review.reviews.sectorial_review - INFO - Applied capping to 3 companies in ENRGP
+2025-08-05 17:08:11,878 - Review.reviews.sectorial_review - INFO -   SHELL PLC: 0.7526 -> 0.2000 (CF: 0.2657)
+2025-08-05 17:08:11,878 - Review.reviews.sectorial_review - INFO -   SIEMENS ENERGY AG: 0.2417 -> 0.2000 (CF: 0.8276)
+2025-08-05 17:08:11,878 - Review.reviews.sectorial_review - INFO -   TOTALENERGIES: 0.4551 -> 0.2000 (CF: 0.4395)
+2025-08-05 17:08:11,879 - Review.reviews.sectorial_review - INFO - Total weight after capping for ENRGP: 1.230230
+2025-08-05 17:08:11,879 - Review.reviews.sectorial_review - ERROR - Error processing ENRGP: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:11,879 - Review.reviews.sectorial_review - WARNING - Failed to process ENRGP
+2025-08-05 17:08:11,879 - Review.reviews.sectorial_review - INFO - Processing UTIL...
+2025-08-05 17:08:11,964 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in UTIL
+2025-08-05 17:08:11,964 - Review.reviews.sectorial_review - INFO -   IBERDROLA: 0.3012 -> 0.2000 (CF: 0.6639)
+2025-08-05 17:08:11,965 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTIL: 0.996666
+2025-08-05 17:08:11,966 - Review.reviews.sectorial_review - ERROR - Error processing UTIL: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:11,966 - Review.reviews.sectorial_review - WARNING - Failed to process UTIL
+2025-08-05 17:08:11,966 - Review.reviews.sectorial_review - INFO - Processing BASM...
+2025-08-05 17:08:11,976 - Review.reviews.sectorial_review - INFO - Applied capping to 2 companies in BASM
+2025-08-05 17:08:11,977 - Review.reviews.sectorial_review - INFO -   AIR LIQUIDE: 0.6486 -> 0.2000 (CF: 0.3084)
+2025-08-05 17:08:11,977 - Review.reviews.sectorial_review - INFO -   BASF: 0.2341 -> 0.2000 (CF: 0.8543)
+2025-08-05 17:08:11,977 - Review.reviews.sectorial_review - INFO - Total weight after capping for BASM: 0.942323
+2025-08-05 17:08:11,978 - Review.reviews.sectorial_review - ERROR - Error processing BASM: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:11,978 - Review.reviews.sectorial_review - WARNING - Failed to process BASM
+2025-08-05 17:08:11,978 - Review.reviews.sectorial_review - INFO - Processing FINA...
+2025-08-05 17:08:11,981 - Review.reviews.sectorial_review - INFO - Total weight after capping for FINA: 0.995894
+2025-08-05 17:08:11,981 - Review.reviews.sectorial_review - ERROR - Error processing FINA: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:11,983 - Review.reviews.sectorial_review - WARNING - Failed to process FINA
+2025-08-05 17:08:11,983 - Review.reviews.sectorial_review - INFO - Processing CSTA...
+2025-08-05 17:08:12,064 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in CSTA
+2025-08-05 17:08:12,064 - Review.reviews.sectorial_review - INFO -   UNILEVER: 0.4433 -> 0.2000 (CF: 0.4512)
+2025-08-05 17:08:12,064 - Review.reviews.sectorial_review - INFO - Total weight after capping for CSTA: 1.010817
+2025-08-05 17:08:12,064 - Review.reviews.sectorial_review - ERROR - Error processing CSTA: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,064 - Review.reviews.sectorial_review - WARNING - Failed to process CSTA
+2025-08-05 17:08:12,064 - Review.reviews.sectorial_review - INFO - Processing TELEP...
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in TELEP
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO -   DEUTSCHE TELEKOM AG: 0.7975 -> 0.2000 (CF: 0.2508)
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO - Total weight after capping for TELEP: 1.319142
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - ERROR - Error processing TELEP: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - WARNING - Failed to process TELEP
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO - Processing HEAC...
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO - Applied capping to 2 companies in HEAC
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO -   ESSILORLUXOTTICA: 0.2348 -> 0.2000 (CF: 0.8517)
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO -   SANOFI: 0.2858 -> 0.2000 (CF: 0.6997)
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - INFO - Total weight after capping for HEAC: 1.026127
+2025-08-05 17:08:12,213 - Review.reviews.sectorial_review - ERROR - Error processing HEAC: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,221 - Review.reviews.sectorial_review - WARNING - Failed to process HEAC
+2025-08-05 17:08:12,221 - Review.reviews.sectorial_review - INFO - Processing INDU...
+2025-08-05 17:08:12,223 - Review.reviews.sectorial_review - INFO - Total weight after capping for INDU: 1.013771
+2025-08-05 17:08:12,223 - Review.reviews.sectorial_review - ERROR - Error processing INDU: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,223 - Review.reviews.sectorial_review - WARNING - Failed to process INDU
+2025-08-05 17:08:12,223 - Review.reviews.sectorial_review - INFO - Processing CDIS...
+2025-08-05 17:08:12,225 - Review.reviews.sectorial_review - INFO - Total weight after capping for CDIS: 0.923049
+2025-08-05 17:08:12,225 - Review.reviews.sectorial_review - ERROR - Error processing CDIS: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,226 - Review.reviews.sectorial_review - WARNING - Failed to process CDIS
+2025-08-05 17:08:12,226 - Review.reviews.sectorial_review - INFO - Processing TBMA...
+2025-08-05 17:08:12,228 - Review.reviews.sectorial_review - INFO - Total weight after capping for TBMA: 0.981912
+2025-08-05 17:08:12,228 - Review.reviews.sectorial_review - ERROR - Error processing TBMA: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,228 - Review.reviews.sectorial_review - WARNING - Failed to process TBMA
+2025-08-05 17:08:12,228 - Review.reviews.sectorial_review - INFO - Processing TCDI...
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in TCDI
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2359 -> 0.2000 (CF: 0.8477)
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCDI: 0.975589
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - ERROR - Error processing TCDI: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - WARNING - Failed to process TCDI
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Processing TCST...
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCST: 1.003806
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - ERROR - Error processing TCST: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - WARNING - Failed to process TCST
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Processing TENR...
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Total weight after capping for TENR: 1.000122
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - ERROR - Error processing TENR: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - WARNING - Failed to process TENR
+2025-08-05 17:08:12,233 - Review.reviews.sectorial_review - INFO - Processing TFINP...
+2025-08-05 17:08:12,242 - Review.reviews.sectorial_review - INFO - Total weight after capping for TFINP: 1.001363
+2025-08-05 17:08:12,242 - Review.reviews.sectorial_review - ERROR - Error processing TFINP: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,242 - Review.reviews.sectorial_review - WARNING - Failed to process TFINP
+2025-08-05 17:08:12,242 - Review.reviews.sectorial_review - INFO - Processing THEC...
+2025-08-05 17:08:12,244 - Review.reviews.sectorial_review - INFO - Total weight after capping for THEC: 0.984623
+2025-08-05 17:08:12,244 - Review.reviews.sectorial_review - ERROR - Error processing THEC: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,245 - Review.reviews.sectorial_review - WARNING - Failed to process THEC
+2025-08-05 17:08:12,245 - Review.reviews.sectorial_review - INFO - Processing TIND...
+2025-08-05 17:08:12,246 - Review.reviews.sectorial_review - INFO - Total weight after capping for TIND: 1.009319
+2025-08-05 17:08:12,247 - Review.reviews.sectorial_review - ERROR - Error processing TIND: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,248 - Review.reviews.sectorial_review - WARNING - Failed to process TIND
+2025-08-05 17:08:12,248 - Review.reviews.sectorial_review - INFO - Processing TTEC...
+2025-08-05 17:08:12,251 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEC: 1.004419
+2025-08-05 17:08:12,251 - Review.reviews.sectorial_review - ERROR - Error processing TTEC: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,251 - Review.reviews.sectorial_review - WARNING - Failed to process TTEC
+2025-08-05 17:08:12,251 - Review.reviews.sectorial_review - INFO - Processing TTEL...
+2025-08-05 17:08:12,253 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEL: 1.000798
+2025-08-05 17:08:12,254 - Review.reviews.sectorial_review - ERROR - Error processing TTEL: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,254 - Review.reviews.sectorial_review - WARNING - Failed to process TTEL
+2025-08-05 17:08:12,254 - Review.reviews.sectorial_review - INFO - Processing TUTI...
+2025-08-05 17:08:12,255 - Review.reviews.sectorial_review - INFO - Total weight after capping for TUTI: 1.006253
+2025-08-05 17:08:12,255 - Review.reviews.sectorial_review - ERROR - Error processing TUTI: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,255 - Review.reviews.sectorial_review - WARNING - Failed to process TUTI
+2025-08-05 17:08:12,255 - Review.reviews.sectorial_review - INFO - Processing UUTI...
+2025-08-05 17:08:12,258 - Review.reviews.sectorial_review - INFO - Total weight after capping for UUTI: 1.003393
+2025-08-05 17:08:12,258 - Review.reviews.sectorial_review - ERROR - Error processing UUTI: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,258 - Review.reviews.sectorial_review - WARNING - Failed to process UUTI
+2025-08-05 17:08:12,259 - Review.reviews.sectorial_review - INFO - Processing UTEL...
+2025-08-05 17:08:12,298 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in UTEL
+2025-08-05 17:08:12,298 - Review.reviews.sectorial_review - INFO -   CISCO SYSTEMS INC: 0.2526 -> 0.2000 (CF: 0.7918)
+2025-08-05 17:08:12,298 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEL: 0.986067
+2025-08-05 17:08:12,298 - Review.reviews.sectorial_review - ERROR - Error processing UTEL: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,298 - Review.reviews.sectorial_review - WARNING - Failed to process UTEL
+2025-08-05 17:08:12,298 - Review.reviews.sectorial_review - INFO - Processing UTEC...
+2025-08-05 17:08:12,307 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEC: 0.998752
+2025-08-05 17:08:12,307 - Review.reviews.sectorial_review - ERROR - Error processing UTEC: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,307 - Review.reviews.sectorial_review - WARNING - Failed to process UTEC
+2025-08-05 17:08:12,307 - Review.reviews.sectorial_review - INFO - Processing UIND...
+2025-08-05 17:08:12,310 - Review.reviews.sectorial_review - INFO - Total weight after capping for UIND: 1.009649
+2025-08-05 17:08:12,310 - Review.reviews.sectorial_review - ERROR - Error processing UIND: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,310 - Review.reviews.sectorial_review - WARNING - Failed to process UIND
+2025-08-05 17:08:12,312 - Review.reviews.sectorial_review - INFO - Processing UHEC...
+2025-08-05 17:08:12,314 - Review.reviews.sectorial_review - INFO - Total weight after capping for UHEC: 0.982955
+2025-08-05 17:08:12,315 - Review.reviews.sectorial_review - ERROR - Error processing UHEC: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,316 - Review.reviews.sectorial_review - WARNING - Failed to process UHEC
+2025-08-05 17:08:12,316 - Review.reviews.sectorial_review - INFO - Processing UFIN...
+2025-08-05 17:08:12,320 - Review.reviews.sectorial_review - INFO - Total weight after capping for UFIN: 1.004780
+2025-08-05 17:08:12,320 - Review.reviews.sectorial_review - ERROR - Error processing UFIN: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,320 - Review.reviews.sectorial_review - WARNING - Failed to process UFIN
+2025-08-05 17:08:12,321 - Review.reviews.sectorial_review - INFO - Processing UENR...
+2025-08-05 17:08:12,324 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in UENR
+2025-08-05 17:08:12,324 - Review.reviews.sectorial_review - INFO -   EXXON MOBIL: 0.2969 -> 0.2000 (CF: 0.6737)
+2025-08-05 17:08:12,324 - Review.reviews.sectorial_review - INFO - Total weight after capping for UENR: 1.004062
+2025-08-05 17:08:12,326 - Review.reviews.sectorial_review - ERROR - Error processing UENR: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,326 - Review.reviews.sectorial_review - WARNING - Failed to process UENR
+2025-08-05 17:08:12,326 - Review.reviews.sectorial_review - INFO - Processing UCST...
+2025-08-05 17:08:12,328 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCST: 1.006839
+2025-08-05 17:08:12,329 - Review.reviews.sectorial_review - ERROR - Error processing UCST: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,329 - Review.reviews.sectorial_review - WARNING - Failed to process UCST
+2025-08-05 17:08:12,329 - Review.reviews.sectorial_review - INFO - Processing UCDI...
+2025-08-05 17:08:12,331 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in UCDI
+2025-08-05 17:08:12,331 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2935 -> 0.2000 (CF: 0.6814)
+2025-08-05 17:08:12,331 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCDI: 0.986368
+2025-08-05 17:08:12,337 - Review.reviews.sectorial_review - ERROR - Error processing UCDI: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,337 - Review.reviews.sectorial_review - WARNING - Failed to process UCDI
+2025-08-05 17:08:12,337 - Review.reviews.sectorial_review - INFO - Processing UBMA...
+2025-08-05 17:08:12,341 - Review.reviews.sectorial_review - INFO - Applied capping to 1 companies in UBMA
+2025-08-05 17:08:12,341 - Review.reviews.sectorial_review - INFO -   LINDE PLC: 0.4122 -> 0.2000 (CF: 0.4852)
+2025-08-05 17:08:12,342 - Review.reviews.sectorial_review - INFO - Total weight after capping for UBMA: 0.988990
+2025-08-05 17:08:12,342 - Review.reviews.sectorial_review - ERROR - Error processing UBMA: "['Rounded NOSH', 'Effective Date of Review'] not in index"
+2025-08-05 17:08:12,342 - Review.reviews.sectorial_review - WARNING - Failed to process UBMA
+2025-08-05 17:08:12,343 - Review.reviews.sectorial_review - INFO - Creating summary file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\All_Sectorial_Summary_20250805_170812.xlsx
+2025-08-05 17:08:12,371 - werkzeug - INFO - 127.0.0.1 - - [05/Aug/2025 17:08:12] "POST /calculate HTTP/1.1" 200 -
+2025-08-05 17:09:08,878 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-08-05 17:09:08,904 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading

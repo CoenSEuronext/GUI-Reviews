@@ -1,0 +1,21 @@
+2025-09-12 12:54:59,656 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 12:54:59,656 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 12:55:22,818 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 12:55:22] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-12 12:55:22,818 - Review.reviews.etsep_review - INFO - Loading EOD data...
+2025-09-12 12:55:22,826 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 12:55:22] "GET /task-status/0ff26f20-62a9-44cb-b67c-5330dd5f2918 HTTP/1.1" 200 -
+2025-09-12 12:55:24,829 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 12:55:24] "GET /task-status/0ff26f20-62a9-44cb-b67c-5330dd5f2918 HTTP/1.1" 200 -
+2025-09-12 12:55:24,978 - Review.reviews.etsep_review - INFO - Loading reference data...
+2025-09-12 12:55:25,897 - Review.reviews.etsep_review - INFO - Saving ETSEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ETSEP_df_20250912_125525.xlsx
+2025-09-12 12:55:26,103 - Review.reviews.eltfp_review - INFO - Loading EOD data...
+2025-09-12 12:55:26,828 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 12:55:26] "GET /task-status/0ff26f20-62a9-44cb-b67c-5330dd5f2918 HTTP/1.1" 200 -
+2025-09-12 12:55:27,065 - Review.reviews.eltfp_review - INFO - Loading reference data...
+2025-09-12 12:55:28,250 - Review.reviews.eltfp_review - INFO - Saving ELTFP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELTFP_df_20250912_125528.xlsx
+2025-09-12 12:55:28,384 - Review.reviews.elecp_review - INFO - Loading EOD data...
+2025-09-12 12:55:28,836 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 12:55:28] "GET /task-status/0ff26f20-62a9-44cb-b67c-5330dd5f2918 HTTP/1.1" 200 -
+2025-09-12 12:55:29,276 - Review.reviews.elecp_review - INFO - Loading reference data...
+2025-09-12 12:55:30,018 - Review.reviews.elecp_review - INFO - Saving ELECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELECP_df_20250912_125530.xlsx
+2025-09-12 12:55:30,829 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 12:55:30] "GET /task-status/0ff26f20-62a9-44cb-b67c-5330dd5f2918 HTTP/1.1" 200 -
+2025-09-12 13:24:42,051 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\uuid.py', reloading
+2025-09-12 13:24:42,077 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\enum.py', reloading
+2025-09-12 13:24:42,128 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\dataclasses.py', reloading
+2025-09-12 13:24:42,150 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\typing.py', reloading

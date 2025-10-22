@@ -1,0 +1,26 @@
+{
+  "task_id": "1202b596-4188-45e0-a056-916a99c3496f",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-16T10:49:19.726521",
+  "started_at": "2025-09-16T10:49:19.728521",
+  "completed_at": "2025-09-16T10:49:25.326260",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "efmep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EFMEP_df_20250916_104925.xlsx"
+  },
+  "review_type": "EFMEP",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EFMEP",
+    "isin": "NL0012730451",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.596739
+}

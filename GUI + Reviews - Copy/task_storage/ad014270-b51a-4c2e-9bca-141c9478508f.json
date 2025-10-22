@@ -1,0 +1,24 @@
+{
+  "task_id": "ad014270-b51a-4c2e-9bca-141c9478508f",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-09-15T17:19:11.669121",
+  "started_at": "2025-09-15T17:19:11.670127",
+  "completed_at": "2025-09-15T17:19:13.357932",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "EZN1P",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZN1P",
+    "isin": "NL0012949143",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

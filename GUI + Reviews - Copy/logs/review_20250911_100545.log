@@ -1,0 +1,6 @@
+2025-09-11 10:05:45,806 - werkzeug - WARNING -  * Debugger is active!
+2025-09-11 10:05:45,808 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-11 10:07:11,890 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:07:11] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-11 10:07:11,890 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-09-11 10:07:11,896 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 10:07:11] "GET /task-status/16163c5d-c740-4750-8e50-4ea0943155f3 HTTP/1.1" 200 -
+2025-09-11 10:07:11,898 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading

@@ -1,0 +1,37 @@
+2025-09-16 19:37:10,660 - werkzeug - WARNING -  * Debugger is active!
+2025-09-16 19:37:10,660 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-16 19:37:10,681 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:10] "POST /calculate HTTP/1.1" 200 -
+2025-09-16 19:37:10,692 - Review.reviews.efesp_review - INFO - Loading EOD data...
+2025-09-16 19:37:10,696 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:10] "GET /task-status/0263b3a7-e2f8-49bb-831c-87c59b8a0071 HTTP/1.1" 200 -
+2025-09-16 19:37:12,519 - Review.reviews.efesp_review - INFO - Loading reference data...
+2025-09-16 19:37:12,725 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:12] "GET /task-status/0263b3a7-e2f8-49bb-831c-87c59b8a0071 HTTP/1.1" 200 -
+2025-09-16 19:37:14,694 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:14] "GET /task-status/0263b3a7-e2f8-49bb-831c-87c59b8a0071 HTTP/1.1" 200 -
+2025-09-16 19:37:16,727 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:16] "GET /task-status/0263b3a7-e2f8-49bb-831c-87c59b8a0071 HTTP/1.1" 200 -
+2025-09-16 19:37:18,715 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:18] "GET /task-status/0263b3a7-e2f8-49bb-831c-87c59b8a0071 HTTP/1.1" 200 -
+2025-09-16 19:37:19,826 - Review.reviews.efesp_review - INFO - Creating eligible companies dataframe...
+2025-09-16 19:37:19,826 - Review.reviews.efesp_review - INFO - Group 1 (ICB 501010): 5 selected out of 21 companies
+2025-09-16 19:37:19,839 - Review.reviews.efesp_review - INFO - Group 2 (ICB 502010): 5 selected out of 15 companies
+2025-09-16 19:37:19,841 - Review.reviews.efesp_review - INFO - Group 3 (ICB 502040): 5 selected out of 16 companies
+2025-09-16 19:37:19,842 - Review.reviews.efesp_review - INFO - Group 4 (ICB 502020): 5 selected out of 13 companies
+2025-09-16 19:37:19,843 - Review.reviews.efesp_review - INFO - Group 5 (ICB 101010): 5 selected out of 15 companies
+2025-09-16 19:37:19,844 - Review.reviews.efesp_review - INFO - Group 6 (ICB 502060): 5 selected out of 11 companies
+2025-09-16 19:37:19,846 - Review.reviews.efesp_review - INFO - Total eligible companies: 91
+2025-09-16 19:37:19,846 - Review.reviews.efesp_review - INFO - Total eligible FFMC: 2,244,220,526,734.58
+2025-09-16 19:37:19,846 - Review.reviews.efesp_review - INFO - Weight sum check: 1.000000
+2025-09-16 19:37:19,846 - Review.reviews.efesp_review - ERROR - Error during review calculation: "['Effective Date of Review'] not in index"
+2025-09-16 19:37:19,857 - Review.reviews.efesp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\efesp_review.py", line 196, in run_efesp_review
+    eligible_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Effective Date of Review'] not in index"
+
+2025-09-16 19:37:20,697 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 19:37:20] "GET /task-status/0263b3a7-e2f8-49bb-831c-87c59b8a0071 HTTP/1.1" 200 -
+2025-09-16 19:37:42,991 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efesp_review.py', reloading
+2025-09-16 19:37:42,991 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efesp_review.py', reloading
+2025-09-16 19:37:42,991 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efesp_review.py', reloading

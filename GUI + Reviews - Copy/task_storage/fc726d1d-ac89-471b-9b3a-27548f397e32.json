@@ -1,0 +1,26 @@
+{
+  "task_id": "fc726d1d-ac89-471b-9b3a-27548f397e32",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-16T19:37:44.417561",
+  "started_at": "2025-09-16T19:37:44.417561",
+  "completed_at": "2025-09-16T19:37:53.927424",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "efesp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EFESP_df_20250916_193753.xlsx"
+  },
+  "review_type": "EFESP",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EFESP",
+    "isin": "NLIX00006584",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 9.509863
+}

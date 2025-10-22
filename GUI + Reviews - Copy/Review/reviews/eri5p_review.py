@@ -59,7 +59,7 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
             .drop('Isin Code', axis=1)
             # Merge FX data
             .merge(
-                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
                 on='#Symbol',
                 how='left'
             )
@@ -138,9 +138,9 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
         selection_df['New Sustainability Score'] = pd.to_numeric(selection_df['New Sustainability Score'], errors='coerce')
         selection_df['FFMC'] = pd.to_numeric(selection_df['FFMC'], errors='coerce')
         
-        # Fill NaN values with very low values so they rank last
-        selection_df['New Sustainability Score'].fillna(-999999, inplace=True)
-        selection_df['FFMC'].fillna(-999999, inplace=True)
+# Fill NaN values with very low values so they rank last
+        selection_df['New Sustainability Score'] = selection_df['New Sustainability Score'].fillna(-999999)
+        selection_df['FFMC'] = selection_df['FFMC'].fillna(-999999)
         
         # Add ranking columns for all companies - FIXED VERSION
         # Sort by Sustainability Score descending (higher is better), then by FFMC descending (higher is better)

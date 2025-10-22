@@ -127,8 +127,8 @@ def run_egspp_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
         # Convert columns to numeric
         energy_columns = [
             'Coal Mining and Power Gen - Maximum Percentage of Revenues (%)',
-            'FossilFuelProdMaxRev',
-            'FossilFuelDistMaxRev',
+            'FossilFuelProdMaxRev-values',
+            'FossilFuelDistMaxRev-values',
             'Power Generation - Thermal Maximum Percentage of Revenues (%)'
         ]
 
@@ -142,7 +142,7 @@ def run_egspp_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
                 'exclude_value': 'exclude_CoalMining'
             },
             'FossilFuel': {
-                'condition': lambda df: (df['FossilFuelProdMaxRev'] + df['FossilFuelDistMaxRev']) >= 0.10,
+                'condition': lambda df: (df['FossilFuelProdMaxRev-values'] + df['FossilFuelDistMaxRev-values']) >= 0.10,
                 'exclude_value': 'exclude_FossilFuel'
             },
             'Thermal': {

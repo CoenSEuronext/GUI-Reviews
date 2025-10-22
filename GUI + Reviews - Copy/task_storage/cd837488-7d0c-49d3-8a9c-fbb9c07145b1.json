@@ -1,0 +1,30 @@
+{
+  "task_id": "cd837488-7d0c-49d3-8a9c-fbb9c07145b1",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-09-12T15:00:03.431646",
+  "started_at": "2025-09-12T15:00:03.433645",
+  "completed_at": "2025-09-12T15:00:12.759909",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "euadp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EUADP_df_20250912_150012.xlsx",
+    "total_companies": 1283,
+    "non_excluded_companies": 15,
+    "top_50_companies": 15,
+    "total_ffmc": 532038682679.06165
+  },
+  "review_type": "EUADP",
+  "parameters": {
+    "date": "20250617",
+    "co_date": "20250523",
+    "effective_date": "23-Jun-25",
+    "index": "EUADP",
+    "isin": "NLIX00005818",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 9.32426
+}

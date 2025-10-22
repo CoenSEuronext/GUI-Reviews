@@ -1,0 +1,21 @@
+2025-08-15 16:12:30,452 - werkzeug - WARNING -  * Debugger is active!
+2025-08-15 16:12:30,455 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-08-15 16:13:47,346 - Review.reviews.etsep_review - INFO - Loading EOD data...
+2025-08-15 16:13:51,123 - Review.reviews.etsep_review - INFO - Loading reference data...
+2025-08-15 16:13:52,208 - Review.reviews.etsep_review - ERROR - Error during review calculation: single positional indexer is out-of-bounds
+2025-08-15 16:13:52,208 - Review.reviews.etsep_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\etsep_review.py", line 113, in run_etsep_review
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2025-08-15 16:13:52,218 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 16:13:52] "POST /calculate HTTP/1.1" 200 -
+2025-08-15 16:15:33,040 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-08-15 16:15:33,042 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

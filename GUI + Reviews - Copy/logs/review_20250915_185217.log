@@ -1,0 +1,98 @@
+2025-09-15 18:52:18,269 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 18:52:18,270 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 18:52:23,238 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:52:23] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 18:52:23,238 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-09-15 18:52:23,238 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:52:23] "GET /task-status/c8081348-7a87-4b43-b444-11485a1837b1 HTTP/1.1" 200 -
+2025-09-15 18:52:25,237 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-09-15 18:52:25,253 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:52:25] "GET /task-status/c8081348-7a87-4b43-b444-11485a1837b1 HTTP/1.1" 200 -
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                  Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+286            VERBUND AG                 10.000000  4.320531e+09                1                        Excluded: 100 days avg turnover < €22M
+100        EDP RENOVAVEIS                 10.000000  3.373816e+09                2                        Excluded: 100 days avg turnover < €22M
+37             AURUBIS AG                 10.000000  2.638060e+09                3  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+221                  RELX                  9.947917  7.891460e+10                4                                                              
+232          SAINT GOBAIN                  9.947917  4.408928e+10                5                                                              
+177               KPN KON                  9.947917  1.579684e+10                6                                                              
+248  SIEMENS HEALTHINEERS                  9.947917  1.353036e+10                7                                                              
+277    UNIBAIL-RODAMCO-WE                  9.947917  1.116521e+10                8                                                              
+215             QIAGEN NV                  9.947917  9.214458e+09                9                        Excluded: 100 days avg turnover < €22M
+106                ENDESA                  9.947917  8.490133e+09               10                                                              
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+221                  RELX                  9.947917  7.891460e+10               1.0
+232          SAINT GOBAIN                  9.947917  4.408928e+10               2.0
+177               KPN KON                  9.947917  1.579684e+10               3.0
+248  SIEMENS HEALTHINEERS                  9.947917  1.353036e+10               4.0
+277    UNIBAIL-RODAMCO-WE                  9.947917  1.116521e+10               5.0
+106                ENDESA                  9.947917  8.490133e+09               6.0
+235                SANOFI                  9.750000  1.018468e+11               7.0
+274                   UCB                  9.750000  2.494438e+10               8.0
+127     FRESENIUS SE & CO                  9.750000  2.014559e+10               9.0
+265            TELEFONICA                  9.750000  1.713806e+10              10.0
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Total excluded: 173 companies
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Eligible for selection: 127 companies
+2025-09-15 18:52:26,488 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-09-15 18:52:26,507 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20250915_185226.xlsx
+2025-09-15 18:52:27,254 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:52:27] "GET /task-status/c8081348-7a87-4b43-b444-11485a1837b1 HTTP/1.1" 200 -
+2025-09-15 18:56:37,667 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:56:37] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 18:56:37,667 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-09-15 18:56:37,675 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:56:37] "GET /task-status/2c5cfb73-768a-4a9f-802c-a5be831f0128 HTTP/1.1" 200 -
+2025-09-15 18:56:39,689 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:56:39] "GET /task-status/2c5cfb73-768a-4a9f-802c-a5be831f0128 HTTP/1.1" 200 -
+2025-09-15 18:56:41,675 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:56:41] "GET /task-status/2c5cfb73-768a-4a9f-802c-a5be831f0128 HTTP/1.1" 200 -
+2025-09-15 18:56:42,255 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-09-15 18:56:43,352 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-09-15 18:56:43,354 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                  Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+286            VERBUND AG                 10.000000  4.320531e+09                1                        Excluded: 100 days avg turnover < €22M
+100        EDP RENOVAVEIS                 10.000000  3.373816e+09                2                        Excluded: 100 days avg turnover < €22M
+37             AURUBIS AG                 10.000000  2.638060e+09                3  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+221                  RELX                  9.947917  7.891460e+10                4                                                              
+232          SAINT GOBAIN                  9.947917  4.408928e+10                5                                                              
+177               KPN KON                  9.947917  1.579684e+10                6                                                              
+248  SIEMENS HEALTHINEERS                  9.947917  1.353036e+10                7                                                              
+277    UNIBAIL-RODAMCO-WE                  9.947917  1.116521e+10                8                                                              
+215             QIAGEN NV                  9.947917  9.214458e+09                9                        Excluded: 100 days avg turnover < €22M
+106                ENDESA                  9.947917  8.490133e+09               10                                                              
+2025-09-15 18:56:43,358 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+221                  RELX                  9.947917  7.891460e+10               1.0
+232          SAINT GOBAIN                  9.947917  4.408928e+10               2.0
+177               KPN KON                  9.947917  1.579684e+10               3.0
+248  SIEMENS HEALTHINEERS                  9.947917  1.353036e+10               4.0
+277    UNIBAIL-RODAMCO-WE                  9.947917  1.116521e+10               5.0
+106                ENDESA                  9.947917  8.490133e+09               6.0
+235                SANOFI                  9.750000  1.018468e+11               7.0
+274                   UCB                  9.750000  2.494438e+10               8.0
+127     FRESENIUS SE & CO                  9.750000  2.014559e+10               9.0
+265            TELEFONICA                  9.750000  1.713806e+10              10.0
+2025-09-15 18:56:43,359 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-09-15 18:56:43,359 - Review.reviews.eri5p_review - INFO - Total excluded: 173 companies
+2025-09-15 18:56:43,359 - Review.reviews.eri5p_review - INFO - Eligible for selection: 127 companies
+2025-09-15 18:56:43,359 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-09-15 18:56:43,366 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20250915_185643.xlsx
+2025-09-15 18:56:43,689 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:56:43] "GET /task-status/2c5cfb73-768a-4a9f-802c-a5be831f0128 HTTP/1.1" 200 -
+2025-09-15 18:59:46,089 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:59:46] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 18:59:46,089 - Review.reviews.ez15p_review - INFO - Loading EOD data...
+2025-09-15 18:59:46,109 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:59:46] "GET /task-status/ec8b038b-e554-4b79-b45f-9c2996a4195b HTTP/1.1" 200 -
+2025-09-15 18:59:48,122 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:59:48] "GET /task-status/ec8b038b-e554-4b79-b45f-9c2996a4195b HTTP/1.1" 200 -
+2025-09-15 18:59:48,153 - Review.reviews.ez15p_review - INFO - Loading reference data...
+2025-09-15 18:59:48,849 - Review.reviews.ez15p_review - INFO - Total universe: 300 companies
+2025-09-15 18:59:48,849 - Review.reviews.ez15p_review - INFO - Excluded by turnover filter: 67 companies
+2025-09-15 18:59:48,849 - Review.reviews.ez15p_review - INFO - Eligible for selection: 233 companies
+2025-09-15 18:59:48,849 - Review.reviews.ez15p_review - INFO - Selecting top 150 companies with highest FFMC from eligible companies...
+2025-09-15 18:59:48,861 - Review.reviews.ez15p_review - INFO - Saving EZ15P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ15P_df_20250915_185948.xlsx
+2025-09-15 18:59:50,122 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 18:59:50] "GET /task-status/ec8b038b-e554-4b79-b45f-9c2996a4195b HTTP/1.1" 200 -
+2025-09-15 19:00:01,608 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:00:01] "POST /calculate HTTP/1.1" 200 -
+2025-09-15 19:00:01,608 - Review.reviews.ez15p_review - INFO - Loading EOD data...
+2025-09-15 19:00:01,608 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:00:01] "GET /task-status/14eea658-ce8a-41b8-8ecc-75112cd7b5b2 HTTP/1.1" 200 -
+2025-09-15 19:00:03,422 - Review.reviews.ez15p_review - INFO - Loading reference data...
+2025-09-15 19:00:03,621 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:00:03] "GET /task-status/14eea658-ce8a-41b8-8ecc-75112cd7b5b2 HTTP/1.1" 200 -
+2025-09-15 19:00:04,138 - Review.reviews.ez15p_review - INFO - Total universe: 300 companies
+2025-09-15 19:00:04,138 - Review.reviews.ez15p_review - INFO - Excluded by turnover filter: 67 companies
+2025-09-15 19:00:04,138 - Review.reviews.ez15p_review - INFO - Eligible for selection: 233 companies
+2025-09-15 19:00:04,138 - Review.reviews.ez15p_review - INFO - Selecting top 150 companies with highest FFMC from eligible companies...
+2025-09-15 19:00:04,156 - Review.reviews.ez15p_review - INFO - Saving EZ15P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ15P_df_20250915_190004.xlsx
+2025-09-15 19:00:05,625 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:00:05] "GET /task-status/14eea658-ce8a-41b8-8ecc-75112cd7b5b2 HTTP/1.1" 200 -
+2025-09-15 19:00:45,909 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading

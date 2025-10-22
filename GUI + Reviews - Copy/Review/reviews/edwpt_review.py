@@ -7,11 +7,12 @@ from Review.functions import read_semicolon_csv
 from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
+from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
 def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX00001932", 
-                    area="US", area2="EU", type="STOCK", universe="98% universe", 
+                    area="US", area2="EU", type="STOCK", universe="98_universe", 
                     feed="Reuters", currency="EUR", year=None):
     """
     Run the index review calculation
@@ -46,13 +47,13 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
 
         ref_data = load_reference_data(
             current_data_folder, 
-            required_files=['ff', 'universe'],
+            required_files=['ff', '98_universe'],
             universe_name=universe  # This will be "98% Universe" by default
         )
 
         # Get the DataFrames from ref_data
         ff_df = ref_data.get('ff')
-        full_universe_df = ref_data.get('universe')
+        full_universe_df = ref_data.get('98_universe')
 
         # Add validation
         if ff_df is None or full_universe_df is None:
@@ -95,22 +96,22 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
 
         # Create MIC grouping mapping
         mic_groups = {
-            'US': ['XNYS', 'XNGS', 'BATS'],
-            'SE': ['XSTO', 'XNGM'],
+            'US': ['XNYS', 'XNGS', 'BATS', 'XNMS', 'XNCM', 'XASE'],
+            'SE': ['XSTO', 'XNGM', 'SSME'],
             'IT': ['XMIL', 'MTAA'],
             'IE': ['XESM', 'XMSM'],
             'AU': ['XASX'],
             'AT': ['WBAH'],
             'BE': ['XBRU'],
-            'CA': ['XTSE'],
-            'DK': ['XCSE'],
-            'FI': ['XHEL'],
+            'CA': ['XTSE', 'NEOE'],
+            'DK': ['XCSE', 'DSME'],
+            'FI': ['XHEL', 'FSME'],
             'FR': ['XPAR', 'ALXP'],
             'DE': ['XETR'],
             'ES': ['XMAD'],
             'JP': ['XTKS'],
             'NL': ['XAMS'],
-            'NZ': ['XNZE'],
+            'NZ': ['XNZE'], 
             'NO': ['XOSL', 'MERK'],
             'PT': ['XLIS'],
             'SG': ['XSES'],
@@ -155,40 +156,30 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
 
         def analyze_changes(universe_df, stock_eod_df, group_name, selected_columns):
             """
-            Analyze inclusions and exclusions for a given group
-            
-            Args:
-                universe_df: DataFrame with selected companies
-                stock_eod_df: DataFrame with current stock data
-                group_name: Name of the index (e.g., 'EDWPT')
-                selected_columns: List of columns to include
+            Analyze inclusions and exclusions for a given group using the utility function
             """
-            # Get ISINs of selected companies for this group from universe_df
-            selected_isins = set(universe_df[universe_df[f'{group_name}_selection'] == 1]['ISIN Code'].tolist())
+            # Filter universe_df to only selected companies for this group
+            selection_df = universe_df[universe_df[f'{group_name}_selection'] == 1].copy()
             
-            # Get current constituents from stock_eod_df for this specific index
-            # Change 'MIC' to 'Index' to correctly filter the data
-            current_isins = set(stock_eod_df[stock_eod_df['Index'] == group_name]['Isin Code'].unique().tolist())
+            # Use the utility function
+            analysis_results = inclusion_exclusion_analysis(
+                selection_df, 
+                stock_eod_df, 
+                group_name, 
+                isin_column='ISIN Code'  # Updated column name
+            )
             
-            # Find inclusions (in selected but not in current constituents)
-            inclusion_isins = selected_isins - current_isins
+            # Extract DataFrames and add Change Type column for consistency
+            inclusions_df = analysis_results['inclusion_df'].copy()
+            exclusions_df = analysis_results['exclusion_df'].copy()
             
-            # Find exclusions (in current constituents but not in selected)
-            exclusion_isins = current_isins - selected_isins
-            
-            # Create DataFrame for inclusions using universe_df data
-            inclusions_df = universe_df[
-                universe_df['ISIN Code'].isin(inclusion_isins)
-            ][['ISIN Code', 'Name']].copy()
+            # Add Change Type column for consistency with existing code
             inclusions_df['Change Type'] = 'Inclusion'
-            
-            # Create DataFrame for exclusions using stock_eod_df data
-            exclusions_df = stock_eod_df[
-                (stock_eod_df['Index'] == group_name) & 
-                (stock_eod_df['Isin Code'].isin(exclusion_isins))
-            ][['Isin Code', 'Name']].copy()
-            exclusions_df = exclusions_df.rename(columns={'Isin Code': 'ISIN Code'})
             exclusions_df['Change Type'] = 'Exclusion'
+            
+            # Rename ISIN column to match expected format
+            if 'ISIN code' in exclusions_df.columns:
+                exclusions_df = exclusions_df.rename(columns={'ISIN code': 'ISIN Code'})
             
             return inclusions_df, exclusions_df
 
@@ -279,17 +270,17 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
         logger.info(mic_summary)
         
         # Rename ISIN to ISIN Code just before defining selected_columns
-        universe_df = universe_df.rename(columns={'ISIN': 'ISIN Code'})
+        universe_df = universe_df.rename(columns={'ISIN': 'ISIN Code', 'Name': 'Company'})
         
         # Create DataFrames for all country groups
         all_dfs = {}
-        selected_columns = ['Name', 'ISIN Code', 'MIC', 'Number of Shares', 'Free Float', 'Capping Factor', 
+        selected_columns = ['Company', 'ISIN Code', 'MIC', 'Number of Shares', 'Free Float', 'Capping Factor', 
                         'Effective Date of Review', 'Currency']
 
         for group_name in country_groups.keys():
             all_dfs[group_name] = universe_df[universe_df[f'{group_name}_selection'] == 1][selected_columns].copy()
             # Sort all DataFrames alphabetically by Company name
-            all_dfs[group_name] = all_dfs[group_name].sort_values('Name', ascending=True)
+            all_dfs[group_name] = all_dfs[group_name].sort_values('Company', ascending=True)
 
 
         try:
@@ -320,10 +311,10 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                     
                     # Write changes to separate sheets (after sorting alphabetically by Company)
                     if not inclusions_df.empty:
-                        inclusions_df = inclusions_df.sort_values('Name', ascending=True)
+                        inclusions_df = inclusions_df.sort_values('Company', ascending=True)
                         inclusions_df.to_excel(writer, sheet_name=f'{group_name} Inclusions', index=False)
                     if not exclusions_df.empty:
-                        exclusions_df = exclusions_df.sort_values('Name', ascending=True)
+                        exclusions_df = exclusions_df.sort_values('Company', ascending=True)
                         exclusions_df.to_excel(writer, sheet_name=f'{group_name} Exclusions', index=False)
                     
                     # Log changes summary

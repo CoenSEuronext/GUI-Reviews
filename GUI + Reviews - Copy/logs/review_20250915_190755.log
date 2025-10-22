@@ -1,0 +1,8 @@
+2025-09-15 19:07:55,382 - werkzeug - WARNING -  * Debugger is active!
+2025-09-15 19:07:55,382 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-15 19:07:55,400 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:07:55] "GET /task-status/5b509cf3-216e-4e01-a253-2e77324ebaa7 HTTP/1.1" 200 -
+2025-09-15 19:08:21,819 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:08:21] "POST /calculate-batch HTTP/1.1" 200 -
+2025-09-15 19:08:21,827 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-09-15 19:08:21,828 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:08:21] "GET /task-status/699acb06-ff57-4000-84c9-37a0dc26ab2e HTTP/1.1" 200 -
+2025-09-15 19:08:23,827 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:08:23] "GET /task-status/699acb06-ff57-4000-84c9-37a0dc26ab2e HTTP/1.1" 200 -
+2025-09-15 19:08:24,878 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\elecp_review.py', reloading

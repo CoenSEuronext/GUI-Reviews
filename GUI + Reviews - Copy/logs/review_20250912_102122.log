@@ -1,0 +1,24 @@
+2025-09-12 10:21:23,079 - werkzeug - WARNING -  * Debugger is active!
+2025-09-12 10:21:23,079 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-09-12 10:21:23,211 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:23] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:25,371 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:25] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:27,365 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:27] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:29,379 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:29] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:31,365 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:31] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:33,203 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:33] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:35,206 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:35] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:37,215 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:37] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:39,206 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:39] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:41,206 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:41] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:43,366 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:43] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:45,218 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:45] "[33mGET /task-status/ac84334b-2c32-443d-b5d6-554e1f2cefe7 HTTP/1.1[0m" 404 -
+2025-09-12 10:21:46,412 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:46] "GET / HTTP/1.1" 200 -
+2025-09-12 10:21:46,482 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:46] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-09-12 10:21:51,715 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:51] "POST /calculate HTTP/1.1" 200 -
+2025-09-12 10:21:51,716 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-09-12 10:21:51,721 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:51] "GET /task-status/997f4e02-11eb-4bb5-ad3d-86150639953f HTTP/1.1" 200 -
+2025-09-12 10:21:53,733 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:53] "GET /task-status/997f4e02-11eb-4bb5-ad3d-86150639953f HTTP/1.1" 200 -
+2025-09-12 10:21:55,725 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 10:21:55] "GET /task-status/997f4e02-11eb-4bb5-ad3d-86150639953f HTTP/1.1" 200 -
+2025-09-12 10:21:55,952 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
+2025-09-12 10:21:55,963 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
+2025-09-12 10:21:55,966 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

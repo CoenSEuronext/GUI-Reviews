@@ -55,7 +55,8 @@ def get_mnemo_from_filename(filename):
     "SGTEP", "TERPR", "BIOCP", "FCLSP", "ESBTP", "ZSBTP", "EETPR", "PFC4E", "CSBTP", "EQGEP", 
     "EQGFP", "ENFRP", "ES4PP", "EZ6PP", "FREMP", "EBLPP", "BIOEP", "JPCLE", "JPCLA", "EBSEP", 
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
-    "BELAS", "BIRUT", "ESGBP", "BERE"
+    "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
+    "EEFAP", "EES2", "EFESP"
 ]
     
     # Look for pattern "MNEMO_" in the filename
@@ -65,7 +66,7 @@ def get_mnemo_from_filename(filename):
             return mnemo
             
     # Alternative regex approach
-    pattern = r'(CANP|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP|GICP|FRECP|FRN4P|FR20P|EZ40P|EFMEP|EZ15P|EZN1P|EUS5P|ERI5P|BE1P|EDEFP|EZ60P)[_-]'
+    pattern = r'(CANP|GSFBP|EESF|EES2|F4RIP|EFESP|SES5P|EEFAP|ESVEP|ELTFP|ETSEP|EUADP|ETPFB|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP|ELUXP|GICP|FRECP|FRN4P|FR20P|EZ40P|EFMEP|EZ15P|EZN1P|EUS5P|ERI5P|BE1P|EDEFP|EZ60P|TECHP|ENRGP|UTIL|BASM|FINA|CSTA|TELEP|HEAC|INDU|CDIS|TBMA|TCDI|TCST|TENR|TFINP|THEC|TIND|TTEC|TTEL|TUTI|ELECP|UUTI|UTEL|UTEC|UIND|UHEC|UFIN|UENR|UCST|UCDI|UBMA|DWREP|DAREP|DEREP|EUREP)[_-]'
     match = re.search(pattern, filename)
     if match:
         return match.group(1)
@@ -134,6 +135,29 @@ def load_excel_data(file_path, is_dataiku_file=False):
         print(f"Error loading {file_path}: {str(e)}")
         return None
 
+def get_company_mapping(df):
+    """Extract ISIN to Company name mapping from DataFrame"""
+    company_mapping = {}
+    
+    # Only try 'Company' column
+    if 'Company' in df.columns and 'ISIN Code' in df.columns:
+        # Create mapping from ISIN to Company
+        for _, row in df.iterrows():
+            isin = row['ISIN Code']
+            company = row['Company']
+            if pd.notna(isin) and pd.notna(company):
+                company_mapping[isin] = str(company)
+    
+    return company_mapping
+
+def find_column_match(df, field_variations):
+    """Find the matching column name from a list of possible variations"""
+    available_columns = df.columns.tolist()
+    for variation in field_variations:
+        if variation in available_columns:
+            return variation
+    return None
+
 def are_currencies_equivalent(currency1, currency2):
     """Check if two currency codes represent the same currency with acceptable variations"""
     if currency1 == currency2:
@@ -172,7 +196,10 @@ def compare_files(coen_file, dataiku_file):
             'message': f"Missing 'ISIN Code' column: Coen: {'ISIN Code' in coen_df.columns}, Dataiku: {'ISIN Code' in dataiku_df.columns}"
         }
     
-    # Rest of the function remains the same...
+    # Get company mappings from both files
+    coen_companies = get_company_mapping(coen_df)
+    dataiku_companies = get_company_mapping(dataiku_df)
+    
     # Get the set of ISIN codes from each file
     coen_isins = set(coen_df['ISIN Code'])
     dataiku_isins = set(dataiku_df['ISIN Code'])
@@ -185,38 +212,34 @@ def compare_files(coen_file, dataiku_file):
     coen_only = coen_isins - dataiku_isins
     dataiku_only = dataiku_isins - coen_isins
     
-    # Fields to compare - handle both "Final Capping" and "Capping Factor" column names
-    base_fields = ['MIC', 'Number of Shares', 'Free Float', 'Currency']
-    capping_column_names = {'Final Capping', 'Capping Factor'}
+    # Define field mappings - each field can have multiple possible column names
+    field_mappings = {
+        'MIC': ['MIC'],
+        'Number of Shares': ['Number of Shares', 'Preliminary Number of Shares'],
+        'Free Float': ['Free Float', 'Preliminary Free Float'],
+        'Currency': ['Currency']
+    }
     
-    # Determine which capping column name to use based on what's in the DataFrames
-    capping_field = None
-    coen_capping_field = None
-    dataiku_capping_field = None
-    
-    for field in capping_column_names:
-        if field in coen_df.columns:
-            coen_capping_field = field
-        if field in dataiku_df.columns:
-            dataiku_capping_field = field
+    # Handle capping field separately as it has multiple possible names
+    capping_variations = ['Final Capping', 'Capping Factor', 'Preliminary Capping Factor']
     
     # Helper function for float comparison
     def compare_float_values(val1, val2, tolerance=1e-14):
-            """Compare float values with ultra-high precision tolerance (14 decimal places)"""
-            try:
-                # Try to convert both values to float
-                float1 = float(val1) if val1 is not None else None
-                float2 = float(val2) if val2 is not None else None
-                
-                # If either value is None, they're equal only if both are None
-                if float1 is None or float2 is None:
-                    return float1 is None and float2 is None
-                
-                # Compare with ultra-strict tolerance (14 decimal places)
-                return abs(float1 - float2) < tolerance
-            except (ValueError, TypeError):
-                # If conversion fails, fall back to direct equality
-                return val1 == val2
+        """Compare float values with ultra-high precision tolerance (14 decimal places)"""
+        try:
+            # Try to convert both values to float
+            float1 = float(val1) if val1 is not None else None
+            float2 = float(val2) if val2 is not None else None
+            
+            # If either value is None, they're equal only if both are None
+            if float1 is None or float2 is None:
+                return float1 is None and float2 is None
+            
+            # Compare with ultra-strict tolerance (14 decimal places)
+            return abs(float1 - float2) < tolerance
+        except (ValueError, TypeError):
+            # If conversion fails, fall back to direct equality
+            return val1 == val2
     
     # Initialize field comparison results
     field_results = {}
@@ -226,12 +249,16 @@ def compare_files(coen_file, dataiku_file):
         # Get common ISINs
         common_isins = coen_isins
         
-        # First compare the standard fields
-        for field in base_fields:
-            if field in coen_df.columns and field in dataiku_df.columns:
+        # Compare the mapped fields
+        for field_display_name, field_variations in field_mappings.items():
+            # Find matching columns in both dataframes
+            coen_column = find_column_match(coen_df, field_variations)
+            dataiku_column = find_column_match(dataiku_df, field_variations)
+            
+            if coen_column and dataiku_column:
                 # Create dictionaries mapping ISIN to field value for easier comparison
-                coen_dict = dict(zip(coen_df['ISIN Code'], coen_df[field]))
-                dataiku_dict = dict(zip(dataiku_df['ISIN Code'], dataiku_df[field]))
+                coen_dict = dict(zip(coen_df['ISIN Code'], coen_df[coen_column]))
+                dataiku_dict = dict(zip(dataiku_df['ISIN Code'], dataiku_df[dataiku_column]))
                 
                 # Compare values for each ISIN
                 mismatches = 0
@@ -242,7 +269,7 @@ def compare_files(coen_file, dataiku_file):
                     dataiku_value = dataiku_dict.get(isin)
                     
                     # Special handling for Currency field
-                    if field == 'Currency':
+                    if field_display_name == 'Currency':
                         if not are_currencies_equivalent(coen_value, dataiku_value):
                             mismatches += 1
                             if len(mismatch_examples) < 5:  # Limit to 5 examples
@@ -252,7 +279,7 @@ def compare_files(coen_file, dataiku_file):
                                     'Dataiku value': dataiku_value
                                 })
                     # For numeric fields, use float comparison with tolerance
-                    elif field in ['Number of Shares', 'Free Float']:
+                    elif field_display_name in ['Number of Shares', 'Free Float']:
                         if not compare_float_values(coen_value, dataiku_value):
                             mismatches += 1
                             if len(mismatch_examples) < 5:  # Limit to 5 examples
@@ -273,26 +300,37 @@ def compare_files(coen_file, dataiku_file):
                                 })
                 
                 if mismatches > 0:
-                    field_results[field] = {
+                    field_results[field_display_name] = {
                         'match': False,
                         'mismatches': mismatches,
-                        'examples': mismatch_examples
+                        'examples': mismatch_examples,
+                        'coen_column': coen_column,
+                        'dataiku_column': dataiku_column
                     }
                 else:
-                    field_results[field] = {
-                        'match': True
+                    field_results[field_display_name] = {
+                        'match': True,
+                        'coen_column': coen_column,
+                        'dataiku_column': dataiku_column
                     }
             else:
-                field_results[field] = {
+                field_results[field_display_name] = {
                     'match': False,
-                    'error': f"Field missing: Coen: {field in coen_df.columns}, Dataiku: {field in dataiku_df.columns}"
+                    'error': f"Field missing: Coen: {coen_column}, Dataiku: {dataiku_column}",
+                    'coen_column': coen_column,
+                    'dataiku_column': dataiku_column
                 }
         
-        # Now handle the capping field separately, since it might have a different name in each file
-        if coen_capping_field and dataiku_capping_field:
+        # Handle the capping field separately
+        coen_capping_column = find_column_match(coen_df, capping_variations)
+        dataiku_capping_column = find_column_match(dataiku_df, capping_variations)
+        
+        display_field_name = "Capping (Final Capping/Capping Factor)"
+        
+        if coen_capping_column and dataiku_capping_column:
             # Create dictionaries mapping ISIN to capping value for each file
-            coen_dict = dict(zip(coen_df['ISIN Code'], coen_df[coen_capping_field]))
-            dataiku_dict = dict(zip(dataiku_df['ISIN Code'], dataiku_df[dataiku_capping_field]))
+            coen_dict = dict(zip(coen_df['ISIN Code'], coen_df[coen_capping_column]))
+            dataiku_dict = dict(zip(dataiku_df['ISIN Code'], dataiku_df[dataiku_capping_column]))
             
             # Compare values for each ISIN
             mismatches = 0
@@ -312,22 +350,26 @@ def compare_files(coen_file, dataiku_file):
                             'Dataiku value': dataiku_value
                         })
             
-            display_field_name = "Capping (Final Capping/Capping Factor)"
             if mismatches > 0:
                 field_results[display_field_name] = {
                     'match': False,
                     'mismatches': mismatches,
-                    'examples': mismatch_examples
+                    'examples': mismatch_examples,
+                    'coen_column': coen_capping_column,
+                    'dataiku_column': dataiku_capping_column
                 }
             else:
                 field_results[display_field_name] = {
-                    'match': True
+                    'match': True,
+                    'coen_column': coen_capping_column,
+                    'dataiku_column': dataiku_capping_column
                 }
         else:
-            display_field_name = "Capping (Final Capping/Capping Factor)"
             field_results[display_field_name] = {
                 'match': False,
-                'error': f"Field missing: Coen: {coen_capping_field}, Dataiku: {dataiku_capping_field}"
+                'error': f"Field missing: Coen: {coen_capping_column}, Dataiku: {dataiku_capping_column}",
+                'coen_column': coen_capping_column,
+                'dataiku_column': dataiku_capping_column
             }
     
     result = {
@@ -340,7 +382,11 @@ def compare_files(coen_file, dataiku_file):
         'dataiku_only': list(dataiku_only)[:5],  # First 5 ISINs only in Dataiku
         'coen_only_count': len(coen_only),
         'dataiku_only_count': len(dataiku_only),
-        'field_results': field_results
+        'field_results': field_results,
+        'coen_only_full': list(coen_only),  # Full list for ISIN differences sheet
+        'dataiku_only_full': list(dataiku_only),  # Full list for ISIN differences sheet
+        'coen_companies': coen_companies,  # Company mappings
+        'dataiku_companies': dataiku_companies  # Company mappings
     }
     
     return result
@@ -454,7 +500,9 @@ def create_excel_report(results, output_path):
                             'Mnemo': mnemo,
                             'Field': field,
                             'Issue Type': 'Error',
-                            'Details': field_result['error']
+                            'Details': field_result['error'],
+                            'Coen Column': field_result.get('coen_column', 'N/A'),
+                            'Dataiku Column': field_result.get('dataiku_column', 'N/A')
                         })
                     elif 'examples' in field_result:
                         for example in field_result['examples']:
@@ -464,7 +512,9 @@ def create_excel_report(results, output_path):
                                 'Issue Type': 'Value Mismatch',
                                 'ISIN': example['ISIN'],
                                 'Coen Value': example['Coen value'],
-                                'Dataiku Value': example['Dataiku value']
+                                'Dataiku Value': example['Dataiku value'],
+                                'Coen Column': field_result.get('coen_column', 'N/A'),
+                                'Dataiku Column': field_result.get('dataiku_column', 'N/A')
                             })
     
     if field_mismatch_data:
@@ -481,21 +531,31 @@ def create_excel_report(results, output_path):
             column_width = max(len(str(column)), field_mismatch_df[column].astype(str).map(len).max())
             mismatch_sheet.set_column(i, i, column_width + 2)
     
-    # ISIN Differences Sheet - ISINs that appear in only one of the files
+    # ISIN Differences Sheet - ISINs that appear in only one of the files (with Company names)
     isin_diff_data = []
     for mnemo, result in results.items():
         if result['status'] == 'SUCCESS' and not result['same_isins']:
-            for isin in result['coen_only']:
+            # Get company mappings
+            coen_companies = result.get('coen_companies', {})
+            dataiku_companies = result.get('dataiku_companies', {})
+            
+            # Add ISINs that are only in Coen
+            for isin in result.get('coen_only_full', []):
+                company_name = coen_companies.get(isin, 'N/A')
                 isin_diff_data.append({
                     'Mnemo': mnemo,
                     'ISIN': isin,
+                    'Company': company_name,
                     'Present In': 'Coen Only'
                 })
             
-            for isin in result['dataiku_only']:
+            # Add ISINs that are only in Dataiku
+            for isin in result.get('dataiku_only_full', []):
+                company_name = dataiku_companies.get(isin, 'N/A')
                 isin_diff_data.append({
                     'Mnemo': mnemo,
                     'ISIN': isin,
+                    'Company': company_name,
                     'Present In': 'Dataiku Only'
                 })
     
@@ -520,8 +580,8 @@ def create_excel_report(results, output_path):
 
 def main():
     # Set folder paths
-    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202506\Review 202506\Coen"
-    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202506\Review 202506\Dataiku"
+    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202509\Review 202509\Coen"
+    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202509\Review 202509\Dataiku\EIA"
     
     # Set output folder path
     output_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review Comparison"
@@ -563,6 +623,10 @@ def main():
                             print(f"  Field '{field}': {field_result['error']}")
                         else:
                             print(f"  Field '{field}': {field_result['mismatches']} mismatches")
+                            # Print column mapping info
+                            coen_col = field_result.get('coen_column', 'N/A')
+                            dataiku_col = field_result.get('dataiku_column', 'N/A')
+                            print(f"    (Coen column: '{coen_col}', Dataiku column: '{dataiku_col}')")
         else:
             print(f"  Error: {comparison_result['message']}")
     
