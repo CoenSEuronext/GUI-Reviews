@@ -50,3 +50,1434 @@
 2025-10-22 17:52:51 - INFO - Function process_existing_files_bulk took 120.66 seconds
 2025-10-22 17:52:57 - INFO - Running periodic CSV merger check...
 2025-10-22 17:53:02 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 13:33:58 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 13:33:58 - INFO - Starting unified monitoring system...
+2025-10-23 13:36:01 - INFO - Function compare_folders took 122.35 seconds
+2025-10-23 13:36:01 - INFO - Function process_existing_files_bulk took 122.35 seconds
+2025-10-23 13:36:06 - INFO - Running periodic CSV merger check...
+2025-10-23 13:36:11 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 13:36:42 - INFO - Running periodic CSV merger check...
+2025-10-23 13:37:19 - INFO - Running periodic CSV merger check...
+2025-10-23 13:37:56 - INFO - Running periodic CSV merger check...
+2025-10-23 13:38:33 - INFO - Running periodic CSV merger check...
+2025-10-23 13:39:09 - INFO - Running periodic CSV merger check...
+2025-10-23 13:39:45 - INFO - Running periodic CSV merger check...
+2025-10-23 13:40:20 - INFO - Running periodic CSV merger check...
+2025-10-23 13:40:55 - INFO - Running periodic CSV merger check...
+2025-10-23 13:41:31 - INFO - Running periodic CSV merger check...
+2025-10-23 13:42:05 - INFO - Running periodic CSV merger check...
+2025-10-23 13:42:40 - INFO - Running periodic CSV merger check...
+2025-10-23 13:43:12 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 13:43:12 - INFO - Starting unified monitoring system...
+2025-10-23 13:45:19 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 13:45:19 - INFO - Starting unified monitoring system...
+2025-10-23 13:47:29 - INFO - Function compare_folders took 123.64 seconds
+2025-10-23 13:47:29 - INFO - Function process_existing_files_bulk took 123.64 seconds
+2025-10-23 13:47:34 - INFO - Running periodic CSV merger check...
+2025-10-23 13:47:40 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 13:48:09 - INFO - Running periodic CSV merger check...
+2025-10-23 13:48:44 - INFO - Running periodic CSV merger check...
+2025-10-23 13:49:19 - INFO - Running periodic CSV merger check...
+2025-10-23 13:49:55 - INFO - Running periodic CSV merger check...
+2025-10-23 13:50:30 - INFO - Running periodic CSV merger check...
+2025-10-23 13:51:13 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 13:51:13 - INFO - Starting unified monitoring system...
+2025-10-23 13:53:02 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 13:53:02 - INFO - Starting unified monitoring system...
+2025-10-23 13:55:12 - INFO - Function compare_folders took 124.40 seconds
+2025-10-23 13:55:12 - INFO - Function process_existing_files_bulk took 124.40 seconds
+2025-10-23 13:55:17 - INFO - Running periodic CSV merger check...
+2025-10-23 13:55:23 - DEBUG - Not all MANUAL merge files found. Missing: ['TTMIndexEU1_GIS_MANUAL_STOCK_20251023.csv', 'TTMIndexUS1_GIS_NXTD_STOCK_20251023.csv', 'TTMIndexEU1_GIS_MANUAL_INDEX_20251023.csv', 'TTMIndexUS1_GIS_NXTD_INDEX_20251023.csv']
+2025-10-23 13:55:23 - DEBUG - Not all EOD merge files found. Missing: ['TTMIndexEU1_GIS_EOD_STOCK_20251023.csv', 'TTMIndexUS1_GIS_EOD_STOCK_20251023.csv', 'TTMIndexEU1_GIS_EOD_INDEX_20251023.csv', 'TTMIndexUS1_GIS_EOD_INDEX_20251023.csv']
+2025-10-23 13:55:23 - DEBUG - Single file not found: TTMStrategy_GIS_EOD_INDEX_20251023.csv
+2025-10-23 13:55:23 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 13:55:23 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx. Skipping merge.
+2025-10-23 13:55:23 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx. Skipping merge.
+2025-10-23 13:55:23 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 13:55:23 - DEBUG - Checking workday 20251021 (day -1)...
+2025-10-23 13:55:23 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 13:55:23 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 13:55:23 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 13:55:23 - DEBUG - Checking workday 20251020 (day -2)...
+2025-10-23 13:55:23 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 13:55:24 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 13:55:24 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 13:55:24 - DEBUG - Checking workday 20251017 (day -3)...
+2025-10-23 13:55:24 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - Checking workday 20251017 (day -4)...
+2025-10-23 13:55:24 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - Checking workday 20251017 (day -5)...
+2025-10-23 13:55:24 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:55:24 - DEBUG - Checking workday 20251016 (day -6)...
+2025-10-23 13:55:24 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 13:55:24 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 13:55:24 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 13:55:24 - DEBUG - Checking workday 20251015 (day -7)...
+2025-10-23 13:55:24 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 13:55:24 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 13:55:24 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 13:55:24 - DEBUG - Checking workday 20251014 (day -8)...
+2025-10-23 13:55:24 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 13:55:25 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 13:55:25 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 13:55:25 - DEBUG - Checking workday 20251013 (day -9)...
+2025-10-23 13:55:25 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 13:55:25 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 13:55:25 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 13:55:25 - DEBUG - Checking workday 20251010 (day -10)...
+2025-10-23 13:55:25 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - Checking workday 20251010 (day -11)...
+2025-10-23 13:55:25 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - Checking workday 20251010 (day -12)...
+2025-10-23 13:55:25 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:55:25 - DEBUG - Checking workday 20251009 (day -13)...
+2025-10-23 13:55:25 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 13:55:25 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 13:55:25 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 13:55:25 - DEBUG - Checking workday 20251008 (day -14)...
+2025-10-23 13:55:26 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 13:55:26 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 13:55:26 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 13:55:26 - DEBUG - Checking workday 20251007 (day -15)...
+2025-10-23 13:55:26 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 13:55:26 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 13:55:26 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 13:55:26 - DEBUG - Checking workday 20251006 (day -16)...
+2025-10-23 13:55:26 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 13:55:26 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 13:55:26 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 13:55:26 - DEBUG - Checking workday 20251003 (day -17)...
+2025-10-23 13:55:26 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:55:26 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - Checking workday 20251003 (day -18)...
+2025-10-23 13:55:27 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - Checking workday 20251003 (day -19)...
+2025-10-23 13:55:27 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:55:27 - DEBUG - Checking workday 20251002 (day -20)...
+2025-10-23 13:55:27 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 13:55:27 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 13:55:27 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 13:55:27 - DEBUG - Checking workday 20251001 (day -21)...
+2025-10-23 13:55:27 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 13:55:27 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 13:55:27 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 13:55:27 - DEBUG - Checking workday 20250930 (day -22)...
+2025-10-23 13:55:27 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 13:55:27 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 13:55:27 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 13:55:27 - DEBUG - Checking workday 20250929 (day -23)...
+2025-10-23 13:55:27 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 13:55:28 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 13:55:28 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 13:55:28 - DEBUG - Checking workday 20250926 (day -24)...
+2025-10-23 13:55:28 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - Checking workday 20250926 (day -25)...
+2025-10-23 13:55:28 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - Checking workday 20250926 (day -26)...
+2025-10-23 13:55:28 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:55:28 - DEBUG - Checking workday 20250925 (day -27)...
+2025-10-23 13:55:28 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 13:55:28 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 13:55:28 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 13:55:28 - DEBUG - Checking workday 20250924 (day -28)...
+2025-10-23 13:55:28 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 13:55:28 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 13:55:28 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 13:55:28 - DEBUG - Checking workday 20250923 (day -29)...
+2025-10-23 13:55:28 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 13:55:29 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 13:55:29 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 13:55:29 - DEBUG - Checking workday 20250922 (day -30)...
+2025-10-23 13:55:29 - DEBUG - All MANUAL output files from workday 20250922 already exist.
+2025-10-23 13:55:29 - DEBUG - All EOD output files from workday 20250922 already exist.
+2025-10-23 13:55:29 - DEBUG - All SOD output files from workday 20250922 already exist.
+2025-10-23 13:55:29 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 13:55:38 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 13:55:38 - INFO - Starting unified monitoring system...
+2025-10-23 13:57:45 - INFO - Function compare_folders took 122.98 seconds
+2025-10-23 13:57:45 - INFO - Function process_existing_files_bulk took 122.98 seconds
+2025-10-23 13:57:50 - INFO - Running periodic CSV merger check...
+2025-10-23 13:57:55 - DEBUG - Not all MANUAL merge files found. Missing: ['TTMIndexEU1_GIS_MANUAL_STOCK_20251023.csv', 'TTMIndexUS1_GIS_NXTD_STOCK_20251023.csv', 'TTMIndexEU1_GIS_MANUAL_INDEX_20251023.csv', 'TTMIndexUS1_GIS_NXTD_INDEX_20251023.csv']
+2025-10-23 13:57:55 - DEBUG - Not all EOD merge files found. Missing: ['TTMIndexEU1_GIS_EOD_STOCK_20251023.csv', 'TTMIndexUS1_GIS_EOD_STOCK_20251023.csv', 'TTMIndexEU1_GIS_EOD_INDEX_20251023.csv', 'TTMIndexUS1_GIS_EOD_INDEX_20251023.csv']
+2025-10-23 13:57:55 - DEBUG - Single file not found: TTMStrategy_GIS_EOD_INDEX_20251023.csv
+2025-10-23 13:57:55 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 13:57:55 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx. Skipping merge.
+2025-10-23 13:57:55 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx. Skipping merge.
+2025-10-23 13:57:55 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 13:57:55 - DEBUG - Checking workday 20251021 (day -1)...
+2025-10-23 13:57:55 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 13:57:55 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 13:57:55 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 13:57:55 - DEBUG - Checking workday 20251020 (day -2)...
+2025-10-23 13:57:55 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251017 (day -3)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251017 (day -4)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251017 (day -5)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251016 (day -6)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251015 (day -7)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251014 (day -8)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 13:57:56 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 13:57:56 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 13:57:56 - DEBUG - Checking workday 20251013 (day -9)...
+2025-10-23 13:57:56 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251010 (day -10)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251010 (day -11)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251010 (day -12)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251009 (day -13)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251008 (day -14)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251007 (day -15)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 13:57:57 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 13:57:57 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 13:57:57 - DEBUG - Checking workday 20251006 (day -16)...
+2025-10-23 13:57:57 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20251003 (day -17)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20251003 (day -18)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20251003 (day -19)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20251002 (day -20)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20251001 (day -21)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20250930 (day -22)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 13:57:58 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 13:57:58 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 13:57:58 - DEBUG - Checking workday 20250929 (day -23)...
+2025-10-23 13:57:58 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250926 (day -24)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250926 (day -25)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250926 (day -26)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250925 (day -27)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250924 (day -28)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250923 (day -29)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 13:57:59 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 13:57:59 - DEBUG - Checking workday 20250922 (day -30)...
+2025-10-23 13:57:59 - DEBUG - All MANUAL output files from workday 20250922 already exist.
+2025-10-23 13:57:59 - DEBUG - All EOD output files from workday 20250922 already exist.
+2025-10-23 13:58:00 - DEBUG - All SOD output files from workday 20250922 already exist.
+2025-10-23 13:58:00 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 13:58:25 - INFO - Running periodic CSV merger check...
+2025-10-23 13:58:30 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 13:58:30 - DEBUG - Checking workday 20251021 (day -1)...
+2025-10-23 13:58:30 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 13:58:30 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 13:58:30 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 13:58:30 - DEBUG - Checking workday 20251020 (day -2)...
+2025-10-23 13:58:30 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 13:58:30 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 13:58:30 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 13:58:30 - DEBUG - Checking workday 20251017 (day -3)...
+2025-10-23 13:58:30 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - Checking workday 20251017 (day -4)...
+2025-10-23 13:58:30 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - Checking workday 20251017 (day -5)...
+2025-10-23 13:58:30 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:58:30 - DEBUG - Checking workday 20251016 (day -6)...
+2025-10-23 13:58:30 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 13:58:30 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251015 (day -7)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251014 (day -8)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251013 (day -9)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251010 (day -10)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251010 (day -11)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251010 (day -12)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251009 (day -13)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 13:58:31 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 13:58:31 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 13:58:31 - DEBUG - Checking workday 20251008 (day -14)...
+2025-10-23 13:58:31 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251007 (day -15)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251006 (day -16)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251003 (day -17)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251003 (day -18)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251003 (day -19)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251002 (day -20)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 13:58:32 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 13:58:32 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 13:58:32 - DEBUG - Checking workday 20251001 (day -21)...
+2025-10-23 13:58:32 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250930 (day -22)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250929 (day -23)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250926 (day -24)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250926 (day -25)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250926 (day -26)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250925 (day -27)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 13:58:33 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 13:58:33 - DEBUG - Checking workday 20250924 (day -28)...
+2025-10-23 13:58:33 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 13:58:33 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 13:58:34 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 13:58:34 - DEBUG - Checking workday 20250923 (day -29)...
+2025-10-23 13:58:34 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 13:58:34 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 13:58:34 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 13:58:34 - DEBUG - Checking workday 20250922 (day -30)...
+2025-10-23 13:58:34 - DEBUG - All MANUAL output files from workday 20250922 already exist.
+2025-10-23 13:58:34 - DEBUG - All EOD output files from workday 20250922 already exist.
+2025-10-23 13:58:34 - DEBUG - All SOD output files from workday 20250922 already exist.
+2025-10-23 13:58:34 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 13:58:59 - INFO - Running periodic CSV merger check...
+2025-10-23 13:59:05 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 13:59:05 - DEBUG - Checking workday 20251021 (day -1)...
+2025-10-23 13:59:05 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 13:59:05 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 13:59:05 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 13:59:05 - DEBUG - Checking workday 20251020 (day -2)...
+2025-10-23 13:59:05 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 13:59:05 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 13:59:05 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 13:59:05 - DEBUG - Checking workday 20251017 (day -3)...
+2025-10-23 13:59:05 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - Checking workday 20251017 (day -4)...
+2025-10-23 13:59:05 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - Checking workday 20251017 (day -5)...
+2025-10-23 13:59:05 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:59:05 - DEBUG - Checking workday 20251016 (day -6)...
+2025-10-23 13:59:05 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251015 (day -7)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251014 (day -8)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251013 (day -9)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251010 (day -10)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251010 (day -11)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251010 (day -12)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:59:06 - DEBUG - Checking workday 20251009 (day -13)...
+2025-10-23 13:59:06 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251008 (day -14)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251007 (day -15)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251006 (day -16)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251003 (day -17)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251003 (day -18)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251003 (day -19)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:59:07 - DEBUG - Checking workday 20251002 (day -20)...
+2025-10-23 13:59:07 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20251001 (day -21)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20250930 (day -22)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20250929 (day -23)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20250926 (day -24)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20250926 (day -25)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20250926 (day -26)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:59:08 - DEBUG - Checking workday 20250925 (day -27)...
+2025-10-23 13:59:08 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 13:59:09 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 13:59:09 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 13:59:09 - DEBUG - Checking workday 20250924 (day -28)...
+2025-10-23 13:59:09 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 13:59:09 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 13:59:09 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 13:59:09 - DEBUG - Checking workday 20250923 (day -29)...
+2025-10-23 13:59:09 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 13:59:09 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 13:59:09 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 13:59:09 - DEBUG - Checking workday 20250922 (day -30)...
+2025-10-23 13:59:09 - DEBUG - All MANUAL output files from workday 20250922 already exist.
+2025-10-23 13:59:09 - DEBUG - All EOD output files from workday 20250922 already exist.
+2025-10-23 13:59:09 - DEBUG - All SOD output files from workday 20250922 already exist.
+2025-10-23 13:59:09 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 13:59:35 - INFO - Running periodic CSV merger check...
+2025-10-23 13:59:40 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251021 (day -1)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 13:59:40 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251020 (day -2)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 13:59:40 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251017 (day -3)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251017 (day -4)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251017 (day -5)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251016 (day -6)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 13:59:40 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 13:59:40 - DEBUG - Checking workday 20251015 (day -7)...
+2025-10-23 13:59:40 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 13:59:40 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251014 (day -8)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251013 (day -9)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251010 (day -10)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251010 (day -11)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251010 (day -12)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251009 (day -13)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251008 (day -14)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 13:59:41 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 13:59:41 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 13:59:41 - DEBUG - Checking workday 20251007 (day -15)...
+2025-10-23 13:59:41 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20251006 (day -16)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20251003 (day -17)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20251003 (day -18)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20251003 (day -19)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20251002 (day -20)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20251001 (day -21)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 13:59:42 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 13:59:42 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 13:59:42 - DEBUG - Checking workday 20250930 (day -22)...
+2025-10-23 13:59:42 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250929 (day -23)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250926 (day -24)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250926 (day -25)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250926 (day -26)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250925 (day -27)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250924 (day -28)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 13:59:43 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 13:59:43 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 13:59:43 - DEBUG - Checking workday 20250923 (day -29)...
+2025-10-23 13:59:43 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 13:59:44 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 13:59:44 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 13:59:44 - DEBUG - Checking workday 20250922 (day -30)...
+2025-10-23 13:59:44 - DEBUG - All MANUAL output files from workday 20250922 already exist.
+2025-10-23 13:59:44 - DEBUG - All EOD output files from workday 20250922 already exist.
+2025-10-23 13:59:44 - DEBUG - All SOD output files from workday 20250922 already exist.
+2025-10-23 13:59:44 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:00:01 - INFO - Unified monitoring stopped
+2025-10-23 14:00:05 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 14:00:05 - INFO - Starting unified monitoring system...
+2025-10-23 14:02:17 - INFO - Function compare_folders took 126.29 seconds
+2025-10-23 14:02:17 - INFO - Function process_existing_files_bulk took 126.29 seconds
+2025-10-23 14:02:22 - INFO - Running periodic CSV merger check...
+2025-10-23 14:02:27 - DEBUG - Not all MANUAL merge files found. Missing: ['TTMIndexEU1_GIS_MANUAL_STOCK_20251023.csv', 'TTMIndexUS1_GIS_NXTD_STOCK_20251023.csv', 'TTMIndexEU1_GIS_MANUAL_INDEX_20251023.csv', 'TTMIndexUS1_GIS_NXTD_INDEX_20251023.csv']
+2025-10-23 14:02:28 - DEBUG - Not all EOD merge files found. Missing: ['TTMIndexEU1_GIS_EOD_STOCK_20251023.csv', 'TTMIndexUS1_GIS_EOD_STOCK_20251023.csv', 'TTMIndexEU1_GIS_EOD_INDEX_20251023.csv', 'TTMIndexUS1_GIS_EOD_INDEX_20251023.csv']
+2025-10-23 14:02:28 - DEBUG - Single file not found: TTMStrategy_GIS_EOD_INDEX_20251023.csv
+2025-10-23 14:02:28 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 14:02:28 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx. Skipping merge.
+2025-10-23 14:02:28 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx. Skipping merge.
+2025-10-23 14:02:28 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:02:28 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:02:28 - INFO - Missing MANUAL output files from workday 20251022: ['TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx', 'TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx']
+2025-10-23 14:02:28 - INFO - Found all source files for MANUAL from workday 20251022. Creating missing output files.
+2025-10-23 14:02:28 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.csv and TTMIndexUS1_GIS_NXTD_STOCK_20251022.csv
+2025-10-23 14:02:35 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-23 14:02:54 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:02:54 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:02:55 - INFO - Created previous workday file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx for 20251022
+2025-10-23 14:02:55 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.csv and TTMIndexUS1_GIS_NXTD_INDEX_20251022.csv
+2025-10-23 14:02:55 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-23 14:02:56 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 14:02:56 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 14:02:56 - INFO - Created previous workday file: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx for 20251022
+2025-10-23 14:02:56 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:02:56 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:02:56 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:02:56 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:02:57 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:02:57 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:02:57 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:02:57 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:02:57 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:02:57 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:02:57 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:02:57 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:02:57 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:02:57 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:02:57 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:02:57 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:02:57 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:02:57 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:02:57 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:02:58 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:02:58 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:02:58 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:02:58 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:02:58 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:02:58 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:02:58 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:02:58 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:02:58 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:02:58 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:02:58 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:02:58 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:02:58 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:02:58 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:02:59 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:02:59 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:02:59 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:02:59 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:02:59 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:02:59 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:02:59 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:02:59 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:02:59 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:02:59 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:02:59 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:02:59 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:02:59 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:02:59 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:02:59 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:03:00 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:03:00 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:03:00 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:03:00 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:03:00 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:03:00 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:03:00 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:03:00 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:03:00 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:03:00 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:03:00 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:03:00 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:03:00 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:03:00 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:03:00 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:03:01 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:03:01 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:03:01 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:03:01 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:03:01 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:03:01 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:03:01 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:03:01 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:03:01 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:03:01 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:03:01 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:03:01 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:03:01 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:03:01 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:03:02 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:03:02 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:03:02 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:03:02 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:03:02 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:03:02 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:03:02 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:03:02 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:03:02 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:03:02 - INFO - Completed checking previous 30 workdays. Performed 2 merge/conversion operations.
+2025-10-23 14:03:27 - INFO - Running periodic CSV merger check...
+2025-10-23 14:03:33 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:03:33 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:03:33 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-23 14:03:33 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:03:33 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:03:33 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:03:33 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:03:33 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:03:33 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:03:33 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:03:33 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:03:33 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:03:34 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:03:34 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:03:34 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:03:34 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:03:34 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:03:34 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:03:34 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:03:34 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:03:34 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:03:34 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:03:34 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:03:34 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:03:34 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:03:34 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:03:34 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:03:35 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:03:35 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:03:35 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:03:35 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:03:35 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:03:35 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:03:35 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:03:35 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:03:35 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:03:35 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:03:35 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:03:35 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:03:35 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:03:35 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:03:35 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:03:36 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:03:36 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:03:36 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:03:36 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:03:36 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:03:36 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:03:36 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:03:36 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:03:36 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:03:36 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:03:36 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:03:36 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:03:36 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:03:36 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:03:37 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:03:37 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:03:37 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:03:37 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:03:37 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:03:37 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:03:37 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:03:37 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:03:37 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:03:37 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:03:37 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:03:37 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:03:37 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:03:37 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:03:37 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:03:38 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:03:38 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:03:38 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:03:38 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:03:38 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:03:38 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:03:38 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:03:38 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:03:38 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:03:38 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:03:38 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:03:38 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:03:38 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:03:38 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:03:38 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:03:39 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:03:39 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:03:39 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:03:39 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:04:04 - INFO - Running periodic CSV merger check...
+2025-10-23 14:04:10 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:04:10 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:04:10 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-23 14:04:10 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:04:10 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:04:10 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:04:10 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:04:10 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:04:10 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:04:10 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:04:10 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:04:10 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:04:10 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:04:10 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:04:10 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:04:11 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:04:11 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:04:11 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:04:11 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:04:11 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:04:11 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:04:11 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:04:11 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:04:11 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:04:11 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:04:11 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:04:11 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:04:11 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:04:11 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:04:11 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:04:12 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:04:12 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:04:12 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:04:12 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:04:12 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:04:12 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:04:12 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:04:12 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:04:12 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:04:12 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:04:12 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:04:12 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:04:12 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:04:13 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:04:13 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:04:13 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:04:13 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:04:13 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:04:13 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:04:13 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:04:13 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:04:13 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:04:13 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:04:13 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:04:13 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:04:13 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:04:13 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:04:13 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:04:14 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:04:14 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:04:14 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:04:14 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:04:14 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:04:14 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:04:14 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:04:14 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:04:14 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:04:14 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:04:14 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:04:14 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:04:14 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:04:14 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:04:15 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:04:15 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:04:15 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:04:15 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:04:15 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:04:15 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:04:15 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:04:15 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:04:15 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:04:15 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:04:15 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:04:15 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:04:15 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:04:15 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:04:15 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:04:16 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:04:16 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:04:16 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:04:40 - INFO - Running periodic CSV merger check...
+2025-10-23 14:04:46 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:04:46 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:04:46 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-23 14:04:46 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:04:46 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:04:46 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:04:46 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:04:46 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:04:46 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:04:46 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:04:46 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:04:46 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:04:46 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:04:46 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:04:46 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:04:47 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:04:47 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:04:47 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:04:47 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:04:47 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:04:47 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:04:47 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:04:47 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:04:47 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:04:47 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:04:47 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:04:47 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:04:47 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:04:47 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:04:47 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:04:47 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:04:48 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:04:48 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:04:48 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:04:48 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:04:48 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:04:48 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:04:48 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:04:48 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:04:48 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:04:48 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:04:48 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:04:48 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:04:48 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:04:48 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:04:48 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:04:49 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:04:49 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:04:49 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:04:49 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:04:49 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:04:49 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:04:49 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:04:49 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:04:49 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:04:49 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:04:49 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:04:49 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:04:49 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:04:49 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:04:50 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:04:50 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:04:50 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:04:50 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:04:50 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:04:50 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:04:50 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:04:50 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:04:50 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:04:50 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:04:50 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:04:50 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:04:50 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:04:50 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:04:50 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:04:51 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:04:51 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:04:51 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:04:51 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:04:51 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:04:51 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:04:51 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:04:51 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:04:51 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:04:51 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:04:51 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:04:51 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:04:51 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:04:51 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:04:51 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:05:16 - INFO - Running periodic CSV merger check...
+2025-10-23 14:05:21 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:05:21 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:05:21 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-23 14:05:22 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:05:22 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:05:22 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:05:22 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:05:22 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:05:22 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:05:22 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:05:22 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:05:22 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:05:22 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:05:22 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:05:22 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:05:22 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:05:22 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:05:22 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:05:23 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:05:23 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:05:23 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:05:23 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:05:23 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:05:23 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:05:23 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:05:23 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:05:23 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:05:23 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:05:23 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:05:23 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:05:23 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:05:23 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:05:24 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:05:24 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:05:24 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:05:24 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:05:24 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:05:24 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:05:24 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:05:24 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:05:24 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:05:24 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:05:24 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:05:24 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:05:24 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:05:24 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:05:24 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:05:25 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:05:25 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:05:25 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:05:25 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:05:25 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:05:25 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:05:25 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:05:25 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:05:25 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:05:25 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:05:25 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:05:25 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:05:25 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:05:25 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:05:25 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:05:25 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:05:26 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:05:26 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:05:26 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:05:26 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:05:26 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:05:26 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:05:26 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:05:26 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:05:26 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:05:26 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:05:26 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:05:26 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:05:26 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:05:26 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:05:26 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:05:27 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:05:27 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:05:27 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:05:27 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:05:27 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:05:27 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:05:27 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:05:27 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:05:27 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:05:27 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:05:27 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:05:27 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:05:53 - INFO - Running periodic CSV merger check...
+2025-10-23 14:05:59 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:05:59 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:05:59 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-23 14:05:59 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:05:59 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:05:59 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:05:59 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:05:59 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:05:59 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:05:59 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:05:59 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:05:59 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:05:59 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:05:59 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:05:59 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:06:00 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:06:00 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:06:00 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:06:00 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:06:00 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:06:00 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:06:00 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:06:00 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:06:00 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:06:00 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:06:00 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:06:00 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:06:00 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:06:00 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:06:00 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:06:01 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:06:01 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:06:01 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:06:01 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:06:01 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:06:01 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:06:01 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:06:01 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:06:01 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:06:01 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:06:01 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:06:01 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:06:01 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:06:01 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:06:02 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:06:02 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:06:02 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:06:02 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:06:02 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:06:02 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:06:02 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:06:02 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:06:02 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:06:02 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:06:02 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:06:02 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:06:02 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:06:02 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:06:02 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:06:03 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:06:03 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:06:03 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:06:03 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:06:03 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:06:03 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:06:03 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:06:03 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:06:03 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:06:03 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:06:03 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:06:03 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:06:03 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:06:04 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:06:04 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:06:04 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:06:04 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:06:04 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:06:04 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:06:04 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:06:04 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:06:04 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:06:04 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:06:04 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:06:04 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:06:04 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:06:04 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:06:04 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:06:05 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:06:05 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:06:05 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:06:30 - INFO - Running periodic CSV merger check...
+2025-10-23 14:06:36 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-23 14:06:36 - DEBUG - Checking workday 20251022 (day -1)...
+2025-10-23 14:06:36 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-23 14:06:36 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-23 14:06:36 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-23 14:06:36 - DEBUG - Checking workday 20251021 (day -2)...
+2025-10-23 14:06:36 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-23 14:06:36 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-23 14:06:36 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-23 14:06:36 - DEBUG - Checking workday 20251020 (day -3)...
+2025-10-23 14:06:37 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-23 14:06:37 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-23 14:06:37 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-23 14:06:37 - DEBUG - Checking workday 20251017 (day -6)...
+2025-10-23 14:06:37 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-23 14:06:37 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-23 14:06:37 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-23 14:06:37 - DEBUG - Checking workday 20251016 (day -7)...
+2025-10-23 14:06:37 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-23 14:06:37 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-23 14:06:37 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-23 14:06:37 - DEBUG - Checking workday 20251015 (day -8)...
+2025-10-23 14:06:37 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-23 14:06:38 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-23 14:06:38 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-23 14:06:38 - DEBUG - Checking workday 20251014 (day -9)...
+2025-10-23 14:06:38 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-23 14:06:38 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-23 14:06:38 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-23 14:06:38 - DEBUG - Checking workday 20251013 (day -10)...
+2025-10-23 14:06:38 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-23 14:06:38 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-23 14:06:38 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-23 14:06:38 - DEBUG - Checking workday 20251010 (day -13)...
+2025-10-23 14:06:38 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-23 14:06:38 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-23 14:06:38 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-23 14:06:38 - DEBUG - Checking workday 20251009 (day -14)...
+2025-10-23 14:06:39 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-23 14:06:39 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-23 14:06:39 - DEBUG - All SOD output files from workday 20251009 already exist.
+2025-10-23 14:06:39 - DEBUG - Checking workday 20251008 (day -15)...
+2025-10-23 14:06:39 - DEBUG - All MANUAL output files from workday 20251008 already exist.
+2025-10-23 14:06:39 - DEBUG - All EOD output files from workday 20251008 already exist.
+2025-10-23 14:06:39 - DEBUG - All SOD output files from workday 20251008 already exist.
+2025-10-23 14:06:39 - DEBUG - Checking workday 20251007 (day -16)...
+2025-10-23 14:06:39 - DEBUG - All MANUAL output files from workday 20251007 already exist.
+2025-10-23 14:06:39 - DEBUG - All EOD output files from workday 20251007 already exist.
+2025-10-23 14:06:39 - DEBUG - All SOD output files from workday 20251007 already exist.
+2025-10-23 14:06:39 - DEBUG - Checking workday 20251006 (day -17)...
+2025-10-23 14:06:40 - DEBUG - All MANUAL output files from workday 20251006 already exist.
+2025-10-23 14:06:40 - DEBUG - All EOD output files from workday 20251006 already exist.
+2025-10-23 14:06:40 - DEBUG - All SOD output files from workday 20251006 already exist.
+2025-10-23 14:06:40 - DEBUG - Checking workday 20251003 (day -20)...
+2025-10-23 14:06:40 - DEBUG - All MANUAL output files from workday 20251003 already exist.
+2025-10-23 14:06:40 - DEBUG - All EOD output files from workday 20251003 already exist.
+2025-10-23 14:06:40 - DEBUG - All SOD output files from workday 20251003 already exist.
+2025-10-23 14:06:40 - DEBUG - Checking workday 20251002 (day -21)...
+2025-10-23 14:06:40 - DEBUG - All MANUAL output files from workday 20251002 already exist.
+2025-10-23 14:06:40 - DEBUG - All EOD output files from workday 20251002 already exist.
+2025-10-23 14:06:40 - DEBUG - All SOD output files from workday 20251002 already exist.
+2025-10-23 14:06:40 - DEBUG - Checking workday 20251001 (day -22)...
+2025-10-23 14:06:40 - DEBUG - All MANUAL output files from workday 20251001 already exist.
+2025-10-23 14:06:40 - DEBUG - All EOD output files from workday 20251001 already exist.
+2025-10-23 14:06:41 - DEBUG - All SOD output files from workday 20251001 already exist.
+2025-10-23 14:06:41 - DEBUG - Checking workday 20250930 (day -23)...
+2025-10-23 14:06:41 - DEBUG - All MANUAL output files from workday 20250930 already exist.
+2025-10-23 14:06:41 - DEBUG - All EOD output files from workday 20250930 already exist.
+2025-10-23 14:06:41 - DEBUG - All SOD output files from workday 20250930 already exist.
+2025-10-23 14:06:41 - DEBUG - Checking workday 20250929 (day -24)...
+2025-10-23 14:06:41 - DEBUG - All MANUAL output files from workday 20250929 already exist.
+2025-10-23 14:06:41 - DEBUG - All EOD output files from workday 20250929 already exist.
+2025-10-23 14:06:41 - DEBUG - All SOD output files from workday 20250929 already exist.
+2025-10-23 14:06:41 - DEBUG - Checking workday 20250926 (day -27)...
+2025-10-23 14:06:41 - DEBUG - All MANUAL output files from workday 20250926 already exist.
+2025-10-23 14:06:41 - DEBUG - All EOD output files from workday 20250926 already exist.
+2025-10-23 14:06:41 - DEBUG - All SOD output files from workday 20250926 already exist.
+2025-10-23 14:06:41 - DEBUG - Checking workday 20250925 (day -28)...
+2025-10-23 14:06:41 - DEBUG - All MANUAL output files from workday 20250925 already exist.
+2025-10-23 14:06:42 - DEBUG - All EOD output files from workday 20250925 already exist.
+2025-10-23 14:06:42 - DEBUG - All SOD output files from workday 20250925 already exist.
+2025-10-23 14:06:42 - DEBUG - Checking workday 20250924 (day -29)...
+2025-10-23 14:06:42 - DEBUG - All MANUAL output files from workday 20250924 already exist.
+2025-10-23 14:06:42 - DEBUG - All EOD output files from workday 20250924 already exist.
+2025-10-23 14:06:42 - DEBUG - All SOD output files from workday 20250924 already exist.
+2025-10-23 14:06:42 - DEBUG - Checking workday 20250923 (day -30)...
+2025-10-23 14:06:42 - DEBUG - All MANUAL output files from workday 20250923 already exist.
+2025-10-23 14:06:42 - DEBUG - All EOD output files from workday 20250923 already exist.
+2025-10-23 14:06:42 - DEBUG - All SOD output files from workday 20250923 already exist.
+2025-10-23 14:06:42 - DEBUG - Completed checking previous 30 workdays. No missing files found.
+2025-10-23 14:07:08 - INFO - Running periodic CSV merger check...
+2025-10-23 14:07:13 - INFO - Unified monitoring stopped
+2025-10-23 14:07:18 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 14:07:19 - INFO - Starting unified monitoring system...
+2025-10-23 14:09:28 - INFO - Function compare_folders took 124.36 seconds
+2025-10-23 14:09:28 - INFO - Function process_existing_files_bulk took 124.36 seconds
+2025-10-23 14:09:34 - INFO - Running periodic CSV merger check...
+2025-10-23 14:09:39 - INFO - All SOD merge files found. Starting merge process.
+2025-10-23 14:10:10 - INFO - Running periodic CSV merger check...
+2025-10-23 14:10:47 - INFO - Running periodic CSV merger check...
+2025-10-23 14:11:24 - INFO - Running periodic CSV merger check...
+2025-10-23 14:12:02 - INFO - Running periodic CSV merger check...
+2025-10-23 14:12:38 - INFO - Running periodic CSV merger check...
+2025-10-23 14:13:15 - INFO - Running periodic CSV merger check...
+2025-10-23 14:13:51 - INFO - Running periodic CSV merger check...
+2025-10-23 14:14:28 - INFO - Running periodic CSV merger check...
+2025-10-23 14:15:05 - INFO - Running periodic CSV merger check...
+2025-10-23 14:15:41 - INFO - Running periodic CSV merger check...
+2025-10-23 14:16:18 - INFO - Running periodic CSV merger check...
+2025-10-23 14:16:55 - INFO - Running periodic CSV merger check...
+2025-10-23 14:17:31 - INFO - Running periodic CSV merger check...
+2025-10-23 14:18:07 - INFO - Running periodic CSV merger check...
+2025-10-23 14:18:36 - INFO - Unified monitoring stopped
+2025-10-23 16:25:35 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 16:25:35 - INFO - Starting unified monitoring system...
+2025-10-23 16:25:42 - INFO - Moved to archive: OsloIndexTrades_20250626.csv
+2025-10-23 16:25:43 - INFO - Moved to archive: OsloIndexTrades_20250627.csv
+2025-10-23 16:25:46 - INFO - Moved to archive: OsloIndexTrades_20250630.csv
+2025-10-23 16:25:47 - INFO - Moved to archive: OsloIndexTrades_20250701.csv
+2025-10-23 16:25:50 - INFO - Moved to archive: OsloIndexTrades_20250702.csv
+2025-10-23 16:25:56 - INFO - Moved to archive: OsloIndexTrades_20250703.csv
+2025-10-23 16:25:57 - INFO - Moved to archive: OsloIndexTrades_20250704.csv
+2025-10-23 16:26:02 - INFO - Moved to archive: OsloIndexTrades_20250707.csv
+2025-10-23 16:26:04 - INFO - Moved to archive: OsloIndexTrades_20250708.csv
+2025-10-23 16:26:09 - INFO - Moved to archive: OsloIndexTrades_20250709.csv
+2025-10-23 16:26:12 - INFO - Moved to archive: OsloIndexTrades_20250710.csv
+2025-10-23 16:26:18 - INFO - Moved to archive: OsloIndexTrades_20250711.csv
+2025-10-23 16:26:23 - INFO - Moved to archive: OsloIndexTrades_20250714.csv
+2025-10-23 16:26:27 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250626.csv
+2025-10-23 16:26:34 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250627.csv
+2025-10-23 16:26:37 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250630.csv
+2025-10-23 16:26:38 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250701.csv
+2025-10-23 16:26:39 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250702.csv
+2025-10-23 16:26:40 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250703.csv
+2025-10-23 16:26:41 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250704.csv
+2025-10-23 16:26:43 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250707.csv
+2025-10-23 16:26:45 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250708.csv
+2025-10-23 16:26:46 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250709.csv
+2025-10-23 16:26:47 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250710.csv
+2025-10-23 16:26:48 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250711.csv
+2025-10-23 16:26:48 - INFO - Moved to archive: TAllEquities_GIS_EOD_INDEX_20250714.csv
+2025-10-23 16:26:52 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250626.csv
+2025-10-23 16:26:53 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250627.csv
+2025-10-23 16:26:56 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250630.csv
+2025-10-23 16:27:02 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250701.csv
+2025-10-23 16:27:05 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250702.csv
+2025-10-23 16:27:12 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250703.csv
+2025-10-23 16:27:14 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250704.csv
+2025-10-23 16:27:20 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250707.csv
+2025-10-23 16:27:25 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250708.csv
+2025-10-23 16:27:28 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250709.csv
+2025-10-23 16:27:37 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250710.csv
+2025-10-23 16:27:42 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250711.csv
+2025-10-23 16:27:45 - INFO - Moved to archive: TAllEquities_GIS_EOD_STOCK_20250714.csv
+2025-10-23 16:27:55 - INFO - Moved to archive: TAllEquities_GIS_MANUAL_INDEX_20250630.csv
+2025-10-23 16:27:56 - INFO - Moved to archive: TAllEquities_GIS_MANUAL_INDEX_20250702.csv
+2025-10-23 16:27:57 - INFO - Moved to archive: TAllEquities_GIS_MANUAL_STOCK_20250630.csv
+2025-10-23 16:27:58 - INFO - Moved to archive: TAllEquities_GIS_MANUAL_STOCK_20250702.csv
+2025-10-23 16:28:05 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250626.csv
+2025-10-23 16:28:08 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250627.csv
+2025-10-23 16:28:14 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250630.csv
+2025-10-23 16:28:15 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250701.csv
+2025-10-23 16:28:16 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250702.csv
+2025-10-23 16:28:17 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250703.csv
+2025-10-23 16:28:17 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250704.csv
+2025-10-23 16:28:18 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250707.csv
+2025-10-23 16:28:19 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250708.csv
+2025-10-23 16:28:21 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250709.csv
+2025-10-23 16:28:22 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250710.csv
+2025-10-23 16:28:23 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250711.csv
+2025-10-23 16:28:25 - INFO - Moved to archive: TAllEquities_GIS_NXTD_INDEX_20250714.csv
+2025-10-23 16:28:26 - INFO - Moved to archive: TAllEquities_GIS_NXTD_STOCK_20250626.csv
+2025-10-23 16:28:27 - INFO - Moved to archive: TAllEquities_GIS_NXTD_STOCK_20250627.csv
+2025-10-23 16:28:28 - INFO - Moved to archive: TAllEquities_GIS_NXTD_STOCK_20250630.csv
+2025-10-23 16:28:28 - INFO - Moved to archive: TAllEquities_GIS_NXTD_STOCK_20250701.csv
+2025-10-23 16:28:29 - INFO - Moved to archive: TAllEquities_GIS_NXTD_STOCK_20250702.csv
+2025-10-23 16:28:32 - INFO - Moved to archive: TAllEquities_GIS_NXTD_STOCK_20250703.csv
+2025-10-23 16:39:05 - INFO - Added 147 holidays to the exclusion list
+2025-10-23 16:39:05 - INFO - Starting unified monitoring system...
+2025-10-23 16:41:20 - INFO - Function compare_folders took 129.64 seconds
+2025-10-23 16:41:20 - INFO - Function process_existing_files_bulk took 129.64 seconds
+2025-10-23 16:41:25 - INFO - Running periodic CSV merger check...
+2025-10-23 16:41:30 - INFO - Found all 4 afternoon/evening manual files for 20251023. Starting immediate merge.
+2025-10-23 16:41:30 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251023.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251023.csv
+2025-10-23 16:41:31 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-23 16:41:32 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_INDEX_20251023.xlsx
+2025-10-23 16:41:32 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_INDEX_20251023.xlsx
+2025-10-23 16:41:32 - INFO - ✓ Merged INDEX files -> TTMIndex_GIS_MANUAL_INDEX_20251023.xlsx
+2025-10-23 16:41:32 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251023.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251023.csv
+2025-10-23 16:41:38 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-23 16:41:57 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_STOCK_20251023.xlsx
+2025-10-23 16:41:57 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_STOCK_20251023.xlsx
+2025-10-23 16:41:57 - INFO - ✓ Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251023.xlsx
+2025-10-23 16:41:57 - INFO - Completed afternoon/evening manual merge for 20251023
+2025-10-23 16:41:57 - INFO - All SOD merge files found. Starting merge process.

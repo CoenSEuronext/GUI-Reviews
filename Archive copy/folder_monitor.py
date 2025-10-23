@@ -72,6 +72,10 @@ NETWORK_DELAY = 0.1  # 100ms delay between operations
 HOLIDAYS = []
 processed_files_today = set()
 
+# NEW: Track manual files for immediate merging
+manual_files_tracker = {}
+manual_merge_lock = threading.Lock()
+
 # ============================================================================
 # CONFIGURATION SECTION
 # ============================================================================
@@ -84,6 +88,9 @@ DESTINATION_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles
 MANUAL_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Manual"
 EOD_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\EOD"
 SOD_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\SOD"
+
+# NEW: Afternoon + Evening Manuals output folder
+AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals"
 
 # ============================================================================
 # FILE MONITORING FUNCTIONS
@@ -807,6 +814,122 @@ def merge_csv_files(file1_path, file2_path, output_path):
         print(f"Error merging CSV files: {str(e)}")
         return False
 
+
+# ============================================================================
+# NEW: AFTERNOON + EVENING MANUAL FILES MERGER
+# ============================================================================
+
+def check_manual_files_for_immediate_merge(date_str):
+    """Check for afternoon/evening manual files and merge them immediately if all 4 are present
+    
+    Merges:
+    - TTMIndexUS1_GIS_MANUAL_INDEX + TTMIndexEU1_GIS_MANUAL_INDEX -> INDEX merged file
+    - TTMIndexUS1_GIS_MANUAL_STOCK + TTMIndexEU1_GIS_MANUAL_STOCK -> STOCK merged file
+    
+    Output folder: Afternoon + Evening Manuals
+    Previous merged files are overwritten when new sets arrive
+    """
+    global manual_files_tracker
+    
+    try:
+        with manual_merge_lock:
+            # Define the 4 files we're looking for
+            required_files = {
+                'us_index': f"TTMIndexUS1_GIS_MANUAL_INDEX_{date_str}.csv",
+                'eu_index': f"TTMIndexEU1_GIS_MANUAL_INDEX_{date_str}.csv",
+                'us_stock': f"TTMIndexUS1_GIS_MANUAL_STOCK_{date_str}.csv",
+                'eu_stock': f"TTMIndexEU1_GIS_MANUAL_STOCK_{date_str}.csv"
+            }
+            
+            # Check which files exist
+            existing_files = {}
+            all_files_present = True
+            
+            for key, filename in required_files.items():
+                file_path = os.path.join(DESTINATION_FOLDER, filename)
+                if os.path.exists(file_path):
+                    existing_files[key] = file_path
+                else:
+                    all_files_present = False
+            
+            # If all 4 files are present, perform the merge
+            if all_files_present:
+                # Check if we've already processed this set today
+                merge_key = f"afternoon_evening_manual_{date_str}"
+                
+                if merge_key not in processed_files_today:
+                    logger.info(f"Found all 4 afternoon/evening manual files for {date_str}. Starting immediate merge.")
+                    print(f"\n{'='*80}")
+                    print(f"IMMEDIATE MERGE: Afternoon + Evening Manual Files")
+                    print(f"{'='*80}")
+                    print(f"Date: {date_str}")
+                    print(f"Found all 4 required manual files:")
+                    for key, path in existing_files.items():
+                        print(f"  ✓ {os.path.basename(path)}")
+                    
+                    # Mark as processed
+                    processed_files_today.add(merge_key)
+                    
+                    # Merge INDEX files (EU + US)
+                    index_output = os.path.join(
+                        AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER, 
+                        f"TTMIndex_GIS_MANUAL_INDEX_{date_str}.xlsx"
+                    )
+                    
+                    # Remove old INDEX file if it exists (overwrite behavior)
+                    if os.path.exists(index_output):
+                        try:
+                            os.chmod(index_output, stat.S_IWRITE)  # Remove read-only
+                            os.remove(index_output)
+                            logger.info(f"Removed previous merged file: {os.path.basename(index_output)}")
+                            print(f"  Overwriting previous INDEX file...")
+                        except Exception as e:
+                            logger.warning(f"Could not remove old INDEX file: {str(e)}")
+                    
+                    print(f"\n  Merging INDEX files...")
+                    if merge_csv_files(existing_files['eu_index'], existing_files['us_index'], index_output):
+                        logger.info(f"✓ Merged INDEX files -> {os.path.basename(index_output)}")
+                        print(f"  ✓ Created: {os.path.basename(index_output)}")
+                    
+                    # Merge STOCK files (EU + US)
+                    stock_output = os.path.join(
+                        AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER, 
+                        f"TTMIndex_GIS_MANUAL_STOCK_{date_str}.xlsx"
+                    )
+                    
+                    # Remove old STOCK file if it exists (overwrite behavior)
+                    if os.path.exists(stock_output):
+                        try:
+                            os.chmod(stock_output, stat.S_IWRITE)  # Remove read-only
+                            os.remove(stock_output)
+                            logger.info(f"Removed previous merged file: {os.path.basename(stock_output)}")
+                            print(f"  Overwriting previous STOCK file...")
+                        except Exception as e:
+                            logger.warning(f"Could not remove old STOCK file: {str(e)}")
+                    
+                    print(f"  Merging STOCK files...")
+                    if merge_csv_files(existing_files['eu_stock'], existing_files['us_stock'], stock_output):
+                        logger.info(f"✓ Merged STOCK files -> {os.path.basename(stock_output)}")
+                        print(f"  ✓ Created: {os.path.basename(stock_output)}")
+                    
+                    print(f"{'='*80}\n")
+                    logger.info(f"Completed afternoon/evening manual merge for {date_str}")
+                    return True
+            else:
+                # Log which files are missing (only once per day)
+                missing_key = f"afternoon_evening_manual_missing_{date_str}"
+                if missing_key not in processed_files_today:
+                    missing_files = [filename for key, filename in required_files.items() if key not in existing_files]
+                    logger.debug(f"Waiting for afternoon/evening manual files. Missing: {missing_files}")
+                    processed_files_today.add(missing_key)
+            
+            return False
+            
+    except Exception as e:
+        logger.error(f"Error checking manual files for immediate merge: {str(e)}")
+        print(f"Error checking manual files for immediate merge: {str(e)}")
+        return False
+
 def get_merge_groups(date_str):
     """Define merge groups for a specific date"""
     return {
@@ -887,16 +1010,12 @@ def check_previous_workday_files(days_back=30):
         for i in range(1, days_back + 1):
             # Calculate the date to check (going backwards)
             check_date = current_datetime - timedelta(days=i)
-            prev_workday = get_previous_workday_date(check_date)
+            prev_workday = check_date.strftime('%Y%m%d')
             
-            # Create unique key to avoid redundant daily checks
-            check_key = f"prev_check_{prev_workday}"
-            if check_key in processed_files_today:
-                continue  # Already checked this workday today
-            
-            # Mark as checked to avoid processing again today
-            processed_files_today.add(check_key)
-            
+            # Skip if this date is a weekend or holiday
+            if check_date.weekday() >= 5 or prev_workday in HOLIDAYS:
+                continue
+                        
             # Skip files older than 60 days to avoid processing very old data
             workday_date = datetime.strptime(prev_workday, '%Y%m%d')
             if (datetime.now() - workday_date).days > 60:
@@ -998,6 +1117,9 @@ def check_files_for_merge():
         if current_day_key not in processed_files_today:
             processed_files_today.clear()
             processed_files_today.add(current_day_key)
+        
+        # NEW: Check for afternoon/evening manual files first
+        check_manual_files_for_immediate_merge(current_date)
         
         # Get merge groups for current date
         merge_groups = get_merge_groups(current_date)
@@ -1182,6 +1304,13 @@ def process_queue(destination_path, max_age_days):
             if file_date and (datetime.now() - file_date).days <= max_age_days:
                 copy_file(src_path, dest_path, file_name)
                 
+                # NEW: After copying, check if it's a manual file and trigger immediate merge check
+                if "_GIS_MANUAL_" in file_name:
+                    date_str = extract_date_from_csv_filename(file_name)
+                    if date_str:
+                        logger.info(f"Manual file detected: {file_name}. Checking for immediate merge...")
+                        check_manual_files_for_immediate_merge(date_str)
+                
             time.sleep(NETWORK_DELAY)  # Rate limiting
         except queue.Empty:
             time.sleep(0.1)
@@ -1190,7 +1319,12 @@ def process_queue(destination_path, max_age_days):
 
 def initialize_output_folders():
     """Create output folders if they don't exist"""
-    output_folders = [MANUAL_OUTPUT_FOLDER, EOD_OUTPUT_FOLDER, SOD_OUTPUT_FOLDER]
+    output_folders = [
+        MANUAL_OUTPUT_FOLDER, 
+        EOD_OUTPUT_FOLDER, 
+        SOD_OUTPUT_FOLDER,
+        AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER  # NEW: Added afternoon/evening manual folder
+    ]
     
     for folder in output_folders:
         if not os.path.exists(folder):
@@ -1219,7 +1353,7 @@ def monitor_unified():
     archive_folder = os.path.join(DESTINATION_FOLDER, "Archive")
 
     print("=" * 80)
-    print("UNIFIED FILE MONITOR AND CSV MERGER - OPTIMIZED VERSION")
+    print("UNIFIED FILE MONITOR AND CSV MERGER - ENHANCED VERSION")
     print("=" * 80)
     print("Starting unified monitoring system...")
     logger.info("Starting unified monitoring system...")
@@ -1254,7 +1388,12 @@ def monitor_unified():
     print(f"  Manual outputs: {MANUAL_OUTPUT_FOLDER}")
     print(f"  EOD outputs: {EOD_OUTPUT_FOLDER}")
     print(f"  SOD outputs: {SOD_OUTPUT_FOLDER}")
+    print(f"  Afternoon + Evening Manuals: {AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER}")
     print(f"  Check interval: Every 2 minutes")
+    print(f"\nNEW FEATURE:")
+    print(f"  ✓ Immediate merge of afternoon/evening manual files")
+    print(f"  ✓ Merges triggered as soon as all 4 files arrive")
+    print(f"  ✓ Previous merged files automatically overwritten")
     print(f"\nBoth systems are running... (Press Ctrl+C to stop)")
     print("=" * 80)
 

@@ -1454,3 +1454,237 @@
 2025-10-20 14:15:48 - Function read_excel_file took 6.81 seconds
 2025-10-20 14:15:48 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251020.xlsx
 2025-10-20 14:15:52 - File monitoring stopped by user
+2025-10-23 11:58:11 - Starting file monitoring...
+2025-10-23 11:58:11 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 11:58:11 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 11:58:11 - Attempting STOCK comparison...
+2025-10-23 11:58:11 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 11:58:11 - STOCK file status: SOD=True, Manual=False
+2025-10-23 11:58:11 - STOCK files are not available yet
+2025-10-23 11:58:11 - Attempting INDEX comparison...
+2025-10-23 11:58:11 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 11:58:11 - INDEX file status: SOD=True, Manual=False
+2025-10-23 11:58:11 - INDEX files are not available yet
+2025-10-23 11:58:11 - File monitoring started successfully
+2025-10-23 11:59:48 - File monitoring stopped by user
+2025-10-23 11:59:50 - Starting file monitoring...
+2025-10-23 11:59:50 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 11:59:50 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 11:59:50 - Attempting STOCK comparison...
+2025-10-23 11:59:50 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 11:59:50 - STOCK file status: SOD=True, Manual=False
+2025-10-23 11:59:50 - STOCK files are not available yet
+2025-10-23 11:59:50 - Attempting INDEX comparison...
+2025-10-23 11:59:50 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 11:59:50 - INDEX file status: SOD=True, Manual=False
+2025-10-23 11:59:50 - INDEX files are not available yet
+2025-10-23 11:59:50 - File monitoring started successfully
+2025-10-23 11:59:55 - File monitoring stopped by user
+2025-10-23 11:59:57 - Starting file monitoring...
+2025-10-23 11:59:57 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 11:59:57 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 11:59:57 - Attempting STOCK comparison...
+2025-10-23 11:59:57 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 11:59:57 - STOCK file status: SOD=True, Manual=False
+2025-10-23 11:59:57 - STOCK files are not available yet
+2025-10-23 11:59:57 - Attempting INDEX comparison...
+2025-10-23 11:59:57 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 11:59:57 - INDEX file status: SOD=True, Manual=False
+2025-10-23 11:59:57 - INDEX files are not available yet
+2025-10-23 11:59:57 - File monitoring started successfully
+2025-10-23 12:00:20 - File monitoring stopped by user
+2025-10-23 12:56:51 - Starting file monitoring...
+2025-10-23 12:56:51 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 12:56:51 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 12:56:51 - Attempting STOCK comparison...
+2025-10-23 12:56:51 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 12:56:52 - STOCK file status: SOD=True, Manual=False
+2025-10-23 12:56:52 - STOCK files are not available yet
+2025-10-23 12:56:52 - Attempting INDEX comparison...
+2025-10-23 12:56:52 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 12:56:52 - INDEX file status: SOD=True, Manual=False
+2025-10-23 12:56:52 - INDEX files are not available yet
+2025-10-23 12:56:52 - File monitoring started successfully
+2025-10-23 13:00:52 - Periodic check for files...
+2025-10-23 13:00:52 - Attempting STOCK comparison...
+2025-10-23 13:00:52 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 13:00:52 - STOCK file status: SOD=True, Manual=False
+2025-10-23 13:00:52 - STOCK files are not available yet
+2025-10-23 13:00:52 - Attempting INDEX comparison...
+2025-10-23 13:00:52 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 13:00:52 - INDEX file status: SOD=True, Manual=False
+2025-10-23 13:00:52 - INDEX files are not available yet
+2025-10-23 13:01:10 - File monitoring stopped by user
+2025-10-23 14:19:35 - Starting file monitoring...
+2025-10-23 14:19:35 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:19:35 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 14:19:35 - Attempting STOCK comparison...
+2025-10-23 14:19:35 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:19:35 - STOCK file status: SOD=True, Manual=True
+2025-10-23 14:19:35 - STOCK files are available, starting comparison...
+2025-10-23 14:19:35 - Starting stock file comparison...
+2025-10-23 14:19:35 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:19:46 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:19:46 - Function read_excel_file took 10.69 seconds
+2025-10-23 14:19:46 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 14:19:51 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 14:19:51 - Function read_excel_file took 5.33 seconds
+2025-10-23 14:19:52 - Function prepare_dataframes took 0.46 seconds
+2025-10-23 14:19:52 - Function find_differences_vectorized_morning_stock took 0.08 seconds
+2025-10-23 14:19:52 - Found 2 differences out of 61813 common records
+2025-10-23 14:20:14 - Successfully created comparison report: GIS Morning Stock changes_20251023.xlsx
+2025-10-23 14:20:14 - Function write_excel_optimized took 21.78 seconds
+2025-10-23 14:20:14 - Successfully created comparison report: GIS Morning Stock changes_20251023.xlsx
+2025-10-23 14:20:14 - Function compare_files took 38.35 seconds
+2025-10-23 14:20:14 - STOCK file comparison completed successfully in 38.4 seconds
+2025-10-23 14:20:14 - Attempting INDEX comparison...
+2025-10-23 14:20:14 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 14:20:14 - INDEX file status: SOD=True, Manual=True
+2025-10-23 14:20:14 - INDEX files are available, starting comparison...
+2025-10-23 14:20:14 - Starting index file comparison...
+2025-10-23 14:20:14 - Reading file: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 14:20:15 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 14:20:15 - Function read_excel_file took 0.58 seconds
+2025-10-23 14:20:15 - Reading file: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 14:20:16 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 14:20:16 - Function read_excel_file took 0.63 seconds
+2025-10-23 14:20:16 - Function prepare_dataframes took 0.02 seconds
+2025-10-23 14:20:16 - Function find_differences_vectorized_morning_index took 0.00 seconds
+2025-10-23 14:20:16 - Found 2 differences out of 1779 common records
+2025-10-23 14:20:16 - Successfully created comparison report: GIS Morning Index changes_20251023.xlsx
+2025-10-23 14:20:16 - Function write_excel_optimized took 0.66 seconds
+2025-10-23 14:20:16 - Successfully created comparison report: GIS Morning Index changes_20251023.xlsx
+2025-10-23 14:20:16 - Function compare_files took 1.91 seconds
+2025-10-23 14:20:16 - INDEX file comparison completed successfully in 1.9 seconds
+2025-10-23 14:20:16 - File monitoring started successfully
+2025-10-23 14:25:16 - Periodic check for files...
+2025-10-23 14:25:16 - Attempting STOCK comparison...
+2025-10-23 14:25:16 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:25:17 - STOCK file status: SOD=True, Manual=True
+2025-10-23 14:25:17 - STOCK files are available, starting comparison...
+2025-10-23 14:25:17 - Starting stock file comparison...
+2025-10-23 14:25:17 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:25:22 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 14:25:22 - Function read_excel_file took 5.51 seconds
+2025-10-23 14:25:22 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 14:25:28 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 14:25:28 - Function read_excel_file took 5.53 seconds
+2025-10-23 14:25:28 - Function prepare_dataframes took 0.47 seconds
+2025-10-23 14:25:28 - Function find_differences_vectorized_morning_stock took 0.07 seconds
+2025-10-23 14:25:28 - Found 2 differences out of 61813 common records
+2025-10-23 14:25:43 - File monitoring stopped by user
+2025-10-23 15:14:05 - Starting file monitoring...
+2025-10-23 15:14:05 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:14:05 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:14:05 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:14:05 - STOCK file status: SOD=True, Manual=True
+2025-10-23 15:14:05 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:14:16 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:14:16 - Function read_excel_file took 11.03 seconds
+2025-10-23 15:14:16 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:14:22 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:14:22 - Function read_excel_file took 5.28 seconds
+2025-10-23 15:14:22 - Function prepare_dataframes took 0.47 seconds
+2025-10-23 15:14:22 - Function find_differences_vectorized_morning_stock took 0.07 seconds
+2025-10-23 15:14:43 - Successfully wrote Excel file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output\GIS Morning Stock changes_20251023.xlsx
+2025-10-23 15:14:43 - Function write_excel_optimized took 20.69 seconds
+2025-10-23 15:14:43 - STOCK comparison completed. Changes: 2, Common records: 61813
+2025-10-23 15:14:43 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:14:43 - INDEX file status: SOD=True, Manual=True
+2025-10-23 15:14:43 - Reading file: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:14:44 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:14:44 - Function read_excel_file took 0.54 seconds
+2025-10-23 15:14:44 - Reading file: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:14:44 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:14:44 - Function read_excel_file took 0.64 seconds
+2025-10-23 15:14:44 - Function prepare_dataframes took 0.02 seconds
+2025-10-23 15:14:44 - Function find_differences_vectorized_morning_index took 0.01 seconds
+2025-10-23 15:14:45 - Successfully wrote Excel file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output\GIS Morning Index changes_20251023.xlsx
+2025-10-23 15:14:45 - Function write_excel_optimized took 0.61 seconds
+2025-10-23 15:14:45 - INDEX comparison completed. Changes: 2, Common records: 1779
+2025-10-23 15:14:45 - File monitoring started successfully
+2025-10-23 15:15:45 - Periodic check for files...
+2025-10-23 15:15:45 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:15:45 - STOCK file status: SOD=True, Manual=True
+2025-10-23 15:15:45 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:15:53 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:15:53 - Function read_excel_file took 7.82 seconds
+2025-10-23 15:15:53 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:15:59 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:15:59 - Function read_excel_file took 5.88 seconds
+2025-10-23 15:15:59 - Function prepare_dataframes took 0.50 seconds
+2025-10-23 15:16:00 - Function find_differences_vectorized_morning_stock took 0.09 seconds
+2025-10-23 15:16:00 - Error writing Excel file: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Check files output\\GIS Morning Stock changes_20251023.xlsx'
+2025-10-23 15:16:00 - Function write_excel_optimized took 0.00 seconds
+2025-10-23 15:16:00 - Failed to write STOCK output file
+2025-10-23 15:16:00 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:16:00 - INDEX file status: SOD=True, Manual=True
+2025-10-23 15:16:00 - Reading file: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:16:01 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:16:01 - Function read_excel_file took 0.63 seconds
+2025-10-23 15:16:01 - Reading file: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:16:04 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:16:04 - Function read_excel_file took 3.55 seconds
+2025-10-23 15:16:04 - Function prepare_dataframes took 0.03 seconds
+2025-10-23 15:16:04 - Function find_differences_vectorized_morning_index took 0.01 seconds
+2025-10-23 15:16:04 - Error writing Excel file: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Check files output\\GIS Morning Index changes_20251023.xlsx'
+2025-10-23 15:16:04 - Function write_excel_optimized took 0.00 seconds
+2025-10-23 15:16:04 - Failed to write INDEX output file
+2025-10-23 15:20:04 - Periodic check for files...
+2025-10-23 15:20:04 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:20:05 - STOCK file status: SOD=True, Manual=True
+2025-10-23 15:20:05 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:20:13 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:20:13 - Function read_excel_file took 8.34 seconds
+2025-10-23 15:20:13 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:20:18 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:20:18 - Function read_excel_file took 5.37 seconds
+2025-10-23 15:20:19 - Function prepare_dataframes took 0.47 seconds
+2025-10-23 15:20:19 - Function find_differences_vectorized_morning_stock took 0.07 seconds
+2025-10-23 15:20:19 - Error writing Excel file: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\Archive copy\\destination\\Check files output\\GIS Morning Stock changes_20251023.xlsx'
+2025-10-23 15:20:19 - Function write_excel_optimized took 0.00 seconds
+2025-10-23 15:20:19 - Failed to write STOCK output file
+2025-10-23 15:20:19 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:20:21 - INDEX file status: SOD=True, Manual=True
+2025-10-23 15:20:21 - Reading file: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:20:22 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:20:22 - Function read_excel_file took 1.18 seconds
+2025-10-23 15:20:22 - Reading file: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:20:27 - File monitoring stopped by user
+2025-10-23 15:44:38 - Starting file monitoring...
+2025-10-23 15:44:38 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:38 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:44:38 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:39 - STOCK file status: SOD=True, Manual=True
+2025-10-23 15:44:39 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:48 - Starting file monitoring...
+2025-10-23 15:44:48 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:48 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:44:48 - Expected STOCK files: SOD=TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:48 - STOCK file status: SOD=True, Manual=True
+2025-10-23 15:44:48 - Reading file: TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:53 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_MANUAL_STOCK_20251022.xlsx
+2025-10-23 15:44:53 - Function read_excel_file took 5.47 seconds
+2025-10-23 15:44:53 - Reading file: TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:44:59 - Successfully read 61813 rows and 30 columns from TTMIndexEU1_GIS_SOD_STOCK_20251023.xlsx
+2025-10-23 15:44:59 - Function read_excel_file took 5.54 seconds
+2025-10-23 15:44:59 - Function prepare_dataframes took 0.48 seconds
+2025-10-23 15:45:00 - Function find_differences_vectorized_morning_stock took 0.09 seconds
+2025-10-23 15:45:21 - Successfully wrote Excel file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output\GIS Morning Stock changes_20251023.xlsx
+2025-10-23 15:45:21 - Function write_excel_optimized took 21.50 seconds
+2025-10-23 15:45:21 - STOCK comparison completed. Changes: 2, Common records: 61813
+2025-10-23 15:45:21 - Expected INDEX files: SOD=TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx, Manual=TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:45:21 - INDEX file status: SOD=True, Manual=True
+2025-10-23 15:45:21 - Reading file: TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:45:22 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_MANUAL_INDEX_20251022.xlsx
+2025-10-23 15:45:22 - Function read_excel_file took 0.53 seconds
+2025-10-23 15:45:22 - Reading file: TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:45:23 - Successfully read 1779 rows and 31 columns from TTMIndexEU1_GIS_SOD_INDEX_20251023.xlsx
+2025-10-23 15:45:23 - Function read_excel_file took 1.14 seconds
+2025-10-23 15:45:23 - Function prepare_dataframes took 0.04 seconds
+2025-10-23 15:45:23 - Function find_differences_vectorized_morning_index took 0.00 seconds
+2025-10-23 15:45:24 - Successfully wrote Excel file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output\GIS Morning Index changes_20251023.xlsx
+2025-10-23 15:45:24 - Function write_excel_optimized took 0.79 seconds
+2025-10-23 15:45:24 - INDEX comparison completed. Changes: 2, Common records: 1779
+2025-10-23 15:45:24 - File monitoring started successfully
+2025-10-23 15:46:48 - File monitoring stopped by user

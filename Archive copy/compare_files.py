@@ -74,6 +74,35 @@ COMPARISON_CONFIGS = {
     }
 }
 
+# Allowed mnemonics for index comparison (Mnemo values that should NOT be highlighted blue)
+ALLOWED_MNEMONICS = {
+    'BERE', 'BELAS', 'N100', 'N150', 'FRRE', 'ISEIN', 'ISETE', 'ISEBM', 'ISCG', 'ISECS', 
+    'ISEHC', 'ISUT', 'ISRE', 'ISEFI', 'ISEQ', 'ECETH', 'ECSOL', 'ECADA', 'ECXRP', 'ECDOT', 
+    'ECMAT', 'ECAVA', 'AAX', 'REPOT', 'NLRE', 'NLUT', 'NOKFW', 'OSEAP', 'OAAXP', 'OTECP', 
+    'OTELP', 'OHCP', 'OFINP', 'OREP', 'OCDP', 'OCSP', 'OINP', 'OBMP', 'OENP', 'OUTP', 
+    'SSENP', 'SSSFP', 'SSSHP', 'PAX', 'NLOG', 'NLBM', 'NLIN', 'NLCG', 'NLHC', 'NLCS', 
+    'NLTEL', 'NLFIN', 'NLTEC', 'FROG', 'FRBM', 'FRIN', 'FRCG', 'FRHC', 'FRCS', 'FRTEL', 
+    'FRUT', 'FRFIN', 'FRTEC', 'ALASI', 'BIOTK', 'NAOII', 'BVL', 'BEBMP', 'PTBMP', 'PTINP', 
+    'PTCGP', 'PTCSP', 'PTTLP', 'PTUTP', 'PTFIP', 'PTTEP', 'BECSP', 'BEUTP', 'BETP', 'BEFIP', 
+    'BETEP', 'BEHCP', 'BEINP', 'BECGP', 'BELCP', 'BEOGP', 'PTHCP', 'PTOGP'
+}
+
+# Purple mnemonics for special highlighting
+PURPLE_MNEMONICS = {'AEX BANK', 'PX1'}
+
+# Purple index mnemonics (for Name column)
+PURPLE_INDEX_MNEMONICS = {
+    'AEX', 'AMX', 'BEL20', 'CESGP', 'AEXDI', 'C4CD', 'EZBDI', 
+    'C4SD', 'CACDI', 'PX1', 'BANK', 'ENESG', 'ISE20', 'OBXP', 'PSI20'
+}
+
+# Excluded index values for Isin Code cross-reference check
+EXCLUDED_INDEX_VALUES = {
+    'DUUSC', 'DUMEU', 'DUMUS', 'PFAEX', 'PFEES', 'PFPX1', 'PFOSF', 'PFOSB', 
+    'PFCSB', 'PFMES', 'PFC4E', 'PFLCE', 'PFLC1', 'PFEBL', 'PFBEL', 'PFFRI', 
+    'PFFRD', 'BSWPF', 'PFLCW'
+}
+
 # Timer decorator for performance monitoring
 def timer(func):
     """Decorator to time function execution"""
@@ -319,6 +348,39 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
     df1_diff = df1_indexed.loc[diff_keys]
     df2_diff = df2_indexed.loc[diff_keys]
     
+    # Perform Isin Code cross-reference lookup
+    # Get unique Isin Codes from the differences
+    isin_codes = df1_diff.get('Isin Code', '').astype(str)
+    
+    # Prepare lookup column (column X) - for each Isin Code, find matching #Symbols in SOD
+    cross_ref_symbols = []
+    
+    for isin_code in isin_codes:
+        if pd.isna(isin_code) or str(isin_code).strip() == '':
+            cross_ref_symbols.append('')
+            continue
+        
+        # Filter df2_indexed for matching Isin Code and excluded Index values
+        if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
+            # Find rows with matching Isin Code
+            matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
+            
+            # Filter out excluded Index values
+            if len(matching_rows) > 0:
+                filtered_rows = matching_rows[~matching_rows['Index'].astype(str).str.strip().isin(EXCLUDED_INDEX_VALUES)]
+                
+                # Get unique #Symbol values
+                if len(filtered_rows) > 0 and '#Symbol' in filtered_rows.columns:
+                    unique_symbols = filtered_rows['#Symbol'].astype(str).str.strip().unique()
+                    unique_symbols = [s for s in unique_symbols if s != '' and s != 'nan']
+                    cross_ref_symbols.append(';'.join(sorted(unique_symbols)))
+                else:
+                    cross_ref_symbols.append('')
+            else:
+                cross_ref_symbols.append('')
+        else:
+            cross_ref_symbols.append('')
+    
     differences_data = {
         'Rank': range(1, len(diff_keys) + 1),
         'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
@@ -342,7 +404,8 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
         'Prev FF': df1_diff.get('Free float-Coeff', ''),
         'New FF': df2_diff.get('Free float-Coeff', ''),
         'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
-        'New Capping': df2_diff.get('Capping Factor-Coeff', '')
+        'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
+        'Cross-Ref Symbols': cross_ref_symbols  # New column X
     }
     
     diff_df = pd.DataFrame(differences_data)
@@ -427,6 +490,9 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         
         orange_format = workbook.add_format({'bg_color': '#FFC000', 'font_name': 'Verdana', 'font_size': 10})
         red_format = workbook.add_format({'bg_color': '#FF0000', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
+        blue_format = workbook.add_format({'bg_color': '#0070C0', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
+        purple_format = workbook.add_format({'bg_color': '#800080', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
+        black_format = workbook.add_format({'bg_color': '#000000', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
         normal_format = workbook.add_format({'font_name': 'Verdana', 'font_size': 10})
         header_format = workbook.add_format({
             'bold': True,
@@ -442,17 +508,39 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             # Apply formatting based on comparison type
             if comparison_type == 'stock':
                 diff_df_formatted['_shares_changed'] = False
+                diff_df_formatted['_prev_shares_blue'] = False
                 diff_df_formatted['_ff_red'] = False
                 diff_df_formatted['_ff_orange'] = False
                 diff_df_formatted['_capping_changed'] = False
+                diff_df_formatted['_adj_price_changed'] = False
+                diff_df_formatted['_icb_changed'] = False
+                diff_df_formatted['_div_positive'] = False
+                diff_df_formatted['_mnemo_allowed'] = False
+                diff_df_formatted['_mnemo_purple'] = False
+                diff_df_formatted['_name_purple'] = False
+                diff_df_formatted['_close_prc_red'] = False
+                diff_df_formatted['_adj_closing_price_red'] = False
+                diff_df_formatted['_symbol_not_in_crossref'] = False
                 
                 for idx in range(len(diff_df)):
+                    # Check Mnemo first
+                    mnemo_value = str(diff_df.iloc[idx].get('Mnemo', '')).strip()
+                    mnemo_allowed = mnemo_value in ALLOWED_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_allowed')] = mnemo_allowed
+                    
+                    # Check if shares changed - for New Shares (orange) and Prev Shares (blue)
                     new_shares = diff_df.iloc[idx]['New Shares']
                     prev_shares = diff_df.iloc[idx]['Prev. Shares']
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_shares_changed')] = (
+                    shares_changed = (
                         pd.notna(new_shares) and pd.notna(prev_shares) and str(new_shares) != str(prev_shares)
                     )
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_shares_changed')] = shares_changed
                     
+                    # COMBINED: Prev Shares gets blue ONLY if Mnemo is in ALLOWED_MNEMONICS AND shares changed
+                    prev_shares_blue = mnemo_allowed and shares_changed
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_prev_shares_blue')] = prev_shares_blue
+                    
+                    # Check FF (Free Float)
                     new_ff = diff_df.iloc[idx]['New FF']
                     prev_ff = diff_df.iloc[idx]['Prev FF']
                     new_ff_clean = '' if pd.isna(new_ff) else new_ff
@@ -467,13 +555,88 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_red')] = ff_red
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_orange')] = ff_orange
                     
+                    # Check Capping
                     new_capping = diff_df.iloc[idx]['New Capping']
                     prev_capping = diff_df.iloc[idx]['Prev Capping']
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_capping_changed')] = (
                         pd.notna(new_capping) and pd.notna(prev_capping) and str(new_capping) != str(prev_capping)
                     )
+                    
+                    # Check if Adj Closing price is different from Close Prc
+                    adj_closing_price = diff_df.iloc[idx]['Adj Closing price']
+                    close_prc = diff_df.iloc[idx]['Close Prc']
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_price_changed')] = (
+                        pd.notna(adj_closing_price) and pd.notna(close_prc) and str(adj_closing_price).strip() != str(close_prc).strip()
+                    )
+                    
+                    # Check if New ICB is different from Prev ICB
+                    new_icb = diff_df.iloc[idx]['New ICB']
+                    prev_icb = diff_df.iloc[idx]['Prev ICB']
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_icb_changed')] = (
+                        pd.notna(new_icb) and pd.notna(prev_icb) and str(new_icb).strip() != str(prev_icb).strip()
+                    )
+                    
+                    # Check if Net Div is a positive number
+                    net_div = diff_df.iloc[idx]['Net Div']
+                    try:
+                        net_div_numeric = float(net_div) if pd.notna(net_div) and str(net_div).strip() != '' else None
+                        div_positive = net_div_numeric is not None and net_div_numeric > 0
+                    except (ValueError, TypeError):
+                        div_positive = False
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_div_positive')] = div_positive
+                    
+                    # NEW: Check if Mnemo is in PURPLE_MNEMONICS (AEX BANK or PX1)
+                    mnemo_purple = mnemo_value in PURPLE_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_purple')] = mnemo_purple
+                    
+                    # NEW: Check if Mnemo is in PURPLE_INDEX_MNEMONICS (for Name column)
+                    name_purple = mnemo_value in PURPLE_INDEX_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_name_purple')] = name_purple
+                    
+                    # NEW: Check if Close Prc is empty or 0
+                    close_prc_val = diff_df.iloc[idx]['Close Prc']
+                    try:
+                        close_prc_numeric = float(close_prc_val) if pd.notna(close_prc_val) and str(close_prc_val).strip() != '' else None
+                        close_prc_red = close_prc_numeric is None or close_prc_numeric == 0
+                    except (ValueError, TypeError):
+                        close_prc_red = True
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_close_prc_red')] = close_prc_red
+                    
+                    # NEW: Check if Adj Closing price is empty or 0
+                    adj_closing_val = diff_df.iloc[idx]['Adj Closing price']
+                    try:
+                        adj_closing_numeric = float(adj_closing_val) if pd.notna(adj_closing_val) and str(adj_closing_val).strip() != '' else None
+                        adj_closing_red = adj_closing_numeric is None or adj_closing_numeric == 0
+                    except (ValueError, TypeError):
+                        adj_closing_red = True
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_closing_price_red')] = adj_closing_red
+                    
+                    # NEW: Check if all Cross-Ref Symbols values exist in the #Symbol column of the output sheet
+                    cross_ref_symbols_str = str(diff_df.iloc[idx].get('Cross-Ref Symbols', '')).strip()
+                    
+                    if cross_ref_symbols_str != '' and cross_ref_symbols_str != 'nan':
+                        # Split the semicolon-separated list
+                        cross_ref_list = [s.strip() for s in cross_ref_symbols_str.split(';') if s.strip() != '']
+                        
+                        # Get all #Symbol values from the entire output sheet
+                        all_symbols_in_output = set(diff_df['#Symbol'].astype(str).str.strip())
+                        
+                        # Check if ALL cross-ref symbols exist in the output sheet's #Symbol column
+                        all_exist = all(symbol in all_symbols_in_output for symbol in cross_ref_list)
+                        
+                        # Flag if NOT all exist
+                        symbol_not_in_crossref = not all_exist
+                    else:
+                        # If cross-ref list is empty, don't flag it
+                        symbol_not_in_crossref = False
+                    
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_symbol_not_in_crossref')] = symbol_not_in_crossref
                 
-                diff_df_main = diff_df_formatted.drop(['_shares_changed', '_ff_red', '_ff_orange', '_capping_changed'], axis=1)
+                diff_df_main = diff_df_formatted.drop([
+                    '_shares_changed', '_prev_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
+                    '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed', '_mnemo_purple',
+                    '_name_purple', '_close_prc_red', '_adj_closing_price_red', '_symbol_not_in_crossref'
+                ], axis=1)
             
             elif comparison_type == 'index':
                 diff_df_formatted['_divisor_changed'] = False
@@ -481,6 +644,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_formatted['_t0iv_unround_changed'] = False
                 diff_df_formatted['_mktcap_changed'] = False
                 diff_df_formatted['_nrcomp_changed'] = False
+                diff_df_formatted['_mnemo_blue'] = False
                 
                 for idx in range(len(diff_df)):
                     for field_pair, flag_col in [
@@ -495,10 +659,16 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc(flag_col)] = (
                             pd.notna(new_val) and pd.notna(prev_val) and str(new_val) != str(prev_val)
                         )
+                    
+                    # Check if Mnemo should be blue (not in allowed list AND divisor changed)
+                    mnemo_value = str(diff_df.iloc[idx].get('Mnemo', '')).strip()
+                    divisor_changed = diff_df_formatted.iloc[idx]['_divisor_changed']
+                    mnemo_blue = (mnemo_value not in ALLOWED_MNEMONICS) and divisor_changed
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_blue')] = mnemo_blue
                 
                 diff_df_main = diff_df_formatted.drop([
                     '_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', 
-                    '_mktcap_changed', '_nrcomp_changed'
+                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue'
                 ], axis=1)
             else:
                 diff_df_main = diff_df_formatted
@@ -528,23 +698,72 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             
             # Apply specific cell formatting based on comparison type
             if comparison_type == 'stock':
+                symbol_col = diff_df.columns.get_loc('#Symbol')
                 new_shares_col = diff_df.columns.get_loc('New Shares')
+                prev_shares_col = diff_df.columns.get_loc('Prev. Shares')
                 new_ff_col = diff_df.columns.get_loc('New FF')
                 new_capping_col = diff_df.columns.get_loc('New Capping')
+                adj_closing_price_col = diff_df.columns.get_loc('Adj Closing price')
+                new_icb_col = diff_df.columns.get_loc('New ICB')
+                net_div_col = diff_df.columns.get_loc('Net Div')
+                gross_div_col = diff_df.columns.get_loc('Gross Div')
+                mnemo_col = diff_df.columns.get_loc('Mnemo')
+                name_col = diff_df.columns.get_loc('Name')
+                close_prc_col = diff_df.columns.get_loc('Close Prc')
                 
                 for row_idx in range(len(diff_df)):
                     excel_row = row_idx + data_start_row
                     
+                    # Orange: New Shares changed
                     if diff_df_formatted.iloc[row_idx]['_shares_changed']:
                         worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], orange_format)
                     
+                    # NEW: Blue: Prev Shares when shares changed
+                    if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
+                        worksheet1.write(excel_row, prev_shares_col, diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
+                    
+                    # FF formatting
                     if diff_df_formatted.iloc[row_idx]['_ff_red']:
                         worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], red_format)
                     elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
                         worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], orange_format)
                     
+                    # Capping changed
                     if diff_df_formatted.iloc[row_idx]['_capping_changed']:
                         worksheet1.write(excel_row, new_capping_col, diff_df.iloc[row_idx]['New Capping'], orange_format)
+                    
+                    # Adj price changed
+                    if diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
+                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], orange_format)
+                    
+                    # ICB changed
+                    if diff_df_formatted.iloc[row_idx]['_icb_changed']:
+                        worksheet1.write(excel_row, new_icb_col, diff_df.iloc[row_idx]['New ICB'], orange_format)
+                    
+                    # Dividend positive
+                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
+                        worksheet1.write(excel_row, net_div_col, diff_df.iloc[row_idx]['Net Div'], orange_format)
+                        worksheet1.write(excel_row, gross_div_col, diff_df.iloc[row_idx]['Gross Div'], orange_format)
+                    
+                    # NEW: Purple background for Mnemo if AEX BANK or PX1
+                    if diff_df_formatted.iloc[row_idx]['_mnemo_purple']:
+                        worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], purple_format)
+                    
+                    # NEW: Purple background for Name if Mnemo is in PURPLE_INDEX_MNEMONICS
+                    if diff_df_formatted.iloc[row_idx]['_name_purple']:
+                        worksheet1.write(excel_row, name_col, diff_df.iloc[row_idx]['Name'], purple_format)
+                    
+                    # NEW: Red background for Close Prc if empty or 0
+                    if diff_df_formatted.iloc[row_idx]['_close_prc_red']:
+                        worksheet1.write(excel_row, close_prc_col, diff_df.iloc[row_idx]['Close Prc'], red_format)
+                    
+                    # NEW: Red background for Adj Closing price if empty or 0 (only if not already orange from adj_price_changed)
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_red'] and not diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
+                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], red_format)
+                    
+                    # NEW: Black background for #Symbol if not in Cross-Ref Symbols list
+                    if diff_df_formatted.iloc[row_idx]['_symbol_not_in_crossref']:
+                        worksheet1.write(excel_row, symbol_col, diff_df.iloc[row_idx]['#Symbol'], black_format)
             
             elif comparison_type == 'index':
                 field_cols = {
@@ -564,6 +783,11 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     for flag_col, output_col in zip(flag_cols, output_cols):
                         if diff_df_formatted.iloc[row_idx][flag_col]:
                             worksheet1.write(excel_row, field_cols[output_col], diff_df.iloc[row_idx][output_col], orange_format)
+                    
+                    # Apply blue formatting to Mnemo if needed
+                    if diff_df_formatted.iloc[row_idx]['_mnemo_blue']:
+                        mnemo_col = diff_df.columns.get_loc('Mnemo')
+                        worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], blue_format)
         
         else:
             worksheet1 = workbook.add_worksheet('Differences')
@@ -652,110 +876,90 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         
         writer.close()
         
-        logger.info(f"Successfully created comparison report: {os.path.basename(output_path)}")
-        print(f"Successfully created comparison report: {os.path.basename(output_path)}")
-        print(f"Found {len(diff_df)} differences between the files")
-        
+        logger.info(f"Successfully wrote Excel file: {output_path}")
         return True
         
     except Exception as e:
         logger.error(f"Error writing Excel file: {str(e)}")
-        print(f"Error writing Excel file: {str(e)}")
         return False
 
-@timer
-def compare_files(file1_path, file2_path, output_path, comparison_type='stock'):
-    """Main comparison function with optimizations for large files"""
+def perform_comparison(comparison_type='stock'):
+    """Perform the file comparison and generate output"""
     try:
-        logger.info(f"Starting {comparison_type} file comparison...")
+        print(f"\n{'='*60}")
+        print(f"Starting {comparison_type.upper()} comparison...")
+        print(f"{'='*60}\n")
         
-        df1 = read_excel_file(file1_path)
-        df2 = read_excel_file(file2_path)
+        file_status = check_files_available(comparison_type)
         
-        if df1 is None or df2 is None:
+        if not file_status['available']:
+            logger.info(f"{comparison_type.upper()} files not available yet")
+            print(f"{comparison_type.upper()} files not available yet.")
+            return False
+        
+        sod_path = file_status['sod_path']
+        manual_path = file_status['manual_path']
+        
+        print(f"Files found:")
+        print(f"  Manual: {os.path.basename(manual_path)}")
+        print(f"  SOD: {os.path.basename(sod_path)}")
+        print()
+        
+        # Read files
+        df_manual = read_excel_file(manual_path)
+        df_sod = read_excel_file(sod_path)
+        
+        if df_manual is None or df_sod is None:
             logger.error("Failed to read one or both files")
             return False
         
-        config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+        # Get comparison configuration
+        config = COMPARISON_CONFIGS[comparison_type]
         key_fields = config['key_fields']
         
-        df1_indexed, df2_indexed = prepare_dataframes(df1, df2, key_fields)
+        # Prepare dataframes
+        df_manual_indexed, df_sod_indexed = prepare_dataframes(df_manual, df_sod, key_fields)
         
-        # Call the appropriate comparison function
-        comparison_function_name = config['comparison_function']
-        if comparison_function_name == 'find_differences_vectorized_morning_stock':
-            diff_df, common_keys = find_differences_vectorized_morning_stock(df1_indexed, df2_indexed)
-        elif comparison_function_name == 'find_differences_vectorized_morning_index':
-            diff_df, common_keys = find_differences_vectorized_morning_index(df1_indexed, df2_indexed)
+        # Find differences
+        comparison_function = config['comparison_function']
+        if comparison_function == 'find_differences_vectorized_morning_stock':
+            diff_df, common_keys = find_differences_vectorized_morning_stock(df_manual_indexed, df_sod_indexed)
+        elif comparison_function == 'find_differences_vectorized_morning_index':
+            diff_df, common_keys = find_differences_vectorized_morning_index(df_manual_indexed, df_sod_indexed)
         else:
-            logger.error(f"Unknown comparison function: {comparison_function_name}")
+            logger.error(f"Unknown comparison function: {comparison_function}")
             return False
         
-        logger.info(f"Found {len(diff_df)} differences out of {len(common_keys)} common records")
+        # Generate output filename with current date
+        current_date = datetime.now().strftime("%Y%m%d")
+        output_filename = config['output_filename'].format(date=current_date)
+        output_path = os.path.join(OUTPUT_DIR, output_filename)
         
-        success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path, comparison_type)
+        # Write output file
+        success = write_excel_optimized(diff_df, df_manual_indexed, df_sod_indexed, output_path, comparison_type)
         
         if success:
-            logger.info(f"Successfully created comparison report: {os.path.basename(output_path)}")
-            print(f"Total differences found: {len(diff_df)}")
+            print(f"\n✓ {comparison_type.upper()} comparison completed successfully!")
+            print(f"  Output file: {output_filename}")
+            print(f"  Changes found: {len(diff_df)}")
+            print(f"  Common records: {len(common_keys)}")
+            logger.info(f"{comparison_type.upper()} comparison completed. Changes: {len(diff_df)}, Common records: {len(common_keys)}")
+        else:
+            print(f"\n✗ Failed to write {comparison_type.upper()} output file")
+            logger.error(f"Failed to write {comparison_type.upper()} output file")
         
         return success
         
     except Exception as e:
-        logger.error(f"Error comparing files: {str(e)}")
-        print(f"Error comparing files: {str(e)}")
-        return False
-
-def perform_comparison(comparison_type='stock'):
-    """Perform the file comparison when files are available"""
-    try:
-        file_status = check_files_available(comparison_type)
-        
-        if file_status['available']:
-            logger.info(f"{comparison_type.upper()} files are available, starting comparison...")
-            
-            current_date = datetime.now().strftime("%Y%m%d")
-            config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
-            output_filename = config['output_filename'].format(date=current_date)
-            output_path = os.path.join(OUTPUT_DIR, output_filename)
-            
-            start_time = time.time()
-            
-            success = compare_files(
-                file_status['manual_path'], 
-                file_status['sod_path'], 
-                output_path,
-                comparison_type
-            )
-            
-            total_time = time.time() - start_time
-            
-            if success:
-                print(f"{comparison_type.upper()} comparison completed successfully in {total_time:.1f} seconds!")
-                print(f"Output saved to: {output_path}")
-                logger.info(f"{comparison_type.upper()} file comparison completed successfully in {total_time:.1f} seconds")
-                return True
-            else:
-                print(f"{comparison_type.upper()} comparison failed. Check the log file for details.")
-                logger.error(f"{comparison_type.upper()} file comparison failed")
-                return False
-        else:
-            logger.info(f"{comparison_type.upper()} files are not available yet")
-            return False
-    
-    except Exception as e:
-        logger.error(f"Error performing {comparison_type} comparison: {str(e)}")
-        print(f"Error performing {comparison_type} comparison: {str(e)}")
+        logger.error(f"Error during {comparison_type} comparison: {str(e)}")
+        print(f"Error during {comparison_type} comparison: {str(e)}")
         return False
 
 def perform_all_comparisons():
     """Perform all configured comparisons"""
     results = {}
     for comparison_type in COMPARISON_CONFIGS.keys():
-        logger.info(f"Attempting {comparison_type.upper()} comparison...")
-        print(f"\n=== {comparison_type.upper()} Comparison ===")
         results[comparison_type] = perform_comparison(comparison_type)
-    
     return results
 
 class FileMonitorHandler(FileSystemEventHandler):
