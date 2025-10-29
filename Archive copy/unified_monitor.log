@@ -1481,3 +1481,1835 @@
 2025-10-23 16:41:57 - INFO - ✓ Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251023.xlsx
 2025-10-23 16:41:57 - INFO - Completed afternoon/evening manual merge for 20251023
 2025-10-23 16:41:57 - INFO - All SOD merge files found. Starting merge process.
+2025-10-29 17:20:28 - INFO - Added 147 holidays to the exclusion list
+2025-10-29 17:20:28 - INFO - Starting unified monitoring system...
+2025-10-29 17:22:36 - INFO - Function compare_folders took 124.19 seconds
+2025-10-29 17:22:36 - INFO - Function process_existing_files_bulk took 124.19 seconds
+2025-10-29 17:22:42 - INFO - Running periodic CSV merger check...
+2025-10-29 17:22:47 - INFO - Found all 4 afternoon/evening manual files for 20251029. Starting immediate merge.
+2025-10-29 17:22:47 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:22:47 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 17:22:48 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:22:48 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:22:48 - INFO - ✓ Merged INDEX files -> TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:22:49 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:22:55 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 17:23:14 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:23:14 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:23:14 - INFO - ✓ Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:23:14 - INFO - Completed afternoon/evening manual merge for 20251029
+2025-10-29 17:23:14 - DEBUG - Not all MANUAL merge files found. Missing: ['TTMIndexUS1_GIS_NXTD_STOCK_20251029.csv', 'TTMIndexUS1_GIS_NXTD_INDEX_20251029.csv']
+2025-10-29 17:23:14 - DEBUG - Not all EOD merge files found. Missing: ['TTMIndexEU1_GIS_EOD_STOCK_20251029.csv', 'TTMIndexUS1_GIS_EOD_STOCK_20251029.csv', 'TTMIndexEU1_GIS_EOD_INDEX_20251029.csv', 'TTMIndexUS1_GIS_EOD_INDEX_20251029.csv']
+2025-10-29 17:23:14 - DEBUG - Single file not found: TTMStrategy_GIS_EOD_INDEX_20251029.csv
+2025-10-29 17:23:14 - INFO - All SOD merge files found. Starting merge process.
+2025-10-29 17:23:14 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_STOCK_20251029.xlsx. Skipping merge.
+2025-10-29 17:23:14 - DEBUG - Output file already exists: TTMIndexEU1_GIS_SOD_INDEX_20251029.xlsx. Skipping merge.
+2025-10-29 17:23:14 - DEBUG - Checking for previous 30 workdays output files...
+2025-10-29 17:23:14 - DEBUG - Checking workday 20251028 (day -1)...
+2025-10-29 17:23:14 - DEBUG - All MANUAL output files from workday 20251028 already exist.
+2025-10-29 17:23:15 - DEBUG - All EOD output files from workday 20251028 already exist.
+2025-10-29 17:23:16 - DEBUG - All SOD output files from workday 20251028 already exist.
+2025-10-29 17:23:16 - DEBUG - Checking workday 20251027 (day -2)...
+2025-10-29 17:23:17 - DEBUG - All MANUAL output files from workday 20251027 already exist.
+2025-10-29 17:23:17 - DEBUG - All EOD output files from workday 20251027 already exist.
+2025-10-29 17:23:17 - DEBUG - All SOD output files from workday 20251027 already exist.
+2025-10-29 17:23:17 - DEBUG - Checking workday 20251024 (day -5)...
+2025-10-29 17:23:17 - DEBUG - All MANUAL output files from workday 20251024 already exist.
+2025-10-29 17:23:17 - DEBUG - All EOD output files from workday 20251024 already exist.
+2025-10-29 17:23:17 - DEBUG - All SOD output files from workday 20251024 already exist.
+2025-10-29 17:23:17 - DEBUG - Checking workday 20251023 (day -6)...
+2025-10-29 17:23:17 - DEBUG - All MANUAL output files from workday 20251023 already exist.
+2025-10-29 17:23:17 - DEBUG - All EOD output files from workday 20251023 already exist.
+2025-10-29 17:23:17 - DEBUG - All SOD output files from workday 20251023 already exist.
+2025-10-29 17:23:17 - DEBUG - Checking workday 20251022 (day -7)...
+2025-10-29 17:23:17 - DEBUG - All MANUAL output files from workday 20251022 already exist.
+2025-10-29 17:23:18 - DEBUG - All EOD output files from workday 20251022 already exist.
+2025-10-29 17:23:18 - DEBUG - All SOD output files from workday 20251022 already exist.
+2025-10-29 17:23:18 - DEBUG - Checking workday 20251021 (day -8)...
+2025-10-29 17:23:18 - DEBUG - All MANUAL output files from workday 20251021 already exist.
+2025-10-29 17:23:18 - DEBUG - All EOD output files from workday 20251021 already exist.
+2025-10-29 17:23:18 - DEBUG - All SOD output files from workday 20251021 already exist.
+2025-10-29 17:23:18 - DEBUG - Checking workday 20251020 (day -9)...
+2025-10-29 17:23:18 - DEBUG - All MANUAL output files from workday 20251020 already exist.
+2025-10-29 17:23:18 - DEBUG - All EOD output files from workday 20251020 already exist.
+2025-10-29 17:23:18 - DEBUG - All SOD output files from workday 20251020 already exist.
+2025-10-29 17:23:18 - DEBUG - Checking workday 20251017 (day -12)...
+2025-10-29 17:23:18 - DEBUG - All MANUAL output files from workday 20251017 already exist.
+2025-10-29 17:23:18 - DEBUG - All EOD output files from workday 20251017 already exist.
+2025-10-29 17:23:18 - DEBUG - All SOD output files from workday 20251017 already exist.
+2025-10-29 17:23:18 - DEBUG - Checking workday 20251016 (day -13)...
+2025-10-29 17:23:19 - DEBUG - All MANUAL output files from workday 20251016 already exist.
+2025-10-29 17:23:19 - DEBUG - All EOD output files from workday 20251016 already exist.
+2025-10-29 17:23:19 - DEBUG - All SOD output files from workday 20251016 already exist.
+2025-10-29 17:23:19 - DEBUG - Checking workday 20251015 (day -14)...
+2025-10-29 17:23:19 - DEBUG - All MANUAL output files from workday 20251015 already exist.
+2025-10-29 17:23:19 - DEBUG - All EOD output files from workday 20251015 already exist.
+2025-10-29 17:23:19 - DEBUG - All SOD output files from workday 20251015 already exist.
+2025-10-29 17:23:19 - DEBUG - Checking workday 20251014 (day -15)...
+2025-10-29 17:23:19 - DEBUG - All MANUAL output files from workday 20251014 already exist.
+2025-10-29 17:23:19 - DEBUG - All EOD output files from workday 20251014 already exist.
+2025-10-29 17:23:19 - DEBUG - All SOD output files from workday 20251014 already exist.
+2025-10-29 17:23:19 - DEBUG - Checking workday 20251013 (day -16)...
+2025-10-29 17:23:19 - DEBUG - All MANUAL output files from workday 20251013 already exist.
+2025-10-29 17:23:20 - DEBUG - All EOD output files from workday 20251013 already exist.
+2025-10-29 17:23:20 - DEBUG - All SOD output files from workday 20251013 already exist.
+2025-10-29 17:23:20 - DEBUG - Checking workday 20251010 (day -19)...
+2025-10-29 17:23:20 - DEBUG - All MANUAL output files from workday 20251010 already exist.
+2025-10-29 17:23:20 - DEBUG - All EOD output files from workday 20251010 already exist.
+2025-10-29 17:23:20 - DEBUG - All SOD output files from workday 20251010 already exist.
+2025-10-29 17:23:20 - DEBUG - Checking workday 20251009 (day -20)...
+2025-10-29 17:23:20 - DEBUG - All MANUAL output files from workday 20251009 already exist.
+2025-10-29 17:23:20 - DEBUG - All EOD output files from workday 20251009 already exist.
+2025-10-29 17:23:33 - INFO - Added 147 holidays to the exclusion list
+2025-10-29 17:23:33 - INFO - Starting unified monitoring system...
+2025-10-29 17:27:32 - INFO - Added 147 holidays to the exclusion list
+2025-10-29 17:27:32 - INFO - Starting unified monitoring system...
+2025-10-29 17:29:38 - INFO - Function compare_folders took 119.88 seconds
+2025-10-29 17:29:38 - INFO - Function process_existing_files_bulk took 119.88 seconds
+2025-10-29 17:29:43 - INFO - Running periodic CSV merger check...
+2025-10-29 17:29:48 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:29:48 - INFO - [PERIODIC CHECK] New day detected - clearing processed_files_today
+2025-10-29 17:29:48 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? False
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Removed previous INDEX file: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:29:48 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:29:48 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:29:49 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 17:29:50 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:29:50 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:29:50 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:29:50 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:29:50 - INFO - [IMMEDIATE MERGE] Removed previous STOCK file: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:29:50 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:29:50 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:29:57 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 17:30:16 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:30:16 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:30:16 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:30:16 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 17:30:17 - INFO - All SOD merge files found. Starting merge process.
+2025-10-29 17:30:17 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:32:23 - INFO - Running periodic CSV merger check...
+2025-10-29 17:32:23 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:32:23 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:32:23 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:32:23 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:34:30 - INFO - Running periodic CSV merger check...
+2025-10-29 17:34:30 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:34:30 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:34:30 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:34:30 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:36:36 - INFO - Running periodic CSV merger check...
+2025-10-29 17:36:36 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:36:36 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:36:36 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:36:36 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:36:55 - INFO - File TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv has different size - will copy
+2025-10-29 17:36:55 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:58 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:58 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:36:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:36:59 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:36:59 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:36:59 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:36:59 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:02 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:02 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:03 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:03 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:03 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:03 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:03 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:09 - INFO - File TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv has different size - will copy
+2025-10-29 17:37:09 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:11 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:12 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:12 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:12 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:13 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:37:13 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:37:13 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:38:42 - INFO - Running periodic CSV merger check...
+2025-10-29 17:38:42 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:38:42 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:38:42 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:38:42 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:39:55 - INFO - File TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv has different size - will copy
+2025-10-29 17:39:55 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:39:58 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:39:58 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:39:58 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:00 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:00 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:00 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:00 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:01 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:01 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:01 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:01 - INFO - File TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv has different size - will copy
+2025-10-29 17:40:01 - INFO - Starting copy of TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:03 - INFO - Successfully copied TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:03 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:03 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:04 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:04 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:05 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:05 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:06 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:06 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:07 - INFO - Manual file detected in queue: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:07 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:53 - INFO - Running periodic CSV merger check...
+2025-10-29 17:40:59 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:40:59 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:40:59 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:40:59 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:43:11 - INFO - Running periodic CSV merger check...
+2025-10-29 17:43:16 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:43:16 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:43:16 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:43:16 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:45:27 - INFO - Running periodic CSV merger check...
+2025-10-29 17:45:32 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:45:32 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:45:32 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:45:32 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:47:44 - INFO - Running periodic CSV merger check...
+2025-10-29 17:47:49 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:47:49 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:47:49 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:47:50 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:47:50 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:50:02 - INFO - Running periodic CSV merger check...
+2025-10-29 17:50:07 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:50:07 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:50:07 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:50:07 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:51:51 - INFO - Added 147 holidays to the exclusion list
+2025-10-29 17:51:51 - INFO - Starting unified monitoring system...
+2025-10-29 17:53:59 - INFO - Function compare_folders took 123.06 seconds
+2025-10-29 17:53:59 - INFO - Function process_existing_files_bulk took 123.06 seconds
+2025-10-29 17:54:04 - INFO - Running periodic CSV merger check...
+2025-10-29 17:54:10 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:54:10 - INFO - [PERIODIC CHECK] New day detected - clearing processed_files_today
+2025-10-29 17:54:10 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? False
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Input file TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv is newer than output files!
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Removed previous INDEX file: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:54:10 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:54:10 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:54:11 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 17:54:12 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:54:12 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:54:12 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 17:54:12 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:54:12 - INFO - [IMMEDIATE MERGE] Removed previous STOCK file: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:54:12 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:54:12 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:54:20 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 17:54:38 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:54:38 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:54:38 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 17:54:38 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 17:54:39 - INFO - All SOD merge files found. Starting merge process.
+2025-10-29 17:54:39 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:56:51 - INFO - Running periodic CSV merger check...
+2025-10-29 17:56:57 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 17:56:57 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 17:56:57 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 17:56:58 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 17:56:58 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 17:56:58 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 17:58:02 - INFO - Added 147 holidays to the exclusion list
+2025-10-29 17:58:02 - INFO - Starting unified monitoring system...
+2025-10-29 18:00:12 - INFO - Function compare_folders took 125.91 seconds
+2025-10-29 18:00:12 - INFO - Function process_existing_files_bulk took 125.91 seconds
+2025-10-29 18:00:20 - INFO - Running periodic CSV merger check...
+2025-10-29 18:00:30 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:00:30 - INFO - [PERIODIC CHECK] New day detected - clearing processed_files_today
+2025-10-29 18:00:30 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? False
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: False, STOCK: False
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:00:30 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:00:30 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:00:30 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:00:31 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:00:31 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:00:31 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:00:31 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:00:31 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:00:31 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:00:38 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:00:57 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:00:57 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:00:57 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:00:57 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 18:00:57 - INFO - All SOD merge files found. Starting merge process.
+2025-10-29 18:00:57 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:01:14 - INFO - File TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv has different size - will copy
+2025-10-29 18:01:14 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:15 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:16 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Input file TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv is newer than output files!
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Input files have been updated! Removing key and re-merging...
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 18:01:16 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:17 - INFO - [IMMEDIATE MERGE] Removed previous INDEX file: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:17 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:17 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:17 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:01:19 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:19 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:19 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:19 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:19 - INFO - [IMMEDIATE MERGE] Removed previous STOCK file: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:19 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:19 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:26 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:01:44 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:44 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 18:01:44 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:44 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:01:45 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:01:45 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:01:47 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:01:47 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:01:48 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:01:48 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:01:49 - INFO - File TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv has different size - will copy
+2025-10-29 18:01:49 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:50 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:50 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:51 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:51 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:01:51 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:01:51 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:01:51 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] Input file TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv is newer than output files!
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] Input files have been updated! Removing key and re-merging...
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] Removed previous INDEX file: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:52 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:52 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:01:52 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:01:54 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:54 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:54 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndexEU1_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:01:54 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:54 - INFO - [IMMEDIATE MERGE] Removed previous STOCK file: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:01:54 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:01:54 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:01 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:02:19 - INFO - Set file to read-only: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:02:19 - INFO - Successfully merged CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:02:19 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndexEU1_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:02:19 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 18:02:20 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:02:20 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:02:21 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] All input files are older than output files - no need to re-merge
+2025-10-29 18:02:21 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:02:37 - INFO - Unified monitoring stopped
+2025-10-29 18:07:17 - INFO - Added 147 holidays to the exclusion list
+2025-10-29 18:07:17 - INFO - Starting unified monitoring system...
+2025-10-29 18:09:26 - INFO - Found 4 missing files:
+2025-10-29 18:09:26 - INFO - Missing file: TTMStrategy_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:09:26 - INFO - Missing file: TTMSTRATBUI_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:09:26 - INFO - Missing file: TTMStrategy_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:09:26 - INFO - Missing file: TTMSTRATBUI_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:09:26 - INFO - Function compare_folders took 122.08 seconds
+2025-10-29 18:09:26 - INFO - Identified 4 files for bulk copy
+2025-10-29 18:09:26 - INFO - Starting bulk copy of 4 files
+2025-10-29 18:09:28 - INFO - Robocopy completed successfully. Return code: 1
+2025-10-29 18:09:29 - INFO - Bulk copy successful: 4 files copied and set to read-only
+2025-10-29 18:09:29 - INFO - Function bulk_copy_missing_files took 3.73 seconds
+2025-10-29 18:09:29 - INFO - Checking for manual files after bulk copy...
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:09:29 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? False
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: False, STOCK: False
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:09:30 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:09:30 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:09:30 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:09:33 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:09:33 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:09:33 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:09:33 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:09:33 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:09:33 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:09:41 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:09:59 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:09:59 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:09:59 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:09:59 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 18:09:59 - INFO - Function process_existing_files_bulk took 155.12 seconds
+2025-10-29 18:10:05 - INFO - Running periodic CSV merger check...
+2025-10-29 18:10:06 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:10:06 - INFO - [PERIODIC CHECK] New day detected - clearing processed_files_today
+2025-10-29 18:10:06 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? False
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 0 newer, 4 older - waiting for all 4
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Marked as processed: afternoon_evening_manual_20251029
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] INDEX output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Removed previous INDEX file: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:10:06 - INFO - [IMMEDIATE MERGE] Merging INDEX: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv + TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:10:06 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv and TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:10:07 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:10:08 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:10:08 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:10:08 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> TTMIndex_GIS_MANUAL_INDEX_20251029.xlsx
+2025-10-29 18:10:08 - INFO - [IMMEDIATE MERGE] STOCK output path: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals\TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:10:08 - INFO - [IMMEDIATE MERGE] Removed previous STOCK file: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:10:08 - INFO - [IMMEDIATE MERGE] Merging STOCK: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv + TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:10:08 - INFO - Merging CSV files: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv and TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:10:15 - WARNING - Could not convert column I to numeric: cannot access local variable 'df1' where it is not associated with a value
+2025-10-29 18:10:34 - INFO - Set file to read-only: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:10:34 - INFO - Successfully merged CSV files: TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:10:34 - INFO - [IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> TTMIndex_GIS_MANUAL_STOCK_20251029.xlsx
+2025-10-29 18:10:34 - INFO - [IMMEDIATE MERGE] ========== Completed Merge for 20251029 ==========
+2025-10-29 18:10:34 - INFO - Found EOD single file for conversion: TTMStrategy_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:10:34 - INFO - Converting CSV file: TTMStrategy_GIS_EOD_INDEX_20251029.csv to XLSX
+2025-10-29 18:10:35 - INFO - Set file to read-only: TTMStrategy_GIS_EOD_INDEX_20251029.xlsx
+2025-10-29 18:10:35 - INFO - Successfully converted CSV file: TTMStrategy_GIS_EOD_INDEX_20251029.xlsx
+2025-10-29 18:10:35 - INFO - Converted: TTMStrategy_GIS_EOD_INDEX_20251029.csv -> TTMStrategy_GIS_EOD_INDEX_20251029.xlsx
+2025-10-29 18:10:35 - INFO - All SOD merge files found. Starting merge process.
+2025-10-29 18:10:36 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:12:42 - INFO - Running periodic CSV merger check...
+2025-10-29 18:12:42 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:12:42 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:12:42 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:12:43 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:12:43 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:12:43 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:12:43 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:12:43 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 0 newer, 4 older - waiting for all 4
+2025-10-29 18:12:43 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:12:43 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:14:49 - INFO - Running periodic CSV merger check...
+2025-10-29 18:14:49 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:14:49 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 0 newer, 4 older - waiting for all 4
+2025-10-29 18:14:49 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:14:49 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:15:43 - INFO - Starting copy of TTMRates_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:15:44 - INFO - Successfully copied TTMRates_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:15:45 - INFO - Starting copy of TTMRates_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:15:47 - INFO - Successfully copied TTMRates_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:16:31 - INFO - Starting copy of TTMIndexSSIE_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:16:32 - INFO - Successfully copied TTMIndexSSIE_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:16:34 - INFO - Starting copy of TTMIndexSSIE_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:16:35 - INFO - Successfully copied TTMIndexSSIE_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:17:01 - INFO - Running periodic CSV merger check...
+2025-10-29 18:17:19 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:17:19 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:17:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:17:20 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:17:20 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:17:20 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:17:20 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:17:20 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 0 newer, 4 older - waiting for all 4
+2025-10-29 18:17:20 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:17:21 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:17:59 - INFO - Starting copy of TTMIndexEU1_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:18:01 - INFO - Successfully copied TTMIndexEU1_GIS_EOD_STOCK_20251029.csv
+2025-10-29 18:18:14 - INFO - Starting copy of TTMIndexEU1_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:18:15 - INFO - Successfully copied TTMIndexEU1_GIS_EOD_INDEX_20251029.csv
+2025-10-29 18:19:40 - INFO - Running periodic CSV merger check...
+2025-10-29 18:19:44 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:19:44 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:19:44 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 0 newer, 4 older - waiting for all 4
+2025-10-29 18:19:45 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:19:45 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:21:57 - INFO - Running periodic CSV merger check...
+2025-10-29 18:22:02 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:22:02 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:22:02 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:22:03 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 0 newer, 4 older - waiting for all 4
+2025-10-29 18:22:03 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:22:03 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:24:12 - INFO - File TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv has different size - will copy
+2025-10-29 18:24:12 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:15 - INFO - Running periodic CSV merger check...
+2025-10-29 18:24:16 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:16 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:16 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:17 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 1 newer, 3 older - waiting for all 4
+2025-10-29 18:24:17 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:19 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:19 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 1 newer, 3 older - waiting for all 4
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:20 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:20 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 1 newer, 3 older - waiting for all 4
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:21 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:21 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:24:21 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 1 newer, 3 older - waiting for all 4
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:21 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:22 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 1 newer, 3 older - waiting for all 4
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:22 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 1 newer, 3 older - waiting for all 4
+2025-10-29 18:24:22 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:26 - INFO - File TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv has different size - will copy
+2025-10-29 18:24:26 - INFO - Starting copy of TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - Successfully copied TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:28 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:28 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:29 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:24:29 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:30 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:24:30 - INFO - Manual file detected in queue: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv. Checking for immediate merge...
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:24:30 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:26:34 - INFO - Running periodic CSV merger check...
+2025-10-29 18:26:40 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:26:40 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:26:40 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:26:41 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:26:41 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:26:41 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:28:54 - INFO - Running periodic CSV merger check...
+2025-10-29 18:28:58 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:28:58 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:28:58 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:28:59 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:28:59 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:31:11 - INFO - Running periodic CSV merger check...
+2025-10-29 18:31:16 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:31:16 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:31:16 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:31:17 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:33:28 - INFO - Running periodic CSV merger check...
+2025-10-29 18:33:33 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:33:33 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:33:33 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:33:34 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:33:34 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:33:34 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:35:46 - INFO - Running periodic CSV merger check...
+2025-10-29 18:35:51 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:35:51 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:35:51 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:35:52 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:38:04 - INFO - Running periodic CSV merger check...
+2025-10-29 18:38:08 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:38:08 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:38:08 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:38:09 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:38:09 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:38:09 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:40:20 - INFO - Running periodic CSV merger check...
+2025-10-29 18:40:26 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:40:26 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:40:26 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:40:27 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:42:33 - INFO - Running periodic CSV merger check...
+2025-10-29 18:42:33 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:42:33 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:42:33 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:42:33 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:44:44 - INFO - Running periodic CSV merger check...
+2025-10-29 18:44:50 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:44:50 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:44:50 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:44:50 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:47:01 - INFO - Running periodic CSV merger check...
+2025-10-29 18:47:06 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:47:06 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:47:06 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:47:07 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:49:19 - INFO - Running periodic CSV merger check...
+2025-10-29 18:49:24 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:49:24 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:49:24 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:49:25 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:51:36 - INFO - Running periodic CSV merger check...
+2025-10-29 18:51:41 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:51:41 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:51:41 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:51:42 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:53:54 - INFO - Running periodic CSV merger check...
+2025-10-29 18:53:58 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:53:58 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:53:58 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:53:59 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:53:59 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:56:10 - INFO - Running periodic CSV merger check...
+2025-10-29 18:56:15 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:56:15 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:56:15 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:56:16 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:56:16 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:56:16 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 18:58:27 - INFO - Running periodic CSV merger check...
+2025-10-29 18:58:32 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 18:58:32 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 18:58:32 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 18:58:33 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 19:00:49 - INFO - Running periodic CSV merger check...
+2025-10-29 19:00:55 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 19:00:55 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 19:00:55 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 19:00:58 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 19:00:58 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 19:01:00 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 19:03:16 - INFO - Running periodic CSV merger check...
+2025-10-29 19:03:21 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 19:03:21 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 19:03:21 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 19:03:22 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 19:05:45 - INFO - Running periodic CSV merger check...
+2025-10-29 19:06:03 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 19:06:03 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 19:06:03 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 19:06:04 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 19:06:04 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 19:06:04 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 19:08:27 - INFO - Running periodic CSV merger check...
+2025-10-29 19:08:32 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 19:08:32 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:08:32 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:08:33 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 19:08:33 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 19:08:33 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 19:08:33 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 19:08:33 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 19:08:33 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 19:08:33 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 19:10:39 - INFO - Running periodic CSV merger check...
+2025-10-29 19:10:39 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 19:10:39 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 19:10:39 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 19:10:39 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-10-29 19:12:48 - INFO - Running periodic CSV merger check...
+2025-10-29 19:12:53 - INFO - [PERIODIC CHECK] ========== Periodic CSV Merge Check for 20251029 ==========
+2025-10-29 19:12:53 - INFO - [PERIODIC CHECK] Calling immediate merge check for current date...
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] ========== Starting Check for Date: 20251029 ==========
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Looking in folder: V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Required files:
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE]   - us_index: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE]   - eu_index: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE]   - us_stock: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE]   - eu_stock: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_INDEX_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexUS1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] ✓ FOUND: TTMIndexEU1_GIS_MANUAL_STOCK_20251029.csv
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] All 4 files found! Checking if already processed...
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Merge key: afternoon_evening_manual_20251029
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Already in processed_files_today? True
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Output files exist? INDEX: True, STOCK: True
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Not all inputs are newer: 2 newer, 2 older - waiting for all 4
+2025-10-29 19:12:53 - INFO - [IMMEDIATE MERGE] Already processed today - skipping duplicate merge
+2025-10-29 19:12:54 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========

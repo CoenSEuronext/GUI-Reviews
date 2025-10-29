@@ -64,13 +64,29 @@ COMPARISON_CONFIGS = {
         'file_suffix': 'STOCK',
         'key_fields': ['#Symbol', 'Index'],
         'output_filename': 'GIS Morning Stock changes_{date}.xlsx',
-        'comparison_function': 'find_differences_vectorized_morning_stock'
+        'comparison_function': 'find_differences_vectorized_morning_stock',
+        'comparison_type': 'morning'
     },
     'index': {
         'file_suffix': 'INDEX',
         'key_fields': ['#Symbol'],
         'output_filename': 'GIS Morning Index changes_{date}.xlsx',
-        'comparison_function': 'find_differences_vectorized_morning_index'
+        'comparison_function': 'find_differences_vectorized_morning_index',
+        'comparison_type': 'morning'
+    },
+    'afternoon_stock': {
+        'file_suffix': 'STOCK',
+        'key_fields': ['#Symbol', 'Index'],
+        'output_filename': 'GIS Afternoon Stock changes_{date}.xlsx',
+        'comparison_function': 'find_differences_vectorized_morning_stock',
+        'comparison_type': 'afternoon'
+    },
+    'afternoon_index': {
+        'file_suffix': 'INDEX',
+        'key_fields': ['#Symbol'],
+        'output_filename': 'GIS Afternoon Index changes_{date}.xlsx',
+        'comparison_function': 'find_differences_vectorized_morning_index',
+        'comparison_type': 'afternoon'
     }
 }
 
@@ -146,7 +162,8 @@ except Exception as e:
 # Configuration
 MONITOR_FOLDERS = {
     'manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Manual",
-    'sod': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\SOD"
+    'sod': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\SOD",
+    'afternoon': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals"
 }
 
 OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output"
@@ -154,6 +171,12 @@ OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archiv
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
     logger.info(f"Created output directory: {OUTPUT_DIR}")
+
+def is_before_afternoon_cutoff():
+    """Check if current time is before 18:10 (6:10 PM)"""
+    now = datetime.now()
+    cutoff_time = now.replace(hour=18, minute=10, second=0, microsecond=0)
+    return now < cutoff_time
 
 def get_previous_workday(date=None):
     """Get the previous workday (excluding weekends and holidays)"""
@@ -200,18 +223,31 @@ def get_expected_filenames(comparison_type='stock'):
     current_workday = get_current_workday()
     previous_workday = get_previous_workday()
     
-    sod_date = current_workday.strftime("%Y%m%d")
-    manual_date = previous_workday.strftime("%Y%m%d")
-    
     config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
     file_suffix = config['file_suffix']
+    comp_type = config.get('comparison_type', 'morning')
     
-    expected_files = {
-        'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.xlsx",
-        'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.xlsx"
-    }
+    if comp_type == 'morning':
+        # Morning comparison: SOD (current day) vs Manual (previous day)
+        sod_date = current_workday.strftime("%Y%m%d")
+        manual_date = previous_workday.strftime("%Y%m%d")
+        
+        expected_files = {
+            'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.xlsx",
+            'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.xlsx",
+            'manual_folder': 'manual'
+        }
+    else:  # afternoon
+        # Afternoon comparison: SOD (current day) vs Manual (current day)
+        current_date = current_workday.strftime("%Y%m%d")
+        
+        expected_files = {
+            'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{current_date}.xlsx",
+            'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{current_date}.xlsx",
+            'manual_folder': 'afternoon'
+        }
     
-    logger.info(f"Expected {file_suffix} files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
+    logger.info(f"Expected {file_suffix} ({comp_type}) files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
     
     return expected_files
 
@@ -232,7 +268,8 @@ def check_files_available(comparison_type='stock'):
     expected_files = get_expected_filenames(comparison_type)
     
     sod_path = os.path.join(MONITOR_FOLDERS['sod'], expected_files['sod'])
-    manual_path = os.path.join(MONITOR_FOLDERS['manual'], expected_files['manual'])
+    manual_folder = expected_files['manual_folder']
+    manual_path = os.path.join(MONITOR_FOLDERS[manual_folder], expected_files['manual'])
     
     sod_ready = file_exists_and_ready(sod_path)
     manual_ready = file_exists_and_ready(manual_path)
@@ -339,6 +376,28 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
                 field_diff = df1_common[field].astype(str) != df2_common[field].astype(str)
             
             has_differences |= field_diff
+    
+    # Also include rows where Adj Closing price or dividends would receive formatting
+    
+    # Check for Adj Closing price issues (empty, 0, or different from Close Prc)
+    if 'Adj Closing price' in df2_common.columns:
+        adj_closing_val = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce')
+        # Flag if Adj Closing price is empty or 0
+        adj_closing_red = adj_closing_val.isna() | (adj_closing_val == 0)
+        has_differences |= adj_closing_red
+        
+        # Flag if Adj Closing price differs from Close Prc
+        if 'Close Prc' in df2_common.columns:
+            close_prc_val = df2_common['Close Prc'].astype(str).str.strip()
+            adj_closing_str = df2_common['Adj Closing price'].astype(str).str.strip()
+            adj_price_changed = adj_closing_str != close_prc_val
+            has_differences |= adj_price_changed
+    
+    # Check for positive dividends (Net Div or Gross Div)
+    if 'Net Div' in df2_common.columns:
+        net_div_val = pd.to_numeric(df2_common['Net Div'], errors='coerce')
+        div_positive = net_div_val > 0
+        has_differences |= div_positive
     
     diff_keys = common_keys[has_differences]
     
@@ -505,8 +564,11 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         if not diff_df.empty:
             diff_df_formatted = diff_df.copy()
             
+            # Determine base comparison type (stock or index)
+            base_comp_type = 'stock' if 'stock' in comparison_type else 'index'
+            
             # Apply formatting based on comparison type
-            if comparison_type == 'stock':
+            if base_comp_type == 'stock':
                 diff_df_formatted['_shares_changed'] = False
                 diff_df_formatted['_prev_shares_blue'] = False
                 diff_df_formatted['_ff_red'] = False
@@ -638,7 +700,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     '_name_purple', '_close_prc_red', '_adj_closing_price_red', '_symbol_not_in_crossref'
                 ], axis=1)
             
-            elif comparison_type == 'index':
+            elif base_comp_type == 'index':
                 diff_df_formatted['_divisor_changed'] = False
                 diff_df_formatted['_t0iv_changed'] = False
                 diff_df_formatted['_t0iv_unround_changed'] = False
@@ -697,7 +759,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 })
             
             # Apply specific cell formatting based on comparison type
-            if comparison_type == 'stock':
+            if base_comp_type == 'stock':
                 symbol_col = diff_df.columns.get_loc('#Symbol')
                 new_shares_col = diff_df.columns.get_loc('New Shares')
                 prev_shares_col = diff_df.columns.get_loc('Prev. Shares')
@@ -765,7 +827,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     if diff_df_formatted.iloc[row_idx]['_symbol_not_in_crossref']:
                         worksheet1.write(excel_row, symbol_col, diff_df.iloc[row_idx]['#Symbol'], black_format)
             
-            elif comparison_type == 'index':
+            elif base_comp_type == 'index':
                 field_cols = {
                     'New Divisor': diff_df.columns.get_loc('New Divisor'),
                     't0 IV   SOD': diff_df.columns.get_loc('t0 IV   SOD'),
@@ -897,6 +959,34 @@ def perform_comparison(comparison_type='stock'):
             print(f"{comparison_type.upper()} files not available yet.")
             return False
         
+        # Generate output filename with current date
+        current_date = datetime.now().strftime("%Y%m%d")
+        config = COMPARISON_CONFIGS[comparison_type]
+        output_filename = config['output_filename'].format(date=current_date)
+        output_path = os.path.join(OUTPUT_DIR, output_filename)
+        
+        # Check if this is an afternoon comparison
+        is_afternoon = config.get('comparison_type') == 'afternoon'
+        
+        # For afternoon comparisons, check time and allow overwriting until 18:10
+        if is_afternoon:
+            if os.path.exists(output_path):
+                if is_before_afternoon_cutoff():
+                    logger.info(f"{comparison_type.upper()} output file exists but before 18:10, overwriting: {output_filename}")
+                    print(f"  {comparison_type.upper()} output file exists, overwriting (before 18:10)...")
+                else:
+                    logger.info(f"{comparison_type.upper()} output file already exists and after 18:10: {output_filename}. Skipping comparison.")
+                    print(f"✓ {comparison_type.upper()} output file already exists (after 18:10): {output_filename}")
+                    print("  Skipping comparison.\n")
+                    return True
+        else:
+            # For morning comparisons, check if output file already exists
+            if os.path.exists(output_path):
+                logger.info(f"{comparison_type.upper()} output file already exists: {output_filename}. Skipping comparison.")
+                print(f"✓ {comparison_type.upper()} output file already exists: {output_filename}")
+                print("  Skipping comparison.\n")
+                return True
+        
         sod_path = file_status['sod_path']
         manual_path = file_status['manual_path']
         
@@ -987,33 +1077,43 @@ class FileMonitorHandler(FileSystemEventHandler):
         """Check if files are available and process them"""
         current_time = time.time()
         
-        # Determine which comparison type based on filename
+        # Determine which comparison type based on filename and folder
         filename = os.path.basename(file_path)
-        comparison_type = None
+        folder_path = os.path.dirname(file_path)
+        comparison_types = []
         
-        for comp_type, config in COMPARISON_CONFIGS.items():
-            if config['file_suffix'] in filename:
-                comparison_type = comp_type
-                break
+        # Check if this is an afternoon manual file
+        if 'Afternoon + Evening Manuals' in folder_path:
+            if 'STOCK' in filename:
+                comparison_types.append('afternoon_stock')
+            if 'INDEX' in filename:
+                comparison_types.append('afternoon_index')
+        else:
+            # Check for morning comparisons
+            for comp_type, config in COMPARISON_CONFIGS.items():
+                if config.get('comparison_type') == 'morning' and config['file_suffix'] in filename:
+                    comparison_types.append(comp_type)
         
-        if comparison_type is None:
+        if not comparison_types:
             return
         
-        # Avoid checking too frequently for each comparison type
-        if comparison_type in self.last_check:
-            if current_time - self.last_check[comparison_type] < self.check_interval:
-                return
-        
-        self.last_check[comparison_type] = current_time
-        
-        # Wait a bit for file to be completely written
-        time.sleep(5)
-        
-        if perform_comparison(comparison_type):
-            logger.info(f"{comparison_type.upper()} comparison completed successfully!")
-            print(f"{comparison_type.upper()} comparison completed successfully!")
-        else:
-            logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
+        # Process each relevant comparison type
+        for comparison_type in comparison_types:
+            # Avoid checking too frequently for each comparison type
+            if comparison_type in self.last_check:
+                if current_time - self.last_check[comparison_type] < self.check_interval:
+                    continue
+            
+            self.last_check[comparison_type] = current_time
+            
+            # Wait a bit for file to be completely written
+            time.sleep(5)
+            
+            if perform_comparison(comparison_type):
+                logger.info(f"{comparison_type.upper()} comparison completed successfully!")
+                print(f"{comparison_type.upper()} comparison completed successfully!")
+            else:
+                logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
 
 def start_monitoring():
     """Start monitoring the specified folders"""
@@ -1024,13 +1124,15 @@ def start_monitoring():
     # Display expected files for all comparison types
     for comparison_type in COMPARISON_CONFIGS.keys():
         expected_files = get_expected_filenames(comparison_type)
-        print(f"\nLooking for {comparison_type.upper()} files:")
+        comp_type_label = COMPARISON_CONFIGS[comparison_type].get('comparison_type', 'morning').upper()
+        print(f"\nLooking for {comparison_type.upper()} ({comp_type_label}) files:")
         print(f"  Manual: {expected_files['manual']}")
         print(f"  SOD: {expected_files['sod']}")
     
     print(f"\nFolders:")
     print(f"  Manual: {MONITOR_FOLDERS['manual']}")
     print(f"  SOD: {MONITOR_FOLDERS['sod']}")
+    print(f"  Afternoon: {MONITOR_FOLDERS['afternoon']}")
     print()
     
     # Check if files already exist
@@ -1046,10 +1148,11 @@ def start_monitoring():
     event_handler = FileMonitorHandler()
     observer = Observer()
     
-    # Monitor both folders
+    # Monitor all folders
     try:
         observer.schedule(event_handler, MONITOR_FOLDERS['manual'], recursive=False)
         observer.schedule(event_handler, MONITOR_FOLDERS['sod'], recursive=False)
+        observer.schedule(event_handler, MONITOR_FOLDERS['afternoon'], recursive=False)
         
         observer.start()
         logger.info("File monitoring started successfully")
