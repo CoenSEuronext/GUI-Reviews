@@ -65,28 +65,38 @@ COMPARISON_CONFIGS = {
         'key_fields': ['#Symbol', 'Index'],
         'output_filename': 'GIS Morning Stock changes_{date}.xlsx',
         'comparison_function': 'find_differences_vectorized_morning_stock',
-        'comparison_type': 'morning'
+        'use_previous_workday': True,
+        'manual_folder': 'manual',
+        'allow_overwrite': False
     },
     'index': {
         'file_suffix': 'INDEX',
         'key_fields': ['#Symbol'],
         'output_filename': 'GIS Morning Index changes_{date}.xlsx',
         'comparison_function': 'find_differences_vectorized_morning_index',
-        'comparison_type': 'morning'
+        'use_previous_workday': True,
+        'manual_folder': 'manual',
+        'allow_overwrite': False
     },
     'afternoon_stock': {
         'file_suffix': 'STOCK',
         'key_fields': ['#Symbol', 'Index'],
         'output_filename': 'GIS Afternoon Stock changes_{date}.xlsx',
         'comparison_function': 'find_differences_vectorized_morning_stock',
-        'comparison_type': 'afternoon'
+        'use_previous_workday': False,
+        'manual_folder': 'afternoon_manual',
+        'allow_overwrite': True,
+        'overwrite_until': '18:10'
     },
     'afternoon_index': {
         'file_suffix': 'INDEX',
         'key_fields': ['#Symbol'],
         'output_filename': 'GIS Afternoon Index changes_{date}.xlsx',
         'comparison_function': 'find_differences_vectorized_morning_index',
-        'comparison_type': 'afternoon'
+        'use_previous_workday': False,
+        'manual_folder': 'afternoon_manual',
+        'allow_overwrite': True,
+        'overwrite_until': '18:10'
     }
 }
 
@@ -163,7 +173,7 @@ except Exception as e:
 MONITOR_FOLDERS = {
     'manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Manual",
     'sod': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\SOD",
-    'afternoon': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals"
+    'afternoon_manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals"
 }
 
 OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output"
@@ -171,12 +181,6 @@ OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archiv
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
     logger.info(f"Created output directory: {OUTPUT_DIR}")
-
-def is_before_afternoon_cutoff():
-    """Check if current time is before 18:10 (6:10 PM)"""
-    now = datetime.now()
-    cutoff_time = now.replace(hour=18, minute=10, second=0, microsecond=0)
-    return now < cutoff_time
 
 def get_previous_workday(date=None):
     """Get the previous workday (excluding weekends and holidays)"""
@@ -218,6 +222,25 @@ def get_current_workday(date=None):
     
     return date
 
+def should_allow_overwrite(comparison_type):
+    """Check if overwrite is allowed based on time and comparison config"""
+    config = COMPARISON_CONFIGS.get(comparison_type)
+    if not config or not config.get('allow_overwrite'):
+        return False
+    
+    overwrite_until = config.get('overwrite_until')
+    if not overwrite_until:
+        return True
+    
+    # Parse overwrite_until time (format: "HH:MM")
+    try:
+        cutoff_hour, cutoff_minute = map(int, overwrite_until.split(':'))
+        cutoff_time = datetime.now().replace(hour=cutoff_hour, minute=cutoff_minute, second=0, microsecond=0)
+        
+        return datetime.now() < cutoff_time
+    except:
+        return True
+
 def get_expected_filenames(comparison_type='stock'):
     """Get the expected filenames for today's comparison"""
     current_workday = get_current_workday()
@@ -225,29 +248,22 @@ def get_expected_filenames(comparison_type='stock'):
     
     config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
     file_suffix = config['file_suffix']
-    comp_type = config.get('comparison_type', 'morning')
+    use_previous_workday = config.get('use_previous_workday', True)
     
-    if comp_type == 'morning':
-        # Morning comparison: SOD (current day) vs Manual (previous day)
-        sod_date = current_workday.strftime("%Y%m%d")
+    sod_date = current_workday.strftime("%Y%m%d")
+    
+    # For afternoon comparisons, manual file also uses current date
+    if use_previous_workday:
         manual_date = previous_workday.strftime("%Y%m%d")
-        
-        expected_files = {
-            'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.xlsx",
-            'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.xlsx",
-            'manual_folder': 'manual'
-        }
-    else:  # afternoon
-        # Afternoon comparison: SOD (current day) vs Manual (current day)
-        current_date = current_workday.strftime("%Y%m%d")
-        
-        expected_files = {
-            'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{current_date}.xlsx",
-            'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{current_date}.xlsx",
-            'manual_folder': 'afternoon'
-        }
+    else:
+        manual_date = current_workday.strftime("%Y%m%d")
     
-    logger.info(f"Expected {file_suffix} ({comp_type}) files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
+    expected_files = {
+        'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.xlsx",
+        'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.xlsx"
+    }
+    
+    logger.info(f"Expected {file_suffix} files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
     
     return expected_files
 
@@ -266,9 +282,10 @@ def file_exists_and_ready(filepath):
 def check_files_available(comparison_type='stock'):
     """Check if both expected files are available"""
     expected_files = get_expected_filenames(comparison_type)
+    config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+    manual_folder = config.get('manual_folder', 'manual')
     
     sod_path = os.path.join(MONITOR_FOLDERS['sod'], expected_files['sod'])
-    manual_folder = expected_files['manual_folder']
     manual_path = os.path.join(MONITOR_FOLDERS[manual_folder], expected_files['manual'])
     
     sod_ready = file_exists_and_ready(sod_path)
@@ -350,8 +367,14 @@ def prepare_dataframes(df1, df2, key_fields):
     return df1_indexed, df2_indexed
 
 @timer
-def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
-    """Find differences for morning stock comparison - vectorized operations"""
+def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_afternoon=False):
+    """Find differences for morning stock comparison - vectorized operations
+    
+    Args:
+        df1_indexed: First dataframe (Manual for morning, SOD for afternoon)
+        df2_indexed: Second dataframe (SOD for morning, Manual for afternoon)
+        is_afternoon: If True, also include removals (rows in df1/SOD but not in df2/Manual)
+    """
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
     if len(common_keys) == 0:
@@ -377,29 +400,31 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
             
             has_differences |= field_diff
     
-    # Also include rows where Adj Closing price or dividends would receive formatting
+    # Also include rows with formatting conditions of interest (even without differences)
+    has_formatting_interest = pd.Series(False, index=common_keys)
     
-    # Check for Adj Closing price issues (empty, 0, or different from Close Prc)
+    # Check for Close Prc empty or 0
+    if 'Close Prc' in df2_common.columns:
+        close_prc_vals = pd.to_numeric(df2_common['Close Prc'], errors='coerce')
+        has_formatting_interest |= (close_prc_vals.isna() | (close_prc_vals == 0))
+    
+    # Check for Adj Closing price empty or 0
     if 'Adj Closing price' in df2_common.columns:
-        adj_closing_val = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce')
-        # Flag if Adj Closing price is empty or 0
-        adj_closing_red = adj_closing_val.isna() | (adj_closing_val == 0)
-        has_differences |= adj_closing_red
-        
-        # Flag if Adj Closing price differs from Close Prc
-        if 'Close Prc' in df2_common.columns:
-            close_prc_val = df2_common['Close Prc'].astype(str).str.strip()
-            adj_closing_str = df2_common['Adj Closing price'].astype(str).str.strip()
-            adj_price_changed = adj_closing_str != close_prc_val
-            has_differences |= adj_price_changed
+        adj_closing_vals = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce')
+        has_formatting_interest |= (adj_closing_vals.isna() | (adj_closing_vals == 0))
     
-    # Check for positive dividends (Net Div or Gross Div)
+    # Check for Adj Closing price different from Close Prc
+    if 'Adj Closing price' in df2_common.columns and 'Close Prc' in df2_common.columns:
+        adj_diff = df2_common['Adj Closing price'].astype(str).str.strip() != df2_common['Close Prc'].astype(str).str.strip()
+        has_formatting_interest |= adj_diff
+    
+    # Check for positive Net Div
     if 'Net Div' in df2_common.columns:
-        net_div_val = pd.to_numeric(df2_common['Net Div'], errors='coerce')
-        div_positive = net_div_val > 0
-        has_differences |= div_positive
+        net_div_vals = pd.to_numeric(df2_common['Net Div'], errors='coerce')
+        has_formatting_interest |= (net_div_vals > 0)
     
-    diff_keys = common_keys[has_differences]
+    # Combine both conditions: actual differences OR formatting interest
+    diff_keys = common_keys[has_differences | has_formatting_interest]
     
     if len(diff_keys) == 0:
         return pd.DataFrame(), common_keys
@@ -469,11 +494,86 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed):
     
     diff_df = pd.DataFrame(differences_data)
     
+    # For afternoon comparisons, also include removals (rows in SOD but not in Manual)
+    if is_afternoon:
+        removed_keys = df1_indexed.index.difference(df2_indexed.index)
+        
+        if len(removed_keys) > 0:
+            df1_removed = df1_indexed.loc[removed_keys]
+            
+            # Perform Isin Code cross-reference lookup for removed rows
+            isin_codes_removed = df1_removed.get('Isin Code', '').astype(str)
+            cross_ref_symbols_removed = []
+            
+            for isin_code in isin_codes_removed:
+                if pd.isna(isin_code) or str(isin_code).strip() == '':
+                    cross_ref_symbols_removed.append('')
+                    continue
+                
+                # Look up in df2_indexed (Manual file)
+                if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
+                    matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
+                    
+                    if len(matching_rows) > 0:
+                        filtered_rows = matching_rows[~matching_rows['Index'].astype(str).str.strip().isin(EXCLUDED_INDEX_VALUES)]
+                        
+                        if len(filtered_rows) > 0 and '#Symbol' in filtered_rows.columns:
+                            unique_symbols = filtered_rows['#Symbol'].astype(str).str.strip().unique()
+                            unique_symbols = [s for s in unique_symbols if s != '' and s != 'nan']
+                            cross_ref_symbols_removed.append(';'.join(sorted(unique_symbols)))
+                        else:
+                            cross_ref_symbols_removed.append('')
+                    else:
+                        cross_ref_symbols_removed.append('')
+                else:
+                    cross_ref_symbols_removed.append('')
+            
+            # Create removal rows with SOD values and #N/A for Manual values
+            removal_data = {
+                'Rank': range(len(diff_df) + 1, len(diff_df) + len(removed_keys) + 1),
+                'Code': df1_removed['#Symbol'].astype(str) + df1_removed['Index'].astype(str),
+                '#Symbol': df1_removed['#Symbol'],
+                'Sys date': df1_removed.get('System date', ''),
+                'Adj. Rsn': 'Removal',  # Special value for removals
+                'Isin Code': df1_removed.get('Isin Code', ''),
+                'Country': df1_removed.get('Country', ''),
+                'Mnemo': df1_removed.get('Mnemo', ''),
+                'Name': df1_removed.get('Name', ''),
+                'MIC': df1_removed.get('MIC', ''),
+                'Prev ICB': df1_removed.get('ICBCode', ''),
+                'New ICB': '#N/A',
+                'Close Prc': '#N/A',
+                'Adj Closing price': '#N/A',
+                'Net Div': '#N/A',
+                'Gross Div': '#N/A',
+                'Index': df1_removed['Index'],
+                'Prev. Shares': df1_removed.get('Shares', ''),
+                'New Shares': '#N/A',
+                'Prev FF': df1_removed.get('Free float-Coeff', ''),
+                'New FF': '#N/A',
+                'Prev Capping': df1_removed.get('Capping Factor-Coeff', ''),
+                'New Capping': '#N/A',
+                'Cross-Ref Symbols': cross_ref_symbols_removed
+            }
+            
+            removal_df = pd.DataFrame(removal_data)
+            
+            # Combine differences and removals
+            diff_df = pd.concat([diff_df, removal_df], ignore_index=True)
+            # Re-rank
+            diff_df['Rank'] = range(1, len(diff_df) + 1)
+    
     return diff_df, common_keys
 
 @timer
-def find_differences_vectorized_morning_index(df1_indexed, df2_indexed):
-    """Find differences for morning index comparison - vectorized operations"""
+def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_afternoon=False):
+    """Find differences for morning index comparison - vectorized operations
+    
+    Args:
+        df1_indexed: First dataframe (Manual for morning, SOD for afternoon)
+        df2_indexed: Second dataframe (SOD for morning, Manual for afternoon)
+        is_afternoon: If True, also include removals (rows in df1/SOD but not in df2/Manual)
+    """
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
     if len(common_keys) == 0:
@@ -527,6 +627,42 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed):
     
     diff_df = pd.DataFrame(differences_data)
     
+    # For afternoon comparisons, also include removals (rows in SOD but not in Manual)
+    if is_afternoon:
+        removed_keys = df1_indexed.index.difference(df2_indexed.index)
+        
+        if len(removed_keys) > 0:
+            df1_removed = df1_indexed.loc[removed_keys]
+            
+            # Create removal rows with SOD values and #N/A for Manual values
+            removal_data = {
+                'Rank': range(len(diff_df) + 1, len(diff_df) + len(removed_keys) + 1),
+                '#Symbol': df1_removed['#Symbol'],
+                'Sys Date': df1_removed.get('System Date', ''),
+                'IsinCode': df1_removed.get('IsinCode', ''),
+                'Cntry': df1_removed.get('Country', ''),
+                'Mnemo': df1_removed.get('Mnemo', ''),
+                'Name': df1_removed.get('Name', ''),
+                'MIC': df1_removed.get('MIC', ''),
+                'Prev Divisor': df1_removed.get('Divisor', ''),
+                'New Divisor': '#N/A',
+                'Prev t0 IV': df1_removed.get('t0 IV', ''),
+                't0 IV   SOD': '#N/A',
+                'Prev t0 IV unround': df1_removed.get('t0 IV unround', ''),
+                't0 IV unround': '#N/A',
+                'Prev Mkt Cap': df1_removed.get('Mkt Cap', ''),
+                'New Mkt Cap': '#N/A',
+                'Prev Nr of comp': df1_removed.get('Nr of components', ''),
+                'Nr of comp': '#N/A'
+            }
+            
+            removal_df = pd.DataFrame(removal_data)
+            
+            # Combine differences and removals
+            diff_df = pd.concat([diff_df, removal_df], ignore_index=True)
+            # Re-rank
+            diff_df['Rank'] = range(1, len(diff_df) + 1)
+    
     return diff_df, common_keys
 
 def excel_column_name(col_index):
@@ -564,11 +700,12 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         if not diff_df.empty:
             diff_df_formatted = diff_df.copy()
             
-            # Determine base comparison type (stock or index)
-            base_comp_type = 'stock' if 'stock' in comparison_type else 'index'
+            # Determine if this is a stock or index comparison
+            is_stock = comparison_type in ['stock', 'afternoon_stock']
+            is_index = comparison_type in ['index', 'afternoon_index']
             
             # Apply formatting based on comparison type
-            if base_comp_type == 'stock':
+            if is_stock:
                 diff_df_formatted['_shares_changed'] = False
                 diff_df_formatted['_prev_shares_blue'] = False
                 diff_df_formatted['_ff_red'] = False
@@ -583,8 +720,14 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_formatted['_close_prc_red'] = False
                 diff_df_formatted['_adj_closing_price_red'] = False
                 diff_df_formatted['_symbol_not_in_crossref'] = False
+                diff_df_formatted['_is_removal'] = False
                 
                 for idx in range(len(diff_df)):
+                    # Check if this is a removal row
+                    adj_rsn = str(diff_df.iloc[idx].get('Adj. Rsn', '')).strip()
+                    is_removal = adj_rsn == 'Removal'
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_is_removal')] = is_removal
+                    
                     # Check Mnemo first
                     mnemo_value = str(diff_df.iloc[idx].get('Mnemo', '')).strip()
                     mnemo_allowed = mnemo_value in ALLOWED_MNEMONICS
@@ -697,18 +840,24 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_main = diff_df_formatted.drop([
                     '_shares_changed', '_prev_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
                     '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed', '_mnemo_purple',
-                    '_name_purple', '_close_prc_red', '_adj_closing_price_red', '_symbol_not_in_crossref'
+                    '_name_purple', '_close_prc_red', '_adj_closing_price_red', '_symbol_not_in_crossref', '_is_removal'
                 ], axis=1)
             
-            elif base_comp_type == 'index':
+            elif is_index:
                 diff_df_formatted['_divisor_changed'] = False
                 diff_df_formatted['_t0iv_changed'] = False
                 diff_df_formatted['_t0iv_unround_changed'] = False
                 diff_df_formatted['_mktcap_changed'] = False
                 diff_df_formatted['_nrcomp_changed'] = False
                 diff_df_formatted['_mnemo_blue'] = False
+                diff_df_formatted['_is_removal'] = False
                 
                 for idx in range(len(diff_df)):
+                    # Check if this is a removal row (check if New Divisor is '#N/A')
+                    new_divisor = str(diff_df.iloc[idx].get('New Divisor', '')).strip()
+                    is_removal = new_divisor == '#N/A'
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_is_removal')] = is_removal
+                    
                     for field_pair, flag_col in [
                         (('Prev Divisor', 'New Divisor'), '_divisor_changed'),
                         (('Prev t0 IV', 't0 IV   SOD'), '_t0iv_changed'),
@@ -730,7 +879,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 
                 diff_df_main = diff_df_formatted.drop([
                     '_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', 
-                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue'
+                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue', '_is_removal'
                 ], axis=1)
             else:
                 diff_df_main = diff_df_formatted
@@ -759,7 +908,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 })
             
             # Apply specific cell formatting based on comparison type
-            if base_comp_type == 'stock':
+            if is_stock:
                 symbol_col = diff_df.columns.get_loc('#Symbol')
                 new_shares_col = diff_df.columns.get_loc('New Shares')
                 prev_shares_col = diff_df.columns.get_loc('Prev. Shares')
@@ -827,7 +976,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     if diff_df_formatted.iloc[row_idx]['_symbol_not_in_crossref']:
                         worksheet1.write(excel_row, symbol_col, diff_df.iloc[row_idx]['#Symbol'], black_format)
             
-            elif base_comp_type == 'index':
+            elif is_index:
                 field_cols = {
                     'New Divisor': diff_df.columns.get_loc('New Divisor'),
                     't0 IV   SOD': diff_df.columns.get_loc('t0 IV   SOD'),
@@ -965,23 +1114,18 @@ def perform_comparison(comparison_type='stock'):
         output_filename = config['output_filename'].format(date=current_date)
         output_path = os.path.join(OUTPUT_DIR, output_filename)
         
-        # Check if this is an afternoon comparison
-        is_afternoon = config.get('comparison_type') == 'afternoon'
-        
-        # For afternoon comparisons, check time and allow overwriting until 18:10
-        if is_afternoon:
-            if os.path.exists(output_path):
-                if is_before_afternoon_cutoff():
-                    logger.info(f"{comparison_type.upper()} output file exists but before 18:10, overwriting: {output_filename}")
-                    print(f"  {comparison_type.upper()} output file exists, overwriting (before 18:10)...")
+        # Check if output file already exists and whether overwrite is allowed
+        if os.path.exists(output_path):
+            if config.get('allow_overwrite', False):
+                if should_allow_overwrite(comparison_type):
+                    logger.info(f"{comparison_type.upper()} output file exists but overwrite is allowed. Regenerating...")
+                    print(f"  {comparison_type.upper()} output file exists but will be overwritten.")
                 else:
-                    logger.info(f"{comparison_type.upper()} output file already exists and after 18:10: {output_filename}. Skipping comparison.")
-                    print(f"✓ {comparison_type.upper()} output file already exists (after 18:10): {output_filename}")
+                    logger.info(f"{comparison_type.upper()} output file exists and overwrite time has passed. Skipping.")
+                    print(f"✓ {comparison_type.upper()} output file already exists and overwrite time has passed.")
                     print("  Skipping comparison.\n")
                     return True
-        else:
-            # For morning comparisons, check if output file already exists
-            if os.path.exists(output_path):
+            else:
                 logger.info(f"{comparison_type.upper()} output file already exists: {output_filename}. Skipping comparison.")
                 print(f"✓ {comparison_type.upper()} output file already exists: {output_filename}")
                 print("  Skipping comparison.\n")
@@ -991,42 +1135,44 @@ def perform_comparison(comparison_type='stock'):
         manual_path = file_status['manual_path']
         
         print(f"Files found:")
-        print(f"  Manual: {os.path.basename(manual_path)}")
         print(f"  SOD: {os.path.basename(sod_path)}")
+        print(f"  Manual: {os.path.basename(manual_path)}")
         print()
         
         # Read files
-        df_manual = read_excel_file(manual_path)
-        df_sod = read_excel_file(sod_path)
+        # For afternoon comparisons: SOD is df1 (older), Manual is df2 (newer)
+        # For morning comparisons: Manual is df1 (older), SOD is df2 (newer)
+        is_afternoon = comparison_type.startswith('afternoon_')
         
-        if df_manual is None or df_sod is None:
+        if is_afternoon:
+            df1 = read_excel_file(sod_path)
+            df2 = read_excel_file(manual_path)
+        else:
+            df1 = read_excel_file(manual_path)
+            df2 = read_excel_file(sod_path)
+        
+        if df1 is None or df2 is None:
             logger.error("Failed to read one or both files")
             return False
         
         # Get comparison configuration
-        config = COMPARISON_CONFIGS[comparison_type]
         key_fields = config['key_fields']
         
         # Prepare dataframes
-        df_manual_indexed, df_sod_indexed = prepare_dataframes(df_manual, df_sod, key_fields)
+        df1_indexed, df2_indexed = prepare_dataframes(df1, df2, key_fields)
         
         # Find differences
         comparison_function = config['comparison_function']
         if comparison_function == 'find_differences_vectorized_morning_stock':
-            diff_df, common_keys = find_differences_vectorized_morning_stock(df_manual_indexed, df_sod_indexed)
+            diff_df, common_keys = find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_afternoon)
         elif comparison_function == 'find_differences_vectorized_morning_index':
-            diff_df, common_keys = find_differences_vectorized_morning_index(df_manual_indexed, df_sod_indexed)
+            diff_df, common_keys = find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_afternoon)
         else:
             logger.error(f"Unknown comparison function: {comparison_function}")
             return False
         
-        # Generate output filename with current date
-        current_date = datetime.now().strftime("%Y%m%d")
-        output_filename = config['output_filename'].format(date=current_date)
-        output_path = os.path.join(OUTPUT_DIR, output_filename)
-        
         # Write output file
-        success = write_excel_optimized(diff_df, df_manual_indexed, df_sod_indexed, output_path, comparison_type)
+        success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path, comparison_type)
         
         if success:
             print(f"\n✓ {comparison_type.upper()} comparison completed successfully!")
@@ -1080,40 +1226,40 @@ class FileMonitorHandler(FileSystemEventHandler):
         # Determine which comparison type based on filename and folder
         filename = os.path.basename(file_path)
         folder_path = os.path.dirname(file_path)
-        comparison_types = []
+        comparison_type = None
         
-        # Check if this is an afternoon manual file
-        if 'Afternoon + Evening Manuals' in folder_path:
-            if 'STOCK' in filename:
-                comparison_types.append('afternoon_stock')
-            if 'INDEX' in filename:
-                comparison_types.append('afternoon_index')
-        else:
-            # Check for morning comparisons
-            for comp_type, config in COMPARISON_CONFIGS.items():
-                if config.get('comparison_type') == 'morning' and config['file_suffix'] in filename:
-                    comparison_types.append(comp_type)
+        # Check if file is in afternoon manual folder
+        is_afternoon_manual = 'Afternoon' in folder_path
         
-        if not comparison_types:
+        for comp_type, config in COMPARISON_CONFIGS.items():
+            if config['file_suffix'] in filename:
+                # Match afternoon comparisons with afternoon manual files
+                if is_afternoon_manual and comp_type.startswith('afternoon_'):
+                    comparison_type = comp_type
+                    break
+                # Match morning comparisons with regular manual or SOD files
+                elif not is_afternoon_manual and not comp_type.startswith('afternoon_'):
+                    comparison_type = comp_type
+                    break
+        
+        if comparison_type is None:
             return
         
-        # Process each relevant comparison type
-        for comparison_type in comparison_types:
-            # Avoid checking too frequently for each comparison type
-            if comparison_type in self.last_check:
-                if current_time - self.last_check[comparison_type] < self.check_interval:
-                    continue
-            
-            self.last_check[comparison_type] = current_time
-            
-            # Wait a bit for file to be completely written
-            time.sleep(5)
-            
-            if perform_comparison(comparison_type):
-                logger.info(f"{comparison_type.upper()} comparison completed successfully!")
-                print(f"{comparison_type.upper()} comparison completed successfully!")
-            else:
-                logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
+        # Avoid checking too frequently for each comparison type
+        if comparison_type in self.last_check:
+            if current_time - self.last_check[comparison_type] < self.check_interval:
+                return
+        
+        self.last_check[comparison_type] = current_time
+        
+        # Wait a bit for file to be completely written
+        time.sleep(5)
+        
+        if perform_comparison(comparison_type):
+            logger.info(f"{comparison_type.upper()} comparison completed successfully!")
+            print(f"{comparison_type.upper()} comparison completed successfully!")
+        else:
+            logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
 
 def start_monitoring():
     """Start monitoring the specified folders"""
@@ -1124,15 +1270,17 @@ def start_monitoring():
     # Display expected files for all comparison types
     for comparison_type in COMPARISON_CONFIGS.keys():
         expected_files = get_expected_filenames(comparison_type)
-        comp_type_label = COMPARISON_CONFIGS[comparison_type].get('comparison_type', 'morning').upper()
-        print(f"\nLooking for {comparison_type.upper()} ({comp_type_label}) files:")
-        print(f"  Manual: {expected_files['manual']}")
+        config = COMPARISON_CONFIGS[comparison_type]
+        manual_folder = config.get('manual_folder', 'manual')
+        
+        print(f"\nLooking for {comparison_type.upper()} files:")
         print(f"  SOD: {expected_files['sod']}")
+        print(f"  Manual ({manual_folder}): {expected_files['manual']}")
     
     print(f"\nFolders:")
-    print(f"  Manual: {MONITOR_FOLDERS['manual']}")
+    print(f"  Morning Manual: {MONITOR_FOLDERS['manual']}")
     print(f"  SOD: {MONITOR_FOLDERS['sod']}")
-    print(f"  Afternoon: {MONITOR_FOLDERS['afternoon']}")
+    print(f"  Afternoon Manual: {MONITOR_FOLDERS['afternoon_manual']}")
     print()
     
     # Check if files already exist
@@ -1152,7 +1300,7 @@ def start_monitoring():
     try:
         observer.schedule(event_handler, MONITOR_FOLDERS['manual'], recursive=False)
         observer.schedule(event_handler, MONITOR_FOLDERS['sod'], recursive=False)
-        observer.schedule(event_handler, MONITOR_FOLDERS['afternoon'], recursive=False)
+        observer.schedule(event_handler, MONITOR_FOLDERS['afternoon_manual'], recursive=False)
         
         observer.start()
         logger.info("File monitoring started successfully")
@@ -1215,10 +1363,12 @@ def manual_check(comparison_type=None):
     if comparison_type:
         # Check specific comparison type
         expected_files = get_expected_filenames(comparison_type)
+        config = COMPARISON_CONFIGS[comparison_type]
+        manual_folder = config.get('manual_folder', 'manual')
         
         print(f"\nExpected {comparison_type.upper()} files:")
-        print(f"  Manual: {expected_files['manual']}")
         print(f"  SOD: {expected_files['sod']}")
+        print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         print()
         
         file_status = check_files_available(comparison_type)
@@ -1237,10 +1387,12 @@ def manual_check(comparison_type=None):
         # Check all comparison types
         for comp_type in COMPARISON_CONFIGS.keys():
             expected_files = get_expected_filenames(comp_type)
+            config = COMPARISON_CONFIGS[comp_type]
+            manual_folder = config.get('manual_folder', 'manual')
             
             print(f"\nExpected {comp_type.upper()} files:")
-            print(f"  Manual: {expected_files['manual']}")
             print(f"  SOD: {expected_files['sod']}")
+            print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         
         print()
         results = perform_all_comparisons()

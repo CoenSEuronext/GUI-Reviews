@@ -821,7 +821,7 @@ def merge_csv_files(file1_path, file2_path, output_path):
 def check_manual_files_for_immediate_merge(date_str):
     """Check for afternoon/evening manual files and merge them immediately if all 4 are present
     
-    FIXED VERSION with comprehensive logging to diagnose merge issues
+    Reduced console output - only shows detailed messages when actually merging or when files are missing
     
     Merges:
     - TTMIndexUS1_GIS_MANUAL_INDEX + TTMIndexEU1_GIS_MANUAL_INDEX -> INDEX merged file
@@ -834,7 +834,6 @@ def check_manual_files_for_immediate_merge(date_str):
     
     try:
         logger.info(f"[IMMEDIATE MERGE] ========== Starting Check for Date: {date_str} ==========")
-        print(f"\n[IMMEDIATE MERGE CHECK] Checking afternoon/evening manual files for {date_str}...")
         
         with manual_merge_lock:
             # Define the 4 files we're looking for
@@ -860,12 +859,10 @@ def check_manual_files_for_immediate_merge(date_str):
                 if os.path.exists(file_path):
                     existing_files[key] = file_path
                     logger.info(f"[IMMEDIATE MERGE] ✓ FOUND: {filename}")
-                    print(f"  ✓ Found: {filename}")
                 else:
                     all_files_present = False
                     missing_files.append(filename)
                     logger.info(f"[IMMEDIATE MERGE] ✗ MISSING: {filename}")
-                    print(f"  ✗ Missing: {filename}")
             
             # If all 4 files are present, perform the merge
             if all_files_present:
@@ -875,11 +872,11 @@ def check_manual_files_for_immediate_merge(date_str):
                 # Define output file paths
                 index_output = os.path.join(
                     AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER, 
-                    f"TTMIndex_GIS_MANUAL_INDEX_{date_str}.xlsx"
+                    f"TTMIndexEU1_GIS_MANUAL_INDEX_{date_str}.xlsx"
                 )
                 stock_output = os.path.join(
                     AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER, 
-                    f"TTMIndex_GIS_MANUAL_STOCK_{date_str}.xlsx"
+                    f"TTMIndexEU1_GIS_MANUAL_STOCK_{date_str}.xlsx"
                 )
                 
                 # Check if output files actually exist
@@ -918,11 +915,8 @@ def check_manual_files_for_immediate_merge(date_str):
                         
                         if input_files_newer:
                             logger.info(f"[IMMEDIATE MERGE] ALL 4 input files are newer than output files! Will re-merge.")
-                            print(f"  🔄 All 4 input files updated - will re-merge")
                         else:
                             logger.info(f"[IMMEDIATE MERGE] Not all inputs are newer: {newer_count} newer, {older_count} older - waiting for all 4")
-                            if newer_count > 0:
-                                print(f"  ⏳ Waiting for all 4 files to update ({newer_count}/4 so far)")
                     except Exception as e:
                         logger.warning(f"[IMMEDIATE MERGE] Could not check file times: {str(e)}")
                         input_files_newer = False
@@ -930,90 +924,83 @@ def check_manual_files_for_immediate_merge(date_str):
                 # If marked as processed but output files don't exist, remove the key and re-process
                 if merge_key in processed_files_today and not output_files_exist:
                     logger.warning(f"[IMMEDIATE MERGE] Marked as processed but output files missing! Removing key and re-processing...")
-                    print(f"  ⚠ WARNING: Marked as processed but output files missing - will re-merge")
                     processed_files_today.discard(merge_key)
                 
                 # If marked as processed but input files are newer, remove the key and re-process
                 if merge_key in processed_files_today and input_files_newer:
                     logger.info(f"[IMMEDIATE MERGE] Input files have been updated! Removing key and re-merging...")
-                    print(f"  🔄 Input files updated - will re-merge and overwrite existing outputs")
                     processed_files_today.discard(merge_key)
                 
-                if merge_key not in processed_files_today:
-                    logger.info(f"[IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***")
-                    print(f"\n{'='*80}")
-                    print(f"IMMEDIATE MERGE: Afternoon + Evening Manual Files")
-                    print(f"{'='*80}")
-                    print(f"Date: {date_str}")
-                    print(f"All 4 required manual files found:")
-                    for key, path in existing_files.items():
-                        print(f"  ✓ {os.path.basename(path)}")
-                    
-                    # Mark as processed FIRST to prevent duplicate processing
-                    processed_files_today.add(merge_key)
-                    logger.info(f"[IMMEDIATE MERGE] Marked as processed: {merge_key}")
-                    
-                    # Ensure output folder exists
-                    if not os.path.exists(AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER):
-                        os.makedirs(AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER)
-                        logger.info(f"[IMMEDIATE MERGE] Created output folder: {AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER}")
-                    
-                    # Use the pre-defined output paths (already defined above)
-                    logger.info(f"[IMMEDIATE MERGE] INDEX output path: {index_output}")
-                    
-                    # Remove old INDEX file if it exists (overwrite behavior)
-                    if os.path.exists(index_output):
-                        try:
-                            os.chmod(index_output, stat.S_IWRITE)  # Remove read-only
-                            os.remove(index_output)
-                            logger.info(f"[IMMEDIATE MERGE] Removed previous INDEX file: {os.path.basename(index_output)}")
-                            print(f"  Overwriting previous INDEX file...")
-                        except Exception as e:
-                            logger.warning(f"[IMMEDIATE MERGE] Could not remove old INDEX file: {str(e)}")
-                    
-                    print(f"\n  Merging INDEX files (EU + US)...")
-                    logger.info(f"[IMMEDIATE MERGE] Merging INDEX: {os.path.basename(existing_files['eu_index'])} + {os.path.basename(existing_files['us_index'])}")
-                    
-                    if merge_csv_files(existing_files['eu_index'], existing_files['us_index'], index_output):
-                        logger.info(f"[IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> {os.path.basename(index_output)}")
-                        print(f"  ✓ Created: {os.path.basename(index_output)}")
-                    else:
-                        logger.error(f"[IMMEDIATE MERGE] ✗ FAILED: INDEX merge failed")
-                        print(f"  ✗ FAILED: INDEX merge failed")
-                    
-                    # Merge STOCK files (EU + US)
-                    # Use the pre-defined stock_output path (already defined above)
-                    logger.info(f"[IMMEDIATE MERGE] STOCK output path: {stock_output}")
-                    
-                    # Remove old STOCK file if it exists (overwrite behavior)
-                    if os.path.exists(stock_output):
-                        try:
-                            os.chmod(stock_output, stat.S_IWRITE)  # Remove read-only
-                            os.remove(stock_output)
-                            logger.info(f"[IMMEDIATE MERGE] Removed previous STOCK file: {os.path.basename(stock_output)}")
-                            print(f"  Overwriting previous STOCK file...")
-                        except Exception as e:
-                            logger.warning(f"[IMMEDIATE MERGE] Could not remove old STOCK file: {str(e)}")
-                    
-                    print(f"  Merging STOCK files (EU + US)...")
-                    logger.info(f"[IMMEDIATE MERGE] Merging STOCK: {os.path.basename(existing_files['eu_stock'])} + {os.path.basename(existing_files['us_stock'])}")
-                    
-                    if merge_csv_files(existing_files['eu_stock'], existing_files['us_stock'], stock_output):
-                        logger.info(f"[IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> {os.path.basename(stock_output)}")
-                        print(f"  ✓ Created: {os.path.basename(stock_output)}")
-                    else:
-                        logger.error(f"[IMMEDIATE MERGE] ✗ FAILED: STOCK merge failed")
-                        print(f"  ✗ FAILED: STOCK merge failed")
-                    
-                    print(f"{'='*80}\n")
-                    logger.info(f"[IMMEDIATE MERGE] ========== Completed Merge for {date_str} ==========")
-                    return True
-                else:
-                    logger.info(f"[IMMEDIATE MERGE] Already processed today - skipping duplicate merge")
-                    print(f"  Already processed today - skipping duplicate merge")
+                # EARLY EXIT: If already processed and nothing has changed, exit silently
+                if merge_key in processed_files_today:
+                    logger.info(f"[IMMEDIATE MERGE] Already processed and up-to-date - skipping duplicate merge")
+                    logger.info(f"[IMMEDIATE MERGE] ========== Check Complete (already processed) ==========")
                     return False
+                
+                # If we reach here, we need to merge (either first time or files were updated)
+                logger.info(f"[IMMEDIATE MERGE] *** STARTING MERGE PROCESS ***")
+                print(f"\n{'='*80}")
+                print(f"IMMEDIATE MERGE: Afternoon + Evening Manual Files")
+                print(f"{'='*80}")
+                print(f"Date: {date_str}")
+                print(f"All 4 required manual files found:")
+                for key, path in existing_files.items():
+                    print(f"  ✓ {os.path.basename(path)}")
+                
+                # Mark as processed FIRST to prevent duplicate processing
+                processed_files_today.add(merge_key)
+                logger.info(f"[IMMEDIATE MERGE] Marked as processed: {merge_key}")
+                
+                # Ensure output folder exists
+                if not os.path.exists(AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER):
+                    os.makedirs(AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER)
+                    logger.info(f"[IMMEDIATE MERGE] Created output folder: {AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER}")
+                
+                # Remove old INDEX file if it exists (overwrite behavior)
+                if os.path.exists(index_output):
+                    try:
+                        os.chmod(index_output, stat.S_IWRITE)  # Remove read-only
+                        os.remove(index_output)
+                        logger.info(f"[IMMEDIATE MERGE] Removed previous INDEX file: {os.path.basename(index_output)}")
+                        print(f"  Overwriting previous INDEX file...")
+                    except Exception as e:
+                        logger.warning(f"[IMMEDIATE MERGE] Could not remove old INDEX file: {str(e)}")
+                
+                print(f"\n  Merging INDEX files (EU + US)...")
+                logger.info(f"[IMMEDIATE MERGE] Merging INDEX: {os.path.basename(existing_files['eu_index'])} + {os.path.basename(existing_files['us_index'])}")
+                
+                if merge_csv_files(existing_files['eu_index'], existing_files['us_index'], index_output):
+                    logger.info(f"[IMMEDIATE MERGE] ✓ SUCCESS: Merged INDEX files -> {os.path.basename(index_output)}")
+                    print(f"  ✓ Created: {os.path.basename(index_output)}")
+                else:
+                    logger.error(f"[IMMEDIATE MERGE] ✗ FAILED: INDEX merge failed")
+                    print(f"  ✗ FAILED: INDEX merge failed")
+                
+                # Remove old STOCK file if it exists (overwrite behavior)
+                if os.path.exists(stock_output):
+                    try:
+                        os.chmod(stock_output, stat.S_IWRITE)  # Remove read-only
+                        os.remove(stock_output)
+                        logger.info(f"[IMMEDIATE MERGE] Removed previous STOCK file: {os.path.basename(stock_output)}")
+                        print(f"  Overwriting previous STOCK file...")
+                    except Exception as e:
+                        logger.warning(f"[IMMEDIATE MERGE] Could not remove old STOCK file: {str(e)}")
+                
+                print(f"  Merging STOCK files (EU + US)...")
+                logger.info(f"[IMMEDIATE MERGE] Merging STOCK: {os.path.basename(existing_files['eu_stock'])} + {os.path.basename(existing_files['us_stock'])}")
+                
+                if merge_csv_files(existing_files['eu_stock'], existing_files['us_stock'], stock_output):
+                    logger.info(f"[IMMEDIATE MERGE] ✓ SUCCESS: Merged STOCK files -> {os.path.basename(stock_output)}")
+                    print(f"  ✓ Created: {os.path.basename(stock_output)}")
+                else:
+                    logger.error(f"[IMMEDIATE MERGE] ✗ FAILED: STOCK merge failed")
+                    print(f"  ✗ FAILED: STOCK merge failed")
+                
+                print(f"{'='*80}\n")
+                logger.info(f"[IMMEDIATE MERGE] ========== Completed Merge for {date_str} ==========")
+                return True
             else:
-                # Not all files present yet
+                # Not all files present yet - only show this message once per day
                 logger.info(f"[IMMEDIATE MERGE] Waiting for files. Missing {len(missing_files)} file(s):")
                 for missing_file in missing_files:
                     logger.info(f"[IMMEDIATE MERGE]   - {missing_file}")
@@ -1021,7 +1008,8 @@ def check_manual_files_for_immediate_merge(date_str):
                 # Only log this once per day to avoid spam
                 missing_key = f"afternoon_evening_manual_missing_{date_str}"
                 if missing_key not in processed_files_today:
-                    print(f"  Still waiting for {len(missing_files)} file(s)...")
+                    # Only print to console if this is the first time we're checking today
+                    logger.info(f"[IMMEDIATE MERGE] First check of the day - files not ready yet")
                     processed_files_today.add(missing_key)
                 
                 logger.info(f"[IMMEDIATE MERGE] ========== Check Complete (files not ready) ==========")
@@ -1462,7 +1450,7 @@ def monitor_unified():
     archive_folder = os.path.join(DESTINATION_FOLDER, "Archive")
 
     print("=" * 80)
-    print("UNIFIED FILE MONITOR AND CSV MERGER - ENHANCED VERSION WITH FIX")
+    print("UNIFIED FILE MONITOR AND CSV MERGER - QUIET MODE")
     print("=" * 80)
     print("Starting unified monitoring system...")
     logger.info("Starting unified monitoring system...")
@@ -1498,21 +1486,20 @@ def monitor_unified():
     print(f"  EOD outputs: {EOD_OUTPUT_FOLDER}")
     print(f"  SOD outputs: {SOD_OUTPUT_FOLDER}")
     print(f"  Afternoon + Evening Manuals: {AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER}")
-    print(f"  Check interval: Every 20 seconds")
-    print(f"\nNEW FEATURE (FIXED):")
-    print(f"  ✓ Immediate merge of afternoon/evening manual files")
-    print(f"  ✓ Comprehensive logging to diagnose issues")
-    print(f"  ✓ Merges triggered as soon as all 4 files arrive")
-    print(f"  ✓ Previous merged files automatically overwritten")
+    print(f"  Check interval: Every 2 minutes")
+    print(f"\nQUIET MODE ENABLED:")
+    print(f"  ✓ Reduced console output")
+    print(f"  ✓ Only shows important events and merge operations")
+    print(f"  ✓ Full details still logged to unified_monitor.log")
     print(f"\nBoth systems are running... (Press Ctrl+C to stop)")
     print("=" * 80)
 
     try:
         while True:
-            # Periodically check and move old files (every 20 seconds)
+            # Periodically check and move old files (every 2 minutes)
             check_and_move_old_files(DESTINATION_FOLDER, archive_folder)
             
-            # Periodically check for CSV files to merge (every 20 seconds)
+            # Periodically check for CSV files to merge (every 2 minutes)
             logger.info("Running periodic CSV merger check...")
             check_files_for_merge()
             check_previous_workday_files(days_back=30)
