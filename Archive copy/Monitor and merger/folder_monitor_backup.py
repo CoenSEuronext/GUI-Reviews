@@ -19,6 +19,7 @@ import calendar
 import functools
 import subprocess
 
+DATE_PATTERN = re.compile(r'(\d{8})')
 # Timer decorator for performance monitoring
 def timer(func):
     """Decorator to time function execution"""
@@ -90,7 +91,7 @@ SOD_OUTPUT_FOLDER = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\
 
 def extract_date_from_filename(filename):
     """Extract date from filename using regex to find 'yyyymmdd' pattern"""
-    date_match = re.search(r'(\d{8})', filename)
+    date_match = DATE_PATTERN.search(filename)
     if date_match:
         date_str = date_match.group(1)
         try:
@@ -101,31 +102,67 @@ def extract_date_from_filename(filename):
 
 @timer
 def compare_folders(source_path, destination_path):
-    """Compare source and destination folders to identify missing files"""
+    """Compare source and destination folders - ULTRA OPTIMIZED"""
     try:
-        # Get lists of files in both folders
-        source_files = set(f for f in os.listdir(source_path) if os.path.isfile(os.path.join(source_path, f)))
-        dest_files = set(f for f in os.listdir(destination_path) if os.path.isfile(os.path.join(destination_path, f)))
+        cutoff_date = datetime.now() - timedelta(days=100)
+        cutoff_str = cutoff_date.strftime('%Y%m%d')
         
-        # Find missing files that are within 100 days
+        # KEY CHANGE: Use scandir() instead of listdir()
+        print("  Reading source folder (this may take 2-5 minutes on network drives)...")
+        source_start = time.time()
+        
+        source_files = set()
+        source_count = 0
+        
+        # NEW: scandir() is 2-3x faster than listdir()
+        with os.scandir(source_path) as entries:
+            for entry in entries:
+                if entry.is_file():
+                    source_files.add(entry.name)
+                    source_count += 1
+        
+        
+        # Same optimization for destination
+        dest_start = time.time()
+        
+        dest_files = set()
+        dest_count = 0
+        
+        with os.scandir(destination_path) as entries:
+            for entry in entries:
+                if entry.is_file():
+                    dest_files.add(entry.name)
+                    dest_count += 1
+        
+        diff_start = time.time()
+        potentially_missing = source_files - dest_files
+        
+        filter_start = time.time()
         missing_files = []
-        for filename in source_files - dest_files:
-            file_date = extract_date_from_filename(filename)
-            if file_date and (datetime.now() - file_date).days <= 100:
-                missing_files.append(filename)
+        for filename in potentially_missing:
+            date_match = DATE_PATTERN.search(filename)
+            if date_match:
+                date_str = date_match.group(1)
+                if date_str >= cutoff_str:
+                    missing_files.append(filename)
+        
         
         if missing_files:
             logger.info(f"Found {len(missing_files)} missing files:")
-            for file in missing_files[:10]:  # Log first 10 missing files
+            print(f"\n  Found {len(missing_files)} missing files to copy:")
+            for file in missing_files[:10]:
                 logger.info(f"Missing file: {file}")
-                print(f"Missing file: {file}")
+                print(f"     - {file}")
             if len(missing_files) > 10:
                 logger.info(f"... and {len(missing_files) - 10} more")
-                print(f"... and {len(missing_files) - 10} more")
+                print(f"     ... and {len(missing_files) - 10} more")
+        else:
+            print("  No missing files found - destination is up to date!")
         
         return missing_files
     except Exception as e:
         logger.error(f"Error comparing folders: {str(e)}")
+        print(f"  ERROR: {str(e)}")
         return []
 
 def retry_operation(operation, max_retries=3, delay=5):
@@ -473,7 +510,7 @@ def process_existing_files_original(source_path, destination_path, max_age_days)
         print(f"Error during initial scan: {str(e)}")
 
 def check_and_move_old_files(destination_path, archive_folder):
-    """Check destination folder for files older than 120 days and move them to archive"""
+    """Check destination folder for files older than 120 days and move them to archive - OPTIMIZED"""
     try:
         # Ensure archive folder exists
         if not os.path.exists(archive_folder):
@@ -482,30 +519,42 @@ def check_and_move_old_files(destination_path, archive_folder):
         
         current_date = datetime.now()
         moved_count = 0
+        scanned_count = 0
         
-        for filename in os.listdir(destination_path):
-            file_path = os.path.join(destination_path, filename)
-            if os.path.isfile(file_path):
-                file_date = extract_date_from_filename(filename)
-                if file_date:
-                    days_old = (current_date - file_date).days
-                    if days_old >= 120:
-                        archive_path = os.path.join(archive_folder, filename)
-                        
-                        # Check if file already exists in archive
-                        if os.path.exists(archive_path):
-                            logger.debug(f"File {filename} already exists in archive, skipping")
-                            continue
-                        
-                        print(f"Moving old file to archive: {filename} ({days_old} days old)")
-                        logger.info(f"Moving old file to archive: {filename} - {days_old} days old")
-                        
-                        if move_file_to_archive(file_path, archive_path, filename):
-                            moved_count += 1
+        scan_start = time.time()
+        
+        # OPTIMIZATION: Use scandir() instead of listdir()
+        with os.scandir(destination_path) as entries:
+            for entry in entries:
+                if entry.is_file():
+                    scanned_count += 1
+                    
+                    
+                    filename = entry.name
+                    file_date = extract_date_from_filename(filename)
+                    
+                    if file_date:
+                        days_old = (current_date - file_date).days
+                        if days_old >= 120:
+                            archive_path = os.path.join(archive_folder, filename)
+                            
+                            if os.path.exists(archive_path):
+                                logger.debug(f"File {filename} already exists in archive, skipping")
+                                continue
+                            
+                            print(f"  Moving old file to archive: {filename} ({days_old} days old)")
+                            logger.info(f"Moving old file to archive: {filename} - {days_old} days old")
+                            
+                            if move_file_to_archive(entry.path, archive_path, filename):
+                                moved_count += 1
+        
+        scan_time = time.time() - scan_start
         
         if moved_count > 0:
-            print(f"Moved {moved_count} old files to archive folder")
-            logger.info(f"Moved {moved_count} old files to archive folder")
+            print(f"  Moved {moved_count} old files to archive")
+            logger.info(f"Moved {moved_count} old files to archive")
+        else:
+            pass
         
     except Exception as e:
         logger.error(f"Error checking and moving old files: {str(e)}")
@@ -567,13 +616,17 @@ def extract_date_from_csv_filename(filename):
             return None
     return None
 
+def read_csv_safe(file_path, encoding='latin1', sep=';'):
+    """Read CSV file without dtype warnings"""
+    return pd.read_csv(file_path, encoding=encoding, sep=sep, low_memory=False)
+
 def convert_single_csv_to_xlsx(csv_path, output_path):
     """Convert a single CSV file to XLSX format with proper formatting"""
     try:
         logger.info(f"Converting CSV file: {os.path.basename(csv_path)} to XLSX")
         
         # Read the CSV file with pandas - using latin1 encoding and semicolon delimiter
-        df = pd.read_csv(csv_path, encoding='latin1', sep=';')
+        df = read_csv_safe(csv_path)
         
         # Make sure the output path has .xlsx extension
         if not output_path.endswith('.xlsx'):
@@ -644,10 +697,10 @@ def merge_csv_files(file1_path, file2_path, output_path):
         logger.info(f"Merging CSV files: {os.path.basename(file1_path)} and {os.path.basename(file2_path)}")
         
         # Read the first file with pandas - using latin1 encoding and semicolon delimiter
-        df1 = pd.read_csv(file1_path, encoding='latin1', sep=';')
+        df1 = read_csv_safe(file1_path)
         
         # Read the second file with pandas
-        df2 = pd.read_csv(file2_path, encoding='latin1', sep=';')
+        df2 = read_csv_safe(file2_path)
         
         # Combine the dataframes - keeping all rows including header of second file
         merged_df = pd.concat([df1, df2])
@@ -835,15 +888,7 @@ def check_previous_workday_files(days_back=30):
             # Calculate the date to check (going backwards)
             check_date = current_datetime - timedelta(days=i)
             prev_workday = get_previous_workday_date(check_date)
-            
-            # Create unique key to avoid redundant daily checks
-            check_key = f"prev_check_{prev_workday}"
-            if check_key in processed_files_today:
-                continue  # Already checked this workday today
-            
-            # Mark as checked to avoid processing again today
-            processed_files_today.add(check_key)
-            
+                        
             # Skip files older than 60 days to avoid processing very old data
             workday_date = datetime.strptime(prev_workday, '%Y%m%d')
             if (datetime.now() - workday_date).days > 60:

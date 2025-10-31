@@ -1095,7 +1095,7 @@ def check_previous_workday_files(days_back=30):
         logger.debug(f"Checking for previous {days_back} workdays output files...")
         
         # Limit processing to avoid performance issues
-        max_merges_per_check = 3  # Don't merge more than 3 files per cycle
+        max_merges_per_check = 10 
         merges_performed = 0
         
         # Check each of the previous N workdays
@@ -1488,9 +1488,6 @@ def monitor_unified():
     print(f"  Afternoon + Evening Manuals: {AFTERNOON_EVENING_MANUAL_OUTPUT_FOLDER}")
     print(f"  Check interval: Every 2 minutes")
     print(f"\nQUIET MODE ENABLED:")
-    print(f"  ✓ Reduced console output")
-    print(f"  ✓ Only shows important events and merge operations")
-    print(f"  ✓ Full details still logged to unified_monitor.log")
     print(f"\nBoth systems are running... (Press Ctrl+C to stop)")
     print("=" * 80)
 
