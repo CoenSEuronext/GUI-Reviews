@@ -4,446 +4,354 @@ import os
 
 # Stock prices dictionary
 stock_prices = {
-    "AACM.ST": 109.4,
-    "AAK.ST": 260.6,
-    "SAGAd.ST": 33.5,
-    "SAGAb.ST": 210.8,
-    "ACADE.ST": 89.2,
-    "ALIFb.ST": 172.7,
-    "ANODb.ST": 112.8,
-    "ADDTb.ST": 330.8,
-    "ADMCM.HE": 50.2,
-    "AFRY.ST": 157.4,
-    "AKTIA.HE": 10.14,
-    "ALFA.ST": 424.6,
-    "ALIG.ST": 168.2,
-    "ALLEI.ST": 70.3,
-    "ALLIGOb.ST": 107.4,
-    "AMBEA.ST": 123.1,
-    "APOTEA.ST": 116.62,
-    "AQ.ST": 198.9,
-    "ARJOb.ST": 34.8,
-    "ASKER.ST": 103.84,
-    "ASMDEEb.ST": 123.92,
-    "ASSAb.ST": 324.8,
-    "ATCOa.ST": 152.75,
-    "ATCOb.ST": 136.1,
-    "ATRLJb.ST": 33.005,
-    "AVANZ.ST": 352.7,
-    "AXFO.ST": 294.8,
-    "BEIAb.ST": 257,
-    "BEIJb.ST": 166.7,
-    "BERGb.ST": 315.5,
-    "BETSb.ST": 166.3,
-    "BETCO.ST": 139.6,
-    "BHGF.ST": 24.6,
-    "BILIa.ST": 117.5,
-    "BIOAb.ST": 210.8,
-    "BIOGb.ST": 98.2,
-    "BOL.ST": 309.7,
-    "BONAVb.ST": 11.5,
-    "BONEX.ST": 335.4,
-    "BOOZT.ST": 88.35,
-    "BRAV.ST": 92.15,
-    "BTSb.ST": 207.5,
-    "BUFAB.ST": 97.97,
-    "BURE.ST": 293.2,
-    "BMAX.ST": 60,
-    "CAMX.ST": 709.5,
-    "CAPMAN.HE": 1.954,
-    "CAST.ST": 113.25,
-    "CATE.ST": 458.8,
-    "CEVI.ST": 177.8,
-    "CRNOSb.ST": 9.53,
-    "CIBUS.ST": 175.65,
-    "CINT.ST": 7.325,
-    "CTY1S.HE": 3.76,
-    "CLOEb.ST": 31.68,
-    "COOR.ST": 46.74,
-    "COREb.ST": 4.474,
-    "CTTS.ST": 214,
-    "DIOS.ST": 65.25,
-    "DOMETIC.ST": 50.8,
-    "DUNI.ST": 91.5,
-    "DUST.ST": 1.674,
-    "DYVOX.ST": 127.5,
-    "EAST9.ST": 48.5,
-    "ELUXb.ST": 61.96,
-    "EPROb.ST": 67.3,
-    "EKTAb.ST": 49.18,
-    "ELISA.HE": 45.96,
-    "EMBRACb.ST": 103,
-    "ENENTO.HE": 15.56,
-    "ENGCONb.ST": 76.8,
-    "EPEND.ST": 119.2,
-    "EPIRa.ST": 204.5,
-    "EPIRb.ST": 180.7,
-    "EQTAB.ST": 331.6,
-    "ERICb.ST": 71.6,
-    "ESSITYb.ST": 245,
-    "EVOG.ST": 877.4,
-    "FSECURE.HE": 1.668,
-    "FABG.ST": 83.4,
-    "FAG.ST": 38,
-    "FARON.HE": 2.255,
-    "BALDb.ST": 68.48,
-    "EMILb.ST": 50.4,
-    "FPARa.ST": 51.1,
-    "FIA1S.HE": 2.924,
-    "FORTUM.HE": 16.44,
-    "GRANG.ST": 135.5,
-    "GREENL.ST": 57.9,
-    "GRK.HE": 14.28,
-    "HANZA.ST": 108.6,
-    "HARVIA.HE": 51.6,
-    "HAYPP.ST": 146.4,
-    "HEBAb.ST": 31.2,
-    "HEM.ST": 283,
-    "HMb.ST": 136.7,
-    "HEXAb.ST": 110.55,
-    "HTRO.ST": 21.09,
-    "HPOLb.ST": 85.6,
-    "HIAB.HE": 59.85,
-    "HMSN.ST": 420,
-    "HOFI.ST": 97.1,
-    "HOLMb.ST": 375.8,
-    "HUFVa.ST": 119.8,
-    "HUH1V.HE": 31.12,
-    "HUMBLE.ST": 7.95,
-    "HUSQb.ST": 55.02,
-    "IDUNb.ST": 388,
-    "IMPsdba.ST": 70.2,
-    "INDUc.ST": 370.7,
-    "INDUa.ST": 371,
-    "INDT.ST": 242,
-    "INSTAL.ST": 26.3,
-    "INTEAb.ST": 77.1,
-    "INTE.ST": 125.4,
-    "IPCOR.ST": 167.7,
-    "INTRUM.ST": 56.18,
-    "ORES.ST": 130.4,
-    "INVEb.ST": 291.35,
-    "IVSO.ST": 321.5,
-    "INWI.ST": 183.3,
-    "ITAB.ST": 17.82,
-    "JM.ST": 145.8,
-    "KALMAR.HE": 39.1,
-    "KAMBI.ST": 141.1,
-    "KARNELb.ST": 62,
-    "KARNO.ST": 120,
-    "KEMIRA.HE": 19.06,
-    "KEMPOWR.HE": 16.69,
-    "KESKOB.HE": 19.42,
-    "KINVb.ST": 89.82,
-    "KNOW.ST": 119.8,
-    "KOJAMO.HE": 10.98,
-    "KNEBV.HE": 54.58,
-    "KCRA.HE": 74.3,
-    "LAGRb.ST": 229.8,
-    "LATOb.ST": 255.2,
-    "LIFCOb.ST": 352,
-    "LIMET.ST": 382.5,
-    "LIAB.ST": 214.8,
-    "LOGIb.ST": 16.4,
-    "LOOMIS.ST": 386,
-    "LUNDb.ST": 488,
-    "MANTA.HE": 5.926,
-    "MEKKO.HE": 13.34,
-    "MEDCAP.ST": 642,
-    "MCOVb.ST": 279,
-    "MEKO.ST": 88.8,
-    "METSB.HE": 3.146,
-    "METSO.HE": 11.345,
-    "MILDEF.ST": 173.9,
-    "MIPS.ST": 418,
-    "MTGb.ST": 102.7,
-    "MMGRb.ST": 158.4,
-    "MTRS.ST": 137,
-    "MYCR.ST": 213.15,
-    "NCAB.ST": 54.45,
-    "NCCb.ST": 186.6,
-    "NESTE.HE": 14.09,
-    "NEWAb.ST": 121.4,
-    "NIBEb.ST": 44.89,
-    "NOBI.ST": 4.728,
-    "NOKIA.HE": 3.592,
-    "TYRES.HE": 8,
-    "NOLAb.ST": 59,
-    "NDAFI.HE": 12.77,
-    "SAVE.ST": 264,
-    "NORION.ST": 61.8,
-    "NOTE.ST": 191.2,
-    "NP3.ST": 267.5,
-    "NYFO.ST": 86.7,
-    "OEMb.ST": 136.4,
-    "OLVAS.HE": 34,
-    "ORNBV.HE": 70.55,
-    "OUT1V.HE": 3.452,
-    "PANDXb.ST": 176.2,
-    "PDXI.ST": 168.7,
-    "PEABb.ST": 74.4,
-    "PIHLIS.HE": 16.35,
-    "PLAZb.ST": 70.7,
-    "PACT.ST": 97.5,
-    "PUUILO.HE": 13.72,
-    "QTCOM.HE": 60.6,
-    "RAIVV.HE": 2.525,
-    "RATOb.ST": 35.12,
-    "RAYb.ST": 356.5,
-    "REJLb.ST": 201,
-    "REG1V.HE": 28.35,
-    "RUSTA.ST": 78.15,
-    "RVRC.ST": 44.94,
-    "SAABb.ST": 525.9,
-    "SAMPO.HE": 9.406,
-    "SAND.ST": 243.1,
-    "SBBb.ST": 5.036,
-    "SCST.ST": 93.5,
-    "SHOTE.ST": 81.45,
-    "SDIPb.ST": 200.2,
-    "SEBc.ST": 174.2,
-    "SECTb.ST": 369,
-    "SECUb.ST": 147,
-    "SINCH.ST": 34.4,
-    "SEBa.ST": 172.05,
-    "SKAb.ST": 232.5,
-    "SKFb.ST": 233.2,
-    "SEYE.ST": 65.3,
-    "SSABa.ST": 58.14,
-    "SSABb.ST": 57.16,
-    "SFRG.ST": 5.235,
-    "LINDEX.HE": 2.845,
-    "STERV.HE": 9.444,
-    "STORb.ST": 11.935,
-    "STORYb.ST": 85.35,
-    "SUSW.ST": 152.6,
-    "SVEAF.ST": 37.9,
-    "SCAb.ST": 126.7,
-    "SHBb.ST": 191.2,
-    "SHBa.ST": 119.6,
-    "SWECb.ST": 156.2,
-    "SWEDa.ST": 259.2,
-    "SECARE.ST": 38.65,
-    "SLPb.ST": 40.15,
-    "SOBIV.ST": 282.6,
-    "SYNSAM.ST": 54.2,
-    "SYSR.ST": 95.4,
-    "TEL2b.ST": 151.45,
-    "TELIA.ST": 35.08,
-    "TTALO.HE": 10.77,
-    "TFBANK.ST": 133.8,
-    "THULE.ST": 282.8,
-    "TIETO.HE": 15.23,
-    "TOKMAN.HE": 8.795,
-    "TRELb.ST": 358.4,
-    "TROAX.ST": 136.6,
-    "TRUEb.ST": 50.15,
-    "UPM.HE": 23.99,
-    "VAIAS.HE": 47.45,
-    "VALMT.HE": 31.38,
-    "VBGb.ST": 285.6,
-    "VERVE.ST": 30.64,
-    "VESTUM.ST": 9.72,
-    "VIMIAN.ST": 34.34,
-    "VITb.ST": 388,
-    "VITR.ST": 143.3,
-    "VOLVb.ST": 284.4,
-    "VOLVa.ST": 284.6,
-    "VOLCARb.ST": 19.535,
-    "WALLb.ST": 44.9,
-    "WRT1V.HE": 24.14,
-    "WIHL.ST": 97.65,
-    "XVIVO.ST": 198.2,
-    "YIT.HE": 3.114,
-    "YUBICO.ST": 135.8,
-    "ZZb.ST": 250,
-    "ADDVb.ST": 1.466,
-    "BICO.ST": 38.3,
-    "BITTI.HE": 9.79,
-    "BRE2.ST": 3.265,
-    "COREpref.ST": 245.5,
-    "FG.ST": 30.9,
-    "FINGb.ST": 0.0096,
-    "FLERIE.ST": 43.4,
-    "GENOb.ST": 27.75,
-    "GOFORE.HE": 18.08,
-    "HNSA.ST": 28.07,
-    "IARb.ST": 178,
-    "ICP1V.HE": 10.62,
-    "INVEa.ST": 291.2,
-    "JOMA.ST": 62.6,
-    "KFASTb.ST": 16.76,
-    "LIC.ST": 79.4,
-    "MUSTI.HE": 20.55,
-    "NANOFH.HE": 1.034,
-    "NDASE.ST": 12.77,
-    "NEOBO.ST": 17.16,
-    "NETIb.ST": 3.985,
-    "OMASP.HE": 8.96,
-    "ORRON.ST": 5.015,
-    "RESURS.ST": 28,
-    "SANOMA.HE": 9.6,
-    "SCENS.ST": 0.785,
-    "SPEC.ST": 0.1688,
-    "TEQ.ST": 156,
-    "VNV.ST": 20.18,
-    "VPLAYb.ST": 0.9122,
+"/AAV.TO":11.52,
+"/AGI.TO":43.94,
+"/AIF.TO":57.15,
+"/ALS.TO":38.17,
+"/AP_u.TO":14.33,
+"/ARE.TO":30.95,
+"/ARIS.TO":14.26,
+"/ATD.TO":69.61,
+"/ATRL.TO":97.88,
+"/ATZ.TO":100.31,
+"/AYA.TO":15.47,
+"/BB.TO":6.75,
+"/BBUC.TO":50.18,
+"/BDGI.TO":73.49,
+"/BEI_u.TO":63.87,
+"/BIR.TO":6.69,
+"/BMO.TO":175.49,
+"/BNS.TO":92.36,
+"/BTE.TO":3.35,
+"/BYD.TO":224.71,
+"/CAR_u.TO":38.18,
+"/CCLb.TO":77.42,
+"/CG.TO":16.56,
+"/CHP_u.TO":14.67,
+"/CJ.TO":8.04,
+"/CLS.TO":490.61,
+"/CNR.TO":134.4,
+"/CP.TO":99.36,
+"/CPX.TO":73.59,
+"/CRT_u.TO":16.16,
+"/CSH_u.TO":20.83,
+"/CTCa.TO":161.84,
+"/CVE.TO":23.91,
+"/DFY.TO":64.89,
+"/DIR_u.TO":12.1,
+"/DOO.TO":87.62,
+"/DSG.TO":124.03,
+"/EFN.TO":37.87,
+"/EFX.TO":18.25,
+"/ELD.TO":36.23,
+"/EMPa.TO":48.2,
+"/ENGH.TO":21.03,
+"/EQX.TO":15.28,
+"/ERO.TO":28.99,
+"/EXE.TO":16.31,
+"/FFH.TO":2238.79,
+"/FNV.TO":264.4,
+"/FTS.TO":69.99,
+"/GEI.TO":23.75,
+"/GIBa.TO":121.78,
+"/H.TO":51.26,
+"/HPSa.TO":215,
+"/IAG.TO":167.52,
+"/IMO.TO":126.19,
+"/JWEL.TO":34.5,
+"/KEY.TO":41.17,
+"/KMP_u.TO":17.17,
+"/L.TO":55.71,
+"/AAUC.TO":21.8,
+"/ABX.TO":46.45,
+"/ACOx.TO":52.71,
+"/AEM.TO":228.35,
+"/AII.TO":9.21,
+"/ALA.TO":41.02,
+"/AND.TO":54.96,
+"/AQN.TO":7.82,
+"/ARX.TO":25.86,
+"/LIF.TO":29,
+"/LSPD.TO":16.66,
+"/LUN.TO":22.44,
+"/MAU.TO":6.93,
+"/MDA.TO":27.4,
+"/MFI.TO":26.58,
+"/MG.TO":69.26,
+"/MRU.TO":93.45,
+"/MX.TO":52.3,
+"/NFI.TO":14.28,
+"/NGD.TO":10.23,
+"/NPI.TO":25.78,
+"/NVA.TO":17.05,
+"/NWH_u.TO":5.03,
+"/OLA.TO":14.35,
+"/OR.TO":44.77,
+"/PET.TO":35.7,
+"/PMZ_u.TO":15.23,
+"/POU.TO":23.32,
+"/PPL.TO":52.95,
+"/PSI.TO":11.88,
+"/PXT.TO":18.59,
+"/QSR.TO":92.48,
+"/RCH.TO":38.94,
+"/REI_u.TO":18.64,
+"/RUS.TO":42.78,
+"/SES.TO":17.12,
+"/SJ.TO":78.66,
+"/SKE.TO":22.87,
+"/SLF.TO":85.74,
+"/SOBO.TO":35.97,
+"/SRU_u.TO":26.4,
+"/STN.TO":153.91,
+"/SVM.TO":9.11,
+"/T.TO":20.5,
+"/TCLa.TO":19.5,
+"/TD.TO":115.18,
+"/TFII.TO":125.55,
+"/TKO.TO":6.28,
+"/TPZ.TO":24.84,
+"/TRI.TO":218.92,
+"/TSU.TO":38.09,
+"/TVK.TO":130.49,
+"/TXG.TO":58.2,
+"/VNP.TO":20.76,
+"/WCN.TO":232.94,
+"/WDO.TO":20.86,
+"/WFG.TO":84.5,
+"/WPK.TO":41.46,
+"/WSP.TO":267.7,
+"/X.TO":51.93,
+"/ATH.TO":7.05,
+"/ATS.TO":37.93,
+"/BAM.TO":76.43,
+"/BBDb.TO":199.7,
+"/BCE.TO":31.88,
+"/BDT.TO":29.89,
+"/BIPC.TO":64.43,
+"/BITF.TO":5.79,
+"/BLX.TO":27.95,
+"/BN.TO":64.62,
+"/BNT.TO":64.72,
+"/BTO.TO":5.97,
+"/CAE.TO":38.84,
+"/CCO.TO":141.77,
+"/CEU.TO":9.45,
+"/CIGI.TO":223.21,
+"/CJT.TO":81.23,
+"/CM.TO":117.84,
+"/CNQ.TO":44.9,
+"/CPKR.TO":16.16,
+"/CRR_u.TO":14.83,
+"/CS.TO":12.29,
+"/CSU.TO":3584.85,
+"/CU.TO":39.36,
+"/DML.TO":4.11,
+"/DOL.TO":182.6,
+"/DPM.TO":30.13,
+"/DSV.TO":5.57,
+"/EFR.TO":24.52,
+"/EIF.TO":77.73,
+"/EMA.TO":66.53,
+"/ENB.TO":65.52,
+"/EQB.TO":90.19,
+"/FCR_u.TO":18.61,
+"/FM.TO":28.48,
+"/FOM.TO":3.78,
+"/FRU.TO":14.14,
+"/FSV.TO":221.04,
+"/FTT.TO":75.25,
+"/GFL.TO":61.51,
+"/GIL.TO":81.5,
+"/GMIN.TO":27.75,
+"/GSY.TO":167.94,
+"/GWO.TO":59.54,
+"/HBM.TO":22.27,
+"/HWX.TO":7.44,
+"/IFC.TO":263.4,
+"/IGM.TO":54.71,
+"/IMG.TO":16.23,
+"/IVN.TO":13.62,
+"/K.TO":32.9,
+"/KNT.TO":18.3,
+"/KXS.TO":170.36,
+"/LB.TO":33.61,
+"/LNR.TO":76.35,
+"/LUG.TO":96.46,
+"/MEG.TO":29.82,
+"/MEQ.TO":187.99,
+"/MFC.TO":46.42,
+"/MTL.TO":14.14,
+"/NA.TO":158.21,
+"/NGEX.TO":22.29,
+"/NTR.TO":76.68,
+"/NWC.TO":45.57,
+"/NXE.TO":12.85,
+"/OGC.TO":31.09,
+"/ONEX.TO":120.08,
+"/OTEX.TO":53.64,
+"/PBH.TO":97.5,
+"/PD.TO":84.51,
+"/PEY.TO":20.72,
+"/PKI.TO":39.98,
+"/POW.TO":66.3,
+"/PPTA.TO":31.84,
+"/PSK.TO":25.1,
+"/QBRb.TO":44.68,
+"/RBA.TO":136.88,
+"/RCIb.TO":54.05,
+"/RUP.TO":5.61,
+"/RY.TO":207.22,
+"/SAP.TO":33.8,
+"/SIA.TO":19.1,
+"/SIS.TO":22.13,
+"/SPB.TO":8.01,
+"/SSRM.TO":32.18,
+"/SU.TO":55.68,
+"/SVI.TO":4.9,
+"/SXGC.TO":8.09,
+"/TA.TO":24.76,
+"/TCW.TO":5.27,
+"/TECKb.TO":60,
+"/TFPM.TO":39.43,
+"/TIH.TO":165.91,
+"/TOU.TO":61.47,
+"/TRP.TO":70.33,
+"/TVE.TO":6.26,
+"/VET.TO":10.54,
+"/VZLA.TO":5.76,
+"/WCP.TO":10.48,
+"/WELL.TO":5.16,
+"/WN.TO":85.32,
+"/WPM.TO":136.6,
+"/AC.TO":18.85,
+"/ADEN.TO":35.37,
+"/AFN.TO":36.09,
+"/BHC.TO":9.6,
+"/BLDP.TO":5.01,
+"/CF.TO":11.77,
+"/CMG.TO":5.33,
+"/DNTL.TO":10.9,
+"/D_u.TO":18.37,
+"/GLXY.TO":49.05,
+"/GRT_u.TO":78.66,
+"/HUT.TO":77.37,
+"/IIP_u.TO":13.38,
+"/AG.TO":17.59,
+"/MER.TO":1.82,
+"/NOA.TO":21.69,
+"/SII.TO":115.16,
+"/AX_u.TO":6,
+"/BEP_u.TO":44.29,
+"/CAS.TO":11.14,
+"/CFP.TO":12.22,
+"/DCBO.TO":35.92,
+"/DHT_u.TO":16.18,
+"/HR_u.TO":11.19,
+"/MATR.TO":10.79,
+"/MRE.TO":10.25,
+"/NG.TO":11.41,
+"/OBE.TO":7.99,
+"/SEA.TO":32.96,
+"/WTE.TO":25.53,
 }
 
 # Get current timestamp for the output filename
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
 # Function to generate previous day's date
-def get_previous_day(date_str):
-    # Convert string date to datetime object
+def get_previous_business_day(date_str):
+    """Get previous business day (skip weekends)"""
     date_obj = datetime.datetime.strptime(date_str, "%Y%m%d")
+    
     # Subtract one day
     prev_day = date_obj - datetime.timedelta(days=1)
-    # Return as string in same format
+    
+    # Keep going back until we find a weekday (Monday=0, Sunday=6)
+    while prev_day.weekday() > 4:  # Saturday=5, Sunday=6
+        prev_day = prev_day - datetime.timedelta(days=1)
+    
     return prev_day.strftime("%Y%m%d")
-
 # List of mnemonics to process
 mnemonics = [
-    "ENVEO", "ENVEU", "LC100", "EZWTP", "SES5P", "BANK", "EEEPR", "EESGP", 
-    "WATPR", "EZENP", "EZ300", "EU500", "ERI5P", "ESG1P", "ECO5P", "EZN1P", 
-    "EZ15P", "EZ60P", "ES1EP", "CLE5P", "ESE4P", "ESG50", "ECOEW", "ECOP", 
-    "ENCLE", "ESE30", "EITD", "EFESP", "EESO", "EENS", "ESAL", "EZ50P", 
-    "EDEFP", "EETAP", "EETEP", "EUADP", "BREU", "ESVEP", "DEREP", "EZSCP", 
-    "UTIL", "TELEP", "INDU", "HEAC", "FINA", "ENRGP", "CSTA", "BASM", 
-    "DEZPT", "DEUPT", "DEZP", "DEUP", "EZCLA", "CLAMP", "ESGCP", "EZSFP", 
-    "EPABP", "GOVEP", "LC1EP", "ESGEP", "ENESG", "GRE5P", "EESAP", "TERPR", 
-    "BIOCP", "ESBTP", "ZSBTP", "EETPR", "EQGEP", "ES4PP", "EZ6PP", "EBLPP", 
-    "EBSEP", "EGSPP", "EPSP", "ENVW", "ENDMP", "ENWP", "ETE5P", "WESGP", 
-    "ESGTP", "WLENP", "EG60", "EGHW", "DWREP", "TUTI", "TBMA", "THEC", 
-    "TTEL", "TIND", "TFINP", "TCDI", "TCST", "TENR", "TTEC", "AERDP", 
-    "EDWPT", "EDWP", "ENZTP", "HSPCP", "HSPAP", "ENTP", "EDMPU", "EDWEP", 
-    "TESGP", "ECC5P", "LC3WP", "WIFRP", "FILVP", "EIFRP", "EAIWP", "EGOPR", 
-    "BISWP", "EBEWP", "EBSTP", "EBSPW", "EBSWP", "PBTAP", "TPABP"
+    "CANPT",
+    "ECC5P",
+    "DNAPT",
+    "DWREP",
+    "EDWPT",
+    "ELECP",
+    "EBSPW",
+    "EBSWP",
+    "EGOPR",
+    "EGHW",
+    "EG60",
+    "FILVP",
+    "EGEL",
+    "EGES",
+    "ERGCP",
+    "ERGSP",
+    "EAIWP",
+    "EBEWP",
+    "BISWP",
+    "CANP",
+    "ECWPR",
+    "ENDMP",
+    "EDMPU",
+    "DNAP",
+    "EDWP",
+    "EDWPE",
+    "EDWSP",
+    "EVEWP",
+    "ENZTP",
+    "FRD4P",
+    "FRI4P",
+    "EIFRP",
+    "LC3WP",
+    "NA500",
+    "PABUP",
+    "ERGBP",
+    "ESECP",
+    "ENVW",
+    "ENTP",
+    "ENWP",
+    "EWAP",
+    "EWBR",
+    "EWCSP",
+    "EWOG",
+    "EWOU"
 ]
 
 mnemonics_tr4_perc = {
-    "EZ150": "NL0012949119",
-    "TPAB5": "FRCLIM000114",
-    "TER5D": "FRESG0002708",
-    "TER35": "FRESG0002708",
-    "PBT5D": "FRCLIM000262",
-    "ESGTL": "NL0013908783",
-    "EZEN3": "NL0013352586",
-    "WIFRD": "FRIX00002785",
-    "ESGE4": "NL0012758551",
-    "EBLPD": "FRESG0000397",
-    "EPAB5": "FR0014003PM1",
-    "BANKD": "NL0015000AT9",
-    "LC3WD": "FR0013522596",
-    "ETE5D": "NL0015000BQ3",
-    "ESG1D": "NL0013025604",
-    "ERI5E": "NL0013217748",
-    "EPSD3": "FRCLIM000411",
-    "ECO50": "NL0012328827",
-    "ESGEC": "FR0014004HG8",
-    "ESN3D": "FRESG0001312",
-    "EZSFD": "FR0014004FO6",
-    "EBSE4": "FRESG0000108",
-    "TLESG": "FR0014004PU2",
-    "ARD35": "NLIX00003102",
-    "AERD5": "NLIX00003102",
-    "BRD5": "NLIX00005578",
-    "WAT5D": "NL0013908833",
-    "EBLD5": "FRESG0000397",
-    "COP5E": "NL0011923065",
-    "ESVED": "NLIX00005255",
-    "WAT4D": "NL0013908833",
-    "EZESG": "NL0013941032",
-    "ESG8D": "FR0013468865",
-    "ESGD5": "FR0013468865",
-    "COP5D": "NL0011923065",
-    "ESGEL": "NL0012758551",
-    "CLIE5": "NL0012758593",
-    "EZNE1": "NL0012949150",
-    "ECO5E": "NL0013025562",
-    "EZENV": "NL0013352578",
-    "FILV3": "FRIX00002736",
-    "ESGED": "NL0013025604",
-    "WLENV": "NL0013352610",
-    "FILVD": "FRIX00002736",
-    "WLESG": "NL0013940992",
-    "GRE50": "FR0013457868",
-    "GREG5": "FR0013457876",
-    "ESGEZ": "FR0013477023",
-    "ESGZD": "FR0013477023",
-    "ESG4E": "NL0012758551",
-    "BIOC3": "FRESG0002591",
-    "BIOC5": "FRESG0002591",
-    "ESGDE": "NL0013025604",
-    "ESG8E": "FR0013468865",
-    "ECO4D": "NL0013025562",
-    "ESGD4": "FR0013468865",
     "ECC5D": "FR0013533569",
-    "EZEN4": "NL0013352578",
-    "EZWTR": "NL00150005F3",
-    "EPAB4": "FR0014003PM1",
-    "GOVEZ": "FR0014003PT6",
-    "EBSE5": "FRESG0000108",
-    "EEED5": "NL0015000AB7",
-    "ZSN3D": "FRESG0001221",
-    "ZSN4D": "FRESG0001221",
-    "ZSN5D": "FRESG0001221",
-    "ZSG3D": "FRESG0001239",
     "ECC3D": "FR0013533569",
-    "ZSG4D": "FRESG0001239",
-    "ZSG5D": "FRESG0001239",
-    "ESN4D": "FRESG0001312",
-    "ESN5D": "FRESG0001312",
-    "ESDG3": "FRESG0001320",
-    "ESDG4": "FRESG0001320",
-    "ESDG5": "FRESG0001320",
-    "ES4P4": "FRESG0000553",
-    "ES4P5": "FRESG0000553",
-    "EZ6P4": "FRESG0000504",
-    "EZ6P5": "FRESG0000504",
-    "EBST4": "FRESG0000413",
-    "EBST5": "FRESG0000413",
-    "EET4D": "FRESG0001171",
-    "EET5D": "FRESG0001171",
-    "ESOD5": "NLIX00006444",
-    "ESVD4": "NLIX00005255",
-    "EADD5": "NLIX00005826",
-    "EFSD5": "NLIX00006592",
-    "EZ5D5": "NLIX00006105",
-    "EDEFD": "NLIX00005990",
-    "E30D5": "NLIX00007152",
-    "EGOD3": "FRESG0002864"
+    "ELED5": "NLIX00007566",
+    "EGOD3": "FRESG0002864",
+    "FILVD": "FRIX00002736",
+    "FILV3": "FRIX00002736",
+    "ERGBD": "NL0012645246",
+    "ERGCD": "NL0012645212",
+    "ERGSD": "NL0012939060",
+    "FRD4D": "FRIX00003049",
+    "FRI4D": "FRIX00003650",
+    "LC3WD": "FR0013522596",
+    "PABU5": "FRCLIM000155",
+    "ESED5": "NLIX00005933"
     }
 mnemonics_tr4_points = {
-    "TER50": "FRESG0002716",
-    "TER5N": "FRESG0002708",
-    "PBT50": "FRCLIM000270",
-    "EZ6PD": "FRESG0000512",
-    "EBSED": "FRESG0000116",
-    "EBSTD": "FRESG0000421",
-    "ES1ED": "NL0012758643",
-    "EPABD": "FR0014003PL3",
-    "BRD5P": "NLIX00005586",
-    "CLAMB": "FR0014004XP6",
-    "ESG5D": "NL0012481766",
-    "SES50": "NL0015000EC7",
-    "TPD5P": "FRCLIM000122",
-    "EZ60": "NL0012846281",
-    "EAD5P": "NLIX00005834",
-    "EFS50": "NLIX00006600",
-    "EZ50D": "NLIX00006113",
-    "EDE5D": "NLIX00006006"
+    "ELE50": "NLIX00007558",
+    "FRID5": "FRIX00003668",
+    "ESD5P": "NLIX00005941"
 }
 def load_data_with_encoding_fallback():
     """Load data with encoding fallback mechanism - combines US and EU files"""
     encodings = ['latin1', 'windows-1252', 'utf-8']
     
     # File date configuration
-    current_stock_eod_date = "20250729"
-    current_index_eod_date = "20250729"
+    current_stock_eod_date = "20251103"
+    current_index_eod_date = "20251103"
     
-    prev_stock_eod_date = get_previous_day(current_stock_eod_date)
-    prev_index_eod_date = get_previous_day(current_index_eod_date)
+    prev_stock_eod_date = get_previous_business_day(current_stock_eod_date)
+    prev_index_eod_date = get_previous_business_day(current_index_eod_date)
     
     # Use only the primary path
     base_path = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
@@ -572,11 +480,14 @@ def calculate_index_levels(stock_eod_df, index_eod_df, index_eod_df_t1, mnemonic
         gross_level = None
         net_level = None
         
+        # Calculate gross level if gross_t1 is available
         if price_t1 is not None and price_t1 != 0 and gross_t1 is not None:
             if price_level_round is not None and gross_mass is not None:
                 gross_level_unrounded = gross_t1 * ((price_level_round + gross_mass) / price_t1)
                 gross_level = round(gross_level_unrounded, 8)
-            
+
+        # Calculate net level if net_t1 is available (independent of gross_t1)
+        if price_t1 is not None and price_t1 != 0 and net_t1 is not None:
             if price_level_round is not None and net_mass is not None:
                 net_level_unrounded = net_t1 * ((price_level_round + net_mass) / price_t1)
                 net_level = round(net_level_unrounded, 8)
@@ -603,7 +514,7 @@ def calculate_index_levels(stock_eod_df, index_eod_df, index_eod_df_t1, mnemonic
 
     return pd.DataFrame(results)
 
-def calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df):
+def calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df, current_date, prev_date):
     """Calculate decrement level using the formula: DIt = DIt−1 * (UIt / UIt−1 - Dcr * day / yearly_days)"""
     result = {
         'Mnemo': mnemo,
@@ -671,25 +582,16 @@ def calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, result
         else:
             result['Error_Message'] = f"Dcr (Return Value) not found for mnemo {mnemo}"
         
-        # Get Yearly Days - NEW: retrieve from index_eod_df instead of hardcoded 365
+        # Get Yearly Days
         yearly_days_row = index_eod_df[index_eod_df['Mnemo'] == mnemo]
         if not yearly_days_row.empty and 'Yearly Days' in index_eod_df.columns:
             result['Yearly_Days'] = yearly_days_row['Yearly Days'].values[0]
         else:
             result['Error_Message'] = f"Yearly Days not found for mnemo {mnemo}"
-            # Fallback to 365 if not found
             result['Yearly_Days'] = 365
         
-        # Get day
-        if 'System Date' in index_eod_df.columns and 'System Date' in index_eod_df_t1.columns:
-            try:
-                current_date = pd.to_datetime(index_eod_df['System Date'].iloc[0])
-                previous_date = pd.to_datetime(index_eod_df_t1['System Date'].iloc[0])
-                result['Day'] = (current_date - previous_date).days
-            except:
-                result['Day'] = 1
-        else:
-            result['Day'] = 1
+        # Calculate day from file dates
+        result['Day'] = (current_date - prev_date).days
         
         # Calculate intermediate values
         if result['UIt'] is not None and result['UIt_1'] is not None and result['UIt_1'] != 0:
@@ -714,7 +616,7 @@ def calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, result
     
     return result
 
-def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df):
+def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df, current_date, prev_date):
     """Calculate decrement points level using the formula: DPIt = DPIt−1 * (DuRt / DuRt−1 - Points * day / yearly_days)"""
     result = {
         'Mnemo': mnemo,
@@ -733,12 +635,12 @@ def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1,
     }
     
     try:
-        # Get Underlying Index - NEW: retrieve ISIN Underlying Price Index from index_eod_df
+        # Get Underlying Index
         underlying_index_row = index_eod_df[index_eod_df['Mnemo'] == mnemo]
         if not underlying_index_row.empty and 'ISIN Underlying Price Index' in index_eod_df.columns:
             result['Underlying_Index'] = underlying_index_row['ISIN Underlying Price Index'].values[0]
         else:
-            result['Underlying_Index'] = None  # Not an error, as not all indices may have this field
+            result['Underlying_Index'] = None
         
         # Get DPIt-1
         dpit_1_row = index_eod_df_t1[index_eod_df_t1['Mnemo'] == mnemo]
@@ -790,25 +692,16 @@ def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1,
         else:
             result['Error_Message'] = f"Points (Return Value) not found for mnemo {mnemo}"
         
-        # Get Yearly Days - NEW: retrieve from index_eod_df instead of hardcoded 365
+        # Get Yearly Days
         yearly_days_row = index_eod_df[index_eod_df['Mnemo'] == mnemo]
         if not yearly_days_row.empty and 'Yearly Days' in index_eod_df.columns:
             result['Yearly_Days'] = yearly_days_row['Yearly Days'].values[0]
         else:
             result['Error_Message'] = f"Yearly Days not found for mnemo {mnemo}"
-            # Fallback to 365 if not found
             result['Yearly_Days'] = 365
         
-        # Get day
-        if 'System Date' in index_eod_df.columns and 'System Date' in index_eod_df_t1.columns:
-            try:
-                current_date = pd.to_datetime(index_eod_df['System Date'].iloc[0])
-                previous_date = pd.to_datetime(index_eod_df_t1['System Date'].iloc[0])
-                result['Day'] = (current_date - previous_date).days
-            except:
-                result['Day'] = 1
-        else:
-            result['Day'] = 1
+        # Calculate day from file dates
+        result['Day'] = (current_date - prev_date).days
         
         # Calculate intermediate values
         if result['DuRt'] is not None and result['DuRt_1'] is not None and result['DuRt_1'] != 0:
@@ -856,6 +749,16 @@ def save_results_to_excel(results_df, decrement_df, decrement_points_df, stock_e
 
 # Main execution
 try:
+    # Define dates at the start
+    current_stock_eod_date = "20251103"
+    current_index_eod_date = "20251103"
+    prev_stock_eod_date = get_previous_business_day(current_stock_eod_date)
+    prev_index_eod_date = get_previous_business_day(current_index_eod_date)
+    
+    # Convert to datetime objects for day calculation
+    current_date = datetime.datetime.strptime(current_stock_eod_date, "%Y%m%d")
+    prev_date = datetime.datetime.strptime(prev_stock_eod_date, "%Y%m%d")
+    
     # Load data
     stock_eod_df, index_eod_df, stock_eod_df_t1, index_eod_df_t1 = load_data_with_encoding_fallback()
     
@@ -869,7 +772,7 @@ try:
     print("Calculating decrement levels for TR4 percentage indices...")
     decrement_results = []
     for mnemo, isin in mnemonics_tr4_perc.items():
-        result = calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df)
+        result = calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df, current_date, prev_date)
         decrement_results.append(result)
     
     decrement_df = pd.DataFrame(decrement_results)
@@ -880,7 +783,7 @@ try:
     print("Calculating decrement points levels for TR4 points indices...")
     decrement_points_results = []
     for mnemo, isin in mnemonics_tr4_points.items():
-        result = calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df)
+        result = calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df, current_date, prev_date)
         decrement_points_results.append(result)
     
     decrement_points_df = pd.DataFrame(decrement_points_results)
