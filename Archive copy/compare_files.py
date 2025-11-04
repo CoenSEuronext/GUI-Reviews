@@ -67,7 +67,8 @@ COMPARISON_CONFIGS = {
         'comparison_function': 'find_differences_vectorized_morning_stock',
         'use_previous_workday': True,
         'manual_folder': 'manual',
-        'allow_overwrite': False
+        'allow_overwrite': False,
+        'file_extension': 'xlsx'
     },
     'index': {
         'file_suffix': 'INDEX',
@@ -76,7 +77,8 @@ COMPARISON_CONFIGS = {
         'comparison_function': 'find_differences_vectorized_morning_index',
         'use_previous_workday': True,
         'manual_folder': 'manual',
-        'allow_overwrite': False
+        'allow_overwrite': False,
+        'file_extension': 'xlsx'
     },
     'afternoon_stock': {
         'file_suffix': 'STOCK',
@@ -86,7 +88,8 @@ COMPARISON_CONFIGS = {
         'use_previous_workday': False,
         'manual_folder': 'afternoon_manual',
         'allow_overwrite': True,
-        'overwrite_until': '18:10'
+        'overwrite_until': '18:10',
+        'file_extension': 'xlsx'
     },
     'afternoon_index': {
         'file_suffix': 'INDEX',
@@ -96,7 +99,36 @@ COMPARISON_CONFIGS = {
         'use_previous_workday': False,
         'manual_folder': 'afternoon_manual',
         'allow_overwrite': True,
-        'overwrite_until': '18:10'
+        'overwrite_until': '18:10',
+        'file_extension': 'xlsx'
+    },
+    'evening_stock': {
+        'file_suffix': 'STOCK',
+        'key_fields': ['#Symbol', 'Index'],
+        'output_filename': 'GIS Evening Stock changes_{date}.xlsx',
+        'comparison_function': 'find_differences_vectorized_morning_stock',
+        'use_previous_workday': False,
+        'eod_folder': 'eod',
+        'manual_folder': 'eod_manual',
+        'allow_overwrite': True,
+        'overwrite_until': '23:00',
+        'file_extension': 'csv',
+        'file1_prefix': 'EOD',
+        'file2_prefix': 'MANUAL'
+    },
+    'evening_index': {
+        'file_suffix': 'INDEX',
+        'key_fields': ['#Symbol'],
+        'output_filename': 'GIS Evening Index changes_{date}.xlsx',
+        'comparison_function': 'find_differences_vectorized_morning_index',
+        'use_previous_workday': False,
+        'eod_folder': 'eod',
+        'manual_folder': 'eod_manual',
+        'allow_overwrite': True,
+        'overwrite_until': '23:00',
+        'file_extension': 'csv',
+        'file1_prefix': 'EOD',
+        'file2_prefix': 'MANUAL'
     }
 }
 
@@ -114,7 +146,7 @@ ALLOWED_MNEMONICS = {
 }
 
 # Purple mnemonics for special highlighting
-PURPLE_MNEMONICS = {'AEX BANK', 'PX1'}
+PURPLE_MNEMONICS = {'AEX', 'BANK', 'PX1'}
 
 # Purple index mnemonics (for Name column)
 PURPLE_INDEX_MNEMONICS = {
@@ -173,7 +205,9 @@ except Exception as e:
 MONITOR_FOLDERS = {
     'manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Manual",
     'sod': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\SOD",
-    'afternoon_manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals"
+    'afternoon_manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive\Merged files\Afternoon + Evening Manuals",
+    'eod': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive",
+    'eod_manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
 }
 
 OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output"
@@ -249,7 +283,24 @@ def get_expected_filenames(comparison_type='stock'):
     config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
     file_suffix = config['file_suffix']
     use_previous_workday = config.get('use_previous_workday', True)
+    file_extension = config.get('file_extension', 'xlsx')
     
+    # For evening comparisons
+    if comparison_type.startswith('evening_'):
+        file1_prefix = config.get('file1_prefix', 'EOD')
+        file2_prefix = config.get('file2_prefix', 'MANUAL')
+        date_str = current_workday.strftime("%Y%m%d")
+        
+        expected_files = {
+            'file1': f"TTMIndexEU1_GIS_{file1_prefix}_{file_suffix}_{date_str}.{file_extension}",
+            'file2': f"TTMIndexEU1_GIS_{file2_prefix}_{file_suffix}_{date_str}.{file_extension}"
+        }
+        
+        logger.info(f"Expected {file_suffix} files: {file1_prefix}={expected_files['file1']}, {file2_prefix}={expected_files['file2']}")
+        
+        return expected_files
+    
+    # For morning and afternoon comparisons
     sod_date = current_workday.strftime("%Y%m%d")
     
     # For afternoon comparisons, manual file also uses current date
@@ -259,8 +310,8 @@ def get_expected_filenames(comparison_type='stock'):
         manual_date = current_workday.strftime("%Y%m%d")
     
     expected_files = {
-        'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.xlsx",
-        'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.xlsx"
+        'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.{file_extension}",
+        'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.{file_extension}"
     }
     
     logger.info(f"Expected {file_suffix} files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
@@ -283,6 +334,34 @@ def check_files_available(comparison_type='stock'):
     """Check if both expected files are available"""
     expected_files = get_expected_filenames(comparison_type)
     config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+    
+    # For evening comparisons
+    if comparison_type.startswith('evening_'):
+        eod_folder = config.get('eod_folder', 'eod')
+        manual_folder = config.get('manual_folder', 'eod_manual')
+        
+        file1_path = os.path.join(MONITOR_FOLDERS[eod_folder], expected_files['file1'])
+        file2_path = os.path.join(MONITOR_FOLDERS[manual_folder], expected_files['file2'])
+        
+        file1_ready = file_exists_and_ready(file1_path)
+        file2_ready = file_exists_and_ready(file2_path)
+        
+        logger.info(f"{comparison_type.upper()} file status: EOD={file1_ready}, Manual={file2_ready}")
+        
+        if file1_ready and file2_ready:
+            return {
+                'available': True,
+                'file1_path': file1_path,
+                'file2_path': file2_path
+            }
+        else:
+            return {
+                'available': False,
+                'file1_path': None,
+                'file2_path': None
+            }
+    
+    # For morning and afternoon comparisons
     manual_folder = config.get('manual_folder', 'manual')
     
     sod_path = os.path.join(MONITOR_FOLDERS['sod'], expected_files['sod'])
@@ -318,7 +397,7 @@ def make_file_writable(file_path):
 
 @timer
 def read_excel_file(file_path):
-    """Read Excel file and return DataFrame - optimized for large files"""
+    """Read Excel or CSV file and return DataFrame - optimized for large files"""
     try:
         logger.info(f"Reading file: {os.path.basename(file_path)}")
         
@@ -328,8 +407,16 @@ def read_excel_file(file_path):
         
         make_file_writable(file_path)
         
+        # Determine file type by extension
+        file_ext = os.path.splitext(file_path)[1].lower()
+        
         try:
-            df = pd.read_excel(file_path, engine='openpyxl')
+            if file_ext == '.csv':
+                # Read CSV file
+                df = pd.read_csv(file_path, encoding='utf-8')
+            else:
+                # Read Excel file
+                df = pd.read_excel(file_path, engine='openpyxl')
             
             for col in df.columns:
                 if df[col].dtype == 'object':
@@ -374,128 +461,121 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
         df1_indexed: First dataframe (Manual for morning, SOD for afternoon)
         df2_indexed: Second dataframe (SOD for morning, Manual for afternoon)
         is_afternoon: If True, also include removals (rows in df1/SOD but not in df2/Manual)
+                      and additions (rows in df2/Manual but not in df1/SOD)
     """
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
     if len(common_keys) == 0:
-        return pd.DataFrame(), common_keys
-    
-    df1_common = df1_indexed.loc[common_keys]
-    df2_common = df2_indexed.loc[common_keys]
-    
-    critical_fields = ['ICBCode', 'Shares', 'Free float-Coeff', 'Capping Factor-Coeff']
-    
-    has_differences = pd.Series(False, index=common_keys)
-    
-    for field in critical_fields:
-        if field in df1_common.columns and field in df2_common.columns:
-            if field in ['Shares', 'Free float-Coeff', 'Capping Factor-Coeff']:
-                val1 = pd.to_numeric(df1_common[field], errors='coerce').fillna(0)
-                val2 = pd.to_numeric(df2_common[field], errors='coerce').fillna(0)
-                
-                tolerance = 1e-6 if field == 'Shares' else 1e-10
-                field_diff = abs(val1 - val2) > tolerance
-            else:
-                field_diff = df1_common[field].astype(str) != df2_common[field].astype(str)
-            
-            has_differences |= field_diff
-    
-    # Also include rows with formatting conditions of interest (even without differences)
-    has_formatting_interest = pd.Series(False, index=common_keys)
-    
-    # Check for Close Prc empty or 0
-    if 'Close Prc' in df2_common.columns:
-        close_prc_vals = pd.to_numeric(df2_common['Close Prc'], errors='coerce')
-        has_formatting_interest |= (close_prc_vals.isna() | (close_prc_vals == 0))
-    
-    # Check for Adj Closing price empty or 0
-    if 'Adj Closing price' in df2_common.columns:
-        adj_closing_vals = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce')
-        has_formatting_interest |= (adj_closing_vals.isna() | (adj_closing_vals == 0))
-    
-    # Check for Adj Closing price different from Close Prc
-    if 'Adj Closing price' in df2_common.columns and 'Close Prc' in df2_common.columns:
-        adj_diff = df2_common['Adj Closing price'].astype(str).str.strip() != df2_common['Close Prc'].astype(str).str.strip()
-        has_formatting_interest |= adj_diff
-    
-    # Check for positive Net Div
-    if 'Net Div' in df2_common.columns:
-        net_div_vals = pd.to_numeric(df2_common['Net Div'], errors='coerce')
-        has_formatting_interest |= (net_div_vals > 0)
-    
-    # Combine both conditions: actual differences OR formatting interest
-    diff_keys = common_keys[has_differences | has_formatting_interest]
-    
-    if len(diff_keys) == 0:
-        return pd.DataFrame(), common_keys
-    
-    df1_diff = df1_indexed.loc[diff_keys]
-    df2_diff = df2_indexed.loc[diff_keys]
-    
-    # Perform Isin Code cross-reference lookup
-    # Get unique Isin Codes from the differences
-    isin_codes = df1_diff.get('Isin Code', '').astype(str)
-    
-    # Prepare lookup column (column X) - for each Isin Code, find matching #Symbols in SOD
-    cross_ref_symbols = []
-    
-    for isin_code in isin_codes:
-        if pd.isna(isin_code) or str(isin_code).strip() == '':
-            cross_ref_symbols.append('')
-            continue
+        diff_df = pd.DataFrame()
+    else:
+        df1_common = df1_indexed.loc[common_keys]
+        df2_common = df2_indexed.loc[common_keys]
         
-        # Filter df2_indexed for matching Isin Code and excluded Index values
-        if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
-            # Find rows with matching Isin Code
-            matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
-            
-            # Filter out excluded Index values
-            if len(matching_rows) > 0:
-                filtered_rows = matching_rows[~matching_rows['Index'].astype(str).str.strip().isin(EXCLUDED_INDEX_VALUES)]
+        critical_fields = ['ICBCode', 'Shares', 'Free float-Coeff', 'Capping Factor-Coeff']
+        
+        has_differences = pd.Series(False, index=common_keys)
+        
+        for field in critical_fields:
+            if field in df1_common.columns and field in df2_common.columns:
+                if field in ['Shares', 'Free float-Coeff', 'Capping Factor-Coeff']:
+                    val1 = pd.to_numeric(df1_common[field], errors='coerce').fillna(0)
+                    val2 = pd.to_numeric(df2_common[field], errors='coerce').fillna(0)
+                    
+                    tolerance = 1e-6 if field == 'Shares' else 1e-10
+                    field_diff = abs(val1 - val2) > tolerance
+                else:
+                    field_diff = df1_common[field].astype(str) != df2_common[field].astype(str)
                 
-                # Get unique #Symbol values
-                if len(filtered_rows) > 0 and '#Symbol' in filtered_rows.columns:
-                    unique_symbols = filtered_rows['#Symbol'].astype(str).str.strip().unique()
-                    unique_symbols = [s for s in unique_symbols if s != '' and s != 'nan']
-                    cross_ref_symbols.append(';'.join(sorted(unique_symbols)))
+                has_differences |= field_diff
+        
+        # Also include rows with formatting conditions of interest (even without differences)
+        has_formatting_interest = pd.Series(False, index=common_keys)
+        
+        # Check for BOTH Close Prc AND Adj Closing price empty or 0
+        if 'Close Prc' in df2_common.columns and 'Adj Closing price' in df2_common.columns:
+            close_prc_vals = pd.to_numeric(df2_common['Close Prc'], errors='coerce')
+            adj_closing_vals = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce')
+            
+            close_prc_empty = (close_prc_vals.isna() | (close_prc_vals == 0))
+            adj_closing_empty = (adj_closing_vals.isna() | (adj_closing_vals == 0))
+            
+            # Both must be empty/0 together (AND condition)
+            has_formatting_interest |= (close_prc_empty & adj_closing_empty)
+        
+        # Combine both conditions: actual differences OR formatting interest
+        diff_keys = common_keys[has_differences | has_formatting_interest]
+        
+        if len(diff_keys) == 0:
+            diff_df = pd.DataFrame()
+        else:
+            df1_diff = df1_indexed.loc[diff_keys]
+            df2_diff = df2_indexed.loc[diff_keys]
+            
+            # Perform Isin Code cross-reference lookup
+            # Get unique Isin Codes from the differences
+            isin_codes = df1_diff.get('Isin Code', '').astype(str)
+            
+            # Prepare lookup column (column X) - for each Isin Code, find matching #Symbols in SOD
+            cross_ref_symbols = []
+            
+            for isin_code in isin_codes:
+                if pd.isna(isin_code) or str(isin_code).strip() == '':
+                    cross_ref_symbols.append('')
+                    continue
+                
+                # Filter df2_indexed for matching Isin Code and excluded Index values
+                if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
+                    # Find rows with matching Isin Code
+                    matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
+                    
+                    # Filter out excluded Index values
+                    if len(matching_rows) > 0:
+                        filtered_rows = matching_rows[~matching_rows['Index'].astype(str).str.strip().isin(EXCLUDED_INDEX_VALUES)]
+                        
+                        # Get unique #Symbol values
+                        if len(filtered_rows) > 0 and '#Symbol' in filtered_rows.columns:
+                            unique_symbols = filtered_rows['#Symbol'].astype(str).str.strip().unique()
+                            unique_symbols = [s for s in unique_symbols if s != '' and s != 'nan']
+                            cross_ref_symbols.append(';'.join(sorted(unique_symbols)))
+                        else:
+                            cross_ref_symbols.append('')
+                    else:
+                        cross_ref_symbols.append('')
                 else:
                     cross_ref_symbols.append('')
-            else:
-                cross_ref_symbols.append('')
-        else:
-            cross_ref_symbols.append('')
+            
+            differences_data = {
+                'Rank': range(1, len(diff_keys) + 1),
+                'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
+                '#Symbol': df1_diff['#Symbol'],
+                'Sys date': df1_diff.get('System date', ''),
+                'Adj. Rsn': df2_diff.get('Adjust Reason', ''),
+                'Isin Code': df1_diff.get('Isin Code', ''),
+                'Country': df1_diff.get('Country', ''),
+                'Mnemo': df1_diff.get('Mnemo', ''),
+                'Name': df1_diff.get('Name', ''),
+                'MIC': df1_diff.get('MIC', ''),
+                'Prev ICB': df1_diff.get('ICBCode', ''),
+                'New ICB': df2_diff.get('ICBCode', ''),
+                'Close Prc': df2_diff.get('Close Prc', ''),
+                'Adj Closing price': df2_diff.get('Adj Closing price', ''),
+                'Net Div': df2_diff.get('Net Div', ''),
+                'Gross Div': df2_diff.get('Gross Div', ''),
+                'Index': df1_diff['Index'],
+                'Prev. Shares': df1_diff.get('Shares', ''),
+                'New Shares': df2_diff.get('Shares', ''),
+                'Prev FF': df1_diff.get('Free float-Coeff', ''),
+                'New FF': df2_diff.get('Free float-Coeff', ''),
+                'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
+                'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
+                'Cross-Ref Symbols': cross_ref_symbols  # New column X
+            }
+            
+            diff_df = pd.DataFrame(differences_data)
     
-    differences_data = {
-        'Rank': range(1, len(diff_keys) + 1),
-        'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
-        '#Symbol': df1_diff['#Symbol'],
-        'Sys date': df1_diff.get('System date', ''),
-        'Adj. Rsn': df2_diff.get('Adjust Reason', ''),
-        'Isin Code': df1_diff.get('Isin Code', ''),
-        'Country': df1_diff.get('Country', ''),
-        'Mnemo': df1_diff.get('Mnemo', ''),
-        'Name': df1_diff.get('Name', ''),
-        'MIC': df1_diff.get('MIC', ''),
-        'Prev ICB': df1_diff.get('ICBCode', ''),
-        'New ICB': df2_diff.get('ICBCode', ''),
-        'Close Prc': df2_diff.get('Close Prc', ''),
-        'Adj Closing price': df2_diff.get('Adj Closing price', ''),
-        'Net Div': df2_diff.get('Net Div', ''),
-        'Gross Div': df2_diff.get('Gross Div', ''),
-        'Index': df1_diff['Index'],
-        'Prev. Shares': df1_diff.get('Shares', ''),
-        'New Shares': df2_diff.get('Shares', ''),
-        'Prev FF': df1_diff.get('Free float-Coeff', ''),
-        'New FF': df2_diff.get('Free float-Coeff', ''),
-        'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
-        'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
-        'Cross-Ref Symbols': cross_ref_symbols  # New column X
-    }
-    
-    diff_df = pd.DataFrame(differences_data)
-    
-    # For afternoon comparisons, also include removals (rows in SOD but not in Manual)
+    # For afternoon comparisons, also include removals and additions
     if is_afternoon:
+        # First handle removals (rows in SOD but not in Manual)
         removed_keys = df1_indexed.index.difference(df2_indexed.index)
         
         if len(removed_keys) > 0:
@@ -562,6 +642,74 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             diff_df = pd.concat([diff_df, removal_df], ignore_index=True)
             # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
+        
+        # Now handle additions (rows in Manual but not in SOD)
+        added_keys = df2_indexed.index.difference(df1_indexed.index)
+        
+        if len(added_keys) > 0:
+            df2_added = df2_indexed.loc[added_keys]
+            
+            # Perform Isin Code cross-reference lookup for added rows
+            isin_codes_added = df2_added.get('Isin Code', '').astype(str)
+            cross_ref_symbols_added = []
+            
+            for isin_code in isin_codes_added:
+                if pd.isna(isin_code) or str(isin_code).strip() == '':
+                    cross_ref_symbols_added.append('')
+                    continue
+                
+                # Look up in df2_indexed (Manual file)
+                if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
+                    matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
+                    
+                    if len(matching_rows) > 0:
+                        filtered_rows = matching_rows[~matching_rows['Index'].astype(str).str.strip().isin(EXCLUDED_INDEX_VALUES)]
+                        
+                        if len(filtered_rows) > 0 and '#Symbol' in filtered_rows.columns:
+                            unique_symbols = filtered_rows['#Symbol'].astype(str).str.strip().unique()
+                            unique_symbols = [s for s in unique_symbols if s != '' and s != 'nan']
+                            cross_ref_symbols_added.append(';'.join(sorted(unique_symbols)))
+                        else:
+                            cross_ref_symbols_added.append('')
+                    else:
+                        cross_ref_symbols_added.append('')
+                else:
+                    cross_ref_symbols_added.append('')
+            
+            # Create addition rows with Manual values and #N/A for SOD values
+            addition_data = {
+                'Rank': range(len(diff_df) + 1, len(diff_df) + len(added_keys) + 1),
+                'Code': df2_added['#Symbol'].astype(str) + df2_added['Index'].astype(str),
+                '#Symbol': df2_added['#Symbol'],
+                'Sys date': df2_added.get('System date', ''),
+                'Adj. Rsn': 'Add Composition',  # Special value for additions
+                'Isin Code': df2_added.get('Isin Code', ''),
+                'Country': df2_added.get('Country', ''),
+                'Mnemo': df2_added.get('Mnemo', ''),
+                'Name': df2_added.get('Name', ''),
+                'MIC': df2_added.get('MIC', ''),
+                'Prev ICB': '#N/A',
+                'New ICB': df2_added.get('ICBCode', ''),
+                'Close Prc': df2_added.get('Close Prc', ''),
+                'Adj Closing price': df2_added.get('Adj Closing price', ''),
+                'Net Div': df2_added.get('Net Div', ''),
+                'Gross Div': df2_added.get('Gross Div', ''),
+                'Index': df2_added['Index'],
+                'Prev. Shares': '#N/A',
+                'New Shares': df2_added.get('Shares', ''),
+                'Prev FF': '#N/A',
+                'New FF': df2_added.get('Free float-Coeff', ''),
+                'Prev Capping': '#N/A',
+                'New Capping': df2_added.get('Capping Factor-Coeff', ''),
+                'Cross-Ref Symbols': cross_ref_symbols_added
+            }
+            
+            addition_df = pd.DataFrame(addition_data)
+            
+            # Combine with existing data
+            diff_df = pd.concat([diff_df, addition_df], ignore_index=True)
+            # Re-rank
+            diff_df['Rank'] = range(1, len(diff_df) + 1)
     
     return diff_df, common_keys
 
@@ -573,62 +721,64 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
         df1_indexed: First dataframe (Manual for morning, SOD for afternoon)
         df2_indexed: Second dataframe (SOD for morning, Manual for afternoon)
         is_afternoon: If True, also include removals (rows in df1/SOD but not in df2/Manual)
+                      and additions (rows in df2/Manual but not in df1/SOD)
     """
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
     if len(common_keys) == 0:
-        return pd.DataFrame(), common_keys
-    
-    df1_common = df1_indexed.loc[common_keys]
-    df2_common = df2_indexed.loc[common_keys]
-    
-    critical_fields = ['Divisor', 't0 IV', 't0 IV unround', 'Mkt Cap', 'Nr of components']
-    
-    has_differences = pd.Series(False, index=common_keys)
-    
-    for field in critical_fields:
-        if field in df1_common.columns and field in df2_common.columns:
-            val1 = pd.to_numeric(df1_common[field], errors='coerce').fillna(0)
-            val2 = pd.to_numeric(df2_common[field], errors='coerce').fillna(0)
+        diff_df = pd.DataFrame()
+    else:
+        df1_common = df1_indexed.loc[common_keys]
+        df2_common = df2_indexed.loc[common_keys]
+        
+        critical_fields = ['Divisor', 't0 IV', 't0 IV unround', 'Mkt Cap', 'Nr of components']
+        
+        has_differences = pd.Series(False, index=common_keys)
+        
+        for field in critical_fields:
+            if field in df1_common.columns and field in df2_common.columns:
+                val1 = pd.to_numeric(df1_common[field], errors='coerce').fillna(0)
+                val2 = pd.to_numeric(df2_common[field], errors='coerce').fillna(0)
+                
+                tolerance = 1e-10
+                field_diff = abs(val1 - val2) > tolerance
+                
+                has_differences |= field_diff
+        
+        diff_keys = common_keys[has_differences]
+        
+        if len(diff_keys) == 0:
+            diff_df = pd.DataFrame()
+        else:
+            df1_diff = df1_indexed.loc[diff_keys]
+            df2_diff = df2_indexed.loc[diff_keys]
             
-            tolerance = 1e-10
-            field_diff = abs(val1 - val2) > tolerance
+            differences_data = {
+                'Rank': range(1, len(diff_keys) + 1),
+                '#Symbol': df2_diff['#Symbol'],
+                'Sys Date': df2_diff.get('System Date', ''),
+                'IsinCode': df2_diff.get('IsinCode', ''),
+                'Cntry': df2_diff.get('Country', ''),
+                'Mnemo': df2_diff.get('Mnemo', ''),
+                'Name': df2_diff.get('Name', ''),
+                'MIC': df2_diff.get('MIC', ''),
+                'Prev Divisor': df1_diff.get('Divisor', ''),
+                'New Divisor': df2_diff.get('Divisor', ''),
+                'Prev t0 IV': df1_diff.get('t0 IV', ''),
+                't0 IV   SOD': df2_diff.get('t0 IV', ''),
+                'Prev t0 IV unround': df1_diff.get('t0 IV unround', ''),
+                't0 IV unround': df2_diff.get('t0 IV unround', ''),
+                'Prev Mkt Cap': df1_diff.get('Mkt Cap', ''),
+                'New Mkt Cap': df2_diff.get('Mkt Cap', ''),
+                'Prev Nr of comp': df1_diff.get('Nr of components', ''),
+                'Nr of comp': df2_diff.get('Nr of components', '')
+            }
             
-            has_differences |= field_diff
+            diff_df = pd.DataFrame(differences_data)
     
-    diff_keys = common_keys[has_differences]
-    
-    if len(diff_keys) == 0:
-        return pd.DataFrame(), common_keys
-    
-    df1_diff = df1_indexed.loc[diff_keys]
-    df2_diff = df2_indexed.loc[diff_keys]
-    
-    differences_data = {
-        'Rank': range(1, len(diff_keys) + 1),
-        '#Symbol': df2_diff['#Symbol'],
-        'Sys Date': df2_diff.get('System Date', ''),
-        'IsinCode': df2_diff.get('IsinCode', ''),
-        'Cntry': df2_diff.get('Country', ''),
-        'Mnemo': df2_diff.get('Mnemo', ''),
-        'Name': df2_diff.get('Name', ''),
-        'MIC': df2_diff.get('MIC', ''),
-        'Prev Divisor': df1_diff.get('Divisor', ''),
-        'New Divisor': df2_diff.get('Divisor', ''),
-        'Prev t0 IV': df1_diff.get('t0 IV', ''),
-        't0 IV   SOD': df2_diff.get('t0 IV', ''),
-        'Prev t0 IV unround': df1_diff.get('t0 IV unround', ''),
-        't0 IV unround': df2_diff.get('t0 IV unround', ''),
-        'Prev Mkt Cap': df1_diff.get('Mkt Cap', ''),
-        'New Mkt Cap': df2_diff.get('Mkt Cap', ''),
-        'Prev Nr of comp': df1_diff.get('Nr of components', ''),
-        'Nr of comp': df2_diff.get('Nr of components', '')
-    }
-    
-    diff_df = pd.DataFrame(differences_data)
-    
-    # For afternoon comparisons, also include removals (rows in SOD but not in Manual)
+    # For afternoon comparisons, also include removals and additions
     if is_afternoon:
+        # First handle removals (rows in SOD but not in Manual)
         removed_keys = df1_indexed.index.difference(df2_indexed.index)
         
         if len(removed_keys) > 0:
@@ -660,6 +810,41 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
             
             # Combine differences and removals
             diff_df = pd.concat([diff_df, removal_df], ignore_index=True)
+            # Re-rank
+            diff_df['Rank'] = range(1, len(diff_df) + 1)
+        
+        # Now handle additions (rows in Manual but not in SOD)
+        added_keys = df2_indexed.index.difference(df1_indexed.index)
+        
+        if len(added_keys) > 0:
+            df2_added = df2_indexed.loc[added_keys]
+            
+            # Create addition rows with Manual values and #N/A for SOD values
+            addition_data = {
+                'Rank': range(len(diff_df) + 1, len(diff_df) + len(added_keys) + 1),
+                '#Symbol': df2_added['#Symbol'],
+                'Sys Date': df2_added.get('System Date', ''),
+                'IsinCode': df2_added.get('IsinCode', ''),
+                'Cntry': df2_added.get('Country', ''),
+                'Mnemo': df2_added.get('Mnemo', ''),
+                'Name': df2_added.get('Name', ''),
+                'MIC': df2_added.get('MIC', ''),
+                'Prev Divisor': '#N/A',
+                'New Divisor': df2_added.get('Divisor', ''),
+                'Prev t0 IV': '#N/A',
+                't0 IV   SOD': df2_added.get('t0 IV', ''),
+                'Prev t0 IV unround': '#N/A',
+                't0 IV unround': df2_added.get('t0 IV unround', ''),
+                'Prev Mkt Cap': '#N/A',
+                'New Mkt Cap': df2_added.get('Mkt Cap', ''),
+                'Prev Nr of comp': '#N/A',
+                'Nr of comp': df2_added.get('Nr of components', '')
+            }
+            
+            addition_df = pd.DataFrame(addition_data)
+            
+            # Combine with existing data
+            diff_df = pd.concat([diff_df, addition_df], ignore_index=True)
             # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
     
@@ -893,7 +1078,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             for col_num, value in enumerate(diff_df.columns.values):
                 worksheet1.write(2, col_num, value, header_format)
             
-            worksheet1.set_row(3, None, None, {'hidden': True})
+            # Row 4 is no longer hidden - removed the hidden line
             
             data_start_row = 4
             data_end_row = data_start_row + len(diff_df) - 1
@@ -1005,7 +1190,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             worksheet1.write(0, 0, 0, normal_format)
             for col_num, value in enumerate(diff_df.columns.values):
                 worksheet1.write(2, col_num, value, header_format)
-            worksheet1.set_row(3, None, None, {'hidden': True})
+            # Row 4 is no longer hidden - removed the hidden line
         
         for i, col in enumerate(diff_df.columns):
             max_length = max(len(str(col)), 10)
@@ -1031,7 +1216,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             for col_num, value in enumerate(df1_clean_output.columns.values):
                 worksheet2.write(2, col_num, value, header_format)
             
-            worksheet2.set_row(3, None, None, {'hidden': True})
+            # Row 4 is no longer hidden - removed the hidden line
             
             if len(df1_clean_output) > 0:
                 end_col_name = excel_column_name(len(df1_clean_output.columns) - 1)
@@ -1067,7 +1252,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             for col_num, value in enumerate(df2_clean_output.columns.values):
                 worksheet3.write(2, col_num, value, header_format)
             
-            worksheet3.set_row(3, None, None, {'hidden': True})
+            # Row 4 is no longer hidden - removed the hidden line
             
             if len(df2_clean_output) > 0:
                 end_col_name = excel_column_name(len(df2_clean_output.columns) - 1)
@@ -1131,20 +1316,35 @@ def perform_comparison(comparison_type='stock'):
                 print("  Skipping comparison.\n")
                 return True
         
-        sod_path = file_status['sod_path']
-        manual_path = file_status['manual_path']
-        
-        print(f"Files found:")
-        print(f"  SOD: {os.path.basename(sod_path)}")
-        print(f"  Manual: {os.path.basename(manual_path)}")
-        print()
+        # Get file paths based on comparison type
+        if comparison_type.startswith('evening_'):
+            file1_path = file_status['file1_path']
+            file2_path = file_status['file2_path']
+            
+            print(f"Files found:")
+            print(f"  EOD: {os.path.basename(file1_path)}")
+            print(f"  Manual: {os.path.basename(file2_path)}")
+            print()
+        else:
+            sod_path = file_status['sod_path']
+            manual_path = file_status['manual_path']
+            
+            print(f"Files found:")
+            print(f"  SOD: {os.path.basename(sod_path)}")
+            print(f"  Manual: {os.path.basename(manual_path)}")
+            print()
         
         # Read files
-        # For afternoon comparisons: SOD is df1 (older), Manual is df2 (newer)
+        # For afternoon and evening comparisons: older file is df1, newer file is df2
         # For morning comparisons: Manual is df1 (older), SOD is df2 (newer)
         is_afternoon = comparison_type.startswith('afternoon_')
+        is_evening = comparison_type.startswith('evening_')
         
-        if is_afternoon:
+        if is_evening:
+            # For evening: EOD is df1 (older), Manual is df2 (newer)
+            df1 = read_excel_file(file1_path)
+            df2 = read_excel_file(file2_path)
+        elif is_afternoon:
             df1 = read_excel_file(sod_path)
             df2 = read_excel_file(manual_path)
         else:
@@ -1163,10 +1363,13 @@ def perform_comparison(comparison_type='stock'):
         
         # Find differences
         comparison_function = config['comparison_function']
+        # Evening comparisons should include removals and additions like afternoon
+        is_afternoon_or_evening = is_afternoon or is_evening
+        
         if comparison_function == 'find_differences_vectorized_morning_stock':
-            diff_df, common_keys = find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_afternoon)
+            diff_df, common_keys = find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_afternoon_or_evening)
         elif comparison_function == 'find_differences_vectorized_morning_index':
-            diff_df, common_keys = find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_afternoon)
+            diff_df, common_keys = find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_afternoon_or_evening)
         else:
             logger.error(f"Unknown comparison function: {comparison_function}")
             return False
@@ -1231,14 +1434,33 @@ class FileMonitorHandler(FileSystemEventHandler):
         # Check if file is in afternoon manual folder
         is_afternoon_manual = 'Afternoon' in folder_path
         
+        # Check if file is EOD or Manual in the Monthly Archive folder (for evening)
+        is_eod_file = 'EOD' in filename and 'Monthly Archive' in folder_path and 'Merged files' not in folder_path
+        is_evening_manual = 'MANUAL' in filename and 'Monthly Archive' in folder_path and 'Merged files' not in folder_path and '.csv' in filename
+        
         for comp_type, config in COMPARISON_CONFIGS.items():
             if config['file_suffix'] in filename:
+                # Match evening comparisons
+                if comp_type.startswith('evening_') and (is_eod_file or is_evening_manual):
+                    # Only trigger on Manual file arrival, and only if EOD file already exists
+                    if is_evening_manual:
+                        comparison_type = comp_type
+                        # Check if EOD file exists first
+                        expected_files = get_expected_filenames(comp_type)
+                        eod_path = os.path.join(MONITOR_FOLDERS['eod'], expected_files['file1'])
+                        if not file_exists_and_ready(eod_path):
+                            logger.info(f"Evening Manual file detected but EOD file not ready yet for {comp_type}")
+                            return
+                    else:
+                        # If it's an EOD file, don't trigger yet - wait for Manual
+                        return
+                    break
                 # Match afternoon comparisons with afternoon manual files
-                if is_afternoon_manual and comp_type.startswith('afternoon_'):
+                elif is_afternoon_manual and comp_type.startswith('afternoon_'):
                     comparison_type = comp_type
                     break
                 # Match morning comparisons with regular manual or SOD files
-                elif not is_afternoon_manual and not comp_type.startswith('afternoon_'):
+                elif not is_afternoon_manual and not is_eod_file and not is_evening_manual and not comp_type.startswith('afternoon_') and not comp_type.startswith('evening_'):
                     comparison_type = comp_type
                     break
         
@@ -1271,16 +1493,22 @@ def start_monitoring():
     for comparison_type in COMPARISON_CONFIGS.keys():
         expected_files = get_expected_filenames(comparison_type)
         config = COMPARISON_CONFIGS[comparison_type]
-        manual_folder = config.get('manual_folder', 'manual')
         
-        print(f"\nLooking for {comparison_type.upper()} files:")
-        print(f"  SOD: {expected_files['sod']}")
-        print(f"  Manual ({manual_folder}): {expected_files['manual']}")
+        if comparison_type.startswith('evening_'):
+            print(f"\nLooking for {comparison_type.upper()} files:")
+            print(f"  EOD: {expected_files['file1']}")
+            print(f"  Manual: {expected_files['file2']}")
+        else:
+            manual_folder = config.get('manual_folder', 'manual')
+            print(f"\nLooking for {comparison_type.upper()} files:")
+            print(f"  SOD: {expected_files['sod']}")
+            print(f"  Manual ({manual_folder}): {expected_files['manual']}")
     
     print(f"\nFolders:")
     print(f"  Morning Manual: {MONITOR_FOLDERS['manual']}")
     print(f"  SOD: {MONITOR_FOLDERS['sod']}")
     print(f"  Afternoon Manual: {MONITOR_FOLDERS['afternoon_manual']}")
+    print(f"  EOD/Evening Manual: {MONITOR_FOLDERS['eod']}")
     print()
     
     # Check if files already exist
@@ -1301,6 +1529,7 @@ def start_monitoring():
         observer.schedule(event_handler, MONITOR_FOLDERS['manual'], recursive=False)
         observer.schedule(event_handler, MONITOR_FOLDERS['sod'], recursive=False)
         observer.schedule(event_handler, MONITOR_FOLDERS['afternoon_manual'], recursive=False)
+        observer.schedule(event_handler, MONITOR_FOLDERS['eod'], recursive=False)
         
         observer.start()
         logger.info("File monitoring started successfully")
@@ -1364,11 +1593,16 @@ def manual_check(comparison_type=None):
         # Check specific comparison type
         expected_files = get_expected_filenames(comparison_type)
         config = COMPARISON_CONFIGS[comparison_type]
-        manual_folder = config.get('manual_folder', 'manual')
         
-        print(f"\nExpected {comparison_type.upper()} files:")
-        print(f"  SOD: {expected_files['sod']}")
-        print(f"  Manual ({manual_folder}): {expected_files['manual']}")
+        if comparison_type.startswith('evening_'):
+            print(f"\nExpected {comparison_type.upper()} files:")
+            print(f"  EOD: {expected_files['file1']}")
+            print(f"  Manual: {expected_files['file2']}")
+        else:
+            manual_folder = config.get('manual_folder', 'manual')
+            print(f"\nExpected {comparison_type.upper()} files:")
+            print(f"  SOD: {expected_files['sod']}")
+            print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         print()
         
         file_status = check_files_available(comparison_type)
@@ -1388,11 +1622,16 @@ def manual_check(comparison_type=None):
         for comp_type in COMPARISON_CONFIGS.keys():
             expected_files = get_expected_filenames(comp_type)
             config = COMPARISON_CONFIGS[comp_type]
-            manual_folder = config.get('manual_folder', 'manual')
             
-            print(f"\nExpected {comp_type.upper()} files:")
-            print(f"  SOD: {expected_files['sod']}")
-            print(f"  Manual ({manual_folder}): {expected_files['manual']}")
+            if comp_type.startswith('evening_'):
+                print(f"\nExpected {comp_type.upper()} files:")
+                print(f"  EOD: {expected_files['file1']}")
+                print(f"  Manual: {expected_files['file2']}")
+            else:
+                manual_folder = config.get('manual_folder', 'manual')
+                print(f"\nExpected {comp_type.upper()} files:")
+                print(f"  SOD: {expected_files['sod']}")
+                print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         
         print()
         results = perform_all_comparisons()

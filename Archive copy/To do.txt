@@ -1,0 +1,6 @@
+
+To do:
+-   Afternoon stock: Fix the black formatting for missing component in case of share update and Add Composition / Remove composition etc --> This can be removed from all
+-   Morning Index: Potentially remove Mcap differences
+-   Check if the EICC runs based on the new afternoon file Check
+-
