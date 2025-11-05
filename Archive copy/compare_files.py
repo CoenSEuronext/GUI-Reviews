@@ -60,7 +60,7 @@ HOLIDAYS = [
 
 # Comparison configurations
 COMPARISON_CONFIGS = {
-    'stock': {
+    'morning_stock': {
         'file_suffix': 'STOCK',
         'key_fields': ['#Symbol', 'Index'],
         'output_filename': 'GIS Morning Stock changes_{date}.xlsx',
@@ -70,7 +70,7 @@ COMPARISON_CONFIGS = {
         'allow_overwrite': False,
         'file_extension': 'xlsx'
     },
-    'index': {
+    'morning_index': {
         'file_suffix': 'INDEX',
         'key_fields': ['#Symbol'],
         'output_filename': 'GIS Morning Index changes_{date}.xlsx',
@@ -146,7 +146,7 @@ ALLOWED_MNEMONICS = {
 }
 
 # Purple mnemonics for special highlighting
-PURPLE_MNEMONICS = {'AEX', 'BANK', 'PX1'}
+PURPLE_MNEMONICS = {'AEX BANK', 'PX1'}
 
 # Purple index mnemonics (for Name column)
 PURPLE_INDEX_MNEMONICS = {
@@ -275,12 +275,12 @@ def should_allow_overwrite(comparison_type):
     except:
         return True
 
-def get_expected_filenames(comparison_type='stock'):
+def get_expected_filenames(comparison_type='morning_stock'):
     """Get the expected filenames for today's comparison"""
     current_workday = get_current_workday()
     previous_workday = get_previous_workday()
     
-    config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+    config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['morning_stock'])
     file_suffix = config['file_suffix']
     use_previous_workday = config.get('use_previous_workday', True)
     file_extension = config.get('file_extension', 'xlsx')
@@ -330,10 +330,10 @@ def file_exists_and_ready(filepath):
     except (IOError, OSError):
         return False
 
-def check_files_available(comparison_type='stock'):
+def check_files_available(comparison_type='morning_stock'):
     """Check if both expected files are available"""
     expected_files = get_expected_filenames(comparison_type)
-    config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['stock'])
+    config = COMPARISON_CONFIGS.get(comparison_type, COMPARISON_CONFIGS['morning_stock'])
     
     # For evening comparisons
     if comparison_type.startswith('evening_'):
@@ -412,12 +412,42 @@ def read_excel_file(file_path):
         
         try:
             if file_ext == '.csv':
-                # Read CSV file
-                df = pd.read_csv(file_path, encoding='utf-8')
+                # Try reading CSV with different encodings and delimiters
+                encodings_to_try = ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1', 'utf-16']
+                delimiters_to_try = [',', ';', '\t', '|']
+                
+                df = None
+                last_error = None
+                
+                for encoding in encodings_to_try:
+                    for delimiter in delimiters_to_try:
+                        try:
+                            df = pd.read_csv(
+                                file_path, 
+                                encoding=encoding,
+                                delimiter=delimiter,
+                                engine='python'  # More flexible parser
+                            )
+                            
+                            # Check if we got reasonable data (has columns and rows)
+                            if df is not None and len(df.columns) > 1 and len(df) > 0:
+                                logger.info(f"Successfully read CSV with encoding={encoding}, delimiter='{delimiter}', {len(df)} rows, {len(df.columns)} columns")
+                                break
+                        except Exception as e:
+                            last_error = e
+                            continue
+                    
+                    if df is not None and len(df.columns) > 1:
+                        break
+                
+                if df is None or len(df.columns) <= 1:
+                    logger.error(f"Failed to read CSV file with all encoding/delimiter combinations. Last error: {str(last_error)}")
+                    return None
             else:
                 # Read Excel file
                 df = pd.read_excel(file_path, engine='openpyxl')
             
+            # Clean up string columns
             for col in df.columns:
                 if df[col].dtype == 'object':
                     df[col] = df[col].astype(str).str.strip()
@@ -886,8 +916,8 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             diff_df_formatted = diff_df.copy()
             
             # Determine if this is a stock or index comparison
-            is_stock = comparison_type in ['stock', 'afternoon_stock']
-            is_index = comparison_type in ['index', 'afternoon_index']
+            is_stock = comparison_type in ['morning_stock', 'afternoon_stock', 'evening_stock']
+            is_index = comparison_type in ['morning_index', 'afternoon_index', 'evening_index']
             
             # Apply formatting based on comparison type
             if is_stock:
@@ -1279,7 +1309,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         logger.error(f"Error writing Excel file: {str(e)}")
         return False
 
-def perform_comparison(comparison_type='stock'):
+def perform_comparison(comparison_type='morning_stock'):
     """Perform the file comparison and generate output"""
     try:
         print(f"\n{'='*60}")

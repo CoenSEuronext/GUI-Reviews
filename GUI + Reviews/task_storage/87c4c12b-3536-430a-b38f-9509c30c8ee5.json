@@ -1,0 +1,24 @@
+{
+  "task_id": "87c4c12b-3536-430a-b38f-9509c30c8ee5",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-11-05T14:07:37.312905",
+  "started_at": "2025-11-05T14:07:37.314904",
+  "completed_at": "2025-11-05T14:07:39.475285",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "AEXAT",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "AEXAT",
+    "isin": "NL0010614491",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

@@ -1,9 +1,5 @@
 Seperate CSS/JS from HTML
 
-
-
-Create an empty review and copy the rulebook into claude to code a base
-
 Make selection_df the uniform choice for the name of the selection
 
 Integrate co_date everywhere

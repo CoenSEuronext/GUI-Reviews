@@ -1,0 +1,24 @@
+{
+  "task_id": "7b477d22-a1e4-444c-af51-e65c6d562640",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-11-05T14:04:28.219878",
+  "started_at": "2025-11-05T14:04:28.219878",
+  "completed_at": "2025-11-05T14:04:32.862689",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'NoneType' object is not subscriptable",
+  "error": "Error during review calculation: 'NoneType' object is not subscriptable",
+  "result_data": null,
+  "review_type": "AEXAT",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "AEXAT",
+    "isin": "NL0010614491",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 4.636263
+}

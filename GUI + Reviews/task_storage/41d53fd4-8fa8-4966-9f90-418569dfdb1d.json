@@ -1,0 +1,26 @@
+{
+  "task_id": "41d53fd4-8fa8-4966-9f90-418569dfdb1d",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-11-05T16:23:26.202531",
+  "started_at": "2025-11-05T16:23:26.207121",
+  "completed_at": "2025-11-05T16:23:30.991648",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "aexat_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\AEXAT_df_20251105_162330.xlsx"
+  },
+  "review_type": "AEXAT",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "AEXAT",
+    "isin": "NL0010614491",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 4.783521
+}

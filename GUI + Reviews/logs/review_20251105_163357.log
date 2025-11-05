@@ -1,0 +1,15 @@
+2025-11-05 16:33:58,224 - werkzeug - WARNING -  * Debugger is active!
+2025-11-05 16:33:58,240 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-05 16:33:59,673 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:33:59] "POST /calculate HTTP/1.1" 200 -
+2025-11-05 16:33:59,673 - Review.reviews.aexat_review - INFO - Loading EOD data...
+2025-11-05 16:33:59,690 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:33:59] "GET /task-status/c3de9812-2e0f-4397-8086-21daf22fcb1b HTTP/1.1" 200 -
+2025-11-05 16:34:01,689 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:34:01] "GET /task-status/c3de9812-2e0f-4397-8086-21daf22fcb1b HTTP/1.1" 200 -
+2025-11-05 16:34:03,690 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:34:03] "GET /task-status/c3de9812-2e0f-4397-8086-21daf22fcb1b HTTP/1.1" 200 -
+2025-11-05 16:34:04,187 - Review.reviews.aexat_review - INFO - Loading reference data...
+2025-11-05 16:34:04,410 - Review.reviews.aexat_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-11-05 16:34:04,450 - Review.reviews.aexat_review - INFO - Applied 15% capping. Companies capped: 2
+2025-11-05 16:34:04,450 - Review.reviews.aexat_review - INFO - Saving AEXAT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXAT_df_20251105_163404.xlsx
+2025-11-05 16:34:05,690 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:34:05] "GET /task-status/c3de9812-2e0f-4397-8086-21daf22fcb1b HTTP/1.1" 200 -
+2025-11-05 16:37:41,072 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexat_review.py', reloading
+2025-11-05 16:37:41,072 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexat_review.py', reloading
+2025-11-05 16:37:41,072 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexat_review.py', reloading

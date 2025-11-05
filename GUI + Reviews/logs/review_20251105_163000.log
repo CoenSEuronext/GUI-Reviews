@@ -1,0 +1,25 @@
+2025-11-05 16:30:00,590 - werkzeug - WARNING -  * Debugger is active!
+2025-11-05 16:30:00,590 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-05 16:30:06,961 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:30:06] "POST /calculate HTTP/1.1" 200 -
+2025-11-05 16:30:06,963 - Review.reviews.aexat_review - INFO - Loading EOD data...
+2025-11-05 16:30:06,965 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:30:06] "GET /task-status/7f30830d-34f3-47b9-b5fb-a2ac7bb64131 HTTP/1.1" 200 -
+2025-11-05 16:30:08,974 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:30:08] "GET /task-status/7f30830d-34f3-47b9-b5fb-a2ac7bb64131 HTTP/1.1" 200 -
+2025-11-05 16:30:10,974 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 16:30:10] "GET /task-status/7f30830d-34f3-47b9-b5fb-a2ac7bb64131 HTTP/1.1" 200 -
+2025-11-05 16:30:11,582 - Review.reviews.aexat_review - INFO - Loading reference data...
+2025-11-05 16:30:11,823 - Review.reviews.aexat_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-11-05 16:30:11,881 - Review.reviews.aexat_review - INFO - Applied 15% capping. Companies capped: 1
+2025-11-05 16:30:11,885 - Review.reviews.aexat_review - ERROR - Error during review calculation: "['Rounded NOSH'] not in index"
+2025-11-05 16:30:11,889 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-11-05 16:30:11,892 - Review.reviews.aexat_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aexat_review.py", line 160, in run_aexat_review
+    selection_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Rounded NOSH'] not in index"
+
+2025-11-05 16:30:11,892 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading

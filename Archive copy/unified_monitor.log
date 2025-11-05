@@ -18321,3 +18321,5 @@
 2025-10-31 16:53:17 - INFO - [IMMEDIATE MERGE]   - TTMIndexEU1_GIS_MANUAL_STOCK_20251031.csv
 2025-10-31 16:53:17 - INFO - [IMMEDIATE MERGE] ========== Check Complete (files not ready) ==========
 2025-10-31 16:53:17 - INFO - [PERIODIC CHECK] ========== Periodic Check Complete ==========
+2025-11-05 10:40:59 - INFO - Added 147 holidays to the exclusion list
+2025-11-05 10:40:59 - INFO - Starting unified monitoring system...

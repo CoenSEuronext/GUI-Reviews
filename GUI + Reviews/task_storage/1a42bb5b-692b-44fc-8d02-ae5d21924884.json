@@ -1,0 +1,26 @@
+{
+  "task_id": "1a42bb5b-692b-44fc-8d02-ae5d21924884",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-11-05T17:24:35.300035",
+  "started_at": "2025-11-05T17:24:35.300035",
+  "completed_at": "2025-11-05T17:24:40.310529",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "aetaw_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\AETAW_df_20251105_172440.xlsx"
+  },
+  "review_type": "AETAW",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "AETAW",
+    "isin": "NL0010614525",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.010494
+}

@@ -1,0 +1,19 @@
+2025-11-05 17:18:30,330 - werkzeug - WARNING -  * Debugger is active!
+2025-11-05 17:18:30,330 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-05 17:18:32,742 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 17:18:32] "POST /calculate HTTP/1.1" 200 -
+2025-11-05 17:18:32,742 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-11-05 17:18:32,742 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 17:18:32] "GET /task-status/11cdab01-3541-424b-8f66-7e1412536a46 HTTP/1.1" 200 -
+2025-11-05 17:18:34,756 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 17:18:34] "GET /task-status/11cdab01-3541-424b-8f66-7e1412536a46 HTTP/1.1" 200 -
+2025-11-05 17:18:35,426 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-11-05 17:18:35,709 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-11-05 17:18:35,739 - utils.capping_2_step - INFO - After 9% individual cap: 5 companies at cap
+2025-11-05 17:18:35,739 - utils.capping_2_step - INFO - Companies above 4.5%: 7, Total weight: 58.51%
+2025-11-05 17:18:35,739 - utils.capping_2_step - INFO - Collective cap violated! Excess: 22.51%. Applying collective capping...
+2025-11-05 17:18:35,739 - utils.capping_2_step - INFO - Reduced 7 companies by factor 0.6153
+2025-11-05 17:18:35,739 - utils.capping_2_step - INFO - Redistributed 22.51% to 69 companies below threshold
+2025-11-05 17:18:35,739 - utils.capping_2_step - INFO - Final: 10 companies above 4.5%, Total: 54.06%
+2025-11-05 17:18:35,739 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 72
+2025-11-05 17:18:35,759 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251105_171835.xlsx
+2025-11-05 17:18:37,006 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 17:18:37] "GET /task-status/11cdab01-3541-424b-8f66-7e1412536a46 HTTP/1.1" 200 -
+2025-11-05 17:23:47,843 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-11-05 17:23:47,843 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading

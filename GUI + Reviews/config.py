@@ -240,6 +240,16 @@ INDEX_CONFIGS = {
         "index": "EFESP",
         "isin": "NLIX00006584",
         "output_key": "efesp_path"
+    },
+    "AEXAT": {
+        "index": "AEXAT",
+        "isin": "NL0010614491",
+        "output_key": "aexat_path"
+    },
+    "AETAW": {
+        "index": "AETAW",
+        "isin": "NL0010614525",
+        "output_key": "aetaw_path"
     }
     # Add new indices here following the same pattern
 }
