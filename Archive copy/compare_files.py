@@ -319,15 +319,84 @@ def get_expected_filenames(comparison_type='morning_stock'):
     return expected_files
 
 def file_exists_and_ready(filepath):
-    """Check if file exists and is ready (not being written to)"""
+    """Check if file exists and is ready (not being written to)
+    
+    Enhanced version with multiple stability checks and CSV validation
+    """
     if not os.path.exists(filepath):
         return False
     
     try:
+        # First check: Can we open and read the file?
         with open(filepath, 'rb') as f:
             f.read(1024)
+        
+        # Second check: Wait and verify file size is stable (not still being written)
+        # For CSV files, check multiple times to ensure stability
+        is_csv = filepath.lower().endswith('.csv')
+        stability_checks = 3 if is_csv else 2
+        
+        for check_num in range(stability_checks):
+            initial_size = os.path.getsize(filepath)
+            initial_mtime = os.path.getmtime(filepath)
+            
+            time.sleep(2)  # Wait 2 seconds between checks
+            
+            final_size = os.path.getsize(filepath)
+            final_mtime = os.path.getmtime(filepath)
+            
+            if initial_size != final_size or initial_mtime != final_mtime:
+                logger.info(f"File {os.path.basename(filepath)} is still being written (check {check_num + 1}/{stability_checks})")
+                return False
+        
+        # Third check: For CSV files, validate basic readability
+        if is_csv:
+            try:
+                # Try to read with multiple encodings to verify file is readable
+                encodings_to_test = ['utf-8', 'latin-1', 'cp1252']
+                readable = False
+                
+                for encoding in encodings_to_test:
+                    try:
+                        with open(filepath, 'r', encoding=encoding, errors='strict') as f:
+                            # Try to read first 50 lines to catch structural issues
+                            line_count = 0
+                            for line in f:
+                                line_count += 1
+                                if line_count >= 50:
+                                    break
+                        readable = True
+                        break
+                    except (UnicodeDecodeError, UnicodeError):
+                        continue
+                    except Exception as e:
+                        logger.warning(f"CSV file {os.path.basename(filepath)} failed readability check with {encoding}: {str(e)}")
+                        continue
+                
+                if not readable:
+                    logger.warning(f"CSV file {os.path.basename(filepath)} could not be read with any standard encoding")
+                    return False
+                
+                # Additional check: Try to parse as CSV to detect structural issues
+                try:
+                    # Quick sanity check - try to detect delimiter and read a few rows
+                    test_df = pd.read_csv(filepath, nrows=10, encoding=encoding, engine='python', on_bad_lines='skip')
+                    if test_df is None or len(test_df.columns) <= 1:
+                        logger.warning(f"CSV file {os.path.basename(filepath)} appears to have structural issues (only {len(test_df.columns) if test_df is not None else 0} columns)")
+                        return False
+                except Exception as e:
+                    logger.warning(f"CSV file {os.path.basename(filepath)} failed pandas parsing check: {str(e)}")
+                    return False
+                    
+            except Exception as e:
+                logger.warning(f"CSV file {os.path.basename(filepath)} failed validation: {str(e)}")
+                return False
+        
+        logger.info(f"File {os.path.basename(filepath)} is ready (passed all stability checks)")
         return True
-    except (IOError, OSError):
+        
+    except (IOError, OSError) as e:
+        logger.warning(f"File {os.path.basename(filepath)} not ready: {str(e)}")
         return False
 
 def check_files_available(comparison_type='morning_stock'):
@@ -397,7 +466,7 @@ def make_file_writable(file_path):
 
 @timer
 def read_excel_file(file_path):
-    """Read Excel or CSV file and return DataFrame - optimized for large files"""
+    """Read Excel or CSV file and return DataFrame - optimized for large files with robust error handling"""
     try:
         logger.info(f"Reading file: {os.path.basename(file_path)}")
         
@@ -412,25 +481,32 @@ def read_excel_file(file_path):
         
         try:
             if file_ext == '.csv':
-                # Try reading CSV with different encodings and delimiters
+                # Enhanced CSV reading with better error handling
                 encodings_to_try = ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1', 'utf-16']
                 delimiters_to_try = [',', ';', '\t', '|']
                 
                 df = None
                 last_error = None
+                successful_encoding = None
+                successful_delimiter = None
                 
                 for encoding in encodings_to_try:
                     for delimiter in delimiters_to_try:
                         try:
+                            # Use on_bad_lines='skip' to handle malformed lines
                             df = pd.read_csv(
                                 file_path, 
                                 encoding=encoding,
                                 delimiter=delimiter,
-                                engine='python'  # More flexible parser
+                                engine='python',  # More flexible parser
+                                on_bad_lines='skip',  # Skip problematic lines instead of failing
+                                encoding_errors='replace'  # Replace invalid characters instead of failing
                             )
                             
                             # Check if we got reasonable data (has columns and rows)
                             if df is not None and len(df.columns) > 1 and len(df) > 0:
+                                successful_encoding = encoding
+                                successful_delimiter = delimiter
                                 logger.info(f"Successfully read CSV with encoding={encoding}, delimiter='{delimiter}', {len(df)} rows, {len(df.columns)} columns")
                                 break
                         except Exception as e:
@@ -441,7 +517,9 @@ def read_excel_file(file_path):
                         break
                 
                 if df is None or len(df.columns) <= 1:
-                    logger.error(f"Failed to read CSV file with all encoding/delimiter combinations. Last error: {str(last_error)}")
+                    logger.error(f"Failed to read CSV file with all encoding/delimiter combinations.")
+                    logger.error(f"Last error: {str(last_error)}")
+                    logger.error(f"File may be corrupted, incomplete, or still being written.")
                     return None
             else:
                 # Read Excel file
@@ -459,6 +537,7 @@ def read_excel_file(file_path):
             return None
         except Exception as e:
             logger.error(f"Failed to read file: {str(e)}")
+            logger.error(f"This could indicate the file is still being written or is corrupted")
             return None
         
         logger.info(f"Successfully read {len(df)} rows and {len(df.columns)} columns from {os.path.basename(file_path)}")
@@ -574,6 +653,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 else:
                     cross_ref_symbols.append('')
             
+            # FIXED: Always use Source dividend columns for all comparisons
             differences_data = {
                 'Rank': range(1, len(diff_keys) + 1),
                 'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
@@ -589,8 +669,8 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'New ICB': df2_diff.get('ICBCode', ''),
                 'Close Prc': df2_diff.get('Close Prc', ''),
                 'Adj Closing price': df2_diff.get('Adj Closing price', ''),
-                'Net Div': df2_diff.get('Net Div', ''),
-                'Gross Div': df2_diff.get('Gross Div', ''),
+                'Net Div': df2_diff.get('Source net div', ''),
+                'Gross Div': df2_diff.get('Source gross div', ''),
                 'Index': df1_diff['Index'],
                 'Prev. Shares': df1_diff.get('Shares', ''),
                 'New Shares': df2_diff.get('Shares', ''),
@@ -598,7 +678,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'New FF': df2_diff.get('Free float-Coeff', ''),
                 'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
                 'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
-                'Cross-Ref Symbols': cross_ref_symbols  # New column X
+                'Cross-Ref Symbols': cross_ref_symbols
             }
             
             diff_df = pd.DataFrame(differences_data)
@@ -706,7 +786,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 else:
                     cross_ref_symbols_added.append('')
             
-            # Create addition rows with Manual values and #N/A for SOD values
+            # FIXED: Create addition rows with Source dividend columns
             addition_data = {
                 'Rank': range(len(diff_df) + 1, len(diff_df) + len(added_keys) + 1),
                 'Code': df2_added['#Symbol'].astype(str) + df2_added['Index'].astype(str),
@@ -722,8 +802,8 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'New ICB': df2_added.get('ICBCode', ''),
                 'Close Prc': df2_added.get('Close Prc', ''),
                 'Adj Closing price': df2_added.get('Adj Closing price', ''),
-                'Net Div': df2_added.get('Net Div', ''),
-                'Gross Div': df2_added.get('Gross Div', ''),
+                'Net Div': df2_added.get('Source net div', ''),
+                'Gross Div': df2_added.get('Source gross div', ''),
                 'Index': df2_added['Index'],
                 'Prev. Shares': '#N/A',
                 'New Shares': df2_added.get('Shares', ''),
@@ -1108,8 +1188,6 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             for col_num, value in enumerate(diff_df.columns.values):
                 worksheet1.write(2, col_num, value, header_format)
             
-            # Row 4 is no longer hidden - removed the hidden line
-            
             data_start_row = 4
             data_end_row = data_start_row + len(diff_df) - 1
             
@@ -1220,7 +1298,6 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             worksheet1.write(0, 0, 0, normal_format)
             for col_num, value in enumerate(diff_df.columns.values):
                 worksheet1.write(2, col_num, value, header_format)
-            # Row 4 is no longer hidden - removed the hidden line
         
         for i, col in enumerate(diff_df.columns):
             max_length = max(len(str(col)), 10)
@@ -1245,8 +1322,6 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             
             for col_num, value in enumerate(df1_clean_output.columns.values):
                 worksheet2.write(2, col_num, value, header_format)
-            
-            # Row 4 is no longer hidden - removed the hidden line
             
             if len(df1_clean_output) > 0:
                 end_col_name = excel_column_name(len(df1_clean_output.columns) - 1)
@@ -1281,8 +1356,6 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             
             for col_num, value in enumerate(df2_clean_output.columns.values):
                 worksheet3.write(2, col_num, value, header_format)
-            
-            # Row 4 is no longer hidden - removed the hidden line
             
             if len(df2_clean_output) > 0:
                 end_col_name = excel_column_name(len(df2_clean_output.columns) - 1)
@@ -1654,12 +1727,12 @@ def manual_check(comparison_type=None):
             config = COMPARISON_CONFIGS[comp_type]
             
             if comp_type.startswith('evening_'):
-                print(f"\nExpected {comp_type.upper()} files:")
+                print(f"\nExpected {comp_type.UPPER()} files:")
                 print(f"  EOD: {expected_files['file1']}")
                 print(f"  Manual: {expected_files['file2']}")
             else:
                 manual_folder = config.get('manual_folder', 'manual')
-                print(f"\nExpected {comp_type.upper()} files:")
+                print(f"\nExpected {comp_type.UPPER()} files:")
                 print(f"  SOD: {expected_files['sod']}")
                 print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         
@@ -1669,7 +1742,7 @@ def manual_check(comparison_type=None):
         print(f"\nResults:")
         for comp_type, success in results.items():
             status = "Success" if success else "Failed/Not Available"
-            print(f"  {comp_type.upper()}: {status}")
+            print(f"  {comp_type.UPPER()}: {status}")
         
         return any(results.values())
 
