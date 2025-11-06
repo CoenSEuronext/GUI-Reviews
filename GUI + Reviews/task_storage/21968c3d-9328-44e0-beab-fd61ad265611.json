@@ -1,0 +1,24 @@
+{
+  "task_id": "21968c3d-9328-44e0-beab-fd61ad265611",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-11-06T14:30:19.942704",
+  "started_at": "2025-11-06T14:30:19.942704",
+  "completed_at": "2025-11-06T14:30:22.810879",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: unsupported operand type(s) for /: 'NoneType' and 'float'",
+  "error": "Error during review calculation: unsupported operand type(s) for /: 'NoneType' and 'float'",
+  "result_data": null,
+  "review_type": "AETAW",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "AETAW",
+    "isin": "NL0010614525",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.867174
+}

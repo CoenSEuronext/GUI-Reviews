@@ -1,0 +1,172 @@
+2025-11-06 14:38:33,244 - werkzeug - WARNING -  * Debugger is active!
+2025-11-06 14:38:33,245 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-06 14:38:50,883 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:38:50] "POST /calculate HTTP/1.1" 200 -
+2025-11-06 14:38:50,885 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-11-06 14:38:50,889 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:38:50] "GET /task-status/6bb27d4e-1c58-4c5a-b221-6383ddae0468 HTTP/1.1" 200 -
+2025-11-06 14:38:52,903 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:38:52] "GET /task-status/6bb27d4e-1c58-4c5a-b221-6383ddae0468 HTTP/1.1" 200 -
+2025-11-06 14:38:54,902 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:38:54] "GET /task-status/6bb27d4e-1c58-4c5a-b221-6383ddae0468 HTTP/1.1" 200 -
+2025-11-06 14:38:56,052 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-11-06 14:38:56,268 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-11-06 14:38:56,321 - utils.capping_2_step - INFO - 
+--- Iteration 1 ---
+2025-11-06 14:38:56,321 - utils.capping_2_step - INFO - Companies at 9%: 3
+2025-11-06 14:38:56,321 - utils.capping_2_step - INFO - Companies capped at 4.5%: 2
+2025-11-06 14:38:56,321 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 33.33% / 36.00%
+2025-11-06 14:38:56,323 - utils.capping_2_step - INFO - Excess weight to redistribute: 26.35%
+2025-11-06 14:38:56,324 - utils.capping_2_step - INFO - Redistributed 26.35% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,324 - utils.capping_2_step - INFO -   WARNING: 1 companies NOW ABOVE 4.5% after redistribution:
+2025-11-06 14:38:56,324 - utils.capping_2_step - INFO -       1: 3.62% -> 5.84%
+2025-11-06 14:38:56,325 - utils.capping_2_step - INFO - Max weight change: 15.1920%
+2025-11-06 14:38:56,325 - utils.capping_2_step - INFO - 
+--- Iteration 2 ---
+2025-11-06 14:38:56,325 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,326 - utils.capping_2_step - INFO - Companies capped at 4.5%: 3
+2025-11-06 14:38:56,326 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,326 - utils.capping_2_step - INFO - Excess weight to redistribute: 6.49%
+2025-11-06 14:38:56,327 - utils.capping_2_step - INFO - Redistributed 6.49% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,327 - utils.capping_2_step - INFO -   WARNING: 1 companies NOW ABOVE 4.5% after redistribution:
+2025-11-06 14:38:56,327 - utils.capping_2_step - INFO -       3: 4.13% -> 4.52%
+2025-11-06 14:38:56,328 - utils.capping_2_step - INFO - Max weight change: 2.5073%
+2025-11-06 14:38:56,328 - utils.capping_2_step - INFO - 
+--- Iteration 3 ---
+2025-11-06 14:38:56,329 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,329 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,329 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,329 - utils.capping_2_step - INFO - Excess weight to redistribute: 2.33%
+2025-11-06 14:38:56,330 - utils.capping_2_step - INFO - Redistributed 2.33% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,330 - utils.capping_2_step - INFO - Max weight change: 0.6110%
+2025-11-06 14:38:56,331 - utils.capping_2_step - INFO - 
+--- Iteration 4 ---
+2025-11-06 14:38:56,331 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,332 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,332 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,332 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.97%
+2025-11-06 14:38:56,333 - utils.capping_2_step - INFO - Redistributed 0.97% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,333 - utils.capping_2_step - INFO - Max weight change: 0.1999%
+2025-11-06 14:38:56,333 - utils.capping_2_step - INFO - 
+--- Iteration 5 ---
+2025-11-06 14:38:56,334 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,334 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,334 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,334 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.40%
+2025-11-06 14:38:56,335 - utils.capping_2_step - INFO - Redistributed 0.40% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,336 - utils.capping_2_step - INFO - Max weight change: 0.0831%
+2025-11-06 14:38:56,336 - utils.capping_2_step - INFO - 
+--- Iteration 6 ---
+2025-11-06 14:38:56,337 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,337 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,337 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,337 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.17%
+2025-11-06 14:38:56,339 - utils.capping_2_step - INFO - Redistributed 0.17% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,340 - utils.capping_2_step - INFO - Max weight change: 0.0346%
+2025-11-06 14:38:56,340 - utils.capping_2_step - INFO - 
+--- Iteration 7 ---
+2025-11-06 14:38:56,341 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,341 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,341 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,341 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.07%
+2025-11-06 14:38:56,342 - utils.capping_2_step - INFO - Redistributed 0.07% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,342 - utils.capping_2_step - INFO - Max weight change: 0.0144%
+2025-11-06 14:38:56,342 - utils.capping_2_step - INFO - 
+--- Iteration 8 ---
+2025-11-06 14:38:56,344 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.03%
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Redistributed 0.03% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Max weight change: 0.0060%
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - 
+--- Iteration 9 ---
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,345 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.01%
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - Redistributed 0.01% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - Max weight change: 0.0025%
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - 
+--- Iteration 10 ---
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,349 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.01%
+2025-11-06 14:38:56,352 - utils.capping_2_step - INFO - Redistributed 0.01% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,353 - utils.capping_2_step - INFO - Max weight change: 0.0010%
+2025-11-06 14:38:56,353 - utils.capping_2_step - INFO - 
+--- Iteration 11 ---
+2025-11-06 14:38:56,354 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,354 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,354 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,354 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Max weight change: 0.0004%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - 
+--- Iteration 12 ---
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Max weight change: 0.0002%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - 
+--- Iteration 13 ---
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - Max weight change: 0.0001%
+2025-11-06 14:38:56,356 - utils.capping_2_step - INFO - 
+--- Iteration 14 ---
+2025-11-06 14:38:56,364 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,365 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,365 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,365 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,366 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,367 - utils.capping_2_step - INFO - Max weight change: 0.0000%
+2025-11-06 14:38:56,368 - utils.capping_2_step - INFO - 
+--- Iteration 15 ---
+2025-11-06 14:38:56,368 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,368 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,368 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,370 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,370 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,370 - utils.capping_2_step - INFO - Max weight change: 0.0000%
+2025-11-06 14:38:56,371 - utils.capping_2_step - INFO - 
+--- Iteration 16 ---
+2025-11-06 14:38:56,372 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,372 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,372 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,372 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,373 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,374 - utils.capping_2_step - INFO - Max weight change: 0.0000%
+2025-11-06 14:38:56,374 - utils.capping_2_step - INFO - 
+--- Iteration 17 ---
+2025-11-06 14:38:56,374 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,375 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,375 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,375 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,376 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,376 - utils.capping_2_step - INFO - Max weight change: 0.0000%
+2025-11-06 14:38:56,376 - utils.capping_2_step - INFO - 
+--- Iteration 18 ---
+2025-11-06 14:38:56,379 - utils.capping_2_step - INFO - Companies at 9%: 0
+2025-11-06 14:38:56,379 - utils.capping_2_step - INFO - Companies capped at 4.5%: 4
+2025-11-06 14:38:56,379 - utils.capping_2_step - INFO - Collective budget used (>4.5%): 35.27% / 36.00%
+2025-11-06 14:38:56,379 - utils.capping_2_step - INFO - Excess weight to redistribute: 0.00%
+2025-11-06 14:38:56,380 - utils.capping_2_step - INFO - Redistributed 0.00% to 71 companies at/below 4.5%
+2025-11-06 14:38:56,380 - utils.capping_2_step - INFO - Max weight change: 0.0000%
+2025-11-06 14:38:56,381 - utils.capping_2_step - INFO - [SUCCESS] Converged after 18 iterations
+2025-11-06 14:38:56,382 - utils.capping_2_step - INFO - 
+=== Final Results ===
+2025-11-06 14:38:56,382 - utils.capping_2_step - INFO - Companies at 9.00%: 3
+2025-11-06 14:38:56,382 - utils.capping_2_step - INFO - Companies at 4.50%: 4
+2025-11-06 14:38:56,383 - utils.capping_2_step - INFO - Companies between 4.5% and 9%: 1
+2025-11-06 14:38:56,383 - utils.capping_2_step - INFO - Companies at or below 4.5%: 71
+2025-11-06 14:38:56,383 - utils.capping_2_step - INFO - Total weight OVER 4.5%: 35.27% (limit: 36.00%)
+2025-11-06 14:38:56,383 - utils.capping_2_step - INFO - [SUCCESS] Collective cap satisfied
+2025-11-06 14:38:56,385 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 73
+2025-11-06 14:38:56,388 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251106_143856.xlsx
+2025-11-06 14:38:56,903 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:38:56] "GET /task-status/6bb27d4e-1c58-4c5a-b221-6383ddae0468 HTTP/1.1" 200 -
+2025-11-06 14:42:06,199 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading
+2025-11-06 14:42:06,199 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading
+2025-11-06 14:42:06,199 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading

@@ -1,0 +1,6 @@
+2025-11-06 14:37:30,090 - werkzeug - WARNING -  * Debugger is active!
+2025-11-06 14:37:30,092 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-06 14:37:30,117 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:37:30] "GET /task-status/55ca1c82-4022-49c2-b62e-df927b7fff35 HTTP/1.1" 200 -
+2025-11-06 14:37:39,711 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading
+2025-11-06 14:37:39,711 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading
+2025-11-06 14:37:39,711 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading
