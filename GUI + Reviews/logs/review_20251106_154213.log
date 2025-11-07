@@ -1,0 +1,3 @@
+2025-11-06 15:42:13,974 - werkzeug - WARNING -  * Debugger is active!
+2025-11-06 15:42:13,974 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-07 11:16:41,946 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\watchdog\\events.py', reloading
