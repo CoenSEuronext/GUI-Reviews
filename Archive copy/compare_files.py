@@ -274,6 +274,39 @@ def should_allow_overwrite(comparison_type):
         return datetime.now() < cutoff_time
     except:
         return True
+    
+def should_regenerate_output(input_files, output_path):
+    """Check if output file should be regenerated based on input file timestamps
+    
+    Args:
+        input_files: List of input file paths
+        output_path: Path to the output file
+        
+    Returns:
+        bool: True if any input file is newer than output file, False otherwise
+    """
+    # If output doesn't exist, always regenerate
+    if not os.path.exists(output_path):
+        return True
+    
+    try:
+        output_mtime = os.path.getmtime(output_path)
+        
+        # Check if any input file is newer than output
+        for input_file in input_files:
+            if os.path.exists(input_file):
+                input_mtime = os.path.getmtime(input_file)
+                if input_mtime > output_mtime:
+                    logger.info(f"Input file {os.path.basename(input_file)} is newer than output file")
+                    return True
+        
+        logger.info(f"Output file is up to date, no regeneration needed")
+        return False
+        
+    except Exception as e:
+        logger.warning(f"Error checking file timestamps: {str(e)}")
+        # On error, default to regenerating to be safe
+        return True
 
 def get_expected_filenames(comparison_type='morning_stock'):
     """Get the expected filenames for today's comparison"""
@@ -378,11 +411,26 @@ def file_exists_and_ready(filepath):
                     return False
                 
                 # Additional check: Try to parse as CSV to detect structural issues
+                # Try multiple delimiters to find the right one
                 try:
-                    # Quick sanity check - try to detect delimiter and read a few rows
-                    test_df = pd.read_csv(filepath, nrows=10, encoding=encoding, engine='python', on_bad_lines='skip')
-                    if test_df is None or len(test_df.columns) <= 1:
-                        logger.warning(f"CSV file {os.path.basename(filepath)} appears to have structural issues (only {len(test_df.columns) if test_df is not None else 0} columns)")
+                    delimiters_to_test = [',', ';', '\t', '|']
+                    valid_structure = False
+                    max_columns_found = 0
+                    
+                    for delimiter in delimiters_to_test:
+                        try:
+                            test_df = pd.read_csv(filepath, nrows=5, encoding=encoding, delimiter=delimiter, engine='python', on_bad_lines='skip')
+                            if test_df is not None and len(test_df.columns) > max_columns_found:
+                                max_columns_found = len(test_df.columns)
+                                if len(test_df.columns) > 1:
+                                    valid_structure = True
+                                    logger.info(f"CSV file {os.path.basename(filepath)} has valid structure with delimiter '{delimiter}' ({len(test_df.columns)} columns)")
+                        except:
+                            continue
+                    
+                    # If we found at least 2 columns with any delimiter, file is valid
+                    if not valid_structure:
+                        logger.warning(f"CSV file {os.path.basename(filepath)} appears to have structural issues (max {max_columns_found} columns found)")
                         return False
                 except Exception as e:
                     logger.warning(f"CSV file {os.path.basename(filepath)} failed pandas parsing check: {str(e)}")
@@ -610,6 +658,24 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             
             # Both must be empty/0 together (AND condition)
             has_formatting_interest |= (close_prc_empty & adj_closing_empty)
+            
+            # For afternoon/evening: also include rows where Close Prc != Adj Closing price
+            if is_afternoon:
+                close_adj_different = (
+                    (~close_prc_empty) & (~adj_closing_empty) & 
+                    (abs(close_prc_vals - adj_closing_vals) > 1e-10)
+                )
+                has_formatting_interest |= close_adj_different
+        
+        # For afternoon/evening: include rows with positive dividends
+        if is_afternoon:
+            if 'Source net div' in df2_common.columns:
+                net_div_vals = pd.to_numeric(df2_common['Source net div'], errors='coerce').fillna(0)
+                has_formatting_interest |= (net_div_vals > 0)
+            
+            if 'Source gross div' in df2_common.columns:
+                gross_div_vals = pd.to_numeric(df2_common['Source gross div'], errors='coerce').fillna(0)
+                has_formatting_interest |= (gross_div_vals > 0)
         
         # Combine both conditions: actual differences OR formatting interest
         diff_keys = common_keys[has_differences | has_formatting_interest]
@@ -1403,19 +1469,34 @@ def perform_comparison(comparison_type='morning_stock'):
         output_path = os.path.join(OUTPUT_DIR, output_filename)
         
         # Check if output file already exists and whether overwrite is allowed
+
         if os.path.exists(output_path):
             if config.get('allow_overwrite', False):
                 if should_allow_overwrite(comparison_type):
-                    logger.info(f"{comparison_type.upper()} output file exists but overwrite is allowed. Regenerating...")
-                    print(f"  {comparison_type.upper()} output file exists but will be overwritten.")
+                    # For afternoon and evening, check if input files are newer
+                    # Get input file paths
+                    if comparison_type.startswith('evening_'):
+                        input_files = [file_status['file1_path'], file_status['file2_path']]
+                    else:
+                        input_files = [file_status['sod_path'], file_status['manual_path']]
+                    
+                    # Only regenerate if input files are newer than output
+                    if should_regenerate_output(input_files, output_path):
+                        logger.info(f"{comparison_type.upper()} output file exists but input files are newer. Regenerating...")
+                        print(f"  {comparison_type.upper()} output file exists but input files are newer.")
+                    else:
+                        logger.info(f"{comparison_type.upper()} output file is up to date. Skipping.")
+                        print(f"  {comparison_type.upper()} output file is up to date.")
+                        print("  Skipping comparison.\n")
+                        return True
                 else:
                     logger.info(f"{comparison_type.upper()} output file exists and overwrite time has passed. Skipping.")
-                    print(f"✓ {comparison_type.upper()} output file already exists and overwrite time has passed.")
+                    print(f"  {comparison_type.upper()} output file already exists and overwrite time has passed.")
                     print("  Skipping comparison.\n")
                     return True
             else:
                 logger.info(f"{comparison_type.upper()} output file already exists: {output_filename}. Skipping comparison.")
-                print(f"✓ {comparison_type.upper()} output file already exists: {output_filename}")
+                print(f"  {comparison_type.upper()} output file already exists: {output_filename}")
                 print("  Skipping comparison.\n")
                 return True
         
@@ -1481,13 +1562,13 @@ def perform_comparison(comparison_type='morning_stock'):
         success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path, comparison_type)
         
         if success:
-            print(f"\n✓ {comparison_type.upper()} comparison completed successfully!")
+            print(f"\n  {comparison_type.upper()} comparison completed successfully!")
             print(f"  Output file: {output_filename}")
             print(f"  Changes found: {len(diff_df)}")
             print(f"  Common records: {len(common_keys)}")
             logger.info(f"{comparison_type.upper()} comparison completed. Changes: {len(diff_df)}, Common records: {len(common_keys)}")
         else:
-            print(f"\n✗ Failed to write {comparison_type.upper()} output file")
+            print(f"\n  Failed to write {comparison_type.UPPER()} output file")
             logger.error(f"Failed to write {comparison_type.upper()} output file")
         
         return success
@@ -1727,12 +1808,12 @@ def manual_check(comparison_type=None):
             config = COMPARISON_CONFIGS[comp_type]
             
             if comp_type.startswith('evening_'):
-                print(f"\nExpected {comp_type.UPPER()} files:")
+                print(f"\nExpected {comp_type.upper()} files:")
                 print(f"  EOD: {expected_files['file1']}")
                 print(f"  Manual: {expected_files['file2']}")
             else:
                 manual_folder = config.get('manual_folder', 'manual')
-                print(f"\nExpected {comp_type.UPPER()} files:")
+                print(f"\nExpected {comp_type.upper()} files:")
                 print(f"  SOD: {expected_files['sod']}")
                 print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         
@@ -1742,7 +1823,7 @@ def manual_check(comparison_type=None):
         print(f"\nResults:")
         for comp_type, success in results.items():
             status = "Success" if success else "Failed/Not Available"
-            print(f"  {comp_type.UPPER()}: {status}")
+            print(f"  {comp_type.upper()}: {status}")
         
         return any(results.values())
 

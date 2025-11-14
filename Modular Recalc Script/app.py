@@ -2,14 +2,11 @@ import pandas as pd
 import datetime
 import os
 
+# Input EOD to be recalculated
+RELEVANT_EOD_DATE = "20251111"
 # Stock prices dictionary
 stock_prices = {
-".EZCLG":3844.04103854,
-".JPCEG":5062.76207116,
-".UC3EG":9226.4906432,
-".USCEG":8948.54125114,
-".EGELN":8474.95833429,
-".EGESG":3042.913426450
+"AAPL.O": 23.323
 }
 
 # Get current timestamp for the output filename
@@ -28,20 +25,22 @@ def get_previous_business_day(date_str):
         prev_day = prev_day - datetime.timedelta(days=1)
     
     return prev_day.strftime("%Y%m%d")
-# List of mnemonics to process
+
+
+# List of Price Index mnemonics to process
 mnemonics = [
-    "WCAMP",
-    "GSCSP",
-    "TCAMP",
-    "EGELS"
+"WCAMP",
+"GSCSP",
+"TCAMP",
 ]
 
+# Insert Index to be calculated + Underlying Index
 mnemonics_tr4_perc = {
-    "WCAMB": "FRESG0000355",
-    "GSCSD": "FRESG0000884",
-    "TCAMB": "FR0014005GG7"
+    "LC3WD": "FR0013522596",
 
     }
+
+# Insert Index to be calculated + Underlying Index
 mnemonics_tr4_points = {
     "WCAMB": "FRESG0000355",
     "GSCSD": "FRESG0000884",
@@ -52,8 +51,8 @@ def load_data_with_encoding_fallback():
     encodings = ['latin1', 'windows-1252', 'utf-8']
     
     # File date configuration
-    current_stock_eod_date = "20251106"
-    current_index_eod_date = "20251106"
+    current_stock_eod_date = RELEVANT_EOD_DATE
+    current_index_eod_date = RELEVANT_EOD_DATE
     
     prev_stock_eod_date = get_previous_business_day(current_stock_eod_date)
     prev_index_eod_date = get_previous_business_day(current_index_eod_date)
@@ -433,7 +432,7 @@ def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1,
 
 def save_results_to_excel(results_df, decrement_df, decrement_points_df, stock_eod_df, stock_eod_df_t1, index_eod_df, index_eod_df_t1, timestamp):
     """Save all results to Excel with proper sheet names"""
-    output_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script\Output\Decr_Recalc_{timestamp}.xlsx"
+    output_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script\Output\Level_Recalc_{timestamp}.xlsx"
     
     with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         results_df.to_excel(writer, sheet_name='Index_Totals', index=False)
@@ -455,8 +454,8 @@ def save_results_to_excel(results_df, decrement_df, decrement_points_df, stock_e
 # Main execution
 try:
     # Define dates at the start
-    current_stock_eod_date = "20251106"
-    current_index_eod_date = "20251106"
+    current_stock_eod_date = RELEVANT_EOD_DATE
+    current_index_eod_date = RELEVANT_EOD_DATE
     prev_stock_eod_date = get_previous_business_day(current_stock_eod_date)
     prev_index_eod_date = get_previous_business_day(current_index_eod_date)
     
