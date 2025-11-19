@@ -1,0 +1,21 @@
+2025-11-19 14:04:26,230 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 14:04:26,234 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 14:04:26,966 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:26] "POST /calculate HTTP/1.1" 200 -
+2025-11-19 14:04:26,968 - Review.reviews.envb_review - INFO - Loading EOD data...
+2025-11-19 14:04:26,972 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:26] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:28,973 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:28] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:29,334 - Review.reviews.envb_review - INFO - Loading reference data...
+2025-11-19 14:04:30,993 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:30] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:32,988 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:32] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:34,981 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:34] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:37,032 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:37] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:37,249 - Review.reviews.envb_review - ERROR - Error during review calculation: 'sustainalytics'
+2025-11-19 14:04:37,249 - Review.reviews.envb_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envb_review.py", line 70, in run_envb_review
+    ref_data['sustainalytics'][['ISIN', 'ESG Risk Score', 'Overall Global Compact Compliance Status']].drop_duplicates(subset='ISIN', keep='first'),
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'sustainalytics'
+
+2025-11-19 14:04:38,976 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:04:38] "GET /task-status/0347aff6-ef3c-41ca-894d-eb33dccdcd5b HTTP/1.1" 200 -
+2025-11-19 14:04:52,828 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envb_review.py', reloading
+2025-11-19 14:04:52,828 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envb_review.py', reloading

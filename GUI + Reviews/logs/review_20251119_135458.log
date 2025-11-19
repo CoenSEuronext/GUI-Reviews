@@ -1,0 +1,4 @@
+2025-11-19 13:54:59,791 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 13:54:59,792 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 13:55:12,356 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\cachelib\\__init__.py', reloading
+2025-11-19 13:55:12,426 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\concurrent\\__init__.py', reloading

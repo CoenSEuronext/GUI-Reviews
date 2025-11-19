@@ -274,6 +274,39 @@ def should_allow_overwrite(comparison_type):
         return datetime.now() < cutoff_time
     except:
         return True
+    
+def should_regenerate_output(input_files, output_path):
+    """Check if output file should be regenerated based on input file timestamps
+    
+    Args:
+        input_files: List of input file paths
+        output_path: Path to the output file
+        
+    Returns:
+        bool: True if any input file is newer than output file, False otherwise
+    """
+    # If output doesn't exist, always regenerate
+    if not os.path.exists(output_path):
+        return True
+    
+    try:
+        output_mtime = os.path.getmtime(output_path)
+        
+        # Check if any input file is newer than output
+        for input_file in input_files:
+            if os.path.exists(input_file):
+                input_mtime = os.path.getmtime(input_file)
+                if input_mtime > output_mtime:
+                    logger.info(f"Input file {os.path.basename(input_file)} is newer than output - will regenerate")
+                    return True
+        
+        # Only log when skipping regeneration
+        return False
+        
+    except Exception as e:
+        logger.warning(f"Error checking file timestamps: {str(e)}")
+        # On error, default to regenerating to be safe
+        return True
 
 def get_expected_filenames(comparison_type='morning_stock'):
     """Get the expected filenames for today's comparison"""
@@ -296,8 +329,6 @@ def get_expected_filenames(comparison_type='morning_stock'):
             'file2': f"TTMIndexEU1_GIS_{file2_prefix}_{file_suffix}_{date_str}.{file_extension}"
         }
         
-        logger.info(f"Expected {file_suffix} files: {file1_prefix}={expected_files['file1']}, {file2_prefix}={expected_files['file2']}")
-        
         return expected_files
     
     # For morning and afternoon comparisons
@@ -313,8 +344,6 @@ def get_expected_filenames(comparison_type='morning_stock'):
         'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.{file_extension}",
         'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.{file_extension}"
     }
-    
-    logger.info(f"Expected {file_suffix} files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
     
     return expected_files
 
@@ -346,7 +375,7 @@ def file_exists_and_ready(filepath):
             final_mtime = os.path.getmtime(filepath)
             
             if initial_size != final_size or initial_mtime != final_mtime:
-                logger.info(f"File {os.path.basename(filepath)} is still being written (check {check_num + 1}/{stability_checks})")
+                # File is still being written - don't log, just return False
                 return False
         
         # Third check: For CSV files, validate basic readability
@@ -369,8 +398,7 @@ def file_exists_and_ready(filepath):
                         break
                     except (UnicodeDecodeError, UnicodeError):
                         continue
-                    except Exception as e:
-                        logger.warning(f"CSV file {os.path.basename(filepath)} failed readability check with {encoding}: {str(e)}")
+                    except Exception:
                         continue
                 
                 if not readable:
@@ -378,7 +406,6 @@ def file_exists_and_ready(filepath):
                     return False
                 
                 # Additional check: Try to parse as CSV to detect structural issues
-                # Try multiple delimiters to find the right one
                 try:
                     delimiters_to_test = [',', ';', '\t', '|']
                     valid_structure = False
@@ -391,7 +418,6 @@ def file_exists_and_ready(filepath):
                                 max_columns_found = len(test_df.columns)
                                 if len(test_df.columns) > 1:
                                     valid_structure = True
-                                    logger.info(f"CSV file {os.path.basename(filepath)} has valid structure with delimiter '{delimiter}' ({len(test_df.columns)} columns)")
                         except:
                             continue
                     
@@ -407,7 +433,9 @@ def file_exists_and_ready(filepath):
                 logger.warning(f"CSV file {os.path.basename(filepath)} failed validation: {str(e)}")
                 return False
         
-        logger.info(f"File {os.path.basename(filepath)} is ready (passed all stability checks)")
+        # File is ready - only log for CSV files as they're more complex
+        if is_csv:
+            logger.info(f"CSV file {os.path.basename(filepath)} is ready and validated")
         return True
         
     except (IOError, OSError) as e:
@@ -430,9 +458,9 @@ def check_files_available(comparison_type='morning_stock'):
         file1_ready = file_exists_and_ready(file1_path)
         file2_ready = file_exists_and_ready(file2_path)
         
-        logger.info(f"{comparison_type.upper()} file status: EOD={file1_ready}, Manual={file2_ready}")
-        
+        # Only log when files become available
         if file1_ready and file2_ready:
+            logger.info(f"{comparison_type.upper()} files are now ready: EOD and Manual")
             return {
                 'available': True,
                 'file1_path': file1_path,
@@ -454,9 +482,9 @@ def check_files_available(comparison_type='morning_stock'):
     sod_ready = file_exists_and_ready(sod_path)
     manual_ready = file_exists_and_ready(manual_path)
     
-    logger.info(f"{comparison_type.upper()} file status: SOD={sod_ready}, Manual={manual_ready}")
-    
+    # Only log when files become available
     if sod_ready and manual_ready:
+        logger.info(f"{comparison_type.upper()} files are now ready: SOD and Manual")
         return {
             'available': True,
             'sod_path': sod_path,
@@ -625,6 +653,24 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             
             # Both must be empty/0 together (AND condition)
             has_formatting_interest |= (close_prc_empty & adj_closing_empty)
+            
+            # For afternoon/evening: also include rows where Close Prc != Adj Closing price
+            if is_afternoon:
+                close_adj_different = (
+                    (~close_prc_empty) & (~adj_closing_empty) & 
+                    (abs(close_prc_vals - adj_closing_vals) > 1e-10)
+                )
+                has_formatting_interest |= close_adj_different
+        
+        # For afternoon/evening: include rows with positive dividends
+        if is_afternoon:
+            if 'Source net div' in df2_common.columns:
+                net_div_vals = pd.to_numeric(df2_common['Source net div'], errors='coerce').fillna(0)
+                has_formatting_interest |= (net_div_vals > 0)
+            
+            if 'Source gross div' in df2_common.columns:
+                gross_div_vals = pd.to_numeric(df2_common['Source gross div'], errors='coerce').fillna(0)
+                has_formatting_interest |= (gross_div_vals > 0)
         
         # Combine both conditions: actual differences OR formatting interest
         diff_keys = common_keys[has_differences | has_formatting_interest]
@@ -1397,19 +1443,25 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         logger.error(f"Error writing Excel file: {str(e)}")
         return False
 
-def perform_comparison(comparison_type='morning_stock'):
-    """Perform the file comparison and generate output"""
+def perform_comparison(comparison_type='morning_stock', silent=False):
+    """Perform the file comparison and generate output
+    
+    Args:
+        comparison_type: Type of comparison to perform
+        silent: If True, suppress output messages when skipping (for periodic checks)
+    """
     try:
-        print(f"\n{'='*60}")
-        print(f"Starting {comparison_type.upper()} comparison...")
-        print(f"{'='*60}\n")
-        
         file_status = check_files_available(comparison_type)
         
         if not file_status['available']:
-            logger.info(f"{comparison_type.upper()} files not available yet")
-            print(f"{comparison_type.upper()} files not available yet.")
+            # Don't print anything - reduces console spam
             return False
+        
+        # Only print when files are actually available and comparison will run
+        if not silent:
+            print(f"\n{'='*60}")
+            print(f"Starting {comparison_type.upper()} comparison...")
+            print(f"{'='*60}\n")
         
         # Generate output filename with current date
         current_date = datetime.now().strftime("%Y%m%d")
@@ -1421,17 +1473,35 @@ def perform_comparison(comparison_type='morning_stock'):
         if os.path.exists(output_path):
             if config.get('allow_overwrite', False):
                 if should_allow_overwrite(comparison_type):
-                    logger.info(f"{comparison_type.upper()} output file exists but overwrite is allowed. Regenerating...")
-                    print(f"  {comparison_type.upper()} output file exists but will be overwritten.")
+                    # For afternoon and evening, check if input files are newer
+                    # Get input file paths
+                    if comparison_type.startswith('evening_'):
+                        input_files = [file_status['file1_path'], file_status['file2_path']]
+                    else:
+                        input_files = [file_status['sod_path'], file_status['manual_path']]
+                    
+                    # Only regenerate if input files are newer than output
+                    if should_regenerate_output(input_files, output_path):
+                        if not silent:
+                            logger.info(f"{comparison_type.upper()} output file exists but input files are newer. Regenerating...")
+                            print(f"  {comparison_type.upper()} output file exists but input files are newer.")
+                    else:
+                        logger.info(f"{comparison_type.upper()} output file is up to date. Skipping.")
+                        if not silent:
+                            print(f"  {comparison_type.upper()} output file is up to date.")
+                            print("  Skipping comparison.\n")
+                        return True
                 else:
                     logger.info(f"{comparison_type.upper()} output file exists and overwrite time has passed. Skipping.")
-                    print(f"✓ {comparison_type.upper()} output file already exists and overwrite time has passed.")
-                    print("  Skipping comparison.\n")
+                    if not silent:
+                        print(f"  {comparison_type.upper()} output file already exists and overwrite time has passed.")
+                        print("  Skipping comparison.\n")
                     return True
             else:
                 logger.info(f"{comparison_type.upper()} output file already exists: {output_filename}. Skipping comparison.")
-                print(f"✓ {comparison_type.upper()} output file already exists: {output_filename}")
-                print("  Skipping comparison.\n")
+                if not silent:
+                    print(f"  {comparison_type.upper()} output file already exists: {output_filename}")
+                    print("  Skipping comparison.\n")
                 return True
         
         # Get file paths based on comparison type
@@ -1496,13 +1566,13 @@ def perform_comparison(comparison_type='morning_stock'):
         success = write_excel_optimized(diff_df, df1_indexed, df2_indexed, output_path, comparison_type)
         
         if success:
-            print(f"\n✓ {comparison_type.upper()} comparison completed successfully!")
+            print(f"\n  {comparison_type.upper()} comparison completed successfully!")
             print(f"  Output file: {output_filename}")
             print(f"  Changes found: {len(diff_df)}")
             print(f"  Common records: {len(common_keys)}")
             logger.info(f"{comparison_type.upper()} comparison completed. Changes: {len(diff_df)}, Common records: {len(common_keys)}")
         else:
-            print(f"\n✗ Failed to write {comparison_type.upper()} output file")
+            print(f"\n  Failed to write {comparison_type.UPPER()} output file")
             logger.error(f"Failed to write {comparison_type.upper()} output file")
         
         return success
@@ -1512,11 +1582,15 @@ def perform_comparison(comparison_type='morning_stock'):
         print(f"Error during {comparison_type} comparison: {str(e)}")
         return False
 
-def perform_all_comparisons():
-    """Perform all configured comparisons"""
+def perform_all_comparisons(silent=False):
+    """Perform all configured comparisons
+    
+    Args:
+        silent: If True, suppress skip messages (for periodic checks)
+    """
     results = {}
     for comparison_type in COMPARISON_CONFIGS.keys():
-        results[comparison_type] = perform_comparison(comparison_type)
+        results[comparison_type] = perform_comparison(comparison_type, silent=silent)
     return results
 
 class FileMonitorHandler(FileSystemEventHandler):
@@ -1595,9 +1669,10 @@ class FileMonitorHandler(FileSystemEventHandler):
         # Wait a bit for file to be completely written
         time.sleep(5)
         
-        if perform_comparison(comparison_type):
-            logger.info(f"{comparison_type.upper()} comparison completed successfully!")
-            print(f"{comparison_type.upper()} comparison completed successfully!")
+        # Use silent=True to avoid spam from file monitoring events
+        if perform_comparison(comparison_type, silent=True):
+            # Only log success to file, no console output
+            logger.info(f"{comparison_type.upper()} comparison completed successfully from file event!")
         else:
             logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
 
@@ -1629,7 +1704,7 @@ def start_monitoring():
     print(f"  EOD/Evening Manual: {MONITOR_FOLDERS['eod']}")
     print()
     
-    # Check if files already exist
+# Check if files already exist
     print("Checking if files already exist...")
     results = perform_all_comparisons()
     
@@ -1658,10 +1733,11 @@ def start_monitoring():
                 time.sleep(60)
                 
                 # Periodic check in case file events were missed
+                # Only log when comparisons actually happen, not on every check
                 current_time = datetime.now()
                 if current_time.minute % 5 == 0:
-                    logger.info("Periodic check for files...")
-                    perform_all_comparisons()
+                    # Don't log the check itself, just perform it silently
+                    perform_all_comparisons(silent=True)
                 
         except KeyboardInterrupt:
             observer.stop()
@@ -1742,12 +1818,12 @@ def manual_check(comparison_type=None):
             config = COMPARISON_CONFIGS[comp_type]
             
             if comp_type.startswith('evening_'):
-                print(f"\nExpected {comp_type.UPPER()} files:")
+                print(f"\nExpected {comp_type.upper()} files:")
                 print(f"  EOD: {expected_files['file1']}")
                 print(f"  Manual: {expected_files['file2']}")
             else:
                 manual_folder = config.get('manual_folder', 'manual')
-                print(f"\nExpected {comp_type.UPPER()} files:")
+                print(f"\nExpected {comp_type.upper()} files:")
                 print(f"  SOD: {expected_files['sod']}")
                 print(f"  Manual ({manual_folder}): {expected_files['manual']}")
         
@@ -1757,7 +1833,7 @@ def manual_check(comparison_type=None):
         print(f"\nResults:")
         for comp_type, success in results.items():
             status = "Success" if success else "Failed/Not Available"
-            print(f"  {comp_type.UPPER()}: {status}")
+            print(f"  {comp_type.upper()}: {status}")
         
         return any(results.values())
 

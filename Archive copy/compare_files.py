@@ -146,7 +146,7 @@ ALLOWED_MNEMONICS = {
 }
 
 # Purple mnemonics for special highlighting
-PURPLE_MNEMONICS = {'AEX BANK', 'PX1'}
+PURPLE_MNEMONICS = {'AEX', 'BANK', 'PX1'}
 
 # Purple index mnemonics (for Name column)
 PURPLE_INDEX_MNEMONICS = {
@@ -297,10 +297,10 @@ def should_regenerate_output(input_files, output_path):
             if os.path.exists(input_file):
                 input_mtime = os.path.getmtime(input_file)
                 if input_mtime > output_mtime:
-                    logger.info(f"Input file {os.path.basename(input_file)} is newer than output file")
+                    logger.info(f"Input file {os.path.basename(input_file)} is newer than output - will regenerate")
                     return True
         
-        logger.info(f"Output file is up to date, no regeneration needed")
+        # Only log when skipping regeneration
         return False
         
     except Exception as e:
@@ -329,8 +329,6 @@ def get_expected_filenames(comparison_type='morning_stock'):
             'file2': f"TTMIndexEU1_GIS_{file2_prefix}_{file_suffix}_{date_str}.{file_extension}"
         }
         
-        logger.info(f"Expected {file_suffix} files: {file1_prefix}={expected_files['file1']}, {file2_prefix}={expected_files['file2']}")
-        
         return expected_files
     
     # For morning and afternoon comparisons
@@ -346,8 +344,6 @@ def get_expected_filenames(comparison_type='morning_stock'):
         'sod': f"TTMIndexEU1_GIS_SOD_{file_suffix}_{sod_date}.{file_extension}",
         'manual': f"TTMIndexEU1_GIS_MANUAL_{file_suffix}_{manual_date}.{file_extension}"
     }
-    
-    logger.info(f"Expected {file_suffix} files: SOD={expected_files['sod']}, Manual={expected_files['manual']}")
     
     return expected_files
 
@@ -379,7 +375,7 @@ def file_exists_and_ready(filepath):
             final_mtime = os.path.getmtime(filepath)
             
             if initial_size != final_size or initial_mtime != final_mtime:
-                logger.info(f"File {os.path.basename(filepath)} is still being written (check {check_num + 1}/{stability_checks})")
+                # File is still being written - don't log, just return False
                 return False
         
         # Third check: For CSV files, validate basic readability
@@ -402,8 +398,7 @@ def file_exists_and_ready(filepath):
                         break
                     except (UnicodeDecodeError, UnicodeError):
                         continue
-                    except Exception as e:
-                        logger.warning(f"CSV file {os.path.basename(filepath)} failed readability check with {encoding}: {str(e)}")
+                    except Exception:
                         continue
                 
                 if not readable:
@@ -411,7 +406,6 @@ def file_exists_and_ready(filepath):
                     return False
                 
                 # Additional check: Try to parse as CSV to detect structural issues
-                # Try multiple delimiters to find the right one
                 try:
                     delimiters_to_test = [',', ';', '\t', '|']
                     valid_structure = False
@@ -424,7 +418,6 @@ def file_exists_and_ready(filepath):
                                 max_columns_found = len(test_df.columns)
                                 if len(test_df.columns) > 1:
                                     valid_structure = True
-                                    logger.info(f"CSV file {os.path.basename(filepath)} has valid structure with delimiter '{delimiter}' ({len(test_df.columns)} columns)")
                         except:
                             continue
                     
@@ -440,7 +433,9 @@ def file_exists_and_ready(filepath):
                 logger.warning(f"CSV file {os.path.basename(filepath)} failed validation: {str(e)}")
                 return False
         
-        logger.info(f"File {os.path.basename(filepath)} is ready (passed all stability checks)")
+        # File is ready - only log for CSV files as they're more complex
+        if is_csv:
+            logger.info(f"CSV file {os.path.basename(filepath)} is ready and validated")
         return True
         
     except (IOError, OSError) as e:
@@ -463,9 +458,9 @@ def check_files_available(comparison_type='morning_stock'):
         file1_ready = file_exists_and_ready(file1_path)
         file2_ready = file_exists_and_ready(file2_path)
         
-        logger.info(f"{comparison_type.upper()} file status: EOD={file1_ready}, Manual={file2_ready}")
-        
+        # Only log when files become available
         if file1_ready and file2_ready:
+            logger.info(f"{comparison_type.upper()} files are now ready: EOD and Manual")
             return {
                 'available': True,
                 'file1_path': file1_path,
@@ -487,9 +482,9 @@ def check_files_available(comparison_type='morning_stock'):
     sod_ready = file_exists_and_ready(sod_path)
     manual_ready = file_exists_and_ready(manual_path)
     
-    logger.info(f"{comparison_type.upper()} file status: SOD={sod_ready}, Manual={manual_ready}")
-    
+    # Only log when files become available
     if sod_ready and manual_ready:
+        logger.info(f"{comparison_type.upper()} files are now ready: SOD and Manual")
         return {
             'available': True,
             'sod_path': sod_path,
@@ -1065,10 +1060,10 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             is_stock = comparison_type in ['morning_stock', 'afternoon_stock', 'evening_stock']
             is_index = comparison_type in ['morning_index', 'afternoon_index', 'evening_index']
             
-            # Apply formatting based on comparison type
             if is_stock:
                 diff_df_formatted['_shares_changed'] = False
                 diff_df_formatted['_prev_shares_blue'] = False
+                diff_df_formatted['_new_shares_blue'] = False  # NEW
                 diff_df_formatted['_ff_red'] = False
                 diff_df_formatted['_ff_orange'] = False
                 diff_df_formatted['_capping_changed'] = False
@@ -1076,12 +1071,18 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_formatted['_icb_changed'] = False
                 diff_df_formatted['_div_positive'] = False
                 diff_df_formatted['_mnemo_allowed'] = False
-                diff_df_formatted['_mnemo_purple'] = False
-                diff_df_formatted['_name_purple'] = False
                 diff_df_formatted['_close_prc_red'] = False
                 diff_df_formatted['_adj_closing_price_red'] = False
+                diff_df_formatted['_adj_closing_price_blue'] = False  # NEW
+                diff_df_formatted['_gross_div_blue'] = False  # NEW
                 diff_df_formatted['_symbol_not_in_crossref'] = False
                 diff_df_formatted['_is_removal'] = False
+                
+                # Determine if this is afternoon/evening (for conditional formatting)
+                is_afternoon_evening = comparison_type in ['afternoon_stock', 'evening_stock']
+                
+                # Blue flag values for special checks
+                BLUE_FLAG_VALUES = ['1.11', '1.111', '1.1111', '1.11111', '1.111111', '1.1111111', '1.11111111']
                 
                 for idx in range(len(diff_df)):
                     # Check if this is a removal row
@@ -1094,6 +1095,9 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     mnemo_allowed = mnemo_value in ALLOWED_MNEMONICS
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_allowed')] = mnemo_allowed
                     
+                    # Get Index value for additional checks
+                    index_value = str(diff_df.iloc[idx].get('Index', '')).strip()
+                    
                     # Check if shares changed - for New Shares (orange) and Prev Shares (blue)
                     new_shares = diff_df.iloc[idx]['New Shares']
                     prev_shares = diff_df.iloc[idx]['Prev. Shares']
@@ -1105,6 +1109,10 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     # COMBINED: Prev Shares gets blue ONLY if Mnemo is in ALLOWED_MNEMONICS AND shares changed
                     prev_shares_blue = mnemo_allowed and shares_changed
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_prev_shares_blue')] = prev_shares_blue
+                    
+                    # NEW: New Shares gets blue if afternoon/evening AND shares changed AND Index NOT in ALLOWED_MNEMONICS
+                    new_shares_blue = is_afternoon_evening and shares_changed and (index_value not in ALLOWED_MNEMONICS)
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_new_shares_blue')] = new_shares_blue
                     
                     # Check FF (Free Float)
                     new_ff = diff_df.iloc[idx]['New FF']
@@ -1135,6 +1143,13 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         pd.notna(adj_closing_price) and pd.notna(close_prc) and str(adj_closing_price).strip() != str(close_prc).strip()
                     )
                     
+                    # NEW: Check if Adj Closing price contains blue flag values (afternoon/evening only)
+                    adj_closing_price_blue = False
+                    if is_afternoon_evening:
+                        adj_closing_str = str(adj_closing_price).strip()
+                        adj_closing_price_blue = adj_closing_str in BLUE_FLAG_VALUES
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_closing_price_blue')] = adj_closing_price_blue
+                    
                     # Check if New ICB is different from Prev ICB
                     new_icb = diff_df.iloc[idx]['New ICB']
                     prev_icb = diff_df.iloc[idx]['Prev ICB']
@@ -1151,57 +1166,63 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         div_positive = False
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_div_positive')] = div_positive
                     
-                    # NEW: Check if Mnemo is in PURPLE_MNEMONICS (AEX BANK or PX1)
-                    mnemo_purple = mnemo_value in PURPLE_MNEMONICS
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_purple')] = mnemo_purple
+                    # NEW: Check if Gross Div contains blue flag values (afternoon/evening only)
+                    gross_div = diff_df.iloc[idx]['Gross Div']
+                    gross_div_blue = False
+                    if is_afternoon_evening:
+                        gross_div_str = str(gross_div).strip()
+                        gross_div_blue = gross_div_str in BLUE_FLAG_VALUES
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_gross_div_blue')] = gross_div_blue
                     
-                    # NEW: Check if Mnemo is in PURPLE_INDEX_MNEMONICS (for Name column)
-                    name_purple = mnemo_value in PURPLE_INDEX_MNEMONICS
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_name_purple')] = name_purple
-                    
-                    # NEW: Check if Close Prc is empty or 0
+                    # MODIFIED: Check if Close Prc is empty or 0 (but NOT if Adj. Rsn is 'Removal')
                     close_prc_val = diff_df.iloc[idx]['Close Prc']
                     try:
                         close_prc_numeric = float(close_prc_val) if pd.notna(close_prc_val) and str(close_prc_val).strip() != '' else None
-                        close_prc_red = close_prc_numeric is None or close_prc_numeric == 0
+                        # Don't flag as red if Adj. Rsn contains 'Removal'
+                        close_prc_red = (close_prc_numeric is None or close_prc_numeric == 0) and adj_rsn != 'Removal'
                     except (ValueError, TypeError):
-                        close_prc_red = True
+                        close_prc_red = adj_rsn != 'Removal'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_close_prc_red')] = close_prc_red
                     
-                    # NEW: Check if Adj Closing price is empty or 0
+                    # MODIFIED: Check if Adj Closing price is empty or 0 (but NOT if Adj. Rsn is 'Removal')
                     adj_closing_val = diff_df.iloc[idx]['Adj Closing price']
                     try:
                         adj_closing_numeric = float(adj_closing_val) if pd.notna(adj_closing_val) and str(adj_closing_val).strip() != '' else None
-                        adj_closing_red = adj_closing_numeric is None or adj_closing_numeric == 0
+                        # Don't flag as red if Adj. Rsn contains 'Removal'
+                        adj_closing_red = (adj_closing_numeric is None or adj_closing_numeric == 0) and adj_rsn != 'Removal'
                     except (ValueError, TypeError):
-                        adj_closing_red = True
+                        adj_closing_red = adj_rsn != 'Removal'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_closing_price_red')] = adj_closing_red
                     
-                    # NEW: Check if all Cross-Ref Symbols values exist in the #Symbol column of the output sheet
-                    cross_ref_symbols_str = str(diff_df.iloc[idx].get('Cross-Ref Symbols', '')).strip()
-                    
-                    if cross_ref_symbols_str != '' and cross_ref_symbols_str != 'nan':
-                        # Split the semicolon-separated list
-                        cross_ref_list = [s.strip() for s in cross_ref_symbols_str.split(';') if s.strip() != '']
+                    # MODIFIED: Check Cross-Ref Symbols - only for afternoon/evening
+                    symbol_not_in_crossref = False
+
+                    # Only process for afternoon/evening comparisons
+                    if is_afternoon_evening:
+                        cross_ref_symbols_str = str(diff_df.iloc[idx].get('Cross-Ref Symbols', '')).strip()
                         
-                        # Get all #Symbol values from the entire output sheet
-                        all_symbols_in_output = set(diff_df['#Symbol'].astype(str).str.strip())
-                        
-                        # Check if ALL cross-ref symbols exist in the output sheet's #Symbol column
-                        all_exist = all(symbol in all_symbols_in_output for symbol in cross_ref_list)
-                        
-                        # Flag if NOT all exist
-                        symbol_not_in_crossref = not all_exist
-                    else:
-                        # If cross-ref list is empty, don't flag it
-                        symbol_not_in_crossref = False
-                    
+                        if cross_ref_symbols_str != '' and cross_ref_symbols_str != 'nan':
+                            # Only flag if Adj. Rsn does NOT contain 'Share Number' or 'Composition All Setting'
+                            if 'Share Number' not in adj_rsn and 'Composition All Setting' not in adj_rsn:
+                                # Split the semicolon-separated list
+                                cross_ref_list = [s.strip() for s in cross_ref_symbols_str.split(';') if s.strip() != '']
+                                
+                                # Get all #Symbol values from the entire output sheet
+                                all_symbols_in_output = set(diff_df['#Symbol'].astype(str).str.strip())
+                                
+                                # Check if ALL cross-ref symbols exist in the output sheet's #Symbol column
+                                all_exist = all(symbol in all_symbols_in_output for symbol in cross_ref_list)
+                                
+                                # Flag if NOT all exist
+                                symbol_not_in_crossref = not all_exist
+
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_symbol_not_in_crossref')] = symbol_not_in_crossref
                 
                 diff_df_main = diff_df_formatted.drop([
-                    '_shares_changed', '_prev_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
-                    '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed', '_mnemo_purple',
-                    '_name_purple', '_close_prc_red', '_adj_closing_price_red', '_symbol_not_in_crossref', '_is_removal'
+                    '_shares_changed', '_prev_shares_blue', '_new_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
+                    '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed',
+                    '_close_prc_red', '_adj_closing_price_red', '_adj_closing_price_blue', '_gross_div_blue',
+                    '_symbol_not_in_crossref', '_is_removal'
                 ], axis=1)
             
             elif is_index:
@@ -1211,6 +1232,8 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_formatted['_mktcap_changed'] = False
                 diff_df_formatted['_nrcomp_changed'] = False
                 diff_df_formatted['_mnemo_blue'] = False
+                diff_df_formatted['_mnemo_purple'] = False  # NEW
+                diff_df_formatted['_name_purple'] = False   # NEW
                 diff_df_formatted['_is_removal'] = False
                 
                 for idx in range(len(diff_df)):
@@ -1237,10 +1260,18 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     divisor_changed = diff_df_formatted.iloc[idx]['_divisor_changed']
                     mnemo_blue = (mnemo_value not in ALLOWED_MNEMONICS) and divisor_changed
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_blue')] = mnemo_blue
+                    
+                    # NEW: Check if Mnemo is in PURPLE_MNEMONICS (AEX BANK or PX1)
+                    mnemo_purple = mnemo_value in PURPLE_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_purple')] = mnemo_purple
+                    
+                    # NEW: Check if Mnemo is in PURPLE_INDEX_MNEMONICS (for Name column)
+                    name_purple = mnemo_value in PURPLE_INDEX_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_name_purple')] = name_purple
                 
                 diff_df_main = diff_df_formatted.drop([
                     '_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', 
-                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue', '_is_removal'
+                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue', '_mnemo_purple', '_name_purple', '_is_removal'
                 ], axis=1)
             else:
                 diff_df_main = diff_df_formatted
@@ -1277,18 +1308,19 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 new_icb_col = diff_df.columns.get_loc('New ICB')
                 net_div_col = diff_df.columns.get_loc('Net Div')
                 gross_div_col = diff_df.columns.get_loc('Gross Div')
-                mnemo_col = diff_df.columns.get_loc('Mnemo')
-                name_col = diff_df.columns.get_loc('Name')
                 close_prc_col = diff_df.columns.get_loc('Close Prc')
                 
                 for row_idx in range(len(diff_df)):
                     excel_row = row_idx + data_start_row
                     
-                    # Orange: New Shares changed
-                    if diff_df_formatted.iloc[row_idx]['_shares_changed']:
+                    # NEW: Blue takes precedence - New Shares blue (afternoon/evening, Index not in ALLOWED_MNEMONICS)
+                    if diff_df_formatted.iloc[row_idx]['_new_shares_blue']:
+                        worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], blue_format)
+                    # Orange: New Shares changed (only if not blue)
+                    elif diff_df_formatted.iloc[row_idx]['_shares_changed']:
                         worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], orange_format)
                     
-                    # NEW: Blue: Prev Shares when shares changed
+                    # Blue: Prev Shares when shares changed and Mnemo allowed
                     if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
                         worksheet1.write(excel_row, prev_shares_col, diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
                     
@@ -1302,36 +1334,36 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     if diff_df_formatted.iloc[row_idx]['_capping_changed']:
                         worksheet1.write(excel_row, new_capping_col, diff_df.iloc[row_idx]['New Capping'], orange_format)
                     
-                    # Adj price changed
-                    if diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
+                    # NEW: Blue takes precedence - Adj Closing price contains blue flag values
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_blue']:
+                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], blue_format)
+                    # Orange: Adj price changed (only if not blue)
+                    elif diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
                         worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], orange_format)
+                    # Red: Adj Closing price empty/0 (only if not blue and not orange)
+                    elif diff_df_formatted.iloc[row_idx]['_adj_closing_price_red']:
+                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], red_format)
                     
                     # ICB changed
                     if diff_df_formatted.iloc[row_idx]['_icb_changed']:
                         worksheet1.write(excel_row, new_icb_col, diff_df.iloc[row_idx]['New ICB'], orange_format)
                     
-                    # Dividend positive
-                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
-                        worksheet1.write(excel_row, net_div_col, diff_df.iloc[row_idx]['Net Div'], orange_format)
+                    # NEW: Blue takes precedence - Gross Div contains blue flag values
+                    if diff_df_formatted.iloc[row_idx]['_gross_div_blue']:
+                        worksheet1.write(excel_row, gross_div_col, diff_df.iloc[row_idx]['Gross Div'], blue_format)
+                    # Orange: Dividend positive (only if not blue)
+                    elif diff_df_formatted.iloc[row_idx]['_div_positive']:
                         worksheet1.write(excel_row, gross_div_col, diff_df.iloc[row_idx]['Gross Div'], orange_format)
                     
-                    # NEW: Purple background for Mnemo if AEX BANK or PX1
-                    if diff_df_formatted.iloc[row_idx]['_mnemo_purple']:
-                        worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], purple_format)
+                    # Orange: Net Div positive
+                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
+                        worksheet1.write(excel_row, net_div_col, diff_df.iloc[row_idx]['Net Div'], orange_format)
                     
-                    # NEW: Purple background for Name if Mnemo is in PURPLE_INDEX_MNEMONICS
-                    if diff_df_formatted.iloc[row_idx]['_name_purple']:
-                        worksheet1.write(excel_row, name_col, diff_df.iloc[row_idx]['Name'], purple_format)
-                    
-                    # NEW: Red background for Close Prc if empty or 0
+                    # Red: Close Prc if empty or 0
                     if diff_df_formatted.iloc[row_idx]['_close_prc_red']:
                         worksheet1.write(excel_row, close_prc_col, diff_df.iloc[row_idx]['Close Prc'], red_format)
                     
-                    # NEW: Red background for Adj Closing price if empty or 0 (only if not already orange from adj_price_changed)
-                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_red'] and not diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
-                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], red_format)
-                    
-                    # NEW: Black background for #Symbol if not in Cross-Ref Symbols list
+                    # Black: #Symbol if not in Cross-Ref Symbols list
                     if diff_df_formatted.iloc[row_idx]['_symbol_not_in_crossref']:
                         worksheet1.write(excel_row, symbol_col, diff_df.iloc[row_idx]['#Symbol'], black_format)
             
@@ -1343,6 +1375,9 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     'New Mkt Cap': diff_df.columns.get_loc('New Mkt Cap'),
                     'Nr of comp': diff_df.columns.get_loc('Nr of comp')
                 }
+                
+                mnemo_col = diff_df.columns.get_loc('Mnemo')
+                name_col = diff_df.columns.get_loc('Name')  # NEW
                 
                 flag_cols = ['_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', '_mktcap_changed', '_nrcomp_changed']
                 output_cols = ['New Divisor', 't0 IV   SOD', 't0 IV unround', 'New Mkt Cap', 'Nr of comp']
@@ -1356,8 +1391,15 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     
                     # Apply blue formatting to Mnemo if needed
                     if diff_df_formatted.iloc[row_idx]['_mnemo_blue']:
-                        mnemo_col = diff_df.columns.get_loc('Mnemo')
                         worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], blue_format)
+                    
+                    # NEW: Purple background for Mnemo if AEX BANK or PX1
+                    if diff_df_formatted.iloc[row_idx]['_mnemo_purple']:
+                        worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], purple_format)
+                    
+                    # NEW: Purple background for Name if Mnemo is in PURPLE_INDEX_MNEMONICS
+                    if diff_df_formatted.iloc[row_idx]['_name_purple']:
+                        worksheet1.write(excel_row, name_col, diff_df.iloc[row_idx]['Name'], purple_format)
         
         else:
             worksheet1 = workbook.add_worksheet('Differences')
@@ -1448,19 +1490,25 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         logger.error(f"Error writing Excel file: {str(e)}")
         return False
 
-def perform_comparison(comparison_type='morning_stock'):
-    """Perform the file comparison and generate output"""
+def perform_comparison(comparison_type='morning_stock', silent=False):
+    """Perform the file comparison and generate output
+    
+    Args:
+        comparison_type: Type of comparison to perform
+        silent: If True, suppress output messages when skipping (for periodic checks)
+    """
     try:
-        print(f"\n{'='*60}")
-        print(f"Starting {comparison_type.upper()} comparison...")
-        print(f"{'='*60}\n")
-        
         file_status = check_files_available(comparison_type)
         
         if not file_status['available']:
-            logger.info(f"{comparison_type.upper()} files not available yet")
-            print(f"{comparison_type.upper()} files not available yet.")
+            # Don't print anything - reduces console spam
             return False
+        
+        # Only print when files are actually available and comparison will run
+        if not silent:
+            print(f"\n{'='*60}")
+            print(f"Starting {comparison_type.upper()} comparison...")
+            print(f"{'='*60}\n")
         
         # Generate output filename with current date
         current_date = datetime.now().strftime("%Y%m%d")
@@ -1469,7 +1517,6 @@ def perform_comparison(comparison_type='morning_stock'):
         output_path = os.path.join(OUTPUT_DIR, output_filename)
         
         # Check if output file already exists and whether overwrite is allowed
-
         if os.path.exists(output_path):
             if config.get('allow_overwrite', False):
                 if should_allow_overwrite(comparison_type):
@@ -1482,22 +1529,26 @@ def perform_comparison(comparison_type='morning_stock'):
                     
                     # Only regenerate if input files are newer than output
                     if should_regenerate_output(input_files, output_path):
-                        logger.info(f"{comparison_type.upper()} output file exists but input files are newer. Regenerating...")
-                        print(f"  {comparison_type.upper()} output file exists but input files are newer.")
+                        if not silent:
+                            logger.info(f"{comparison_type.upper()} output file exists but input files are newer. Regenerating...")
+                            print(f"  {comparison_type.upper()} output file exists but input files are newer.")
                     else:
                         logger.info(f"{comparison_type.upper()} output file is up to date. Skipping.")
-                        print(f"  {comparison_type.upper()} output file is up to date.")
-                        print("  Skipping comparison.\n")
+                        if not silent:
+                            print(f"  {comparison_type.upper()} output file is up to date.")
+                            print("  Skipping comparison.\n")
                         return True
                 else:
                     logger.info(f"{comparison_type.upper()} output file exists and overwrite time has passed. Skipping.")
-                    print(f"  {comparison_type.upper()} output file already exists and overwrite time has passed.")
-                    print("  Skipping comparison.\n")
+                    if not silent:
+                        print(f"  {comparison_type.upper()} output file already exists and overwrite time has passed.")
+                        print("  Skipping comparison.\n")
                     return True
             else:
                 logger.info(f"{comparison_type.upper()} output file already exists: {output_filename}. Skipping comparison.")
-                print(f"  {comparison_type.upper()} output file already exists: {output_filename}")
-                print("  Skipping comparison.\n")
+                if not silent:
+                    print(f"  {comparison_type.upper()} output file already exists: {output_filename}")
+                    print("  Skipping comparison.\n")
                 return True
         
         # Get file paths based on comparison type
@@ -1578,11 +1629,15 @@ def perform_comparison(comparison_type='morning_stock'):
         print(f"Error during {comparison_type} comparison: {str(e)}")
         return False
 
-def perform_all_comparisons():
-    """Perform all configured comparisons"""
+def perform_all_comparisons(silent=False):
+    """Perform all configured comparisons
+    
+    Args:
+        silent: If True, suppress skip messages (for periodic checks)
+    """
     results = {}
     for comparison_type in COMPARISON_CONFIGS.keys():
-        results[comparison_type] = perform_comparison(comparison_type)
+        results[comparison_type] = perform_comparison(comparison_type, silent=silent)
     return results
 
 class FileMonitorHandler(FileSystemEventHandler):
@@ -1661,9 +1716,10 @@ class FileMonitorHandler(FileSystemEventHandler):
         # Wait a bit for file to be completely written
         time.sleep(5)
         
-        if perform_comparison(comparison_type):
-            logger.info(f"{comparison_type.upper()} comparison completed successfully!")
-            print(f"{comparison_type.upper()} comparison completed successfully!")
+        # Use silent=True to avoid spam from file monitoring events
+        if perform_comparison(comparison_type, silent=True):
+            # Only log success to file, no console output
+            logger.info(f"{comparison_type.upper()} comparison completed successfully from file event!")
         else:
             logger.info(f"{comparison_type.upper()} files not ready yet or comparison failed")
 
@@ -1695,7 +1751,7 @@ def start_monitoring():
     print(f"  EOD/Evening Manual: {MONITOR_FOLDERS['eod']}")
     print()
     
-    # Check if files already exist
+# Check if files already exist
     print("Checking if files already exist...")
     results = perform_all_comparisons()
     
@@ -1724,10 +1780,11 @@ def start_monitoring():
                 time.sleep(60)
                 
                 # Periodic check in case file events were missed
+                # Only log when comparisons actually happen, not on every check
                 current_time = datetime.now()
                 if current_time.minute % 5 == 0:
-                    logger.info("Periodic check for files...")
-                    perform_all_comparisons()
+                    # Don't log the check itself, just perform it silently
+                    perform_all_comparisons(silent=True)
                 
         except KeyboardInterrupt:
             observer.stop()

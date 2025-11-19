@@ -1,0 +1,24 @@
+{
+  "task_id": "0347aff6-ef3c-41ca-894d-eb33dccdcd5b",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-11-19T14:04:26.964170",
+  "started_at": "2025-11-19T14:04:26.966599",
+  "completed_at": "2025-11-19T14:04:37.262168",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'sustainalytics'",
+  "error": "Error during review calculation: 'sustainalytics'",
+  "result_data": null,
+  "review_type": "ENVB",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ENVB",
+    "isin": "QS0011256235",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 10.293368
+}

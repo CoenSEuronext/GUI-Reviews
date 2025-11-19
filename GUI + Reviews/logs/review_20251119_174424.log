@@ -1,0 +1,6 @@
+2025-11-19 17:44:25,309 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 17:44:25,311 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 17:56:50,714 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:56:50] "POST /calculate HTTP/1.1" 200 -
+2025-11-19 17:56:50,728 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-19 17:56:50,732 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:56:50] "GET /task-status/c671897c-eba8-43fe-8943-e6832479417d HTTP/1.1" 200 -
+2025-11-19 17:56:50,930 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading

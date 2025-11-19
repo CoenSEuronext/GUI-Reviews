@@ -4,69 +4,21 @@ import re
 import subprocess
 from pathlib import Path
 from datetime import datetime
+from config import ALL_MNEMOS
 
 def get_mnemo_from_filename(filename):
     """Extract mnemo from filename using the pattern 'MNEMO_' that appears in all files"""
-    # List all possible mnemos
-    mnemos = [
-    "ENVU", "ENVW", "NA500", "ENDMP", "ENWP", "EWCSP", "EVEWP", "ETE5P", "EUEPR", "WESGP", 
-    "ESGTP", "WLENP", "EUS5P", "ERGSP", "ERGBP", "ERGCP", "EIAPR", "TTIT", "UML1P", "GICP", 
-    "UUTI", "UBMA", "UHEC", "UTEL", "UIND", "UFIN", "UCDI", "UCST", "UENR", "UTEC", 
-    "DWREP", "EUREP", "TUTI", "TBMA", "THEC", "TTEL", "TIND", "TFINP", "TCDI", "TCST", 
-    "TENR", "TTEC", "AERDP", "EUSCS", "CANPT", "EUSPT", "DNAPT", "EDWPT", "CANP", "EUSP", 
-    "DNAP", "EDWP", "ENZTP", "HSPCP", "HSPAP", "ENTP", "EDMPU", "EDWEP", "USCLE", "TCAMP", 
-    "USCLA", "TESGP", "TCEPR", "ECC5P", "LC3WP", "FRI4P", "FRD4P", "INFRP", "WIFRP", "FILVP", 
-    "EIFRP", "ECWPR", "EAIWP", "BISWP", "EBEWP", "BSWPF", "GSCSP", "EBSTP", "WCAMP", "UC3PE", 
-    "USC3P", "EBSPW", "EBSWP", "GHCPR", "TP1CP", "PBT4P", "PBTAP", "PABTP", "PABUP", "TPABP", 
-    "PFLCW", "DUMUS", "DUUSC", "ENVB", "ENVEO", "ENVUK", "ENVF", "ENVEU", "PTOGP", "BEOGP", 
-    "BELCP", "BECGP", "BEINP", "BEHCP", "BETEP", "BEFIP", "BETP", "BEUTP", "BECSP", "PTTEP", 
-    "PTFIP", "PTUTP", "PTTLP", "PTCSP", "PTCGP", "PTINP", "PTBMP", "BEBMP", "BVL", "CACLG", 
-    "NAOII", "CACEW", "AEXEW", "LC100", "BIOTK", "REITE", "ALASI", "FRTEC", "FRFIN", "FRUT", 
-    "FRTEL", "FRCS", "FRHC", "FRCG", "FRIN", "FRBM", "FROG", "NLTEC", "NLFIN", "NLTEL", 
-    "NLCS", "NLHC", "NLCG", "NLIN", "NLBM", "NLOG", "PAX", "CACMS", "CACS", "CACMD", 
-    "CN20", "PTEB", "PSI20", "PIRUT", "OEXOP", "OBXEP", "OSEPB", "OSEXP", "OSEPX", "SSSHP", 
-    "SSSFP", "SSENP", "OBXUP", "OSEEP", "OBOSP", "OUTP", "OENP", "OBMP", "OINP", "OCSP", 
-    "OCDP", "OREP", "OFINP", "OHCP", "OTELP", "OTECP", "OAAXP", "OSESP", "OSEMP", "OSEFP", 
-    "OSEBP", "OSEAP", "OBSHP", "OBSFP", "OBXP", "OIRUT", "AS500", "CAIN3", "CAIN2", "NLUT", 
-    "EZWTP", "CAIN5", "SES5P", "BANK", "EEEPR", "NLRE", "EESGP", "WATPR", "EZENP", "EZ300", 
-    "EU500", "ERI5P", "CEE1P", "FREEP", "CEE3P", "BESGP", "ESG1P", "ECO5P", "FRENP", "EZN1P", 
-    "EZ15P", "ES1EP", "CLE5P", "ESE4P", "EZ40P", "FGINP", "EFMEP", "EFGP", "COR3P", "ESG50", 
-    "EFGEW", "ECOEW", "EBLRE", "EC1EW", "ECOP", "ENCLE", "CAIND", "BNEW", "AETAW", "AEXAT", 
-    "AMX", "ASCX", "AAX", "MIRUT", "AEX", "AIRUT", "GSFBP", "BREU", "ENEU", "BE1P", 
-    "SEZTP", "ESVEP", "DEREP", "DAREP", "PFAEX", "EZSCP", "UTIL", "TELEP", "TECHP", "INDU", 
-    "HEAC", "FINA", "ENRGP", "CSTA", "CDIS", "BASM", "ELUXP", "ENEZ5", "EUKPT", "ECHPT", 
-    "EJPPT", "DPAPT", "DASPT", "DAPPT", "DEZPT", "DEUPT", "EUKP", "ECHP", "EJPP", "DPAP", 
-    "DASP", "DAPPR", "DEZP", "DEUP", "TECLP", "AESGP", "ISEQ", "ISEFI", "ISESM", "ISECA", 
-    "ISE20", "IIRUT", "ISRE", "ISUT", "ISEHC", "ISECS", "ISCG", "ISEBM", "ISETE", "ISEIN", 
-    "MESGP", "EZCLA", "FRSOP", "CLAMP", "ESGCP", "EZSFP", "FPABP", "CPABP", "EPABP", "GOVEP", 
-    "CESGP", "LC1EP", "FRRE", "GRF5P", "ESGEP", "ESGFP", "ENESG", "GRE5P", "FESGP", "FRTPR", 
-    "C6RIP", "F4RIP", "ESF5P", "FR20P", "FRN4P", "FRECP", "CLF4P", "ESF4P", "C4SD", "CAGOV", 
-    "CLEJP", "CLEWJ", "SBF80", "CLEW", "ENPME", "EIRUT", "CACT", "PX4", "N150", "N100", 
-    "PX1", "CIRUT", "SGACP", "SPRPR", "SMBGP", "SREP", "SSCP", "SVEP1", "SMIP", "SSOP", 
-    "SURP", "SKLP", "SINP", "SKEP", "SCRP", "SSTP", "SAMP", "SEIP", "SSFP", "SSHP", 
-    "SCAP", "SSAP", "SSGP", "SBNP", "SAXP", "SBOP", "SORP", "STEP", "SENP", "SGS1P", 
-    "SG03P", "SGBP1", "SGRNP", "SSS3P", "SGG5P", "SGS4P", "SGSC", "PFPX1", "SGS3P", "SGG4P", 
-    "SGU2P", "SGEEP", "SGA4P", "SGG3P", "SGB5P", "EIASP", "SGB4P", "SGG2P", "SGSAP", "SGEP3", 
-    "PFOSF", "PFOSB", "CTRFD", "SGEP2", "SGVIP", "SGKEP", "SGU1P", "SMMLP", "SMSGP", "SGSP1", 
-    "SMEP1", "SGBP3", "SGGP1", "SSS2P", "SGEP1", "SGEIP", "SGURP", "SBCAP", "SBSTP", "SGS2P", 
-    "SGLIP", "SGSTP", "SGB3P", "SGC1P", "SSBNP", "NCACI", "CACIN", "SSINP", "SSKEP", "SSCAP", 
-    "SSSTP", "SSMTP", "SSENI", "SSSNP", "SSSAP", "SSS1P", "SSAXP", "SSACP", "SGCAP", "SBBP", 
-    "SBO1P", "SBENP", "SG01P", "SCS1P", "SGSGP", "SGB1P", "SGA1P", "SGBP", "SGT1P", "SGORP", 
-    "SGTEP", "TERPR", "BIOCP", "FCLSP", "ESBTP", "ZSBTP", "EETPR", "PFC4E", "CSBTP", "EQGEP", 
-    "EQGFP", "ENFRP", "ES4PP", "EZ6PP", "FREMP", "EBLPP", "BIOEP", "JPCLE", "JPCLA", "EBSEP", 
-    "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
-    "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
-    "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW"
-]
     
     # Look for pattern "MNEMO_" in the filename
-    for mnemo in mnemos:
+    for mnemo in ALL_MNEMOS:
         pattern = mnemo + "_EDWP"
         if pattern in filename or pattern.replace("_", "-") in filename:
             return mnemo
-            
-    # Alternative regex approach
-    pattern = r'(CANP|GSFBP|EESF|EES2|F4RIP|AETAW|AEXAT|EFESP|SES5P|EEFAP|ESVEP|ELTFP|ETSEP|EUADP|ETPFB|CANPT|DAPPR|DAPPT|DASP|DASPT|DEUP|DEUPT|DEZP|DEZPT|DNAP|DNAPT|DPAP|DPAPT|ECHP|ECHPT|EDWP|EDWPT|EJPP|EJPPT|EUKP|EUKPT|EUSP|EUSPT|AEXEW|BNEW|CACEW|CLEW|FRD4P|FRI4P|WIFRP|ELUXP|GICP|FRECP|FRN4P|FR20P|EZ40P|EFMEP|EZ15P|EZN1P|EUS5P|ERI5P|BE1P|EDEFP|EZ60P|TECHP|ENRGP|UTIL|BASM|FINA|CSTA|TELEP|HEAC|INDU|CDIS|TBMA|TCDI|TCST|TENR|TFINP|THEC|TIND|TTEC|TTEL|TUTI|ELECP|UUTI|UTEL|UTEC|UIND|UHEC|UFIN|UENR|UCST|UCDI|UBMA|DWREP|DAREP|DEREP|EUREP)[_-]'
+    
+    # Alternative regex approach using dynamically generated pattern
+    # Sort by length (longest first) to match longer mnemos before shorter ones
+    sorted_mnemos = sorted(ALL_MNEMOS, key=len, reverse=True)
+    pattern = r'(' + '|'.join(re.escape(m) for m in sorted_mnemos) + r')[_-]'
     match = re.search(pattern, filename)
     if match:
         return match.group(1)

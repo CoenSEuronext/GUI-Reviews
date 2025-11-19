@@ -1,0 +1,17 @@
+2025-11-19 15:34:43,548 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 15:34:43,550 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 15:34:44,189 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:44] "POST /calculate HTTP/1.1" 200 -
+2025-11-19 15:34:44,189 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-19 15:34:44,198 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:44] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:46,197 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:46] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:48,197 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:48] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:49,021 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-19 15:34:50,212 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:50] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:52,203 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:52] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:54,220 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:54] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:56,207 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:56] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:34:57,221 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251119_153457.xlsx
+2025-11-19 15:34:58,197 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:34:58] "GET /task-status/1d84e36f-db0d-41fd-bc7f-c5255b32208a HTTP/1.1" 200 -
+2025-11-19 15:35:41,640 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-19 15:35:41,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-19 15:35:41,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading

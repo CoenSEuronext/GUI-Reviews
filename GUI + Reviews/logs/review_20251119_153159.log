@@ -1,0 +1,20 @@
+2025-11-19 15:31:59,782 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 15:31:59,785 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 15:31:59,809 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:31:59] "GET /task-status/1496ea48-bbf9-4968-a2eb-fdca71ff1fdd HTTP/1.1" 200 -
+2025-11-19 15:32:01,111 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:32:01] "POST /calculate HTTP/1.1" 200 -
+2025-11-19 15:32:01,114 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-19 15:32:01,118 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:32:01] "GET /task-status/c7e70726-e3aa-4f33-a1bb-14de4a8be26e HTTP/1.1" 200 -
+2025-11-19 15:32:02,068 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-19 15:32:03,127 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:32:03] "GET /task-status/c7e70726-e3aa-4f33-a1bb-14de4a8be26e HTTP/1.1" 200 -
+2025-11-19 15:32:05,117 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:32:05] "GET /task-status/c7e70726-e3aa-4f33-a1bb-14de4a8be26e HTTP/1.1" 200 -
+2025-11-19 15:32:07,124 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:32:07] "GET /task-status/c7e70726-e3aa-4f33-a1bb-14de4a8be26e HTTP/1.1" 200 -
+2025-11-19 15:32:08,743 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-19 15:32:08,746 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-19 15:32:09,118 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 15:32:09] "GET /task-status/c7e70726-e3aa-4f33-a1bb-14de4a8be26e HTTP/1.1" 200 -
+2025-11-19 15:32:09,810 - Review.reviews.es2pr_review - ERROR - Error during review calculation: 'NoneType' object is not subscriptable
+2025-11-19 15:32:09,811 - Review.reviews.es2pr_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\es2pr_review.py", line 125, in run_es2pr_review
+    developed_market_df[['ISIN', 'NOSH', 'Price (EUR) ', 'Mcap in EUR', 'Currency (Local)']].drop_duplicates(subset='ISIN', keep='first'),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+

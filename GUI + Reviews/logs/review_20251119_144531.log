@@ -1,0 +1,15 @@
+2025-11-19 14:45:32,074 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 14:45:32,074 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 14:45:32,337 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:32] "POST /calculate HTTP/1.1" 200 -
+2025-11-19 14:45:32,341 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-19 14:45:32,343 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:32] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:34,363 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:34] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:36,357 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:36] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:37,490 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-19 14:45:38,374 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:38] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:40,357 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:40] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:42,373 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:42] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:44,357 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:44] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -
+2025-11-19 14:45:45,534 - Review.reviews.es2pr_review - INFO - Saving ED2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ED2PR_df_20251119_144545.xlsx
+2025-11-19 14:45:46,095 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-19 14:45:46,358 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:45:46] "GET /task-status/5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6 HTTP/1.1" 200 -

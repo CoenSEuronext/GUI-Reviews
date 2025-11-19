@@ -1,0 +1,7 @@
+2025-11-19 15:19:28,817 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 15:19:28,817 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 15:23:13,207 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\sqlalchemy\\__init__.py', reloading
+2025-11-19 15:23:13,211 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\sqlalchemy\\engine\\__init__.py', reloading
+2025-11-19 15:23:13,217 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\sqlalchemy\\engine\\interfaces.py', reloading
+2025-11-19 15:23:13,233 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\sqlalchemy\\event\\__init__.py', reloading
+2025-11-19 15:23:13,234 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\sqlalchemy\\event\\registry.py', reloading

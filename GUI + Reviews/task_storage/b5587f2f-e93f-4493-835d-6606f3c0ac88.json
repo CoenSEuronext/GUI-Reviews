@@ -1,0 +1,26 @@
+{
+  "task_id": "b5587f2f-e93f-4493-835d-6606f3c0ac88",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-11-19T14:06:33.636591",
+  "started_at": "2025-11-19T14:06:33.640843",
+  "completed_at": "2025-11-19T14:06:46.866372",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ENVB_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVB_df_20251119_140646.xlsx"
+  },
+  "review_type": "ENVB",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ENVB",
+    "isin": "QS0011256235",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.224128
+}

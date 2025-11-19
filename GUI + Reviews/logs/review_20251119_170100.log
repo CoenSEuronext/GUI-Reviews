@@ -1,0 +1,18 @@
+2025-11-19 17:01:01,405 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 17:01:01,407 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 17:01:02,464 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:02] "POST /calculate HTTP/1.1" 200 -
+2025-11-19 17:01:02,464 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-19 17:01:02,464 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:02] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:04,474 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:04] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:06,473 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:06] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:06,991 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-19 17:01:08,490 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:08] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:10,473 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:10] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:12,473 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:12] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:14,474 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:14] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:01:14,669 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-19 17:01:14,682 - Review.reviews.es2pr_review - INFO - Capping converged after 3 iterations
+2025-11-19 17:01:14,684 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.6981474425470566
+2025-11-19 17:01:14,687 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251119_170114.xlsx
+2025-11-19 17:01:16,473 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 17:01:16] "GET /task-status/686d83c0-1727-4240-be28-f0cdb74e536e HTTP/1.1" 200 -
+2025-11-19 17:44:23,258 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\inclusion_exclusion.py', reloading

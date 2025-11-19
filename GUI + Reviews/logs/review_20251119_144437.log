@@ -1,0 +1,4 @@
+2025-11-19 14:44:38,192 - werkzeug - WARNING -  * Debugger is active!
+2025-11-19 14:44:38,192 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-19 14:44:38,231 - werkzeug - INFO - 127.0.0.1 - - [19/Nov/2025 14:44:38] "GET /task-status/6a344bf2-8e06-4687-a6f0-ca00f5ae43f8 HTTP/1.1" 200 -
+2025-11-19 14:45:01,834 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading

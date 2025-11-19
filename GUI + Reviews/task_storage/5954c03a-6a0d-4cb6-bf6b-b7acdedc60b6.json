@@ -1,0 +1,26 @@
+{
+  "task_id": "5954c03a-6a0d-4cb6-bf6b-b7acdedc60b6",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-11-19T14:45:32.335451",
+  "started_at": "2025-11-19T14:45:32.337979",
+  "completed_at": "2025-11-19T14:45:45.677621",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ed2pr_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ED2PR_df_20251119_144545.xlsx"
+  },
+  "review_type": "ES2PR",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ES2PR",
+    "isin": "NLIX00008218",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.337606
+}
