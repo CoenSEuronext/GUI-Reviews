@@ -1,0 +1,19 @@
+2025-11-20 11:09:27,971 - werkzeug - WARNING -  * Debugger is active!
+2025-11-20 11:09:27,971 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-20 11:09:31,413 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:31] "POST /calculate HTTP/1.1" 200 -
+2025-11-20 11:09:31,413 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-20 11:09:31,413 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:31] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:33,421 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:33] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:35,421 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:35] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:36,593 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-20 11:09:37,428 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:37] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:39,433 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:39] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:41,421 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:41] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:43,428 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:43] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:09:44,412 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-20 11:09:44,423 - Review.reviews.es2pr_review - INFO - Capping converged after 3 iterations
+2025-11-20 11:09:44,424 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.6776437583514008
+2025-11-20 11:09:44,431 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251120_110944.xlsx
+2025-11-20 11:09:45,424 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 11:09:45] "GET /task-status/52dace6a-105c-49b0-ab49-ef7be040b3a6 HTTP/1.1" 200 -
+2025-11-20 11:13:06,120 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-20 11:13:06,123 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
