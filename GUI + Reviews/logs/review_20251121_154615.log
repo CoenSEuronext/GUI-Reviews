@@ -1,0 +1,18 @@
+2025-11-21 15:46:16,302 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 15:46:16,306 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 15:46:16,337 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:16] "GET /task-status/72f513eb-72d8-4331-8b04-508c9a9d8fec HTTP/1.1" 200 -
+2025-11-21 15:46:18,579 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:18] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 15:46:18,581 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 15:46:18,583 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:18] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:20,588 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:20] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:21,729 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 15:46:22,589 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:22] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:24,592 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:24] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:26,590 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:26] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:28,586 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:28] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:30,585 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:30] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:46:30,934 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-21 15:46:31,064 - Review.reviews.es2pr_review - INFO - Converged after 32 iteration(s)
+2025-11-21 15:46:31,074 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251121_154631.xlsx
+2025-11-21 15:46:32,587 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:32] "GET /task-status/cb19a6dc-b54d-403c-914a-f2ca0790cec7 HTTP/1.1" 200 -
+2025-11-21 15:48:34,579 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\ntpath.py', reloading

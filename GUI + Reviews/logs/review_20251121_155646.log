@@ -1,0 +1,11 @@
+2025-11-21 15:56:47,126 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 15:56:47,126 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 15:56:47,391 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:56:47] "GET /task-status/abc1201f-a025-4e7a-b4a8-282710828920 HTTP/1.1" 200 -
+2025-11-21 15:57:01,478 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:01] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 15:57:01,478 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 15:57:01,484 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:01] "GET /task-status/17fb0ada-71c5-4c29-add7-3543e8a31567 HTTP/1.1" 200 -
+2025-11-21 15:57:03,487 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:03] "GET /task-status/17fb0ada-71c5-4c29-add7-3543e8a31567 HTTP/1.1" 200 -
+2025-11-21 15:57:05,159 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 15:57:05,190 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
+2025-11-21 15:57:05,204 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
+2025-11-21 15:57:05,207 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

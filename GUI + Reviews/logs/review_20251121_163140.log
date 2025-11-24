@@ -1,0 +1,28 @@
+2025-11-21 16:31:41,123 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 16:31:41,124 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 16:31:41,156 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:41] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 16:31:41,156 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 16:31:41,156 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:41] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:43,170 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:43] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:45,169 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:45] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:46,008 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 16:31:47,179 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:47] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:49,178 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:49] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:51,169 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:51] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:53,169 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:53] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:53,779 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-21 16:31:53,779 - Review.reviews.es2pr_review - ERROR - Error during review calculation: Did not converge after 50 iterations
+2025-11-21 16:31:53,779 - Review.reviews.es2pr_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\es2pr_review.py", line 278, in run_es2pr_review
+    selection_df, iterations_df, company_iterations_df, sector_summary_df = calculate_capping_factors(
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\es2pr_review.py", line 60, in calculate_capping_factors
+    capped_weights = calculate_capped_weights(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\capping_dataiku.py", line 58, in calculate_capped_weights
+    raise RuntimeError(f"Did not converge after {max_iterations} iterations")
+RuntimeError: Did not converge after 50 iterations
+
+2025-11-21 16:31:55,169 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:31:55] "GET /task-status/ed7b3e9c-fd18-4c6b-a193-3c382f2650a7 HTTP/1.1" 200 -
+2025-11-21 16:31:58,332 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
+2025-11-21 16:31:58,332 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading

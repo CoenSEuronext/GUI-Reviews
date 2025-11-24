@@ -1,0 +1,16 @@
+2025-11-21 15:57:06,600 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 15:57:06,603 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 15:57:06,632 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:06] "GET /task-status/17fb0ada-71c5-4c29-add7-3543e8a31567 HTTP/1.1" 200 -
+2025-11-21 15:57:08,848 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:08] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 15:57:08,857 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 15:57:08,857 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:08] "GET /task-status/26e46f08-345b-4e43-841c-b0a86c9262e0 HTTP/1.1" 200 -
+2025-11-21 15:57:09,821 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 15:57:10,873 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:10] "GET /task-status/26e46f08-345b-4e43-841c-b0a86c9262e0 HTTP/1.1" 200 -
+2025-11-21 15:57:12,883 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:12] "GET /task-status/26e46f08-345b-4e43-841c-b0a86c9262e0 HTTP/1.1" 200 -
+2025-11-21 15:57:14,866 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:14] "GET /task-status/26e46f08-345b-4e43-841c-b0a86c9262e0 HTTP/1.1" 200 -
+2025-11-21 15:57:16,873 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:16] "GET /task-status/26e46f08-345b-4e43-841c-b0a86c9262e0 HTTP/1.1" 200 -
+2025-11-21 15:57:17,357 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-21 15:57:17,371 - Review.reviews.es2pr_review - INFO - Converged after 2 iteration(s)
+2025-11-21 15:57:17,379 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251121_155717.xlsx
+2025-11-21 15:57:18,866 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:57:18] "GET /task-status/26e46f08-345b-4e43-841c-b0a86c9262e0 HTTP/1.1" 200 -
+2025-11-21 16:16:13,834 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\typing.py', reloading

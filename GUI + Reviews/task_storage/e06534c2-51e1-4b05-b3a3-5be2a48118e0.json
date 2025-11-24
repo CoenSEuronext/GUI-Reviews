@@ -1,0 +1,24 @@
+{
+  "task_id": "e06534c2-51e1-4b05-b3a3-5be2a48118e0",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-11-21T16:41:33.007325",
+  "started_at": "2025-11-21T16:41:33.008326",
+  "completed_at": "2025-11-21T16:41:44.829913",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: name 'calculate_capped_weights' is not defined",
+  "error": "Error during review calculation: name 'calculate_capped_weights' is not defined",
+  "result_data": null,
+  "review_type": "ES2PR",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ES2PR",
+    "isin": "NLIX00008218",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 11.818265
+}

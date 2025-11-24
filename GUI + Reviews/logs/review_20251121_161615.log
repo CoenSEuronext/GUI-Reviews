@@ -1,0 +1,17 @@
+2025-11-21 16:16:16,102 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 16:16:16,104 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 16:16:30,355 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:30] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 16:16:30,355 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 16:16:30,367 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:30] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:32,365 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:32] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:34,364 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:34] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:35,584 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 16:16:36,374 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:36] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:38,381 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:38] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:40,398 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:40] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:42,375 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:42] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:16:43,176 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-21 16:16:43,181 - Review.reviews.es2pr_review - INFO - Converged after 2 iteration(s)
+2025-11-21 16:16:43,191 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251121_161643.xlsx
+2025-11-21 16:16:44,364 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 16:16:44] "GET /task-status/b3446de5-9371-426f-957f-9fdc799423fd HTTP/1.1" 200 -
+2025-11-21 16:29:59,850 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\__init__.py', reloading

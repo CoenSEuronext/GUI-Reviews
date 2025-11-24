@@ -1,0 +1,11 @@
+2025-11-21 15:46:02,847 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 15:46:02,851 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 15:46:05,972 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:05] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 15:46:05,972 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 15:46:05,984 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:05] "GET /task-status/72f513eb-72d8-4331-8b04-508c9a9d8fec HTTP/1.1" 200 -
+2025-11-21 15:46:07,985 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:07] "GET /task-status/72f513eb-72d8-4331-8b04-508c9a9d8fec HTTP/1.1" 200 -
+2025-11-21 15:46:08,728 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 15:46:10,005 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:10] "GET /task-status/72f513eb-72d8-4331-8b04-508c9a9d8fec HTTP/1.1" 200 -
+2025-11-21 15:46:12,024 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:12] "GET /task-status/72f513eb-72d8-4331-8b04-508c9a9d8fec HTTP/1.1" 200 -
+2025-11-21 15:46:13,787 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-11-21 15:46:13,990 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 15:46:13] "GET /task-status/72f513eb-72d8-4331-8b04-508c9a9d8fec HTTP/1.1" 200 -

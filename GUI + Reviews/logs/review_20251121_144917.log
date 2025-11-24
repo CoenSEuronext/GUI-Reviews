@@ -1,0 +1,17 @@
+2025-11-21 14:49:18,179 - werkzeug - WARNING -  * Debugger is active!
+2025-11-21 14:49:18,179 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-21 14:49:20,964 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:20] "POST /calculate HTTP/1.1" 200 -
+2025-11-21 14:49:20,964 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-21 14:49:20,974 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:20] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:22,980 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:22] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:24,975 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:24] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:25,469 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-21 14:49:26,989 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:26] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:28,983 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:28] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:30,973 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:30] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:33,030 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:33] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:49:33,450 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-21 14:49:33,471 - Review.reviews.es2pr_review - INFO - Converged after 2 iteration(s)
+2025-11-21 14:49:33,496 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251121_144933.xlsx
+2025-11-21 14:49:34,980 - werkzeug - INFO - 127.0.0.1 - - [21/Nov/2025 14:49:34] "GET /task-status/3dde26a3-46e2-4b21-b79d-f917bed597f2 HTTP/1.1" 200 -
+2025-11-21 14:50:05,506 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
