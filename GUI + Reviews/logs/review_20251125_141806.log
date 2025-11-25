@@ -1,0 +1,20 @@
+2025-11-25 14:18:06,945 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 14:18:06,947 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-25 14:21:29,688 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:29] "POST /calculate HTTP/1.1" 200 -
+2025-11-25 14:21:29,689 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-25 14:21:29,695 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:29] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:31,704 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:31] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:33,704 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:33] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:34,588 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-25 14:21:35,721 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:35] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:37,706 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:37] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:39,738 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:39] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:41,706 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:41] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:21:42,371 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-25 14:21:42,393 - Review.reviews.es2pr_review - INFO - Capping converged after 3 iterations
+2025-11-25 14:21:42,393 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.6981474425470566
+2025-11-25 14:21:42,405 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251125_142142.xlsx
+2025-11-25 14:21:43,705 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:21:43] "GET /task-status/cb5a5cd5-6680-4305-bf42-cb78fab94785 HTTP/1.1" 200 -
+2025-11-25 14:53:56,377 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
+2025-11-25 14:53:56,377 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
+2025-11-25 14:53:56,378 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading

@@ -206,6 +206,22 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
             'filename': 'DAPPT.xlsx',
             'loader': lambda f: pd.read_excel(f)
         },
+        'deup': {
+            'filename': 'DEUP.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'dezp': {
+            'filename': 'DEZP.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'edwp': {
+            'filename': 'EDWP.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
+        'eusp': {
+            'filename': 'EUSP.xlsx',
+            'loader': lambda f: pd.read_excel(f)
+        },
         'sustainalytics': {
             'filename': 'sustainalytics.xlsx',
             'loader': lambda f: pd.read_excel(f)

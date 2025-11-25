@@ -1,0 +1,22 @@
+2025-11-25 13:51:51,156 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 13:51:51,161 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-25 13:51:51,206 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:51:51] "GET /task-status/791d9f63-369a-4b2b-880d-a0eb15295a27 HTTP/1.1" 200 -
+2025-11-25 13:51:53,411 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:51:53] "POST /calculate HTTP/1.1" 200 -
+2025-11-25 13:51:53,411 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-25 13:51:53,420 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:51:53] "GET /task-status/70356d44-eab1-4140-8a1e-745825bd436a HTTP/1.1" 200 -
+2025-11-25 13:51:54,255 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-25 13:51:55,428 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:51:55] "GET /task-status/70356d44-eab1-4140-8a1e-745825bd436a HTTP/1.1" 200 -
+2025-11-25 13:51:57,422 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:51:57] "GET /task-status/70356d44-eab1-4140-8a1e-745825bd436a HTTP/1.1" 200 -
+2025-11-25 13:51:59,422 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:51:59] "GET /task-status/70356d44-eab1-4140-8a1e-745825bd436a HTTP/1.1" 200 -
+2025-11-25 13:52:01,472 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:52:01] "GET /task-status/70356d44-eab1-4140-8a1e-745825bd436a HTTP/1.1" 200 -
+2025-11-25 13:52:01,988 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-25 13:52:02,010 - Review.reviews.es2pr_review - INFO - Capping converged after 3 iterations
+2025-11-25 13:52:02,010 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.6981474425470566
+2025-11-25 13:52:02,017 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251125_135202.xlsx
+2025-11-25 13:52:03,422 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 13:52:03] "GET /task-status/70356d44-eab1-4140-8a1e-745825bd436a HTTP/1.1" 200 -
+2025-11-25 13:52:41,595 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
+2025-11-25 13:52:41,989 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading
+2025-11-25 13:52:42,004 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2025-11-25 13:52:42,043 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading
+2025-11-25 13:52:42,046 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2025-11-25 13:52:42,060 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_scalars.py', reloading

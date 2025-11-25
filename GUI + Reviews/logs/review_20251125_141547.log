@@ -1,0 +1,27 @@
+2025-11-25 14:15:47,841 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 14:15:47,841 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-25 14:15:47,902 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:47] "POST /calculate HTTP/1.1" 200 -
+2025-11-25 14:15:47,905 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-25 14:15:47,909 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:47] "GET /task-status/8e033f70-eb85-4054-af28-bf0248432b5a HTTP/1.1" 200 -
+2025-11-25 14:15:49,921 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:49] "GET /task-status/8e033f70-eb85-4054-af28-bf0248432b5a HTTP/1.1" 200 -
+2025-11-25 14:15:50,166 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-25 14:15:51,913 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:51] "GET /task-status/8e033f70-eb85-4054-af28-bf0248432b5a HTTP/1.1" 200 -
+2025-11-25 14:15:53,938 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:53] "GET /task-status/8e033f70-eb85-4054-af28-bf0248432b5a HTTP/1.1" 200 -
+2025-11-25 14:15:55,955 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:55] "GET /task-status/8e033f70-eb85-4054-af28-bf0248432b5a HTTP/1.1" 200 -
+2025-11-25 14:15:57,918 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 14:15:57] "GET /task-status/8e033f70-eb85-4054-af28-bf0248432b5a HTTP/1.1" 200 -
+2025-11-25 14:15:58,105 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-25 14:15:58,222 - Review.reviews.es2pr_review - ERROR - Error during review calculation: "['Capping Factor'] not in index"
+2025-11-25 14:15:58,238 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-11-25 14:15:58,245 - Review.reviews.es2pr_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\es2pr_review.py", line 243, in run_es2pr_review
+    selection_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Capping Factor'] not in index"
+
+2025-11-25 14:15:58,246 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
