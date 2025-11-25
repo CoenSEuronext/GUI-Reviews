@@ -89,7 +89,7 @@ COMPARISON_CONFIGS = {
         'manual_folder': 'afternoon_manual',
         'allow_overwrite': True,
         'overwrite_until': '18:10',
-        'generate_from': '12:00',
+        'generate_from': '11:00',
         'file_extension': 'xlsx'
     },
     'afternoon_index': {
@@ -101,7 +101,7 @@ COMPARISON_CONFIGS = {
         'manual_folder': 'afternoon_manual',
         'allow_overwrite': True,
         'overwrite_until': '18:10',
-        'generate_from': '12:00',
+        'generate_from': '11:00',
         'file_extension': 'xlsx'
     },
     'evening_stock': {
@@ -144,7 +144,7 @@ ALLOWED_MNEMONICS = {
     'NLTEL', 'NLFIN', 'NLTEC', 'FROG', 'FRBM', 'FRIN', 'FRCG', 'FRHC', 'FRCS', 'FRTEL', 
     'FRUT', 'FRFIN', 'FRTEC', 'ALASI', 'BIOTK', 'NAOII', 'BVL', 'BEBMP', 'PTBMP', 'PTINP', 
     'PTCGP', 'PTCSP', 'PTTLP', 'PTUTP', 'PTFIP', 'PTTEP', 'BECSP', 'BEUTP', 'BETP', 'BEFIP', 
-    'BETEP', 'BEHCP', 'BEINP', 'BECGP', 'BELCP', 'BEOGP', 'PTHCP', 'PTOGP'
+    'BETEP', 'BEHCP', 'BEINP', 'BECGP', 'BELCP', 'BEOGP', 'PTHCP', 'PTOGP',
 }
 
 # Purple mnemonics for special highlighting
@@ -900,6 +900,12 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
     
+    if not diff_df.empty and 'Index' in diff_df.columns:
+        before = len(diff_df)
+        diff_df = diff_df[diff_df['Index'] != 'C4SD']
+        if len(diff_df) < before:
+            logger.info(f"Excluded {before - len(diff_df)} row(s) with Index='C4SD' from stock comparison output")
+
     return diff_df, common_keys
 
 @timer
@@ -1036,6 +1042,15 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
             diff_df = pd.concat([diff_df, addition_df], ignore_index=True)
             # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
+            
+            if 'Index' in diff_df.columns:
+                before = len(diff_df)
+                diff_df = diff_df[diff_df['Index'] != 'C4SD'].copy()
+                if len(diff_df) < before:
+                    excluded = before - len(diff_df)
+                    logger.info(f"Excluded {excluded} row(s) with Index='C4SD' from final stock output")
+                # Re-rank after exclusion
+                diff_df['Rank'] = range(1, len(diff_df) + 1)
     
     return diff_df, common_keys
 
@@ -1060,8 +1075,8 @@ def get_stock_formatting_summary():
         ['ORANGE', 'Reflects regular changes', 'Prev FF + New FF'],
         ['ORANGE', 'Reflects regular changes', 'Prev Capping + New Capping'],
         ['RED', 'FF is empty, 0 or >1', 'New FF'],
-        ['RED', 'Cell Empty or 0', 'Close Prc + Adj Closing Price'],
-        ['BLUE', 'Reflects Shares change in indices that should not change', 'Prev. Shares'],
+        ['RED', 'Cell Empty or 0', 'Adj Closing Price'],
+        ['BLUE', 'Reflects Share change in indices that should not change', 'Prev. Shares'],
         ['BLUE', 'Cell contains Dummy value(1.111111 etc)', 'Gross Div'],
         ['BLUE', 'Cell contains Dummy value(1.111111 etc)', 'Adj Closing Price'],
         ['BLACK', 'Different ISIN/RIC that corresponds to this component is missing (See column X)', '#Symbol + Cross-Ref Symbols']
@@ -1261,7 +1276,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     new_shares_blue = is_afternoon_evening and shares_changed and (index_value not in ALLOWED_MNEMONICS)
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_new_shares_blue')] = new_shares_blue
                     if new_shares_blue:
-                        checklist_data.append([isin_code, name, 'New Shares', 'Reflects Shares change in indices that should not change', '', 'BLUE'])
+                        checklist_data.append([isin_code, name, 'New Shares', 'Reflects Shares change in indices that should not change daily unless special CA', '', 'BLUE'])
                     
                     new_ff = diff_df.iloc[idx]['New FF']
                     prev_ff = diff_df.iloc[idx]['Prev FF']
@@ -1358,7 +1373,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_symbol_not_in_crossref')] = symbol_not_in_crossref
                     if symbol_not_in_crossref:
-                        checklist_data.append([isin_code, name, '#Symbol', 'Different ISIN/RIC that corresponds to this component is missing (See column #Symbol + Cross-Ref Symbols', '', 'BLACK'])
+                        checklist_data.append([isin_code, name, '#Symbol', 'Different ISIN/RIC that corresponds to this component is missing (See column #Symbol + Cross-Ref Symbols)', '', 'BLACK'])
                 
                 # WRITE CHECKLIST TO SUMMARY SHEET (2 rows below formatting summary)
                 summary_sheet = writer.sheets['Summary']
@@ -1535,49 +1550,93 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 net_div_col = diff_df.columns.get_loc('Net Div')
                 gross_div_col = diff_df.columns.get_loc('Gross Div')
                 close_prc_col = diff_df.columns.get_loc('Close Prc')
-                
+                adj_rsn_col = diff_df.columns.get_loc('Adj. Rsn') if 'Adj. Rsn' in diff_df.columns else -1
+
                 for row_idx in range(len(diff_df)):
                     excel_row = row_idx + data_start_row
-                    
-                    if diff_df_formatted.iloc[row_idx]['_new_shares_blue']:
-                        worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], blue_format)
-                    elif diff_df_formatted.iloc[row_idx]['_shares_changed']:
-                        worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], orange_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
-                        worksheet1.write(excel_row, prev_shares_col, diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_ff_red']:
-                        worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], red_format)
-                    elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
-                        worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], orange_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_capping_changed']:
-                        worksheet1.write(excel_row, new_capping_col, diff_df.iloc[row_idx]['New Capping'], orange_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_blue']:
-                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], blue_format)
-                    elif diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
-                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], orange_format)
-                    elif diff_df_formatted.iloc[row_idx]['_adj_closing_price_red']:
-                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], red_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_icb_changed']:
-                        worksheet1.write(excel_row, new_icb_col, diff_df.iloc[row_idx]['New ICB'], orange_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_gross_div_blue']:
-                        worksheet1.write(excel_row, gross_div_col, diff_df.iloc[row_idx]['Gross Div'], blue_format)
-                    elif diff_df_formatted.iloc[row_idx]['_div_positive']:
-                        worksheet1.write(excel_row, gross_div_col, diff_df.iloc[row_idx]['Gross Div'], orange_format)
-                    
-                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
-                        worksheet1.write(excel_row, net_div_col, diff_df.iloc[row_idx]['Net Div'], orange_format)
-                    
+                    adj_rsn = str(diff_df.iloc[row_idx]['Adj. Rsn']).strip() if adj_rsn_col != -1 else ""
+
+                    # --------------------------------------------------------------
+                    # 1. RED formatting on Close Prc + Adj Closing price
+                    #    → now ONLY on “Adj Closing price” when empty/0
+                    # --------------------------------------------------------------
                     if diff_df_formatted.iloc[row_idx]['_close_prc_red']:
+                        # keep old behaviour for Close Prc (still red when empty/0)
                         worksheet1.write(excel_row, close_prc_col, diff_df.iloc[row_idx]['Close Prc'], red_format)
-                    
+
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_red']:
+                        # RED only on Adj Closing price when empty/0 (including removals)
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], red_format)
+
+                    # --------------------------------------------------------------
+                    # 2. BLUE formatting on New Shares
+                    #    → do NOT apply when Adj. Rsn is "Removal" or "Add Composition"
+                    # --------------------------------------------------------------
+                    apply_new_shares_blue = (
+                        diff_df_formatted.iloc[row_idx]['_new_shares_blue'] and
+                        adj_rsn not in ("Removal", "Add Composition")
+                    )
+
+                    if apply_new_shares_blue:
+                        worksheet1.write(excel_row, new_shares_col,
+                                        diff_df.iloc[row_idx]['New Shares'], blue_format)
+                    elif diff_df_formatted.iloc[row_idx]['_shares_changed']:
+                        worksheet1.write(excel_row, new_shares_col,
+                                        diff_df.iloc[row_idx]['New Shares'], orange_format)
+
+                    # Prev. Shares blue stays unchanged (still only when mnemo allowed)
+                    if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
+                        worksheet1.write(excel_row, prev_shares_col,
+                                        diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
+
+                    # --------------------------------------------------------------
+                    # 3. RED formatting on New FF when it contains #N/A and Adj. Rsn = Removal
+                    #    → do NOT make it red in that case
+                    # --------------------------------------------------------------
+                    new_ff_val = diff_df.iloc[row_idx]['New FF']
+                    is_na = pd.isna(new_ff_val) or str(new_ff_val).strip() in ("#N/A", "N/A", "NA")
+
+                    if diff_df_formatted.iloc[row_idx]['_ff_red']:
+                        # suppress red when it is a removal AND value is #N/A
+                        if adj_rsn == "Removal" and is_na:
+                            # write without red (normal colour)
+                            worksheet1.write(excel_row, new_ff_col, new_ff_val, normal_format)
+                        else:
+                            worksheet1.write(excel_row, new_ff_col, new_ff_val, red_format)
+                    elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
+                        worksheet1.write(excel_row, new_ff_col, new_ff_val, orange_format)
+
+                    # ────── the rest of the formatting stays exactly the same ──────
+                    if diff_df_formatted.iloc[row_idx]['_capping_changed']:
+                        worksheet1.write(excel_row, new_capping_col,
+                                        diff_df.iloc[row_idx]['New Capping'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_blue']:
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], blue_format)
+                    elif diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_icb_changed']:
+                        worksheet1.write(excel_row, new_icb_col,
+                                        diff_df.iloc[row_idx]['New ICB'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_gross_div_blue']:
+                        worksheet1.write(excel_row, gross_div_col,
+                                        diff_df.iloc[row_idx]['Gross Div'], blue_format)
+                    elif diff_df_formatted.iloc[row_idx]['_div_positive']:
+                        worksheet1.write(excel_row, gross_div_col,
+                                        diff_df.iloc[row_idx]['Gross Div'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
+                        worksheet1.write(excel_row, net_div_col,
+                                        diff_df.iloc[row_idx]['Net Div'], orange_format)
+
                     if diff_df_formatted.iloc[row_idx]['_symbol_not_in_crossref']:
-                        worksheet1.write(excel_row, symbol_col, diff_df.iloc[row_idx]['#Symbol'], black_format)
+                        worksheet1.write(excel_row, symbol_col,
+                                        diff_df.iloc[row_idx]['#Symbol'], black_format)
             
             elif is_index:
                 field_cols = {

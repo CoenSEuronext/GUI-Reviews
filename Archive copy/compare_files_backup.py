@@ -89,6 +89,7 @@ COMPARISON_CONFIGS = {
         'manual_folder': 'afternoon_manual',
         'allow_overwrite': True,
         'overwrite_until': '18:10',
+        'generate_from': '11:00',
         'file_extension': 'xlsx'
     },
     'afternoon_index': {
@@ -100,6 +101,7 @@ COMPARISON_CONFIGS = {
         'manual_folder': 'afternoon_manual',
         'allow_overwrite': True,
         'overwrite_until': '18:10',
+        'generate_from': '11:00',
         'file_extension': 'xlsx'
     },
     'evening_stock': {
@@ -142,11 +144,11 @@ ALLOWED_MNEMONICS = {
     'NLTEL', 'NLFIN', 'NLTEC', 'FROG', 'FRBM', 'FRIN', 'FRCG', 'FRHC', 'FRCS', 'FRTEL', 
     'FRUT', 'FRFIN', 'FRTEC', 'ALASI', 'BIOTK', 'NAOII', 'BVL', 'BEBMP', 'PTBMP', 'PTINP', 
     'PTCGP', 'PTCSP', 'PTTLP', 'PTUTP', 'PTFIP', 'PTTEP', 'BECSP', 'BEUTP', 'BETP', 'BEFIP', 
-    'BETEP', 'BEHCP', 'BEINP', 'BECGP', 'BELCP', 'BEOGP', 'PTHCP', 'PTOGP'
+    'BETEP', 'BEHCP', 'BEINP', 'BECGP', 'BELCP', 'BEOGP', 'PTHCP', 'PTOGP',
 }
 
 # Purple mnemonics for special highlighting
-PURPLE_MNEMONICS = {'AEX BANK', 'PX1'}
+PURPLE_MNEMONICS = {'AEX', 'BANK', 'PX1'}
 
 # Purple index mnemonics (for Name column)
 PURPLE_INDEX_MNEMONICS = {
@@ -262,6 +264,22 @@ def should_allow_overwrite(comparison_type):
     if not config or not config.get('allow_overwrite'):
         return False
     
+    current_time = datetime.now()
+    
+    # Check if there's a start time restriction (generate_from)
+    generate_from = config.get('generate_from')
+    if generate_from:
+        try:
+            start_hour, start_minute = map(int, generate_from.split(':'))
+            start_time = current_time.replace(hour=start_hour, minute=start_minute, second=0, microsecond=0)
+            
+            # If current time is before start time, don't allow generation
+            if current_time < start_time:
+                return False
+        except:
+            pass  # If parsing fails, ignore the start time restriction
+    
+    # Check end time restriction (overwrite_until)
     overwrite_until = config.get('overwrite_until')
     if not overwrite_until:
         return True
@@ -269,9 +287,9 @@ def should_allow_overwrite(comparison_type):
     # Parse overwrite_until time (format: "HH:MM")
     try:
         cutoff_hour, cutoff_minute = map(int, overwrite_until.split(':'))
-        cutoff_time = datetime.now().replace(hour=cutoff_hour, minute=cutoff_minute, second=0, microsecond=0)
+        cutoff_time = current_time.replace(hour=cutoff_hour, minute=cutoff_minute, second=0, microsecond=0)
         
-        return datetime.now() < cutoff_time
+        return current_time < cutoff_time
     except:
         return True
     
@@ -882,6 +900,12 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
     
+    if not diff_df.empty and 'Index' in diff_df.columns:
+        before = len(diff_df)
+        diff_df = diff_df[diff_df['Index'] != 'C4SD']
+        if len(diff_df) < before:
+            logger.info(f"Excluded {before - len(diff_df)} row(s) with Index='C4SD' from stock comparison output")
+
     return diff_df, common_keys
 
 @timer
@@ -1018,6 +1042,15 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
             diff_df = pd.concat([diff_df, addition_df], ignore_index=True)
             # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
+            
+            if 'Index' in diff_df.columns:
+                before = len(diff_df)
+                diff_df = diff_df[diff_df['Index'] != 'C4SD'].copy()
+                if len(diff_df) < before:
+                    excluded = before - len(diff_df)
+                    logger.info(f"Excluded {excluded} row(s) with Index='C4SD' from final stock output")
+                # Re-rank after exclusion
+                diff_df['Rank'] = range(1, len(diff_df) + 1)
     
     return diff_df, common_keys
 
@@ -1030,6 +1063,99 @@ def excel_column_name(col_index):
         if col_index < 0:
             break
     return result
+
+def get_stock_formatting_summary():
+    """Return the formatting summary data for stock comparisons"""
+    return [
+        ['STOCK', 'Explanation', 'Column'], 
+        ['ORANGE', 'Reflects regular changes', 'Close Prc + Adj Closing Price'],
+        ['ORANGE', 'Reflects regular changes', 'Prev ICB + New ICB'],
+        ['ORANGE', 'Reflects regular changes', 'Net Div + Gross Div'],
+        ['ORANGE', 'Reflects regular changes', 'Prev. Shares + New Shares'],
+        ['ORANGE', 'Reflects regular changes', 'Prev FF + New FF'],
+        ['ORANGE', 'Reflects regular changes', 'Prev Capping + New Capping'],
+        ['RED', 'FF is empty, 0 or >1', 'New FF'],
+        ['RED', 'Cell Empty or 0', 'Adj Closing Price'],
+        ['BLUE', 'Reflects Share change in indices that should not change', 'Prev. Shares'],
+        ['BLUE', 'Cell contains Dummy value(1.111111 etc)', 'Gross Div'],
+        ['BLUE', 'Cell contains Dummy value(1.111111 etc)', 'Adj Closing Price'],
+        ['BLACK', 'Different ISIN/RIC that corresponds to this component is missing (See column X)', '#Symbol + Cross-Ref Symbols']
+    ]
+
+def get_index_formatting_summary():
+    """Return the formatting summary data for index comparisons"""
+    return [
+        ['INDEX', 'Explanation', 'Column'],
+        ['ORANGE', 'Reflects regular changes', 'Prev Divisor + New Divisor'],
+        ['ORANGE', 'Reflects regular changes', 'Prev t0 IV + t0 IV SOD'],
+        ['ORANGE', 'Reflects regular changes', 'Prev Mkt Cap + New Mkt Cap'],
+        ['ORANGE', 'Reflects regular changes', 'Prev Nr of comp + Nr of comp'],
+        ['BLUE', 'Change in divisor where this is not supposed to happen unless Special CA', 'Mnemo'],
+        ['PURPLE', 'AEX BANK or PX1 for Dividend point sheet', 'Mnemo'],
+        ['PURPLE', 'Index with Derivates attached', 'Name']
+    ]
+
+def create_checklist_data(diff_df, df2_indexed):
+    """Create checklist data from highlighted cells in the differences dataframe"""
+    checklist_rows = []
+    
+    # Define which columns have which color formatting
+    red_columns = ['New FF', 'Close Prc', 'Adj Closing price']
+    blue_columns = ['Prev. Shares', 'Adj Closing price', 'Gross Div', 'New Shares']
+    black_columns = ['#Symbol']
+    
+    for idx in range(len(diff_df)):
+        row = diff_df.iloc[idx]
+        isin_code = str(row.get('Isin Code', ''))
+        name = str(row.get('Name', ''))
+        symbol = str(row.get('#Symbol', ''))
+        
+        # Check RED formatting conditions
+        # New FF - Red when empty, 0, or >1
+        new_ff = row.get('New FF', '')
+        try:
+            new_ff_numeric = float(new_ff) if pd.notna(new_ff) and str(new_ff).strip() != '' else None
+            if new_ff_numeric is None or new_ff_numeric > 1:
+                checklist_rows.append([isin_code, name, 'New FF', 'When FF is empty, 0 or >1', ''])
+        except (ValueError, TypeError):
+            checklist_rows.append([isin_code, name, 'New FF', 'When FF is empty, 0 or >1', ''])
+        
+        # Close Prc - Red when empty or 0 (not for removals)
+        adj_rsn = str(row.get('Adj. Rsn', '')).strip()
+        close_prc = row.get('Close Prc', '')
+        try:
+            close_prc_numeric = float(close_prc) if pd.notna(close_prc) and str(close_prc).strip() != '' else None
+            if (close_prc_numeric is None or close_prc_numeric == 0) and adj_rsn != 'Removal':
+                checklist_rows.append([isin_code, name, 'Close Prc', 'When Empty or 0', ''])
+        except (ValueError, TypeError):
+            if adj_rsn != 'Removal':
+                checklist_rows.append([isin_code, name, 'Close Prc', 'When Empty or 0', ''])
+        
+        # Adj Closing price - Red when empty or 0 (not for removals)
+        adj_closing = row.get('Adj Closing price', '')
+        try:
+            adj_closing_numeric = float(adj_closing) if pd.notna(adj_closing) and str(adj_closing).strip() != '' else None
+            if (adj_closing_numeric is None or adj_closing_numeric == 0) and adj_rsn != 'Removal':
+                checklist_rows.append([isin_code, name, 'Adj Closing price', 'When Empty or 0', ''])
+        except (ValueError, TypeError):
+            if adj_rsn != 'Removal':
+                checklist_rows.append([isin_code, name, 'Adj Closing price', 'When Empty or 0', ''])
+        
+        # Check BLUE formatting conditions
+        # Prev. Shares - Blue when shares changed AND Mnemo in ALLOWED_MNEMONICS
+        mnemo_value = str(row.get('Mnemo', '')).strip()
+        new_shares = row.get('New Shares', '')
+        prev_shares = row.get('Prev. Shares', '')
+        shares_changed = (pd.notna(new_shares) and pd.notna(prev_shares) and str(new_shares) != str(prev_shares))
+        
+        if mnemo_value in ALLOWED_MNEMONICS and shares_changed:
+            checklist_rows.append([isin_code, name, 'Prev. Shares', 'Reflects Shares change in indices that should not change', ''])
+        
+        # Check BLACK formatting conditions
+        # #Symbol - Black when not in Cross-Ref Symbols (afternoon/evening only)
+        # This check is complex and should match the logic in write_excel_optimized
+        
+    return checklist_rows
 
 @timer
 def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison_type='stock'):
@@ -1052,18 +1178,58 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             'bg_color': '#D9D9D9'
         })
         
-        # Sheet 1: Differences
+        # Determine if this is a stock or index comparison
+        is_stock = comparison_type in ['morning_stock', 'afternoon_stock', 'evening_stock']
+        is_index = comparison_type in ['morning_index', 'afternoon_index', 'evening_index']
+        
+        # Sheet 1: Summary (for both stock and index comparisons)
+        if is_stock or is_index:
+            summary_data = get_stock_formatting_summary() if is_stock else get_index_formatting_summary()
+            
+            # Create Summary sheet
+            summary_sheet = workbook.add_worksheet('Summary')
+            
+            # Write formatting summary table at top
+            for row_idx, row_data in enumerate(summary_data):
+                if row_idx == 0:  # Header
+                    for col_idx, value in enumerate(row_data):
+                        summary_sheet.write(row_idx, col_idx, value, header_format)
+                else:
+                    color_type = row_data[0]
+                    # Apply color to first column based on type
+                    if color_type == 'ORANGE':
+                        color_format = orange_format
+                    elif color_type == 'RED':
+                        color_format = red_format
+                    elif color_type == 'BLUE':
+                        color_format = blue_format
+                    elif color_type == 'BLACK':
+                        color_format = black_format
+                    elif color_type == 'PURPLE':
+                        color_format = purple_format
+                    else:
+                        color_format = normal_format
+                    
+                    summary_sheet.write(row_idx, 0, row_data[0], color_format)
+                    for col_idx in range(1, len(row_data)):
+                        summary_sheet.write(row_idx, col_idx, row_data[col_idx], normal_format)
+            
+            # Set column widths for summary (swapped - Explanation is now column 1, Column is column 2)
+            summary_sheet.set_column(0, 0, 12)
+            summary_sheet.set_column(1, 1, 80)  # Explanation
+            summary_sheet.set_column(2, 2, 35)  # Column
+        
+        # Sheet 2 (or 1 for index): Differences
         if not diff_df.empty:
             diff_df_formatted = diff_df.copy()
             
-            # Determine if this is a stock or index comparison
-            is_stock = comparison_type in ['morning_stock', 'afternoon_stock', 'evening_stock']
-            is_index = comparison_type in ['morning_index', 'afternoon_index', 'evening_index']
-            
-            # Apply formatting based on comparison type
             if is_stock:
+                # Create checklist data
+                checklist_data = []
+                
                 diff_df_formatted['_shares_changed'] = False
                 diff_df_formatted['_prev_shares_blue'] = False
+                diff_df_formatted['_new_shares_blue'] = False
                 diff_df_formatted['_ff_red'] = False
                 diff_df_formatted['_ff_orange'] = False
                 diff_df_formatted['_capping_changed'] = False
@@ -1071,25 +1237,30 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_formatted['_icb_changed'] = False
                 diff_df_formatted['_div_positive'] = False
                 diff_df_formatted['_mnemo_allowed'] = False
-                diff_df_formatted['_mnemo_purple'] = False
-                diff_df_formatted['_name_purple'] = False
                 diff_df_formatted['_close_prc_red'] = False
                 diff_df_formatted['_adj_closing_price_red'] = False
+                diff_df_formatted['_adj_closing_price_blue'] = False
+                diff_df_formatted['_gross_div_blue'] = False
                 diff_df_formatted['_symbol_not_in_crossref'] = False
                 diff_df_formatted['_is_removal'] = False
                 
+                is_afternoon_evening = comparison_type in ['afternoon_stock', 'evening_stock']
+                BLUE_FLAG_VALUES = ['1.11', '1.111', '1.1111', '1.11111', '1.111111', '1.1111111', '1.11111111']
+                
                 for idx in range(len(diff_df)):
-                    # Check if this is a removal row
+                    isin_code = str(diff_df.iloc[idx].get('Isin Code', ''))
+                    name = str(diff_df.iloc[idx].get('Name', ''))
+                    
                     adj_rsn = str(diff_df.iloc[idx].get('Adj. Rsn', '')).strip()
                     is_removal = adj_rsn == 'Removal'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_is_removal')] = is_removal
                     
-                    # Check Mnemo first
                     mnemo_value = str(diff_df.iloc[idx].get('Mnemo', '')).strip()
                     mnemo_allowed = mnemo_value in ALLOWED_MNEMONICS
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_allowed')] = mnemo_allowed
                     
-                    # Check if shares changed - for New Shares (orange) and Prev Shares (blue)
+                    index_value = str(diff_df.iloc[idx].get('Index', '')).strip()
+                    
                     new_shares = diff_df.iloc[idx]['New Shares']
                     prev_shares = diff_df.iloc[idx]['Prev. Shares']
                     shares_changed = (
@@ -1097,11 +1268,16 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     )
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_shares_changed')] = shares_changed
                     
-                    # COMBINED: Prev Shares gets blue ONLY if Mnemo is in ALLOWED_MNEMONICS AND shares changed
                     prev_shares_blue = mnemo_allowed and shares_changed
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_prev_shares_blue')] = prev_shares_blue
+                    if prev_shares_blue:
+                        checklist_data.append([isin_code, name, 'Prev. Shares', 'Reflects Shares change in indices that should not change', '', 'BLUE'])
                     
-                    # Check FF (Free Float)
+                    new_shares_blue = is_afternoon_evening and shares_changed and (index_value not in ALLOWED_MNEMONICS)
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_new_shares_blue')] = new_shares_blue
+                    if new_shares_blue:
+                        checklist_data.append([isin_code, name, 'New Shares', 'Reflects Shares change in indices that should not change daily unless special CA', '', 'BLUE'])
+                    
                     new_ff = diff_df.iloc[idx]['New FF']
                     prev_ff = diff_df.iloc[idx]['Prev FF']
                     new_ff_clean = '' if pd.isna(new_ff) else new_ff
@@ -1115,29 +1291,38 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_red')] = ff_red
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_orange')] = ff_orange
+                    if ff_red:
+                        checklist_data.append([isin_code, name, 'New FF', 'When FF is empty, 0 or >1', '', 'RED'])
                     
-                    # Check Capping
                     new_capping = diff_df.iloc[idx]['New Capping']
                     prev_capping = diff_df.iloc[idx]['Prev Capping']
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_capping_changed')] = (
+                    capping_changed = (
                         pd.notna(new_capping) and pd.notna(prev_capping) and str(new_capping) != str(prev_capping)
                     )
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_capping_changed')] = capping_changed
                     
-                    # Check if Adj Closing price is different from Close Prc
                     adj_closing_price = diff_df.iloc[idx]['Adj Closing price']
                     close_prc = diff_df.iloc[idx]['Close Prc']
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_price_changed')] = (
+                    adj_price_changed = (
                         pd.notna(adj_closing_price) and pd.notna(close_prc) and str(adj_closing_price).strip() != str(close_prc).strip()
                     )
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_price_changed')] = adj_price_changed
                     
-                    # Check if New ICB is different from Prev ICB
+                    adj_closing_price_blue = False
+                    if is_afternoon_evening:
+                        adj_closing_str = str(adj_closing_price).strip()
+                        adj_closing_price_blue = adj_closing_str in BLUE_FLAG_VALUES
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_closing_price_blue')] = adj_closing_price_blue
+                    if adj_closing_price_blue:
+                        checklist_data.append([isin_code, name, 'Adj Closing Price', 'When cell contains Dummy value(1.111111 etc)', '', 'BLUE'])
+                    
                     new_icb = diff_df.iloc[idx]['New ICB']
                     prev_icb = diff_df.iloc[idx]['Prev ICB']
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_icb_changed')] = (
+                    icb_changed = (
                         pd.notna(new_icb) and pd.notna(prev_icb) and str(new_icb).strip() != str(prev_icb).strip()
                     )
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_icb_changed')] = icb_changed
                     
-                    # Check if Net Div is a positive number
                     net_div = diff_df.iloc[idx]['Net Div']
                     try:
                         net_div_numeric = float(net_div) if pd.notna(net_div) and str(net_div).strip() != '' else None
@@ -1146,70 +1331,107 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         div_positive = False
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_div_positive')] = div_positive
                     
-                    # NEW: Check if Mnemo is in PURPLE_MNEMONICS (AEX BANK or PX1)
-                    mnemo_purple = mnemo_value in PURPLE_MNEMONICS
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_purple')] = mnemo_purple
+                    gross_div = diff_df.iloc[idx]['Gross Div']
+                    gross_div_blue = False
+                    if is_afternoon_evening:
+                        gross_div_str = str(gross_div).strip()
+                        gross_div_blue = gross_div_str in BLUE_FLAG_VALUES
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_gross_div_blue')] = gross_div_blue
+                    if gross_div_blue:
+                        checklist_data.append([isin_code, name, 'Gross Div', 'When cell contains Dummy value(1.111111 etc)', '', 'BLUE'])
                     
-                    # NEW: Check if Mnemo is in PURPLE_INDEX_MNEMONICS (for Name column)
-                    name_purple = mnemo_value in PURPLE_INDEX_MNEMONICS
-                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_name_purple')] = name_purple
-                    
-                    # NEW: Check if Close Prc is empty or 0
                     close_prc_val = diff_df.iloc[idx]['Close Prc']
                     try:
                         close_prc_numeric = float(close_prc_val) if pd.notna(close_prc_val) and str(close_prc_val).strip() != '' else None
-                        close_prc_red = close_prc_numeric is None or close_prc_numeric == 0
+                        close_prc_red = (close_prc_numeric is None or close_prc_numeric == 0) and adj_rsn != 'Removal'
                     except (ValueError, TypeError):
-                        close_prc_red = True
+                        close_prc_red = adj_rsn != 'Removal'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_close_prc_red')] = close_prc_red
+                    if close_prc_red:
+                        checklist_data.append([isin_code, name, 'Close Prc', 'When Empty or 0', '', 'RED'])
                     
-                    # NEW: Check if Adj Closing price is empty or 0
                     adj_closing_val = diff_df.iloc[idx]['Adj Closing price']
                     try:
                         adj_closing_numeric = float(adj_closing_val) if pd.notna(adj_closing_val) and str(adj_closing_val).strip() != '' else None
-                        adj_closing_red = adj_closing_numeric is None or adj_closing_numeric == 0
+                        adj_closing_red = (adj_closing_numeric is None or adj_closing_numeric == 0) and adj_rsn != 'Removal'
                     except (ValueError, TypeError):
-                        adj_closing_red = True
+                        adj_closing_red = adj_rsn != 'Removal'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_closing_price_red')] = adj_closing_red
+                    if adj_closing_red:
+                        checklist_data.append([isin_code, name, 'Adj Closing price', 'When Empty or 0', '', 'RED'])
                     
-                    # NEW: Check if all Cross-Ref Symbols values exist in the #Symbol column of the output sheet
-                    cross_ref_symbols_str = str(diff_df.iloc[idx].get('Cross-Ref Symbols', '')).strip()
-                    
-                    if cross_ref_symbols_str != '' and cross_ref_symbols_str != 'nan':
-                        # Split the semicolon-separated list
-                        cross_ref_list = [s.strip() for s in cross_ref_symbols_str.split(';') if s.strip() != '']
+                    symbol_not_in_crossref = False
+                    if is_afternoon_evening:
+                        cross_ref_symbols_str = str(diff_df.iloc[idx].get('Cross-Ref Symbols', '')).strip()
                         
-                        # Get all #Symbol values from the entire output sheet
-                        all_symbols_in_output = set(diff_df['#Symbol'].astype(str).str.strip())
-                        
-                        # Check if ALL cross-ref symbols exist in the output sheet's #Symbol column
-                        all_exist = all(symbol in all_symbols_in_output for symbol in cross_ref_list)
-                        
-                        # Flag if NOT all exist
-                        symbol_not_in_crossref = not all_exist
-                    else:
-                        # If cross-ref list is empty, don't flag it
-                        symbol_not_in_crossref = False
+                        if cross_ref_symbols_str != '' and cross_ref_symbols_str != 'nan':
+                            if 'Share Number' not in adj_rsn and 'Composition All Setting' not in adj_rsn:
+                                cross_ref_list = [s.strip() for s in cross_ref_symbols_str.split(';') if s.strip() != '']
+                                all_symbols_in_output = set(diff_df['#Symbol'].astype(str).str.strip())
+                                all_exist = all(symbol in all_symbols_in_output for symbol in cross_ref_list)
+                                symbol_not_in_crossref = not all_exist
                     
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_symbol_not_in_crossref')] = symbol_not_in_crossref
+                    if symbol_not_in_crossref:
+                        checklist_data.append([isin_code, name, '#Symbol', 'Different ISIN/RIC that corresponds to this component is missing (See column #Symbol + Cross-Ref Symbols)', '', 'BLACK'])
+                
+                # WRITE CHECKLIST TO SUMMARY SHEET (2 rows below formatting summary)
+                summary_sheet = writer.sheets['Summary']
+                
+                checklist_start_row = len(summary_data) + 2
+                checklist_headers = ['Isin Code', 'Name', 'Column', 'Explanation', 'Check?']
+                for col_idx, header in enumerate(checklist_headers):
+                    summary_sheet.write(checklist_start_row, col_idx, header, header_format)
+                
+                for row_idx, checklist_row in enumerate(checklist_data):
+                    color_type = checklist_row[5]  # Get the color indicator from the last element
+                    
+                    # Determine format for Isin Code based on color type
+                    if color_type == 'RED':
+                        isin_format = red_format
+                    elif color_type == 'BLUE':
+                        isin_format = blue_format
+                    elif color_type == 'BLACK':
+                        isin_format = black_format
+                    else:
+                        isin_format = normal_format
+                    
+                    # Write Isin Code with colored format
+                    summary_sheet.write(checklist_start_row + 1 + row_idx, 0, checklist_row[0], isin_format)
+                    
+                    # Write the rest with normal format
+                    for col_idx in range(1, 5):  # columns 1-4 (Name, Column, Explanation, Check?)
+                        summary_sheet.write(checklist_start_row + 1 + row_idx, col_idx, checklist_row[col_idx], normal_format)
+                
+                # Set column widths for checklist columns in summary sheet
+                summary_sheet.set_column(3, 3, 80)  # Explanation column
+                summary_sheet.set_column(4, 4, 10)  # Check? column
                 
                 diff_df_main = diff_df_formatted.drop([
-                    '_shares_changed', '_prev_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
-                    '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed', '_mnemo_purple',
-                    '_name_purple', '_close_prc_red', '_adj_closing_price_red', '_symbol_not_in_crossref', '_is_removal'
+                    '_shares_changed', '_prev_shares_blue', '_new_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
+                    '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed',
+                    '_close_prc_red', '_adj_closing_price_red', '_adj_closing_price_blue', '_gross_div_blue',
+                    '_symbol_not_in_crossref', '_is_removal'
                 ], axis=1)
             
             elif is_index:
+                # Create checklist data for index
+                checklist_data = []
+                
                 diff_df_formatted['_divisor_changed'] = False
                 diff_df_formatted['_t0iv_changed'] = False
                 diff_df_formatted['_t0iv_unround_changed'] = False
                 diff_df_formatted['_mktcap_changed'] = False
                 diff_df_formatted['_nrcomp_changed'] = False
                 diff_df_formatted['_mnemo_blue'] = False
+                diff_df_formatted['_mnemo_purple'] = False
+                diff_df_formatted['_name_purple'] = False
                 diff_df_formatted['_is_removal'] = False
                 
                 for idx in range(len(diff_df)):
-                    # Check if this is a removal row (check if New Divisor is '#N/A')
+                    isin_code = str(diff_df.iloc[idx].get('IsinCode', ''))
+                    name = str(diff_df.iloc[idx].get('Name', ''))
+                    
                     new_divisor = str(diff_df.iloc[idx].get('New Divisor', '')).strip()
                     is_removal = new_divisor == '#N/A'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_is_removal')] = is_removal
@@ -1227,29 +1449,84 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                             pd.notna(new_val) and pd.notna(prev_val) and str(new_val) != str(prev_val)
                         )
                     
-                    # Check if Mnemo should be blue (not in allowed list AND divisor changed)
                     mnemo_value = str(diff_df.iloc[idx].get('Mnemo', '')).strip()
                     divisor_changed = diff_df_formatted.iloc[idx]['_divisor_changed']
                     mnemo_blue = (mnemo_value not in ALLOWED_MNEMONICS) and divisor_changed
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_blue')] = mnemo_blue
+                    
+                    # Add to checklist if blue
+                    if mnemo_blue:
+                        checklist_data.append([isin_code, name, 'Mnemo', 'Change in divisor where this is not supposed to happen unless Special CA', '', 'BLUE'])
+                    
+                    mnemo_purple = mnemo_value in PURPLE_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_mnemo_purple')] = mnemo_purple
+                    
+                    # Add to checklist if purple (Mnemo)
+                    if mnemo_purple:
+                        checklist_data.append([isin_code, name, 'Mnemo', 'AEX BANK or PX1 for Dividend point sheet', '', 'PURPLE'])
+                    
+                    name_purple = mnemo_value in PURPLE_INDEX_MNEMONICS
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_name_purple')] = name_purple
+                    
+                    # DO NOT add to checklist if purple (Name) - as per instructions
+                
+                # WRITE CHECKLIST TO SUMMARY SHEET (2 rows below formatting summary)
+                summary_sheet = writer.sheets['Summary']
+                
+                checklist_start_row = len(summary_data) + 2
+                checklist_headers = ['Isin Code', 'Name', 'Column', 'Explanation', 'Check?']
+                for col_idx, header in enumerate(checklist_headers):
+                    summary_sheet.write(checklist_start_row, col_idx, header, header_format)
+                
+                for row_idx, checklist_row in enumerate(checklist_data):
+                    color_type = checklist_row[5]  # Get the color indicator from the last element
+                    
+                    # Determine format for Isin Code based on color type
+                    if color_type == 'BLUE':
+                        isin_format = blue_format
+                    elif color_type == 'PURPLE':
+                        isin_format = purple_format
+                    else:
+                        isin_format = normal_format
+                    
+                    # Write Isin Code with colored format
+                    summary_sheet.write(checklist_start_row + 1 + row_idx, 0, checklist_row[0], isin_format)
+                    
+                    # Write the rest with normal format
+                    for col_idx in range(1, 5):  # columns 1-4 (Name, Column, Explanation, Check?)
+                        summary_sheet.write(checklist_start_row + 1 + row_idx, col_idx, checklist_row[col_idx], normal_format)
+                
+                # Set column widths for checklist columns in summary sheet
+                summary_sheet.set_column(3, 3, 80)  # Explanation column
+                summary_sheet.set_column(4, 4, 10)  # Check? column
                 
                 diff_df_main = diff_df_formatted.drop([
                     '_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', 
-                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue', '_is_removal'
+                    '_mktcap_changed', '_nrcomp_changed', '_mnemo_blue', '_mnemo_purple', '_name_purple', '_is_removal'
                 ], axis=1)
             else:
                 diff_df_main = diff_df_formatted
             
+            # WRITE DIFFERENCES SHEET - CLEAN, NO SUMMARY OR CHECKLIST
             diff_df_main.to_excel(writer, sheet_name='Differences', index=False, startrow=4, header=False)
             
             worksheet1 = writer.sheets['Differences']
+            
+            # Standard data start row for Differences sheet (no summary/checklist here)
+            data_start_row = 4
+            
+            # Write rank and headers
             max_rank = diff_df['Rank'].max()
-            worksheet1.write(0, 0, max_rank, normal_format)
+            worksheet1.write(data_start_row - 2, 0, max_rank, normal_format)
             
             for col_num, value in enumerate(diff_df.columns.values):
-                worksheet1.write(2, col_num, value, header_format)
+                worksheet1.write(data_start_row - 2, col_num, value, header_format)
             
-            data_start_row = 4
+            # Re-write the data at the correct position
+            for row_idx in range(len(diff_df_main)):
+                for col_idx, col_name in enumerate(diff_df_main.columns):
+                    worksheet1.write(data_start_row + row_idx, col_idx, diff_df_main.iloc[row_idx, col_idx], normal_format)
+            
             data_end_row = data_start_row + len(diff_df) - 1
             
             # Apply conditional formatting
@@ -1272,63 +1549,94 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 new_icb_col = diff_df.columns.get_loc('New ICB')
                 net_div_col = diff_df.columns.get_loc('Net Div')
                 gross_div_col = diff_df.columns.get_loc('Gross Div')
-                mnemo_col = diff_df.columns.get_loc('Mnemo')
-                name_col = diff_df.columns.get_loc('Name')
                 close_prc_col = diff_df.columns.get_loc('Close Prc')
-                
+                adj_rsn_col = diff_df.columns.get_loc('Adj. Rsn') if 'Adj. Rsn' in diff_df.columns else -1
+
                 for row_idx in range(len(diff_df)):
                     excel_row = row_idx + data_start_row
-                    
-                    # Orange: New Shares changed
-                    if diff_df_formatted.iloc[row_idx]['_shares_changed']:
-                        worksheet1.write(excel_row, new_shares_col, diff_df.iloc[row_idx]['New Shares'], orange_format)
-                    
-                    # NEW: Blue: Prev Shares when shares changed
-                    if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
-                        worksheet1.write(excel_row, prev_shares_col, diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
-                    
-                    # FF formatting
-                    if diff_df_formatted.iloc[row_idx]['_ff_red']:
-                        worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], red_format)
-                    elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
-                        worksheet1.write(excel_row, new_ff_col, diff_df.iloc[row_idx]['New FF'], orange_format)
-                    
-                    # Capping changed
-                    if diff_df_formatted.iloc[row_idx]['_capping_changed']:
-                        worksheet1.write(excel_row, new_capping_col, diff_df.iloc[row_idx]['New Capping'], orange_format)
-                    
-                    # Adj price changed
-                    if diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
-                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], orange_format)
-                    
-                    # ICB changed
-                    if diff_df_formatted.iloc[row_idx]['_icb_changed']:
-                        worksheet1.write(excel_row, new_icb_col, diff_df.iloc[row_idx]['New ICB'], orange_format)
-                    
-                    # Dividend positive
-                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
-                        worksheet1.write(excel_row, net_div_col, diff_df.iloc[row_idx]['Net Div'], orange_format)
-                        worksheet1.write(excel_row, gross_div_col, diff_df.iloc[row_idx]['Gross Div'], orange_format)
-                    
-                    # NEW: Purple background for Mnemo if AEX BANK or PX1
-                    if diff_df_formatted.iloc[row_idx]['_mnemo_purple']:
-                        worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], purple_format)
-                    
-                    # NEW: Purple background for Name if Mnemo is in PURPLE_INDEX_MNEMONICS
-                    if diff_df_formatted.iloc[row_idx]['_name_purple']:
-                        worksheet1.write(excel_row, name_col, diff_df.iloc[row_idx]['Name'], purple_format)
-                    
-                    # NEW: Red background for Close Prc if empty or 0
+                    adj_rsn = str(diff_df.iloc[row_idx]['Adj. Rsn']).strip() if adj_rsn_col != -1 else ""
+
+                    # --------------------------------------------------------------
+                    # 1. RED formatting on Close Prc + Adj Closing price
+                    #    → now ONLY on “Adj Closing price” when empty/0
+                    # --------------------------------------------------------------
                     if diff_df_formatted.iloc[row_idx]['_close_prc_red']:
+                        # keep old behaviour for Close Prc (still red when empty/0)
                         worksheet1.write(excel_row, close_prc_col, diff_df.iloc[row_idx]['Close Prc'], red_format)
-                    
-                    # NEW: Red background for Adj Closing price if empty or 0 (only if not already orange from adj_price_changed)
-                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_red'] and not diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
-                        worksheet1.write(excel_row, adj_closing_price_col, diff_df.iloc[row_idx]['Adj Closing price'], red_format)
-                    
-                    # NEW: Black background for #Symbol if not in Cross-Ref Symbols list
+
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_red']:
+                        # RED only on Adj Closing price when empty/0 (including removals)
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], red_format)
+
+                    # --------------------------------------------------------------
+                    # 2. BLUE formatting on New Shares
+                    #    → do NOT apply when Adj. Rsn is "Removal" or "Add Composition"
+                    # --------------------------------------------------------------
+                    apply_new_shares_blue = (
+                        diff_df_formatted.iloc[row_idx]['_new_shares_blue'] and
+                        adj_rsn not in ("Removal", "Add Composition")
+                    )
+
+                    if apply_new_shares_blue:
+                        worksheet1.write(excel_row, new_shares_col,
+                                        diff_df.iloc[row_idx]['New Shares'], blue_format)
+                    elif diff_df_formatted.iloc[row_idx]['_shares_changed']:
+                        worksheet1.write(excel_row, new_shares_col,
+                                        diff_df.iloc[row_idx]['New Shares'], orange_format)
+
+                    # Prev. Shares blue stays unchanged (still only when mnemo allowed)
+                    if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
+                        worksheet1.write(excel_row, prev_shares_col,
+                                        diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
+
+                    # --------------------------------------------------------------
+                    # 3. RED formatting on New FF when it contains #N/A and Adj. Rsn = Removal
+                    #    → do NOT make it red in that case
+                    # --------------------------------------------------------------
+                    new_ff_val = diff_df.iloc[row_idx]['New FF']
+                    is_na = pd.isna(new_ff_val) or str(new_ff_val).strip() in ("#N/A", "N/A", "NA")
+
+                    if diff_df_formatted.iloc[row_idx]['_ff_red']:
+                        # suppress red when it is a removal AND value is #N/A
+                        if adj_rsn == "Removal" and is_na:
+                            # write without red (normal colour)
+                            worksheet1.write(excel_row, new_ff_col, new_ff_val, normal_format)
+                        else:
+                            worksheet1.write(excel_row, new_ff_col, new_ff_val, red_format)
+                    elif diff_df_formatted.iloc[row_idx]['_ff_orange']:
+                        worksheet1.write(excel_row, new_ff_col, new_ff_val, orange_format)
+
+                    # ────── the rest of the formatting stays exactly the same ──────
+                    if diff_df_formatted.iloc[row_idx]['_capping_changed']:
+                        worksheet1.write(excel_row, new_capping_col,
+                                        diff_df.iloc[row_idx]['New Capping'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_blue']:
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], blue_format)
+                    elif diff_df_formatted.iloc[row_idx]['_adj_price_changed']:
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_icb_changed']:
+                        worksheet1.write(excel_row, new_icb_col,
+                                        diff_df.iloc[row_idx]['New ICB'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_gross_div_blue']:
+                        worksheet1.write(excel_row, gross_div_col,
+                                        diff_df.iloc[row_idx]['Gross Div'], blue_format)
+                    elif diff_df_formatted.iloc[row_idx]['_div_positive']:
+                        worksheet1.write(excel_row, gross_div_col,
+                                        diff_df.iloc[row_idx]['Gross Div'], orange_format)
+
+                    if diff_df_formatted.iloc[row_idx]['_div_positive']:
+                        worksheet1.write(excel_row, net_div_col,
+                                        diff_df.iloc[row_idx]['Net Div'], orange_format)
+
                     if diff_df_formatted.iloc[row_idx]['_symbol_not_in_crossref']:
-                        worksheet1.write(excel_row, symbol_col, diff_df.iloc[row_idx]['#Symbol'], black_format)
+                        worksheet1.write(excel_row, symbol_col,
+                                        diff_df.iloc[row_idx]['#Symbol'], black_format)
             
             elif is_index:
                 field_cols = {
@@ -1338,6 +1646,9 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     'New Mkt Cap': diff_df.columns.get_loc('New Mkt Cap'),
                     'Nr of comp': diff_df.columns.get_loc('Nr of comp')
                 }
+                
+                mnemo_col = diff_df.columns.get_loc('Mnemo')
+                name_col = diff_df.columns.get_loc('Name')
                 
                 flag_cols = ['_divisor_changed', '_t0iv_changed', '_t0iv_unround_changed', '_mktcap_changed', '_nrcomp_changed']
                 output_cols = ['New Divisor', 't0 IV   SOD', 't0 IV unround', 'New Mkt Cap', 'Nr of comp']
@@ -1349,10 +1660,14 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         if diff_df_formatted.iloc[row_idx][flag_col]:
                             worksheet1.write(excel_row, field_cols[output_col], diff_df.iloc[row_idx][output_col], orange_format)
                     
-                    # Apply blue formatting to Mnemo if needed
                     if diff_df_formatted.iloc[row_idx]['_mnemo_blue']:
-                        mnemo_col = diff_df.columns.get_loc('Mnemo')
                         worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], blue_format)
+                    
+                    if diff_df_formatted.iloc[row_idx]['_mnemo_purple']:
+                        worksheet1.write(excel_row, mnemo_col, diff_df.iloc[row_idx]['Mnemo'], purple_format)
+                    
+                    if diff_df_formatted.iloc[row_idx]['_name_purple']:
+                        worksheet1.write(excel_row, name_col, diff_df.iloc[row_idx]['Name'], purple_format)
         
         else:
             worksheet1 = workbook.add_worksheet('Differences')
@@ -1366,7 +1681,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 max_length = max(max_length, diff_df[col].astype(str).str.len().max())
             worksheet1.set_column(i, i, min(max_length + 2, 50))
         
-        # Sheet 2: Raw Data File 1
+        # Sheet 3 (or 2 for index): Raw Data File 1
         df1_clean_output = df1_clean.drop('composite_key', axis=1, errors='ignore')
         df1_clean_output = df1_clean_output.replace([np.inf, -np.inf], np.nan)
         
@@ -1400,7 +1715,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 max_length = max(max_length, df1_clean_output[col].astype(str).str.len().max())
             worksheet2.set_column(i, i, min(max_length + 2, 50))
         
-        # Sheet 3: Raw Data File 2
+        # Sheet 4 (or 3 for index): Raw Data File 2
         df2_clean_output = df2_clean.drop('composite_key', axis=1, errors='ignore')
         df2_clean_output = df2_clean_output.replace([np.inf, -np.inf], np.nan)
         
