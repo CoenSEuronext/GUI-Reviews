@@ -1,0 +1,17 @@
+2025-11-26 13:15:08,487 - werkzeug - WARNING -  * Debugger is active!
+2025-11-26 13:15:08,487 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-11-26 13:15:08,506 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:08] "GET /task-status/f84465d0-ff1b-4fd0-bfc6-93de1d357359 HTTP/1.1" 200 -
+2025-11-26 13:15:09,553 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:09] "POST /calculate HTTP/1.1" 200 -
+2025-11-26 13:15:09,558 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-11-26 13:15:09,558 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:09] "GET /task-status/91fd548b-45ce-43a5-bbec-43a9554c9c2a HTTP/1.1" 200 -
+2025-11-26 13:15:10,343 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-11-26 13:15:11,584 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:11] "GET /task-status/91fd548b-45ce-43a5-bbec-43a9554c9c2a HTTP/1.1" 200 -
+2025-11-26 13:15:13,570 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:13] "GET /task-status/91fd548b-45ce-43a5-bbec-43a9554c9c2a HTTP/1.1" 200 -
+2025-11-26 13:15:15,566 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:15] "GET /task-status/91fd548b-45ce-43a5-bbec-43a9554c9c2a HTTP/1.1" 200 -
+2025-11-26 13:15:17,568 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:17] "GET /task-status/91fd548b-45ce-43a5-bbec-43a9554c9c2a HTTP/1.1" 200 -
+2025-11-26 13:15:18,300 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-11-26 13:15:18,322 - Review.reviews.es2pr_review - INFO - Capping converged after 3 iterations
+2025-11-26 13:15:18,322 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.6981474425470566
+2025-11-26 13:15:18,338 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251126_131518.xlsx
+2025-11-26 13:15:19,567 - werkzeug - INFO - 127.0.0.1 - - [26/Nov/2025 13:15:19] "GET /task-status/91fd548b-45ce-43a5-bbec-43a9554c9c2a HTTP/1.1" 200 -
+2025-11-26 13:15:30,606 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nbit.py', reloading

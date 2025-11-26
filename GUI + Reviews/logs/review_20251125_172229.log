@@ -2216,3 +2216,4 @@ ValueError: Algorithm failed: Total weight is 0.80000000, not 1.0
 2025-11-25 17:24:51,974 - Review.reviews.sectorial_review - INFO - Individual files saved: 41
 2025-11-25 17:24:51,974 - Review.reviews.sectorial_review - INFO - Summary file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\All_Sectorial_Summary_20251125_172445.xlsx
 2025-11-25 17:24:52,805 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 17:24:52] "GET /task-status/d2051dd9-a109-49a6-a94c-e421342b20ec HTTP/1.1" 200 -
+2025-11-25 17:26:51,712 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading

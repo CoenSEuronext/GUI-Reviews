@@ -1,0 +1,34 @@
+Step 1: 
+Replace index information in the main function of the new index review:
+
+def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX00003031", 
+                    area="US", area2="EU", type="STOCK", universe="Developed Market", 
+                    feed="Reuters", currency="EUR", year=None):
+
+Step 2:
+Add to Config.py in identical formatting:
+
+    "EFESP": {
+        "index": "EFESP",
+        "isin": "NLIX00006584",
+        "output_key": "efesp_path"
+    }
+
+Step 3:
+Add the review function to review_logic.py
+
+    1. Import the review:
+        from .reviews.efesp_review import run_efesp_review
+    2. Add to REVIEW_FUNCTIONS dictionary
+
+Step 4:
+Add to compare_eia_files.py
+    1. add the mnemo of your new review to the mnemos list
+    2. add the mnemo to the pattern list
+
+Step 5:
+Add to compare.py
+    1. add the mnemo of your new review to the mnemos list
+    2. add the mnemo to the pattern list
+
+
