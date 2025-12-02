@@ -160,7 +160,7 @@ PURPLE_INDEX_MNEMONICS = {
 EXCLUDED_INDEX_VALUES = {
     'DUUSC', 'DUMEU', 'DUMUS', 'PFAEX', 'PFEES', 'PFPX1', 'PFOSF', 'PFOSB', 
     'PFCSB', 'PFMES', 'PFC4E', 'PFLCE', 'PFLC1', 'PFEBL', 'PFBEL', 'PFFRI', 
-    'PFFRD', 'BSWPF', 'PFLCW'
+    'PFFRD', 'BSWPF', 'PFLCW', "CTRFD"
 }
 
 # Timer decorator for performance monitoring
@@ -660,7 +660,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
         
         # Also include rows with formatting conditions of interest (even without differences)
         has_formatting_interest = pd.Series(False, index=common_keys)
-        
+
         # Check for BOTH Close Prc AND Adj Closing price empty or 0
         if 'Close Prc' in df2_common.columns and 'Adj Closing price' in df2_common.columns:
             close_prc_vals = pd.to_numeric(df2_common['Close Prc'], errors='coerce')
@@ -679,6 +679,17 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                     (abs(close_prc_vals - adj_closing_vals) > 1e-10)
                 )
                 has_formatting_interest |= close_adj_different
+            
+            # For morning: check if Adj Closing price differs between Manual (df1) and SOD (df2)
+            adj_closing_manual_sod_diff = pd.Series(False, index=common_keys)
+            if not is_afternoon:
+                if 'Adj Closing price' in df1_common.columns:
+                    adj_closing_manual = pd.to_numeric(df1_common['Adj Closing price'], errors='coerce').fillna(0)
+                    adj_closing_sod = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce').fillna(0)
+                    
+                    adj_closing_changed = abs(adj_closing_manual - adj_closing_sod) > 1e-10
+                    adj_closing_manual_sod_diff = adj_closing_changed
+                    has_formatting_interest |= adj_closing_changed
         
         # For afternoon/evening: include rows with positive dividends
         if is_afternoon:
@@ -757,7 +768,9 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'New FF': df2_diff.get('Free float-Coeff', ''),
                 'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
                 'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
-                'Cross-Ref Symbols': cross_ref_symbols
+                'Cross-Ref Symbols': cross_ref_symbols,
+                '_adj_closing_manual_sod_diff': adj_closing_manual_sod_diff.loc[diff_keys] if not is_afternoon else pd.Series(False, index=diff_keys)
+                
             }
             
             diff_df = pd.DataFrame(differences_data)
@@ -1074,6 +1087,8 @@ def get_stock_formatting_summary():
         ['ORANGE', 'Reflects regular changes', 'Prev. Shares + New Shares'],
         ['ORANGE', 'Reflects regular changes', 'Prev FF + New FF'],
         ['ORANGE', 'Reflects regular changes', 'Prev Capping + New Capping'],
+        ['YELLOW', 'Stock split -> Absolute value instead of Relative value', 'New Shares'],
+        ['PINK', 'Adj Closing price changed between Manual and SOD', 'Adj Closing Price'],
         ['RED', 'FF is empty, 0 or >1', 'New FF'],
         ['RED', 'Cell Empty or 0', 'Adj Closing Price'],
         ['BLUE', 'Reflects Share change in indices that should not change', 'Prev. Shares'],
@@ -1170,6 +1185,8 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         blue_format = workbook.add_format({'bg_color': '#0070C0', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
         purple_format = workbook.add_format({'bg_color': '#800080', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
         black_format = workbook.add_format({'bg_color': '#000000', 'font_color': '#FFFFFF', 'font_name': 'Verdana', 'font_size': 10})
+        yellow_format = workbook.add_format({'bg_color': '#FFFF00', 'font_name': 'Verdana', 'font_size': 10})
+        pink_format = workbook.add_format({'bg_color': '#FFC0CB', 'font_name': 'Verdana', 'font_size': 10})
         normal_format = workbook.add_format({'font_name': 'Verdana', 'font_size': 10})
         header_format = workbook.add_format({
             'bold': True,
@@ -1207,6 +1224,10 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         color_format = black_format
                     elif color_type == 'PURPLE':
                         color_format = purple_format
+                    elif color_type == 'YELLOW':
+                        color_format = yellow_format
+                    elif color_type == 'PINK':  # ADD THESE 2 LINES
+                        color_format = pink_format
                     else:
                         color_format = normal_format
                     
@@ -1230,6 +1251,8 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 diff_df_formatted['_shares_changed'] = False
                 diff_df_formatted['_prev_shares_blue'] = False
                 diff_df_formatted['_new_shares_blue'] = False
+                diff_df_formatted['_new_shares_yellow'] = False
+                diff_df_formatted['_adj_closing_price_pink'] = False
                 diff_df_formatted['_ff_red'] = False
                 diff_df_formatted['_ff_orange'] = False
                 diff_df_formatted['_capping_changed'] = False
@@ -1268,6 +1291,23 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     )
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_shares_changed')] = shares_changed
                     
+                    new_shares_yellow = False
+                    if is_afternoon_evening and shares_changed:
+                        try:
+                            prev_shares_numeric = float(prev_shares) if pd.notna(prev_shares) and str(prev_shares).strip() != '' else None
+                            new_shares_numeric = float(new_shares) if pd.notna(new_shares) and str(new_shares).strip() != '' else None
+                            
+                            if prev_shares_numeric is not None and new_shares_numeric is not None:
+                                if prev_shares_numeric > 26 and new_shares_numeric < 26:
+                                    new_shares_yellow = True
+                        except (ValueError, TypeError):
+                            pass
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_new_shares_yellow')] = new_shares_yellow
+                    
+                    # Add to checklist if yellow (but not for Removal or Add Composition)
+                    if new_shares_yellow and adj_rsn not in ("Removal", "Add Composition"):
+                        checklist_data.append([isin_code, name, 'New Shares', 'Stock split -> Absolute value instead of Relative value', '', 'YELLOW'])
+                    
                     prev_shares_blue = mnemo_allowed and shares_changed
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_prev_shares_blue')] = prev_shares_blue
                     if prev_shares_blue:
@@ -1275,12 +1315,15 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     
                     new_shares_blue = is_afternoon_evening and shares_changed and (index_value not in ALLOWED_MNEMONICS)
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_new_shares_blue')] = new_shares_blue
-                    if new_shares_blue:
-                        checklist_data.append([isin_code, name, 'New Shares', 'Reflects Shares change in indices that should not change daily unless special CA', '', 'BLUE'])
+
+                    # Add to checklist if blue (but only if NOT yellow, and not for Removal/Add Composition)
+                    if new_shares_blue and not new_shares_yellow and adj_rsn not in ("Removal", "Add Composition"):
+                        checklist_data.append([isin_code, name, 'New Shares', 'Reflects Shares change in indices that should not change daily unless special CA', '', 'BLUE'])                    
                     
                     new_ff = diff_df.iloc[idx]['New FF']
                     prev_ff = diff_df.iloc[idx]['Prev FF']
                     new_ff_clean = '' if pd.isna(new_ff) else new_ff
+                    
                     try:
                         new_ff_numeric = float(new_ff_clean) if new_ff_clean != '' else None
                     except (ValueError, TypeError):
@@ -1360,6 +1403,14 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     if adj_closing_red:
                         checklist_data.append([isin_code, name, 'Adj Closing price', 'When Empty or 0', '', 'RED'])
                     
+                    adj_closing_pink = False
+                    if not is_afternoon_evening:
+                        # Use the flag from difference detection that tracks Manual vs SOD Adj Closing price difference
+                        adj_closing_pink = bool(diff_df.iloc[idx].get('_adj_closing_manual_sod_diff', False))
+                    diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_adj_closing_price_pink')] = adj_closing_pink
+                    if adj_closing_pink:
+                        checklist_data.append([isin_code, name, 'Adj Closing Price', 'Adj Closing price changed between Manual and SOD (Morning only)', '', 'PINK'])
+                    
                     symbol_not_in_crossref = False
                     if is_afternoon_evening:
                         cross_ref_symbols_str = str(diff_df.iloc[idx].get('Cross-Ref Symbols', '')).strip()
@@ -1393,6 +1444,10 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         isin_format = blue_format
                     elif color_type == 'BLACK':
                         isin_format = black_format
+                    elif color_type == 'YELLOW':
+                        isin_format = yellow_format
+                    elif color_type == 'PINK':
+                        isin_format = pink_format
                     else:
                         isin_format = normal_format
                     
@@ -1408,7 +1463,9 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 summary_sheet.set_column(4, 4, 10)  # Check? column
                 
                 diff_df_main = diff_df_formatted.drop([
-                    '_shares_changed', '_prev_shares_blue', '_new_shares_blue', '_ff_red', '_ff_orange', '_capping_changed', 
+                    '_shares_changed', '_prev_shares_blue', '_new_shares_blue', '_new_shares_yellow',
+                    '_adj_closing_price_pink', '_adj_closing_manual_sod_diff',
+                    '_ff_red', '_ff_orange', '_capping_changed', 
                     '_adj_price_changed', '_icb_changed', '_div_positive', '_mnemo_allowed',
                     '_close_prc_red', '_adj_closing_price_red', '_adj_closing_price_blue', '_gross_div_blue',
                     '_symbol_not_in_crossref', '_is_removal'
@@ -1570,20 +1627,28 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                                         diff_df.iloc[row_idx]['Adj Closing price'], red_format)
 
                     # --------------------------------------------------------------
-                    # 2. BLUE formatting on New Shares
-                    #    → do NOT apply when Adj. Rsn is "Removal" or "Add Composition"
+                    # 2. BLUE/YELLOW formatting on New Shares
+                    #    → YELLOW takes precedence over BLUE and ORANGE
+                    #    → BLUE: do NOT apply when Adj. Rsn is "Removal" or "Add Composition"
                     # --------------------------------------------------------------
-                    apply_new_shares_blue = (
-                        diff_df_formatted.iloc[row_idx]['_new_shares_blue'] and
-                        adj_rsn not in ("Removal", "Add Composition")
-                    )
-
-                    if apply_new_shares_blue:
+                    if diff_df_formatted.iloc[row_idx]['_new_shares_yellow']:
+                        # YELLOW has highest precedence for New Shares (stock split detection)
                         worksheet1.write(excel_row, new_shares_col,
-                                        diff_df.iloc[row_idx]['New Shares'], blue_format)
-                    elif diff_df_formatted.iloc[row_idx]['_shares_changed']:
-                        worksheet1.write(excel_row, new_shares_col,
-                                        diff_df.iloc[row_idx]['New Shares'], orange_format)
+                                        diff_df.iloc[row_idx]['New Shares'], yellow_format)
+                    else:
+                        # Check BLUE condition (only if not yellow)
+                        apply_new_shares_blue = (
+                            diff_df_formatted.iloc[row_idx]['_new_shares_blue'] and
+                            adj_rsn not in ("Removal", "Add Composition")
+                        )
+                        
+                        if apply_new_shares_blue:
+                            worksheet1.write(excel_row, new_shares_col,
+                                            diff_df.iloc[row_idx]['New Shares'], blue_format)
+                        elif diff_df_formatted.iloc[row_idx]['_shares_changed']:
+                            # ORANGE for regular share changes (if not yellow or blue)
+                            worksheet1.write(excel_row, new_shares_col,
+                                            diff_df.iloc[row_idx]['New Shares'], orange_format)
 
                     # Prev. Shares blue stays unchanged (still only when mnemo allowed)
                     if diff_df_formatted.iloc[row_idx]['_prev_shares_blue']:
@@ -1612,7 +1677,13 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         worksheet1.write(excel_row, new_capping_col,
                                         diff_df.iloc[row_idx]['New Capping'], orange_format)
 
-                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_blue']:
+                    # Adj Closing price formatting - UPDATED WITH PINK
+                    # Pink takes precedence over Blue and Orange
+                    if diff_df_formatted.iloc[row_idx]['_adj_closing_price_pink']:
+                        # PINK for morning when Adj Closing price changed
+                        worksheet1.write(excel_row, adj_closing_price_col,
+                                        diff_df.iloc[row_idx]['Adj Closing price'], pink_format)
+                    elif diff_df_formatted.iloc[row_idx]['_adj_closing_price_blue']:
                         worksheet1.write(excel_row, adj_closing_price_col,
                                         diff_df.iloc[row_idx]['Adj Closing price'], blue_format)
                     elif diff_df_formatted.iloc[row_idx]['_adj_price_changed']:

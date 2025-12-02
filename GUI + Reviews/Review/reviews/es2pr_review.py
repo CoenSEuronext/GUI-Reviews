@@ -13,7 +13,9 @@ logger = setup_logging(__name__)
 def calculate_capping_factors(df, index_mcap, max_individual_weight=0.10, max_sector_weight=0.50, max_iterations=100):
     """
     Calculate capping factors with individual (10%) and sector (50%) caps.
-    Once a company is capped at 10%, it remains at 10% and doesn't receive redistributed weight.
+    Two-step approach:
+    1. Iteratively apply individual cap until fully satisfied (using proportional capping method)
+    2. Iteratively apply sector cap (only to companies not capped in step 1)
     Final capping factors are normalized so the highest is 1.
     Returns the dataframe with capping factors and a list of iteration steps for tracking.
     """
@@ -21,114 +23,173 @@ def calculate_capping_factors(df, index_mcap, max_individual_weight=0.10, max_se
     df = df.copy()
     df['Capping Factor'] = 1.0
     df['Initial Weight'] = (df['Mcap in EUR_EOD'] / index_mcap)
-    df['Is Capped'] = False  # Track which companies are already capped at 10%
+    df['Is Capped'] = False  # Track which companies are capped at 10%
     
     # Track iterations
     iterations_data = []
     company_iteration_steps = []
+    iteration_counter = 0
+    
+    # ============================================================================
+    # STEP 1: ITERATIVELY APPLY INDIVIDUAL CAP UNTIL FULLY SATISFIED
+    # Using the proportional_capping approach
+    # ============================================================================
+    logger.info("Starting Step 1: Individual capping")
+    
+    # Start with initial weights
+    df['Current Weight'] = df['Initial Weight'].copy()
     
     for iteration in range(max_iterations):
-        # Calculate current weights with capping factors
-        df['Capped Mcap'] = df['Mcap in EUR_EOD'] * df['Capping Factor']
-        total_capped_mcap = df['Capped Mcap'].sum()
-        df['Current Weight'] = df['Capped Mcap'] / total_capped_mcap
-        
         # Calculate sector weights (using first 4 digits of Subsector Code for ICB Industry)
         df['ICB Industry'] = df['Subsector Code'].astype(str).str[:4]
         sector_weights = df.groupby('ICB Industry')['Current Weight'].sum()
         
+        iteration_counter += 1
+        
         # Save company states for this iteration
         for idx, row in df.iterrows():
             company_iteration_steps.append({
-                'Iteration': iteration + 1,
+                'Iteration': iteration_counter,
+                'Step': 'Individual Cap',
                 'Company': row['Company'],
                 'ISIN code': row['ISIN code'],
                 'ICB Industry': row['ICB Industry'],
                 'Capping Factor': row['Capping Factor'],
                 'Current Weight': row['Current Weight'],
                 'Is Capped': row['Is Capped'],
-                'Above Individual Cap': row['Current Weight'] > max_individual_weight,
+                'Above Individual Cap': round(row['Current Weight'], 14) > max_individual_weight,
                 'Sector Weight': sector_weights.loc[row['ICB Industry']]
             })
         
         # Track this iteration summary
         iteration_info = {
-            'Iteration': iteration + 1,
+            'Iteration': iteration_counter,
+            'Step': 'Individual Cap',
             'Max Individual Weight': df['Current Weight'].max(),
             'Max Sector Weight': sector_weights.max(),
-            'Companies Above 10%': (df['Current Weight'] > max_individual_weight).sum(),
+            'Companies Above 10%': (df['Current Weight'].round(14) > max_individual_weight).sum(),
             'Companies Capped at 10%': df['Is Capped'].sum(),
             'Sectors Above 50%': (sector_weights > max_sector_weight).sum(),
             'Total Weight': df['Current Weight'].sum()
         }
         iterations_data.append(iteration_info)
         
-        # Check if both caps are satisfied
-        individual_breach = (df['Current Weight'] > max_individual_weight) & (~df['Is Capped'])
-        sector_breach = df['ICB Industry'].map(sector_weights) > max_sector_weight
-        
-        if not individual_breach.any() and not sector_breach.any():
-            logger.info(f"Capping converged after {iteration + 1} iterations")
+        # Check if individual cap is satisfied (using rounding to 14 decimals)
+        if df[df['Current Weight'].round(14) > max_individual_weight].shape[0] == 0:
+            logger.info(f"Individual capping satisfied after {iteration + 1} iterations")
             break
         
-        # Step 1: Apply individual cap (only to companies not already capped)
-        if individual_breach.any():
-            # Mark companies that need to be capped
-            newly_capped = individual_breach
-            
-            # Calculate how much weight these companies currently have vs what they should have
-            excess_weight = df.loc[newly_capped, 'Current Weight'].sum() - (newly_capped.sum() * max_individual_weight)
-            
-            # Cap these companies at exactly 10% of total index
-            # Calculate capping factor needed to achieve exactly 10% weight
-            for idx in df[newly_capped].index:
-                target_mcap = max_individual_weight * total_capped_mcap
-                df.loc[idx, 'Capping Factor'] = target_mcap / df.loc[idx, 'Mcap in EUR_EOD']
-                df.loc[idx, 'Is Capped'] = True
-            
-            # Redistribute excess weight only to uncapped companies
-            uncapped_mask = ~df['Is Capped']
-            if uncapped_mask.any() and excess_weight > 0:
-                uncapped_weight = df.loc[uncapped_mask, 'Current Weight'].sum()
-                if uncapped_weight > 0:
-                    # Proportionally increase weights of uncapped companies
-                    redistribution_factor = 1 + (excess_weight / uncapped_weight)
-                    df.loc[uncapped_mask, 'Capping Factor'] *= redistribution_factor
+        # Count how many companies need capping
+        to_cap_count = df[df['Current Weight'].round(14) >= max_individual_weight].shape[0]
         
-        # Recalculate after individual capping
-        df['Capped Mcap'] = df['Mcap in EUR_EOD'] * df['Capping Factor']
-        total_capped_mcap = df['Capped Mcap'].sum()
-        df['Current Weight'] = df['Capped Mcap'] / total_capped_mcap
+        # Compute how much weight should be allocated to the non-capped companies
+        final_weight_uncapped = 1.0 - (max_individual_weight * to_cap_count)
+        
+        # Compute how much weight the non-capped companies currently have
+        initial_weight_uncapped = df[df['Current Weight'].round(14) < max_individual_weight]['Current Weight'].sum()
+        
+        # Calculate weight increase ratio
+        if initial_weight_uncapped > 0:
+            weight_increase_ratio = (final_weight_uncapped / initial_weight_uncapped) - 1
+        else:
+            weight_increase_ratio = 0
+        
+        # Apply capping: cap at max_individual_weight or increase proportionally
+        df['Current Weight'] = np.where(
+            df['Current Weight'].round(14) >= max_individual_weight,
+            max_individual_weight,
+            df['Current Weight'] * (1 + weight_increase_ratio)
+        )
+        
+        # Mark companies that are now capped
+        df['Is Capped'] = df['Current Weight'].round(14) >= max_individual_weight
+        
+        # Update capping factors based on new weights
+        # Capping Factor = (Current Weight * Total Market Cap) / Original Market Cap
+        total_index_mcap = index_mcap  # This remains constant
+        df['Capping Factor'] = (df['Current Weight'] * total_index_mcap) / df['Mcap in EUR_EOD']
+    else:
+        logger.warning(f"Individual capping did not converge after {max_iterations} iterations")
+    
+    # ============================================================================
+    # STEP 2: ITERATIVELY APPLY SECTOR CAP
+    # ============================================================================
+    logger.info("Starting Step 2: Sector capping")
+    
+    for iteration in range(max_iterations):
+        # Recalculate sector weights
         sector_weights = df.groupby('ICB Industry')['Current Weight'].sum()
         
-        # Step 2: Apply sector cap
-        breached_sectors = sector_weights[sector_weights > max_sector_weight].index
+        iteration_counter += 1
+        
+        # Save company states for this iteration
+        for idx, row in df.iterrows():
+            company_iteration_steps.append({
+                'Iteration': iteration_counter,
+                'Step': 'Sector Cap',
+                'Company': row['Company'],
+                'ISIN code': row['ISIN code'],
+                'ICB Industry': row['ICB Industry'],
+                'Capping Factor': row['Capping Factor'],
+                'Current Weight': row['Current Weight'],
+                'Is Capped': row['Is Capped'],
+                'Above Individual Cap': round(row['Current Weight'], 14) > max_individual_weight,
+                'Sector Weight': sector_weights.loc[row['ICB Industry']]
+            })
+        
+        # Track this iteration summary
+        iteration_info = {
+            'Iteration': iteration_counter,
+            'Step': 'Sector Cap',
+            'Max Individual Weight': df['Current Weight'].max(),
+            'Max Sector Weight': sector_weights.max(),
+            'Companies Above 10%': (df['Current Weight'].round(14) > max_individual_weight).sum(),
+            'Companies Capped at 10%': df['Is Capped'].sum(),
+            'Sectors Above 50%': (sector_weights.round(14) > max_sector_weight).sum(),
+            'Total Weight': df['Current Weight'].sum()
+        }
+        iterations_data.append(iteration_info)
+        
+        # Check if sector cap is satisfied (using rounding to 14 decimals)
+        sector_breach = sector_weights.round(14) > max_sector_weight
+        
+        if not sector_breach.any():
+            logger.info(f"Sector capping satisfied after {iteration + 1} iterations")
+            break
+        
+        # Find the breached sector
+        breached_sectors = sector_weights[sector_breach].index
+        
         if len(breached_sectors) > 0:
-            for sector in breached_sectors:
-                sector_mask = df['ICB Industry'] == sector
-                
-                # Calculate sector excess
-                sector_current_weight = df.loc[sector_mask, 'Current Weight'].sum()
-                sector_excess = sector_current_weight - max_sector_weight
-                
-                # Scale down all companies in the breached sector proportionally
-                # But respect the 10% cap for already-capped companies
-                scale_factor = max_sector_weight / sector_current_weight
-                df.loc[sector_mask, 'Capping Factor'] *= scale_factor
-                
-                # Redistribute excess only to companies NOT in breached sectors and NOT capped at 10%
-                eligible_for_redistribution = (~df['ICB Industry'].isin(breached_sectors)) & (~df['Is Capped'])
-                
-                if eligible_for_redistribution.any():
-                    eligible_weight = df.loc[eligible_for_redistribution, 'Current Weight'].sum()
-                    if eligible_weight > 0:
-                        redistribution_factor = 1 + (sector_excess / eligible_weight)
-                        df.loc[eligible_for_redistribution, 'Capping Factor'] *= redistribution_factor
-    
+            # Take the sector with highest breach
+            breached_sector = sector_weights[sector_breach].idxmax()
+            
+            sector_mask = df['ICB Industry'] == breached_sector
+            
+            # Calculate sector excess
+            sector_current_weight = df.loc[sector_mask, 'Current Weight'].sum()
+            sector_excess = sector_current_weight - max_sector_weight
+            
+            # Scale down all companies in the breached sector proportionally
+            scale_factor = max_sector_weight / sector_current_weight
+            df.loc[sector_mask, 'Current Weight'] *= scale_factor
+            df.loc[sector_mask, 'Capping Factor'] *= scale_factor
+            
+            # Redistribute excess only to companies NOT in breached sector and NOT capped at 10%
+            eligible_for_redistribution = (~df['ICB Industry'].isin(breached_sectors)) & (~df['Is Capped'])
+            
+            if eligible_for_redistribution.any() and sector_excess > 0:
+                eligible_weight = df.loc[eligible_for_redistribution, 'Current Weight'].sum()
+                if eligible_weight > 0:
+                    redistribution_factor = 1 + (sector_excess / eligible_weight)
+                    df.loc[eligible_for_redistribution, 'Current Weight'] *= redistribution_factor
+                    df.loc[eligible_for_redistribution, 'Capping Factor'] *= redistribution_factor
     else:
-        logger.warning(f"Capping did not converge after {max_iterations} iterations")
+        logger.warning(f"Sector capping did not converge after {max_iterations} iterations")
     
-    # NORMALIZE CAPPING FACTORS - highest should be 1
+    # ============================================================================
+    # NORMALIZE CAPPING FACTORS
+    # ============================================================================
     max_capping_factor = df['Capping Factor'].max()
     if max_capping_factor > 0:
         df['Unnormalized Capping Factor'] = df['Capping Factor'].copy()
@@ -146,11 +207,12 @@ def calculate_capping_factors(df, index_mcap, max_individual_weight=0.10, max_se
     # Update final iteration info with normalized values
     final_iteration_info = {
         'Iteration': 'Final (Normalized)',
+        'Step': 'Normalized',
         'Max Individual Weight': df['Final Weight'].max(),
         'Max Sector Weight': final_sector_weights.max(),
-        'Companies Above 10%': (df['Final Weight'] > max_individual_weight).sum(),
+        'Companies Above 10%': (df['Final Weight'].round(14) > max_individual_weight).sum(),
         'Companies Capped at 10%': df['Is Capped'].sum(),
-        'Sectors Above 50%': (final_sector_weights > max_sector_weight).sum(),
+        'Sectors Above 50%': (final_sector_weights.round(14) > max_sector_weight).sum(),
         'Total Weight': df['Final Weight'].sum(),
         'Max Capping Factor': df['Capping Factor'].max(),
         'Normalization Factor': max_capping_factor if max_capping_factor > 0 else 1.0
@@ -166,7 +228,7 @@ def calculate_capping_factors(df, index_mcap, max_individual_weight=0.10, max_se
         'Final Weight': 'sum',
         'Company': 'count'
     }).rename(columns={'Company': 'Number of Companies'}).reset_index()
-    sector_summary['Within 50% Cap'] = sector_summary['Final Weight'] <= max_sector_weight
+    sector_summary['Within 50% Cap'] = sector_summary['Final Weight'].round(14) <= max_sector_weight
     
     return df, iterations_df, company_iterations_df, sector_summary
 

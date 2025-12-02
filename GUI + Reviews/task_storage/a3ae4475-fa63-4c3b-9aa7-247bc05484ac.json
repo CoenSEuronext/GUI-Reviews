@@ -1,0 +1,24 @@
+{
+  "task_id": "a3ae4475-fa63-4c3b-9aa7-247bc05484ac",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-02T15:58:58.982550",
+  "started_at": "2025-12-02T15:58:58.986953",
+  "completed_at": "2025-12-02T15:59:13.360250",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'float' object has no attribute 'round'",
+  "error": "Error during review calculation: 'float' object has no attribute 'round'",
+  "result_data": null,
+  "review_type": "ES2PR",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ES2PR",
+    "isin": "NLIX00008218",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 14.370209
+}

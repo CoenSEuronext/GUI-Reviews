@@ -1,0 +1,23 @@
+2025-12-02 16:01:48,039 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 16:01:48,039 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 16:02:02,889 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:02] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 16:02:02,890 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-12-02 16:02:02,890 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:02] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:04,906 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:04] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:06,906 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:06] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:07,755 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-12-02 16:02:08,918 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:08] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:10,915 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:10] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:12,939 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:12] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:14,906 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:14] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:16,892 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:16] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:17,139 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-12-02 16:02:17,139 - Review.reviews.es2pr_review - INFO - Starting Step 1: Individual capping
+2025-12-02 16:02:17,139 - Review.reviews.es2pr_review - INFO - Individual capping satisfied after 3 iterations
+2025-12-02 16:02:17,139 - Review.reviews.es2pr_review - INFO - Starting Step 2: Sector capping
+2025-12-02 16:02:17,158 - Review.reviews.es2pr_review - INFO - Sector capping satisfied after 2 iterations
+2025-12-02 16:02:17,158 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.6471173314546406
+2025-12-02 16:02:17,168 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251202_160217.xlsx
+2025-12-02 16:02:18,909 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:02:18] "GET /task-status/34477941-96c3-4e98-bf59-825629df98f6 HTTP/1.1" 200 -
+2025-12-02 16:02:41,366 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-12-02 16:02:41,366 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading

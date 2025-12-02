@@ -1,0 +1,27 @@
+2025-12-02 15:58:25,012 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 15:58:25,014 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 15:58:25,051 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:25] "GET /task-status/4296cba2-59bd-4a47-801d-13c2e7430f95 HTTP/1.1" 200 -
+2025-12-02 15:58:25,992 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:25] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 15:58:25,992 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-12-02 15:58:26,001 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:26] "GET /task-status/d8d11afa-21ce-46de-84fb-ac8ca8c65b26 HTTP/1.1" 200 -
+2025-12-02 15:58:26,755 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-12-02 15:58:28,009 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:28] "GET /task-status/d8d11afa-21ce-46de-84fb-ac8ca8c65b26 HTTP/1.1" 200 -
+2025-12-02 15:58:30,643 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:30] "GET /task-status/d8d11afa-21ce-46de-84fb-ac8ca8c65b26 HTTP/1.1" 200 -
+2025-12-02 15:58:32,015 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:32] "GET /task-status/d8d11afa-21ce-46de-84fb-ac8ca8c65b26 HTTP/1.1" 200 -
+2025-12-02 15:58:34,016 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:34] "GET /task-status/d8d11afa-21ce-46de-84fb-ac8ca8c65b26 HTTP/1.1" 200 -
+2025-12-02 15:58:35,493 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-12-02 15:58:35,493 - Review.reviews.es2pr_review - INFO - Starting Step 1: Individual capping
+2025-12-02 15:58:35,502 - Review.reviews.es2pr_review - ERROR - Error during review calculation: 'float' object has no attribute 'round'
+2025-12-02 15:58:35,505 - Review.reviews.es2pr_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\es2pr_review.py", line 368, in run_es2pr_review
+    selection_df, iterations_df, company_iterations_df, sector_summary_df = calculate_capping_factors(
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\es2pr_review.py", line 60, in calculate_capping_factors
+    'Above Individual Cap': row['Current Weight'].round(14) > max_individual_weight,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'round'
+
+2025-12-02 15:58:36,009 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 15:58:36] "GET /task-status/d8d11afa-21ce-46de-84fb-ac8ca8c65b26 HTTP/1.1" 200 -
+2025-12-02 15:58:56,725 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-12-02 15:58:56,725 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-12-02 15:58:57,677 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading

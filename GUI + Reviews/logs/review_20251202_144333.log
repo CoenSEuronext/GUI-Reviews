@@ -1,0 +1,6 @@
+2025-12-02 14:43:33,955 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 14:43:33,958 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 14:43:44,127 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-12-02 14:43:44,892 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading
+2025-12-02 14:43:44,945 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-12-02 14:43:44,947 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading

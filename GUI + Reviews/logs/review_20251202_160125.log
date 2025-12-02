@@ -1,0 +1,8 @@
+2025-12-02 16:01:25,731 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 16:01:25,731 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 16:01:25,758 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:01:25] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 16:01:25,767 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-12-02 16:01:25,772 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:01:25] "GET /task-status/b7fdbf42-fa9b-47a3-b1dd-8079e6ba96ca HTTP/1.1" 200 -
+2025-12-02 16:01:27,542 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-12-02 16:01:27,544 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-12-02 16:01:27,774 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 16:01:27] "GET /task-status/b7fdbf42-fa9b-47a3-b1dd-8079e6ba96ca HTTP/1.1" 200 -
