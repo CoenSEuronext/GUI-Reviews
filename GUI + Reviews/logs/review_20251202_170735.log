@@ -1,0 +1,43 @@
+2025-12-02 17:07:36,228 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 17:07:36,228 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 17:07:36,557 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:07:36] "GET /task-status/bef778f0-91c5-4ab0-bb8a-8fcce1d1f58a HTTP/1.1" 200 -
+2025-12-02 17:07:38,078 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:07:38] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 17:07:38,088 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-02 17:07:38,092 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:07:38] "GET /task-status/29b29997-d987-4aa1-9bc5-ccbcaf380741 HTTP/1.1" 200 -
+2025-12-02 17:07:39,201 - Review.reviews.ezsl_review - ERROR - Error during review calculation: Failed to load required reference data files
+2025-12-02 17:07:39,201 - Review.reviews.ezsl_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezsl_review.py", line 61, in run_ezsl_review
+    raise ValueError("Failed to load required reference data files")
+ValueError: Failed to load required reference data files
+
+2025-12-02 17:07:40,091 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:07:40] "GET /task-status/29b29997-d987-4aa1-9bc5-ccbcaf380741 HTTP/1.1" 200 -
+2025-12-02 17:10:03,957 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:10:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 17:10:03,959 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-02 17:10:03,961 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:10:03] "GET /task-status/dbc1d013-9db4-4ad6-89f1-27383d21b909 HTTP/1.1" 200 -
+2025-12-02 17:10:05,975 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:10:05] "GET /task-status/dbc1d013-9db4-4ad6-89f1-27383d21b909 HTTP/1.1" 200 -
+2025-12-02 17:10:07,234 - Review.reviews.ezsl_review - ERROR - Error during review calculation: 'fx_rate'
+2025-12-02 17:10:07,234 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-12-02 17:10:07,241 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-12-02 17:10:07,241 - Review.reviews.ezsl_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'fx_rate'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezsl_review.py", line 63, in run_ezsl_review
+    full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['NOSH_final'] * full_universe_df['Price_final'] * full_universe_df['free_float']
+                                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'fx_rate'
+

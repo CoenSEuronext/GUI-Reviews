@@ -225,6 +225,10 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
         'sustainalytics': {
             'filename': 'sustainalytics.xlsx',
             'loader': lambda f: pd.read_excel(f)
+        },
+        'dezpt': {
+            'filename': 'DEZPT.xlsx',
+            'loader': lambda f: pd.read_excel(f)
         }
     }
     

@@ -1,0 +1,23 @@
+2025-12-03 13:48:33,539 - werkzeug - WARNING -  * Debugger is active!
+2025-12-03 13:48:33,540 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-03 13:48:33,570 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:48:33] "GET /task-status/5712a41b-cdfb-4a88-a916-295b952e0569 HTTP/1.1" 200 -
+2025-12-03 13:48:34,725 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:48:34] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 13:48:34,725 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 13:48:34,725 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:48:34] "GET /task-status/f359ca3e-fef0-48c4-84e8-ff0ed5164f9e HTTP/1.1" 200 -
+2025-12-03 13:48:35,884 - Review.reviews.ezsl_review - INFO - Found 0 existing companies in EZSL
+2025-12-03 13:48:35,901 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary:
+2025-12-03 13:48:35,901 - Review.reviews.ezsl_review - INFO - Total companies selected: 358
+2025-12-03 13:48:35,901 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 0
+2025-12-03 13:48:35,901 - Review.reviews.ezsl_review - INFO -   - New companies selected: 358
+2025-12-03 13:48:35,901 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 13.02%
+2025-12-03 13:48:35,908 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-03 13:48:35,909 - Review.reviews.ezsl_review - INFO - Inclusions: 358
+2025-12-03 13:48:35,909 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-03 13:48:35,910 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_134835.xlsx
+2025-12-03 13:48:36,034 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_134835.xlsx
+2025-12-03 13:48:36,737 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:48:36] "GET /task-status/f359ca3e-fef0-48c4-84e8-ff0ed5164f9e HTTP/1.1" 200 -
+2025-12-03 14:05:31,981 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 14:05:31,981 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 14:05:31,999 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading

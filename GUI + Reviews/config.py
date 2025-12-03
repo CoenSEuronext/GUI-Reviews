@@ -260,6 +260,11 @@ INDEX_CONFIGS = {
         "index": "ES2PR",
         "isin": "NLIX00008218",
         "output_key": "es2pr_path"
+    },
+    "EZSL": {
+        "index": "EZSL",
+        "isin": "NLIX00008655",
+        "output_key": "ezsl_path"
     }
     # Add new indices here following the same pattern
 }
@@ -327,7 +332,7 @@ ALL_MNEMOS = [
     "EQGFP", "ENFRP", "ES4PP", "EZ6PP", "FREMP", "EBLPP", "BIOEP", "JPCLE", "JPCLA", "EBSEP", 
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
-    "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR"
+    "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL"
 ]
 
 

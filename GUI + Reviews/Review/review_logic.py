@@ -53,6 +53,7 @@ from .reviews.aexat_review import run_aexat_review
 from .reviews.aetaw_review import run_aetaw_review
 from .reviews.es2pr_review import run_es2pr_review
 from .reviews.envb_review import run_envb_review
+from .reviews.ezsl_review import run_ezsl_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -109,7 +110,8 @@ REVIEW_FUNCTIONS = {
     "AEXAT": run_aexat_review,
     "AETAW": run_aetaw_review,
     "ES2PR": run_es2pr_review,
-    "ENVB": run_envb_review
+    "ENVB": run_envb_review,
+    "EZSL": run_ezsl_review
 }
 
 def run_review(review_type, **kwargs):

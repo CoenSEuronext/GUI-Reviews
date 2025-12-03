@@ -1,0 +1,4 @@
+2025-12-02 17:11:37,776 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 17:11:37,776 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 17:13:10,523 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2025-12-02 17:13:10,526 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading

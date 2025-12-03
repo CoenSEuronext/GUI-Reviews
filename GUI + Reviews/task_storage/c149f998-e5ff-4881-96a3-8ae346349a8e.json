@@ -1,0 +1,34 @@
+{
+  "task_id": "c149f998-e5ff-4881-96a3-8ae346349a8e",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-03T14:33:13.946490",
+  "started_at": "2025-12-03T14:33:13.949492",
+  "completed_at": "2025-12-03T14:33:16.331491",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ezsl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZSL_Review_20251203_143316.xlsx",
+    "summary": {
+      "total_companies": 356,
+      "existing_companies_selected": 353,
+      "new_companies_selected": 3,
+      "total_ffmc_coverage": 14.917935481486433,
+      "inclusions_count": 3,
+      "exclusions_count": 0
+    }
+  },
+  "review_type": "EZSL",
+  "parameters": {
+    "date": "20251113",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZSL",
+    "isin": "NLIX00008655",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.380003
+}

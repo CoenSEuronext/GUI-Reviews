@@ -1,0 +1,24 @@
+{
+  "task_id": "8dbb0a36-d401-4448-86ad-3c89b3bc2c26",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-03T13:18:28.752759",
+  "started_at": "2025-12-03T13:18:28.752759",
+  "completed_at": "2025-12-03T13:18:30.096492",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'FFMC'",
+  "error": "Error during review calculation: 'FFMC'",
+  "result_data": null,
+  "review_type": "EZSL",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZSL",
+    "isin": "NLIX00008655",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.343733
+}

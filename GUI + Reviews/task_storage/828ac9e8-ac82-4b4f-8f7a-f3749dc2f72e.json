@@ -1,0 +1,24 @@
+{
+  "task_id": "828ac9e8-ac82-4b4f-8f7a-f3749dc2f72e",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-03T13:18:05.492227",
+  "started_at": "2025-12-03T13:18:05.492227",
+  "completed_at": "2025-12-03T13:18:07.517959",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "EZSL",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZSL",
+    "isin": "NLIX00008655",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

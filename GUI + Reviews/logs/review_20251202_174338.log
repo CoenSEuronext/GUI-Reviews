@@ -1,0 +1,20 @@
+2025-12-02 17:43:38,835 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 17:43:38,837 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 17:43:39,236 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:43:39] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 17:43:39,245 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-02 17:43:39,245 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:43:39] "GET /task-status/b5a8b332-c8e4-405d-b809-ca59af3a2c7f HTTP/1.1" 200 -
+2025-12-02 17:43:40,737 - Review.reviews.ezsl_review - ERROR - Error during review calculation: 'FFMC'
+2025-12-02 17:43:40,745 - Review.reviews.ezsl_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezsl_review.py", line 76, in run_ezsl_review
+    universe_df = universe_df.sort_values('FFMC', ascending=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 7189, in sort_values
+    k = self._get_label_or_level_values(by[0], axis=axis)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'FFMC'
+
+2025-12-02 17:43:40,746 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2025-12-02 17:43:41,251 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:43:41] "GET /task-status/b5a8b332-c8e4-405d-b809-ca59af3a2c7f HTTP/1.1" 200 -
+2025-12-02 17:43:41,339 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading

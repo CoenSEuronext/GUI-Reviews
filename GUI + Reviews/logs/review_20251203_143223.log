@@ -1,0 +1,6 @@
+2025-12-03 14:32:23,680 - werkzeug - WARNING -  * Debugger is active!
+2025-12-03 14:32:23,682 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-03 14:32:23,805 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 14:32:24,062 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:32:24] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 14:32:24,063 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 14:32:24,067 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:32:24] "GET /task-status/4eda5ee2-9de1-4df6-aafa-9555e9a5305d HTTP/1.1" 200 -

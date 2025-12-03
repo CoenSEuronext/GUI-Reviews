@@ -1,0 +1,24 @@
+{
+  "task_id": "dbc1d013-9db4-4ad6-89f1-27383d21b909",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-02T17:10:03.949092",
+  "started_at": "2025-12-02T17:10:03.949092",
+  "completed_at": "2025-12-02T17:10:07.245488",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'fx_rate'",
+  "error": "Error during review calculation: 'fx_rate'",
+  "result_data": null,
+  "review_type": "EZSL",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZSL",
+    "isin": "NLIX00008655",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 3.284807
+}

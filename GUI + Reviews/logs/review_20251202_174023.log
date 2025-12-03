@@ -1,0 +1,45 @@
+2025-12-02 17:40:24,374 - werkzeug - WARNING -  * Debugger is active!
+2025-12-02 17:40:24,376 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-02 17:40:24,956 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:40:24] "POST /calculate HTTP/1.1" 200 -
+2025-12-02 17:40:24,966 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-02 17:40:24,971 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:40:24] "GET /task-status/8a655054-79ef-40a3-87a2-ff0ed82af150 HTTP/1.1" 200 -
+2025-12-02 17:40:26,985 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:40:26] "GET /task-status/8a655054-79ef-40a3-87a2-ff0ed82af150 HTTP/1.1" 200 -
+2025-12-02 17:40:27,234 - Review.reviews.ezsl_review - ERROR - Error during review calculation: 'fx_rate'
+2025-12-02 17:40:27,245 - Review.reviews.ezsl_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'fx_rate'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezsl_review.py", line 63, in run_ezsl_review
+    full_universe_df['Mcap in EUR'] = full_universe_df['fx_rate'] * full_universe_df['NOSH_final'] * full_universe_df['Price_final'] * full_universe_df['free_float']
+                                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'fx_rate'
+
+2025-12-02 17:40:28,978 - werkzeug - INFO - 127.0.0.1 - - [02/Dec/2025 17:40:28] "GET /task-status/8a655054-79ef-40a3-87a2-ff0ed82af150 HTTP/1.1" 200 -
+2025-12-02 17:42:09,119 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eesf_review.py', reloading
+2025-12-02 17:42:09,119 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efesp_review.py', reloading
+2025-12-02 17:42:09,134 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-12-02 17:42:09,142 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
+2025-12-02 17:42:09,146 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc100_review.py', reloading
+2025-12-02 17:42:09,153 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gsfbp_review.py', reloading
+2025-12-02 17:42:09,157 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-12-02 17:42:09,160 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frn4p_review.py', reloading
+2025-12-02 17:42:09,163 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
+2025-12-02 17:42:09,166 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frecp_review.py', reloading
+2025-12-02 17:42:09,169 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-12-02 17:42:09,176 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\f4rip_review.py', reloading
+2025-12-02 17:42:09,180 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-12-02 17:42:09,183 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review_backup.py', reloading

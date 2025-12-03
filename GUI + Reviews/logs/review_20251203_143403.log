@@ -1,0 +1,23 @@
+2025-12-03 14:34:03,802 - werkzeug - WARNING -  * Debugger is active!
+2025-12-03 14:34:03,802 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-03 14:34:03,839 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:34:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 14:34:03,841 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 14:34:03,845 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:34:03] "GET /task-status/1420f012-ea73-4579-9fca-7ef18ebd129a HTTP/1.1" 200 -
+2025-12-03 14:34:05,874 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:34:05] "GET /task-status/1420f012-ea73-4579-9fca-7ef18ebd129a HTTP/1.1" 200 -
+2025-12-03 14:34:06,051 - Review.reviews.ezsl_review - INFO - Found 353 existing companies in EZSL
+2025-12-03 14:34:06,055 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-03 14:34:06,055 - Review.reviews.ezsl_review - INFO - Total companies selected: 356
+2025-12-03 14:34:06,056 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 353
+2025-12-03 14:34:06,056 - Review.reviews.ezsl_review - INFO -   - New companies selected: 3
+2025-12-03 14:34:06,057 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 14.92%
+2025-12-03 14:34:06,062 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-03 14:34:06,062 - Review.reviews.ezsl_review - INFO - Inclusions: 3
+2025-12-03 14:34:06,063 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-03 14:34:06,063 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_143406.xlsx
+2025-12-03 14:34:06,199 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_143406.xlsx
+2025-12-03 14:34:07,850 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:34:07] "GET /task-status/1420f012-ea73-4579-9fca-7ef18ebd129a HTTP/1.1" 200 -
+2025-12-03 14:44:42,717 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
+2025-12-03 14:44:42,721 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
+2025-12-03 14:44:42,722 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading

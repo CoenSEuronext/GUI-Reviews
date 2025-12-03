@@ -1,0 +1,67 @@
+2025-12-03 14:22:01,457 - werkzeug - WARNING -  * Debugger is active!
+2025-12-03 14:22:01,457 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-03 14:22:02,168 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:02] "GET /task-status/447b0ee9-d185-46bf-ba60-dd3a928dd6d6 HTTP/1.1" 200 -
+2025-12-03 14:22:06,357 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:06] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 14:22:06,357 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 14:22:06,357 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:06] "GET /task-status/f08afd93-f8fe-40b6-90b1-8ab61d55e0fd HTTP/1.1" 200 -
+2025-12-03 14:22:08,369 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:08] "GET /task-status/f08afd93-f8fe-40b6-90b1-8ab61d55e0fd HTTP/1.1" 200 -
+2025-12-03 14:22:08,489 - Review.reviews.ezsl_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-03 14:22:08,489 - Review.reviews.ezsl_review - INFO - Found 353 existing companies in EZSL
+2025-12-03 14:22:08,489 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary by Country:
+2025-12-03 14:22:08,501 - Review.reviews.ezsl_review - INFO - Austria: 12 total (12 existing, 0 new)
+2025-12-03 14:22:08,504 - Review.reviews.ezsl_review - INFO - Belgium: 22 total (22 existing, 0 new)
+2025-12-03 14:22:08,506 - Review.reviews.ezsl_review - INFO - Finland: 35 total (35 existing, 0 new)
+2025-12-03 14:22:08,510 - Review.reviews.ezsl_review - INFO - France: 70 total (70 existing, 0 new)
+2025-12-03 14:22:08,512 - Review.reviews.ezsl_review - INFO - Germany: 73 total (73 existing, 0 new)
+2025-12-03 14:22:08,514 - Review.reviews.ezsl_review - INFO - Ireland: 7 total (7 existing, 0 new)
+2025-12-03 14:22:08,515 - Review.reviews.ezsl_review - INFO - Italy: 60 total (60 existing, 0 new)
+2025-12-03 14:22:08,518 - Review.reviews.ezsl_review - INFO - Netherlands: 35 total (34 existing, 1 new)
+2025-12-03 14:22:08,521 - Review.reviews.ezsl_review - INFO - Portugal: 8 total (8 existing, 0 new)
+2025-12-03 14:22:08,524 - Review.reviews.ezsl_review - INFO - Spain: 32 total (32 existing, 0 new)
+2025-12-03 14:22:08,524 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-03 14:22:08,524 - Review.reviews.ezsl_review - INFO - Total companies selected: 354
+2025-12-03 14:22:08,524 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 353
+2025-12-03 14:22:08,525 - Review.reviews.ezsl_review - INFO -   - New companies selected: 1
+2025-12-03 14:22:08,525 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 14.91%
+2025-12-03 14:22:08,529 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-03 14:22:08,529 - Review.reviews.ezsl_review - INFO - Inclusions: 1
+2025-12-03 14:22:08,529 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-03 14:22:08,531 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_142208.xlsx
+2025-12-03 14:22:08,689 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_142208.xlsx
+2025-12-03 14:22:10,371 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:10] "GET /task-status/f08afd93-f8fe-40b6-90b1-8ab61d55e0fd HTTP/1.1" 200 -
+2025-12-03 14:22:18,643 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:18] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 14:22:18,653 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 14:22:18,654 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:18] "GET /task-status/7d3d72ad-65dc-4fa5-9c24-4aae23e0b416 HTTP/1.1" 200 -
+2025-12-03 14:22:19,983 - Review.reviews.ezsl_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-03 14:22:19,986 - Review.reviews.ezsl_review - INFO - Found 353 existing companies in EZSL
+2025-12-03 14:22:19,989 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary by Country:
+2025-12-03 14:22:19,992 - Review.reviews.ezsl_review - INFO - Austria: 12 total (12 existing, 0 new)
+2025-12-03 14:22:19,994 - Review.reviews.ezsl_review - INFO - Belgium: 22 total (22 existing, 0 new)
+2025-12-03 14:22:19,997 - Review.reviews.ezsl_review - INFO - Finland: 35 total (35 existing, 0 new)
+2025-12-03 14:22:19,999 - Review.reviews.ezsl_review - INFO - France: 70 total (70 existing, 0 new)
+2025-12-03 14:22:20,003 - Review.reviews.ezsl_review - INFO - Germany: 73 total (73 existing, 0 new)
+2025-12-03 14:22:20,005 - Review.reviews.ezsl_review - INFO - Ireland: 7 total (7 existing, 0 new)
+2025-12-03 14:22:20,010 - Review.reviews.ezsl_review - INFO - Italy: 60 total (60 existing, 0 new)
+2025-12-03 14:22:20,011 - Review.reviews.ezsl_review - INFO - Netherlands: 35 total (34 existing, 1 new)
+2025-12-03 14:22:20,015 - Review.reviews.ezsl_review - INFO - Portugal: 8 total (8 existing, 0 new)
+2025-12-03 14:22:20,015 - Review.reviews.ezsl_review - INFO - Spain: 32 total (32 existing, 0 new)
+2025-12-03 14:22:20,017 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-03 14:22:20,017 - Review.reviews.ezsl_review - INFO - Total companies selected: 354
+2025-12-03 14:22:20,018 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 353
+2025-12-03 14:22:20,018 - Review.reviews.ezsl_review - INFO -   - New companies selected: 1
+2025-12-03 14:22:20,019 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 14.91%
+2025-12-03 14:22:20,025 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-03 14:22:20,025 - Review.reviews.ezsl_review - INFO - Inclusions: 1
+2025-12-03 14:22:20,025 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-03 14:22:20,026 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_142220.xlsx
+2025-12-03 14:22:20,147 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_142220.xlsx
+2025-12-03 14:22:20,672 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:22:20] "GET /task-status/7d3d72ad-65dc-4fa5-9c24-4aae23e0b416 HTTP/1.1" 200 -
+2025-12-03 14:22:35,669 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 14:22:35,669 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 14:22:35,669 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading

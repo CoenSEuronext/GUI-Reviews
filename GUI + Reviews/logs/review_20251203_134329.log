@@ -1,0 +1,33 @@
+2025-12-03 13:43:30,292 - werkzeug - WARNING -  * Debugger is active!
+2025-12-03 13:43:30,294 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-03 13:43:31,556 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:31] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 13:43:31,558 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 13:43:31,558 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:31] "GET /task-status/62772577-135f-4d11-a9e5-f301343b9c77 HTTP/1.1" 200 -
+2025-12-03 13:43:33,569 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:33] "GET /task-status/62772577-135f-4d11-a9e5-f301343b9c77 HTTP/1.1" 200 -
+2025-12-03 13:43:34,318 - Review.reviews.ezsl_review - ERROR - Error during review calculation: Failed to load required reference data files
+2025-12-03 13:43:34,322 - Review.reviews.ezsl_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezsl_review.py", line 61, in run_ezsl_review
+    raise ValueError("Failed to load required reference data files")
+ValueError: Failed to load required reference data files
+
+2025-12-03 13:43:35,565 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:35] "GET /task-status/62772577-135f-4d11-a9e5-f301343b9c77 HTTP/1.1" 200 -
+2025-12-03 13:43:38,386 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:38] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 13:43:38,386 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 13:43:38,391 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:38] "GET /task-status/d7dca0af-2b15-4081-81d8-157fe9fda5db HTTP/1.1" 200 -
+2025-12-03 13:43:39,534 - Review.reviews.ezsl_review - INFO - Found 0 existing companies in EZSL
+2025-12-03 13:43:39,534 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary:
+2025-12-03 13:43:39,534 - Review.reviews.ezsl_review - INFO - Total companies selected: 355
+2025-12-03 13:43:39,534 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 0
+2025-12-03 13:43:39,544 - Review.reviews.ezsl_review - INFO -   - New companies selected: 355
+2025-12-03 13:43:39,545 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 13.00%
+2025-12-03 13:43:39,549 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-03 13:43:39,549 - Review.reviews.ezsl_review - INFO - Inclusions: 355
+2025-12-03 13:43:39,549 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-03 13:43:39,550 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_134339.xlsx
+2025-12-03 13:43:39,698 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_134339.xlsx
+2025-12-03 13:43:40,401 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 13:43:40] "GET /task-status/d7dca0af-2b15-4081-81d8-157fe9fda5db HTTP/1.1" 200 -
+2025-12-03 13:47:58,675 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 13:47:58,675 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-03 13:47:58,684 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading

@@ -1,0 +1,43 @@
+2025-12-03 14:49:21,347 - werkzeug - WARNING -  * Debugger is active!
+2025-12-03 14:49:21,347 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-03 14:49:21,381 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:49:21] "POST /calculate HTTP/1.1" 200 -
+2025-12-03 14:49:21,381 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-03 14:49:21,388 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:49:21] "GET /task-status/9f821785-04c3-4038-9ce8-2dd8b1cccdc3 HTTP/1.1" 200 -
+2025-12-03 14:49:23,397 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:49:23] "GET /task-status/9f821785-04c3-4038-9ce8-2dd8b1cccdc3 HTTP/1.1" 200 -
+2025-12-03 14:49:23,503 - Review.reviews.ezsl_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-03 14:49:23,503 - Review.reviews.ezsl_review - INFO - Found 353 existing companies in EZSL
+2025-12-03 14:49:23,513 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary by Country:
+2025-12-03 14:49:23,518 - Review.reviews.ezsl_review - INFO - Austria: 12 total (12 existing, 0 new)
+2025-12-03 14:49:23,521 - Review.reviews.ezsl_review - INFO - Belgium: 22 total (22 existing, 0 new)
+2025-12-03 14:49:23,523 - Review.reviews.ezsl_review - INFO - Finland: 35 total (35 existing, 0 new)
+2025-12-03 14:49:23,526 - Review.reviews.ezsl_review - INFO - France: 70 total (70 existing, 0 new)
+2025-12-03 14:49:23,528 - Review.reviews.ezsl_review - INFO - Germany: 73 total (73 existing, 0 new)
+2025-12-03 14:49:23,530 - Review.reviews.ezsl_review - INFO - Ireland: 7 total (7 existing, 0 new)
+2025-12-03 14:49:23,532 - Review.reviews.ezsl_review - INFO - Italy: 60 total (60 existing, 0 new)
+2025-12-03 14:49:23,535 - Review.reviews.ezsl_review - INFO - Netherlands: 35 total (34 existing, 1 new)
+2025-12-03 14:49:23,538 - Review.reviews.ezsl_review - INFO - Portugal: 8 total (8 existing, 0 new)
+2025-12-03 14:49:23,540 - Review.reviews.ezsl_review - INFO - Spain: 32 total (32 existing, 0 new)
+2025-12-03 14:49:23,540 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-03 14:49:23,540 - Review.reviews.ezsl_review - INFO - Total companies selected: 354
+2025-12-03 14:49:23,540 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 353
+2025-12-03 14:49:23,540 - Review.reviews.ezsl_review - INFO -   - New companies selected: 1
+2025-12-03 14:49:23,541 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 14.91%
+2025-12-03 14:49:23,541 - Review.reviews.ezsl_review - INFO - 
+Applying proportional capping
+2025-12-03 14:49:23,542 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-03 14:49:23,543 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-03 14:49:23,543 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-03 14:49:23,543 - utils.capping_proportional - INFO -   Total companies: 354
+2025-12-03 14:49:23,543 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-03 14:49:23,544 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-03 14:49:23,544 - utils.capping_proportional - INFO -   Max weight after capping: 0.018289
+2025-12-03 14:49:23,546 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-03 14:49:23,546 - Review.reviews.ezsl_review - INFO - Inclusions: 1
+2025-12-03 14:49:23,546 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-03 14:49:23,551 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_144923.xlsx
+2025-12-03 14:49:23,680 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251203_144923.xlsx
+2025-12-03 14:49:25,387 - werkzeug - INFO - 127.0.0.1 - - [03/Dec/2025 14:49:25] "GET /task-status/9f821785-04c3-4038-9ce8-2dd8b1cccdc3 HTTP/1.1" 200 -
+2025-12-03 16:04:31,389 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezms_review.py', reloading
