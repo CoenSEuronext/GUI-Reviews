@@ -1,0 +1,24 @@
+{
+  "task_id": "47131592-4714-44c2-9a63-937f99e0ed7a",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-04T15:12:57.113313",
+  "started_at": "2025-12-04T15:12:57.113313",
+  "completed_at": "2025-12-04T15:13:01.586181",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'ClimateCuAlignIEANZTgt2050'",
+  "error": "Error during review calculation: 'ClimateCuAlignIEANZTgt2050'",
+  "result_data": null,
+  "review_type": "EZCLA",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZCLA",
+    "isin": "FR0014005IK5",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 4.472868
+}

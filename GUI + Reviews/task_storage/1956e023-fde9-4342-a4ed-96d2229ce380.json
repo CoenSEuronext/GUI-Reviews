@@ -1,0 +1,24 @@
+{
+  "task_id": "1956e023-fde9-4342-a4ed-96d2229ce380",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-04T15:12:53.184154",
+  "started_at": "2025-12-04T15:12:53.186156",
+  "completed_at": "2025-12-04T15:12:56.078293",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "EZCLA",
+  "parameters": {
+    "date": "20250912",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZCLA",
+    "isin": "FR0014005IK5",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

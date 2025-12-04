@@ -1,0 +1,6 @@
+2025-12-04 15:03:39,118 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 15:03:39,129 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 15:03:39,153 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:03:39] "GET /task-status/5778e802-2060-4233-a3a3-8394b6706aba HTTP/1.1" 200 -
+2025-12-04 15:04:43,356 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 15:04:43,356 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 15:04:43,361 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading

@@ -1,0 +1,25 @@
+2025-12-04 16:35:17,137 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 16:35:17,143 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 16:35:17,170 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:17] "GET /task-status/71c3dedb-b1a9-455c-89f3-b8048c004d98 HTTP/1.1" 200 -
+2025-12-04 16:35:18,287 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:18] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 16:35:18,287 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-04 16:35:18,287 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:18] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:35:18,653 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-04 16:35:20,319 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:20] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:35:22,302 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:22] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:35:22,919 - Review.reviews.ezcla_review - INFO - Carbon Budget 80th percentile threshold: 2.550000000000001
+2025-12-04 16:35:22,919 - Review.reviews.ezcla_review - INFO - Companies with data: 298
+2025-12-04 16:35:22,919 - Review.reviews.ezcla_review - INFO - Total companies excluded by Carbon Budget: 62
+2025-12-04 16:35:24,302 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:24] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:35:26,304 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:26] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:35:28,305 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:28] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:35:28,847 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2025-12-04 16:35:28,847 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2025-12-04 16:35:28,853 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZCLA_df_20251204_163528.xlsx
+2025-12-04 16:35:30,303 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 16:35:30] "GET /task-status/7feb4f2c-1f7e-4197-971e-3a680245d121 HTTP/1.1" 200 -
+2025-12-04 16:41:08,645 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 16:41:08,645 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 16:41:08,852 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 16:41:08,852 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 16:41:08,988 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 16:41:08,992 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading

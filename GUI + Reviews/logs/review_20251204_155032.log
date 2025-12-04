@@ -1,0 +1,33 @@
+2025-12-04 15:50:33,022 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 15:50:33,022 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 15:52:13,937 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:13] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 15:52:13,941 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-04 15:52:13,949 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:13] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:15,408 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-04 15:52:15,953 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:15] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:17,960 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:17] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:19,657 - Review.reviews.ezcla_review - INFO - Carbon Budget 80th percentile threshold: 2.550000000000001
+2025-12-04 15:52:19,657 - Review.reviews.ezcla_review - INFO - Companies with data: 298
+2025-12-04 15:52:19,657 - Review.reviews.ezcla_review - INFO - Total companies excluded by Carbon Budget: 62
+2025-12-04 15:52:19,953 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:19] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:21,952 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:21] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:23,953 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:23] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:25,963 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 15:52:25] "GET /task-status/01a8c421-0b0c-4f2d-9a58-746e00008c95 HTTP/1.1" 200 -
+2025-12-04 15:52:26,053 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2025-12-04 15:52:26,053 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2025-12-04 15:52:26,053 - Review.reviews.ezcla_review - ERROR - Error during review calculation: "['Currency (Local)'] not in index"
+2025-12-04 15:52:26,068 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-12-04 15:52:26,071 - Review.reviews.ezcla_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezcla_review.py", line 376, in run_ezcla_review
+    EZCLA_df = final_selection_df[[
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency (Local)'] not in index"
+
+2025-12-04 15:52:26,071 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading

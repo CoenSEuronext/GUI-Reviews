@@ -305,6 +305,11 @@ INDEX_CONFIGS = {
         "index": "ELUX",
         "isin": "NLIX00008424",
         "output_key": "elux_path"
+    },
+    "EZCLA": {
+        "index": "EZCLA",
+        "isin": "FR0014005IK5",
+        "output_key": "ezcla_path"
     }
     # Add new indices here following the same pattern
 }
@@ -373,7 +378,7 @@ ALL_MNEMOS = [
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
     "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS",
-    "EUMS", "EUSL", "EESL", "EWSL"
+    "EUMS", "EUSL", "EESL", "EWSL", "EZCLA"
 ]
 
 

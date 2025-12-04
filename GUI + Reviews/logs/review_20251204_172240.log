@@ -1,0 +1,22 @@
+2025-12-04 17:22:41,338 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 17:22:41,338 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 17:22:41,382 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:41] "GET /task-status/cc633e57-3188-4efa-a594-2b4829c80329 HTTP/1.1" 200 -
+2025-12-04 17:22:41,389 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:41] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 17:22:41,390 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-04 17:22:41,394 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:41] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:22:42,173 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-04 17:22:43,405 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:43] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:22:45,404 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:45] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:22:46,453 - Review.reviews.ezcla_review - INFO - Total companies in universe: 300
+2025-12-04 17:22:46,453 - Review.reviews.ezcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 240.0
+2025-12-04 17:22:46,453 - Review.reviews.ezcla_review - INFO - Total companies excluded by Carbon Budget (rank > 240.0): 58
+2025-12-04 17:22:47,445 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:47] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:22:49,404 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:49] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:22:51,404 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:51] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:22:52,720 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2025-12-04 17:22:52,720 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2025-12-04 17:22:52,720 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZCLA_df_20251204_172252.xlsx
+2025-12-04 17:22:53,397 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:53] "GET /task-status/5cf9f7a7-48d6-4c45-8344-dbab6729ba57 HTTP/1.1" 200 -
+2025-12-04 17:23:21,067 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 17:23:21,068 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 17:23:22,011 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading

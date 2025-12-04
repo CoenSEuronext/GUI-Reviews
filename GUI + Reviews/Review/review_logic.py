@@ -62,6 +62,7 @@ from .reviews.eusl_review import run_eusl_review
 from .reviews.eums_review import run_eums_review
 from .reviews.ewsl_review import run_ewsl_review
 from .reviews.elux_review import run_elux_review
+from .reviews.ezcla_review import run_ezcla_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -128,6 +129,7 @@ REVIEW_FUNCTIONS = {
     "EUMS": run_eums_review,
     "EWSL": run_ewsl_review,
     "ELUX": run_elux_review,
+    "EZCLA": run_ezcla_review
 }
 
 def run_review(review_type, **kwargs):

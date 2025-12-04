@@ -27,3 +27,8 @@ AERDP
 Modularize the date in the folders of the Compare files
 
 Insert the correct Fx/Index Ccy fetch in all reviews.
+
+GIT  uitzoeken
+
+Setup VENV
+

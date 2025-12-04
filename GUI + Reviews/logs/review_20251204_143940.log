@@ -1,0 +1,15 @@
+2025-12-04 14:39:41,654 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 14:39:41,654 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 14:39:41,689 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:41] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 14:39:41,693 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-04 14:39:41,695 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:41] "GET /task-status/ac16f51a-539f-4f2e-92a6-f5418bb309db HTTP/1.1" 200 -
+2025-12-04 14:39:42,754 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-04 14:39:43,698 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:43] "GET /task-status/ac16f51a-539f-4f2e-92a6-f5418bb309db HTTP/1.1" 200 -
+2025-12-04 14:39:45,697 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:45] "GET /task-status/ac16f51a-539f-4f2e-92a6-f5418bb309db HTTP/1.1" 200 -
+2025-12-04 14:39:47,700 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:47] "GET /task-status/ac16f51a-539f-4f2e-92a6-f5418bb309db HTTP/1.1" 200 -
+2025-12-04 14:39:49,699 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:49] "GET /task-status/ac16f51a-539f-4f2e-92a6-f5418bb309db HTTP/1.1" 200 -
+2025-12-04 14:39:49,754 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-04 14:39:51,701 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 14:39:51] "GET /task-status/ac16f51a-539f-4f2e-92a6-f5418bb309db HTTP/1.1" 200 -
+2025-12-04 14:39:52,964 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2025-12-04 14:39:52,964 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2025-12-04 14:39:52,964 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZCLA_df_20251204_143952.xlsx

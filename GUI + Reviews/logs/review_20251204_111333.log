@@ -68,3 +68,4 @@ TypeError: 'NoneType' object is not subscriptable
 2025-12-04 11:17:21,860 - Review.reviews.elux_review - INFO - Loading reference data...
 2025-12-04 11:17:22,527 - Review.reviews.elux_review - INFO - Saving ELUX output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUX_df_20251204_111722.xlsx
 2025-12-04 11:17:22,950 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:17:22] "GET /task-status/224bdce2-50c5-417f-827d-c7dc550822a3 HTTP/1.1" 200 -
+2025-12-04 11:45:53,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eemsc_review.py', reloading

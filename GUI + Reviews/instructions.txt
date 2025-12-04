@@ -31,4 +31,13 @@ Add to compare.py
     1. add the mnemo of your new review to the mnemos list
     2. add the mnemo to the pattern list
 
+Step 6: 
+Look for the following piece of code:
+        symbols_filtered = stock_eod_df[
+            stock_eod_df['#Symbol'].str.len() < 12
+        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
+
+For indices with RIC Codes: < 12
+For indices with ISIN Codes: == 12
+
 

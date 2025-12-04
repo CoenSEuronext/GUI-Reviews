@@ -1,0 +1,6 @@
+2025-12-04 17:22:38,956 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 17:22:38,958 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 17:22:38,994 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:38] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 17:22:38,999 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 17:22:39,004 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 17:22:39] "GET /task-status/cc633e57-3188-4efa-a594-2b4829c80329 HTTP/1.1" 200 -
+2025-12-04 17:22:39,594 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading
