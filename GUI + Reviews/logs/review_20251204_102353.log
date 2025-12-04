@@ -1,0 +1,166 @@
+2025-12-04 10:23:54,000 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 10:23:54,002 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 10:23:59,608 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:23:59] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:23:59,608 - Review.reviews.ewsl_review - INFO - Starting EWSL review calculation
+2025-12-04 10:23:59,608 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:23:59] "GET /task-status/f021986a-1224-4e3b-a010-6e88afc44523 HTTP/1.1" 200 -
+2025-12-04 10:24:01,626 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:01] "GET /task-status/f021986a-1224-4e3b-a010-6e88afc44523 HTTP/1.1" 200 -
+2025-12-04 10:24:03,640 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:03] "GET /task-status/f021986a-1224-4e3b-a010-6e88afc44523 HTTP/1.1" 200 -
+2025-12-04 10:24:03,691 - Review.reviews.ewsl_review - INFO - Found 0 existing companies in EWSL
+2025-12-04 10:24:03,702 - Review.reviews.ewsl_review - INFO - 
+Overall EWSL Selection Summary:
+2025-12-04 10:24:03,702 - Review.reviews.ewsl_review - INFO - Total companies selected: 3981
+2025-12-04 10:24:03,702 - Review.reviews.ewsl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:24:03,705 - Review.reviews.ewsl_review - INFO -   - New companies selected: 3981
+2025-12-04 10:24:03,706 - Review.reviews.ewsl_review - INFO - Total FFMC covered: 13.12%
+2025-12-04 10:24:03,706 - Review.reviews.ewsl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:24:03,709 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:24:03,710 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:24:03,710 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:24:03,711 - utils.capping_proportional - INFO -   Total companies: 3981
+2025-12-04 10:24:03,711 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:24:03,711 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:24:03,711 - utils.capping_proportional - INFO -   Max weight after capping: 0.002125
+2025-12-04 10:24:03,711 - Review.reviews.ewsl_review - INFO - 
+EWSL Changes Summary:
+2025-12-04 10:24:03,711 - Review.reviews.ewsl_review - INFO - Inclusions: 3981
+2025-12-04 10:24:03,711 - Review.reviews.ewsl_review - INFO - Exclusions: 0
+2025-12-04 10:24:03,724 - Review.reviews.ewsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251204_102403.xlsx
+2025-12-04 10:24:04,852 - Review.reviews.ewsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251204_102403.xlsx
+2025-12-04 10:24:05,624 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:05] "GET /task-status/f021986a-1224-4e3b-a010-6e88afc44523 HTTP/1.1" 200 -
+2025-12-04 10:24:14,915 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:14] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:24:14,915 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+2025-12-04 10:24:14,915 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:14] "GET /task-status/400e7371-a2a9-40b1-8142-71b8e865047c HTTP/1.1" 200 -
+2025-12-04 10:24:16,924 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:16] "GET /task-status/400e7371-a2a9-40b1-8142-71b8e865047c HTTP/1.1" 200 -
+2025-12-04 10:24:17,230 - Review.reviews.eums_review - INFO - Found 0 existing companies in EUMS
+2025-12-04 10:24:17,230 - Review.reviews.eums_review - INFO - 
+EUMS Selection Summary by Country:
+2025-12-04 10:24:17,240 - Review.reviews.eums_review - INFO - United States: 1272 total (0 existing, 1272 new)
+2025-12-04 10:24:17,240 - Review.reviews.eums_review - INFO - 
+Overall EUMS Selection Summary:
+2025-12-04 10:24:17,240 - Review.reviews.eums_review - INFO - Total companies selected: 1272
+2025-12-04 10:24:17,241 - Review.reviews.eums_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:24:17,242 - Review.reviews.eums_review - INFO -   - New companies selected: 1272
+2025-12-04 10:24:17,242 - Review.reviews.eums_review - INFO - Total FFMC covered: 28.08%
+2025-12-04 10:24:17,242 - Review.reviews.eums_review - INFO - 
+Applying proportional capping
+2025-12-04 10:24:17,244 - Review.reviews.eums_review - INFO - 
+=== SELECTION DEBUGGING ===
+2025-12-04 10:24:17,244 - Review.reviews.eums_review - INFO - Total universe size: 1418
+2025-12-04 10:24:17,244 - Review.reviews.eums_review - INFO - Companies with EUMS_selection == 1: 1272
+2025-12-04 10:24:17,244 - Review.reviews.eums_review - INFO - Companies with Is_Existing == 1: 0
+2025-12-04 10:24:17,244 - Review.reviews.eums_review - INFO - 
+Existing companies meeting 68% threshold: 0
+2025-12-04 10:24:17,245 - Review.reviews.eums_review - INFO - New companies meeting 72% threshold: 1272
+2025-12-04 10:24:17,245 - Review.reviews.eums_review - INFO - 
+NaN values in key columns:
+2025-12-04 10:24:17,245 - Review.reviews.eums_review - INFO -   Country: 0
+2025-12-04 10:24:17,245 - Review.reviews.eums_review - INFO -   Mcap in EUR: 0
+2025-12-04 10:24:17,245 - Review.reviews.eums_review - INFO -   Country_Cumulative_Percentage: 0
+2025-12-04 10:24:17,245 - Review.reviews.eums_review - INFO - 
+Sample of selection logic:
+2025-12-04 10:24:17,247 - Review.reviews.eums_review - INFO - 
+                   Company        Country  Is_Existing   Mcap in EUR  Country_Cumulative_Percentage  EUMS_selection
+933            NVIDIA CORP  United States            0  3.127089e+12                       6.977338               0
+855         MICROSOFT CORP  United States            0  2.714774e+12                      13.034696               0
+96                   APPLE  United States            0  2.433759e+12                      18.465036               0
+59                  AMAZON  United States            0  1.581563e+12                      21.993910               0
+847       META PLTFORM ORD  United States            0  1.178781e+12                      24.624072               0
+214          BROADCOM INC.  United States            0  9.956822e+11                      26.845695               0
+56        ALPHABET CLASS A  United States            0  8.631987e+11                      28.771713               0
+57        ALPHABET INC - C  United States            0  7.678226e+11                      30.484922               0
+1238             TESLA INC  United States            0  6.712056e+11                      31.982554               0
+723   JP MORGAN CHASE & CO  United States            0  5.865328e+11                      33.291260               0
+174   BERKSHIRE HATHAWAY B  United States            0  4.728103e+11                      34.346221               0
+1343              VISA INC  United States            0  4.281389e+11                      35.301508               0
+451       ELI LILLY AND CO  United States            0  4.122487e+11                      36.221341               0
+899           NETFLIX INC.  United States            0  3.685781e+11                      37.043734               0
+827         MASTERCARD INC  United States            0  3.482735e+11                      37.820821               0
+500            EXXON MOBIL  United States            0  3.415958e+11                      38.583009               0
+720      JOHNSON & JOHNSON  United States            0  3.109055e+11                      39.276719               0
+359   COSTCO WHOLES. CORP.  United States            0  3.060809e+11                      39.959664               0
+1355           WALMART INC  United States            0  3.060224e+11                      40.642478               0
+645         HOME DEPOT INC  United States            0  2.957166e+11                      41.302298               0
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO -   Total companies: 1272
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:24:17,247 - utils.capping_proportional - INFO -   Max weight after capping: 0.004299
+2025-12-04 10:24:17,259 - Review.reviews.eums_review - INFO - 
+EUMS Changes Summary:
+2025-12-04 10:24:17,259 - Review.reviews.eums_review - INFO - Inclusions: 1272
+2025-12-04 10:24:17,260 - Review.reviews.eums_review - INFO - Exclusions: 0
+2025-12-04 10:24:17,260 - Review.reviews.eums_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_102417.xlsx
+2025-12-04 10:24:17,557 - Review.reviews.eums_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_102417.xlsx
+2025-12-04 10:24:18,923 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:18] "GET /task-status/400e7371-a2a9-40b1-8142-71b8e865047c HTTP/1.1" 200 -
+2025-12-04 10:24:28,925 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:28] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:24:28,935 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+2025-12-04 10:24:28,945 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:28] "GET /task-status/e52cbdba-1ef2-4bfd-bad8-d6b920bf971a HTTP/1.1" 200 -
+2025-12-04 10:24:30,957 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:30] "GET /task-status/e52cbdba-1ef2-4bfd-bad8-d6b920bf971a HTTP/1.1" 200 -
+2025-12-04 10:24:32,245 - Review.reviews.eums_review - INFO - Found 0 existing companies in EUMS
+2025-12-04 10:24:32,248 - Review.reviews.eums_review - INFO - 
+EUMS Selection Summary by Country:
+2025-12-04 10:24:32,250 - Review.reviews.eums_review - INFO - United States: 1272 total (0 existing, 1272 new)
+2025-12-04 10:24:32,250 - Review.reviews.eums_review - INFO - 
+Overall EUMS Selection Summary:
+2025-12-04 10:24:32,250 - Review.reviews.eums_review - INFO - Total companies selected: 1272
+2025-12-04 10:24:32,251 - Review.reviews.eums_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:24:32,251 - Review.reviews.eums_review - INFO -   - New companies selected: 1272
+2025-12-04 10:24:32,251 - Review.reviews.eums_review - INFO - Total FFMC covered: 28.08%
+2025-12-04 10:24:32,252 - Review.reviews.eums_review - INFO - 
+Applying proportional capping
+2025-12-04 10:24:32,252 - Review.reviews.eums_review - INFO - 
+=== SELECTION DEBUGGING ===
+2025-12-04 10:24:32,253 - Review.reviews.eums_review - INFO - Total universe size: 1418
+2025-12-04 10:24:32,253 - Review.reviews.eums_review - INFO - Companies with EUMS_selection == 1: 1272
+2025-12-04 10:24:32,253 - Review.reviews.eums_review - INFO - Companies with Is_Existing == 1: 0
+2025-12-04 10:24:32,253 - Review.reviews.eums_review - INFO - 
+Existing companies meeting 68% threshold: 0
+2025-12-04 10:24:32,253 - Review.reviews.eums_review - INFO - New companies meeting 72% threshold: 1272
+2025-12-04 10:24:32,253 - Review.reviews.eums_review - INFO - 
+NaN values in key columns:
+2025-12-04 10:24:32,254 - Review.reviews.eums_review - INFO -   Country: 0
+2025-12-04 10:24:32,254 - Review.reviews.eums_review - INFO -   Mcap in EUR: 0
+2025-12-04 10:24:32,254 - Review.reviews.eums_review - INFO -   Country_Cumulative_Percentage: 0
+2025-12-04 10:24:32,254 - Review.reviews.eums_review - INFO - 
+Sample of selection logic:
+2025-12-04 10:24:32,255 - Review.reviews.eums_review - INFO - 
+                   Company        Country  Is_Existing   Mcap in EUR  Country_Cumulative_Percentage  EUMS_selection
+933            NVIDIA CORP  United States            0  3.127089e+12                       6.977338               0
+855         MICROSOFT CORP  United States            0  2.714774e+12                      13.034696               0
+96                   APPLE  United States            0  2.433759e+12                      18.465036               0
+59                  AMAZON  United States            0  1.581563e+12                      21.993910               0
+847       META PLTFORM ORD  United States            0  1.178781e+12                      24.624072               0
+214          BROADCOM INC.  United States            0  9.956822e+11                      26.845695               0
+56        ALPHABET CLASS A  United States            0  8.631987e+11                      28.771713               0
+57        ALPHABET INC - C  United States            0  7.678226e+11                      30.484922               0
+1238             TESLA INC  United States            0  6.712056e+11                      31.982554               0
+723   JP MORGAN CHASE & CO  United States            0  5.865328e+11                      33.291260               0
+174   BERKSHIRE HATHAWAY B  United States            0  4.728103e+11                      34.346221               0
+1343              VISA INC  United States            0  4.281389e+11                      35.301508               0
+451       ELI LILLY AND CO  United States            0  4.122487e+11                      36.221341               0
+899           NETFLIX INC.  United States            0  3.685781e+11                      37.043734               0
+827         MASTERCARD INC  United States            0  3.482735e+11                      37.820821               0
+500            EXXON MOBIL  United States            0  3.415958e+11                      38.583009               0
+720      JOHNSON & JOHNSON  United States            0  3.109055e+11                      39.276719               0
+359   COSTCO WHOLES. CORP.  United States            0  3.060809e+11                      39.959664               0
+1355           WALMART INC  United States            0  3.060224e+11                      40.642478               0
+645         HOME DEPOT INC  United States            0  2.957166e+11                      41.302298               0
+2025-12-04 10:24:32,256 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:24:32,257 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:24:32,257 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:24:32,258 - utils.capping_proportional - INFO -   Total companies: 1272
+2025-12-04 10:24:32,258 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:24:32,258 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:24:32,259 - utils.capping_proportional - INFO -   Max weight after capping: 0.004299
+2025-12-04 10:24:32,266 - Review.reviews.eums_review - INFO - 
+EUMS Changes Summary:
+2025-12-04 10:24:32,266 - Review.reviews.eums_review - INFO - Inclusions: 1272
+2025-12-04 10:24:32,267 - Review.reviews.eums_review - INFO - Exclusions: 0
+2025-12-04 10:24:32,267 - Review.reviews.eums_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_102432.xlsx
+2025-12-04 10:24:32,591 - Review.reviews.eums_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_102432.xlsx
+2025-12-04 10:24:32,954 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:24:32] "GET /task-status/e52cbdba-1ef2-4bfd-bad8-d6b920bf971a HTTP/1.1" 200 -
+2025-12-04 10:24:54,598 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-12-04 10:24:54,611 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading

@@ -54,6 +54,14 @@ from .reviews.aetaw_review import run_aetaw_review
 from .reviews.es2pr_review import run_es2pr_review
 from .reviews.envb_review import run_envb_review
 from .reviews.ezsl_review import run_ezsl_review
+from .reviews.ezms_review import run_ezms_review
+from .reviews.ewms_review import run_ewms_review
+from .reviews.eesl_review import run_eesl_review
+from .reviews.eemsc_review import run_eemsc_review
+from .reviews.eusl_review import run_eusl_review
+from .reviews.eums_review import run_eums_review
+from .reviews.ewsl_review import run_ewsl_review
+from .reviews.elux_review import run_elux_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -111,7 +119,15 @@ REVIEW_FUNCTIONS = {
     "AETAW": run_aetaw_review,
     "ES2PR": run_es2pr_review,
     "ENVB": run_envb_review,
-    "EZSL": run_ezsl_review
+    "EZSL": run_ezsl_review,
+    "EWMS": run_ewms_review,
+    "EEMSC": run_eemsc_review,
+    "EZMS": run_ezms_review,
+    "EESL": run_eesl_review,
+    "EUSL": run_eusl_review,
+    "EUMS": run_eums_review,
+    "EWSL": run_ewsl_review,
+    "ELUX": run_elux_review,
 }
 
 def run_review(review_type, **kwargs):

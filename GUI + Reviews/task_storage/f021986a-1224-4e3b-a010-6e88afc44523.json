@@ -1,0 +1,35 @@
+{
+  "task_id": "f021986a-1224-4e3b-a010-6e88afc44523",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-04T10:23:59.608379",
+  "started_at": "2025-12-04T10:23:59.608379",
+  "completed_at": "2025-12-04T10:24:04.864743",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ewsl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EWSL_Review_20251204_102403.xlsx",
+    "summary": {
+      "total_companies": 3981,
+      "existing_companies_selected": 0,
+      "new_companies_selected": 3981,
+      "total_ffmc_coverage": 13.121200583624631,
+      "inclusions_count": 3981,
+      "exclusions_count": 0,
+      "capped_companies": 0
+    }
+  },
+  "review_type": "EWSL",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EWSL",
+    "isin": "NLIX00008531",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.256364
+}

@@ -1,0 +1,24 @@
+{
+  "task_id": "f04c9162-c441-477c-91e7-0bdc9ea4987a",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-04T09:39:51.723973",
+  "started_at": "2025-12-04T09:39:51.723973",
+  "completed_at": "2025-12-04T09:39:54.362844",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: Failed to load required reference data files",
+  "error": "Error during review calculation: Failed to load required reference data files",
+  "result_data": null,
+  "review_type": "EUMS",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EUMS",
+    "isin": "NLIX00008747",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.638871
+}

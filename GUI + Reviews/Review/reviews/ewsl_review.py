@@ -12,17 +12,17 @@ from utils.capping_proportional import apply_proportional_capping
 
 logger = setup_logging(__name__)
 
-def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008689", 
-                    area="EU", area2=None, type="STOCK", universe="edwpt", 
+def run_ewsl_review(date, effective_date, co_date, index="EWSL", isin="NLIX00008689", 
+                    area="EU", area2="US", type="STOCK", universe="edwpt", 
                     feed="Reuters", currency="EUR", year=None, max_individual_weight=0.1, max_iterations=100):
     """
-    Run the EZMS index review calculation
+    Run the EWSL index review calculation
 
     Args:
         date (str): Calculation date in format YYYYMMDD
         effective_date (str): Effective date in format DD-MMM-YY
         co_date (str): Close-out date
-        index (str, optional): Index name. Defaults to "EZMS"
+        index (str, optional): Index name. Defaults to "EWSL"
         isin (str, optional): ISIN code. Defaults to "NLIX00008689"
         area (str, optional): Primary area. Defaults to "EU"
         area2 (str, optional): Secondary area. Defaults to None
@@ -39,7 +39,7 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
     """
     
     try:
-        logger.info("Starting EZMS review calculation")
+        logger.info("Starting EWSL review calculation")
         # If year is not provided, get it from the date
         if year is None:
             year = str(datetime.strptime(date, '%Y%m%d').year)
@@ -130,19 +130,40 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         
         # Create MIC to Country mapping
         mic_to_country = {
-            'XMAD': 'Spain',
-            'XLIS': 'Portugal',
-            'XAMS': 'Netherlands',
-            'XNGM': 'Netherlands',
-            'MTAA': 'Italy',
-            'XESM': 'Ireland',
-            'XMSM': 'Ireland',
-            'XETR': 'Germany',
-            'XPAR': 'France',
-            'ALXP': 'France',
-            'XHEL': 'Finland',
-            'XBRU': 'Belgium',
-            'WBAH': 'Austria'
+            "XNGS": "United States",
+            "XOSL": "Norway",
+            "XLON": "Great Britain",
+            "XNYS": "United States",
+            "XTSE": "Canada",
+            "XTKS": "Japan",
+            "XNMS": "United States",
+            "XASX": "Australia",
+            "MTAA": "Italy",
+            "XHKG": "Hong Kong",
+            "XSTO": "Sweden",
+            "XAMS": "Netherlands",
+            "XBRU": "Belgium",
+            "XSWX": "Switzerland",
+            "XPAR": "France",
+            "XMAD": "Spain",
+            "XTAE": "Israel",
+            "XETR": "Germany",
+            "FSME": "Finland",
+            "XMSM": "Ireland",
+            "XSES": "Singapore",
+            "XNZE": "New Zealand",
+            "XHEL": "Finland",
+            "XCSE": "Denmark",
+            "XLIS": "Portugal",
+            "WBAH": "Austria",
+            "XNCM": "United States",
+            "BATS": "United States",
+            "SSME": "Sweden",
+            "MERK": "Norway",
+            "XESM": "Ireland",
+            "XNGM": "Sweden",
+            "ALXP": "France",
+            "XASE": "United States"
         }
         
         # Add Country column based on MIC
@@ -153,8 +174,8 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         if len(unmapped_mics) > 0:
             logger.warning(f"Unmapped MICs found: {unmapped_mics}")
         
-        # Flag existing companies in the EZMS index
-        # Look up ISIN codes from stock_eod_df where the Index column matches 'EZMS'
+        # Flag existing companies in the EWSL index
+        # Look up ISIN codes from stock_eod_df where the Index column matches 'EWSL'
         # Note: stock_eod_df uses 'Isin Code' (capital I, lowercase sin)
         existing_isins = stock_eod_df[stock_eod_df['Index'] == index]['Isin Code'].unique()
         universe_df['Is_Existing'] = universe_df['ISIN Code'].isin(existing_isins).astype(int)
@@ -174,29 +195,20 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         # Apply eligibility criteria per country
         # Existing companies: cumulative percentile >= 83%
         # New companies: cumulative percentile >= 87%
-        universe_df['EZMS_selection'] = 0
+        universe_df['EWSL_selection'] = 0
         
         existing_mask = universe_df['Is_Existing'] == 1
         new_mask = universe_df['Is_Existing'] == 0
         
-        universe_df.loc[existing_mask & (universe_df['Country_Cumulative_Percentage'] >= 83), 'EZMS_selection'] = 1
-        universe_df.loc[new_mask & (universe_df['Country_Cumulative_Percentage'] >= 87), 'EZMS_selection'] = 1
-        
-        # Print summary statistics per country
-        logger.info(f"\nEZMS Selection Summary by Country:")
-        for country in universe_df['Country'].dropna().unique():
-            country_df = universe_df[universe_df['Country'] == country]
-            selected_count = country_df['EZMS_selection'].sum()
-            existing_selected = country_df[existing_mask & (country_df['EZMS_selection'] == 1)].shape[0]
-            new_selected = country_df[new_mask & (country_df['EZMS_selection'] == 1)].shape[0]
-            logger.info(f"{country}: {selected_count} total ({existing_selected} existing, {new_selected} new)")
-        
+        universe_df.loc[existing_mask & (universe_df['Country_Cumulative_Percentage'] >= 83), 'EWSL_selection'] = 1
+        universe_df.loc[new_mask & (universe_df['Country_Cumulative_Percentage'] >= 87), 'EWSL_selection'] = 1
+
         # Print overall summary statistics
-        logger.info(f"\nOverall EZMS Selection Summary:")
-        logger.info(f"Total companies selected: {universe_df['EZMS_selection'].sum()}")
-        logger.info(f"  - Existing companies selected: {universe_df[existing_mask & (universe_df['EZMS_selection'] == 1)].shape[0]}")
-        logger.info(f"  - New companies selected: {universe_df[new_mask & (universe_df['EZMS_selection'] == 1)].shape[0]}")
-        logger.info(f"Total FFMC covered: {universe_df[universe_df['EZMS_selection'] == 1]['Mcap in EUR'].sum() / universe_df['Mcap in EUR'].sum() * 100:.2f}%")
+        logger.info(f"\nOverall EWSL Selection Summary:")
+        logger.info(f"Total companies selected: {universe_df['EWSL_selection'].sum()}")
+        logger.info(f"  - Existing companies selected: {universe_df[existing_mask & (universe_df['EWSL_selection'] == 1)].shape[0]}")
+        logger.info(f"  - New companies selected: {universe_df[new_mask & (universe_df['EWSL_selection'] == 1)].shape[0]}")
+        logger.info(f"Total FFMC covered: {universe_df[universe_df['EWSL_selection'] == 1]['Mcap in EUR'].sum() / universe_df['Mcap in EUR'].sum() * 100:.2f}%")
 
         # ============================================================================
         # PROPORTIONAL CAPPING: Apply individual cap using utility function
@@ -204,7 +216,7 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         logger.info("\nApplying proportional capping")
         
         # Filter to only selected companies
-        selected_df = universe_df[universe_df['EZMS_selection'] == 1].copy()
+        selected_df = universe_df[universe_df['EWSL_selection'] == 1].copy()
         
         # Apply capping using utility function
         capped_df = apply_proportional_capping(
@@ -217,11 +229,11 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         # Update universe_df with capping results
         capping_columns = ['Initial Weight', 'Current Weight', 'Capping Factor', 'Is Capped']
         for col in capping_columns:
-            universe_df.loc[universe_df['EZMS_selection'] == 1, col] = capped_df[col].values
+            universe_df.loc[universe_df['EWSL_selection'] == 1, col] = capped_df[col].values
         
         # For non-selected companies, set default values
-        universe_df.loc[universe_df['EZMS_selection'] == 0, 'Capping Factor'] = 1.0
-        universe_df.loc[universe_df['EZMS_selection'] == 0, 'Is Capped'] = False
+        universe_df.loc[universe_df['EWSL_selection'] == 0, 'Capping Factor'] = 1.0
+        universe_df.loc[universe_df['EWSL_selection'] == 0, 'Is Capped'] = False
         
         # Get capping summary for reporting
         capped_companies = capped_df['Is Capped'].sum()
@@ -230,11 +242,11 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         selected_columns = ['Company', 'ISIN Code', 'MIC', 'Number of Shares', 'Free Float', 
                            'Capping Factor', 'Effective Date of Review', 'Currency']
         
-        composition_df = universe_df[universe_df['EZMS_selection'] == 1][selected_columns].copy()
+        composition_df = universe_df[universe_df['EWSL_selection'] == 1][selected_columns].copy()
         composition_df = composition_df.sort_values('Company', ascending=True)
 
         # Analyze inclusions and exclusions
-        selection_df = universe_df[universe_df['EZMS_selection'] == 1].copy()
+        selection_df = universe_df[universe_df['EWSL_selection'] == 1].copy()
         
         analysis_results = inclusion_exclusion_analysis(
             selection_df, 
@@ -256,7 +268,7 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
             exclusions_df = exclusions_df.rename(columns={'ISIN code': 'ISIN Code'})
 
         # Log changes summary
-        logger.info(f"\nEZMS Changes Summary:")
+        logger.info(f"\nEWSL Changes Summary:")
         logger.info(f"Inclusions: {len(inclusions_df)}")
         logger.info(f"Exclusions: {len(exclusions_df)}")
 
@@ -267,39 +279,39 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             
             # Path for the main Excel file with all sheets
-            ezms_path = os.path.join(output_dir, f'EZMS_Review_{timestamp}.xlsx')
+            ewsl_path = os.path.join(output_dir, f'EWSL_Review_{timestamp}.xlsx')
             
-            logger.info(f"Saving output to: {ezms_path}")
+            logger.info(f"Saving output to: {ewsl_path}")
             
             # Create the Excel file with all sheets
-            with pd.ExcelWriter(ezms_path) as writer:
+            with pd.ExcelWriter(ewsl_path) as writer:
                 # Write composition sheet
-                composition_df.to_excel(writer, sheet_name='EZMS Composition', index=False)
+                composition_df.to_excel(writer, sheet_name='EWSL Composition', index=False)
 
                 # Write changes sheets (always write, even if empty)
                 inclusions_df_sorted = inclusions_df.sort_values('Company', ascending=True) if not inclusions_df.empty else inclusions_df
-                inclusions_df_sorted.to_excel(writer, sheet_name='EZMS Inclusions', index=False)
+                inclusions_df_sorted.to_excel(writer, sheet_name='EWSL Inclusions', index=False)
 
                 exclusions_df_sorted = exclusions_df.sort_values('Company', ascending=True) if not exclusions_df.empty else exclusions_df
-                exclusions_df_sorted.to_excel(writer, sheet_name='EZMS Exclusions', index=False)
+                exclusions_df_sorted.to_excel(writer, sheet_name='EWSL Exclusions', index=False)
 
                 # Write full universe sheet
                 universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
             
             # Verify file was saved
-            if os.path.exists(ezms_path):
-                logger.info(f"File successfully saved to: {ezms_path}")
+            if os.path.exists(ewsl_path):
+                logger.info(f"File successfully saved to: {ewsl_path}")
                 
                 return {
                     "status": "success",
                     "message": "Review completed successfully",
                     "data": {
-                        "ezms_path": ezms_path,
+                        "ewsl_path": ewsl_path,
                         "summary": {
-                            "total_companies": int(universe_df['EZMS_selection'].sum()),
-                            "existing_companies_selected": int(universe_df[existing_mask & (universe_df['EZMS_selection'] == 1)].shape[0]),
-                            "new_companies_selected": int(universe_df[new_mask & (universe_df['EZMS_selection'] == 1)].shape[0]),
-                            "total_ffmc_coverage": float(universe_df[universe_df['EZMS_selection'] == 1]['Mcap in EUR'].sum() / universe_df['Mcap in EUR'].sum() * 100),
+                            "total_companies": int(universe_df['EWSL_selection'].sum()),
+                            "existing_companies_selected": int(universe_df[existing_mask & (universe_df['EWSL_selection'] == 1)].shape[0]),
+                            "new_companies_selected": int(universe_df[new_mask & (universe_df['EWSL_selection'] == 1)].shape[0]),
+                            "total_ffmc_coverage": float(universe_df[universe_df['EWSL_selection'] == 1]['Mcap in EUR'].sum() / universe_df['Mcap in EUR'].sum() * 100),
                             "inclusions_count": len(inclusions_df),
                             "exclusions_count": len(exclusions_df),
                             "capped_companies": int(capped_companies)

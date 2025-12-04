@@ -1,0 +1,596 @@
+2025-12-04 10:00:24,179 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 10:00:24,181 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 10:02:22,056 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:22] "GET / HTTP/1.1" 200 -
+2025-12-04 10:02:22,105 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:22] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-04 10:02:49,005 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:49] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-04 10:02:49,005 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:49] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:02:49,005 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-04 10:02:51,040 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:51] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:02:51,208 - Review.reviews.ezsl_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-04 10:02:51,208 - Review.reviews.ezsl_review - INFO - Found 0 existing companies in EZSL
+2025-12-04 10:02:51,224 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary by Country:
+2025-12-04 10:02:51,225 - Review.reviews.ezsl_review - INFO - Austria: 12 total (0 existing, 12 new)
+2025-12-04 10:02:51,231 - Review.reviews.ezsl_review - INFO - Belgium: 21 total (0 existing, 21 new)
+2025-12-04 10:02:51,233 - Review.reviews.ezsl_review - INFO - Finland: 34 total (0 existing, 34 new)
+2025-12-04 10:02:51,235 - Review.reviews.ezsl_review - INFO - France: 69 total (0 existing, 69 new)
+2025-12-04 10:02:51,237 - Review.reviews.ezsl_review - INFO - Germany: 71 total (0 existing, 71 new)
+2025-12-04 10:02:51,239 - Review.reviews.ezsl_review - INFO - Ireland: 8 total (0 existing, 8 new)
+2025-12-04 10:02:51,240 - Review.reviews.ezsl_review - INFO - Italy: 56 total (0 existing, 56 new)
+2025-12-04 10:02:51,243 - Review.reviews.ezsl_review - INFO - Netherlands: 34 total (0 existing, 34 new)
+2025-12-04 10:02:51,244 - Review.reviews.ezsl_review - INFO - Portugal: 8 total (0 existing, 8 new)
+2025-12-04 10:02:51,246 - Review.reviews.ezsl_review - INFO - Spain: 32 total (0 existing, 32 new)
+2025-12-04 10:02:51,246 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-04 10:02:51,246 - Review.reviews.ezsl_review - INFO - Total companies selected: 345
+2025-12-04 10:02:51,246 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:02:51,247 - Review.reviews.ezsl_review - INFO -   - New companies selected: 345
+2025-12-04 10:02:51,247 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 13.73%
+2025-12-04 10:02:51,248 - Review.reviews.ezsl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:02:51,248 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:02:51,250 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:02:51,251 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:02:51,251 - utils.capping_proportional - INFO -   Total companies: 345
+2025-12-04 10:02:51,251 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:02:51,251 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:02:51,251 - utils.capping_proportional - INFO -   Max weight after capping: 0.016923
+2025-12-04 10:02:51,257 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-04 10:02:51,258 - Review.reviews.ezsl_review - INFO - Inclusions: 345
+2025-12-04 10:02:51,258 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-04 10:02:51,258 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251204_100251.xlsx
+2025-12-04 10:02:51,407 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251204_100251.xlsx
+2025-12-04 10:02:51,524 - Review.reviews.ezms_review - INFO - Starting EZMS review calculation
+2025-12-04 10:02:53,030 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:53] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:02:53,083 - Review.reviews.ezms_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-04 10:02:53,090 - Review.reviews.ezms_review - INFO - Found 0 existing companies in EZMS
+2025-12-04 10:02:53,097 - Review.reviews.ezms_review - INFO - 
+EZMS Selection Summary by Country:
+2025-12-04 10:02:53,104 - Review.reviews.ezms_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:02:53,111 - Review.reviews.ezms_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:02:53,112 - Review.reviews.ezms_review - INFO - Finland: 40 total (0 existing, 40 new)
+2025-12-04 10:02:53,121 - Review.reviews.ezms_review - INFO - France: 83 total (0 existing, 83 new)
+2025-12-04 10:02:53,127 - Review.reviews.ezms_review - INFO - Germany: 87 total (0 existing, 87 new)
+2025-12-04 10:02:53,131 - Review.reviews.ezms_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:02:53,137 - Review.reviews.ezms_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:02:53,142 - Review.reviews.ezms_review - INFO - Netherlands: 41 total (0 existing, 41 new)
+2025-12-04 10:02:53,147 - Review.reviews.ezms_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:02:53,152 - Review.reviews.ezms_review - INFO - Spain: 37 total (0 existing, 37 new)
+2025-12-04 10:02:53,152 - Review.reviews.ezms_review - INFO - 
+Overall EZMS Selection Summary:
+2025-12-04 10:02:53,153 - Review.reviews.ezms_review - INFO - Total companies selected: 419
+2025-12-04 10:02:53,154 - Review.reviews.ezms_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:02:53,156 - Review.reviews.ezms_review - INFO -   - New companies selected: 419
+2025-12-04 10:02:53,158 - Review.reviews.ezms_review - INFO - Total FFMC covered: 29.36%
+2025-12-04 10:02:53,159 - Review.reviews.ezms_review - INFO - 
+Applying proportional capping
+2025-12-04 10:02:53,161 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:02:53,163 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:02:53,163 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:02:53,163 - utils.capping_proportional - INFO -   Total companies: 419
+2025-12-04 10:02:53,164 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:02:53,164 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:02:53,164 - utils.capping_proportional - INFO -   Max weight after capping: 0.020469
+2025-12-04 10:02:53,179 - Review.reviews.ezms_review - INFO - 
+EZMS Changes Summary:
+2025-12-04 10:02:53,179 - Review.reviews.ezms_review - INFO - Inclusions: 419
+2025-12-04 10:02:53,180 - Review.reviews.ezms_review - INFO - Exclusions: 0
+2025-12-04 10:02:53,180 - Review.reviews.ezms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZMS_Review_20251204_100253.xlsx
+2025-12-04 10:02:53,403 - Review.reviews.ezms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZMS_Review_20251204_100253.xlsx
+2025-12-04 10:02:53,529 - Review.reviews.ewsl_review - INFO - Starting EWSL review calculation
+2025-12-04 10:02:55,020 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:55] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:02:55,071 - Review.reviews.ewsl_review - INFO - Found 0 existing companies in EWSL
+2025-12-04 10:02:55,086 - Review.reviews.ewsl_review - INFO - 
+EWSL Selection Summary by Country:
+2025-12-04 10:02:55,092 - Review.reviews.ewsl_review - INFO - Australia: 214 total (0 existing, 214 new)
+2025-12-04 10:02:55,094 - Review.reviews.ewsl_review - INFO - Austria: 12 total (0 existing, 12 new)
+2025-12-04 10:02:55,099 - Review.reviews.ewsl_review - INFO - Belgium: 21 total (0 existing, 21 new)
+2025-12-04 10:02:55,102 - Review.reviews.ewsl_review - INFO - Canada: 0 total (0 existing, 0 new)
+2025-12-04 10:02:55,107 - Review.reviews.ewsl_review - INFO - Denmark: 22 total (0 existing, 22 new)
+2025-12-04 10:02:55,111 - Review.reviews.ewsl_review - INFO - Finland: 36 total (0 existing, 36 new)
+2025-12-04 10:02:55,114 - Review.reviews.ewsl_review - INFO - France: 66 total (0 existing, 66 new)
+2025-12-04 10:02:55,117 - Review.reviews.ewsl_review - INFO - Germany: 70 total (0 existing, 70 new)
+2025-12-04 10:02:55,121 - Review.reviews.ewsl_review - INFO - Great Britain: 199 total (0 existing, 199 new)
+2025-12-04 10:02:55,125 - Review.reviews.ewsl_review - INFO - Hong Kong: 62 total (0 existing, 62 new)
+2025-12-04 10:02:55,127 - Review.reviews.ewsl_review - INFO - Ireland: 8 total (0 existing, 8 new)
+2025-12-04 10:02:55,127 - Review.reviews.ewsl_review - INFO - Israel: 52 total (0 existing, 52 new)
+2025-12-04 10:02:55,133 - Review.reviews.ewsl_review - INFO - Italy: 56 total (0 existing, 56 new)
+2025-12-04 10:02:55,138 - Review.reviews.ewsl_review - INFO - Japan: 1066 total (0 existing, 1066 new)
+2025-12-04 10:02:55,142 - Review.reviews.ewsl_review - INFO - Netherlands: 33 total (0 existing, 33 new)
+2025-12-04 10:02:55,145 - Review.reviews.ewsl_review - INFO - New Zealand: 22 total (0 existing, 22 new)
+2025-12-04 10:02:55,148 - Review.reviews.ewsl_review - INFO - Norway: 74 total (0 existing, 74 new)
+2025-12-04 10:02:55,152 - Review.reviews.ewsl_review - INFO - Portugal: 8 total (0 existing, 8 new)
+2025-12-04 10:02:55,157 - Review.reviews.ewsl_review - INFO - Singapore: 50 total (0 existing, 50 new)
+2025-12-04 10:02:55,159 - Review.reviews.ewsl_review - INFO - Spain: 31 total (0 existing, 31 new)
+2025-12-04 10:02:55,162 - Review.reviews.ewsl_review - INFO - Sweden: 154 total (0 existing, 154 new)
+2025-12-04 10:02:55,163 - Review.reviews.ewsl_review - INFO - Switzerland: 67 total (0 existing, 67 new)
+2025-12-04 10:02:55,170 - Review.reviews.ewsl_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:02:55,170 - Review.reviews.ewsl_review - INFO - 
+Overall EWSL Selection Summary:
+2025-12-04 10:02:55,171 - Review.reviews.ewsl_review - INFO - Total companies selected: 2328
+2025-12-04 10:02:55,171 - Review.reviews.ewsl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:02:55,172 - Review.reviews.ewsl_review - INFO -   - New companies selected: 2328
+2025-12-04 10:02:55,173 - Review.reviews.ewsl_review - INFO - Total FFMC covered: 13.78%
+2025-12-04 10:02:55,173 - Review.reviews.ewsl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:02:55,174 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:02:55,175 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:02:55,175 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:02:55,175 - utils.capping_proportional - INFO -   Total companies: 2328
+2025-12-04 10:02:55,175 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:02:55,175 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:02:55,175 - utils.capping_proportional - INFO -   Max weight after capping: 0.017979
+2025-12-04 10:02:55,182 - Review.reviews.ewsl_review - INFO - 
+EWSL Changes Summary:
+2025-12-04 10:02:55,182 - Review.reviews.ewsl_review - INFO - Inclusions: 2328
+2025-12-04 10:02:55,182 - Review.reviews.ewsl_review - INFO - Exclusions: 0
+2025-12-04 10:02:55,182 - Review.reviews.ewsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251204_100255.xlsx
+2025-12-04 10:02:56,420 - Review.reviews.ewsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251204_100255.xlsx
+2025-12-04 10:02:56,503 - Review.reviews.ewms_review - INFO - Starting EWMS review calculation
+2025-12-04 10:02:57,030 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:57] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:02:58,008 - Review.reviews.ewms_review - INFO - Found 0 existing companies in EWMS
+2025-12-04 10:02:58,008 - Review.reviews.ewms_review - INFO - 
+EWMS Selection Summary by Country:
+2025-12-04 10:02:58,017 - Review.reviews.ewms_review - INFO - Australia: 257 total (0 existing, 257 new)
+2025-12-04 10:02:58,020 - Review.reviews.ewms_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:02:58,024 - Review.reviews.ewms_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:02:58,027 - Review.reviews.ewms_review - INFO - Canada: 0 total (0 existing, 0 new)
+2025-12-04 10:02:58,029 - Review.reviews.ewms_review - INFO - Denmark: 30 total (0 existing, 30 new)
+2025-12-04 10:02:58,032 - Review.reviews.ewms_review - INFO - Finland: 42 total (0 existing, 42 new)
+2025-12-04 10:02:58,036 - Review.reviews.ewms_review - INFO - France: 80 total (0 existing, 80 new)
+2025-12-04 10:02:58,040 - Review.reviews.ewms_review - INFO - Germany: 86 total (0 existing, 86 new)
+2025-12-04 10:02:58,043 - Review.reviews.ewms_review - INFO - Great Britain: 246 total (0 existing, 246 new)
+2025-12-04 10:02:58,046 - Review.reviews.ewms_review - INFO - Hong Kong: 75 total (0 existing, 75 new)
+2025-12-04 10:02:58,049 - Review.reviews.ewms_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:02:58,053 - Review.reviews.ewms_review - INFO - Israel: 73 total (0 existing, 73 new)
+2025-12-04 10:02:58,057 - Review.reviews.ewms_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:02:58,060 - Review.reviews.ewms_review - INFO - Japan: 1274 total (0 existing, 1274 new)
+2025-12-04 10:02:58,064 - Review.reviews.ewms_review - INFO - Netherlands: 40 total (0 existing, 40 new)
+2025-12-04 10:02:58,067 - Review.reviews.ewms_review - INFO - New Zealand: 28 total (0 existing, 28 new)
+2025-12-04 10:02:58,071 - Review.reviews.ewms_review - INFO - Norway: 93 total (0 existing, 93 new)
+2025-12-04 10:02:58,074 - Review.reviews.ewms_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:02:58,077 - Review.reviews.ewms_review - INFO - Singapore: 64 total (0 existing, 64 new)
+2025-12-04 10:02:58,078 - Review.reviews.ewms_review - INFO - Spain: 36 total (0 existing, 36 new)
+2025-12-04 10:02:58,084 - Review.reviews.ewms_review - INFO - Sweden: 193 total (0 existing, 193 new)
+2025-12-04 10:02:58,087 - Review.reviews.ewms_review - INFO - Switzerland: 81 total (0 existing, 81 new)
+2025-12-04 10:02:58,090 - Review.reviews.ewms_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:02:58,091 - Review.reviews.ewms_review - INFO - 
+Overall EWMS Selection Summary:
+2025-12-04 10:02:58,091 - Review.reviews.ewms_review - INFO - Total companies selected: 2834
+2025-12-04 10:02:58,091 - Review.reviews.ewms_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:02:58,092 - Review.reviews.ewms_review - INFO -   - New companies selected: 2834
+2025-12-04 10:02:58,093 - Review.reviews.ewms_review - INFO - Total FFMC covered: 29.35%
+2025-12-04 10:02:58,093 - Review.reviews.ewms_review - INFO - 
+Applying proportional capping
+2025-12-04 10:02:58,094 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:02:58,095 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:02:58,095 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:02:58,095 - utils.capping_proportional - INFO -   Total companies: 2834
+2025-12-04 10:02:58,095 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:02:58,095 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:02:58,095 - utils.capping_proportional - INFO -   Max weight after capping: 0.014030
+2025-12-04 10:02:58,105 - Review.reviews.ewms_review - INFO - 
+EWMS Changes Summary:
+2025-12-04 10:02:58,105 - Review.reviews.ewms_review - INFO - Inclusions: 2834
+2025-12-04 10:02:58,105 - Review.reviews.ewms_review - INFO - Exclusions: 0
+2025-12-04 10:02:58,106 - Review.reviews.ewms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWMS_Review_20251204_100258.xlsx
+2025-12-04 10:02:59,025 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:02:59] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:02:59,402 - Review.reviews.ewms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWMS_Review_20251204_100258.xlsx
+2025-12-04 10:02:59,469 - Review.reviews.eusl_review - INFO - Starting EUSL review calculation
+2025-12-04 10:03:00,730 - Review.reviews.eusl_review - INFO - Found 0 existing companies in EUSL
+2025-12-04 10:03:00,737 - Review.reviews.eusl_review - INFO - 
+EUSL Selection Summary by Country:
+2025-12-04 10:03:00,741 - Review.reviews.eusl_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:03:00,741 - Review.reviews.eusl_review - INFO - 
+Overall EUSL Selection Summary:
+2025-12-04 10:03:00,741 - Review.reviews.eusl_review - INFO - Total companies selected: 5
+2025-12-04 10:03:00,741 - Review.reviews.eusl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:00,742 - Review.reviews.eusl_review - INFO -   - New companies selected: 5
+2025-12-04 10:03:00,742 - Review.reviews.eusl_review - INFO - Total FFMC covered: 100.00%
+2025-12-04 10:03:00,743 - Review.reviews.eusl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:00,743 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:00,746 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2025-12-04 10:03:00,746 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:00,746 - utils.capping_proportional - INFO -   Total companies: 5
+2025-12-04 10:03:00,747 - utils.capping_proportional - INFO -   Companies capped: 5
+2025-12-04 10:03:00,747 - utils.capping_proportional - INFO -   Weight sum after capping: 0.500000
+2025-12-04 10:03:00,747 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-04 10:03:00,752 - Review.reviews.eusl_review - INFO - 
+EUSL Changes Summary:
+2025-12-04 10:03:00,753 - Review.reviews.eusl_review - INFO - Inclusions: 5
+2025-12-04 10:03:00,753 - Review.reviews.eusl_review - INFO - Exclusions: 0
+2025-12-04 10:03:00,753 - Review.reviews.eusl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251204_100300.xlsx
+2025-12-04 10:03:00,925 - Review.reviews.eusl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251204_100300.xlsx
+2025-12-04 10:03:00,993 - Review.reviews.eemsc_review - INFO - Starting EEMSC review calculation
+2025-12-04 10:03:01,017 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:01] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:03:02,476 - Review.reviews.eemsc_review - INFO - Found 0 existing companies in EEMSC
+2025-12-04 10:03:02,487 - Review.reviews.eemsc_review - INFO - 
+EEMSC Selection Summary by Country:
+2025-12-04 10:03:02,493 - Review.reviews.eemsc_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:03:02,494 - Review.reviews.eemsc_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:03:02,499 - Review.reviews.eemsc_review - INFO - Denmark: 31 total (0 existing, 31 new)
+2025-12-04 10:03:02,504 - Review.reviews.eemsc_review - INFO - Finland: 42 total (0 existing, 42 new)
+2025-12-04 10:03:02,507 - Review.reviews.eemsc_review - INFO - France: 94 total (0 existing, 94 new)
+2025-12-04 10:03:02,511 - Review.reviews.eemsc_review - INFO - Germany: 104 total (0 existing, 104 new)
+2025-12-04 10:03:02,511 - Review.reviews.eemsc_review - INFO - Great Britain: 246 total (0 existing, 246 new)
+2025-12-04 10:03:02,518 - Review.reviews.eemsc_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:03:02,521 - Review.reviews.eemsc_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:03:02,524 - Review.reviews.eemsc_review - INFO - Netherlands: 45 total (0 existing, 45 new)
+2025-12-04 10:03:02,527 - Review.reviews.eemsc_review - INFO - Norway: 93 total (0 existing, 93 new)
+2025-12-04 10:03:02,528 - Review.reviews.eemsc_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:03:02,532 - Review.reviews.eemsc_review - INFO - Spain: 41 total (0 existing, 41 new)
+2025-12-04 10:03:02,534 - Review.reviews.eemsc_review - INFO - Sweden: 193 total (0 existing, 193 new)
+2025-12-04 10:03:02,539 - Review.reviews.eemsc_review - INFO - Switzerland: 87 total (0 existing, 87 new)
+2025-12-04 10:03:02,540 - Review.reviews.eemsc_review - INFO - 
+Overall EEMSC Selection Summary:
+2025-12-04 10:03:02,540 - Review.reviews.eemsc_review - INFO - Total companies selected: 1107
+2025-12-04 10:03:02,541 - Review.reviews.eemsc_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:02,541 - Review.reviews.eemsc_review - INFO -   - New companies selected: 1107
+2025-12-04 10:03:02,542 - Review.reviews.eemsc_review - INFO - Total FFMC covered: 28.76%
+2025-12-04 10:03:02,543 - Review.reviews.eemsc_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:02,544 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:02,545 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:02,547 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:02,547 - utils.capping_proportional - INFO -   Total companies: 1107
+2025-12-04 10:03:02,547 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:02,547 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:02,547 - utils.capping_proportional - INFO -   Max weight after capping: 0.013732
+2025-12-04 10:03:02,559 - Review.reviews.eemsc_review - INFO - 
+EEMSC Changes Summary:
+2025-12-04 10:03:02,559 - Review.reviews.eemsc_review - INFO - Inclusions: 1107
+2025-12-04 10:03:02,559 - Review.reviews.eemsc_review - INFO - Exclusions: 0
+2025-12-04 10:03:02,559 - Review.reviews.eemsc_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251204_100302.xlsx
+2025-12-04 10:03:02,905 - Review.reviews.eemsc_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251204_100302.xlsx
+2025-12-04 10:03:03,020 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:03] "GET /task-status/99d04f7b-642e-4d37-8ee7-71c253baf362 HTTP/1.1" 200 -
+2025-12-04 10:03:18,203 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:18] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-04 10:03:18,205 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:18] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:18,209 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-04 10:03:20,220 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:20] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:20,503 - Review.reviews.ezsl_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-04 10:03:20,516 - Review.reviews.ezsl_review - INFO - Found 0 existing companies in EZSL
+2025-12-04 10:03:20,520 - Review.reviews.ezsl_review - INFO - 
+EZSL Selection Summary by Country:
+2025-12-04 10:03:20,520 - Review.reviews.ezsl_review - INFO - Austria: 12 total (0 existing, 12 new)
+2025-12-04 10:03:20,524 - Review.reviews.ezsl_review - INFO - Belgium: 21 total (0 existing, 21 new)
+2025-12-04 10:03:20,527 - Review.reviews.ezsl_review - INFO - Finland: 34 total (0 existing, 34 new)
+2025-12-04 10:03:20,529 - Review.reviews.ezsl_review - INFO - France: 69 total (0 existing, 69 new)
+2025-12-04 10:03:20,533 - Review.reviews.ezsl_review - INFO - Germany: 71 total (0 existing, 71 new)
+2025-12-04 10:03:20,536 - Review.reviews.ezsl_review - INFO - Ireland: 8 total (0 existing, 8 new)
+2025-12-04 10:03:20,540 - Review.reviews.ezsl_review - INFO - Italy: 56 total (0 existing, 56 new)
+2025-12-04 10:03:20,542 - Review.reviews.ezsl_review - INFO - Netherlands: 34 total (0 existing, 34 new)
+2025-12-04 10:03:20,544 - Review.reviews.ezsl_review - INFO - Portugal: 8 total (0 existing, 8 new)
+2025-12-04 10:03:20,547 - Review.reviews.ezsl_review - INFO - Spain: 32 total (0 existing, 32 new)
+2025-12-04 10:03:20,548 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-04 10:03:20,548 - Review.reviews.ezsl_review - INFO - Total companies selected: 345
+2025-12-04 10:03:20,548 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:20,549 - Review.reviews.ezsl_review - INFO -   - New companies selected: 345
+2025-12-04 10:03:20,549 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 13.73%
+2025-12-04 10:03:20,549 - Review.reviews.ezsl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:20,550 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:20,551 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:20,552 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:20,552 - utils.capping_proportional - INFO -   Total companies: 345
+2025-12-04 10:03:20,552 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:20,552 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:20,552 - utils.capping_proportional - INFO -   Max weight after capping: 0.016923
+2025-12-04 10:03:20,558 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-04 10:03:20,558 - Review.reviews.ezsl_review - INFO - Inclusions: 345
+2025-12-04 10:03:20,558 - Review.reviews.ezsl_review - INFO - Exclusions: 0
+2025-12-04 10:03:20,558 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251204_100320.xlsx
+2025-12-04 10:03:20,736 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251204_100320.xlsx
+2025-12-04 10:03:20,805 - Review.reviews.ezms_review - INFO - Starting EZMS review calculation
+2025-12-04 10:03:22,103 - Review.reviews.ezms_review - WARNING - Unmapped MICs found: ['FSME']
+2025-12-04 10:03:22,103 - Review.reviews.ezms_review - INFO - Found 0 existing companies in EZMS
+2025-12-04 10:03:22,124 - Review.reviews.ezms_review - INFO - 
+EZMS Selection Summary by Country:
+2025-12-04 10:03:22,126 - Review.reviews.ezms_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:03:22,132 - Review.reviews.ezms_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:03:22,137 - Review.reviews.ezms_review - INFO - Finland: 40 total (0 existing, 40 new)
+2025-12-04 10:03:22,142 - Review.reviews.ezms_review - INFO - France: 83 total (0 existing, 83 new)
+2025-12-04 10:03:22,146 - Review.reviews.ezms_review - INFO - Germany: 87 total (0 existing, 87 new)
+2025-12-04 10:03:22,150 - Review.reviews.ezms_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:03:22,158 - Review.reviews.ezms_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:03:22,162 - Review.reviews.ezms_review - INFO - Netherlands: 41 total (0 existing, 41 new)
+2025-12-04 10:03:22,167 - Review.reviews.ezms_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:03:22,172 - Review.reviews.ezms_review - INFO - Spain: 37 total (0 existing, 37 new)
+2025-12-04 10:03:22,172 - Review.reviews.ezms_review - INFO - 
+Overall EZMS Selection Summary:
+2025-12-04 10:03:22,173 - Review.reviews.ezms_review - INFO - Total companies selected: 419
+2025-12-04 10:03:22,175 - Review.reviews.ezms_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:22,176 - Review.reviews.ezms_review - INFO -   - New companies selected: 419
+2025-12-04 10:03:22,177 - Review.reviews.ezms_review - INFO - Total FFMC covered: 29.36%
+2025-12-04 10:03:22,178 - Review.reviews.ezms_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:22,179 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:22,180 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:22,180 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:22,180 - utils.capping_proportional - INFO -   Total companies: 419
+2025-12-04 10:03:22,180 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:22,180 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:22,180 - utils.capping_proportional - INFO -   Max weight after capping: 0.020469
+2025-12-04 10:03:22,196 - Review.reviews.ezms_review - INFO - 
+EZMS Changes Summary:
+2025-12-04 10:03:22,196 - Review.reviews.ezms_review - INFO - Inclusions: 419
+2025-12-04 10:03:22,196 - Review.reviews.ezms_review - INFO - Exclusions: 0
+2025-12-04 10:03:22,196 - Review.reviews.ezms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZMS_Review_20251204_100322.xlsx
+2025-12-04 10:03:22,320 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:22] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:22,447 - Review.reviews.ezms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZMS_Review_20251204_100322.xlsx
+2025-12-04 10:03:22,537 - Review.reviews.ewsl_review - INFO - Starting EWSL review calculation
+2025-12-04 10:03:24,053 - Review.reviews.ewsl_review - INFO - Found 0 existing companies in EWSL
+2025-12-04 10:03:24,070 - Review.reviews.ewsl_review - INFO - 
+EWSL Selection Summary by Country:
+2025-12-04 10:03:24,074 - Review.reviews.ewsl_review - INFO - Australia: 214 total (0 existing, 214 new)
+2025-12-04 10:03:24,076 - Review.reviews.ewsl_review - INFO - Austria: 12 total (0 existing, 12 new)
+2025-12-04 10:03:24,080 - Review.reviews.ewsl_review - INFO - Belgium: 21 total (0 existing, 21 new)
+2025-12-04 10:03:24,083 - Review.reviews.ewsl_review - INFO - Canada: 0 total (0 existing, 0 new)
+2025-12-04 10:03:24,086 - Review.reviews.ewsl_review - INFO - Denmark: 22 total (0 existing, 22 new)
+2025-12-04 10:03:24,090 - Review.reviews.ewsl_review - INFO - Finland: 36 total (0 existing, 36 new)
+2025-12-04 10:03:24,093 - Review.reviews.ewsl_review - INFO - France: 66 total (0 existing, 66 new)
+2025-12-04 10:03:24,095 - Review.reviews.ewsl_review - INFO - Germany: 70 total (0 existing, 70 new)
+2025-12-04 10:03:24,095 - Review.reviews.ewsl_review - INFO - Great Britain: 199 total (0 existing, 199 new)
+2025-12-04 10:03:24,102 - Review.reviews.ewsl_review - INFO - Hong Kong: 62 total (0 existing, 62 new)
+2025-12-04 10:03:24,105 - Review.reviews.ewsl_review - INFO - Ireland: 8 total (0 existing, 8 new)
+2025-12-04 10:03:24,108 - Review.reviews.ewsl_review - INFO - Israel: 52 total (0 existing, 52 new)
+2025-12-04 10:03:24,112 - Review.reviews.ewsl_review - INFO - Italy: 56 total (0 existing, 56 new)
+2025-12-04 10:03:24,116 - Review.reviews.ewsl_review - INFO - Japan: 1066 total (0 existing, 1066 new)
+2025-12-04 10:03:24,119 - Review.reviews.ewsl_review - INFO - Netherlands: 33 total (0 existing, 33 new)
+2025-12-04 10:03:24,123 - Review.reviews.ewsl_review - INFO - New Zealand: 22 total (0 existing, 22 new)
+2025-12-04 10:03:24,126 - Review.reviews.ewsl_review - INFO - Norway: 74 total (0 existing, 74 new)
+2025-12-04 10:03:24,128 - Review.reviews.ewsl_review - INFO - Portugal: 8 total (0 existing, 8 new)
+2025-12-04 10:03:24,131 - Review.reviews.ewsl_review - INFO - Singapore: 50 total (0 existing, 50 new)
+2025-12-04 10:03:24,134 - Review.reviews.ewsl_review - INFO - Spain: 31 total (0 existing, 31 new)
+2025-12-04 10:03:24,137 - Review.reviews.ewsl_review - INFO - Sweden: 154 total (0 existing, 154 new)
+2025-12-04 10:03:24,141 - Review.reviews.ewsl_review - INFO - Switzerland: 67 total (0 existing, 67 new)
+2025-12-04 10:03:24,145 - Review.reviews.ewsl_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:03:24,145 - Review.reviews.ewsl_review - INFO - 
+Overall EWSL Selection Summary:
+2025-12-04 10:03:24,145 - Review.reviews.ewsl_review - INFO - Total companies selected: 2328
+2025-12-04 10:03:24,145 - Review.reviews.ewsl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:24,146 - Review.reviews.ewsl_review - INFO -   - New companies selected: 2328
+2025-12-04 10:03:24,146 - Review.reviews.ewsl_review - INFO - Total FFMC covered: 13.78%
+2025-12-04 10:03:24,146 - Review.reviews.ewsl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:24,147 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:24,148 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:24,149 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:24,149 - utils.capping_proportional - INFO -   Total companies: 2328
+2025-12-04 10:03:24,149 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:24,149 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:24,149 - utils.capping_proportional - INFO -   Max weight after capping: 0.017979
+2025-12-04 10:03:24,158 - Review.reviews.ewsl_review - INFO - 
+EWSL Changes Summary:
+2025-12-04 10:03:24,158 - Review.reviews.ewsl_review - INFO - Inclusions: 2328
+2025-12-04 10:03:24,158 - Review.reviews.ewsl_review - INFO - Exclusions: 0
+2025-12-04 10:03:24,159 - Review.reviews.ewsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251204_100324.xlsx
+2025-12-04 10:03:24,238 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:24] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:25,237 - Review.reviews.ewsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251204_100324.xlsx
+2025-12-04 10:03:25,349 - Review.reviews.ewms_review - INFO - Starting EWMS review calculation
+2025-12-04 10:03:26,221 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:26] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:26,916 - Review.reviews.ewms_review - INFO - Found 0 existing companies in EWMS
+2025-12-04 10:03:26,920 - Review.reviews.ewms_review - INFO - 
+EWMS Selection Summary by Country:
+2025-12-04 10:03:26,924 - Review.reviews.ewms_review - INFO - Australia: 257 total (0 existing, 257 new)
+2025-12-04 10:03:26,927 - Review.reviews.ewms_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:03:26,930 - Review.reviews.ewms_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:03:26,933 - Review.reviews.ewms_review - INFO - Canada: 0 total (0 existing, 0 new)
+2025-12-04 10:03:26,937 - Review.reviews.ewms_review - INFO - Denmark: 30 total (0 existing, 30 new)
+2025-12-04 10:03:26,940 - Review.reviews.ewms_review - INFO - Finland: 42 total (0 existing, 42 new)
+2025-12-04 10:03:26,942 - Review.reviews.ewms_review - INFO - France: 80 total (0 existing, 80 new)
+2025-12-04 10:03:26,942 - Review.reviews.ewms_review - INFO - Germany: 86 total (0 existing, 86 new)
+2025-12-04 10:03:26,951 - Review.reviews.ewms_review - INFO - Great Britain: 246 total (0 existing, 246 new)
+2025-12-04 10:03:26,955 - Review.reviews.ewms_review - INFO - Hong Kong: 75 total (0 existing, 75 new)
+2025-12-04 10:03:26,958 - Review.reviews.ewms_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:03:26,961 - Review.reviews.ewms_review - INFO - Israel: 73 total (0 existing, 73 new)
+2025-12-04 10:03:26,964 - Review.reviews.ewms_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:03:26,967 - Review.reviews.ewms_review - INFO - Japan: 1274 total (0 existing, 1274 new)
+2025-12-04 10:03:26,970 - Review.reviews.ewms_review - INFO - Netherlands: 40 total (0 existing, 40 new)
+2025-12-04 10:03:26,973 - Review.reviews.ewms_review - INFO - New Zealand: 28 total (0 existing, 28 new)
+2025-12-04 10:03:26,977 - Review.reviews.ewms_review - INFO - Norway: 93 total (0 existing, 93 new)
+2025-12-04 10:03:26,980 - Review.reviews.ewms_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:03:26,984 - Review.reviews.ewms_review - INFO - Singapore: 64 total (0 existing, 64 new)
+2025-12-04 10:03:26,987 - Review.reviews.ewms_review - INFO - Spain: 36 total (0 existing, 36 new)
+2025-12-04 10:03:26,990 - Review.reviews.ewms_review - INFO - Sweden: 193 total (0 existing, 193 new)
+2025-12-04 10:03:26,992 - Review.reviews.ewms_review - INFO - Switzerland: 81 total (0 existing, 81 new)
+2025-12-04 10:03:26,997 - Review.reviews.ewms_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:03:26,998 - Review.reviews.ewms_review - INFO - 
+Overall EWMS Selection Summary:
+2025-12-04 10:03:26,998 - Review.reviews.ewms_review - INFO - Total companies selected: 2834
+2025-12-04 10:03:26,998 - Review.reviews.ewms_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:26,999 - Review.reviews.ewms_review - INFO -   - New companies selected: 2834
+2025-12-04 10:03:27,001 - Review.reviews.ewms_review - INFO - Total FFMC covered: 29.35%
+2025-12-04 10:03:27,001 - Review.reviews.ewms_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:27,002 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:27,004 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:27,004 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:27,004 - utils.capping_proportional - INFO -   Total companies: 2834
+2025-12-04 10:03:27,004 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:27,004 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:27,004 - utils.capping_proportional - INFO -   Max weight after capping: 0.014030
+2025-12-04 10:03:27,013 - Review.reviews.ewms_review - INFO - 
+EWMS Changes Summary:
+2025-12-04 10:03:27,013 - Review.reviews.ewms_review - INFO - Inclusions: 2834
+2025-12-04 10:03:27,013 - Review.reviews.ewms_review - INFO - Exclusions: 0
+2025-12-04 10:03:27,013 - Review.reviews.ewms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWMS_Review_20251204_100327.xlsx
+2025-12-04 10:03:28,210 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:28] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:28,365 - Review.reviews.ewms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWMS_Review_20251204_100327.xlsx
+2025-12-04 10:03:28,432 - Review.reviews.eusl_review - INFO - Starting EUSL review calculation
+2025-12-04 10:03:29,697 - Review.reviews.eusl_review - INFO - Found 0 existing companies in EUSL
+2025-12-04 10:03:29,701 - Review.reviews.eusl_review - INFO - 
+EUSL Selection Summary by Country:
+2025-12-04 10:03:29,702 - Review.reviews.eusl_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:03:29,702 - Review.reviews.eusl_review - INFO - 
+Overall EUSL Selection Summary:
+2025-12-04 10:03:29,702 - Review.reviews.eusl_review - INFO - Total companies selected: 5
+2025-12-04 10:03:29,703 - Review.reviews.eusl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:29,703 - Review.reviews.eusl_review - INFO -   - New companies selected: 5
+2025-12-04 10:03:29,703 - Review.reviews.eusl_review - INFO - Total FFMC covered: 100.00%
+2025-12-04 10:03:29,704 - Review.reviews.eusl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:29,704 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:29,707 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2025-12-04 10:03:29,707 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:29,707 - utils.capping_proportional - INFO -   Total companies: 5
+2025-12-04 10:03:29,707 - utils.capping_proportional - INFO -   Companies capped: 5
+2025-12-04 10:03:29,707 - utils.capping_proportional - INFO -   Weight sum after capping: 0.500000
+2025-12-04 10:03:29,707 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-04 10:03:29,712 - Review.reviews.eusl_review - INFO - 
+EUSL Changes Summary:
+2025-12-04 10:03:29,712 - Review.reviews.eusl_review - INFO - Inclusions: 5
+2025-12-04 10:03:29,713 - Review.reviews.eusl_review - INFO - Exclusions: 0
+2025-12-04 10:03:29,713 - Review.reviews.eusl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251204_100329.xlsx
+2025-12-04 10:03:29,925 - Review.reviews.eusl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251204_100329.xlsx
+2025-12-04 10:03:29,986 - Review.reviews.eemsc_review - INFO - Starting EEMSC review calculation
+2025-12-04 10:03:30,222 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:30] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:31,381 - Review.reviews.eemsc_review - INFO - Found 0 existing companies in EEMSC
+2025-12-04 10:03:31,385 - Review.reviews.eemsc_review - INFO - 
+EEMSC Selection Summary by Country:
+2025-12-04 10:03:31,389 - Review.reviews.eemsc_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:03:31,393 - Review.reviews.eemsc_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:03:31,396 - Review.reviews.eemsc_review - INFO - Denmark: 31 total (0 existing, 31 new)
+2025-12-04 10:03:31,400 - Review.reviews.eemsc_review - INFO - Finland: 42 total (0 existing, 42 new)
+2025-12-04 10:03:31,403 - Review.reviews.eemsc_review - INFO - France: 94 total (0 existing, 94 new)
+2025-12-04 10:03:31,407 - Review.reviews.eemsc_review - INFO - Germany: 104 total (0 existing, 104 new)
+2025-12-04 10:03:31,411 - Review.reviews.eemsc_review - INFO - Great Britain: 246 total (0 existing, 246 new)
+2025-12-04 10:03:31,416 - Review.reviews.eemsc_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:03:31,419 - Review.reviews.eemsc_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:03:31,421 - Review.reviews.eemsc_review - INFO - Netherlands: 45 total (0 existing, 45 new)
+2025-12-04 10:03:31,423 - Review.reviews.eemsc_review - INFO - Norway: 93 total (0 existing, 93 new)
+2025-12-04 10:03:31,425 - Review.reviews.eemsc_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:03:31,427 - Review.reviews.eemsc_review - INFO - Spain: 41 total (0 existing, 41 new)
+2025-12-04 10:03:31,429 - Review.reviews.eemsc_review - INFO - Sweden: 193 total (0 existing, 193 new)
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO - Switzerland: 87 total (0 existing, 87 new)
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO - 
+Overall EEMSC Selection Summary:
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO - Total companies selected: 1107
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO -   - New companies selected: 1107
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO - Total FFMC covered: 28.76%
+2025-12-04 10:03:31,430 - Review.reviews.eemsc_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:31,436 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:31,438 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:31,439 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:31,439 - utils.capping_proportional - INFO -   Total companies: 1107
+2025-12-04 10:03:31,439 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:31,439 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:31,440 - utils.capping_proportional - INFO -   Max weight after capping: 0.013732
+2025-12-04 10:03:31,446 - Review.reviews.eemsc_review - INFO - 
+EEMSC Changes Summary:
+2025-12-04 10:03:31,446 - Review.reviews.eemsc_review - INFO - Inclusions: 1107
+2025-12-04 10:03:31,446 - Review.reviews.eemsc_review - INFO - Exclusions: 0
+2025-12-04 10:03:31,446 - Review.reviews.eemsc_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251204_100331.xlsx
+2025-12-04 10:03:31,787 - Review.reviews.eemsc_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251204_100331.xlsx
+2025-12-04 10:03:31,853 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+2025-12-04 10:03:32,220 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:32] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:33,455 - Review.reviews.eums_review - INFO - Found 0 existing companies in EUMS
+2025-12-04 10:03:33,455 - Review.reviews.eums_review - INFO - 
+EUMS Selection Summary by Country:
+2025-12-04 10:03:33,455 - Review.reviews.eums_review - INFO - United States: 5 total (0 existing, 5 new)
+2025-12-04 10:03:33,455 - Review.reviews.eums_review - INFO - 
+Overall EUMS Selection Summary:
+2025-12-04 10:03:33,455 - Review.reviews.eums_review - INFO - Total companies selected: 5
+2025-12-04 10:03:33,455 - Review.reviews.eums_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:33,465 - Review.reviews.eums_review - INFO -   - New companies selected: 5
+2025-12-04 10:03:33,465 - Review.reviews.eums_review - INFO - Total FFMC covered: 100.00%
+2025-12-04 10:03:33,465 - Review.reviews.eums_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:33,466 - Review.reviews.eums_review - INFO - 
+=== SELECTION DEBUGGING ===
+2025-12-04 10:03:33,466 - Review.reviews.eums_review - INFO - Total universe size: 1418
+2025-12-04 10:03:33,466 - Review.reviews.eums_review - INFO - Companies with EUMS_selection == 1: 5
+2025-12-04 10:03:33,466 - Review.reviews.eums_review - INFO - Companies with Is_Existing == 1: 0
+2025-12-04 10:03:33,467 - Review.reviews.eums_review - INFO - 
+Existing companies meeting 68% threshold: 0
+2025-12-04 10:03:33,467 - Review.reviews.eums_review - INFO - New companies meeting 72% threshold: 5
+2025-12-04 10:03:33,467 - Review.reviews.eums_review - INFO - 
+NaN values in key columns:
+2025-12-04 10:03:33,467 - Review.reviews.eums_review - INFO -   Country: 0
+2025-12-04 10:03:33,468 - Review.reviews.eums_review - INFO -   Mcap in EUR: 1413
+2025-12-04 10:03:33,468 - Review.reviews.eums_review - INFO -   Country_Cumulative_Percentage: 1413
+2025-12-04 10:03:33,468 - Review.reviews.eums_review - INFO - 
+Sample of selection logic:
+2025-12-04 10:03:33,473 - Review.reviews.eums_review - INFO - 
+                  Company        Country  Is_Existing   Mcap in EUR  Country_Cumulative_Percentage  EUMS_selection
+84                 AMRIZE  United States            0  2.459571e+10                      92.687563               1
+368               CRH PLC  United States            0  7.496213e+08                      95.512468               1
+539  FLUTTER ENTERTAINMEN  United States            0  5.184907e+08                      97.466372               1
+512  FERGUSON ENTERPRISES  United States            0  4.529779e+08                      99.173394               1
+558             FRONTLINE  United States            0  2.193495e+08                     100.000000               1
+0                   3M CO  United States            0           NaN                            NaN               0
+1        A. O. SMITH CORP  United States            0           NaN                            NaN               0
+2               AAON INC.  United States            0           NaN                            NaN               0
+3               AAR CORP.  United States            0           NaN                            NaN               0
+4     ABBOTT LABORATORIES  United States            0           NaN                            NaN               0
+5             ABBVIE INC.  United States            0           NaN                            NaN               0
+6     ABERCROMBIE & FITCH  United States            0           NaN                            NaN               0
+7    ABM INDUSTRIES INCOR  United States            0           NaN                            NaN               0
+8          ACADEMY SPORTS  United States            0           NaN                            NaN               0
+9           ACADIA PHARMA  United States            0           NaN                            NaN               0
+10    ACADIA REALTY TRUST  United States            0           NaN                            NaN               0
+11        ACCENTURE PLC-A  United States            0           NaN                            NaN               0
+12     ACI WORLDWIDE INC.  United States            0           NaN                            NaN               0
+13            ACUITY INC.  United States            0           NaN                            NaN               0
+14      ACUSHNET HOLDINGS  United States            0           NaN                            NaN               0
+2025-12-04 10:03:33,473 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:33,477 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2025-12-04 10:03:33,478 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:33,478 - utils.capping_proportional - INFO -   Total companies: 5
+2025-12-04 10:03:33,478 - utils.capping_proportional - INFO -   Companies capped: 5
+2025-12-04 10:03:33,478 - utils.capping_proportional - INFO -   Weight sum after capping: 0.500000
+2025-12-04 10:03:33,478 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-04 10:03:33,480 - Review.reviews.eums_review - INFO - 
+EUMS Changes Summary:
+2025-12-04 10:03:33,480 - Review.reviews.eums_review - INFO - Inclusions: 5
+2025-12-04 10:03:33,480 - Review.reviews.eums_review - INFO - Exclusions: 0
+2025-12-04 10:03:33,480 - Review.reviews.eums_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_100333.xlsx
+2025-12-04 10:03:33,688 - Review.reviews.eums_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_100333.xlsx
+2025-12-04 10:03:33,694 - Review.reviews.eesl_review - INFO - Starting EESL review calculation
+2025-12-04 10:03:34,236 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:34] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:03:35,111 - Review.reviews.eesl_review - INFO - Found 0 existing companies in EESL
+2025-12-04 10:03:35,118 - Review.reviews.eesl_review - INFO - 
+EESL Selection Summary by Country:
+2025-12-04 10:03:35,123 - Review.reviews.eesl_review - INFO - Austria: 12 total (0 existing, 12 new)
+2025-12-04 10:03:35,128 - Review.reviews.eesl_review - INFO - Belgium: 21 total (0 existing, 21 new)
+2025-12-04 10:03:35,132 - Review.reviews.eesl_review - INFO - Denmark: 23 total (0 existing, 23 new)
+2025-12-04 10:03:35,136 - Review.reviews.eesl_review - INFO - Finland: 36 total (0 existing, 36 new)
+2025-12-04 10:03:35,138 - Review.reviews.eesl_review - INFO - France: 80 total (0 existing, 80 new)
+2025-12-04 10:03:35,144 - Review.reviews.eesl_review - INFO - Germany: 88 total (0 existing, 88 new)
+2025-12-04 10:03:35,148 - Review.reviews.eesl_review - INFO - Great Britain: 199 total (0 existing, 199 new)
+2025-12-04 10:03:35,151 - Review.reviews.eesl_review - INFO - Ireland: 8 total (0 existing, 8 new)
+2025-12-04 10:03:35,155 - Review.reviews.eesl_review - INFO - Italy: 56 total (0 existing, 56 new)
+2025-12-04 10:03:35,158 - Review.reviews.eesl_review - INFO - Netherlands: 37 total (0 existing, 37 new)
+2025-12-04 10:03:35,164 - Review.reviews.eesl_review - INFO - Norway: 74 total (0 existing, 74 new)
+2025-12-04 10:03:35,170 - Review.reviews.eesl_review - INFO - Portugal: 8 total (0 existing, 8 new)
+2025-12-04 10:03:35,172 - Review.reviews.eesl_review - INFO - Spain: 35 total (0 existing, 35 new)
+2025-12-04 10:03:35,174 - Review.reviews.eesl_review - INFO - Sweden: 154 total (0 existing, 154 new)
+2025-12-04 10:03:35,178 - Review.reviews.eesl_review - INFO - Switzerland: 73 total (0 existing, 73 new)
+2025-12-04 10:03:35,179 - Review.reviews.eesl_review - INFO - 
+Overall EESL Selection Summary:
+2025-12-04 10:03:35,179 - Review.reviews.eesl_review - INFO - Total companies selected: 904
+2025-12-04 10:03:35,180 - Review.reviews.eesl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:03:35,180 - Review.reviews.eesl_review - INFO -   - New companies selected: 904
+2025-12-04 10:03:35,181 - Review.reviews.eesl_review - INFO - Total FFMC covered: 13.39%
+2025-12-04 10:03:35,181 - Review.reviews.eesl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:03:35,183 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:03:35,185 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:03:35,185 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:03:35,185 - utils.capping_proportional - INFO -   Total companies: 904
+2025-12-04 10:03:35,185 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:03:35,186 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:03:35,186 - utils.capping_proportional - INFO -   Max weight after capping: 0.013324
+2025-12-04 10:03:35,192 - Review.reviews.eesl_review - INFO - 
+EESL Changes Summary:
+2025-12-04 10:03:35,192 - Review.reviews.eesl_review - INFO - Inclusions: 904
+2025-12-04 10:03:35,192 - Review.reviews.eesl_review - INFO - Exclusions: 0
+2025-12-04 10:03:35,192 - Review.reviews.eesl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESL_Review_20251204_100335.xlsx
+2025-12-04 10:03:35,589 - Review.reviews.eesl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESL_Review_20251204_100335.xlsx
+2025-12-04 10:03:36,209 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:03:36] "GET /task-status/6734c7d9-eca5-4a27-aa6c-c975515920c3 HTTP/1.1" 200 -
+2025-12-04 10:04:01,867 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\__init__.py', reloading

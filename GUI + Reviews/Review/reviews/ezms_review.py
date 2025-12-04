@@ -142,7 +142,8 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
             'ALXP': 'France',
             'XHEL': 'Finland',
             'XBRU': 'Belgium',
-            'WBAH': 'Austria'
+            'WBAH': 'Austria',
+            'FSME': 'Finland'
         }
         
         # Add Country column based on MIC
@@ -181,15 +182,6 @@ def run_ezms_review(date, effective_date, co_date, index="EZMS", isin="NLIX00008
         
         universe_df.loc[existing_mask & (universe_df['Country_Cumulative_Percentage'] >= 68), 'EZMS_selection'] = 1
         universe_df.loc[new_mask & (universe_df['Country_Cumulative_Percentage'] >= 72), 'EZMS_selection'] = 1
-        
-        # Print summary statistics per country
-        logger.info(f"\nEZMS Selection Summary by Country:")
-        for country in universe_df['Country'].dropna().unique():
-            country_df = universe_df[universe_df['Country'] == country]
-            selected_count = country_df['EZMS_selection'].sum()
-            existing_selected = country_df[existing_mask & (country_df['EZMS_selection'] == 1)].shape[0]
-            new_selected = country_df[new_mask & (country_df['EZMS_selection'] == 1)].shape[0]
-            logger.info(f"{country}: {selected_count} total ({existing_selected} existing, {new_selected} new)")
         
         # Print overall summary statistics
         logger.info(f"\nOverall EZMS Selection Summary:")

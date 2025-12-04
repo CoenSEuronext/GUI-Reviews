@@ -265,6 +265,46 @@ INDEX_CONFIGS = {
         "index": "EZSL",
         "isin": "NLIX00008655",
         "output_key": "ezsl_path"
+    },
+    "EUMS": {
+        "index": "EUMS",
+        "isin": "NLIX00008747",
+        "output_key": "eums_path"
+    },
+    "EZMS": {
+        "index": "EZMS",
+        "isin": "NLIX00008689",
+        "output_key": "ezms_path"
+    },
+    "EEMSC": {
+        "index": "EEMSC",
+        "isin": "NLIX00008622",
+        "output_key": "eemsc_path"
+    },
+    "EWMS": {
+        "index": "EWMS",
+        "isin": "NLIX00008564",
+        "output_key": "ewms_path"
+    },
+    "EUSL": {
+        "index": "EUSL",
+        "isin": "NLIX00008713",
+        "output_key": "eusl_path"
+    },
+    "EESL": {
+        "index": "EESL",
+        "isin": "NLIX00008598",
+        "output_key": "eesl_path"
+    },
+    "EWSL": {
+        "index": "EWSL",
+        "isin": "NLIX00008531",
+        "output_key": "ewsl_path"
+    },
+    "ELUX": {
+        "index": "ELUX",
+        "isin": "NLIX00008424",
+        "output_key": "elux_path"
     }
     # Add new indices here following the same pattern
 }
@@ -332,7 +372,8 @@ ALL_MNEMOS = [
     "EQGFP", "ENFRP", "ES4PP", "EZ6PP", "FREMP", "EBLPP", "BIOEP", "JPCLE", "JPCLA", "EBSEP", 
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
-    "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL"
+    "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS",
+    "EUMS", "EUSL", "EESL", "EWSL"
 ]
 
 

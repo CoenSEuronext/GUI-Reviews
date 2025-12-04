@@ -1,0 +1,24 @@
+{
+  "task_id": "f2047a04-95a9-4739-80d1-730b204539d4",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-04T11:13:26.366269",
+  "started_at": "2025-12-04T11:13:26.366269",
+  "completed_at": "2025-12-04T11:13:31.761724",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: single positional indexer is out-of-bounds",
+  "error": "Error during review calculation: single positional indexer is out-of-bounds",
+  "result_data": null,
+  "review_type": "ELUX",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "ELUX",
+    "isin": "NLIX00008424",
+    "currency": "EUR",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.395455
+}

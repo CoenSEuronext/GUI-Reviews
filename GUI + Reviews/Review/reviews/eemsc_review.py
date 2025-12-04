@@ -13,7 +13,7 @@ from utils.capping_proportional import apply_proportional_capping
 logger = setup_logging(__name__)
 
 def run_eemsc_review(date, effective_date, co_date, index="EEMSC", isin="NLIX00008598", 
-                    area="EU", area2=None, type="STOCK", universe="deupt", 
+                    area="EU", area2="US", type="STOCK", universe="deupt", 
                     feed="Reuters", currency="EUR", year=None, max_individual_weight=0.1, max_iterations=100):
     """
     Run the EEMSC index review calculation
@@ -130,19 +130,27 @@ def run_eemsc_review(date, effective_date, co_date, index="EEMSC", isin="NLIX000
         
         # Create MIC to Country mapping
         mic_to_country = {
-            'XMAD': 'Spain',
-            'XLIS': 'Portugal',
-            'XAMS': 'Netherlands',
-            'XNGM': 'Netherlands',
-            'MTAA': 'Italy',
-            'XESM': 'Ireland',
-            'XMSM': 'Ireland',
-            'XETR': 'Germany',
-            'XPAR': 'France',
-            'ALXP': 'France',
-            'XHEL': 'Finland',
-            'XBRU': 'Belgium',
-            'WBAH': 'Austria'
+            "XETR": "Germany",
+            "XOSL": "Norway",
+            "XLON": "Great Britain",
+            "MTAA": "Italy",
+            "XSTO": "Sweden",
+            "XAMS": "Netherlands",
+            "XBRU": "Belgium",
+            "XSWX": "Switzerland",
+            "XPAR": "France",
+            "XMAD": "Spain",
+            "FSME": "Finland",
+            "XMSM": "Ireland",
+            "XHEL": "Finland",
+            "XCSE": "Denmark",
+            "XLIS": "Portugal",
+            "WBAH": "Austria",
+            "SSME": "Sweden",
+            "MERK": "Norway",
+            "XESM": "Ireland",
+            "XNGM": "Sweden",
+            "ALXP": "France"
         }
         
         # Add Country column based on MIC
@@ -181,15 +189,6 @@ def run_eemsc_review(date, effective_date, co_date, index="EEMSC", isin="NLIX000
         
         universe_df.loc[existing_mask & (universe_df['Country_Cumulative_Percentage'] >= 68), 'EEMSC_selection'] = 1
         universe_df.loc[new_mask & (universe_df['Country_Cumulative_Percentage'] >= 72), 'EEMSC_selection'] = 1
-        
-        # Print summary statistics per country
-        logger.info(f"\nEEMSC Selection Summary by Country:")
-        for country in universe_df['Country'].dropna().unique():
-            country_df = universe_df[universe_df['Country'] == country]
-            selected_count = country_df['EEMSC_selection'].sum()
-            existing_selected = country_df[existing_mask & (country_df['EEMSC_selection'] == 1)].shape[0]
-            new_selected = country_df[new_mask & (country_df['EEMSC_selection'] == 1)].shape[0]
-            logger.info(f"{country}: {selected_count} total ({existing_selected} existing, {new_selected} new)")
         
         # Print overall summary statistics
         logger.info(f"\nOverall EEMSC Selection Summary:")

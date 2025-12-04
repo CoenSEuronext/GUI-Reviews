@@ -1,0 +1,4 @@
+2025-12-04 10:24:56,111 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 10:24:56,113 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 10:25:02,186 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\__init__.py', reloading
+2025-12-04 10:25:02,194 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\app.py', reloading

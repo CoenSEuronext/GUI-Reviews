@@ -1,0 +1,48 @@
+2025-12-04 10:19:31,182 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 10:19:31,184 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 10:19:33,561 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:19:33] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:19:33,563 - Review.reviews.eemsc_review - INFO - Starting EEMSC review calculation
+2025-12-04 10:19:33,566 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:19:33] "GET /task-status/9097738f-fa18-4b60-a48c-bfd9830bbb79 HTTP/1.1" 200 -
+2025-12-04 10:19:35,569 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:19:35] "GET /task-status/9097738f-fa18-4b60-a48c-bfd9830bbb79 HTTP/1.1" 200 -
+2025-12-04 10:19:36,508 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eemsc_review.py', reloading
+2025-12-04 10:19:36,508 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eemsc_review.py', reloading
+2025-12-04 10:19:36,887 - Review.reviews.eemsc_review - INFO - Found 0 existing companies in EEMSC
+2025-12-04 10:19:36,887 - Review.reviews.eemsc_review - INFO - 
+EEMSC Selection Summary by Country:
+2025-12-04 10:19:36,895 - Review.reviews.eemsc_review - INFO - Austria: 15 total (0 existing, 15 new)
+2025-12-04 10:19:36,897 - Review.reviews.eemsc_review - INFO - Belgium: 29 total (0 existing, 29 new)
+2025-12-04 10:19:36,900 - Review.reviews.eemsc_review - INFO - Denmark: 31 total (0 existing, 31 new)
+2025-12-04 10:19:36,902 - Review.reviews.eemsc_review - INFO - Finland: 42 total (0 existing, 42 new)
+2025-12-04 10:19:36,905 - Review.reviews.eemsc_review - INFO - France: 94 total (0 existing, 94 new)
+2025-12-04 10:19:36,907 - Review.reviews.eemsc_review - INFO - Germany: 104 total (0 existing, 104 new)
+2025-12-04 10:19:36,907 - Review.reviews.eemsc_review - INFO - Great Britain: 246 total (0 existing, 246 new)
+2025-12-04 10:19:36,910 - Review.reviews.eemsc_review - INFO - Ireland: 9 total (0 existing, 9 new)
+2025-12-04 10:19:36,913 - Review.reviews.eemsc_review - INFO - Italy: 69 total (0 existing, 69 new)
+2025-12-04 10:19:36,915 - Review.reviews.eemsc_review - INFO - Netherlands: 45 total (0 existing, 45 new)
+2025-12-04 10:19:36,917 - Review.reviews.eemsc_review - INFO - Norway: 93 total (0 existing, 93 new)
+2025-12-04 10:19:36,919 - Review.reviews.eemsc_review - INFO - Portugal: 9 total (0 existing, 9 new)
+2025-12-04 10:19:36,921 - Review.reviews.eemsc_review - INFO - Spain: 41 total (0 existing, 41 new)
+2025-12-04 10:19:36,924 - Review.reviews.eemsc_review - INFO - Sweden: 193 total (0 existing, 193 new)
+2025-12-04 10:19:36,926 - Review.reviews.eemsc_review - INFO - Switzerland: 87 total (0 existing, 87 new)
+2025-12-04 10:19:36,926 - Review.reviews.eemsc_review - INFO - 
+Overall EEMSC Selection Summary:
+2025-12-04 10:19:36,926 - Review.reviews.eemsc_review - INFO - Total companies selected: 1107
+2025-12-04 10:19:36,926 - Review.reviews.eemsc_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:19:36,927 - Review.reviews.eemsc_review - INFO -   - New companies selected: 1107
+2025-12-04 10:19:36,927 - Review.reviews.eemsc_review - INFO - Total FFMC covered: 28.76%
+2025-12-04 10:19:36,927 - Review.reviews.eemsc_review - INFO - 
+Applying proportional capping
+2025-12-04 10:19:36,928 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:19:36,929 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:19:36,929 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:19:36,929 - utils.capping_proportional - INFO -   Total companies: 1107
+2025-12-04 10:19:36,929 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:19:36,929 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:19:36,929 - utils.capping_proportional - INFO -   Max weight after capping: 0.013732
+2025-12-04 10:19:36,936 - Review.reviews.eemsc_review - INFO - 
+EEMSC Changes Summary:
+2025-12-04 10:19:36,937 - Review.reviews.eemsc_review - INFO - Inclusions: 1107
+2025-12-04 10:19:36,937 - Review.reviews.eemsc_review - INFO - Exclusions: 0
+2025-12-04 10:19:36,938 - Review.reviews.eemsc_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251204_101936.xlsx
+2025-12-04 10:19:37,270 - Review.reviews.eemsc_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251204_101936.xlsx
+2025-12-04 10:19:37,570 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:19:37] "GET /task-status/9097738f-fa18-4b60-a48c-bfd9830bbb79 HTTP/1.1" 200 -

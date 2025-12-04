@@ -1,0 +1,102 @@
+2025-12-04 10:25:05,901 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 10:25:05,903 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 10:26:07,129 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:07] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:26:07,130 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+2025-12-04 10:26:07,130 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:07] "GET /task-status/53f9e040-e5cb-44c4-9a08-fc23446db7e5 HTTP/1.1" 200 -
+2025-12-04 10:26:09,138 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:09] "GET /task-status/53f9e040-e5cb-44c4-9a08-fc23446db7e5 HTTP/1.1" 200 -
+2025-12-04 10:26:10,876 - Review.reviews.eums_review - INFO - Found 0 existing companies in EUMS
+2025-12-04 10:26:10,876 - Review.reviews.eums_review - INFO - 
+EUMS Selection Summary by Country:
+2025-12-04 10:26:10,882 - Review.reviews.eums_review - INFO - United States: 1272 total (0 existing, 1272 new)
+2025-12-04 10:26:10,882 - Review.reviews.eums_review - INFO - 
+Overall EUMS Selection Summary:
+2025-12-04 10:26:10,882 - Review.reviews.eums_review - INFO - Total companies selected: 1272
+2025-12-04 10:26:10,882 - Review.reviews.eums_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:26:10,883 - Review.reviews.eums_review - INFO -   - New companies selected: 1272
+2025-12-04 10:26:10,884 - Review.reviews.eums_review - INFO - Total FFMC covered: 28.08%
+2025-12-04 10:26:10,884 - Review.reviews.eums_review - INFO - 
+Applying proportional capping
+2025-12-04 10:26:10,884 - Review.reviews.eums_review - INFO - 
+=== SELECTION DEBUGGING ===
+2025-12-04 10:26:10,884 - Review.reviews.eums_review - INFO - Total universe size: 1418
+2025-12-04 10:26:10,885 - Review.reviews.eums_review - INFO - Companies with EUMS_selection == 1: 1272
+2025-12-04 10:26:10,885 - Review.reviews.eums_review - INFO - Companies with Is_Existing == 1: 0
+2025-12-04 10:26:10,885 - Review.reviews.eums_review - INFO - 
+Existing companies meeting 68% threshold: 0
+2025-12-04 10:26:10,886 - Review.reviews.eums_review - INFO - New companies meeting 72% threshold: 1272
+2025-12-04 10:26:10,886 - Review.reviews.eums_review - INFO - 
+NaN values in key columns:
+2025-12-04 10:26:10,886 - Review.reviews.eums_review - INFO -   Country: 0
+2025-12-04 10:26:10,886 - Review.reviews.eums_review - INFO -   Mcap in EUR: 0
+2025-12-04 10:26:10,886 - Review.reviews.eums_review - INFO -   Country_Cumulative_Percentage: 0
+2025-12-04 10:26:10,887 - Review.reviews.eums_review - INFO - 
+Sample of selection logic:
+2025-12-04 10:26:10,889 - Review.reviews.eums_review - INFO - 
+                   Company        Country  Is_Existing   Mcap in EUR  Country_Cumulative_Percentage  EUMS_selection
+933            NVIDIA CORP  United States            0  3.127089e+12                       6.977338               0
+855         MICROSOFT CORP  United States            0  2.714774e+12                      13.034696               0
+96                   APPLE  United States            0  2.433759e+12                      18.465036               0
+59                  AMAZON  United States            0  1.581563e+12                      21.993910               0
+847       META PLTFORM ORD  United States            0  1.178781e+12                      24.624072               0
+214          BROADCOM INC.  United States            0  9.956822e+11                      26.845695               0
+56        ALPHABET CLASS A  United States            0  8.631987e+11                      28.771713               0
+57        ALPHABET INC - C  United States            0  7.678226e+11                      30.484922               0
+1238             TESLA INC  United States            0  6.712056e+11                      31.982554               0
+723   JP MORGAN CHASE & CO  United States            0  5.865328e+11                      33.291260               0
+174   BERKSHIRE HATHAWAY B  United States            0  4.728103e+11                      34.346221               0
+1343              VISA INC  United States            0  4.281389e+11                      35.301508               0
+451       ELI LILLY AND CO  United States            0  4.122487e+11                      36.221341               0
+899           NETFLIX INC.  United States            0  3.685781e+11                      37.043734               0
+827         MASTERCARD INC  United States            0  3.482735e+11                      37.820821               0
+500            EXXON MOBIL  United States            0  3.415958e+11                      38.583009               0
+720      JOHNSON & JOHNSON  United States            0  3.109055e+11                      39.276719               0
+359   COSTCO WHOLES. CORP.  United States            0  3.060809e+11                      39.959664               0
+1355           WALMART INC  United States            0  3.060224e+11                      40.642478               0
+645         HOME DEPOT INC  United States            0  2.957166e+11                      41.302298               0
+2025-12-04 10:26:10,890 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:26:10,891 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:26:10,891 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:26:10,891 - utils.capping_proportional - INFO -   Total companies: 1272
+2025-12-04 10:26:10,892 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:26:10,892 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:26:10,892 - utils.capping_proportional - INFO -   Max weight after capping: 0.004299
+2025-12-04 10:26:10,899 - Review.reviews.eums_review - INFO - 
+EUMS Changes Summary:
+2025-12-04 10:26:10,900 - Review.reviews.eums_review - INFO - Inclusions: 1272
+2025-12-04 10:26:10,900 - Review.reviews.eums_review - INFO - Exclusions: 0
+2025-12-04 10:26:10,901 - Review.reviews.eums_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_102610.xlsx
+2025-12-04 10:26:11,185 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:11] "GET /task-status/53f9e040-e5cb-44c4-9a08-fc23446db7e5 HTTP/1.1" 200 -
+2025-12-04 10:26:11,342 - Review.reviews.eums_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251204_102610.xlsx
+2025-12-04 10:26:13,143 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:13] "GET /task-status/53f9e040-e5cb-44c4-9a08-fc23446db7e5 HTTP/1.1" 200 -
+2025-12-04 10:26:18,111 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:18] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:26:18,111 - Review.reviews.eusl_review - INFO - Starting EUSL review calculation
+2025-12-04 10:26:18,111 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:18] "GET /task-status/996ba452-3811-47ed-969e-30119374edc5 HTTP/1.1" 200 -
+2025-12-04 10:26:19,892 - Review.reviews.eusl_review - INFO - Found 0 existing companies in EUSL
+2025-12-04 10:26:19,893 - Review.reviews.eusl_review - INFO - 
+EUSL Selection Summary by Country:
+2025-12-04 10:26:19,893 - Review.reviews.eusl_review - INFO - United States: 1048 total (0 existing, 1048 new)
+2025-12-04 10:26:19,893 - Review.reviews.eusl_review - INFO - 
+Overall EUSL Selection Summary:
+2025-12-04 10:26:19,893 - Review.reviews.eusl_review - INFO - Total companies selected: 1048
+2025-12-04 10:26:19,893 - Review.reviews.eusl_review - INFO -   - Existing companies selected: 0
+2025-12-04 10:26:19,899 - Review.reviews.eusl_review - INFO -   - New companies selected: 1048
+2025-12-04 10:26:19,899 - Review.reviews.eusl_review - INFO - Total FFMC covered: 13.03%
+2025-12-04 10:26:19,899 - Review.reviews.eusl_review - INFO - 
+Applying proportional capping
+2025-12-04 10:26:19,900 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-04 10:26:19,901 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-04 10:26:19,901 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-04 10:26:19,901 - utils.capping_proportional - INFO -   Total companies: 1048
+2025-12-04 10:26:19,901 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-04 10:26:19,901 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-04 10:26:19,901 - utils.capping_proportional - INFO -   Max weight after capping: 0.002926
+2025-12-04 10:26:19,909 - Review.reviews.eusl_review - INFO - 
+EUSL Changes Summary:
+2025-12-04 10:26:19,909 - Review.reviews.eusl_review - INFO - Inclusions: 1048
+2025-12-04 10:26:19,909 - Review.reviews.eusl_review - INFO - Exclusions: 0
+2025-12-04 10:26:19,910 - Review.reviews.eusl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251204_102619.xlsx
+2025-12-04 10:26:20,126 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:20] "GET /task-status/996ba452-3811-47ed-969e-30119374edc5 HTTP/1.1" 200 -
+2025-12-04 10:26:20,192 - Review.reviews.eusl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251204_102619.xlsx
+2025-12-04 10:26:22,128 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:26:22] "GET /task-status/996ba452-3811-47ed-969e-30119374edc5 HTTP/1.1" 200 -
+2025-12-04 10:26:26,678 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
+2025-12-04 10:26:26,681 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading

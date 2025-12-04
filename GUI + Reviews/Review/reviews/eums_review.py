@@ -12,8 +12,8 @@ from utils.capping_proportional import apply_proportional_capping
 
 logger = setup_logging(__name__)
 
-def run_EUMS_review(date, effective_date, co_date, index="EUMS", isin="NLIX00008762", 
-                    area="EU", area2=None, type="STOCK", universe="euspt", 
+def run_eums_review(date, effective_date, co_date, index="EUMS", isin="NLIX00008762", 
+                    area="EU", area2="US", type="STOCK", universe="euspt", 
                     feed="Reuters", currency="EUR", year=None, max_individual_weight=0.1, max_iterations=100):
     """
     Run the EUMS index review calculation
@@ -130,19 +130,12 @@ def run_EUMS_review(date, effective_date, co_date, index="EUMS", isin="NLIX00008
         
         # Create MIC to Country mapping
         mic_to_country = {
-            'XMAD': 'Spain',
-            'XLIS': 'Portugal',
-            'XAMS': 'Netherlands',
-            'XNGM': 'Netherlands',
-            'MTAA': 'Italy',
-            'XESM': 'Ireland',
-            'XMSM': 'Ireland',
-            'XETR': 'Germany',
-            'XPAR': 'France',
-            'ALXP': 'France',
-            'XHEL': 'Finland',
-            'XBRU': 'Belgium',
-            'WBAH': 'Austria'
+            "XNYS": "United States",
+            "XNGS": "United States",
+            "XNMS": "United States",
+            "XNCM": "United States",
+            "BATS": "United States",
+            "XASE": "United States"
         }
         
         # Add Country column based on MIC
@@ -205,6 +198,34 @@ def run_EUMS_review(date, effective_date, co_date, index="EUMS", isin="NLIX00008
         
         # Filter to only selected companies
         selected_df = universe_df[universe_df['EUMS_selection'] == 1].copy()
+        
+        
+        # Add this debugging code before the capping section (around line 205)
+        logger.info(f"\n=== SELECTION DEBUGGING ===")
+        logger.info(f"Total universe size: {len(universe_df)}")
+        logger.info(f"Companies with EUMS_selection == 1: {(universe_df['EUMS_selection'] == 1).sum()}")
+        logger.info(f"Companies with Is_Existing == 1: {(universe_df['Is_Existing'] == 1).sum()}")
+
+        # Check the selection criteria results
+        logger.info(f"\nExisting companies meeting 68% threshold: {(existing_mask & (universe_df['Country_Cumulative_Percentage'] >= 68)).sum()}")
+        logger.info(f"New companies meeting 72% threshold: {(new_mask & (universe_df['Country_Cumulative_Percentage'] >= 72)).sum()}")
+
+        # Check for NaN values that might break the selection
+        logger.info(f"\nNaN values in key columns:")
+        logger.info(f"  Country: {universe_df['Country'].isna().sum()}")
+        logger.info(f"  Mcap in EUR: {universe_df['Mcap in EUR'].isna().sum()}")
+        logger.info(f"  Country_Cumulative_Percentage: {universe_df['Country_Cumulative_Percentage'].isna().sum()}")
+
+        # Show sample of data
+        logger.info(f"\nSample of selection logic:")
+        sample_df = universe_df[['Company', 'Country', 'Is_Existing', 'Mcap in EUR', 
+                                'Country_Cumulative_Percentage', 'EUMS_selection']].head(20)
+        logger.info(f"\n{sample_df.to_string()}")
+        
+        
+        
+        
+        
         
         # Apply capping using utility function
         capped_df = apply_proportional_capping(

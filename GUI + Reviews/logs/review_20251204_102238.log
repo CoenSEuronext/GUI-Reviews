@@ -1,0 +1,6 @@
+2025-12-04 10:22:39,539 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 10:22:39,542 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 10:22:45,023 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:22:45] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 10:22:45,026 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+2025-12-04 10:22:45,026 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:22:45] "GET /task-status/05b5566c-17d9-4a0b-b77b-664071cc7043 HTTP/1.1" 200 -
+2025-12-04 10:22:46,281 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eums_review.py', reloading

@@ -1,0 +1,70 @@
+2025-12-04 11:13:33,936 - werkzeug - WARNING -  * Debugger is active!
+2025-12-04 11:13:33,938 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-04 11:13:34,727 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:34] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 11:13:34,727 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 11:13:34,727 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:34] "GET /task-status/2add2484-2f77-4ea8-a0dc-c52032f9fc1c HTTP/1.1" 200 -
+2025-12-04 11:13:35,480 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-04 11:13:36,393 - Review.reviews.elux_review - ERROR - Error during review calculation: single positional indexer is out-of-bounds
+2025-12-04 11:13:36,393 - Review.reviews.elux_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\elux_review.py", line 114, in run_elux_review
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2025-12-04 11:13:36,743 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:36] "GET /task-status/2add2484-2f77-4ea8-a0dc-c52032f9fc1c HTTP/1.1" 200 -
+2025-12-04 11:13:43,976 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:43] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 11:13:43,992 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 11:13:43,994 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:43] "GET /task-status/c8038f5d-0865-48fc-b7b3-651d0fbcf048 HTTP/1.1" 200 -
+2025-12-04 11:13:45,995 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:45] "GET /task-status/c8038f5d-0865-48fc-b7b3-651d0fbcf048 HTTP/1.1" 200 -
+2025-12-04 11:13:46,593 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-04 11:13:47,330 - Review.reviews.elux_review - INFO - Saving ELUX output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUX_df_20251204_111347.xlsx
+2025-12-04 11:13:48,012 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:13:48] "GET /task-status/c8038f5d-0865-48fc-b7b3-651d0fbcf048 HTTP/1.1" 200 -
+2025-12-04 11:15:28,160 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:28] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 11:15:28,160 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 11:15:28,160 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:28] "GET /task-status/d8c5c690-40a3-409a-a62b-adfabec8ca79 HTTP/1.1" 200 -
+2025-12-04 11:15:30,172 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:30] "GET /task-status/d8c5c690-40a3-409a-a62b-adfabec8ca79 HTTP/1.1" 200 -
+2025-12-04 11:15:32,955 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:32] "GET /task-status/d8c5c690-40a3-409a-a62b-adfabec8ca79 HTTP/1.1" 200 -
+2025-12-04 11:15:33,092 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-04 11:15:33,133 - Review.reviews.elux_review - ERROR - Error during review calculation: 'NoneType' object is not subscriptable
+2025-12-04 11:15:33,133 - Review.reviews.elux_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\elux_review.py", line 102, in run_elux_review
+    ff_df[['ISIN Code:', 'Free Float Round:']].drop_duplicates(subset='ISIN Code:', keep='first'),
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-12-04 11:15:34,960 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:34] "GET /task-status/d8c5c690-40a3-409a-a62b-adfabec8ca79 HTTP/1.1" 200 -
+2025-12-04 11:15:43,445 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:43] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 11:15:43,445 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 11:15:43,445 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:43] "GET /task-status/75ca3089-bbe0-4b22-bad9-5d19670cd9fd HTTP/1.1" 200 -
+2025-12-04 11:15:44,560 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-04 11:15:44,612 - Review.reviews.elux_review - ERROR - Error during review calculation: 'NoneType' object is not subscriptable
+2025-12-04 11:15:44,612 - Review.reviews.elux_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\elux_review.py", line 102, in run_elux_review
+    ff_df[['ISIN Code:', 'Free Float Round:']].drop_duplicates(subset='ISIN Code:', keep='first'),
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-12-04 11:15:45,457 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:15:45] "GET /task-status/75ca3089-bbe0-4b22-bad9-5d19670cd9fd HTTP/1.1" 200 -
+2025-12-04 11:16:36,646 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:16:36] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 11:16:36,646 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 11:16:36,646 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:16:36] "GET /task-status/51e7a954-0010-4dbc-9321-035114830784 HTTP/1.1" 200 -
+2025-12-04 11:16:38,662 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:16:38] "GET /task-status/51e7a954-0010-4dbc-9321-035114830784 HTTP/1.1" 200 -
+2025-12-04 11:16:40,663 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:16:40] "GET /task-status/51e7a954-0010-4dbc-9321-035114830784 HTTP/1.1" 200 -
+2025-12-04 11:16:41,498 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-04 11:16:42,166 - Review.reviews.elux_review - INFO - Saving ELUX output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUX_df_20251204_111642.xlsx
+2025-12-04 11:16:42,661 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:16:42] "GET /task-status/51e7a954-0010-4dbc-9321-035114830784 HTTP/1.1" 200 -
+2025-12-04 11:17:16,901 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:17:16] "POST /calculate HTTP/1.1" 200 -
+2025-12-04 11:17:16,901 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-04 11:17:16,907 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:17:16] "GET /task-status/224bdce2-50c5-417f-827d-c7dc550822a3 HTTP/1.1" 200 -
+2025-12-04 11:17:18,912 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:17:18] "GET /task-status/224bdce2-50c5-417f-827d-c7dc550822a3 HTTP/1.1" 200 -
+2025-12-04 11:17:20,959 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:17:20] "GET /task-status/224bdce2-50c5-417f-827d-c7dc550822a3 HTTP/1.1" 200 -
+2025-12-04 11:17:21,860 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-04 11:17:22,527 - Review.reviews.elux_review - INFO - Saving ELUX output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUX_df_20251204_111722.xlsx
+2025-12-04 11:17:22,950 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 11:17:22] "GET /task-status/224bdce2-50c5-417f-827d-c7dc550822a3 HTTP/1.1" 200 -

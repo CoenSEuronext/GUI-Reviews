@@ -13,7 +13,7 @@ from utils.capping_proportional import apply_proportional_capping
 logger = setup_logging(__name__)
 
 def run_eusl_review(date, effective_date, co_date, index="EUSL", isin="NLIX00008655", 
-                    area="EU", area2=None, type="STOCK", universe="euspt", 
+                    area="US", area2="EU", type="STOCK", universe="euspt", 
                     feed="Reuters", currency="EUR", year=None, max_individual_weight=0.1, max_iterations=100):
     """
     Run the EUSL index review calculation
@@ -130,19 +130,12 @@ def run_eusl_review(date, effective_date, co_date, index="EUSL", isin="NLIX00008
         
         # Create MIC to Country mapping
         mic_to_country = {
-            'XMAD': 'Spain',
-            'XLIS': 'Portugal',
-            'XAMS': 'Netherlands',
-            'XNGM': 'Netherlands',
-            'MTAA': 'Italy',
-            'XESM': 'Ireland',
-            'XMSM': 'Ireland',
-            'XETR': 'Germany',
-            'XPAR': 'France',
-            'ALXP': 'France',
-            'XHEL': 'Finland',
-            'XBRU': 'Belgium',
-            'WBAH': 'Austria'
+            "XNYS": "United States",
+            "XNGS": "United States",
+            "XNMS": "United States",
+            "XNCM": "United States",
+            "BATS": "United States",
+            "XASE": "United States"
         }
         
         # Add Country column based on MIC

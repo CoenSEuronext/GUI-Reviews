@@ -1,0 +1,24 @@
+{
+  "task_id": "ac065646-9aef-4dbe-8228-4c4e4fb961ac",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-04T10:36:41.290948",
+  "started_at": "2025-12-04T10:36:41.290948",
+  "completed_at": "2025-12-04T10:36:45.037419",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "EUSL",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EUSL",
+    "isin": "NLIX00008713",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

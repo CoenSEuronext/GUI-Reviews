@@ -1,0 +1,192 @@
+{
+  "task_id": "b9310d10-854f-4d4f-9ee0-50878852e7ab",
+  "task_type": "batch",
+  "status": "completed",
+  "created_at": "2025-12-04T10:42:43.241622",
+  "started_at": "2025-12-04T10:42:43.241622",
+  "completed_at": "2025-12-04T10:43:06.183857",
+  "progress": 100,
+  "message": "Batch completed: 8/8 successful",
+  "error": null,
+  "result_data": {
+    "results": [
+      {
+        "review_type": "EZSL",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "ezsl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZSL_Review_20251204_104247.xlsx",
+          "summary": {
+            "total_companies": 347,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 347,
+            "total_ffmc_coverage": 13.733728187298864,
+            "inclusions_count": 347,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 4.773548,
+        "completed_at": "2025-12-04T10:42:48.015170"
+      },
+      {
+        "review_type": "EZMS",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "ezms_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZMS_Review_20251204_104249.xlsx",
+          "summary": {
+            "total_companies": 421,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 421,
+            "total_ffmc_coverage": 29.371642788200113,
+            "inclusions_count": 421,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.444429,
+        "completed_at": "2025-12-04T10:42:49.566797"
+      },
+      {
+        "review_type": "EWSL",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "ewsl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EWSL_Review_20251204_104252.xlsx",
+          "summary": {
+            "total_companies": 3981,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 3981,
+            "total_ffmc_coverage": 13.121200583624631,
+            "inclusions_count": 3981,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 3.712922,
+        "completed_at": "2025-12-04T10:42:53.342417"
+      },
+      {
+        "review_type": "EWMS",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "ewms_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EWMS_Review_20251204_104255.xlsx",
+          "summary": {
+            "total_companies": 4783,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 4783,
+            "total_ffmc_coverage": 28.292340289881274,
+            "inclusions_count": 4783,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 3.542339,
+        "completed_at": "2025-12-04T10:42:56.973595"
+      },
+      {
+        "review_type": "EUSL",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "eusl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EUSL_Review_20251204_104258.xlsx",
+          "summary": {
+            "total_companies": 1048,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 1048,
+            "total_ffmc_coverage": 13.026634500944,
+            "inclusions_count": 1048,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 2.096634,
+        "completed_at": "2025-12-04T10:42:59.123528"
+      },
+      {
+        "review_type": "EEMSC",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "eemsc_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EEMSC_Review_20251204_104301.xlsx",
+          "summary": {
+            "total_companies": 1107,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 1107,
+            "total_ffmc_coverage": 28.759685894488012,
+            "inclusions_count": 1107,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 2.171144,
+        "completed_at": "2025-12-04T10:43:01.355437"
+      },
+      {
+        "review_type": "EUMS",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "eums_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EUMS_Review_20251204_104303.xlsx",
+          "summary": {
+            "total_companies": 1272,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 1272,
+            "total_ffmc_coverage": 28.077147964334813,
+            "inclusions_count": 1272,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 2.256915,
+        "completed_at": "2025-12-04T10:43:03.711096"
+      },
+      {
+        "review_type": "EESL",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "eesl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EESL_Review_20251204_104305.xlsx",
+          "summary": {
+            "total_companies": 904,
+            "existing_companies_selected": 0,
+            "new_companies_selected": 904,
+            "total_ffmc_coverage": 13.394637141359631,
+            "inclusions_count": 904,
+            "exclusions_count": 0,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 2.348665,
+        "completed_at": "2025-12-04T10:43:06.118922"
+      }
+    ],
+    "summary": {
+      "total": 8,
+      "successful": 8,
+      "failed": 0
+    }
+  },
+  "review_type": null,
+  "parameters": {
+    "review_types": [
+      "EZSL",
+      "EZMS",
+      "EWSL",
+      "EWMS",
+      "EUSL",
+      "EEMSC",
+      "EUMS",
+      "EESL"
+    ],
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 22.942235
+}
