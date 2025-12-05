@@ -1,0 +1,58 @@
+2025-12-05 16:28:21,478 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 16:28:21,480 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 16:28:22,043 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:28:22] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 16:28:22,045 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-12-05 16:28:22,048 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:28:22] "GET /task-status/032a4493-1540-4bd2-9e7d-90d17bbdfce6 HTTP/1.1" 200 -
+2025-12-05 16:28:24,053 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:28:24] "GET /task-status/032a4493-1540-4bd2-9e7d-90d17bbdfce6 HTTP/1.1" 200 -
+2025-12-05 16:28:24,905 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-12-05 16:28:26,060 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:28:26] "GET /task-status/032a4493-1540-4bd2-9e7d-90d17bbdfce6 HTTP/1.1" 200 -
+2025-12-05 16:28:26,260 - Review.reviews.sbf80_review - INFO - Initial selection_df shape: (120, 6)
+2025-12-05 16:28:26,296 - Review.reviews.sbf80_review - INFO - After all merges - shape: (120, 11), columns: ['Company', 'ISIN code', 'MIC', 'Number of shares', 'Free Float', 'Capping', 'Number of Shares', '#Symbol', 'FX/Index Ccy', 'Close Prc_x', 'Close Prc_y']
+2025-12-05 16:28:26,314 - Review.reviews.sbf80_review - INFO - Final selection: 0 companies
+2025-12-05 16:28:26,380 - Review.reviews.sbf80_review - INFO - SBF80 review saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_Review_20250916_20251205_162826.xlsx
+2025-12-05 16:28:28,054 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:28:28] "GET /task-status/032a4493-1540-4bd2-9e7d-90d17bbdfce6 HTTP/1.1" 200 -
+2025-12-05 16:28:36,895 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\cacew_review.py', reloading
+2025-12-05 16:28:36,900 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clew_review.py', reloading
+2025-12-05 16:28:36,904 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-12-05 16:28:36,915 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc3wp_review.py', reloading
+2025-12-05 16:28:36,924 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\lc1ep_review.py', reloading
+2025-12-05 16:28:36,933 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frecp_review.py', reloading
+2025-12-05 16:28:36,933 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frn4p_review.py', reloading
+2025-12-05 16:28:36,940 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fr20p_review.py', reloading
+2025-12-05 16:28:36,942 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez40p_review.py', reloading
+2025-12-05 16:28:36,945 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez60p_review.py', reloading
+2025-12-05 16:28:36,948 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading
+2025-12-05 16:28:36,950 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezn1p_review.py', reloading
+2025-12-05 16:28:36,952 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efmep_review.py', reloading
+2025-12-05 16:28:36,952 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-12-05 16:28:36,958 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\be1p_review.py', reloading
+2025-12-05 16:28:36,962 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eus5p_review.py', reloading
+2025-12-05 16:28:36,966 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edefp_review.py', reloading
+2025-12-05 16:28:36,968 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\etpfb_review.py', reloading
+2025-12-05 16:28:36,970 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eluxp_review.py', reloading
+2025-12-05 16:28:36,970 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esvep_review.py', reloading
+2025-12-05 16:28:36,976 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
+2025-12-05 16:28:36,978 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\derep_review.py', reloading
+2025-12-05 16:28:36,982 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\darep_review.py', reloading
+2025-12-05 16:28:36,984 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eurep_review.py', reloading
+2025-12-05 16:28:36,986 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gsfbp_review.py', reloading
+2025-12-05 16:28:36,988 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eesf_review.py', reloading
+2025-12-05 16:28:36,992 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\etsep_review.py', reloading
+2025-12-05 16:28:36,995 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eltfp_review.py', reloading
+2025-12-05 16:28:36,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\elecp_review.py', reloading
+2025-12-05 16:28:37,000 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
+2025-12-05 16:28:37,001 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eefap_review.py', reloading
+2025-12-05 16:28:37,004 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ees2_review.py', reloading
+2025-12-05 16:28:37,007 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\efesp_review.py', reloading
+2025-12-05 16:28:37,008 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexat_review.py', reloading
+2025-12-05 16:28:37,013 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-05 16:28:37,017 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review.py', reloading
+2025-12-05 16:28:37,021 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envb_review.py', reloading
+2025-12-05 16:28:37,024 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezsl_review.py', reloading
+2025-12-05 16:28:37,028 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ewms_review.py', reloading
+2025-12-05 16:28:37,031 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eemsc_review.py', reloading
+2025-12-05 16:28:37,035 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezms_review.py', reloading
+2025-12-05 16:28:37,037 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eesl_review.py', reloading
+2025-12-05 16:28:37,045 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eusl_review.py', reloading
+2025-12-05 16:28:37,045 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eums_review.py', reloading
+2025-12-05 16:28:37,052 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\elux_review.py', reloading

@@ -1,0 +1,15 @@
+2025-12-05 16:30:40,226 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 16:30:40,226 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 16:30:41,753 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:30:41] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 16:30:41,756 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-12-05 16:30:41,763 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:30:41] "GET /task-status/5e16728e-5c01-4a18-9bef-1177b26d663a HTTP/1.1" 200 -
+2025-12-05 16:30:43,764 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:30:43] "GET /task-status/5e16728e-5c01-4a18-9bef-1177b26d663a HTTP/1.1" 200 -
+2025-12-05 16:30:45,762 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:30:45] "GET /task-status/5e16728e-5c01-4a18-9bef-1177b26d663a HTTP/1.1" 200 -
+2025-12-05 16:30:46,379 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-12-05 16:30:47,722 - Review.reviews.sbf80_review - INFO - Initial selection_df shape: (120, 6)
+2025-12-05 16:30:47,755 - Review.reviews.sbf80_review - INFO - After all merges - shape: (120, 11), columns: ['Company', 'ISIN code', 'MIC', 'Number of shares', 'Free Float', 'Capping', 'Number of Shares', '#Symbol', 'FX/Index Ccy', 'Close Prc_x', 'Close Prc_y']
+2025-12-05 16:30:47,759 - Review.reviews.sbf80_review - INFO - Final selection: 0 companies
+2025-12-05 16:30:47,769 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:30:47] "GET /task-status/5e16728e-5c01-4a18-9bef-1177b26d663a HTTP/1.1" 200 -
+2025-12-05 16:30:47,844 - Review.reviews.sbf80_review - INFO - SBF80 review saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20251205_163047.xlsx
+2025-12-05 16:30:49,763 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:30:49] "GET /task-status/5e16728e-5c01-4a18-9bef-1177b26d663a HTTP/1.1" 200 -
+2025-12-05 16:32:09,295 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\__init__.py', reloading

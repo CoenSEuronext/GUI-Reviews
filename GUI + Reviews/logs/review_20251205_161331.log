@@ -1,0 +1,39 @@
+2025-12-05 16:13:32,038 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 16:13:32,040 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 16:13:32,075 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:13:32] "GET /task-status/fd0ef811-1bff-444d-8a7b-6802d7a611f4 HTTP/1.1" 200 -
+2025-12-05 16:13:34,663 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:13:34] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 16:13:34,663 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-12-05 16:13:34,671 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:13:34] "GET /task-status/e3d956ec-cad5-4ba1-86de-5faac50aba98 HTTP/1.1" 200 -
+2025-12-05 16:13:35,529 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-12-05 16:13:36,672 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:13:36] "GET /task-status/e3d956ec-cad5-4ba1-86de-5faac50aba98 HTTP/1.1" 200 -
+2025-12-05 16:13:36,929 - Review.reviews.sbf80_review - ERROR - Error during review calculation: cannot reindex on an axis with duplicate labels
+2025-12-05 16:13:36,929 - Review.reviews.sbf80_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sbf80_review.py", line 166, in run_sbf80_review
+    selection_df['Number of Shares'].astype(float) *
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\ops\common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\arraylike.py", line 206, in __rmul__
+    return self._arith_method(other, roperator.rmul)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 7910, in _arith_method
+    self, other = self._align_for_op(other, axis, flex=True, level=None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 8211, in _align_for_op
+    left, right = left.align(
+                  ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 10447, in align
+    left, _right, join_index = self._align_series(
+                               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 10590, in _align_series
+    fdata = fdata.reindex_indexer(join_index, lidx, axis=bm_axis)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\internals\managers.py", line 674, in reindex_indexer
+    self.axes[axis]._validate_can_reindex(indexer)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 4321, in _validate_can_reindex
+    raise ValueError("cannot reindex on an axis with duplicate labels")
+ValueError: cannot reindex on an axis with duplicate labels
+
+2025-12-05 16:13:38,671 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:13:38] "GET /task-status/e3d956ec-cad5-4ba1-86de-5faac50aba98 HTTP/1.1" 200 -
+2025-12-05 16:16:03,709 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-12-05 16:16:03,709 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading

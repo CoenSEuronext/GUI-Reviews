@@ -1,0 +1,23 @@
+2025-12-05 16:16:06,036 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 16:16:06,036 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 16:16:09,059 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:16:09] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 16:16:09,060 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2025-12-05 16:16:09,064 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:16:09] "GET /task-status/3fdeece8-f027-4937-94d2-358f83789110 HTTP/1.1" 200 -
+2025-12-05 16:16:11,077 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:16:11] "GET /task-status/3fdeece8-f027-4937-94d2-358f83789110 HTTP/1.1" 200 -
+2025-12-05 16:16:13,069 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:16:13] "GET /task-status/3fdeece8-f027-4937-94d2-358f83789110 HTTP/1.1" 200 -
+2025-12-05 16:16:14,009 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2025-12-05 16:16:15,071 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:16:15] "GET /task-status/3fdeece8-f027-4937-94d2-358f83789110 HTTP/1.1" 200 -
+2025-12-05 16:16:15,376 - Review.reviews.sbf80_review - INFO - Initial selection_df shape: (120, 6)
+2025-12-05 16:16:15,411 - Review.reviews.sbf80_review - INFO - After merges, selection_df shape: (120, 12)
+2025-12-05 16:16:15,414 - Review.reviews.sbf80_review - INFO - After reset_index, selection_df shape: (120, 12)
+2025-12-05 16:16:15,414 - Review.reviews.sbf80_review - INFO - Before final calculations, selection_df shape: (120, 12)
+2025-12-05 16:16:15,415 - Review.reviews.sbf80_review - ERROR - Error during review calculation: arg must be a list, tuple, 1-d array, or Series
+2025-12-05 16:16:15,417 - Review.reviews.sbf80_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sbf80_review.py", line 203, in run_sbf80_review
+    selection_df['Free Float'] = pd.to_numeric(selection_df['Free Float'], errors='coerce')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-12-05 16:16:15,417 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\tools\\numeric.py', reloading

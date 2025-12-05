@@ -1,0 +1,27 @@
+{
+  "task_id": "032a4493-1540-4bd2-9e7d-90d17bbdfce6",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-05T16:28:22.040213",
+  "started_at": "2025-12-05T16:28:22.040213",
+  "completed_at": "2025-12-05T16:28:26.386547",
+  "progress": 100,
+  "message": "SBF80 review completed successfully",
+  "error": null,
+  "result_data": {
+    "file_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\SBF80_Review_20250916_20251205_162826.xlsx",
+    "selected_count": 0
+  },
+  "review_type": "SBF80",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "SBF80",
+    "isin": "FR0013017936",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 4.341403
+}
