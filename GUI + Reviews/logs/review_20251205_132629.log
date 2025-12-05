@@ -1,0 +1,27 @@
+2025-12-05 13:26:30,167 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 13:26:30,167 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 13:26:33,604 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:33] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 13:26:33,616 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-05 13:26:33,619 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:33] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:35,620 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:35] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:35,973 - Review.reviews.uscle_review - INFO - Loading reference data...
+2025-12-05 13:26:37,626 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:37] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:39,617 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:39] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:40,154 - Review.reviews.uscle_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-05 13:26:40,154 - Review.reviews.uscle_review - INFO - Remaining universe size: 458 companies
+2025-12-05 13:26:40,175 - Review.reviews.uscle_review - INFO - Total companies in universe: 458
+2025-12-05 13:26:40,175 - Review.reviews.uscle_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-05 13:26:40,175 - Review.reviews.uscle_review - INFO - Total companies excluded by Carbon Budget (rank > 366.40000000000003): 91
+2025-12-05 13:26:41,624 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:41] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:43,617 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:43] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:45,617 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:45] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:47,636 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:47] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:49,623 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:49] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:51,617 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:51] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:54,578 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:54] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:56,557 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:56] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:26:57,839 - Review.reviews.uscle_review - INFO - Checking IsinCode FR0014005IJ7 in index_eod_df
+2025-12-05 13:26:57,839 - Review.reviews.uscle_review - INFO - Found 1 matching rows
+2025-12-05 13:26:57,839 - Review.reviews.uscle_review - INFO - Saving USCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USCLE_df_20251205_132657.xlsx
+2025-12-05 13:26:58,577 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:26:58] "GET /task-status/05c539a9-e031-4e4f-a6e2-5d71ab3444fd HTTP/1.1" 200 -
+2025-12-05 13:30:21,303 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review_final.py', reloading

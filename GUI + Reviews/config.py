@@ -310,6 +310,26 @@ INDEX_CONFIGS = {
         "index": "EZCLA",
         "isin": "FR0014005IK5",
         "output_key": "ezcla_path"
+    },
+    "USCLE": {
+        "index": "USCLE",
+        "isin": "FR0014005IJ7",
+        "output_key": "uscle_path"
+    },
+    "TCAMP": {
+        "index": "TCAMP",
+        "isin": "FR0014005GI3",
+        "output_key": "tcamp_path"
+    },
+    "GSCSP": {
+        "index": "GSCSP",
+        "isin": "FRESG0000876",
+        "output_key": "gscsp_path"
+    },
+    "WCAMP": {
+        "index": "WCAMP",
+        "isin": "FRESG0000348",
+        "output_key": "wcamp_path"
     }
     # Add new indices here following the same pattern
 }
@@ -378,7 +398,8 @@ ALL_MNEMOS = [
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
     "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS",
-    "EUMS", "EUSL", "EESL", "EWSL", "EZCLA"
+    "EUMS", "EUSL", "EESL", "EWSL"
+    
 ]
 
 

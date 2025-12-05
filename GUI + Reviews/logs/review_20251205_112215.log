@@ -16,3 +16,5 @@
 2025-12-05 11:22:27,519 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
 2025-12-05 11:22:27,519 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZCLA_df_20251205_112227.xlsx
 2025-12-05 11:22:27,961 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 11:22:27] "GET /task-status/f16188ad-4aca-48fd-abd2-201d65eb9be0 HTTP/1.1" 200 -
+2025-12-05 11:30:13,045 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-05 11:30:13,045 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading

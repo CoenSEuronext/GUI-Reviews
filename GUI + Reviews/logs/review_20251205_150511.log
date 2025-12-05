@@ -1,0 +1,16 @@
+2025-12-05 15:05:12,217 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 15:05:12,217 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 15:05:18,057 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:05:18] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 15:05:18,057 - Review.reviews.tcamp_review - INFO - Loading EOD data...
+2025-12-05 15:05:18,068 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:05:18] "GET /task-status/b70b0eb5-eb75-4f82-86f4-65f5d6cdd6e6 HTTP/1.1" 200 -
+2025-12-05 15:05:20,074 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:05:20] "GET /task-status/b70b0eb5-eb75-4f82-86f4-65f5d6cdd6e6 HTTP/1.1" 200 -
+2025-12-05 15:05:20,101 - Review.reviews.tcamp_review - INFO - Loading reference data...
+2025-12-05 15:05:20,101 - Review.reviews.tcamp_review - INFO - Creating selection_df from TCAMP constituents...
+2025-12-05 15:05:20,101 - Review.reviews.tcamp_review - ERROR - Error during review calculation: Missing required columns in stock_eod_df: ['Shares']
+2025-12-05 15:05:20,101 - Review.reviews.tcamp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\tcamp_review.py", line 55, in run_tcamp_review
+    raise ValueError(f"Missing required columns in stock_eod_df: {missing_columns}")
+ValueError: Missing required columns in stock_eod_df: ['Shares']
+
+2025-12-05 15:05:21,908 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\tcamp_review.py', reloading
+2025-12-05 15:05:22,071 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:05:22] "GET /task-status/b70b0eb5-eb75-4f82-86f4-65f5d6cdd6e6 HTTP/1.1" 200 -

@@ -71,21 +71,21 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         exclusion_count = 1
         
         # Step 2a: Trust Metric screening
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = None
-        
+        eurozone_300_df[f'exclusion_{exclusion_count}_TrustMetric'] = None
+
         # Get ISINs with Trust Metric < 0.6 or 'Not Collected'
         # First, convert to numeric but keep original column for 'Not Collected' check
         Oekom_TrustCarbon_df['Trust Metric Numeric'] = pd.to_numeric(
             Oekom_TrustCarbon_df['Reported Emissions - Emissions Trust Metric'], 
             errors='coerce'
         )
-        
+
         excluded_trust_metric = Oekom_TrustCarbon_df[
             (Oekom_TrustCarbon_df['Trust Metric Numeric'] < 0.6) |
             (Oekom_TrustCarbon_df['Reported Emissions - Emissions Trust Metric'] == 'Not Collected')
         ]['ISIN'].tolist()
-        
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+
+        eurozone_300_df[f'exclusion_{exclusion_count}_TrustMetric'] = np.where(
             eurozone_300_df['ISIN'].isin(excluded_trust_metric),
             'exclude_TrustMetric',
             None
@@ -93,13 +93,13 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         exclusion_count += 1
 
         # Step 2b: NBR Overall Flag exclusion
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = None
+        eurozone_300_df[f'exclusion_{exclusion_count}_NBROverallFlag'] = None
         NBR_Overall_Flag_Red = Oekom_TrustCarbon_df[
             (Oekom_TrustCarbon_df['NBR Overall Flag'] == 'RED') |
             (Oekom_TrustCarbon_df['NBR Overall Flag'] == 'Not Collected')
         ]['ISIN'].tolist()
 
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+        eurozone_300_df[f'exclusion_{exclusion_count}_NBROverallFlag'] = np.where(
             eurozone_300_df['ISIN'].isin(NBR_Overall_Flag_Red),
             'exclude_NBROverallFlag',
             None
@@ -108,18 +108,18 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
 
         # Step 2c: Controversial Weapons screening
         weapons_columns = {
-            'Anti-personnel Mines - Overall Flag': 'exclude_APMines',
-            'Biological Weapons - Overall Flag': 'exclude_BiologicalWeapons',
-            'Chemical Weapons - Overall Flag': 'exclude_ChemicalWeapons',
-            'Cluster Munitions - Overall Flag': 'exclude_ClusterMunitions',
-            'Depleted Uranium - Overall Flag': 'exclude_DepletedUranium',
-            'Incendiary Weapons - Overall Flag': 'exclude_IncendiaryWeapons',
-            'Nuclear Weapons Outside NPT - Overall Flag': 'exclude_NuclearWeaponsNonNPT',
-            'White Phosphorous Weapons - Overall Flag': 'exclude_WhitePhosphorus'
+            'Anti-personnel Mines - Overall Flag': ('exclude_APMines', 'APMines'),
+            'Biological Weapons - Overall Flag': ('exclude_BiologicalWeapons', 'BiologicalWeapons'),
+            'Chemical Weapons - Overall Flag': ('exclude_ChemicalWeapons', 'ChemicalWeapons'),
+            'Cluster Munitions - Overall Flag': ('exclude_ClusterMunitions', 'ClusterMunitions'),
+            'Depleted Uranium - Overall Flag': ('exclude_DepletedUranium', 'DepletedUranium'),
+            'Incendiary Weapons - Overall Flag': ('exclude_IncendiaryWeapons', 'IncendiaryWeapons'),
+            'Nuclear Weapons Outside NPT - Overall Flag': ('exclude_NuclearWeaponsNonNPT', 'NuclearWeaponsNonNPT'),
+            'White Phosphorous Weapons - Overall Flag': ('exclude_WhitePhosphorus', 'WhitePhosphorus')
         }
-        
-        for column, exclude_value in weapons_columns.items():
-            eurozone_300_df[f'exclusion_{exclusion_count}'] = None
+
+        for column, (exclude_value, label) in weapons_columns.items():
+            eurozone_300_df[f'exclusion_{exclusion_count}_{label}'] = None
             
             # Get ISINs for this weapon type (Red or 'Not Collected')
             flagged_isins = Oekom_TrustCarbon_df[
@@ -127,7 +127,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
                 (Oekom_TrustCarbon_df[column] == 'Not Collected')
             ]['ISIN'].tolist()
             
-            eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+            eurozone_300_df[f'exclusion_{exclusion_count}_{label}'] = np.where(
                 eurozone_300_df['ISIN'].isin(flagged_isins),
                 exclude_value,
                 None
@@ -135,7 +135,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             exclusion_count += 1
 
         # Step 2d: Thermal Coal Mining screening
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = None
+        eurozone_300_df[f'exclusion_{exclusion_count}_CoalMining'] = None
 
         # Keep original column for 'Not Collected' and 'Not Disclosed' check
         Oekom_TrustCarbon_df['Coal Mining Numeric'] = pd.to_numeric(
@@ -149,7 +149,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             (Oekom_TrustCarbon_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
         ]['ISIN'].tolist()
 
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+        eurozone_300_df[f'exclusion_{exclusion_count}_CoalMining'] = np.where(
             eurozone_300_df['ISIN'].isin(excluded_coal_mining),
             'exclude_CoalMining',
             None
@@ -157,7 +157,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         exclusion_count += 1
 
         # Step 2e: Thermal Coal Power Generation screening
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = None
+        eurozone_300_df[f'exclusion_{exclusion_count}_ThermalPower'] = None
 
         # Keep original column for 'Not Collected' and 'Not Disclosed' check
         Oekom_TrustCarbon_df['Thermal Power Numeric'] = pd.to_numeric(
@@ -171,7 +171,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             (Oekom_TrustCarbon_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
         ]['ISIN'].tolist()
 
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+        eurozone_300_df[f'exclusion_{exclusion_count}_ThermalPower'] = np.where(
             eurozone_300_df['ISIN'].isin(excluded_thermal_power),
             'exclude_ThermalPower',
             None
@@ -179,7 +179,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         exclusion_count += 1
 
         # Step 2f: Shale Oil and/or Gas screening
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = None
+        eurozone_300_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = None
 
         excluded_shale = Oekom_TrustCarbon_df[
             (Oekom_TrustCarbon_df['Shale Oil and/or Gas - Involvement tie'] == 'Production') |
@@ -187,7 +187,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             (Oekom_TrustCarbon_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Disclosed')
         ]['ISIN'].tolist()
 
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+        eurozone_300_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = np.where(
             eurozone_300_df['ISIN'].isin(excluded_shale),
             'exclude_ShaleOilGas',
             None
@@ -195,19 +195,19 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         exclusion_count += 1
 
         # Step 2g: Carbon Budget screening (exclude worst 20% by ranking)
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = None
-        
+        eurozone_300_df[f'exclusion_{exclusion_count}_CarbonBudget'] = None
+
         Oekom_TrustCarbon_df['ClimateCuAlignIEANZTgt2050-values'] = pd.to_numeric(
             Oekom_TrustCarbon_df['ClimateCuAlignIEANZTgt2050-values'], 
             errors='coerce'
         )
-        
+
         # Get ISINs in eurozone_300
         eurozone_isins = eurozone_300_df['ISIN'].tolist()
-        
+
         # Filter Oekom data to only eurozone ISINs
         eurozone_oekom = Oekom_TrustCarbon_df[Oekom_TrustCarbon_df['ISIN'].isin(eurozone_isins)].copy()
-        
+
         # Rank all eurozone companies by Carbon Budget score
         # Step 1: Rank companies with data (lower score = better rank)
         # Step 2: Fill NaN with rank 1
@@ -217,29 +217,29 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             ascending=True,
             na_option='keep'
         ).fillna(1)
-        
+
         # Re-rank to adjust for ties (this implements the Excel COUNTIF logic)
         eurozone_oekom['Temp_Carbon_Rank'] = temp_rank.rank(
             method='min',
             ascending=True
         )
-        
+
         # Calculate the cutoff rank for worst 20%
         # If 300 companies, worst 20% means ranks > 240
         total_companies = len(eurozone_oekom)
         cutoff_rank = total_companies * 0.8
-        
+
         logger.info(f"Total companies in universe: {total_companies}")
         logger.info(f"Carbon Budget cutoff rank (80th percentile): {cutoff_rank}")
-        
+
         # Exclude companies with ranks > cutoff (worst 20%)
         excluded_carbon_budget = eurozone_oekom[
             eurozone_oekom['Temp_Carbon_Rank'] > cutoff_rank
         ]['ISIN'].tolist()
-        
+
         logger.info(f"Total companies excluded by Carbon Budget (rank > {cutoff_rank}): {len(excluded_carbon_budget)}")
-        
-        eurozone_300_df[f'exclusion_{exclusion_count}'] = np.where(
+
+        eurozone_300_df[f'exclusion_{exclusion_count}_CarbonBudget'] = np.where(
             eurozone_300_df['ISIN'].isin(excluded_carbon_budget),
             'exclude_CarbonBudget',
             None
@@ -247,7 +247,8 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         exclusion_count += 1
 
         # Create list of all exclusion columns
-        exclusion_columns = [f'exclusion_{i}' for i in range(1, exclusion_count)]
+        exclusion_columns = [col for col in eurozone_300_df.columns if col.startswith('exclusion_')]
+
         # Merge ALL relevant columns from Oekom data BEFORE creating summary columns
         # This ensures all datapoints appear before exclusion columns in output
         oekom_columns_to_merge = [
@@ -269,6 +270,13 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             'Shale Oil and/or Gas - Involvement tie'
         ]
 
+        # Store exclusion columns temporarily
+        exclusion_data = eurozone_300_df[exclusion_columns].copy()
+
+        # Drop exclusion columns before merge
+        eurozone_300_df = eurozone_300_df.drop(columns=exclusion_columns)
+
+        # Merge Oekom data
         eurozone_300_df = eurozone_300_df.merge(
             Oekom_TrustCarbon_df[oekom_columns_to_merge],
             on='ISIN',
@@ -300,7 +308,11 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             ascending=True
         )
 
-        # NOW create the exclusion summary columns (these will appear AFTER all datapoints)
+        # NOW add back the exclusion columns (these will appear AFTER all datapoints)
+        for col in exclusion_columns:
+            eurozone_300_df[col] = exclusion_data[col]
+
+        # Create the exclusion summary columns
         def summarize_exclusions(row, exclusion_cols):
             """Summarize all exclusion reasons for a company"""
             exclusions = []

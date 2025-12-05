@@ -1,0 +1,33 @@
+2025-12-05 13:43:08,525 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 13:43:08,525 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 13:43:09,235 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:09] "GET /task-status/877602ef-99a8-4154-8022-0f8fc2498c1c HTTP/1.1" 200 -
+2025-12-05 13:43:10,236 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:10] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 13:43:10,236 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-05 13:43:10,236 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:10] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:12,252 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:12] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:14,253 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:14] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:14,484 - Review.reviews.uscle_review - INFO - Loading reference data...
+2025-12-05 13:43:16,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:16] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:18,257 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:18] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:18,601 - Review.reviews.uscle_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-05 13:43:18,601 - Review.reviews.uscle_review - INFO - Remaining universe size: 458 companies
+2025-12-05 13:43:18,620 - Review.reviews.uscle_review - INFO - Total companies in universe: 458
+2025-12-05 13:43:18,620 - Review.reviews.uscle_review - INFO - Companies with Carbon Budget data: 453
+2025-12-05 13:43:18,620 - Review.reviews.uscle_review - INFO - Carbon Budget cutoff rank (80th percentile): 362.40000000000003
+2025-12-05 13:43:18,620 - Review.reviews.uscle_review - INFO - Total companies excluded by Carbon Budget (rank > 362.40000000000003): 91
+2025-12-05 13:43:20,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:20] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:22,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:22] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:24,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:24] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:26,294 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:26] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:28,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:28] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:30,253 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:30] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:32,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:32] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:34,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:34] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:36,251 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:36] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:43:36,457 - Review.reviews.uscle_review - INFO - Checking IsinCode FR0014005IJ7 in index_eod_df
+2025-12-05 13:43:36,457 - Review.reviews.uscle_review - INFO - Found 1 matching rows
+2025-12-05 13:43:36,462 - Review.reviews.uscle_review - INFO - Saving USCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USCLE_df_20251205_134336.xlsx
+2025-12-05 13:43:38,255 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:38] "GET /task-status/1f2dee32-f650-49b7-a408-778e8038c2b2 HTTP/1.1" 200 -
+2025-12-05 13:53:17,312 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
+2025-12-05 13:53:17,312 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
+2025-12-05 13:53:17,312 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading

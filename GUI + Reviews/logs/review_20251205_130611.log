@@ -1,0 +1,14 @@
+2025-12-05 13:06:11,676 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 13:06:11,678 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 13:06:11,743 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:06:11] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 13:06:11,745 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-05 13:06:11,749 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:06:11] "GET /task-status/96e180e8-bb78-4b03-b052-015f0332ac77 HTTP/1.1" 200 -
+2025-12-05 13:06:13,756 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:06:13] "GET /task-status/96e180e8-bb78-4b03-b052-015f0332ac77 HTTP/1.1" 200 -
+2025-12-05 13:06:14,705 - Review.reviews.uscle_review - INFO - Loading reference data...
+2025-12-05 13:06:15,756 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:06:15] "GET /task-status/96e180e8-bb78-4b03-b052-015f0332ac77 HTTP/1.1" 200 -
+2025-12-05 13:06:17,759 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:06:17] "GET /task-status/96e180e8-bb78-4b03-b052-015f0332ac77 HTTP/1.1" 200 -
+2025-12-05 13:06:19,805 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:06:19] "GET /task-status/96e180e8-bb78-4b03-b052-015f0332ac77 HTTP/1.1" 200 -
+2025-12-05 13:06:19,856 - Review.reviews.uscle_review - INFO - Total companies in universe: 458
+2025-12-05 13:06:19,856 - Review.reviews.uscle_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-05 13:06:19,856 - Review.reviews.uscle_review - INFO - Total companies excluded by Carbon Budget (rank > 366.40000000000003): 91
+2025-12-05 13:06:20,022 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading

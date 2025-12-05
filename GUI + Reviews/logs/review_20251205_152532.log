@@ -1,0 +1,17 @@
+2025-12-05 15:25:33,304 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 15:25:33,305 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 15:25:37,338 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:37] "GET / HTTP/1.1" 200 -
+2025-12-05 15:25:37,420 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:37] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-05 15:25:42,259 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:42] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 15:25:42,259 - Review.reviews.wcamp_review - INFO - Loading EOD data...
+2025-12-05 15:25:42,268 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:42] "GET /task-status/5ffb1173-17d7-46d4-ba9f-9ca4aab7ae03 HTTP/1.1" 200 -
+2025-12-05 15:25:44,267 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:44] "GET /task-status/5ffb1173-17d7-46d4-ba9f-9ca4aab7ae03 HTTP/1.1" 200 -
+2025-12-05 15:25:46,268 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:46] "GET /task-status/5ffb1173-17d7-46d4-ba9f-9ca4aab7ae03 HTTP/1.1" 200 -
+2025-12-05 15:25:46,524 - Review.reviews.wcamp_review - INFO - Loading reference data...
+2025-12-05 15:25:46,524 - Review.reviews.wcamp_review - INFO - Creating selection_df from WCAMP constituents...
+2025-12-05 15:25:46,531 - Review.reviews.wcamp_review - INFO - Found 3 WCAMP constituents
+2025-12-05 15:25:46,538 - Review.reviews.wcamp_review - INFO - Saving WCAMP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\WCAMP_df_20251205_152546.xlsx
+2025-12-05 15:25:48,267 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:25:48] "GET /task-status/5ffb1173-17d7-46d4-ba9f-9ca4aab7ae03 HTTP/1.1" 200 -
+2025-12-05 15:26:16,944 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wcamp_review.py', reloading
+2025-12-05 15:26:16,950 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wcamp_review.py', reloading
+2025-12-05 15:26:16,950 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wcamp_review.py', reloading

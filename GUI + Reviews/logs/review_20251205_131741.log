@@ -1,0 +1,30 @@
+2025-12-05 13:17:41,748 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 13:17:41,750 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 13:17:42,458 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:42] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 13:17:42,458 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-05 13:17:42,472 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:42] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:44,480 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:44] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:44,752 - Review.reviews.uscle_review - INFO - Loading reference data...
+2025-12-05 13:17:46,472 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:46] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:48,487 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:48] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:48,886 - Review.reviews.uscle_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-05 13:17:48,886 - Review.reviews.uscle_review - INFO - Remaining universe size: 458 companies
+2025-12-05 13:17:48,908 - Review.reviews.uscle_review - INFO - Total companies in universe: 458
+2025-12-05 13:17:48,909 - Review.reviews.uscle_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-05 13:17:48,909 - Review.reviews.uscle_review - INFO - Total companies excluded by Carbon Budget (rank > 366.40000000000003): 91
+2025-12-05 13:17:50,484 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:50] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:52,484 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:52] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:54,517 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:54] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:56,484 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:56] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:17:58,484 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:17:58] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:18:00,484 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:18:00] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:18:02,487 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:18:02] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:18:04,485 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:18:04] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:18:06,488 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:18:06] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:18:07,690 - Review.reviews.uscle_review - INFO - Checking IsinCode FR0014005IJ7 in index_eod_df
+2025-12-05 13:18:07,690 - Review.reviews.uscle_review - INFO - Found 1 matching rows
+2025-12-05 13:18:07,690 - Review.reviews.uscle_review - INFO - Saving USCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USCLE_df_20251205_131807.xlsx
+2025-12-05 13:18:08,479 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:18:08] "GET /task-status/a779cc42-9522-49f6-8c55-6cd98626e8a5 HTTP/1.1" 200 -
+2025-12-05 13:21:05,484 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
+2025-12-05 13:21:05,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
+2025-12-05 13:21:05,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
