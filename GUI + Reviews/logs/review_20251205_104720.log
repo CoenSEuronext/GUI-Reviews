@@ -1,0 +1,34 @@
+2025-12-05 10:47:21,364 - werkzeug - WARNING -  * Debugger is active!
+2025-12-05 10:47:21,364 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-05 10:47:21,409 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:21] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 10:47:21,409 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-05 10:47:21,409 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:21] "GET /task-status/384cd171-4bc7-405f-9b28-952fb0a6a208 HTTP/1.1" 200 -
+2025-12-05 10:47:23,422 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:23] "GET /task-status/384cd171-4bc7-405f-9b28-952fb0a6a208 HTTP/1.1" 200 -
+2025-12-05 10:47:23,476 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-05 10:47:24,304 - Review.reviews.ezcla_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-12-05 10:47:24,304 - Review.reviews.ezcla_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ezcla_review.py", line 57, in run_ezcla_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-12-05 10:47:25,421 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:25] "GET /task-status/384cd171-4bc7-405f-9b28-952fb0a6a208 HTTP/1.1" 200 -
+2025-12-05 10:47:30,531 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:30] "POST /calculate HTTP/1.1" 200 -
+2025-12-05 10:47:30,531 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-05 10:47:30,539 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:30] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:30,956 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-05 10:47:32,548 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:32] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:34,553 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:34] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:36,088 - Review.reviews.ezcla_review - INFO - Total companies in universe: 300
+2025-12-05 10:47:36,088 - Review.reviews.ezcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 240.0
+2025-12-05 10:47:36,088 - Review.reviews.ezcla_review - INFO - Total companies excluded by Carbon Budget (rank > 240.0): 60
+2025-12-05 10:47:36,588 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:36] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:38,548 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:38] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:40,548 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:40] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:42,563 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:42] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 10:47:43,330 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2025-12-05 10:47:43,330 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2025-12-05 10:47:43,332 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZCLA_df_20251205_104743.xlsx
+2025-12-05 10:47:44,548 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 10:47:44] "GET /task-status/f7b0330c-4b9b-40d0-a479-46b9fc1c1480 HTTP/1.1" 200 -
+2025-12-05 11:14:15,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-05 11:14:15,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading
+2025-12-05 11:14:15,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezcla_review.py', reloading

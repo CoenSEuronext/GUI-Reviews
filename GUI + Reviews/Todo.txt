@@ -32,3 +32,5 @@ GIT  uitzoeken
 
 Setup VENV
 
+Setup exception folder for the server restarts
+
