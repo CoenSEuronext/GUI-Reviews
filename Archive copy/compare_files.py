@@ -158,9 +158,7 @@ PURPLE_INDEX_MNEMONICS = {
 
 # Excluded index values for Isin Code cross-reference check
 EXCLUDED_INDEX_VALUES = {
-    'DUUSC', 'DUMEU', 'DUMUS', 'PFAEX', 'PFEES', 'PFPX1', 'PFOSF', 'PFOSB', 
-    'PFCSB', 'PFMES', 'PFC4E', 'PFLCE', 'PFLC1', 'PFEBL', 'PFBEL', 'PFFRI', 
-    'PFFRD', 'BSWPF', 'PFLCW', "CTRFD"
+    
 }
 
 # Timer decorator for performance monitoring
@@ -749,9 +747,9 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
                 '#Symbol': df1_diff['#Symbol'],
                 'Sys date': df1_diff.get('System date', ''),
-                'Adj. Rsn': df2_diff.get('Adjust Reason', ''),
+                'Adj. Reason': df2_diff.get('Adjust Reason', ''),
                 'Isin Code': df1_diff.get('Isin Code', ''),
-                'Country': df1_diff.get('Country', ''),
+                'Cntry': df1_diff.get('Country', ''),
                 'Mnemo': df1_diff.get('Mnemo', ''),
                 'Name': df1_diff.get('Name', ''),
                 'MIC': df1_diff.get('MIC', ''),
@@ -816,9 +814,9 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'Code': df1_removed['#Symbol'].astype(str) + df1_removed['Index'].astype(str),
                 '#Symbol': df1_removed['#Symbol'],
                 'Sys date': df1_removed.get('System date', ''),
-                'Adj. Rsn': 'Removal',  # Special value for removals
+                'Adj. Reason': 'Removal',  # Special value for removals
                 'Isin Code': df1_removed.get('Isin Code', ''),
-                'Country': df1_removed.get('Country', ''),
+                'Cntry': df1_removed.get('Country', ''),
                 'Mnemo': df1_removed.get('Mnemo', ''),
                 'Name': df1_removed.get('Name', ''),
                 'MIC': df1_removed.get('MIC', ''),
@@ -884,9 +882,9 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'Code': df2_added['#Symbol'].astype(str) + df2_added['Index'].astype(str),
                 '#Symbol': df2_added['#Symbol'],
                 'Sys date': df2_added.get('System date', ''),
-                'Adj. Rsn': 'Add Composition',  # Special value for additions
+                'Adj. Reason': 'Add Composition',  # Special value for additions
                 'Isin Code': df2_added.get('Isin Code', ''),
-                'Country': df2_added.get('Country', ''),
+                'Cntry': df2_added.get('Country', ''),
                 'Mnemo': df2_added.get('Mnemo', ''),
                 'Name': df2_added.get('Name', ''),
                 'MIC': df2_added.get('MIC', ''),
@@ -1107,7 +1105,7 @@ def get_stock_formatting_summary():
         ['YELLOW', 'Stock split -> Absolute value instead of Relative value', 'New Shares'],
         ['PINK', 'Adj Closing price changed between Manual and SOD', 'Adj Closing Price'],
         ['RED', 'FF is empty, 0 or >1', 'New FF'],
-        ['RED', 'Cell Empty or 0', 'Adj Closing Price'],
+        ['RED', 'Adj Closing Price Cell is Empty or 0', 'Adj Closing Price'],
         ['BLUE', 'Reflects Share change in indices that should not change', 'Prev. Shares'],
         ['BLUE', 'Cell contains Dummy value(1.111111 etc)', 'Gross Div'],
         ['BLUE', 'Cell contains Dummy value(1.111111 etc)', 'Adj Closing Price'],
@@ -1153,7 +1151,7 @@ def create_checklist_data(diff_df, df2_indexed):
             checklist_rows.append([isin_code, name, 'New FF', 'When FF is empty, 0 or >1', ''])
         
         # Close Prc - Red when empty or 0 (not for removals)
-        adj_rsn = str(row.get('Adj. Rsn', '')).strip()
+        adj_rsn = str(row.get('Adj. Reason', '')).strip()
         close_prc = row.get('Close Prc', '')
         try:
             close_prc_numeric = float(close_prc) if pd.notna(close_prc) and str(close_prc).strip() != '' else None
@@ -1291,7 +1289,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     isin_code = str(diff_df.iloc[idx].get('Isin Code', ''))
                     name = str(diff_df.iloc[idx].get('Name', ''))
                     
-                    adj_rsn = str(diff_df.iloc[idx].get('Adj. Rsn', '')).strip()
+                    adj_rsn = str(diff_df.iloc[idx].get('Adj. Reason', '')).strip()
                     is_removal = adj_rsn == 'Removal'
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_is_removal')] = is_removal
                     
@@ -1624,11 +1622,11 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 net_div_col = diff_df.columns.get_loc('Net Div')
                 gross_div_col = diff_df.columns.get_loc('Gross Div')
                 close_prc_col = diff_df.columns.get_loc('Close Prc')
-                adj_rsn_col = diff_df.columns.get_loc('Adj. Rsn') if 'Adj. Rsn' in diff_df.columns else -1
+                adj_rsn_col = diff_df.columns.get_loc('Adj. Reason') if 'Adj. Reason' in diff_df.columns else -1
 
                 for row_idx in range(len(diff_df)):
                     excel_row = row_idx + data_start_row
-                    adj_rsn = str(diff_df.iloc[row_idx]['Adj. Rsn']).strip() if adj_rsn_col != -1 else ""
+                    adj_rsn = str(diff_df.iloc[row_idx]['Adj. Reason']).strip() if adj_rsn_col != -1 else ""
 
                     # --------------------------------------------------------------
                     # 1. RED formatting on Close Prc + Adj Closing price
@@ -1646,7 +1644,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     # --------------------------------------------------------------
                     # 2. BLUE/YELLOW formatting on New Shares
                     #    → YELLOW takes precedence over BLUE and ORANGE
-                    #    → BLUE: do NOT apply when Adj. Rsn is "Removal" or "Add Composition"
+                    #    → BLUE: do NOT apply when Adj. Reason is "Removal" or "Add Composition"
                     # --------------------------------------------------------------
                     if diff_df_formatted.iloc[row_idx]['_new_shares_yellow']:
                         # YELLOW has highest precedence for New Shares (stock split detection)
@@ -1673,7 +1671,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                                         diff_df.iloc[row_idx]['Prev. Shares'], blue_format)
 
                     # --------------------------------------------------------------
-                    # 3. RED formatting on New FF when it contains #N/A and Adj. Rsn = Removal
+                    # 3. RED formatting on New FF when it contains #N/A and Adj. Reason = Removal
                     #    → do NOT make it red in that case
                     # --------------------------------------------------------------
                     new_ff_val = diff_df.iloc[row_idx]['New FF']
@@ -1846,6 +1844,31 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         logger.error(f"Error writing Excel file: {str(e)}")
         return False
 
+def is_weekend(date=None):
+    """Check if a date is a weekend"""
+    if date is None:
+        date = datetime.now()
+    return date.weekday() >= 5  # 5 = Saturday, 6 = Sunday
+
+def is_holiday(date=None):
+    """Check if a date is a holiday"""
+    if date is None:
+        date = datetime.now()
+    date_str = date.strftime("%Y%m%d")
+    return date_str in HOLIDAYS
+
+def should_skip_processing():
+    """Check if we should skip all processing (weekend or holiday)"""
+    current_date = datetime.now()
+    
+    if is_weekend(current_date):
+        return True, "weekend"
+    
+    if is_holiday(current_date):
+        return True, "holiday"
+    
+    return False, None
+
 def perform_comparison(comparison_type='morning_stock', silent=False):
     """Perform the file comparison and generate output
     
@@ -1854,6 +1877,13 @@ def perform_comparison(comparison_type='morning_stock', silent=False):
         silent: If True, suppress output messages when skipping (for periodic checks)
     """
     try:
+        # Check if we should skip processing due to weekend/holiday
+        should_skip, reason = should_skip_processing()
+        if should_skip:
+            if not silent:
+                logger.info(f"Skipping {comparison_type} comparison - today is a {reason}")
+            return False
+        
         file_status = check_files_available(comparison_type)
         
         if not file_status['available']:
@@ -1991,6 +2021,13 @@ def perform_all_comparisons(silent=False):
     Args:
         silent: If True, suppress skip messages (for periodic checks)
     """
+    # Check if we should skip processing due to weekend/holiday
+    should_skip, reason = should_skip_processing()
+    if should_skip:
+        if not silent:
+            logger.info(f"Skipping all comparisons - today is a {reason}")
+        return {comp_type: False for comp_type in COMPARISON_CONFIGS.keys()}
+    
     results = {}
     for comparison_type in COMPARISON_CONFIGS.keys():
         results[comparison_type] = perform_comparison(comparison_type, silent=silent)
@@ -2002,10 +2039,21 @@ class FileMonitorHandler(FileSystemEventHandler):
     def __init__(self):
         self.last_check = {}
         self.check_interval = 30
+        self.last_weekend_log = None  # Track last weekend message to avoid spam
         
     def on_created(self, event):
         """Handle file creation events"""
         if event.is_directory:
+            return
+        
+        # Check if we should skip processing
+        should_skip, reason = should_skip_processing()
+        if should_skip:
+            # Log once per hour during weekends to avoid spam
+            current_time = datetime.now()
+            if self.last_weekend_log is None or (current_time - self.last_weekend_log).total_seconds() > 3600:
+                logger.info(f"File event detected but skipping - today is a {reason}")
+                self.last_weekend_log = current_time
             return
         
         self.check_and_process(event.src_path)
@@ -2015,7 +2063,14 @@ class FileMonitorHandler(FileSystemEventHandler):
         if event.is_directory:
             return
         
+        # Check if we should skip processing
+        should_skip, reason = should_skip_processing()
+        if should_skip:
+            return
+        
         self.check_and_process(event.src_path)
+    
+    # Rest of the class remains the same...
     
     def check_and_process(self, file_path):
         """Check if files are available and process them"""
@@ -2085,6 +2140,13 @@ def start_monitoring():
     print("=== GIS Changes File Monitor ===")
     print("Monitoring folders for file changes...")
     
+    # Check if today is weekend or holiday
+    should_skip, reason = should_skip_processing()
+    if should_skip:
+        print(f"\nNote: Today is a {reason} - monitoring will pause until next business day")
+        print("The script will continue running and resume automatically on the next business day.\n")
+        logger.info(f"Starting in paused mode - today is a {reason}")
+    
     # Display expected files for all comparison types
     for comparison_type in COMPARISON_CONFIGS.keys():
         expected_files = get_expected_filenames(comparison_type)
@@ -2107,14 +2169,15 @@ def start_monitoring():
     print(f"  EOD/Evening Manual: {MONITOR_FOLDERS['eod']}")
     print()
     
-# Check if files already exist
-    print("Checking if files already exist...")
-    results = perform_all_comparisons()
-    
-    if any(results.values()):
-        print("\nSome comparisons completed!")
-    else:
-        print("\nNo files available yet, starting monitoring...")
+    # Check if files already exist (only if not weekend/holiday)
+    if not should_skip:
+        print("Checking if files already exist...")
+        results = perform_all_comparisons()
+        
+        if any(results.values()):
+            print("\nSome comparisons completed!")
+        else:
+            print("\nNo files available yet, starting monitoring...")
     
     # Set up file monitors
     event_handler = FileMonitorHandler()
@@ -2132,15 +2195,34 @@ def start_monitoring():
         print("File monitoring started. Press Ctrl+C to stop.")
         
         try:
+            last_status_check = datetime.now()
+            last_weekend_message = None
+            
             while True:
                 time.sleep(60)
                 
-                # Periodic check in case file events were missed
-                # Only log when comparisons actually happen, not on every check
                 current_time = datetime.now()
-                if current_time.minute % 5 == 0:
-                    # Don't log the check itself, just perform it silently
-                    perform_all_comparisons(silent=True)
+                should_skip, reason = should_skip_processing()
+                
+                # Log status change when entering/exiting weekend
+                if should_skip:
+                    # Show message once per day during weekend/holiday
+                    if last_weekend_message is None or current_time.date() != last_weekend_message.date():
+                        logger.info(f"Monitoring paused - today is a {reason}")
+                        print(f"[{current_time.strftime('%Y-%m-%d %H:%M')}] Monitoring paused - today is a {reason}")
+                        last_weekend_message = current_time
+                else:
+                    # Check if we just exited a weekend/holiday
+                    if last_weekend_message is not None:
+                        logger.info("Monitoring resumed - back to business day")
+                        print(f"[{current_time.strftime('%Y-%m-%d %H:%M')}] Monitoring resumed - back to business day")
+                        last_weekend_message = None
+                        # Do an immediate check when resuming
+                        perform_all_comparisons(silent=True)
+                    
+                    # Periodic check every 5 minutes (only on business days)
+                    if current_time.minute % 5 == 0:
+                        perform_all_comparisons(silent=True)
                 
         except KeyboardInterrupt:
             observer.stop()
@@ -2163,7 +2245,27 @@ def polling_mode():
     print("Starting polling mode - checking for files every 2 minutes...")
     
     try:
+        last_weekend_message = None
+        
         while True:
+            current_time = datetime.now()
+            should_skip, reason = should_skip_processing()
+            
+            if should_skip:
+                # Show message once per day during weekend/holiday
+                if last_weekend_message is None or current_time.date() != last_weekend_message.date():
+                    logger.info(f"Polling paused - today is a {reason}")
+                    print(f"[{current_time.strftime('%Y-%m-%d %H:%M')}] Polling paused - today is a {reason}")
+                    last_weekend_message = current_time
+                time.sleep(3600)  # Check every hour during weekends
+                continue
+            else:
+                # Check if we just exited a weekend/holiday
+                if last_weekend_message is not None:
+                    logger.info("Polling resumed - back to business day")
+                    print(f"[{current_time.strftime('%Y-%m-%d %H:%M')}] Polling resumed - back to business day")
+                    last_weekend_message = None
+            
             logger.info("Polling for files...")
             results = perform_all_comparisons()
             

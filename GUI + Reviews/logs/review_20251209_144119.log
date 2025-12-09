@@ -1,0 +1,25 @@
+2025-12-09 14:41:22,976 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.199.43.185:5000
+2025-12-09 14:41:22,976 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-09 14:41:22,989 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 14:41:26,569 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 15:44:48,649 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 15:44:57,115 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:02:37,671 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:06:35,306 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:06:52,877 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:09:20,798 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:10:00,765 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:10:36,495 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:47:51,725 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:48:28,481 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:48:43,666 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:49:50,139 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:50:05,676 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:50:10,596 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:51:14,605 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:51:23,403 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 16:51:42,226 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-09 17:25:09,431 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

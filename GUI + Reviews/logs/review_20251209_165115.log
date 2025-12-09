@@ -1,0 +1,40 @@
+2025-12-09 16:51:15,844 - werkzeug - WARNING -  * Debugger is active!
+2025-12-09 16:51:15,846 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-09 16:51:18,713 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:51:18] "POST /calculate HTTP/1.1" 200 -
+2025-12-09 16:51:18,713 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-12-09 16:51:18,713 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:51:18] "GET /task-status/13ba6d34-9b50-4b78-8d73-d784b3a507ef HTTP/1.1" 200 -
+2025-12-09 16:51:20,725 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:51:20] "GET /task-status/13ba6d34-9b50-4b78-8d73-d784b3a507ef HTTP/1.1" 200 -
+2025-12-09 16:51:22,734 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:51:22] "GET /task-status/13ba6d34-9b50-4b78-8d73-d784b3a507ef HTTP/1.1" 200 -
+2025-12-09 16:51:23,035 - Review.reviews.edwpt_review - INFO - EDWPT: Processing 13501 companies after filtering
+2025-12-09 16:51:23,109 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-12-09 16:51:23,111 - Review.reviews.edwpt_review - INFO - Total companies selected: 5318
+2025-12-09 16:51:23,113 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.82%
+2025-12-09 16:51:23,113 - Review.reviews.edwpt_review - ERROR - Error during review calculation: 'ISIN Code'
+2025-12-09 16:51:23,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-12-09 16:51:23,118 - Review.reviews.edwpt_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'ISIN Code'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 257, in run_edwpt_review
+    universe_df = calculate_group_selection(universe_df, group_name, countries)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpt_review.py", line 191, in calculate_group_selection
+    isin_filter = ~df['ISIN Code'].str.startswith(('CA', 'US'))
+                   ~~^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'ISIN Code'
+

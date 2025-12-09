@@ -13,53 +13,31 @@ END_DATE = "20250919"
 
 # Stock prices dictionary
 stock_prices = {
+    "/6028.T": 0,
+    "SPR.N": 0
 }
 
 # Free Float Coefficient replacements
 # Format: {('ISIN', 'Index'): new_free_float_coeff}
 free_float_replacements = {
-    ('NO0010345853', 'ENEU'): 0.5,
-    ('GB0007980591', 'ENEU'): 1,
-    ('GB00BG12Y042', 'ENEU'): 0.8,
-    ('IT0003132476', 'ENEU'): 0.7,
-    ('NO0010096985', 'ENEU'): 0.35,
-    ('PTGAL0AM0009', 'ENEU'): 0.6,
-    ('FR0011726835', 'ENEU'): 0.95,
-    ('GB00BMBVGQ36', 'ENEU'): 0.45,
-    ('AT0000743059', 'ENEU'): 0.45,
-    ('ES0173516115', 'ENEU'): 1,
-    ('GB00BP6MXD84', 'ENEU'): 1,
-    ('LU0075646355', 'ENEU'): 0.75,
-    ('FR0000120271', 'ENEU'): 0.9,
-    ('NO0011202772', 'ENEU'): 0.35,
-    ('ES0132105018', 'BREU'): 0.75,
-    ('GB00BTK05J60', 'BREU'): 1,
-    ('GB0000456144', 'BREU'): 0.4,
-    ('LU1598757687', 'BREU'): 0.5,
-    ('SE0020050417', 'BREU'): 1,
-    ('GB00BL6K5J42', 'BREU'): 0.75,
-    ('GB00B2QPKJ12', 'BREU'): 0.25,
-    ('JE00B4T3BW64', 'BREU'): 0.8,
-    ('NO0005052605', 'BREU'): 0.65,
-    ('GB0007188757', 'BREU'): 0.85,
-    ('SE0000108227', 'BREU'): 0.85,
-    ('SE0000120669', 'BREU'): 0.85,
-    ('LU2598331598', 'BREU'): 0.25,
-    ('FR0013506730', 'BREU'): 0.7,
-    ('AT0000937503', 'BREU'): 0.6,
+
 }
 
 # Divisor replacements
 # Format: {'Mnemo': new_divisor}
 divisor_replacements = {
-    'BREU': 136988305.520272,
-    'ENEU': 92295075.4649432,
+
 }
 
 # List of Price Index mnemonics to process
 mnemonics = [
-    "BREU",
-    "ENEU",
+    "EDWSP",
+    "EDWPE",
+    "EDMPU",
+    "EDWP",
+    "EDWPT",
+    "ENWP",
+    "ENDMP"
 ]
 
 # Insert Index to be calculated + Underlying Index

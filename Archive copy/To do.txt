@@ -1,2 +1,20 @@
 To do:
 -   Check if the EICC runs based on the new afternoon file Check
+
+Still to do for me:
+Update the output folder to the daily folders dynamically
+Make the file ready to be the basis fortea the EICC
+Merge both scripts so the team only has to activate one script
+
+
+Questions to the audience:
+What extra checks do you think are valuable?
+Do you think the comments explain the situation properly?
+Should i keep the excluded values that we have now?
+
+What I want you to do:
+
+
+
+Add Index to the Summary Sheet
+Include Dummys and Pro Forma's

@@ -1,0 +1,51 @@
+2025-12-09 16:48:44,971 - werkzeug - WARNING -  * Debugger is active!
+2025-12-09 16:48:44,974 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-09 16:48:45,015 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:48:45] "GET /task-status/4871179b-3fdc-4e26-b497-2cf7a873c9f3 HTTP/1.1" 200 -
+2025-12-09 16:48:48,496 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:48:48] "POST /calculate HTTP/1.1" 200 -
+2025-12-09 16:48:48,499 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-12-09 16:48:48,504 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:48:48] "GET /task-status/8c3df5f9-d4e8-4851-9851-ccdbb3ad5246 HTTP/1.1" 200 -
+2025-12-09 16:48:50,491 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-12-09 16:48:50,496 - Review.reviews.edwp_review - INFO - Total companies selected: 1538
+2025-12-09 16:48:50,497 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.82%
+2025-12-09 16:48:50,503 - Review.reviews.edwp_review - INFO - DEUP: Filtered out CA and US ISINs. Remaining companies: 9154
+2025-12-09 16:48:50,506 - Review.reviews.edwp_review - ERROR - Error during review calculation: unhashable type: 'Series'
+2025-12-09 16:48:50,509 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:48:50] "GET /task-status/8c3df5f9-d4e8-4851-9851-ccdbb3ad5246 HTTP/1.1" 200 -
+2025-12-09 16:48:50,510 - Review.reviews.edwp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwp_review.py", line 223, in run_edwp_review
+    universe_df = calculate_group_selection(universe_df, group_name, countries)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwp_review.py", line 185, in calculate_group_selection
+    df.loc[group_mask, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage']
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 907, in __setitem__
+    indexer = self._get_setitem_indexer(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 780, in _get_setitem_indexer
+    return self._convert_to_indexer(key, axis=0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1522, in _convert_to_indexer
+    return self._get_listlike_indexer(key, axis)[1]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1558, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6195, in _get_indexer_strict
+    indexer = self.get_indexer_for(keyarr)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6182, in get_indexer_for
+    return self.get_indexer(target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3949, in get_indexer
+    return this._get_indexer(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3980, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 351, in pandas._libs.index.IndexEngine.get_indexer
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7132, in pandas._libs.hashtable.PyObjectHashTable.lookup
+TypeError: unhashable type: 'Series'
+
+2025-12-09 16:48:52,512 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2025 16:48:52] "GET /task-status/8c3df5f9-d4e8-4851-9851-ccdbb3ad5246 HTTP/1.1" 200 -
+2025-12-09 16:49:49,855 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading
+2025-12-09 16:49:49,855 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading

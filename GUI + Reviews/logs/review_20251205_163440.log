@@ -23,3 +23,5 @@
 2025-12-05 16:36:28,124 - Review.reviews.sbf80_review - INFO - FFMC CO calculated successfully
 2025-12-05 16:36:28,132 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SBF80_df_20251205_163628.xlsx
 2025-12-05 16:36:28,525 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 16:36:28] "GET /task-status/ea495141-c0ed-4a46-8120-6ee1ac1d2db5 HTTP/1.1" 200 -
+2025-12-05 16:45:55,743 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-12-05 16:45:55,743 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading

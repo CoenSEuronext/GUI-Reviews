@@ -1,0 +1,24 @@
+{
+  "task_id": "8c3df5f9-d4e8-4851-9851-ccdbb3ad5246",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-09T16:48:48.491796",
+  "started_at": "2025-12-09T16:48:48.496013",
+  "completed_at": "2025-12-09T16:48:50.514484",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: unhashable type: 'Series'",
+  "error": "Error during review calculation: unhashable type: 'Series'",
+  "result_data": null,
+  "review_type": "EDWP",
+  "parameters": {
+    "date": "20251208",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "EDWP",
+    "isin": "NLIX00001577",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.015463
+}

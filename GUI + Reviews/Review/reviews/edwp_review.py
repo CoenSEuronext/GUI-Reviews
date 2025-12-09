@@ -155,18 +155,29 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
 
         # Function to calculate selection for a group
         def calculate_group_selection(df, group_name, countries):
-            # Create mask for countries in this group
-            group_mask = df['Country Group'].isin(countries)
+            # Filter out CA and US ISINs for DEUP and DEZP only
+            if group_name in ['DEUP', 'DEZP']:
+                # Create a mask for non-CA/US ISINs
+                isin_filter = ~df['ISIN'].str.startswith(('CA', 'US'))
+                logger.info(f"{group_name}: Filtering out CA and US ISINs")
+            else:
+                # No filtering for other indices
+                isin_filter = pd.Series(True, index=df.index)
+            
+            # Create mask for countries in this group AND apply ISIN filter
+            group_mask = df['Country Group'].isin(countries) & isin_filter
             
             # Initialize selection column
             df[f'{group_name}_selection'] = 0
             
-            # Calculate total FFMC for the group
+            # Calculate total FFMC for the group (with filters applied)
             group_total_ffmc = df.loc[group_mask, 'FFMC'].sum()
             
             if group_total_ffmc > 0:
                 # Sort group data by FFMC descending
                 group_df = df[group_mask].sort_values('FFMC', ascending=False).copy()
+                
+                logger.info(f"{group_name}: Processing {len(group_df)} companies after filtering")
                 
                 # Calculate group level cumulative stats
                 group_df[f'{group_name}_Cumulative_FFMC'] = group_df['FFMC'].cumsum()
@@ -174,8 +185,8 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                     group_df[f'{group_name}_Cumulative_FFMC'] / group_total_ffmc * 100
                 )
                 
-                # Add group percentage to main DataFrame
-                df.loc[group_mask, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage']
+                # Add group percentage to main DataFrame using the group_df indices
+                df.loc[group_df.index, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage'].values
                 
                 # Select companies up to 85% plus first one exceeding
                 exceeds_85_group = group_df[f'{group_name}_Cumulative_Percentage'] > 85
@@ -195,8 +206,8 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
                                 country_df['Country_Cumulative_FFMC'] / country_total * 100
                             )
                             
-                            # Add country percentage to main DataFrame
-                            df.loc[country_df.index, f'{group_name}_Country_Percentage'] = country_df['Country_Cumulative_Percentage']
+                            # Add country percentage to main DataFrame using values
+                            df.loc[country_df.index, f'{group_name}_Country_Percentage'] = country_df['Country_Cumulative_Percentage'].values
                             
                             # Select companies up to 85% plus first one exceeding
                             exceeds_85_country = country_df['Country_Cumulative_Percentage'] > 85
