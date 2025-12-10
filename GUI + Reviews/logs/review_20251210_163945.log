@@ -1,0 +1,4 @@
+2025-12-10 16:39:46,332 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 16:39:46,335 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 16:40:02,265 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\darep_review.py', reloading
+2025-12-10 16:40:02,269 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_standard.py', reloading

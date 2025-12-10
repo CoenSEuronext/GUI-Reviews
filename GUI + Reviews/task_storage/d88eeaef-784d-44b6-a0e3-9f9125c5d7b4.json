@@ -1,0 +1,24 @@
+{
+  "task_id": "d88eeaef-784d-44b6-a0e3-9f9125c5d7b4",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T15:47:52.722356",
+  "started_at": "2025-12-10T15:47:52.722356",
+  "completed_at": "2025-12-10T15:47:59.057084",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'MIC'",
+  "error": "Error during review calculation: 'MIC'",
+  "result_data": null,
+  "review_type": "JPCLA",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "JPCLA",
+    "isin": "FRESG0000181",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 6.330642
+}

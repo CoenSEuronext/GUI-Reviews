@@ -1,0 +1,34 @@
+2025-12-10 16:06:57,759 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 16:06:57,759 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 16:06:58,049 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:06:58] "GET / HTTP/1.1" 200 -
+2025-12-10 16:06:58,086 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:06:58] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-10 16:07:03,431 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:07:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 16:07:03,434 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+2025-12-10 16:07:03,434 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:07:03] "GET /task-status/b518e504-7cb8-4806-a026-a3e941db5423 HTTP/1.1" 200 -
+2025-12-10 16:07:05,448 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:07:05] "GET /task-status/b518e504-7cb8-4806-a026-a3e941db5423 HTTP/1.1" 200 -
+2025-12-10 16:07:05,814 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2025-12-10 16:07:07,463 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:07:07] "GET /task-status/b518e504-7cb8-4806-a026-a3e941db5423 HTTP/1.1" 200 -
+2025-12-10 16:07:09,447 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:07:09] "GET /task-status/b518e504-7cb8-4806-a026-a3e941db5423 HTTP/1.1" 200 -
+2025-12-10 16:07:09,797 - Review.reviews.fclsp_review - ERROR - Error during review calculation: 'ISIN'
+2025-12-10 16:07:09,814 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py', reloading
+2025-12-10 16:07:09,823 - Review.reviews.fclsp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\fclsp_review.py", line 62, in run_fclsp_review
+    sbf_120_df = sbf_120_df.merge(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'ISIN'
+
+2025-12-10 16:07:09,824 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading

@@ -72,6 +72,9 @@ from .reviews.uscla_review import run_uscla_review
 from .reviews.usc3p_review import run_usc3p_review
 from .reviews.uc3pe_review import run_uc3pe_review
 from .reviews.clamp_review import run_clamp_review
+from .reviews.jpcla_review import run_jpcla_review
+from .reviews.jpcle_review import run_jpcle_review
+from .reviews.fclsp_review import run_fclsp_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -147,7 +150,10 @@ REVIEW_FUNCTIONS = {
     "USCLA": run_uscla_review,
     "USC3P": run_usc3p_review,
     "UC3PE": run_uc3pe_review,
-    "CLAMP": run_clamp_review
+    "CLAMP": run_clamp_review,
+    "JPCLA": run_jpcla_review,
+    "JPCLE": run_jpcle_review,
+    "FCLSP": run_fclsp_review
 }
 
 def run_review(review_type, **kwargs):

@@ -1,0 +1,26 @@
+{
+  "task_id": "b6dae614-3d1c-48ec-b4b8-3629aad9f204",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-10T16:51:22.801206",
+  "started_at": "2025-12-10T16:51:22.801206",
+  "completed_at": "2025-12-10T16:51:28.944177",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "fclsp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\FCLSP_df_20251210_165128.xlsx"
+  },
+  "review_type": "FCLSP",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "FCLSP",
+    "isin": "FRESG0001478",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 6.142971
+}

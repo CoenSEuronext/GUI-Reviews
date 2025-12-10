@@ -1,0 +1,71 @@
+2025-12-10 15:47:49,172 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 15:47:49,185 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 15:47:49,207 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:47:49] "GET /task-status/1a3a5387-e130-46cf-ad52-880560ae5cce HTTP/1.1" 200 -
+2025-12-10 15:47:52,726 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:47:52] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 15:47:52,726 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-10 15:47:52,736 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:47:52] "GET /task-status/d88eeaef-784d-44b6-a0e3-9f9125c5d7b4 HTTP/1.1" 200 -
+2025-12-10 15:47:54,737 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:47:54] "GET /task-status/d88eeaef-784d-44b6-a0e3-9f9125c5d7b4 HTTP/1.1" 200 -
+2025-12-10 15:47:54,847 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-10 15:47:56,742 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:47:56] "GET /task-status/d88eeaef-784d-44b6-a0e3-9f9125c5d7b4 HTTP/1.1" 200 -
+2025-12-10 15:47:58,734 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:47:58] "GET /task-status/d88eeaef-784d-44b6-a0e3-9f9125c5d7b4 HTTP/1.1" 200 -
+2025-12-10 15:47:59,037 - Review.reviews.jpcla_review - ERROR - Error during review calculation: 'MIC'
+2025-12-10 15:47:59,054 - Review.reviews.jpcla_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'MIC'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\jpcla_review.py", line 92, in run_jpcla_review
+    asia_pacific_500_df = asia_pacific_500_df[asia_pacific_500_df['MIC'] != 'XTSE'].copy()
+                                              ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'MIC'
+
+2025-12-10 15:48:00,737 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:48:00] "GET /task-status/d88eeaef-784d-44b6-a0e3-9f9125c5d7b4 HTTP/1.1" 200 -
+2025-12-10 15:49:32,962 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:49:32] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 15:49:32,973 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-10 15:49:32,979 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:49:32] "GET /task-status/0ff66f9c-deaa-4ac6-958b-079af2db5cf2 HTTP/1.1" 200 -
+2025-12-10 15:49:34,985 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:49:34] "GET /task-status/0ff66f9c-deaa-4ac6-958b-079af2db5cf2 HTTP/1.1" 200 -
+2025-12-10 15:49:35,336 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-10 15:49:36,988 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:49:36] "GET /task-status/0ff66f9c-deaa-4ac6-958b-079af2db5cf2 HTTP/1.1" 200 -
+2025-12-10 15:49:38,988 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:49:38] "GET /task-status/0ff66f9c-deaa-4ac6-958b-079af2db5cf2 HTTP/1.1" 200 -
+2025-12-10 15:49:39,236 - Review.reviews.jpcla_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-10 15:49:39,251 - Review.reviews.jpcla_review - INFO - Remaining universe size: 500 companies
+2025-12-10 15:49:39,252 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-10 15:49:39,252 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-10 15:49:39,266 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 50
+2025-12-10 15:49:39,266 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-10 15:49:39,268 - Review.reviews.jpcla_review - INFO - APMines exclusions: 0
+2025-12-10 15:49:39,269 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-10 15:49:39,270 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-10 15:49:39,270 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 0
+2025-12-10 15:49:39,271 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 0
+2025-12-10 15:49:39,272 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-10 15:49:39,272 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-10 15:49:39,273 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-10 15:49:39,274 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 15
+2025-12-10 15:49:39,275 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 20
+2025-12-10 15:49:39,276 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 11
+2025-12-10 15:49:39,276 - Review.reviews.jpcla_review - INFO - Total companies in universe: 500
+2025-12-10 15:49:39,276 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 400.0
+2025-12-10 15:49:39,277 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 400.0): 100
+2025-12-10 15:49:39,286 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 339
+2025-12-10 15:49:39,297 - Review.reviews.jpcla_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 15:49:40,652 - Review.reviews.jpcla_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 15:49:40,652 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2025-12-10 15:49:40,652 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2025-12-10 15:49:40,661 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLA_df_20251210_154940.xlsx
+2025-12-10 15:49:40,987 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:49:40] "GET /task-status/0ff66f9c-deaa-4ac6-958b-079af2db5cf2 HTTP/1.1" 200 -
+2025-12-10 15:51:07,837 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
+2025-12-10 15:51:07,837 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading

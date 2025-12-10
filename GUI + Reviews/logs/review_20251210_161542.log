@@ -1,0 +1,110 @@
+2025-12-10 16:15:43,136 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 16:15:43,136 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 16:15:45,903 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:15:45] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 16:15:45,903 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+2025-12-10 16:15:45,903 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:15:45] "GET /task-status/286c8417-f30d-4573-9b74-39b35edbee9c HTTP/1.1" 200 -
+2025-12-10 16:15:47,918 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:15:47] "GET /task-status/286c8417-f30d-4573-9b74-39b35edbee9c HTTP/1.1" 200 -
+2025-12-10 16:15:48,774 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2025-12-10 16:15:49,939 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:15:49] "GET /task-status/286c8417-f30d-4573-9b74-39b35edbee9c HTTP/1.1" 200 -
+2025-12-10 16:15:51,936 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:15:51] "GET /task-status/286c8417-f30d-4573-9b74-39b35edbee9c HTTP/1.1" 200 -
+2025-12-10 16:15:52,935 - Review.reviews.fclsp_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-10 16:15:52,935 - Review.reviews.fclsp_review - INFO - Remaining universe size: 120 companies
+2025-12-10 16:15:52,935 - Review.reviews.fclsp_review - INFO - Merging Oekom data points early...
+2025-12-10 16:15:52,956 - Review.reviews.fclsp_review - INFO - Oekom data merged successfully
+2025-12-10 16:15:52,961 - Review.reviews.fclsp_review - INFO - Trust Metric exclusions: 3
+2025-12-10 16:15:52,961 - Review.reviews.fclsp_review - INFO - NBR Overall Flag exclusions: 0
+2025-12-10 16:15:52,962 - Review.reviews.fclsp_review - INFO - APMines exclusions: 1
+2025-12-10 16:15:52,963 - Review.reviews.fclsp_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 16:15:52,964 - Review.reviews.fclsp_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 16:15:52,964 - Review.reviews.fclsp_review - INFO - ClusterMunitions exclusions: 1
+2025-12-10 16:15:52,965 - Review.reviews.fclsp_review - INFO - DepletedUranium exclusions: 1
+2025-12-10 16:15:52,966 - Review.reviews.fclsp_review - INFO - IncendiaryWeapons exclusions: 3
+2025-12-10 16:15:52,967 - Review.reviews.fclsp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 16:15:52,968 - Review.reviews.fclsp_review - INFO - WhitePhosphorus exclusions: 1
+2025-12-10 16:15:52,969 - Review.reviews.fclsp_review - INFO - Coal Mining exclusions: 0
+2025-12-10 16:15:52,970 - Review.reviews.fclsp_review - INFO - Thermal Power exclusions: 2
+2025-12-10 16:15:52,971 - Review.reviews.fclsp_review - INFO - Shale Oil/Gas exclusions: 1
+2025-12-10 16:15:52,971 - Review.reviews.fclsp_review - INFO - Total companies in universe: 120
+2025-12-10 16:15:52,971 - Review.reviews.fclsp_review - INFO - Carbon Budget cutoff rank (80th percentile): 96.0
+2025-12-10 16:15:52,972 - Review.reviews.fclsp_review - INFO - Carbon Budget exclusions (rank > 96.0): 24
+2025-12-10 16:15:52,975 - Review.reviews.fclsp_review - INFO - Companies remaining after exclusions: 89
+2025-12-10 16:15:52,978 - Review.reviews.fclsp_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Checking for duplicate indices in top_250_df...
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Index values: [66, 22, 106, 31, 95, 59, 8, 49, 21, 86, 6, 60, 33, 88, 29, 13, 118, 73, 77, 53, 111, 17, 98, 107, 63, 70, 50, 52, 18, 110, 85, 80, 100, 14, 62, 83, 42, 57, 7, 43, 119, 65, 91, 12, 89, 87, 24, 9, 48, 72, 79, 36, 113, 94, 4, 97, 16, 15, 101, 55, 105, 5, 74, 26, 51, 2, 3, 99, 117, 116, 34, 84, 93, 96, 44, 81, 112, 56, 92, 67, 68, 54, 82, 90, 78, 35, 114, 104, 45]
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Duplicate indices: []
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Number of duplicates: 0
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Checking for duplicate column names...
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Duplicate columns: []
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Checking IsinCode FRESG0001478 in index_eod_df
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - INFO - Found 1 matching rows
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - ERROR - Error during review calculation: "['Currency (Local)'] not in index"
+2025-12-10 16:15:53,489 - Review.reviews.fclsp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\fclsp_review.py", line 460, in run_fclsp_review
+    FCLSP_df = final_selection_df[[
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency (Local)'] not in index"
+
+2025-12-10 16:15:53,918 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:15:53] "GET /task-status/286c8417-f30d-4573-9b74-39b35edbee9c HTTP/1.1" 200 -
+2025-12-10 16:16:03,972 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:16:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 16:16:03,972 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+2025-12-10 16:16:03,980 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:16:03] "GET /task-status/0f4dd19f-50d4-4a23-a00e-485f0aefbd4c HTTP/1.1" 200 -
+2025-12-10 16:16:05,986 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:16:05] "GET /task-status/0f4dd19f-50d4-4a23-a00e-485f0aefbd4c HTTP/1.1" 200 -
+2025-12-10 16:16:06,135 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2025-12-10 16:16:07,985 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:16:07] "GET /task-status/0f4dd19f-50d4-4a23-a00e-485f0aefbd4c HTTP/1.1" 200 -
+2025-12-10 16:16:10,012 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:16:10] "GET /task-status/0f4dd19f-50d4-4a23-a00e-485f0aefbd4c HTTP/1.1" 200 -
+2025-12-10 16:16:10,477 - Review.reviews.fclsp_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-10 16:16:10,477 - Review.reviews.fclsp_review - INFO - Remaining universe size: 120 companies
+2025-12-10 16:16:10,477 - Review.reviews.fclsp_review - INFO - Merging Oekom data points early...
+2025-12-10 16:16:10,485 - Review.reviews.fclsp_review - INFO - Oekom data merged successfully
+2025-12-10 16:16:10,485 - Review.reviews.fclsp_review - INFO - Trust Metric exclusions: 3
+2025-12-10 16:16:10,488 - Review.reviews.fclsp_review - INFO - NBR Overall Flag exclusions: 0
+2025-12-10 16:16:10,489 - Review.reviews.fclsp_review - INFO - APMines exclusions: 1
+2025-12-10 16:16:10,489 - Review.reviews.fclsp_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 16:16:10,491 - Review.reviews.fclsp_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 16:16:10,491 - Review.reviews.fclsp_review - INFO - ClusterMunitions exclusions: 1
+2025-12-10 16:16:10,492 - Review.reviews.fclsp_review - INFO - DepletedUranium exclusions: 1
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - IncendiaryWeapons exclusions: 3
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - WhitePhosphorus exclusions: 1
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - Coal Mining exclusions: 0
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - Thermal Power exclusions: 2
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - Shale Oil/Gas exclusions: 1
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - Total companies in universe: 120
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - Carbon Budget cutoff rank (80th percentile): 96.0
+2025-12-10 16:16:10,493 - Review.reviews.fclsp_review - INFO - Carbon Budget exclusions (rank > 96.0): 24
+2025-12-10 16:16:10,505 - Review.reviews.fclsp_review - INFO - Companies remaining after exclusions: 89
+2025-12-10 16:16:10,512 - Review.reviews.fclsp_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 16:16:11,048 - Review.reviews.fclsp_review - INFO - Checking for duplicate indices in top_250_df...
+2025-12-10 16:16:11,048 - Review.reviews.fclsp_review - INFO - Index values: [66, 22, 106, 31, 95, 59, 8, 49, 21, 86, 6, 60, 33, 88, 29, 13, 118, 73, 77, 53, 111, 17, 98, 107, 63, 70, 50, 52, 18, 110, 85, 80, 100, 14, 62, 83, 42, 57, 7, 43, 119, 65, 91, 12, 89, 87, 24, 9, 48, 72, 79, 36, 113, 94, 4, 97, 16, 15, 101, 55, 105, 5, 74, 26, 51, 2, 3, 99, 117, 116, 34, 84, 93, 96, 44, 81, 112, 56, 92, 67, 68, 54, 82, 90, 78, 35, 114, 104, 45]
+2025-12-10 16:16:11,048 - Review.reviews.fclsp_review - INFO - Duplicate indices: []
+2025-12-10 16:16:11,048 - Review.reviews.fclsp_review - INFO - Number of duplicates: 0
+2025-12-10 16:16:11,048 - Review.reviews.fclsp_review - INFO - Checking for duplicate column names...
+2025-12-10 16:16:11,048 - Review.reviews.fclsp_review - INFO - Duplicate columns: []
+2025-12-10 16:16:11,051 - Review.reviews.fclsp_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 16:16:11,052 - Review.reviews.fclsp_review - INFO - Checking IsinCode FRESG0001478 in index_eod_df
+2025-12-10 16:16:11,053 - Review.reviews.fclsp_review - INFO - Found 1 matching rows
+2025-12-10 16:16:11,054 - Review.reviews.fclsp_review - ERROR - Error during review calculation: "['Currency (Local)'] not in index"
+2025-12-10 16:16:11,055 - Review.reviews.fclsp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\fclsp_review.py", line 460, in run_fclsp_review
+    FCLSP_df = final_selection_df[[
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency (Local)'] not in index"
+
+2025-12-10 16:16:11,985 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:16:11] "GET /task-status/0f4dd19f-50d4-4a23-a00e-485f0aefbd4c HTTP/1.1" 200 -
+2025-12-10 16:16:45,990 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
+2025-12-10 16:16:45,992 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading

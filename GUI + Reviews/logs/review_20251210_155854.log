@@ -1,0 +1,36 @@
+2025-12-10 15:58:55,472 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 15:58:55,474 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 15:58:58,426 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:58:58] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 15:58:58,436 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-10 15:58:58,436 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:58:58] "GET /task-status/41d1399c-95c7-4ba0-a901-a220fe5489f0 HTTP/1.1" 200 -
+2025-12-10 15:59:00,027 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:59:00] "GET / HTTP/1.1" 200 -
+2025-12-10 15:59:00,117 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:59:00] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-10 15:59:01,574 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-10 15:59:06,192 - Review.reviews.jpcla_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-10 15:59:06,192 - Review.reviews.jpcla_review - INFO - Remaining universe size: 500 companies
+2025-12-10 15:59:06,192 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-10 15:59:06,211 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-10 15:59:06,212 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 50
+2025-12-10 15:59:06,213 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-10 15:59:06,214 - Review.reviews.jpcla_review - INFO - APMines exclusions: 0
+2025-12-10 15:59:06,215 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-10 15:59:06,216 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-10 15:59:06,217 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 0
+2025-12-10 15:59:06,218 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 0
+2025-12-10 15:59:06,219 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-10 15:59:06,219 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-10 15:59:06,220 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-10 15:59:06,221 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 15
+2025-12-10 15:59:06,223 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 20
+2025-12-10 15:59:06,224 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 11
+2025-12-10 15:59:06,224 - Review.reviews.jpcla_review - INFO - Total companies in universe: 500
+2025-12-10 15:59:06,224 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 400.0
+2025-12-10 15:59:06,225 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 400.0): 100
+2025-12-10 15:59:06,232 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 339
+2025-12-10 15:59:06,244 - Review.reviews.jpcla_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 15:59:07,705 - Review.reviews.jpcla_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 15:59:07,705 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2025-12-10 15:59:07,706 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2025-12-10 15:59:07,713 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLA_df_20251210_155907.xlsx
+2025-12-10 15:59:12,561 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-12-10 15:59:12,561 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

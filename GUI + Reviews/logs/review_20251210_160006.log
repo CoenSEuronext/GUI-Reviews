@@ -1,0 +1,39 @@
+2025-12-10 16:00:07,697 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 16:00:07,697 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 16:00:07,737 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:07] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 16:00:07,739 - Review.reviews.jpcle_review - INFO - Loading EOD data...
+2025-12-10 16:00:07,743 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:07] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:09,744 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:09] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:11,746 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:11] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:11,833 - Review.reviews.jpcle_review - INFO - Loading reference data...
+2025-12-10 16:00:13,748 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:13] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:15,742 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:15] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:16,119 - Review.reviews.jpcle_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-10 16:00:16,119 - Review.reviews.jpcle_review - INFO - Remaining universe size: 500 companies
+2025-12-10 16:00:16,119 - Review.reviews.jpcle_review - INFO - Merging Oekom data points early...
+2025-12-10 16:00:16,126 - Review.reviews.jpcle_review - INFO - Oekom data merged successfully
+2025-12-10 16:00:16,127 - Review.reviews.jpcle_review - INFO - Trust Metric exclusions: 50
+2025-12-10 16:00:16,128 - Review.reviews.jpcle_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-10 16:00:16,128 - Review.reviews.jpcle_review - INFO - APMines exclusions: 0
+2025-12-10 16:00:16,129 - Review.reviews.jpcle_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-10 16:00:16,130 - Review.reviews.jpcle_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-10 16:00:16,130 - Review.reviews.jpcle_review - INFO - ClusterMunitions exclusions: 0
+2025-12-10 16:00:16,131 - Review.reviews.jpcle_review - INFO - DepletedUranium exclusions: 0
+2025-12-10 16:00:16,132 - Review.reviews.jpcle_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-10 16:00:16,132 - Review.reviews.jpcle_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-10 16:00:16,134 - Review.reviews.jpcle_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-10 16:00:16,135 - Review.reviews.jpcle_review - INFO - Coal Mining exclusions: 15
+2025-12-10 16:00:16,135 - Review.reviews.jpcle_review - INFO - Thermal Power exclusions: 20
+2025-12-10 16:00:16,136 - Review.reviews.jpcle_review - INFO - Shale Oil/Gas exclusions: 11
+2025-12-10 16:00:16,136 - Review.reviews.jpcle_review - INFO - Total companies in universe: 500
+2025-12-10 16:00:16,137 - Review.reviews.jpcle_review - INFO - Carbon Budget cutoff rank (80th percentile): 400.0
+2025-12-10 16:00:16,137 - Review.reviews.jpcle_review - INFO - Carbon Budget exclusions (rank > 400.0): 100
+2025-12-10 16:00:16,149 - Review.reviews.jpcle_review - INFO - Companies remaining after exclusions: 339
+2025-12-10 16:00:16,149 - Review.reviews.jpcle_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 16:00:17,552 - Review.reviews.jpcle_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 16:00:17,552 - Review.reviews.jpcle_review - INFO - Checking IsinCode FRESG0000215 in index_eod_df
+2025-12-10 16:00:17,552 - Review.reviews.jpcle_review - INFO - Found 1 matching rows
+2025-12-10 16:00:17,560 - Review.reviews.jpcle_review - INFO - Saving JPCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLE_df_20251210_160017.xlsx
+2025-12-10 16:00:17,751 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:17] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:19,743 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:00:19] "GET /task-status/71b2fc2b-e4f8-42c7-811c-dfc26bd8c8ca HTTP/1.1" 200 -
+2025-12-10 16:00:20,853 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcle_review.py', reloading

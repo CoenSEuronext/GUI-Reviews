@@ -1,0 +1,9 @@
+2025-12-10 15:59:18,585 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 15:59:18,587 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 15:59:18,614 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:59:18] "GET / HTTP/1.1" 200 -
+2025-12-10 15:59:18,726 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:59:18] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-10 15:59:23,993 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:59:23] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 15:59:23,993 - Review.reviews.jpcle_review - INFO - Loading EOD data...
+2025-12-10 15:59:24,011 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:59:24] "GET /task-status/37ed6925-df2e-46bf-aa2b-d2f1b9cd34b4 HTTP/1.1" 200 -
+2025-12-10 15:59:25,679 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2025-12-10 15:59:25,679 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

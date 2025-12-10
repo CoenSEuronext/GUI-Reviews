@@ -1,0 +1,24 @@
+{
+  "task_id": "37ed6925-df2e-46bf-aa2b-d2f1b9cd34b4",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T15:59:23.993829",
+  "started_at": "2025-12-10T15:59:23.993829",
+  "completed_at": "2025-12-10T15:59:27.315413",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "JPCLE",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "JPCLE",
+    "isin": "FRESG0000215",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

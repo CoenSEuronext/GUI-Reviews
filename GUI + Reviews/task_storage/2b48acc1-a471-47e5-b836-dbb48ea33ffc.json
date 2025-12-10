@@ -1,0 +1,24 @@
+{
+  "task_id": "2b48acc1-a471-47e5-b836-dbb48ea33ffc",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T16:14:40.369232",
+  "started_at": "2025-12-10T16:14:40.369232",
+  "completed_at": "2025-12-10T16:14:46.636959",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: cannot reindex on an axis with duplicate labels",
+  "error": "Error during review calculation: cannot reindex on an axis with duplicate labels",
+  "result_data": null,
+  "review_type": "FCLSP",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "FCLSP",
+    "isin": "FRESG0001478",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 6.267727
+}

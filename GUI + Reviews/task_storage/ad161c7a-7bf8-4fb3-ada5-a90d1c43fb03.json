@@ -1,0 +1,24 @@
+{
+  "task_id": "ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T16:11:27.919277",
+  "started_at": "2025-12-10T16:11:27.919277",
+  "completed_at": "2025-12-10T16:11:36.634575",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'NOSH'",
+  "error": "Error during review calculation: 'NOSH'",
+  "result_data": null,
+  "review_type": "FCLSP",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "FCLSP",
+    "isin": "FRESG0001478",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 8.707129
+}

@@ -1,0 +1,60 @@
+2025-12-10 16:11:26,832 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 16:11:26,832 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 16:11:27,919 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:27] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 16:11:27,927 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+2025-12-10 16:11:27,927 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:27] "GET /task-status/ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03 HTTP/1.1" 200 -
+2025-12-10 16:11:29,933 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:29] "GET /task-status/ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03 HTTP/1.1" 200 -
+2025-12-10 16:11:30,300 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2025-12-10 16:11:31,940 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:31] "GET /task-status/ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03 HTTP/1.1" 200 -
+2025-12-10 16:11:33,938 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:33] "GET /task-status/ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03 HTTP/1.1" 200 -
+2025-12-10 16:11:35,822 - Review.reviews.fclsp_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-10 16:11:35,822 - Review.reviews.fclsp_review - INFO - Remaining universe size: 120 companies
+2025-12-10 16:11:35,824 - Review.reviews.fclsp_review - INFO - Merging Oekom data points early...
+2025-12-10 16:11:35,851 - Review.reviews.fclsp_review - INFO - Oekom data merged successfully
+2025-12-10 16:11:35,854 - Review.reviews.fclsp_review - INFO - Trust Metric exclusions: 3
+2025-12-10 16:11:35,857 - Review.reviews.fclsp_review - INFO - NBR Overall Flag exclusions: 0
+2025-12-10 16:11:35,860 - Review.reviews.fclsp_review - INFO - APMines exclusions: 1
+2025-12-10 16:11:35,862 - Review.reviews.fclsp_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 16:11:35,864 - Review.reviews.fclsp_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 16:11:35,867 - Review.reviews.fclsp_review - INFO - ClusterMunitions exclusions: 1
+2025-12-10 16:11:35,870 - Review.reviews.fclsp_review - INFO - DepletedUranium exclusions: 1
+2025-12-10 16:11:35,872 - Review.reviews.fclsp_review - INFO - IncendiaryWeapons exclusions: 3
+2025-12-10 16:11:35,874 - Review.reviews.fclsp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 16:11:35,875 - Review.reviews.fclsp_review - INFO - WhitePhosphorus exclusions: 1
+2025-12-10 16:11:35,877 - Review.reviews.fclsp_review - INFO - Coal Mining exclusions: 0
+2025-12-10 16:11:35,879 - Review.reviews.fclsp_review - INFO - Thermal Power exclusions: 2
+2025-12-10 16:11:35,880 - Review.reviews.fclsp_review - INFO - Shale Oil/Gas exclusions: 1
+2025-12-10 16:11:35,881 - Review.reviews.fclsp_review - INFO - Total companies in universe: 120
+2025-12-10 16:11:35,881 - Review.reviews.fclsp_review - INFO - Carbon Budget cutoff rank (80th percentile): 96.0
+2025-12-10 16:11:35,883 - Review.reviews.fclsp_review - INFO - Carbon Budget exclusions (rank > 96.0): 24
+2025-12-10 16:11:35,891 - Review.reviews.fclsp_review - INFO - Companies remaining after exclusions: 89
+2025-12-10 16:11:35,896 - Review.reviews.fclsp_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 16:11:35,951 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:35] "GET /task-status/ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03 HTTP/1.1" 200 -
+2025-12-10 16:11:36,616 - Review.reviews.fclsp_review - ERROR - Error during review calculation: 'NOSH'
+2025-12-10 16:11:36,625 - Review.reviews.fclsp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 191, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 234, in pandas._libs.index.IndexEngine._get_loc_duplicates
+  File "index.pyx", line 242, in pandas._libs.index.IndexEngine._maybe_get_bool_indexer
+  File "index.pyx", line 134, in pandas._libs.index._unpack_bool_indexer
+KeyError: 'NOSH'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\fclsp_review.py", line 406, in run_fclsp_review
+    top_250_df['FFMC'] = top_250_df['Close Prc_EOD'] * top_250_df['NOSH'] * top_250_df['Free Float']
+                                                       ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'NOSH'
+
+2025-12-10 16:11:37,933 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 16:11:37] "GET /task-status/ad161c7a-7bf8-4fb3-ada5-a90d1c43fb03 HTTP/1.1" 200 -
+2025-12-10 16:12:08,784 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
+2025-12-10 16:12:08,784 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading

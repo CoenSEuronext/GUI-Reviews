@@ -355,6 +355,21 @@ INDEX_CONFIGS = {
         "index": "CLAMP",
         "isin": "FR0014004XR2",
         "output_key": "clamp_path"
+    },
+    "JPCLA": {
+        "index": "JPCLA",
+        "isin": "FRESG0000181",
+        "output_key": "jpcla_path"
+    },
+    "JPCLE": {
+        "index": "JPCLE",
+        "isin": "FRESG0000215",
+        "output_key": "jpcle_path"
+    },
+    "FCLSP": {
+        "index": "FCLSP",
+        "isin": "FRESG0001478",
+        "output_key": "fclsp_path"
     }
     # Add new indices here following the same pattern
 }
