@@ -1,0 +1,41 @@
+2025-12-10 14:48:21,969 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 14:48:21,974 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 14:48:28,152 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:28] "GET / HTTP/1.1" 200 -
+2025-12-10 14:48:28,216 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:28] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-10 14:48:34,539 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:34] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 14:48:34,539 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-10 14:48:34,553 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:34] "GET /task-status/c6799022-2bd7-4fca-97b9-34694e52fcf2 HTTP/1.1" 200 -
+2025-12-10 14:48:36,552 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:36] "GET /task-status/c6799022-2bd7-4fca-97b9-34694e52fcf2 HTTP/1.1" 200 -
+2025-12-10 14:48:37,202 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-10 14:48:38,552 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:38] "GET /task-status/c6799022-2bd7-4fca-97b9-34694e52fcf2 HTTP/1.1" 200 -
+2025-12-10 14:48:41,107 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:41] "GET /task-status/c6799022-2bd7-4fca-97b9-34694e52fcf2 HTTP/1.1" 200 -
+2025-12-10 14:48:41,451 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-10 14:48:41,451 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2025-12-10 14:48:41,452 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2025-12-10 14:48:41,461 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2025-12-10 14:48:41,463 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 29
+2025-12-10 14:48:41,464 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 2
+2025-12-10 14:48:41,465 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2025-12-10 14:48:41,465 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 14:48:41,466 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 14:48:41,467 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2025-12-10 14:48:41,467 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2025-12-10 14:48:41,469 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 7
+2025-12-10 14:48:41,475 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 14:48:41,477 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 8
+2025-12-10 14:48:41,478 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2025-12-10 14:48:41,479 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 20
+2025-12-10 14:48:41,479 - Review.reviews.usc3p_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-10 14:48:41,480 - Review.reviews.usc3p_review - INFO - Total companies in universe: 458
+2025-12-10 14:48:41,480 - Review.reviews.usc3p_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-10 14:48:41,480 - Review.reviews.usc3p_review - INFO - Carbon Budget exclusions (rank > 366.40000000000003): 92
+2025-12-10 14:48:41,491 - Review.reviews.usc3p_review - INFO - Companies remaining after exclusions: 319
+2025-12-10 14:48:41,495 - Review.reviews.usc3p_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 14:48:43,092 - Review.reviews.usc3p_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 14:48:43,092 - Review.reviews.usc3p_review - INFO - Checking IsinCode FRESG0000249 in index_eod_df
+2025-12-10 14:48:43,092 - Review.reviews.usc3p_review - INFO - Found 1 matching rows
+2025-12-10 14:48:43,099 - Review.reviews.usc3p_review - INFO - Saving USC3P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USC3P_df_20251210_144843.xlsx
+2025-12-10 14:48:43,114 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:43] "GET /task-status/c6799022-2bd7-4fca-97b9-34694e52fcf2 HTTP/1.1" 200 -
+2025-12-10 14:48:45,116 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:48:45] "GET /task-status/c6799022-2bd7-4fca-97b9-34694e52fcf2 HTTP/1.1" 200 -
+2025-12-10 14:49:52,754 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading
+2025-12-10 14:49:52,754 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading

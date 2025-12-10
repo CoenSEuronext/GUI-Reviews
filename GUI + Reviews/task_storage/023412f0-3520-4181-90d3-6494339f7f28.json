@@ -1,0 +1,24 @@
+{
+  "task_id": "023412f0-3520-4181-90d3-6494339f7f28",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T14:50:31.920227",
+  "started_at": "2025-12-10T14:50:31.923272",
+  "completed_at": "2025-12-10T14:50:32.172237",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: No index EOD files found! At least one index file is required.",
+  "error": "Error during review calculation: No index EOD files found! At least one index file is required.",
+  "result_data": null,
+  "review_type": "USC3P",
+  "parameters": {
+    "date": "20250914",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "USC3P",
+    "isin": "FRESG0000249",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 0.248248
+}

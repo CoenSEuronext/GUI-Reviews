@@ -330,6 +330,31 @@ INDEX_CONFIGS = {
         "index": "WCAMP",
         "isin": "FRESG0000348",
         "output_key": "wcamp_path"
+    },
+    "EHNI": {
+        "index": "EHNI",
+        "isin": "FRESG0002815",
+        "output_key": "ehni_path"
+    },
+    "USCLA": {
+        "index": "USCLA",
+        "isin": "FR0014005GE2",
+        "output_key": "uscla_path"
+    },
+    "USC3P": {
+        "index": "USC3P",
+        "isin": "FRESG0000249",
+        "output_key": "usc3p_path"
+    },
+    "UC3PE": {
+        "index": "UC3PE",
+        "isin": "FRESG0000272",
+        "output_key": "uc3pe_path"
+    },
+    "CLAMP": {
+        "index": "CLAMP",
+        "isin": "FR0014004XR2",
+        "output_key": "clamp_path"
     }
     # Add new indices here following the same pattern
 }
@@ -398,7 +423,7 @@ ALL_MNEMOS = [
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
     "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS",
-    "EUMS", "EUSL", "EESL", "EWSL"
+    "EUMS", "EUSL", "EESL", "EWSL", "EHNI"
     
 ]
 

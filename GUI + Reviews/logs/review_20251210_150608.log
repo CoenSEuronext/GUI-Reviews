@@ -1,0 +1,20 @@
+2025-12-10 15:06:09,486 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 15:06:09,486 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 15:06:14,448 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:14] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 15:06:14,455 - Review.reviews.clamp_review - INFO - Loading EOD data...
+2025-12-10 15:06:14,455 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:14] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:06:15,553 - Review.reviews.clamp_review - INFO - Loading reference data...
+2025-12-10 15:06:16,463 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:16] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:06:18,464 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:18] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:06:19,754 - Review.reviews.clamp_review - INFO - Total companies in universe: 300
+2025-12-10 15:06:19,754 - Review.reviews.clamp_review - INFO - Carbon Budget cutoff rank (80th percentile): 240.0
+2025-12-10 15:06:19,756 - Review.reviews.clamp_review - INFO - Total companies excluded by Carbon Budget (rank > 240.0): 60
+2025-12-10 15:06:20,464 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:20] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:06:22,463 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:22] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:06:24,463 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:24] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:06:25,863 - Review.reviews.clamp_review - INFO - Checking IsinCode FR0014004XR2 in index_eod_df
+2025-12-10 15:06:25,863 - Review.reviews.clamp_review - INFO - Found 1 matching rows
+2025-12-10 15:06:25,880 - Review.reviews.clamp_review - INFO - Saving CLAMP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLAMP_df_20251210_150625.xlsx
+2025-12-10 15:06:26,464 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:06:26] "GET /task-status/0323c4d4-d628-4183-b1c6-f7c3df0c7227 HTTP/1.1" 200 -
+2025-12-10 15:35:06,100 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clamp_review.py', reloading
+2025-12-10 15:35:06,142 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clamp_review.py', reloading

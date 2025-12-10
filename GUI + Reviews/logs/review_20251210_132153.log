@@ -1,0 +1,49 @@
+2025-12-10 13:21:54,245 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 13:21:54,245 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 13:21:54,278 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:21:54] "GET /task-status/8a2c9a87-e470-448b-a58b-ede0bc3fc3cc HTTP/1.1" 200 -
+2025-12-10 13:21:57,171 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:21:57] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 13:21:57,179 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-10 13:21:57,179 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:21:57] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:21:58,245 - Review.reviews.uscle_review - INFO - Loading reference data...
+2025-12-10 13:21:59,194 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:21:59] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:01,210 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:01] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:03,193 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:03] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:03,479 - Review.reviews.uscle_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-10 13:22:03,479 - Review.reviews.uscle_review - INFO - Remaining universe size: 458 companies
+2025-12-10 13:22:03,479 - Review.reviews.uscle_review - INFO - Merging Oekom data points early...
+2025-12-10 13:22:03,479 - Review.reviews.uscle_review - INFO - Oekom data merged successfully
+2025-12-10 13:22:03,479 - Review.reviews.uscle_review - INFO - Trust Metric exclusions: 29
+2025-12-10 13:22:03,490 - Review.reviews.uscle_review - INFO - NBR Overall Flag exclusions: 2
+2025-12-10 13:22:03,490 - Review.reviews.uscle_review - INFO - APMines exclusions: 2
+2025-12-10 13:22:03,490 - Review.reviews.uscle_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 13:22:03,494 - Review.reviews.uscle_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 13:22:03,494 - Review.reviews.uscle_review - INFO - ClusterMunitions exclusions: 2
+2025-12-10 13:22:03,496 - Review.reviews.uscle_review - INFO - DepletedUranium exclusions: 4
+2025-12-10 13:22:03,497 - Review.reviews.uscle_review - INFO - IncendiaryWeapons exclusions: 7
+2025-12-10 13:22:03,497 - Review.reviews.uscle_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 13:22:03,497 - Review.reviews.uscle_review - INFO - WhitePhosphorus exclusions: 8
+2025-12-10 13:22:03,499 - Review.reviews.uscle_review - INFO - Coal Mining exclusions: 5
+2025-12-10 13:22:03,499 - Review.reviews.uscle_review - INFO - Thermal Power exclusions: 20
+2025-12-10 13:22:03,503 - Review.reviews.uscle_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-10 13:22:03,503 - Review.reviews.uscle_review - INFO - Total companies in universe: 458
+2025-12-10 13:22:03,503 - Review.reviews.uscle_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-10 13:22:03,503 - Review.reviews.uscle_review - INFO - Carbon Budget exclusions (rank > 366.40000000000003): 91
+2025-12-10 13:22:03,512 - Review.reviews.uscle_review - INFO - Companies remaining after exclusions: 318
+2025-12-10 13:22:03,529 - Review.reviews.uscle_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 13:22:05,210 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:05] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:07,189 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:07] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:09,196 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:09] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:11,195 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:11] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:13,193 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:13] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:15,193 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:15] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:17,193 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:17] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:19,243 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:19] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:21,194 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:21] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:23,211 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:23] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:25,044 - Review.reviews.uscle_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 13:22:25,044 - Review.reviews.uscle_review - INFO - Checking IsinCode FR0014005IJ7 in index_eod_df
+2025-12-10 13:22:25,044 - Review.reviews.uscle_review - INFO - Found 1 matching rows
+2025-12-10 13:22:25,060 - Review.reviews.uscle_review - INFO - Saving USCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USCLE_df_20251210_132225.xlsx
+2025-12-10 13:22:25,244 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:25] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:22:27,193 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 13:22:27] "GET /task-status/77ba29d7-7c9c-4be7-8d3b-b78aa262f0e1 HTTP/1.1" 200 -
+2025-12-10 13:25:13,851 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ehni_review.py', reloading

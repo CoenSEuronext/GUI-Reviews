@@ -1,0 +1,26 @@
+{
+  "task_id": "9a5320f5-659f-4f16-8f26-b7c4aeecb09f",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-10T13:42:50.084488",
+  "started_at": "2025-12-10T13:42:50.084488",
+  "completed_at": "2025-12-10T13:43:03.514111",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ezcla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZCLA_df_20251210_134303.xlsx"
+  },
+  "review_type": "EZCLA",
+  "parameters": {
+    "date": "20250917",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EZCLA",
+    "isin": "FR0014005IK5",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.429623
+}

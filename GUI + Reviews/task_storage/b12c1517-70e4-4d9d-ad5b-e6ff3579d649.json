@@ -1,0 +1,43 @@
+{
+  "task_id": "b12c1517-70e4-4d9d-ad5b-e6ff3579d649",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-10T09:34:34.901051",
+  "started_at": "2025-12-10T09:34:34.903029",
+  "completed_at": "2025-12-10T09:34:43.220546",
+  "progress": 100,
+  "message": "Review completed successfully - Individual files created",
+  "error": null,
+  "result_data": {
+    "individual_files": [
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EDWP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\DEUP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\DEZP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\DAPPR_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\DNAP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\DASP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\DPAP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EUSP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EJPP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ECHP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EUKP_Composition_20251210_093438.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\CANP_Composition_20251210_093438.xlsx"
+    ],
+    "summary": {
+      "total_companies": 1538,
+      "total_ffmc_coverage": 88.82211033765718
+    }
+  },
+  "review_type": "EDWP",
+  "parameters": {
+    "date": "20251208",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "EDWP",
+    "isin": "NLIX00001577",
+    "currency": "EUR",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": 8.317517
+}

@@ -1,0 +1,5 @@
+2025-12-10 10:17:24,786 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 10:17:24,786 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 10:17:25,419 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:17:25] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 10:17:25,419 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:17:25] "GET /task-status/3b134f82-d538-4363-85bd-939bf1651736 HTTP/1.1" 200 -
+2025-12-10 10:17:32,562 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ehni_review.py', reloading

@@ -1,0 +1,18 @@
+2025-12-10 10:26:52,233 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 10:26:52,235 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 10:26:52,650 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:26:52] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 10:26:52,652 - Review.reviews.ehni_review - INFO - Loading EOD data...
+2025-12-10 10:26:52,656 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:26:52] "GET /task-status/29542b13-42a9-42d6-b2df-56970f91055d HTTP/1.1" 200 -
+2025-12-10 10:26:54,657 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:26:54] "GET /task-status/29542b13-42a9-42d6-b2df-56970f91055d HTTP/1.1" 200 -
+2025-12-10 10:26:56,660 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:26:56] "GET /task-status/29542b13-42a9-42d6-b2df-56970f91055d HTTP/1.1" 200 -
+2025-12-10 10:26:57,534 - Review.reviews.ehni_review - INFO - Loading reference data...
+2025-12-10 10:26:58,385 - Review.reviews.ehni_review - INFO - Merging Sustainalytics data...
+2025-12-10 10:26:58,385 - Review.reviews.ehni_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'columns'
+2025-12-10 10:26:58,385 - Review.reviews.ehni_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ehni_review.py", line 143, in run_ehni_review
+    logger.info(f"Raw sustainalytics columns (first 5): {sustainalytics_df.columns.tolist()[:5]}")
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'columns'
+
+2025-12-10 10:26:58,663 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:26:58] "GET /task-status/29542b13-42a9-42d6-b2df-56970f91055d HTTP/1.1" 200 -
+2025-12-10 10:27:13,185 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ehni_review.py', reloading

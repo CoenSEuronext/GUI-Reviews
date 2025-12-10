@@ -1,0 +1,26 @@
+{
+  "task_id": "3bdb5bde-e19f-45d4-9cba-fd65b0c5c52b",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-10T14:23:58.778135",
+  "started_at": "2025-12-10T14:23:58.786130",
+  "completed_at": "2025-12-10T14:24:22.804189",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "uscla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\USCLA_df_20251210_142422.xlsx"
+  },
+  "review_type": "USCLA",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "USCLA",
+    "isin": "FR0014005GE2",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 24.016937
+}

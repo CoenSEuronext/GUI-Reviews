@@ -1,0 +1,26 @@
+{
+  "task_id": "2fee4f03-e423-40a5-8c2b-93569e1ae82b",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-10T10:41:38.000374",
+  "started_at": "2025-12-10T10:41:38.000374",
+  "completed_at": "2025-12-10T10:41:44.315804",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ehni_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EHNI_df_20251210_104144.xlsx"
+  },
+  "review_type": "EHNI",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EHNI",
+    "isin": "FRESG0002815",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 6.31543
+}

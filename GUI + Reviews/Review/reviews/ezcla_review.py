@@ -216,7 +216,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
             method='min',
             ascending=True,
             na_option='keep'
-        ).fillna(1)
+        ).fillna(10000)
 
         # Re-rank to adjust for ties (this implements the Excel COUNTIF logic)
         eurozone_oekom['Temp_Carbon_Rank'] = temp_rank.rank(
@@ -472,7 +472,9 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
         else:
             logger.error(f"No matching index found for ISIN {isin}")
             raise ValueError(f"No matching index found for ISIN {isin}")
-
+        index_mcap_df = pd.DataFrame({
+            'Index Market Cap': [index_mcap]
+        })
         # Calculate the target market cap per company (equal weighting across all 35 companies)
         top_n = 35
         target_mcap_per_company = index_mcap / top_n
@@ -532,6 +534,7 @@ def run_ezcla_review(date, co_date, effective_date, index="EZCLA", isin="FR00140
                 EZCLA_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
+                index_mcap_df.to_excel(writer, sheet_name='Index Market Cap', index=False)
                 eurozone_300_df.to_excel(writer, sheet_name='Full Universe', index=False)
                 top_150_df.to_excel(writer, sheet_name='Top 150', index=False)
                 final_selection_df.to_excel(writer, sheet_name='Final Selection', index=False)

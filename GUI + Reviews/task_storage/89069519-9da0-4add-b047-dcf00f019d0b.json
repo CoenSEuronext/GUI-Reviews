@@ -1,0 +1,24 @@
+{
+  "task_id": "89069519-9da0-4add-b047-dcf00f019d0b",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T14:21:20.000376",
+  "started_at": "2025-12-10T14:21:20.000376",
+  "completed_at": "2025-12-10T14:21:43.743286",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: '#Symbol'",
+  "error": "Error during review calculation: '#Symbol'",
+  "result_data": null,
+  "review_type": "USCLE",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "USCLE",
+    "isin": "FR0014005IJ7",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 23.74291
+}

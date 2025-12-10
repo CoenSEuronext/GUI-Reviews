@@ -1,0 +1,65 @@
+2025-12-10 14:49:54,435 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 14:49:54,435 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 14:50:03,587 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 14:50:03,587 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-10 14:50:03,587 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:03] "GET /task-status/eb743a9b-89e9-46d1-8016-913c82228e54 HTTP/1.1" 200 -
+2025-12-10 14:50:05,604 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:05] "GET /task-status/eb743a9b-89e9-46d1-8016-913c82228e54 HTTP/1.1" 200 -
+2025-12-10 14:50:06,323 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-10 14:50:07,619 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:07] "GET /task-status/eb743a9b-89e9-46d1-8016-913c82228e54 HTTP/1.1" 200 -
+2025-12-10 14:50:09,614 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:09] "GET /task-status/eb743a9b-89e9-46d1-8016-913c82228e54 HTTP/1.1" 200 -
+2025-12-10 14:50:10,388 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-10 14:50:10,388 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2025-12-10 14:50:10,388 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2025-12-10 14:50:10,388 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2025-12-10 14:50:10,388 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 29
+2025-12-10 14:50:10,398 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 2
+2025-12-10 14:50:10,398 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2025-12-10 14:50:10,398 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 14:50:10,399 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 14:50:10,399 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2025-12-10 14:50:10,401 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2025-12-10 14:50:10,402 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 7
+2025-12-10 14:50:10,402 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 14:50:10,404 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 8
+2025-12-10 14:50:10,405 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2025-12-10 14:50:10,406 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 20
+2025-12-10 14:50:10,407 - Review.reviews.usc3p_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-10 14:50:10,407 - Review.reviews.usc3p_review - INFO - Total companies in universe: 458
+2025-12-10 14:50:10,408 - Review.reviews.usc3p_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-10 14:50:10,409 - Review.reviews.usc3p_review - INFO - Carbon Budget exclusions (rank > 366.40000000000003): 92
+2025-12-10 14:50:10,427 - Review.reviews.usc3p_review - INFO - Companies remaining after exclusions: 319
+2025-12-10 14:50:10,430 - Review.reviews.usc3p_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 14:50:11,614 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:11] "GET /task-status/eb743a9b-89e9-46d1-8016-913c82228e54 HTTP/1.1" 200 -
+2025-12-10 14:50:11,788 - Review.reviews.usc3p_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 14:50:11,788 - Review.reviews.usc3p_review - INFO - Checking IsinCode FRESG0000249 in index_eod_df
+2025-12-10 14:50:11,788 - Review.reviews.usc3p_review - INFO - Found 1 matching rows
+2025-12-10 14:50:11,795 - Review.reviews.usc3p_review - INFO - Saving USC3P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USC3P_df_20251210_145011.xlsx
+2025-12-10 14:50:13,605 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:13] "GET /task-status/eb743a9b-89e9-46d1-8016-913c82228e54 HTTP/1.1" 200 -
+2025-12-10 14:50:27,661 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:27] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 14:50:27,664 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-10 14:50:27,664 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:27] "GET /task-status/5fd1d5cb-ce26-4ab3-8b88-0f3e6a8f56eb HTTP/1.1" 200 -
+2025-12-10 14:50:29,130 - Review.reviews.usc3p_review - ERROR - Error during review calculation: No index EOD files found! At least one index file is required.
+2025-12-10 14:50:29,131 - Review.reviews.usc3p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\usc3p_review.py", line 46, in run_usc3p_review
+    index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\data_loader.py", line 39, in load_eod_data
+    raise ValueError("No index EOD files found! At least one index file is required.")
+ValueError: No index EOD files found! At least one index file is required.
+
+2025-12-10 14:50:29,672 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:29] "GET /task-status/5fd1d5cb-ce26-4ab3-8b88-0f3e6a8f56eb HTTP/1.1" 200 -
+2025-12-10 14:50:31,923 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:31] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 14:50:31,923 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-10 14:50:31,923 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:31] "GET /task-status/023412f0-3520-4181-90d3-6494339f7f28 HTTP/1.1" 200 -
+2025-12-10 14:50:32,172 - Review.reviews.usc3p_review - ERROR - Error during review calculation: No index EOD files found! At least one index file is required.
+2025-12-10 14:50:32,172 - Review.reviews.usc3p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\usc3p_review.py", line 46, in run_usc3p_review
+    index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\data_loader.py", line 39, in load_eod_data
+    raise ValueError("No index EOD files found! At least one index file is required.")
+ValueError: No index EOD files found! At least one index file is required.
+
+2025-12-10 14:50:33,941 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:50:33] "GET /task-status/023412f0-3520-4181-90d3-6494339f7f28 HTTP/1.1" 200 -
+2025-12-10 14:51:46,357 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uc3pe_review.py', reloading
+2025-12-10 14:51:46,965 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\enhanced_task_manager.py', reloading

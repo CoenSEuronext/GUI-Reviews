@@ -1,0 +1,39 @@
+2025-12-10 14:32:12,083 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 14:32:12,087 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 14:32:13,048 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:13] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 14:32:13,048 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-10 14:32:13,063 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:13] "GET /task-status/3c21a96c-b252-4ea9-a9d2-9d2e0bae2589 HTTP/1.1" 200 -
+2025-12-10 14:32:15,065 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:15] "GET /task-status/3c21a96c-b252-4ea9-a9d2-9d2e0bae2589 HTTP/1.1" 200 -
+2025-12-10 14:32:15,888 - Review.reviews.uscle_review - INFO - Loading reference data...
+2025-12-10 14:32:17,080 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:17] "GET /task-status/3c21a96c-b252-4ea9-a9d2-9d2e0bae2589 HTTP/1.1" 200 -
+2025-12-10 14:32:19,065 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:19] "GET /task-status/3c21a96c-b252-4ea9-a9d2-9d2e0bae2589 HTTP/1.1" 200 -
+2025-12-10 14:32:19,976 - Review.reviews.uscle_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-10 14:32:19,976 - Review.reviews.uscle_review - INFO - Remaining universe size: 458 companies
+2025-12-10 14:32:19,976 - Review.reviews.uscle_review - INFO - Merging Oekom data points early...
+2025-12-10 14:32:19,981 - Review.reviews.uscle_review - INFO - Oekom data merged successfully
+2025-12-10 14:32:19,990 - Review.reviews.uscle_review - INFO - Trust Metric exclusions: 29
+2025-12-10 14:32:19,990 - Review.reviews.uscle_review - INFO - NBR Overall Flag exclusions: 2
+2025-12-10 14:32:19,991 - Review.reviews.uscle_review - INFO - APMines exclusions: 2
+2025-12-10 14:32:19,991 - Review.reviews.uscle_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-10 14:32:19,992 - Review.reviews.uscle_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-10 14:32:19,993 - Review.reviews.uscle_review - INFO - ClusterMunitions exclusions: 2
+2025-12-10 14:32:19,994 - Review.reviews.uscle_review - INFO - DepletedUranium exclusions: 4
+2025-12-10 14:32:19,995 - Review.reviews.uscle_review - INFO - IncendiaryWeapons exclusions: 7
+2025-12-10 14:32:19,995 - Review.reviews.uscle_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-10 14:32:19,996 - Review.reviews.uscle_review - INFO - WhitePhosphorus exclusions: 8
+2025-12-10 14:32:19,998 - Review.reviews.uscle_review - INFO - Coal Mining exclusions: 5
+2025-12-10 14:32:20,000 - Review.reviews.uscle_review - INFO - Thermal Power exclusions: 20
+2025-12-10 14:32:20,000 - Review.reviews.uscle_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-10 14:32:20,002 - Review.reviews.uscle_review - INFO - Total companies in universe: 458
+2025-12-10 14:32:20,002 - Review.reviews.uscle_review - INFO - Carbon Budget cutoff rank (80th percentile): 366.40000000000003
+2025-12-10 14:32:20,003 - Review.reviews.uscle_review - INFO - Carbon Budget exclusions (rank > 366.40000000000003): 92
+2025-12-10 14:32:20,015 - Review.reviews.uscle_review - INFO - Companies remaining after exclusions: 319
+2025-12-10 14:32:20,019 - Review.reviews.uscle_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-10 14:32:21,071 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:21] "GET /task-status/3c21a96c-b252-4ea9-a9d2-9d2e0bae2589 HTTP/1.1" 200 -
+2025-12-10 14:32:21,395 - Review.reviews.uscle_review - INFO - Selected top 25 companies by FFMC
+2025-12-10 14:32:21,397 - Review.reviews.uscle_review - INFO - Checking IsinCode FR0014005IJ7 in index_eod_df
+2025-12-10 14:32:21,398 - Review.reviews.uscle_review - INFO - Found 1 matching rows
+2025-12-10 14:32:21,398 - Review.reviews.uscle_review - INFO - Saving USCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USCLE_df_20251210_143221.xlsx
+2025-12-10 14:32:23,065 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 14:32:23] "GET /task-status/3c21a96c-b252-4ea9-a9d2-9d2e0bae2589 HTTP/1.1" 200 -
+2025-12-10 14:32:45,166 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscla_review.py', reloading
+2025-12-10 14:32:45,166 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscla_review.py', reloading

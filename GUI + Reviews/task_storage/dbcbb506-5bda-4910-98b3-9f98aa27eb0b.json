@@ -1,0 +1,24 @@
+{
+  "task_id": "dbcbb506-5bda-4910-98b3-9f98aa27eb0b",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T13:33:45.721517",
+  "started_at": "2025-12-10T13:33:45.721517",
+  "completed_at": "2025-12-10T13:34:09.118265",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "USCLE",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "USCLE",
+    "isin": "FR0014005IJ7",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

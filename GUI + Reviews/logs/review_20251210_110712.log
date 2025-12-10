@@ -1,0 +1,16 @@
+2025-12-10 11:07:13,670 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 11:07:13,672 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-10 11:07:14,421 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 11:07:14] "POST /calculate HTTP/1.1" 200 -
+2025-12-10 11:07:14,421 - Review.reviews.ehni_review - INFO - Loading EOD data...
+2025-12-10 11:07:14,421 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 11:07:14] "GET /task-status/f7d20f89-f29f-4167-a802-30409123221b HTTP/1.1" 200 -
+2025-12-10 11:07:16,432 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 11:07:16] "GET /task-status/f7d20f89-f29f-4167-a802-30409123221b HTTP/1.1" 200 -
+2025-12-10 11:07:16,615 - Review.reviews.ehni_review - INFO - Loading reference data...
+2025-12-10 11:07:18,433 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 11:07:18] "GET /task-status/f7d20f89-f29f-4167-a802-30409123221b HTTP/1.1" 200 -
+2025-12-10 11:07:20,082 - Review.reviews.ehni_review - INFO - Merging Sustainalytics data...
+2025-12-10 11:07:20,082 - Review.reviews.ehni_review - INFO - Sustainalytics merge completed. Added 17 columns.
+2025-12-10 11:07:20,082 - Review.reviews.ehni_review - INFO - Applying exclusion criteria...
+2025-12-10 11:07:20,082 - Review.reviews.ehni_review - INFO - Exclusion criteria applied. 3 companies excluded.
+2025-12-10 11:07:20,103 - Review.reviews.ehni_review - INFO - Saving EHNI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EHNI_df_20251210_110720.xlsx
+2025-12-10 11:07:20,434 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 11:07:20] "GET /task-status/f7d20f89-f29f-4167-a802-30409123221b HTTP/1.1" 200 -
+2025-12-10 11:07:24,799 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ehni_review.py', reloading
+2025-12-10 11:07:24,799 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ehni_review.py', reloading

@@ -67,6 +67,11 @@ from .reviews.uscle_review import run_uscle_review
 from .reviews.tcamp_review import run_tcamp_review
 from .reviews.gscsp_review import run_gscsp_review
 from .reviews.wcamp_review import run_wcamp_review
+from .reviews.ehni_review import run_ehni_review
+from .reviews.uscla_review import run_uscla_review
+from .reviews.usc3p_review import run_usc3p_review
+from .reviews.uc3pe_review import run_uc3pe_review
+from .reviews.clamp_review import run_clamp_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -137,7 +142,12 @@ REVIEW_FUNCTIONS = {
     "USCLE": run_uscle_review,
     "TCAMP": run_tcamp_review,
     "GSCSP": run_gscsp_review,
-    "WCAMP": run_wcamp_review
+    "WCAMP": run_wcamp_review,
+    "EHNI": run_ehni_review,
+    "USCLA": run_uscla_review,
+    "USC3P": run_usc3p_review,
+    "UC3PE": run_uc3pe_review,
+    "CLAMP": run_clamp_review
 }
 
 def run_review(review_type, **kwargs):

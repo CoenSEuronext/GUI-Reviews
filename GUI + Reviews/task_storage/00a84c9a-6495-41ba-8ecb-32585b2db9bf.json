@@ -1,0 +1,24 @@
+{
+  "task_id": "00a84c9a-6495-41ba-8ecb-32585b2db9bf",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-10T15:35:17.736152",
+  "started_at": "2025-12-10T15:35:17.736152",
+  "completed_at": "2025-12-10T15:35:21.425083",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "CLAMP",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "CLAMP",
+    "isin": "FR0014004XR2",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

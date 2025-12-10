@@ -10,7 +10,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR0014005GE2", 
+def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR0014005IJ7", 
                     area="EU", area2="US", type="STOCK", universe="north_america_500", 
                     feed="Reuters", currency="EUR", year=None):
     """
@@ -66,6 +66,26 @@ def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR00140
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float',
                                                      'Name': 'Company'})
+
+        # Filter symbols once (Reuters symbols only, length < 12)
+        symbols_filtered = stock_eod_df[
+            stock_eod_df['#Symbol'].str.len() < 12
+        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
+        
+        # Add #Symbol column
+        north_america_500_df = north_america_500_df.merge(
+            symbols_filtered,
+            left_on='ISIN',
+            right_on='Isin Code',
+            how='left'
+        ).drop('Isin Code', axis=1)
+
+        # Add FX/Index Ccy data early based on currency parameter
+        north_america_500_df = north_america_500_df.merge(
+            stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+            on='#Symbol',
+            how='left'
+        )
 
         # Remove companies with MIC = 'XTSE' from the universe entirely
         initial_count = len(north_america_500_df)
@@ -138,7 +158,7 @@ def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR00140
             method='min',
             ascending=True,
             na_option='keep'
-        ).fillna(1)
+        ).fillna(10000)
         
         north_america_500_df['Carbon Budget Rank'] = temp_rank.rank(
             method='min',
@@ -355,24 +375,11 @@ def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR00140
         # PRICE AND FX DATA
         # ===================================================================
         # Step 3: Get price and FX data
-        def get_index_currency(row, index_df):
-            mask = index_df['Mnemo'] == row['Index']
-            matches = index_df[mask]
-            if not matches.empty:
-                return matches.iloc[0]['Curr']
-            return None
-
-        # Add Index Currency column to stock_eod_df
-        stock_eod_df['Index Currency'] = stock_eod_df.apply(
-            lambda row: get_index_currency(row, index_eod_df), axis=1
-        )
-        stock_eod_df['ISIN/Index'] = stock_eod_df['Isin Code'] + stock_eod_df['Index']
-        stock_eod_df['id5'] = stock_eod_df['#Symbol'] + stock_eod_df['Index Currency']
         stock_eod_df['Reuters/Optiq'] = stock_eod_df['#Symbol'].str.len().apply(
             lambda x: 'Reuters' if x < 12 else 'Optiq'
         )
 
-        def get_stock_info(row, stock_df, target_currency):
+        def get_stock_info(row, stock_df):
             mask = (stock_df['Isin Code'] == row['ISIN']) & \
                    (stock_df['MIC'] == row['MIC']) & \
                    (stock_df['Reuters/Optiq'] == 'Reuters')
@@ -381,24 +388,19 @@ def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR00140
             
             if not matches.empty:
                 first_match = matches.iloc[0]
-                lookup_id5 = f"{first_match['#Symbol']}{target_currency}"
-                
-                fx_mask = stock_df['id5'] == lookup_id5
-                fx_matches = stock_df[fx_mask]
-                
-                fx_rate = fx_matches.iloc[0]['FX/Index Ccy'] if not fx_matches.empty else None
                 
                 return pd.Series({
                     'Symbol': first_match['#Symbol'],
-                    'Close Prc_EOD': first_match['Close Prc'],
-                    'FX/Index Ccy': fx_rate
+                    'Close Prc_EOD': first_match['Close Prc']
                 })
-            return pd.Series({'Symbol': None, 'Close Prc_EOD': None, 'FX/Index Ccy': None})
+            return pd.Series({'Symbol': None, 'Close Prc_EOD': None})
 
-        # Add Symbol, Price, and FX Rate columns
-        top_250_df[['Symbol', 'Close Prc_EOD', 'FX/Index Ccy']] = top_250_df.apply(
-            lambda row: get_stock_info(row, stock_eod_df, currency), axis=1
+        # Add Symbol and Price columns
+        top_250_df[['Symbol', 'Close Prc_EOD']] = top_250_df.apply(
+            lambda row: get_stock_info(row, stock_eod_df), axis=1
         )
+        
+        # FX/Index Ccy is already in the dataframe from the early merge
 
         # Calculate FFMC (Free Float Market Cap)
         top_250_df['Price in Index Currency'] = top_250_df['Close Prc_EOD'] * top_250_df['FX/Index Ccy']
@@ -430,7 +432,7 @@ def run_uscle_review(date, co_date, effective_date, index="USCLE", isin="FR00140
             raise ValueError(f"No matching index found for ISIN {isin}")
 
         # Calculate the target market cap per company (equal weighting across all 35 companies)
-        top_n = 35
+        top_n = 25
         target_mcap_per_company = index_mcap / top_n
         
         final_selection_df['Unrounded NOSH'] = target_mcap_per_company / (

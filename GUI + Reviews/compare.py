@@ -455,8 +455,8 @@ def create_excel_report(results, output_path):
 
 def main():
     # Set folder paths
-    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202509\Review 202509\Coen"
-    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202509\Review 202509\Dataiku"
+    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202512\Review 202512\Coen"
+    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202512\Review 202512\Dataiku"
     
     # Set output folder path
     output_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review Comparison"
