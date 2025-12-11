@@ -1,9 +1,0 @@
-2025-11-06 14:52:18,815 - werkzeug - WARNING -  * Debugger is active!
-2025-11-06 14:52:18,822 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-11-06 14:52:47,806 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:52:47] "POST /calculate HTTP/1.1" 200 -
-2025-11-06 14:52:47,807 - Review.reviews.aetaw_review - INFO - Loading EOD data...
-2025-11-06 14:52:47,809 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:52:47] "GET /task-status/1abaf315-85ed-4490-8e43-ea3b66a8b1f3 HTTP/1.1" 200 -
-2025-11-06 14:52:49,232 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
-2025-11-06 14:52:49,237 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
-2025-11-06 14:52:49,817 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:52:49] "GET /task-status/1abaf315-85ed-4490-8e43-ea3b66a8b1f3 HTTP/1.1" 200 -
-2025-11-06 14:52:50,166 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading

@@ -76,37 +76,38 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
         ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
         
         # Filter symbols once (Reuters symbols only, length < 12)
+        # Keep MIC to distinguish between different symbols for the same ISIN
         symbols_filtered = stock_eod_df[
-            stock_eod_df['#Symbol'].str.len() < 12
-        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
-        
+            stock_eod_df['#Symbol'].str.len() == 12
+        ][['Isin Code', '#Symbol', 'MIC']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first')
+
         # Chain all data preparation operations
         sbf_120_df = (sbf_120_df
-            # Merge symbols
+            # Merge symbols using both ISIN and MIC
             .merge(
                 symbols_filtered,
-                left_on='ISIN',
-                right_on='Isin Code',
+                left_on=['ISIN', 'MIC'],
+                right_on=['Isin Code', 'MIC'],
                 how='left'
             )
             .drop('Isin Code', axis=1)
-            # Merge FX data
+            # Merge FX data using both Symbol and MIC
             .merge(
-                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
-                on='#Symbol',
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'MIC', 'FX/Index Ccy']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
                 how='left'
             )
-            # Merge EOD prices
+            # Merge EOD prices using both Symbol and MIC
             .merge(
-                stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
-                on='#Symbol',
+                stock_eod_df[['#Symbol', 'MIC', 'Close Prc']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
                 how='left',
                 suffixes=('', '_EOD')
             )
-            # Merge CO prices
+            # Merge CO prices using both Symbol and MIC
             .merge(
-                stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
-                on='#Symbol',
+                stock_co_df[['#Symbol', 'MIC', 'Close Prc']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
                 how='left',
                 suffixes=('_EOD', '_CO')
             )

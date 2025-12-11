@@ -1,6 +1,0 @@
-2025-08-15 12:01:11,384 - werkzeug - WARNING -  * Debugger is active!
-2025-08-15 12:01:11,387 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-08-15 13:07:31,996 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading
-2025-08-15 13:07:32,084 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
-2025-08-15 13:07:32,090 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading
-2025-08-15 13:07:32,095 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_scalars.py', reloading

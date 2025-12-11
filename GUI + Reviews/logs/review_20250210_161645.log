@@ -1,6 +1,0 @@
-2025-02-10 16:16:45,454 - werkzeug - WARNING -  * Debugger is active!
-2025-02-10 16:16:45,456 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-10 16:16:49,682 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\egspp_review.py', reloading
-2025-02-10 16:16:49,711 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading
-2025-02-10 16:16:49,726 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\bnew_review.py', reloading
-2025-02-10 16:16:49,736 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clew_review.py', reloading

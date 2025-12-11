@@ -1,9 +1,0 @@
-2025-07-17 13:29:12,425 - werkzeug - WARNING -  * Debugger is active!
-2025-07-17 13:29:12,431 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-07-17 13:29:12,470 - Review.reviews.cacew_review - INFO - Loading EOD data...
-2025-07-17 13:29:14,881 - Review.reviews.cacew_review - INFO - Loading reference data...
-2025-07-17 13:29:15,108 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20250717_132915.xlsx
-2025-07-17 13:29:15,345 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 13:29:15] "POST /calculate HTTP/1.1" 200 -
-2025-07-17 13:31:33,972 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\cacew_review.py', reloading
-2025-07-17 13:31:33,972 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\cacew_review.py', reloading
-2025-07-17 13:31:33,972 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\cacew_review.py', reloading

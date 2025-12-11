@@ -1,6 +1,0 @@
-2025-11-05 14:07:37,277 - werkzeug - WARNING -  * Debugger is active!
-2025-11-05 14:07:37,279 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-11-05 14:07:37,314 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 14:07:37] "POST /calculate HTTP/1.1" 200 -
-2025-11-05 14:07:37,314 - Review.reviews.aexat_review - INFO - Loading EOD data...
-2025-11-05 14:07:37,314 - werkzeug - INFO - 127.0.0.1 - - [05/Nov/2025 14:07:37] "GET /task-status/87c4c12b-3536-430a-b38f-9509c30c8ee5 HTTP/1.1" 200 -
-2025-11-05 14:07:37,342 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aexat_review.py', reloading

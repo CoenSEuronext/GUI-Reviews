@@ -1,6 +1,0 @@
-2025-02-04 11:19:22,314 - werkzeug - WARNING -  * Debugger is active!
-2025-02-04 11:19:22,316 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-04 11:19:23,018 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 11:19:23] "POST /calculate HTTP/1.1" 200 -
-2025-02-04 11:19:24,032 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 11:19:24] "POST /calculate HTTP/1.1" 200 -
-2025-02-04 11:19:24,094 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
-2025-02-04 11:19:24,095 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading

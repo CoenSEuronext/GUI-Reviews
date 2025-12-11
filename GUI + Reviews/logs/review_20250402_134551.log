@@ -1,7 +1,0 @@
-2025-04-02 13:45:51,973 - werkzeug - WARNING -  * Debugger is active!
-2025-04-02 13:45:51,983 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-04-02 13:45:53,113 - Review.reviews.wifrp_review - INFO - Loading EOD data...
-2025-04-02 13:45:55,146 - Review.reviews.wifrp_review - INFO - Loading reference data...
-2025-04-02 13:45:55,180 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
-2025-04-02 13:45:55,196 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
-2025-04-02 13:45:55,201 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

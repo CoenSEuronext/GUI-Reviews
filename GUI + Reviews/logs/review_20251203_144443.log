@@ -1,6 +1,0 @@
-2025-12-03 14:44:44,408 - werkzeug - WARNING -  * Debugger is active!
-2025-12-03 14:44:44,408 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-03 14:44:53,932 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\__init__.py', reloading
-2025-12-03 14:44:53,948 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eluxp_review.py', reloading
-2025-12-03 14:44:53,976 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_dataiku.py', reloading
-2025-12-03 14:44:53,977 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_proportional.py', reloading

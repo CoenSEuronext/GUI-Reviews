@@ -1,5 +1,0 @@
-2025-07-02 17:14:26,239 - werkzeug - WARNING -  * Debugger is active!
-2025-07-02 17:14:26,239 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-07-02 17:17:00,255 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\watchdog\\observers\\api.py', reloading
-2025-07-02 17:17:00,275 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\watchdog\\utils\\__init__.py', reloading
-2025-07-02 17:17:00,285 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\watchdog\\events.py', reloading

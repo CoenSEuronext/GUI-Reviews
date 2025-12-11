@@ -1,4 +1,0 @@
-2025-12-10 10:22:13,062 - werkzeug - WARNING -  * Debugger is active!
-2025-12-10 10:22:13,062 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-10 10:22:13,091 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 10:22:13] "GET /task-status/745f800c-abdd-4711-8eeb-792f33bb6dd6 HTTP/1.1" 200 -
-2025-12-10 10:23:13,453 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\typing_extensions.py', reloading

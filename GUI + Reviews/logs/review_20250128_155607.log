@@ -1,9 +1,0 @@
-2025-01-28 15:56:07,944 - werkzeug - WARNING -  * Debugger is active!
-2025-01-28 15:56:07,946 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-01-28 15:56:32,513 - Review.reviews.ses5p_review - INFO - Loading EOD data...
-2025-01-28 15:56:34,380 - Review.reviews.ses5p_review - INFO - Loading reference data...
-2025-01-28 15:56:41,234 - Review.reviews.ses5p_review - INFO - Saving F4RIP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\F4RIP_df_20250128_155641.xlsx
-2025-01-28 15:56:41,242 - Review.reviews.ses5p_review - ERROR - Error saving output file: name 'F4RIP_df' is not defined
-2025-01-28 15:56:41,267 - werkzeug - INFO - 127.0.0.1 - - [28/Jan/2025 15:56:41] "POST /calculate HTTP/1.1" 200 -
-2025-01-28 15:57:15,250 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading
-2025-01-28 15:57:15,251 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ses5p_review.py', reloading

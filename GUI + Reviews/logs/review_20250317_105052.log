@@ -1,4 +1,0 @@
-2025-03-17 10:50:52,140 - werkzeug - WARNING -  * Debugger is active!
-2025-03-17 10:50:52,147 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-03-17 10:50:52,176 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
-2025-03-17 10:50:55,134 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

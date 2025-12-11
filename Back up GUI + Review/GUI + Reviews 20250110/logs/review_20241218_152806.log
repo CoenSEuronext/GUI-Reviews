@@ -1,7 +1,0 @@
-2024-12-18 15:28:06,298 - werkzeug - WARNING -  * Debugger is active!
-2024-12-18 15:28:06,298 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2024-12-18 15:28:08,456 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 15:28:08] "GET / HTTP/1.1" 200 -
-2024-12-18 15:28:08,548 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 15:28:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2024-12-18 15:28:40,483 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
-2024-12-18 15:28:40,496 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
-2024-12-18 15:28:40,499 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

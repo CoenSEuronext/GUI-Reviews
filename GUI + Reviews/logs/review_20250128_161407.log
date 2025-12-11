@@ -1,7 +1,0 @@
-2025-01-28 16:14:07,201 - werkzeug - WARNING -  * Debugger is active!
-2025-01-28 16:14:07,203 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-01-28 16:14:07,850 - Review.reviews.ses5p_review - INFO - Loading EOD data...
-2025-01-28 16:14:09,175 - Review.reviews.ses5p_review - INFO - Loading reference data...
-2025-01-28 16:14:15,803 - Review.reviews.ses5p_review - INFO - Saving SES5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SES5P_df_20250128_161415.xlsx
-2025-01-28 16:14:16,010 - werkzeug - INFO - 127.0.0.1 - - [28/Jan/2025 16:14:16] "POST /calculate HTTP/1.1" 200 -
-2025-01-28 16:15:48,630 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\inclusion_exclusion.py', reloading

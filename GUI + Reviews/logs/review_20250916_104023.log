@@ -1,9 +1,0 @@
-2025-09-16 10:40:23,785 - werkzeug - WARNING -  * Debugger is active!
-2025-09-16 10:40:23,785 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-09-16 10:40:25,686 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:40:25] "POST /calculate HTTP/1.1" 200 -
-2025-09-16 10:40:25,686 - Review.reviews.elecp_review - INFO - Loading EOD data...
-2025-09-16 10:40:25,704 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:40:25] "GET /task-status/4734fd32-fea9-4789-a401-bc524a4afcba HTTP/1.1" 200 -
-2025-09-16 10:40:27,726 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:40:27] "GET /task-status/4734fd32-fea9-4789-a401-bc524a4afcba HTTP/1.1" 200 -
-2025-09-16 10:40:27,793 - Review.reviews.elecp_review - INFO - Loading reference data...
-2025-09-16 10:40:28,569 - Review.reviews.elecp_review - INFO - Saving ELECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELECP_df_20250916_104028.xlsx
-2025-09-16 10:40:29,721 - werkzeug - INFO - 127.0.0.1 - - [16/Sep/2025 10:40:29] "GET /task-status/4734fd32-fea9-4789-a401-bc524a4afcba HTTP/1.1" 200 -

@@ -1,8 +1,0 @@
-2025-03-17 15:24:55,690 - werkzeug - WARNING -  * Debugger is active!
-2025-03-17 15:24:55,692 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-03-17 15:24:56,394 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\re\\__init__.py', reloading
-2025-03-17 15:24:56,398 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\pathlib.py', reloading
-2025-03-17 15:24:56,432 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\typing\\__init__.py', reloading
-2025-03-17 15:24:56,433 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
-2025-03-17 15:24:56,436 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_array_like.py', reloading
-2025-03-17 15:24:56,452 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading

@@ -1,6 +1,0 @@
-2025-09-12 13:43:32,172 - werkzeug - WARNING -  * Debugger is active!
-2025-09-12 13:43:32,174 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-09-12 13:43:32,304 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\euadp_review.py', reloading
-2025-09-12 13:43:33,193 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:43:33] "POST /calculate HTTP/1.1" 200 -
-2025-09-12 13:43:33,194 - Review.reviews.euadp_review - INFO - Loading EOD data...
-2025-09-12 13:43:33,199 - werkzeug - INFO - 127.0.0.1 - - [12/Sep/2025 13:43:33] "GET /task-status/c400256a-ed19-4ad7-97c2-e8a305fc1613 HTTP/1.1" 200 -

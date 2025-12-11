@@ -1,6 +1,0 @@
-2025-01-21 15:41:27,870 - werkzeug - WARNING -  * Debugger is active!
-2025-01-21 15:41:27,873 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-01-21 15:41:28,835 - Review.reviews.gicp_review - INFO - Loading EOD data...
-2025-01-21 15:41:29,955 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
-2025-01-21 15:41:29,956 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
-2025-01-21 15:41:30,788 - Review.reviews.gicp_review - INFO - Loading reference data...

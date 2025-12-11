@@ -1,6 +1,0 @@
-2025-11-06 14:30:15,245 - werkzeug - WARNING -  * Debugger is active!
-2025-11-06 14:30:15,245 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-11-06 14:30:15,394 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_2_step.py', reloading
-2025-11-06 14:30:16,138 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:30:16] "POST /calculate HTTP/1.1" 200 -
-2025-11-06 14:30:16,138 - Review.reviews.aetaw_review - INFO - Loading EOD data...
-2025-11-06 14:30:16,138 - werkzeug - INFO - 127.0.0.1 - - [06/Nov/2025 14:30:16] "GET /task-status/af949059-5077-4a1c-b613-646d29a7ca07 HTTP/1.1" 200 -

@@ -1,6 +1,0 @@
-2025-03-06 11:24:44,219 - werkzeug - WARNING -  * Debugger is active!
-2025-03-06 11:24:44,222 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-03-06 11:24:44,250 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
-2025-03-06 11:24:46,573 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
-2025-03-06 11:24:46,582 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
-2025-03-06 11:24:46,585 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

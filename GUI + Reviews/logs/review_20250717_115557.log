@@ -1,8 +1,0 @@
-2025-07-17 11:55:57,932 - werkzeug - WARNING -  * Debugger is active!
-2025-07-17 11:55:57,942 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-07-17 11:55:57,983 - Review.reviews.aexew_review - INFO - Loading EOD data...
-2025-07-17 11:55:58,608 - Review.reviews.aexew_review - INFO - Loading reference data...
-2025-07-17 11:55:58,815 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250717_115558.xlsx
-2025-07-17 11:55:59,290 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 11:55:59] "POST /calculate HTTP/1.1" 200 -
-2025-07-17 11:56:13,127 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
-2025-07-17 11:56:13,137 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading

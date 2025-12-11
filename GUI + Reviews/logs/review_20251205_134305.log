@@ -1,6 +1,0 @@
-2025-12-05 13:43:06,294 - werkzeug - WARNING -  * Debugger is active!
-2025-12-05 13:43:06,302 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-05 13:43:06,461 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
-2025-12-05 13:43:07,220 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:07] "POST /calculate HTTP/1.1" 200 -
-2025-12-05 13:43:07,229 - Review.reviews.uscle_review - INFO - Loading EOD data...
-2025-12-05 13:43:07,229 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 13:43:07] "GET /task-status/877602ef-99a8-4154-8022-0f8fc2498c1c HTTP/1.1" 200 -

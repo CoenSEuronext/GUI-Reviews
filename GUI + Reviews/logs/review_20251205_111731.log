@@ -1,8 +1,0 @@
-2025-12-05 11:17:32,484 - werkzeug - WARNING -  * Debugger is active!
-2025-12-05 11:17:32,484 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-05 11:17:33,045 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 11:17:33] "GET / HTTP/1.1" 200 -
-2025-12-05 11:17:33,077 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 11:17:33] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
-2025-12-05 11:17:38,800 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 11:17:38] "POST /calculate HTTP/1.1" 200 -
-2025-12-05 11:17:38,800 - Review.reviews.ezcla_review - INFO - Loading EOD data...
-2025-12-05 11:17:38,811 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 11:17:38] "GET /task-status/8971e4b7-e909-4ba6-9e6b-81d4df439d3c HTTP/1.1" 200 -
-2025-12-05 11:17:39,002 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading

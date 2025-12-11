@@ -1,9 +1,0 @@
-2025-12-04 09:34:14,585 - werkzeug - WARNING -  * Debugger is active!
-2025-12-04 09:34:14,588 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-04 09:34:14,717 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 09:34:14] "GET /task-status/74a197ef-8306-495e-8230-b3604ff534a1 HTTP/1.1" 200 -
-2025-12-04 09:34:15,868 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 09:34:15] "POST /calculate-batch HTTP/1.1" 200 -
-2025-12-04 09:34:15,877 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 09:34:15] "GET /task-status/9cdbf152-6b3e-434f-ac77-5ae9489886f0 HTTP/1.1" 200 -
-2025-12-04 09:34:15,877 - Review.reviews.ewms_review - INFO - Starting EWMS review calculation
-2025-12-04 09:34:17,299 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
-2025-12-04 09:34:17,310 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
-2025-12-04 09:34:17,313 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

@@ -1,8 +1,0 @@
-2025-02-10 15:20:01,455 - werkzeug - WARNING -  * Debugger is active!
-2025-02-10 15:20:01,458 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-10 15:20:01,484 - Review.reviews.fri4p_review - INFO - Loading EOD data...
-2025-02-10 15:20:03,606 - Review.reviews.fri4p_review - INFO - Loading reference data...
-2025-02-10 15:20:07,053 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading
-2025-02-10 15:20:07,058 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
-2025-02-10 15:20:07,061 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading
-2025-02-10 15:20:07,063 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_scalars.py', reloading

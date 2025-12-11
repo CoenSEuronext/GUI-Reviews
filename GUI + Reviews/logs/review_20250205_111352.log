@@ -1,5 +1,0 @@
-2025-02-05 11:13:52,148 - werkzeug - WARNING -  * Debugger is active!
-2025-02-05 11:13:52,153 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-05 11:13:58,338 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 11:13:58] "GET / HTTP/1.1" 200 -
-2025-02-05 11:13:58,394 - werkzeug - INFO - 127.0.0.1 - - [05/Feb/2025 11:13:58] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
-2025-02-05 11:14:09,269 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\strings\\__init__.py', reloading

@@ -1,3 +1,0 @@
-2025-10-06 13:13:32,574 - werkzeug - WARNING -  * Debugger is active!
-2025-10-06 13:13:32,577 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-10-06 13:13:32,601 - werkzeug - INFO - 127.0.0.1 - - [06/Oct/2025 13:13:32] "GET /task-status/9d4ecfa6-3ee2-4675-8212-24d6674660be HTTP/1.1" 200 -

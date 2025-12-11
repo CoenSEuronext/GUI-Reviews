@@ -1,9 +1,0 @@
-2025-08-15 16:00:42,036 - werkzeug - WARNING -  * Debugger is active!
-2025-08-15 16:00:42,036 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-08-15 16:00:42,208 - Review.reviews.eesf_review - INFO - Loading EOD data...
-2025-08-15 16:00:45,999 - Review.reviews.eesf_review - INFO - Loading reference data...
-2025-08-15 16:00:47,006 - Review.reviews.eesf_review - INFO - Saving EESF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESF_df_20250815_160047.xlsx
-2025-08-15 16:00:47,169 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 16:00:47] "POST /calculate HTTP/1.1" 200 -
-2025-08-15 16:04:15,467 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare_eia_files.py', reloading
-2025-08-15 16:04:15,468 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare_eia_files.py', reloading
-2025-08-15 16:04:15,473 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\compare_eia_files.py', reloading

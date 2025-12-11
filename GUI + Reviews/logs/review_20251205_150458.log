@@ -1,5 +1,0 @@
-2025-12-05 15:04:58,966 - werkzeug - WARNING -  * Debugger is active!
-2025-12-05 15:04:58,966 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-05 15:04:59,002 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2025 15:04:59] "GET /task-status/08b5714a-3ab5-4fcc-8bc5-fc12186cd2fa HTTP/1.1" 200 -
-2025-12-05 15:05:05,625 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\tcamp_review.py', reloading
-2025-12-05 15:05:05,626 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\tcamp_review.py', reloading

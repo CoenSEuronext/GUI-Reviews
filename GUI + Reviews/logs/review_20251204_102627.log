@@ -1,6 +1,0 @@
-2025-12-04 10:26:28,737 - werkzeug - WARNING -  * Debugger is active!
-2025-12-04 10:26:28,739 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-04 10:36:38,169 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:36:38] "POST /calculate HTTP/1.1" 200 -
-2025-12-04 10:36:38,169 - Review.reviews.eusl_review - INFO - Starting EUSL review calculation
-2025-12-04 10:36:38,173 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2025 10:36:38] "GET /task-status/afa15c67-1388-4ef2-9c80-28d81d5b1c30 HTTP/1.1" 200 -
-2025-12-04 10:36:38,352 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading

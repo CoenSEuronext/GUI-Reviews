@@ -1,8 +1,0 @@
-2025-08-15 11:07:03,934 - werkzeug - WARNING -  * Debugger is active!
-2025-08-15 11:07:03,936 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-08-15 11:07:04,129 - Review.reviews.dwrep_review - INFO - Loading EOD data...
-2025-08-15 11:07:04,858 - Review.reviews.dwrep_review - INFO - Loading reference data...
-2025-08-15 11:07:12,880 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
-2025-08-15 11:07:12,880 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\dwrep_review.py', reloading
-2025-08-15 11:07:13,015 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwp_review.py', reloading
-2025-08-15 11:07:13,863 - Review.reviews.dwrep_review - INFO - Saving DWREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DWREP_df_20250815_110713.xlsx

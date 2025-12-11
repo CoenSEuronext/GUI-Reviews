@@ -1,4 +1,0 @@
-2025-01-14 14:51:15,615 - werkzeug - WARNING -  * Debugger is active!
-2025-01-14 14:51:15,618 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-01-14 14:51:15,648 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2025 14:51:15] "GET / HTTP/1.1" 200 -
-2025-01-14 14:51:18,711 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
