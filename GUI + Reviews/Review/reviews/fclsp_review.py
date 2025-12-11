@@ -516,7 +516,7 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
         final_selection_df['Rounded NOSH'] = final_selection_df['Unrounded NOSH'].round()
         # Normalize Capping Factor by dividing by the maximum
         max_capping_factor = final_selection_df['Capping Factor'].max()
-        final_selection_df['Capping Factor'] = final_selection_df['Capping Factor'] / max_capping_factor
+        final_selection_df['Capping Factor'] = (final_selection_df['Capping Factor'] / max_capping_factor).round(14)
         
         # Set effective date and currency
         final_selection_df['Effective Date of Review'] = effective_date
