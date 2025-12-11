@@ -1,0 +1,24 @@
+{
+  "task_id": "899c5a26-74e3-46fc-b465-fe174e04f71e",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-11T15:48:24.208309",
+  "started_at": "2025-12-11T15:48:24.216386",
+  "completed_at": "2025-12-11T15:48:40.890312",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "FRD4P",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "FRD4P",
+    "isin": "FRIX00003031",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

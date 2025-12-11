@@ -1,0 +1,24 @@
+{
+  "task_id": "ff28a5fb-6f0e-48e2-8532-603c5887562e",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-11T15:48:42.114940",
+  "started_at": "2025-12-11T15:48:42.114940",
+  "completed_at": "2025-12-11T15:48:55.783435",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: Reindexing only valid with uniquely valued Index objects",
+  "error": "Error during review calculation: Reindexing only valid with uniquely valued Index objects",
+  "result_data": null,
+  "review_type": "FRD4P",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "FRD4P",
+    "isin": "FRIX00003031",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.668495
+}

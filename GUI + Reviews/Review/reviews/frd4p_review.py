@@ -56,6 +56,7 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
         nace_df = ref_data['nace']
         sesamm_df = ref_data['sesamm']
         
+        sesamm_df = sesamm_df.drop_duplicates(subset='ISIN', keep='first')
         failed_files = []
         file_mappings = {
             'ff_df': 'ff',
@@ -80,38 +81,53 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
 
         # Replace the entire chained merge section with this more explicit approach:
 
-        # Filter symbols once for efficiency
+        # Keep MIC to distinguish between different symbols for the same ISIN
         symbols_filtered = stock_eod_df[
             stock_eod_df['#Symbol'].str.len() < 12
-        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
+        ][['Isin Code', '#Symbol', 'MIC']].drop_duplicates(subset=['Isin Code', 'MIC'], keep='first')
 
-        # Step 1: Merge Free Float data
-        developed_market_df = developed_market_df.merge(
-            ff_df[['ISIN Code:', 'Free Float Round:']],
-            left_on='ISIN',
-            right_on='ISIN Code:',
-            how='left'
-        ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float'})
-
-        # Step 2: Merge symbols
-        developed_market_df = developed_market_df.merge(
-            symbols_filtered,
-            left_on='ISIN',
-            right_on='Isin Code',
-            how='left'
-        ).drop('Isin Code', axis=1)
-
-        # Step 3: Merge FX data
-        fx_data = stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first')
-        developed_market_df = developed_market_df.merge(fx_data, on='#Symbol', how='left')
-
-        # Step 4: Merge EOD prices
-        eod_prices = stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first').rename(columns={'Close Prc': 'Close Prc_EOD'})
-        developed_market_df = developed_market_df.merge(eod_prices, on='#Symbol', how='left')
-
-        # Step 5: Merge CO prices
-        co_prices = stock_co_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first').rename(columns={'Close Prc': 'Close Prc_CO'})
-        developed_market_df = developed_market_df.merge(co_prices, on='#Symbol', how='left')
+        # Chain all data preparation operations
+        developed_market_df = (developed_market_df
+            # Merge symbols using both ISIN and MIC
+            .merge(
+                symbols_filtered,
+                left_on=['ISIN', 'MIC'],
+                right_on=['Isin Code', 'MIC'],
+                how='left'
+            )
+            .drop('Isin Code', axis=1)
+            # Merge FX data using both Symbol and MIC
+            .merge(
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'MIC', 'FX/Index Ccy']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
+                how='left'
+            )
+            # Merge EOD prices using both Symbol and MIC
+            .merge(
+                stock_eod_df[['#Symbol', 'MIC', 'Close Prc']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
+                how='left',
+                suffixes=('', '_EOD')
+            )
+            .rename(columns={'Close Prc': 'Close Prc_EOD'})
+            # Merge CO prices using both Symbol and MIC
+            .merge(
+                stock_co_df[['#Symbol', 'MIC', 'Close Prc']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
+                how='left',
+                suffixes=('_EOD', '_CO')
+            )
+            .rename(columns={'Close Prc': 'Close Prc_CO'})
+            # Merge FF data for Free Float
+            .merge(
+                ff_df[['ISIN Code:', 'Free Float Round:']].drop_duplicates(subset='ISIN Code:', keep='first'),
+                left_on='ISIN',
+                right_on='ISIN Code:',
+                how='left'
+            )
+            .drop('ISIN Code:', axis=1)
+            .rename(columns={'Free Float Round:': 'Free Float'})
+        )
 
         # Calculate market cap columns right after the merges
         developed_market_df['Price in Index Currency'] = developed_market_df['Close Prc_EOD'] * developed_market_df['FX/Index Ccy']
@@ -394,9 +410,37 @@ def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX000
             how='left'
         )
 
-        # Add this line:
         selection_df['Job_score_3Y'] = pd.to_numeric(selection_df['Job_score_3Y'], errors='coerce').fillna(0)
 
+        selection_df['Job_score_3Y_numeric'] = pd.to_numeric(selection_df['Job_score_3Y'], errors='coerce')
+        selection_df['CRStaffRatingNum_numeric'] = pd.to_numeric(selection_df['CRStaffRatingNum'], errors='coerce')
+        
+        # Create ranking within each MIC type (XPAR vs non-XPAR)
+        selection_df['MIC_Type'] = selection_df['MIC'].apply(lambda x: 'XPAR' if x == 'XPAR' else 'Non-XPAR')
+        selection_df['Ranking'] = selection_df.groupby('MIC_Type')[['Job_score_3Y_numeric', 'CRStaffRatingNum_numeric']].rank(
+            method='first',
+            ascending=[False, False]
+        ).min(axis=1).astype(int)
+        
+        # Sort by MIC_Type and Ranking for better readability
+        selection_df = selection_df.sort_values(['MIC_Type', 'Ranking'])
+        
+        developed_market_df['Job_score_3Y_numeric'] = pd.to_numeric(
+            developed_market_df['ISIN'].map(sesamm_df.set_index('ISIN')['Job_score_3Y']), 
+            errors='coerce'
+        ).fillna(0)
+        developed_market_df['CRStaffRatingNum_numeric'] = pd.to_numeric(
+            developed_market_df['ISIN'].map(analysis_df.set_index('ISIN')['CRStaffRatingNum']), 
+            errors='coerce'
+        ).fillna(3)
+        
+        # Create ranking within each MIC type for full universe
+        developed_market_df['MIC_Type'] = developed_market_df['MIC'].apply(lambda x: 'XPAR' if x == 'XPAR' else 'Non-XPAR')
+        developed_market_df['Ranking'] = developed_market_df.groupby('MIC_Type')[['Job_score_3Y_numeric', 'CRStaffRatingNum_numeric']].rank(
+            method='first',
+            ascending=[False, False]
+        ).min(axis=1).astype(int)
+        
         def select_top_stocks(df, mic_type, n_stocks):
             if mic_type == 'XPAR':
                 filtered_df = df[df['MIC'] == 'XPAR'].copy()
