@@ -1,0 +1,64 @@
+2025-12-11 15:22:31,671 - werkzeug - WARNING -  * Debugger is active!
+2025-12-11 15:22:31,674 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-11 15:22:31,721 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:31] "POST /calculate HTTP/1.1" 200 -
+2025-12-11 15:22:31,722 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-11 15:22:31,731 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:31] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:33,732 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:33] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:35,736 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:35] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:36,525 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-11 15:22:37,741 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:37] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:39,731 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:39] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:41,765 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:41] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:43,731 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:43] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:45,737 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:45] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:22:46,747 - Review.reviews.c6rip_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'merge'
+2025-12-11 15:22:46,748 - Review.reviews.c6rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\c6rip_review.py", line 41, in run_c6rip_review
+    .merge(
+     ^^^^^
+AttributeError: 'NoneType' object has no attribute 'merge'
+
+2025-12-11 15:22:47,732 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:22:47] "GET /task-status/ce6f486a-6eb7-4da9-a694-33e899bda62d HTTP/1.1" 200 -
+2025-12-11 15:23:08,592 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:08] "POST /calculate HTTP/1.1" 200 -
+2025-12-11 15:23:08,600 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-11 15:23:08,601 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:08] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:10,605 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:10] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:12,605 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:12] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:12,838 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-11 15:23:14,617 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:14] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:16,606 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:16] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:18,605 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:18] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:20,612 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:20] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:22,615 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:22] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:22,805 - Review.reviews.c6rip_review - INFO - Starting universe size: 40 stocks
+2025-12-11 15:23:22,805 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-11 15:23:22,805 - Review.reviews.c6rip_review - INFO - Universe size: 40 stocks
+2025-12-11 15:23:22,805 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-11 15:23:22,805 - Review.reviews.c6rip_review - ERROR - Error during review calculation: 'Number of Shares'
+2025-12-11 15:23:22,815 - Review.reviews.c6rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Number of Shares'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\c6rip_review.py", line 102, in run_c6rip_review
+    universe_df['Number of Shares'] *
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Number of Shares'
+
+2025-12-11 15:23:24,606 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:23:24] "GET /task-status/91add97e-24d3-4d25-9b5d-7da7ca605975 HTTP/1.1" 200 -
+2025-12-11 15:23:53,925 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading
+2025-12-11 15:23:53,925 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading
+2025-12-11 15:23:53,925 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading

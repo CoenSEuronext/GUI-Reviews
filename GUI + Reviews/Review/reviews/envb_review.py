@@ -12,7 +12,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 logger = setup_logging(__name__)
 
 def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256235", 
-                    area="US", area2="EU", type="STOCK", universe="EUROPE500", 
+                    area="US", area2="EU", type="STOCK", universe="europe_500", 
                     feed="Reuters", currency="EUR", year=None):
    
     try:
@@ -32,7 +32,7 @@ def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256
         
         # Filter symbols once
         symbols_filtered = stock_eod_df[
-            stock_eod_df['#Symbol'].str.len() == 12
+            stock_eod_df['#Symbol'].str.len() < 12
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
 
         # Chain all data preparation operations

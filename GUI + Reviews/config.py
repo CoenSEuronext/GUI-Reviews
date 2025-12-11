@@ -370,6 +370,36 @@ INDEX_CONFIGS = {
         "index": "FCLSP",
         "isin": "FRESG0001478",
         "output_key": "fclsp_path"
+    },
+    "EAIB": {
+        "index": "EAIB",
+        "isin": "NLIX00008366",
+        "output_key": "eaib_path"
+    },
+    "EEDF": {
+        "index": "EEDF",
+        "isin": "NLIX00008473",
+        "output_key": "eedf_path"
+    },
+    "EHCF": {
+        "index": "EHCF",
+        "isin": "NLIX00008168",
+        "output_key": "ehcf_path"
+    },
+    "EIAPR": {
+        "index": "EIAPR",
+        "isin": "NLIX00005628",
+        "output_key": "eiapr_path"
+    },
+    "EMLS": {
+        "index": "EMLS",
+        "isin": "NLIX00008903",
+        "output_key": "emls_path"
+    },
+    "C6RIP": {
+        "index": "C6RIP",
+        "isin": "FR0013376258",
+        "output_key": "c6rip_path"
     }
     # Add new indices here following the same pattern
 }
@@ -438,7 +468,7 @@ ALL_MNEMOS = [
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
     "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS",
-    "EUMS", "EUSL", "EESL", "EWSL", "EHNI"
+    "EUMS", "EUSL", "EESL", "EWSL", "EHNI", "EMLS", "EIAPR", "EHCF", "EAIB", "EEDF"
     
 ]
 

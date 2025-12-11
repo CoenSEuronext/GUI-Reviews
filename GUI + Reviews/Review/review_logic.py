@@ -75,6 +75,12 @@ from .reviews.clamp_review import run_clamp_review
 from .reviews.jpcla_review import run_jpcla_review
 from .reviews.jpcle_review import run_jpcle_review
 from .reviews.fclsp_review import run_fclsp_review
+from .reviews.eaib_review import run_eaib_review
+from .reviews.eedf_review import run_eedf_review
+from .reviews.ehcf_review import run_ehcf_review
+from .reviews.eiapr_review import run_eiapr_review
+from .reviews.emls_review import run_emls_review
+from .reviews.c6rip_review import run_c6rip_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -153,7 +159,13 @@ REVIEW_FUNCTIONS = {
     "CLAMP": run_clamp_review,
     "JPCLA": run_jpcla_review,
     "JPCLE": run_jpcle_review,
-    "FCLSP": run_fclsp_review
+    "FCLSP": run_fclsp_review,
+    "EAIB": run_eaib_review,
+    "EEDF": run_eedf_review,
+    "EHCF": run_ehcf_review,
+    "EIAPR": run_eiapr_review,
+    "EMLS": run_emls_review,
+    "C6RIP": run_c6rip_review
 }
 
 def run_review(review_type, **kwargs):

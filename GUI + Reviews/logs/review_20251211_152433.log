@@ -1,0 +1,39 @@
+2025-12-11 15:24:34,503 - werkzeug - WARNING -  * Debugger is active!
+2025-12-11 15:24:34,505 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-11 15:24:34,542 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:34] "POST /calculate HTTP/1.1" 200 -
+2025-12-11 15:24:34,549 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-11 15:24:34,549 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:34] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:36,555 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:36] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:38,563 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:38] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:38,739 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-11 15:24:40,565 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:40] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:42,589 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:42] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:44,565 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:44] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:46,560 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:46] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:48,555 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:48] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:49,015 - Review.reviews.c6rip_review - INFO - Starting universe size: 40 stocks
+2025-12-11 15:24:49,015 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-11 15:24:49,015 - Review.reviews.c6rip_review - INFO - Universe size: 40 stocks
+2025-12-11 15:24:49,015 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-11 15:24:49,021 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-11 15:24:49,023 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-11 15:24:49,023 - Review.reviews.c6rip_review - INFO - Selected 40 constituents for c6rip index
+2025-12-11 15:24:49,023 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-11 15:24:49,027 - Review.reviews.c6rip_review - INFO - Weight range: 1.2500% to 2.5000%
+2025-12-11 15:24:49,027 - Review.reviews.c6rip_review - INFO - Total weight: 81.2500%
+2025-12-11 15:24:49,031 - Review.reviews.c6rip_review - ERROR - Error during review calculation: "['Currency (Local)'] not in index"
+2025-12-11 15:24:49,033 - Review.reviews.c6rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\c6rip_review.py", line 166, in run_c6rip_review
+    selection_df[[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency (Local)'] not in index"
+
+2025-12-11 15:24:50,556 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 15:24:50] "GET /task-status/39d7d7b4-e1f2-4c12-ba27-e7ea39731e51 HTTP/1.1" 200 -
+2025-12-11 15:24:53,225 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading
+2025-12-11 15:24:53,225 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading

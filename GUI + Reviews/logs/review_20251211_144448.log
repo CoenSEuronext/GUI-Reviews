@@ -1,0 +1,12 @@
+2025-12-11 14:44:49,060 - werkzeug - WARNING -  * Debugger is active!
+2025-12-11 14:44:49,060 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-11 14:44:49,700 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:44:49] "GET / HTTP/1.1" 200 -
+2025-12-11 14:44:49,737 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:44:49] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-11 14:45:01,978 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:45:01] "POST /calculate HTTP/1.1" 200 -
+2025-12-11 14:45:01,980 - Review.reviews.ehcf_review - INFO - Loading EOD data...
+2025-12-11 14:45:01,980 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:45:01] "GET /task-status/9f6a4ce7-8197-426c-9eaa-6b158205b743 HTTP/1.1" 200 -
+2025-12-11 14:45:03,984 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:45:03] "GET /task-status/9f6a4ce7-8197-426c-9eaa-6b158205b743 HTTP/1.1" 200 -
+2025-12-11 14:45:04,967 - Review.reviews.ehcf_review - INFO - Loading reference data...
+2025-12-11 14:45:05,824 - Review.reviews.ehcf_review - INFO - Saving EHCF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EHCF_df_20251211_144505.xlsx
+2025-12-11 14:45:05,986 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:45:05] "GET /task-status/9f6a4ce7-8197-426c-9eaa-6b158205b743 HTTP/1.1" 200 -
+2025-12-11 14:46:22,323 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eiapr_review.py', reloading

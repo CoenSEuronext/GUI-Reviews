@@ -1,0 +1,26 @@
+{
+  "task_id": "4bda0fc7-518c-4a99-92d9-ccdf42d43cc5",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-11T14:37:22.655118",
+  "started_at": "2025-12-11T14:37:22.657284",
+  "completed_at": "2025-12-11T14:37:27.916279",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "eaib_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EAIB_df_20251211_143727.xlsx"
+  },
+  "review_type": "EAIB",
+  "parameters": {
+    "date": "20251014",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EAIB",
+    "isin": "NLIX00008366",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.258995
+}

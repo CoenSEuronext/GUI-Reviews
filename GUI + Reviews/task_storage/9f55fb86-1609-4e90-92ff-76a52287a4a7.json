@@ -1,0 +1,26 @@
+{
+  "task_id": "9f55fb86-1609-4e90-92ff-76a52287a4a7",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-11T15:25:46.299053",
+  "started_at": "2025-12-11T15:25:46.300460",
+  "completed_at": "2025-12-11T15:25:58.631548",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "c6rip_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\c6rip_df_20251211_152558.xlsx"
+  },
+  "review_type": "C6RIP",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "C6RIP",
+    "isin": "FR0013376258",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 12.331088
+}

@@ -95,7 +95,7 @@ def run_edwp_review(date, effective_date,co_date, index="EDWP", isin="NLIX000015
 
         # Create MIC grouping mapping
         mic_groups = {
-            'US': ['XNYS', 'XNGS', 'BATS', 'XNMS', 'XNCM', 'XASE'],
+            'US': ['XNYS', 'XNGS', 'BATS', 'XNMS', 'XNCM', 'XASE', 'XNAS'],
             'SE': ['XSTO', 'SSME'],
             'IT': ['XMIL', 'MTAA'],
             'IE': ['XESM', 'XMSM'],

@@ -1,0 +1,23 @@
+2025-12-11 14:35:40,616 - werkzeug - WARNING -  * Debugger is active!
+2025-12-11 14:35:40,618 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-11 14:35:40,644 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:35:40] "GET /task-status/1cc8cf58-8ecd-4299-bd7f-c38c79a62409 HTTP/1.1" 200 -
+2025-12-11 14:36:00,566 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:36:00] "POST /calculate HTTP/1.1" 200 -
+2025-12-11 14:36:00,566 - Review.reviews.eaib_review - INFO - Loading EOD data...
+2025-12-11 14:36:00,566 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:36:00] "GET /task-status/60974b70-5313-463a-9341-4c710f8a9f9d HTTP/1.1" 200 -
+2025-12-11 14:36:02,614 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:36:02] "GET /task-status/60974b70-5313-463a-9341-4c710f8a9f9d HTTP/1.1" 200 -
+2025-12-11 14:36:02,882 - Review.reviews.eaib_review - INFO - Loading reference data...
+2025-12-11 14:36:03,702 - Review.reviews.eaib_review - ERROR - Error during review calculation: single positional indexer is out-of-bounds
+2025-12-11 14:36:03,705 - Review.reviews.eaib_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\eaib_review.py", line 123, in run_eaib_review
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2025-12-11 14:36:03,706 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py', reloading

@@ -1,0 +1,26 @@
+{
+  "task_id": "6c6b71c4-b2b6-4ec1-ba5b-1469a19bc7ed",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-11T14:49:10.494094",
+  "started_at": "2025-12-11T14:49:10.503793",
+  "completed_at": "2025-12-11T14:49:16.357381",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "eiapr_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EIAPR_df_20251211_144916.xlsx"
+  },
+  "review_type": "EIAPR",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "EIAPR",
+    "isin": "NLIX00005628",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.849268
+}

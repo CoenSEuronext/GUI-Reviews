@@ -1,0 +1,14 @@
+2025-12-11 14:48:34,352 - werkzeug - WARNING -  * Debugger is active!
+2025-12-11 14:48:34,356 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-11 14:48:37,023 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:48:37] "GET / HTTP/1.1" 200 -
+2025-12-11 14:48:37,064 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:48:37] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-11 14:49:10,505 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:49:10] "POST /calculate HTTP/1.1" 200 -
+2025-12-11 14:49:10,508 - Review.reviews.eiapr_review - INFO - Loading EOD data...
+2025-12-11 14:49:10,508 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:49:10] "GET /task-status/6c6b71c4-b2b6-4ec1-ba5b-1469a19bc7ed HTTP/1.1" 200 -
+2025-12-11 14:49:12,516 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:49:12] "GET /task-status/6c6b71c4-b2b6-4ec1-ba5b-1469a19bc7ed HTTP/1.1" 200 -
+2025-12-11 14:49:14,522 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:49:14] "GET /task-status/6c6b71c4-b2b6-4ec1-ba5b-1469a19bc7ed HTTP/1.1" 200 -
+2025-12-11 14:49:15,390 - Review.reviews.eiapr_review - INFO - Loading reference data...
+2025-12-11 14:49:16,294 - Review.reviews.eiapr_review - INFO - Saving EIAPR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EIAPR_df_20251211_144916.xlsx
+2025-12-11 14:49:16,519 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2025 14:49:16] "GET /task-status/6c6b71c4-b2b6-4ec1-ba5b-1469a19bc7ed HTTP/1.1" 200 -
+2025-12-11 14:49:26,726 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eiapr_review.py', reloading
+2025-12-11 14:49:26,726 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eiapr_review.py', reloading

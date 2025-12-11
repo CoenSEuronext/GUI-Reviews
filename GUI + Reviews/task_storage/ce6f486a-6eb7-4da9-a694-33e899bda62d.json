@@ -1,0 +1,24 @@
+{
+  "task_id": "ce6f486a-6eb7-4da9-a694-33e899bda62d",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-11T15:22:31.708066",
+  "started_at": "2025-12-11T15:22:31.718421",
+  "completed_at": "2025-12-11T15:22:46.789301",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'NoneType' object has no attribute 'merge'",
+  "error": "Error during review calculation: 'NoneType' object has no attribute 'merge'",
+  "result_data": null,
+  "review_type": "C6RIP",
+  "parameters": {
+    "date": "20250916",
+    "co_date": "20250822",
+    "effective_date": "22-Sep-25",
+    "index": "C6RIP",
+    "isin": "FR0013376258",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 15.066503
+}
