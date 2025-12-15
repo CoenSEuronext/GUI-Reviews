@@ -1,0 +1,26 @@
+{
+  "task_id": "b8262817-a300-4fb3-aff6-c75e7751c517",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-15T17:31:57.712586",
+  "started_at": "2025-12-15T17:31:57.718602",
+  "completed_at": "2025-12-15T17:32:38.933778",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "fri4p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\FRI4P_df_20251215_173238.xlsx"
+  },
+  "review_type": "FRI4P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "FRI4P",
+    "isin": "FRIX00003643",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 41.215176
+}

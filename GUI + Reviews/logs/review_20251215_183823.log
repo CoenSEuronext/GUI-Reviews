@@ -1,0 +1,73 @@
+2025-12-15 18:38:24,489 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 18:38:24,491 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 18:38:24,524 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:24] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 18:38:24,527 - Review.reviews.wifrp_review - INFO - Loading EOD data...
+2025-12-15 18:38:24,530 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:24] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:25,021 - Review.reviews.wifrp_review - INFO - Loading reference data...
+2025-12-15 18:38:26,559 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:26] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:28,538 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:28] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:30,553 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:30] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:32,538 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:32] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:34,527 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:34] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:36,538 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:36] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:38:36,805 - Review.reviews.wifrp_review - INFO - Filtering universe to exclude Euronext Paris (XPAR) listings...
+2025-12-15 18:38:36,822 - Review.reviews.wifrp_review - INFO - Merging all reference data points early...
+2025-12-15 18:38:36,822 - Review.reviews.wifrp_review - INFO - Deduplicating reference dataframes...
+2025-12-15 18:38:36,839 - Review.reviews.wifrp_review - INFO - Merging Oekom data...
+2025-12-15 18:38:36,839 - Review.reviews.wifrp_review - INFO - Merging ICB data...
+2025-12-15 18:38:36,867 - Review.reviews.wifrp_review - INFO - Merging SesamM data...
+2025-12-15 18:38:36,872 - Review.reviews.wifrp_review - INFO - Converting numeric columns...
+2025-12-15 18:38:36,872 - Review.reviews.wifrp_review - INFO - Found 38 companies with 'Not Collected' staff rating - assigned value 0
+2025-12-15 18:38:36,872 - Review.reviews.wifrp_review - INFO - Staff Rating distribution: Min=0.0, Max=4.0
+2025-12-15 18:38:36,872 - Review.reviews.wifrp_review - INFO - All reference data merged successfully
+2025-12-15 18:38:36,872 - Review.reviews.wifrp_review - INFO - Universe size after merges: 1465 companies
+2025-12-15 18:38:36,872 - Review.reviews.wifrp_review - INFO - Calculating percentiles and rankings for staff rating and layoff score...
+2025-12-15 18:38:36,969 - Review.reviews.wifrp_review - INFO - Applying SesamM data availability exclusion...
+2025-12-15 18:38:36,971 - Review.reviews.wifrp_review - INFO - SesamM data unavailable exclusions: 1215
+2025-12-15 18:38:36,973 - Review.reviews.wifrp_review - INFO - Applying turnover exclusion...
+2025-12-15 18:38:36,974 - Review.reviews.wifrp_review - INFO - Turnover exclusions: 172
+2025-12-15 18:38:36,974 - Review.reviews.wifrp_review - INFO - Applying NBR Overall Flag exclusion...
+2025-12-15 18:38:36,975 - Review.reviews.wifrp_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 18:38:36,975 - Review.reviews.wifrp_review - INFO - Applying controversial weapons exclusions...
+2025-12-15 18:38:36,976 - Review.reviews.wifrp_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-15 18:38:36,977 - Review.reviews.wifrp_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-15 18:38:36,978 - Review.reviews.wifrp_review - INFO - NuclearWeapons exclusions: 35
+2025-12-15 18:38:36,979 - Review.reviews.wifrp_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-15 18:38:36,980 - Review.reviews.wifrp_review - INFO - ClusterMunitions exclusions: 5
+2025-12-15 18:38:36,982 - Review.reviews.wifrp_review - INFO - DepletedUranium exclusions: 7
+2025-12-15 18:38:36,983 - Review.reviews.wifrp_review - INFO - APMines exclusions: 4
+2025-12-15 18:38:36,984 - Review.reviews.wifrp_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-15 18:38:36,984 - Review.reviews.wifrp_review - INFO - Applying animal welfare exclusions...
+2025-12-15 18:38:36,986 - Review.reviews.wifrp_review - INFO - Animal Welfare exclusions: 248
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Animal Testing exclusions: 224
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Applying energy screening exclusions...
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Coal Mining exclusions: 91
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Fossil Fuel exclusions: 308
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Thermal Power exclusions: 112
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Applying tobacco screening exclusions...
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Tobacco Production exclusions: 0
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Tobacco Distribution exclusions: 0
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Applying layoff screening exclusion...
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Layoff exclusions: 1219
+2025-12-15 18:38:36,988 - Review.reviews.wifrp_review - INFO - Applying staff rating exclusion...
+2025-12-15 18:38:37,022 - Review.reviews.wifrp_review - INFO - Staff Rating exclusions: 256
+2025-12-15 18:38:37,122 - Review.reviews.wifrp_review - INFO - Companies remaining after exclusions: 91
+2025-12-15 18:38:37,122 - Review.reviews.wifrp_review - INFO - Calculating FFMC for ranking...
+2025-12-15 18:38:37,122 - Review.reviews.wifrp_review - INFO - Selecting top 40 companies by FFMC...
+2025-12-15 18:38:37,122 - Review.reviews.wifrp_review - INFO - Applying 10% capping using most recent pricing data...
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO -   Total companies: 40
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO -   Companies capped: 2
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 18:38:37,122 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-15 18:38:37,138 - Review.reviews.wifrp_review - INFO - Total weight after capping: 1.000000
+2025-12-15 18:38:37,138 - Review.reviews.wifrp_review - INFO - Max weight after capping: 0.100000
+2025-12-15 18:38:37,138 - Review.reviews.wifrp_review - INFO - Companies capped: 2
+2025-12-15 18:38:37,138 - Review.reviews.wifrp_review - INFO - Saving WIFRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\WIFRP_df_20251215_183837.xlsx
+2025-12-15 18:38:38,538 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:38:38] "GET /task-status/5240b078-7d8e-442d-a258-f1f2f527f972 HTTP/1.1" 200 -
+2025-12-15 18:42:36,005 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-12-15 18:42:36,005 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-12-15 18:42:36,009 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
+2025-12-15 18:42:36,009 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
