@@ -11,7 +11,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 logger = setup_logging(__name__)
 
 def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR0014005IK5", 
-                    area="EU", area2="", type="STOCK", universe="eurozone_300", 
+                    area="EU", area2="US", type="STOCK", universe="eurozone_300", 
                     feed="Reuters", currency="EUR", year=None):
     """
     Run the CLAMP index review calculation

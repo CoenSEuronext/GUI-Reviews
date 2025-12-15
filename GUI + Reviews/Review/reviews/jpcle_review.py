@@ -94,6 +94,15 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
         logger.info(f"Removed {removed_xtse_count} companies with MIC = 'XTSE' from universe")
         logger.info(f"Remaining universe size: {len(asia_pacific_500_df)} companies")
 
+        # Filter to only include companies with MIC = 'XTKS' (Tokyo Stock Exchange)
+        initial_count = len(asia_pacific_500_df)
+        asia_pacific_500_df = asia_pacific_500_df[asia_pacific_500_df['MIC'] == 'XTKS'].copy()
+        kept_xtks_count = len(asia_pacific_500_df)
+        removed_non_xtks_count = initial_count - kept_xtks_count
+        logger.info(f"Kept {kept_xtks_count} companies with MIC = 'XTKS' (Tokyo Stock Exchange)")
+        logger.info(f"Removed {removed_non_xtks_count} companies with other MICs")
+        logger.info(f"Final universe size after MIC filtering: {len(asia_pacific_500_df)} companies")
+
         # ===================================================================
         # EARLY MERGE: Merge ALL Oekom data points at the beginning
         # ===================================================================
@@ -127,7 +136,8 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
             'White Phosphorous Weapons - Overall Flag',
             'Thermal Coal Mining - Maximum Percentage of Revenues (%)',
             'Power Generation - Thermal Maximum Percentage of Revenues (%)',
-            'Shale Oil and/or Gas - Involvement tie'
+            'Shale Oil and/or Gas - Involvement tie',
+            'Oil Sands - Production Maximum Percentage of Revenues (%)',
         ]
         
         # Merge all Oekom data early
@@ -267,6 +277,30 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
         logger.info(f"Thermal Power exclusions: {len(excluded_thermal_power)}")
         exclusion_count += 1
 
+        # Step 2f: Oil Sands screening
+        asia_pacific_500_df[f'exclusion_{exclusion_count}_OilSands'] = None
+
+        # Create numeric helper column for Oil Sands
+        asia_pacific_500_df['Oil Sands Numeric'] = pd.to_numeric(
+            asia_pacific_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'], 
+            errors='coerce'
+        )
+
+        excluded_oil_sands = asia_pacific_500_df[
+            (asia_pacific_500_df['Oil Sands Numeric'] > 0) |
+            (asia_pacific_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Collected') |
+            (asia_pacific_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
+        ]['ISIN'].tolist()
+
+        asia_pacific_500_df[f'exclusion_{exclusion_count}_OilSands'] = np.where(
+            asia_pacific_500_df['ISIN'].isin(excluded_oil_sands),
+            'exclude_OilSands',
+            None
+        )
+        logger.info(f"Oil Sands exclusions: {len(excluded_oil_sands)}")
+        exclusion_count += 1
+
+        
         # Step 2f: Shale Oil and/or Gas screening
         asia_pacific_500_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = None
 
@@ -368,7 +402,7 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
         )
         
         # Select top 250 eligible companies
-        top_250_df = selection_df.head(250).copy()
+        top_150_df = selection_df.head(150).copy()
         logger.info(f"Selected top 250 companies by ESG Performance Score")
         
         # ===================================================================
@@ -396,26 +430,26 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
             return pd.Series({'Symbol': None, 'Close Prc_EOD': None})
 
         # Add Symbol and Price columns
-        top_250_df[['Symbol', 'Close Prc_EOD']] = top_250_df.apply(
+        top_150_df[['Symbol', 'Close Prc_EOD']] = top_150_df.apply(
             lambda row: get_stock_info(row, stock_eod_df), axis=1
         )
         
         # FX/Index Ccy is already in the dataframe from the early merge
 
         # Calculate FFMC (Free Float Market Cap)
-        top_250_df['Price in Index Currency'] = top_250_df['Close Prc_EOD'] * top_250_df['FX/Index Ccy']
-        top_250_df['FFMC'] = top_250_df['Price (EUR) '] * top_250_df['NOSH'] * top_250_df['Free Float']
+        top_150_df['Price in Index Currency'] = top_150_df['Close Prc_EOD'] * top_150_df['FX/Index Ccy']
+        top_150_df['FFMC'] = top_150_df['Price (EUR) '] * top_150_df['NOSH'] * top_150_df['Free Float']
 
         # Add FFMC Ranking (higher FFMC = better rank)
-        top_250_df['FFMC Rank'] = top_250_df['FFMC'].rank(
+        top_150_df['FFMC Rank'] = top_150_df['FFMC'].rank(
             method='min',
             ascending=False,
             na_option='bottom'
         )
         
         # Rank by FFMC and select top 25
-        top_250_df = top_250_df.sort_values('FFMC', ascending=False)
-        final_selection_df = top_250_df.head(30).copy()
+        top_150_df = top_150_df.sort_values('FFMC', ascending=False)
+        final_selection_df = top_150_df.head(30).copy()
         logger.info(f"Selected top 25 companies by FFMC")
 
         # ===================================================================
@@ -498,7 +532,7 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 asia_pacific_500_df.to_excel(writer, sheet_name='Full Universe', index=False)
-                top_250_df.to_excel(writer, sheet_name='Top 250', index=False)
+                top_150_df.to_excel(writer, sheet_name='Top 250', index=False)
                 final_selection_df.to_excel(writer, sheet_name='Final Selection', index=False)
                 
             return {

@@ -38,8 +38,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
                 'ISIN code': 'ISIN', 
                 'Preliminary number of shares': 'NOSH'
             }
-        )
-        
+        ).drop_duplicates(subset=['ISIN'], keep='first')  # Add this line
         # Validate data loading
         if any(df is None for df in [ff_df, aex_bel_df]):
             raise ValueError("Failed to load one or more required reference data files")
@@ -110,8 +109,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
             .drop('ISIN Code:', axis=1)
             .rename(columns={'Free Float Round:': 'Free Float'})
         )
-        aex_bel_df.to_excel('debug_output.xlsx', index=False)
-        os.startfile('debug_output.xlsx')
+
         # Calculate Price in Index Currency
         aex_bel_df['Price in index currency'] = aex_bel_df['Close Prc_EOD'] * (
             aex_bel_df['FX/Index Ccy'] if 'FX/Index Ccy' in aex_bel_df.columns else 1.0

@@ -1,0 +1,19 @@
+2025-12-12 17:38:55,222 - werkzeug - WARNING -  * Debugger is active!
+2025-12-12 17:38:55,240 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-12 17:38:55,275 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:38:55] "POST /calculate HTTP/1.1" 200 -
+2025-12-12 17:38:55,278 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2025-12-12 17:38:55,281 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:38:55] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:38:57,288 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:38:57] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:38:59,293 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:38:59] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:01,194 - Review.reviews.ses5p_review - INFO - Loading reference data...
+2025-12-12 17:39:01,290 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:39:01] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:03,300 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:39:03] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:05,322 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:39:05] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:07,286 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:39:07] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:09,228 - Review.reviews.ses5p_review - INFO - Saving SES5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SES5P_df_20251212_173909.xlsx
+2025-12-12 17:39:09,306 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:39:09] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:11,290 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 17:39:11] "GET /task-status/93accf8f-b8f1-4bc9-a98b-cd0123155229 HTTP/1.1" 200 -
+2025-12-12 17:39:33,465 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-12-12 17:39:33,467 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-12-12 17:39:33,467 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading
+2025-12-12 17:39:34,413 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sbf80_review.py', reloading

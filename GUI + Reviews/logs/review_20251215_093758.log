@@ -1,0 +1,10 @@
+2025-12-15 09:37:58,828 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 09:37:58,828 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 09:37:58,857 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 09:37:58] "GET /task-status/324a8430-b295-4d30-ab21-9504305c0b09 HTTP/1.1" 200 -
+2025-12-15 09:37:59,968 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 09:37:59] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 09:37:59,972 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-12-15 09:37:59,973 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 09:37:59] "GET /task-status/f96589fa-2cdf-48d7-8555-219c355c4b1e HTTP/1.1" 200 -
+2025-12-15 09:38:00,792 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-12-15 09:38:01,975 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 09:38:01] "GET /task-status/f96589fa-2cdf-48d7-8555-219c355c4b1e HTTP/1.1" 200 -
+2025-12-15 09:38:02,322 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20251215_093802.xlsx
+2025-12-15 09:38:03,984 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 09:38:03] "GET /task-status/f96589fa-2cdf-48d7-8555-219c355c4b1e HTTP/1.1" 200 -

@@ -1,0 +1,54 @@
+2025-12-12 18:15:11,264 - werkzeug - WARNING -  * Debugger is active!
+2025-12-12 18:15:11,264 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-12 18:15:11,617 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:11] "POST /calculate HTTP/1.1" 200 -
+2025-12-12 18:15:11,617 - Review.reviews.jpcle_review - INFO - Loading EOD data...
+2025-12-12 18:15:11,630 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:11] "GET /task-status/b7db0e9b-1f43-465e-8886-2a3f1e27d8b5 HTTP/1.1" 200 -
+2025-12-12 18:15:13,630 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:13] "GET /task-status/b7db0e9b-1f43-465e-8886-2a3f1e27d8b5 HTTP/1.1" 200 -
+2025-12-12 18:15:15,630 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:15] "GET /task-status/b7db0e9b-1f43-465e-8886-2a3f1e27d8b5 HTTP/1.1" 200 -
+2025-12-12 18:15:16,947 - Review.reviews.jpcle_review - INFO - Loading reference data...
+2025-12-12 18:15:17,648 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:17] "GET /task-status/b7db0e9b-1f43-465e-8886-2a3f1e27d8b5 HTTP/1.1" 200 -
+2025-12-12 18:15:17,842 - Review.reviews.jpcle_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2025-12-12 18:15:17,842 - Review.reviews.jpcle_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\jpcle_review.py", line 57, in run_jpcle_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+
+2025-12-12 18:15:19,630 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:19] "GET /task-status/b7db0e9b-1f43-465e-8886-2a3f1e27d8b5 HTTP/1.1" 200 -
+2025-12-12 18:15:23,831 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:23] "POST /calculate HTTP/1.1" 200 -
+2025-12-12 18:15:23,831 - Review.reviews.jpcle_review - INFO - Loading EOD data...
+2025-12-12 18:15:23,831 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:23] "GET /task-status/60d6fc6f-bc21-4c0f-a76f-960c1ae2f0c4 HTTP/1.1" 200 -
+2025-12-12 18:15:24,911 - Review.reviews.jpcle_review - INFO - Loading reference data...
+2025-12-12 18:15:25,852 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:25] "GET /task-status/60d6fc6f-bc21-4c0f-a76f-960c1ae2f0c4 HTTP/1.1" 200 -
+2025-12-12 18:15:27,847 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:27] "GET /task-status/60d6fc6f-bc21-4c0f-a76f-960c1ae2f0c4 HTTP/1.1" 200 -
+2025-12-12 18:15:29,097 - Review.reviews.jpcle_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-12 18:15:29,097 - Review.reviews.jpcle_review - INFO - Remaining universe size: 500 companies
+2025-12-12 18:15:29,097 - Review.reviews.jpcle_review - INFO - Kept 342 companies with MIC = 'XTKS' (Tokyo Stock Exchange)
+2025-12-12 18:15:29,097 - Review.reviews.jpcle_review - INFO - Removed 158 companies with other MICs
+2025-12-12 18:15:29,097 - Review.reviews.jpcle_review - INFO - Final universe size after MIC filtering: 342 companies
+2025-12-12 18:15:29,112 - Review.reviews.jpcle_review - INFO - Merging Oekom data points early...
+2025-12-12 18:15:29,114 - Review.reviews.jpcle_review - INFO - Oekom data merged successfully
+2025-12-12 18:15:29,125 - Review.reviews.jpcle_review - INFO - Trust Metric exclusions: 32
+2025-12-12 18:15:29,125 - Review.reviews.jpcle_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-12 18:15:29,126 - Review.reviews.jpcle_review - INFO - APMines exclusions: 0
+2025-12-12 18:15:29,127 - Review.reviews.jpcle_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-12 18:15:29,127 - Review.reviews.jpcle_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-12 18:15:29,128 - Review.reviews.jpcle_review - INFO - ClusterMunitions exclusions: 0
+2025-12-12 18:15:29,129 - Review.reviews.jpcle_review - INFO - DepletedUranium exclusions: 0
+2025-12-12 18:15:29,130 - Review.reviews.jpcle_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-12 18:15:29,131 - Review.reviews.jpcle_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-12 18:15:29,132 - Review.reviews.jpcle_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-12 18:15:29,133 - Review.reviews.jpcle_review - INFO - Coal Mining exclusions: 8
+2025-12-12 18:15:29,134 - Review.reviews.jpcle_review - INFO - Thermal Power exclusions: 11
+2025-12-12 18:15:29,135 - Review.reviews.jpcle_review - INFO - Oil Sands exclusions: 0
+2025-12-12 18:15:29,136 - Review.reviews.jpcle_review - INFO - Shale Oil/Gas exclusions: 7
+2025-12-12 18:15:29,136 - Review.reviews.jpcle_review - INFO - Total companies in universe: 342
+2025-12-12 18:15:29,136 - Review.reviews.jpcle_review - INFO - Carbon Budget cutoff rank (80th percentile): 273.6
+2025-12-12 18:15:29,137 - Review.reviews.jpcle_review - INFO - Carbon Budget exclusions (rank > 273.6): 69
+2025-12-12 18:15:29,151 - Review.reviews.jpcle_review - INFO - Companies remaining after exclusions: 239
+2025-12-12 18:15:29,154 - Review.reviews.jpcle_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-12 18:15:29,897 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:29] "GET /task-status/60d6fc6f-bc21-4c0f-a76f-960c1ae2f0c4 HTTP/1.1" 200 -
+2025-12-12 18:15:30,196 - Review.reviews.jpcle_review - INFO - Selected top 25 companies by FFMC
+2025-12-12 18:15:30,196 - Review.reviews.jpcle_review - INFO - Checking IsinCode FRESG0000215 in index_eod_df
+2025-12-12 18:15:30,196 - Review.reviews.jpcle_review - INFO - Found 1 matching rows
+2025-12-12 18:15:30,196 - Review.reviews.jpcle_review - INFO - Saving JPCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLE_df_20251212_181530.xlsx
+2025-12-12 18:15:31,850 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 18:15:31] "GET /task-status/60d6fc6f-bc21-4c0f-a76f-960c1ae2f0c4 HTTP/1.1" 200 -

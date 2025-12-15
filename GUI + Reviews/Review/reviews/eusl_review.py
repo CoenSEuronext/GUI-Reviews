@@ -135,7 +135,8 @@ def run_eusl_review(date, effective_date, co_date, index="EUSL", isin="NLIX00008
             "XNMS": "United States",
             "XNCM": "United States",
             "BATS": "United States",
-            "XASE": "United States"
+            "XASE": "United States",
+            "XNAS": "United States",
         }
         
         # Add Country column based on MIC

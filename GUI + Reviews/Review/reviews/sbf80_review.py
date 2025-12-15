@@ -219,6 +219,7 @@ def run_sbf80_review(date, co_date, effective_date, index="SBF80", isin="FR00130
                  'Effective Date of Review', 'Currency']
             ]
             .rename(columns={'Rounded NOSH': 'Number of Shares'})
+            .rename(columns={'ISIN code': 'ISIN Code'})
             .sort_values('Company')
             .reset_index(drop=True)
         )

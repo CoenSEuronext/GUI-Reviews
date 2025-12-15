@@ -1,0 +1,24 @@
+{
+  "task_id": "b7db0e9b-1f43-465e-8886-2a3f1e27d8b5",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-12T18:15:11.617761",
+  "started_at": "2025-12-12T18:15:11.617761",
+  "completed_at": "2025-12-12T18:15:17.852281",
+  "progress": 0,
+  "message": "Task execution failed: [Errno 13] Permission denied: 'task_storage\\\\b7db0e9b-1f43-465e-8886-2a3f1e27d8b5.json'",
+  "error": "[Errno 13] Permission denied: 'task_storage\\\\b7db0e9b-1f43-465e-8886-2a3f1e27d8b5.json'",
+  "result_data": null,
+  "review_type": "JPCLE",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "JPCLE",
+    "isin": "FRESG0000215",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 6.23452
+}

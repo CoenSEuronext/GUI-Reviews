@@ -112,11 +112,13 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
         selection_df = selection_df[selection_df['Final Selection']].copy()
 
-        # Then prepare SES5P_df
         SES5P_df = (selection_df
             [['Company', 'ISIN', 'MIC', 'NOSH', 'Free Float', 'Final Capping', 
             'Effective Date of Review', 'Currency']]
-            .rename(columns={'Currency': 'Currency (Local)'})
+            .rename(columns={
+                'ISIN': 'ISIN Code',
+                'Currency': 'Currency (Local)'
+            })
             .sort_values('Company')
         )
 

@@ -43,7 +43,7 @@ def run_ehcf_review(date, co_date, effective_date, index="EHCF", isin="NLIX00008
             {'Company': 'TEMPUS AI, INC. CLASS A', 'ISIN': 'US88023B1035', 'MIC': 'XNGS', 'Currency': 'USD'},
             {'Company': 'MODERNA, INC.', 'ISIN': 'US60770K1079', 'MIC': 'XNGS', 'Currency': 'USD'},
             {'Company': 'HIMS & HERS HEALTH, INC. CLASS A', 'ISIN': 'US4330001060', 'MIC': 'XNYS', 'Currency': 'USD'},
-            {'Company': 'VIKING THERAPEUTICS, INC.', 'ISIN': 'US92686J1060', 'MIC': 'XNGS', 'Currency': 'USD'}
+            {'Company': 'VIKING THERAPEUTICS, INC.', 'ISIN': 'US92686J1060', 'MIC': 'XNCM', 'Currency': 'USD'}
         ]
 
         # Convert to DataFrame when needed

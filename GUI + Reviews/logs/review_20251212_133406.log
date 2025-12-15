@@ -1,0 +1,70 @@
+2025-12-12 13:34:07,532 - werkzeug - WARNING -  * Debugger is active!
+2025-12-12 13:34:07,536 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-12 13:34:07,578 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 13:34:07] "GET /task-status/a56828f3-59e7-4574-96bc-3a9dbf8af15b HTTP/1.1" 200 -
+2025-12-12 13:34:09,406 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 13:34:09] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-12 13:34:09,409 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-12 13:34:09,411 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 13:34:09] "GET /task-status/af602935-62a9-4bd6-b1c9-73dbd54dd0f7 HTTP/1.1" 200 -
+2025-12-12 13:34:10,372 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-12-12 13:34:10,585 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-12 13:34:10,638 - Review.reviews.aetaw_review - INFO - 
+Initial weights calculated. Starting two-step capping process...
+2025-12-12 13:34:10,638 - Review.reviews.aetaw_review - INFO - 
+========== STEP 1: Cap all companies at 9% ==========
+2025-12-12 13:34:10,639 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 1 ---
+2025-12-12 13:34:10,641 - Review.reviews.aetaw_review - INFO - Capped 2 companies at 9%
+2025-12-12 13:34:10,641 - Review.reviews.aetaw_review - INFO - Excess weight: 30.75%
+2025-12-12 13:34:10,644 - Review.reviews.aetaw_review - INFO - Redistributed to 72 companies below 9%
+2025-12-12 13:34:10,645 - Review.reviews.aetaw_review - INFO -   WARNING: 3 companies now ABOVE 9% after redistribution
+2025-12-12 13:34:10,646 - Review.reviews.aetaw_review - INFO - Max weight change: 23.4948%
+2025-12-12 13:34:10,646 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 2 ---
+2025-12-12 13:34:10,647 - Review.reviews.aetaw_review - INFO - Capped 3 companies at 9%
+2025-12-12 13:34:10,647 - Review.reviews.aetaw_review - INFO - Excess weight: 1.87%
+2025-12-12 13:34:10,648 - Review.reviews.aetaw_review - INFO - Redistributed to 69 companies below 9%
+2025-12-12 13:34:10,648 - Review.reviews.aetaw_review - INFO - Max weight change: 0.9606%
+2025-12-12 13:34:10,648 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 3 ---
+2025-12-12 13:34:10,649 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-12 13:34:10,649 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 1 converged after 3 iterations
+2025-12-12 13:34:10,650 - Review.reviews.aetaw_review - INFO - 
+Step 1 complete: 5 companies at 9%
+2025-12-12 13:34:10,650 - Review.reviews.aetaw_review - INFO - 
+========== STEP 2: Apply collective constraint (36% rule) ==========
+2025-12-12 13:34:10,655 - Review.reviews.aetaw_review - INFO - Top 4 companies by initial market cap (protected at 9%):
+2025-12-12 13:34:10,655 - Review.reviews.aetaw_review - INFO -   1. ASML HOLDING: Initial 32.49%, After Step 1: 9.00%
+2025-12-12 13:34:10,656 - Review.reviews.aetaw_review - INFO -   2. SHELL PLC: Initial 16.26%, After Step 1: 9.00%
+2025-12-12 13:34:10,656 - Review.reviews.aetaw_review - INFO -   3. ING GROEP N.V.: Initial 6.23%, After Step 1: 9.00%
+2025-12-12 13:34:10,656 - Review.reviews.aetaw_review - INFO -   4. PROSUS: Initial 6.09%, After Step 1: 9.00%
+2025-12-12 13:34:10,656 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 1 ---
+2025-12-12 13:34:10,658 - Review.reviews.aetaw_review - INFO - Capped 3 companies (outside top 4) to 4.5%
+2025-12-12 13:34:10,658 - Review.reviews.aetaw_review - INFO - Total companies locked at 4.5%: 3
+2025-12-12 13:34:10,658 - Review.reviews.aetaw_review - INFO - Excess weight: 6.19%
+2025-12-12 13:34:10,659 - Review.reviews.aetaw_review - INFO - Redistributed to 67 companies (not locked at 4.5%)
+2025-12-12 13:34:10,659 - Review.reviews.aetaw_review - INFO - Max weight change: 4.5000%
+2025-12-12 13:34:10,660 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 2 ---
+2025-12-12 13:34:10,660 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-12 13:34:10,661 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 2 converged after 2 iterations
+2025-12-12 13:34:10,662 - Review.reviews.aetaw_review - INFO - 
+========== Final Results ==========
+2025-12-12 13:34:10,662 - Review.reviews.aetaw_review - INFO - Companies at 9.00%: 4
+2025-12-12 13:34:10,662 - Review.reviews.aetaw_review - INFO - Companies locked at 4.50%: 3
+2025-12-12 13:34:10,662 - Review.reviews.aetaw_review - INFO - Total weight OVER 4.5%: 36.00% (limit: 36.00%)
+2025-12-12 13:34:10,662 - Review.reviews.aetaw_review - INFO - [SUCCESS] Collective cap satisfied
+2025-12-12 13:34:10,663 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 72
+2025-12-12 13:34:10,668 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251212_133410.xlsx
+2025-12-12 13:34:10,908 - Review.reviews.aexat_review - INFO - Loading EOD data...
+2025-12-12 13:34:11,421 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 13:34:11] "GET /task-status/af602935-62a9-4bd6-b1c9-73dbd54dd0f7 HTTP/1.1" 200 -
+2025-12-12 13:34:11,888 - Review.reviews.aexat_review - INFO - Loading reference data...
+2025-12-12 13:34:11,968 - Review.reviews.aexat_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-12 13:34:12,034 - Review.reviews.aexat_review - INFO - Applied 15% capping. Companies capped: 63
+2025-12-12 13:34:12,040 - Review.reviews.aexat_review - INFO - Saving AEXAT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXAT_df_20251212_133412.xlsx
+2025-12-12 13:34:12,170 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-12-12 13:34:13,127 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-12-12 13:34:13,219 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20251212_133413.xlsx
+2025-12-12 13:34:13,391 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-12-12 13:34:13,418 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 13:34:13] "GET /task-status/af602935-62a9-4bd6-b1c9-73dbd54dd0f7 HTTP/1.1" 200 -
+2025-12-12 13:34:14,860 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-12-12 13:34:15,445 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 13:34:15] "GET /task-status/af602935-62a9-4bd6-b1c9-73dbd54dd0f7 HTTP/1.1" 200 -

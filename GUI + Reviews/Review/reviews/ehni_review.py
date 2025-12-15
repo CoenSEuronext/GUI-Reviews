@@ -52,7 +52,7 @@ def run_ehni_review(date, co_date, effective_date, index="EHNI", isin="FRESG0002
             {'Company': 'PAN AMERICAN SILVER', 'ISIN': 'CA6979001089', 'MIC': 'XNYS', 'Currency': 'USD'},
             {'Company': 'ALCOA CORP', 'ISIN': 'US0138721065', 'MIC': 'XNYS', 'Currency': 'USD'},
             {'Company': 'SOUTHERN COPPER CORP', 'ISIN': 'US84265V1052', 'MIC': 'XNYS', 'Currency': 'USD'},
-            {'Company': 'ENPHASE ENERGY INC.', 'ISIN': 'US29355A1079', 'MIC': 'XNGS', 'Currency': 'USD'},
+            {'Company': 'ENPHASE ENERGY INC.', 'ISIN': 'US29355A1079', 'MIC': 'XNMS', 'Currency': 'USD'},
             {'Company': 'FIRST SOLAR INC', 'ISIN': 'US3364331070', 'MIC': 'XNGS', 'Currency': 'USD'}
         ]
 

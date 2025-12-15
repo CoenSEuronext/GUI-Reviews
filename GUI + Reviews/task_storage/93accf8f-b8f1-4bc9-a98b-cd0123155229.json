@@ -1,0 +1,26 @@
+{
+  "task_id": "93accf8f-b8f1-4bc9-a98b-cd0123155229",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-12T17:38:55.270391",
+  "started_at": "2025-12-12T17:38:55.275329",
+  "completed_at": "2025-12-12T17:39:09.382078",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ses5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\SES5P_df_20251212_173909.xlsx"
+  },
+  "review_type": "SES5P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "SES5P",
+    "isin": "NL0015000EF0",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 14.104973
+}

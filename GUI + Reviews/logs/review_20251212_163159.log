@@ -1,0 +1,1435 @@
+2025-12-12 16:32:01,234 - werkzeug - WARNING -  * Debugger is active!
+2025-12-12 16:32:01,236 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-12 16:32:01,286 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:01] "GET /task-status/bacd97fb-80e6-467c-b33c-9b2d2f2d341e HTTP/1.1" 200 -
+2025-12-12 16:32:21,491 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:21] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-12 16:32:21,498 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-12 16:32:21,502 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:23,501 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:25,236 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-12-12 16:32:25,451 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-12 16:32:25,498 - Review.reviews.aetaw_review - INFO - 
+Initial weights calculated. Starting two-step capping process...
+2025-12-12 16:32:25,498 - Review.reviews.aetaw_review - INFO - 
+========== STEP 1: Cap all companies at 9% ==========
+2025-12-12 16:32:25,498 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 1 ---
+2025-12-12 16:32:25,498 - Review.reviews.aetaw_review - INFO - Capped 2 companies at 9%
+2025-12-12 16:32:25,498 - Review.reviews.aetaw_review - INFO - Excess weight: 30.75%
+2025-12-12 16:32:25,503 - Review.reviews.aetaw_review - INFO - Redistributed to 72 companies below 9%
+2025-12-12 16:32:25,503 - Review.reviews.aetaw_review - INFO -   WARNING: 3 companies now ABOVE 9% after redistribution
+2025-12-12 16:32:25,504 - Review.reviews.aetaw_review - INFO - Max weight change: 23.4948%
+2025-12-12 16:32:25,504 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 2 ---
+2025-12-12 16:32:25,505 - Review.reviews.aetaw_review - INFO - Capped 3 companies at 9%
+2025-12-12 16:32:25,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:25,505 - Review.reviews.aetaw_review - INFO - Excess weight: 1.87%
+2025-12-12 16:32:25,507 - Review.reviews.aetaw_review - INFO - Redistributed to 69 companies below 9%
+2025-12-12 16:32:25,508 - Review.reviews.aetaw_review - INFO - Max weight change: 0.9606%
+2025-12-12 16:32:25,508 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 3 ---
+2025-12-12 16:32:25,508 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-12 16:32:25,510 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 1 converged after 3 iterations
+2025-12-12 16:32:25,510 - Review.reviews.aetaw_review - INFO - 
+Step 1 complete: 5 companies at 9%
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO - 
+========== STEP 2: Apply collective constraint (36% rule) ==========
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO - Top 4 companies by initial market cap (protected at 9%):
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO -   1. ASML HOLDING: Initial 32.49%, After Step 1: 9.00%
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO -   2. SHELL PLC: Initial 16.26%, After Step 1: 9.00%
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO -   3. ING GROEP N.V.: Initial 6.23%, After Step 1: 9.00%
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO -   4. PROSUS: Initial 6.09%, After Step 1: 9.00%
+2025-12-12 16:32:25,511 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 1 ---
+2025-12-12 16:32:25,512 - Review.reviews.aetaw_review - INFO - Capped 3 companies (outside top 4) to 4.5%
+2025-12-12 16:32:25,513 - Review.reviews.aetaw_review - INFO - Total companies locked at 4.5%: 3
+2025-12-12 16:32:25,513 - Review.reviews.aetaw_review - INFO - Excess weight: 6.19%
+2025-12-12 16:32:25,514 - Review.reviews.aetaw_review - INFO - Redistributed to 67 companies (not locked at 4.5%)
+2025-12-12 16:32:25,514 - Review.reviews.aetaw_review - INFO - Max weight change: 4.5000%
+2025-12-12 16:32:25,514 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 2 ---
+2025-12-12 16:32:25,515 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-12 16:32:25,515 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 2 converged after 2 iterations
+2025-12-12 16:32:25,517 - Review.reviews.aetaw_review - INFO - 
+========== Final Results ==========
+2025-12-12 16:32:25,517 - Review.reviews.aetaw_review - INFO - Companies at 9.00%: 4
+2025-12-12 16:32:25,517 - Review.reviews.aetaw_review - INFO - Companies locked at 4.50%: 3
+2025-12-12 16:32:25,517 - Review.reviews.aetaw_review - INFO - Total weight OVER 4.5%: 36.00% (limit: 36.00%)
+2025-12-12 16:32:25,517 - Review.reviews.aetaw_review - INFO - [SUCCESS] Collective cap satisfied
+2025-12-12 16:32:25,518 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 72
+2025-12-12 16:32:25,522 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251212_163225.xlsx
+2025-12-12 16:32:25,604 - Review.reviews.aexat_review - INFO - Loading EOD data...
+2025-12-12 16:32:26,452 - Review.reviews.aexat_review - INFO - Loading reference data...
+2025-12-12 16:32:26,511 - Review.reviews.aexat_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-12 16:32:26,562 - Review.reviews.aexat_review - INFO - Applied 15% capping. Companies capped: 63
+2025-12-12 16:32:26,571 - Review.reviews.aexat_review - INFO - Saving AEXAT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXAT_df_20251212_163226.xlsx
+2025-12-12 16:32:26,653 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-12-12 16:32:27,486 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-12-12 16:32:27,502 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:27,571 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20251212_163227.xlsx
+2025-12-12 16:32:27,615 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-12-12 16:32:28,419 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-12-12 16:32:29,519 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:31,504 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:33,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:35,502 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 93 companies
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 272 companies
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 63 companies
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Total excluded (any criteria): 283 companies
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Eligible for selection: 17 companies
+2025-12-12 16:32:36,102 - Review.reviews.be1p_review - INFO - Selecting top 10 companies with highest FFMC from eligible companies...
+2025-12-12 16:32:36,131 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BE1P_df_20251212_163236.xlsx
+2025-12-12 16:32:36,252 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-12-12 16:32:37,369 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-12-12 16:32:37,538 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:38,886 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20251212_163238.xlsx
+2025-12-12 16:32:38,942 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-12 16:32:39,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:39,781 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-12 16:32:41,504 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:43,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:43] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:45,508 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:45] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:47,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:47] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:49,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:49] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Starting universe size: 40 stocks
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Universe size: 40 stocks
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Selected 40 constituents for c6rip index
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Weight range: 1.2500% to 2.5000%
+2025-12-12 16:32:50,046 - Review.reviews.c6rip_review - INFO - Total weight: 81.2500%
+2025-12-12 16:32:50,052 - Review.reviews.c6rip_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-12 16:32:50,057 - Review.reviews.c6rip_review - INFO - Inclusions: 0, Exclusions: 20
+2025-12-12 16:32:50,058 - Review.reviews.c6rip_review - INFO - Saving c6rip output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\c6rip_df_20251212_163250.xlsx
+2025-12-12 16:32:50,120 - Review.reviews.cacew_review - INFO - Loading EOD data...
+2025-12-12 16:32:51,203 - Review.reviews.cacew_review - INFO - Loading reference data...
+2025-12-12 16:32:51,290 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20251212_163251.xlsx
+2025-12-12 16:32:51,321 - Review.reviews.clamp_review - INFO - Loading EOD data...
+2025-12-12 16:32:51,503 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:51] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:52,169 - Review.reviews.clamp_review - INFO - Loading reference data...
+2025-12-12 16:32:53,502 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:53] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:55,510 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:55] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:56,342 - Review.reviews.clamp_review - INFO - Step 2a: Calculating FFMC and filtering top 150...
+2025-12-12 16:32:56,342 - Review.reviews.clamp_review - INFO - After FFMC screening: 150 companies remain (top 150)
+2025-12-12 16:32:56,342 - Review.reviews.clamp_review - INFO - Step 2b: Trust Metric screening...
+2025-12-12 16:32:56,342 - Review.reviews.clamp_review - INFO - Step 2c: NBR Overall Flag (UNGC Violators) screening...
+2025-12-12 16:32:56,353 - Review.reviews.clamp_review - INFO - Step 2d: Controversial Weapons screening...
+2025-12-12 16:32:56,358 - Review.reviews.clamp_review - INFO - Step 2e: Thermal Coal Mining screening...
+2025-12-12 16:32:56,362 - Review.reviews.clamp_review - INFO - Step 2f: Thermal Coal Power Generation screening...
+2025-12-12 16:32:56,364 - Review.reviews.clamp_review - INFO - Step 2g: Oil Sands screening...
+2025-12-12 16:32:56,366 - Review.reviews.clamp_review - INFO - Step 2h: Shale Oil and/or Gas screening...
+2025-12-12 16:32:56,366 - Review.reviews.clamp_review - INFO - Step 2i: Arctic Drilling screening...
+2025-12-12 16:32:56,370 - Review.reviews.clamp_review - INFO - Step 2j: Deepwater Drilling screening...
+2025-12-12 16:32:56,388 - Review.reviews.clamp_review - INFO - Step 3a: Carbon Budget Selection - selecting top 75 best Carbon Budget scorers...
+2025-12-12 16:32:56,390 - Review.reviews.clamp_review - INFO - Companies passing all exclusions: 139
+2025-12-12 16:32:56,391 - Review.reviews.clamp_review - INFO - Top 75 Carbon Budget scorers selected: 75
+2025-12-12 16:32:56,391 - Review.reviews.clamp_review - INFO - Step 3b: Ranking top 75 by FFMC...
+2025-12-12 16:32:56,392 - Review.reviews.clamp_review - INFO - Step 3c: Selecting top 40 by FFMC from top 75...
+2025-12-12 16:32:56,392 - Review.reviews.clamp_review - INFO - Final selection: 40 companies
+2025-12-12 16:32:57,502 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:57] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:32:59,503 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:32:59] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:01,503 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:01] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:03,535 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:03] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:05,504 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:05] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:07,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:07] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:09,503 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:09] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:11,503 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:11] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:13,518 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:13] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:15,506 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:15] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:17,503 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:17] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:19,510 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:19] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:21,513 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:21,546 - Review.reviews.clamp_review - INFO - Checking IsinCode FR0014004XR2 in index_eod_df
+2025-12-12 16:33:21,546 - Review.reviews.clamp_review - INFO - Found 1 matching rows
+2025-12-12 16:33:21,558 - Review.reviews.clamp_review - INFO - Saving CLAMP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLAMP_df_20251212_163321.xlsx
+2025-12-12 16:33:21,786 - Review.reviews.clew_review - INFO - Loading EOD data...
+2025-12-12 16:33:23,506 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:25,506 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:26,904 - Review.reviews.clew_review - INFO - Loading reference data...
+2025-12-12 16:33:26,968 - Review.reviews.clew_review - INFO - Saving CLEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLEW_df_20251212_163326.xlsx
+2025-12-12 16:33:27,028 - Review.reviews.darep_review - INFO - Loading EOD data...
+2025-12-12 16:33:27,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:28,004 - Review.reviews.darep_review - INFO - Loading reference data...
+2025-12-12 16:33:29,511 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:31,520 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:33,504 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:35,504 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:37,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:38,670 - Review.reviews.darep_review - INFO - Creating eligible companies dataframe...
+2025-12-12 16:33:38,670 - Review.reviews.darep_review - INFO - Companies with capping applied: 0
+2025-12-12 16:33:38,670 - Review.reviews.darep_review - INFO - Saving DAREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAREP_df_20251212_163338.xlsx
+2025-12-12 16:33:39,188 - Review.reviews.derep_review - INFO - Loading EOD data...
+2025-12-12 16:33:39,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:40,476 - Review.reviews.derep_review - INFO - Loading reference data...
+2025-12-12 16:33:41,511 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:43,514 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:43] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:45,509 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:45] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:47,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:47] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:49,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:49] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:51,515 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:51] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:52,318 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2025-12-12 16:33:52,320 - Review.reviews.derep_review - INFO - Companies with capping applied: 0
+2025-12-12 16:33:52,326 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEREP_df_20251212_163352.xlsx
+2025-12-12 16:33:52,840 - Review.reviews.dwrep_review - INFO - Loading EOD data...
+2025-12-12 16:33:53,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:53] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:55,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:55] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:57,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:57] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:33:58,761 - Review.reviews.dwrep_review - INFO - Loading reference data...
+2025-12-12 16:33:59,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:33:59] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:01,512 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:01] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:03,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:03] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:05,529 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:05] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:07,509 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:07] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:09,522 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:09] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:09,689 - Review.reviews.dwrep_review - INFO - Creating eligible companies dataframe...
+2025-12-12 16:34:09,689 - Review.reviews.dwrep_review - INFO - Total eligible companies: 392
+2025-12-12 16:34:09,689 - Review.reviews.dwrep_review - INFO - Total eligible FFMC: 1,895,429,077,395.73
+2025-12-12 16:34:09,689 - Review.reviews.dwrep_review - INFO - Weight sum check: 1.000000
+2025-12-12 16:34:09,705 - Review.reviews.dwrep_review - INFO - Saving DWREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DWREP_df_20251212_163409.xlsx
+2025-12-12 16:34:10,974 - Review.reviews.eaib_review - INFO - Loading EOD data...
+2025-12-12 16:34:11,506 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:11] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:13,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:13] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:14,622 - Review.reviews.eaib_review - INFO - Loading reference data...
+2025-12-12 16:34:15,521 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:15] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:15,788 - Review.reviews.eaib_review - INFO - Saving EAIB output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EAIB_df_20251212_163415.xlsx
+2025-12-12 16:34:15,826 - Review.reviews.edefp_review - INFO - Loading EOD data...
+2025-12-12 16:34:16,721 - Review.reviews.edefp_review - INFO - Loading reference data...
+2025-12-12 16:34:17,510 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:17] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:17,723 - Review.reviews.edefp_review - INFO - Saving EDEFP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDEFP_df_20251212_163417.xlsx
+2025-12-12 16:34:17,777 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-12-12 16:34:19,512 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:19] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:19,838 - Review.reviews.edwp_review - INFO - EDWP: Processing 13494 companies after filtering
+2025-12-12 16:34:19,895 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-12-12 16:34:19,897 - Review.reviews.edwp_review - INFO - Total companies selected: 1537
+2025-12-12 16:34:19,898 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.83%
+2025-12-12 16:34:19,900 - Review.reviews.edwp_review - INFO - DEUP: Filtering out CA and US ISINs
+2025-12-12 16:34:19,903 - Review.reviews.edwp_review - INFO - DEUP: Processing 3193 companies after filtering
+2025-12-12 16:34:19,930 - Review.reviews.edwp_review - INFO - 
+DEUP Selection Summary:
+2025-12-12 16:34:19,931 - Review.reviews.edwp_review - INFO - Total companies selected: 421
+2025-12-12 16:34:19,932 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.60%
+2025-12-12 16:34:19,934 - Review.reviews.edwp_review - INFO - DEZP: Filtering out CA and US ISINs
+2025-12-12 16:34:19,936 - Review.reviews.edwp_review - INFO - DEZP: Processing 1275 companies after filtering
+2025-12-12 16:34:19,953 - Review.reviews.edwp_review - INFO - 
+DEZP Selection Summary:
+2025-12-12 16:34:19,953 - Review.reviews.edwp_review - INFO - Total companies selected: 173
+2025-12-12 16:34:19,954 - Review.reviews.edwp_review - INFO - Total FFMC covered: 87.88%
+2025-12-12 16:34:19,958 - Review.reviews.edwp_review - INFO - DAPPR: Processing 5105 companies after filtering
+2025-12-12 16:34:19,970 - Review.reviews.edwp_review - INFO - 
+DAPPR Selection Summary:
+2025-12-12 16:34:19,972 - Review.reviews.edwp_review - INFO - Total companies selected: 491
+2025-12-12 16:34:19,973 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.73%
+2025-12-12 16:34:19,979 - Review.reviews.edwp_review - INFO - DNAP: Processing 4893 companies after filtering
+2025-12-12 16:34:19,986 - Review.reviews.edwp_review - INFO - 
+DNAP Selection Summary:
+2025-12-12 16:34:19,986 - Review.reviews.edwp_review - INFO - Total companies selected: 447
+2025-12-12 16:34:19,987 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.77%
+2025-12-12 16:34:19,992 - Review.reviews.edwp_review - INFO - DASP: Processing 4106 companies after filtering
+2025-12-12 16:34:19,995 - Review.reviews.edwp_review - INFO - 
+DASP Selection Summary:
+2025-12-12 16:34:19,995 - Review.reviews.edwp_review - INFO - Total companies selected: 386
+2025-12-12 16:34:19,995 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.51%
+2025-12-12 16:34:20,007 - Review.reviews.edwp_review - INFO - DPAP: Processing 999 companies after filtering
+2025-12-12 16:34:20,013 - Review.reviews.edwp_review - INFO - 
+DPAP Selection Summary:
+2025-12-12 16:34:20,014 - Review.reviews.edwp_review - INFO - Total companies selected: 102
+2025-12-12 16:34:20,014 - Review.reviews.edwp_review - INFO - Total FFMC covered: 86.15%
+2025-12-12 16:34:20,018 - Review.reviews.edwp_review - INFO - EUSP: Processing 4393 companies after filtering
+2025-12-12 16:34:20,026 - Review.reviews.edwp_review - INFO - 
+EUSP Selection Summary:
+2025-12-12 16:34:20,026 - Review.reviews.edwp_review - INFO - Total companies selected: 351
+2025-12-12 16:34:20,028 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.02%
+2025-12-12 16:34:20,032 - Review.reviews.edwp_review - INFO - EJPP: Processing 3656 companies after filtering
+2025-12-12 16:34:20,038 - Review.reviews.edwp_review - INFO - 
+EJPP Selection Summary:
+2025-12-12 16:34:20,040 - Review.reviews.edwp_review - INFO - Total companies selected: 325
+2025-12-12 16:34:20,041 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.04%
+2025-12-12 16:34:20,043 - Review.reviews.edwp_review - INFO - ECHP: Processing 157 companies after filtering
+2025-12-12 16:34:20,046 - Review.reviews.edwp_review - INFO - 
+ECHP Selection Summary:
+2025-12-12 16:34:20,047 - Review.reviews.edwp_review - INFO - Total companies selected: 24
+2025-12-12 16:34:20,048 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.70%
+2025-12-12 16:34:20,050 - Review.reviews.edwp_review - INFO - EUKP: Processing 841 companies after filtering
+2025-12-12 16:34:20,055 - Review.reviews.edwp_review - INFO - 
+EUKP Selection Summary:
+2025-12-12 16:34:20,057 - Review.reviews.edwp_review - INFO - Total companies selected: 73
+2025-12-12 16:34:20,057 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.06%
+2025-12-12 16:34:20,060 - Review.reviews.edwp_review - INFO - CANP: Processing 500 companies after filtering
+2025-12-12 16:34:20,063 - Review.reviews.edwp_review - INFO - 
+CANP Selection Summary:
+2025-12-12 16:34:20,064 - Review.reviews.edwp_review - INFO - Total companies selected: 75
+2025-12-12 16:34:20,065 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.20%
+2025-12-12 16:34:20,074 - Review.reviews.edwp_review - INFO - 
+Global Selection Summary:
+2025-12-12 16:34:20,074 - Review.reviews.edwp_review - INFO - Total companies selected: 1537
+2025-12-12 16:34:20,074 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.83%
+2025-12-12 16:34:20,074 - Review.reviews.edwp_review - INFO - 
+MIC-level Summary:
+2025-12-12 16:34:20,074 - Review.reviews.edwp_review - INFO -       ISIN          FFMC  EDWP_selection
+MIC                                     
+ALXP     1  8.636321e+08               0
+BATS     1  2.298240e+10               1
+DSME     1  1.117565e+07               0
+FSME     2  4.179218e+08               0
+MERK     2  2.709760e+08               0
+MTAA   251  6.566315e+11              26
+NEOE     1  4.911360e+07               0
+SSME    15  4.087461e+09               0
+WBAH    25  7.232654e+10               8
+XAMS    83  1.210451e+12              18
+XASE     3  8.042835e+09               0
+XASX   943  1.469870e+12              80
+XBRU    65  2.388090e+11              14
+XCSE    97  3.691187e+11              16
+XESM     3  2.059088e+09               3
+XETR   239  1.735885e+12              33
+XHEL   136  2.387672e+11              15
+XHKG   288  5.378789e+11              26
+XLIS    17  4.049522e+10               5
+XLON   841  2.488872e+12              73
+XMAD   101  6.657485e+11              13
+XNAS     2  4.299946e+11               2
+XNCM    33  9.086017e+10               1
+XNGS  2579  2.928931e+13             174
+XNMS    61  1.866260e+11               2
+XNYS  1714  2.595318e+13             350
+XNZE    56  5.624452e+10              16
+XOSL   221  1.736930e+11              40
+XPAR   352  1.937294e+12              29
+XSES   162  3.321319e+11              26
+XSTO   596  7.080121e+11              68
+XSWX   157  1.722407e+12              26
+XTAE   291  2.691930e+11              72
+XTKS  3656  5.393683e+12             325
+XTSE   499  2.536982e+12              75
+2025-12-12 16:34:20,109 - Review.reviews.edwp_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20251212_163420.xlsx
+2025-12-12 16:34:20,215 - Review.reviews.edwp_review - INFO - 
+EDWP Changes Summary:
+2025-12-12 16:34:20,216 - Review.reviews.edwp_review - INFO - Inclusions: 69
+2025-12-12 16:34:20,216 - Review.reviews.edwp_review - INFO - Exclusions: 111
+2025-12-12 16:34:20,244 - Review.reviews.edwp_review - INFO - 
+DEUP Changes Summary:
+2025-12-12 16:34:20,244 - Review.reviews.edwp_review - INFO - Inclusions: 21
+2025-12-12 16:34:20,244 - Review.reviews.edwp_review - INFO - Exclusions: 35
+2025-12-12 16:34:20,262 - Review.reviews.edwp_review - INFO - 
+DEZP Changes Summary:
+2025-12-12 16:34:20,263 - Review.reviews.edwp_review - INFO - Inclusions: 8
+2025-12-12 16:34:20,263 - Review.reviews.edwp_review - INFO - Exclusions: 14
+2025-12-12 16:34:20,339 - Review.reviews.edwp_review - INFO - 
+DAPPR Changes Summary:
+2025-12-12 16:34:20,340 - Review.reviews.edwp_review - INFO - Inclusions: 25
+2025-12-12 16:34:20,340 - Review.reviews.edwp_review - INFO - Exclusions: 38
+2025-12-12 16:34:20,377 - Review.reviews.edwp_review - INFO - 
+DNAP Changes Summary:
+2025-12-12 16:34:20,377 - Review.reviews.edwp_review - INFO - Inclusions: 20
+2025-12-12 16:34:20,377 - Review.reviews.edwp_review - INFO - Exclusions: 34
+2025-12-12 16:34:20,417 - Review.reviews.edwp_review - INFO - 
+DASP Changes Summary:
+2025-12-12 16:34:20,418 - Review.reviews.edwp_review - INFO - Inclusions: 16
+2025-12-12 16:34:20,418 - Review.reviews.edwp_review - INFO - Exclusions: 31
+2025-12-12 16:34:20,429 - Review.reviews.edwp_review - INFO - 
+DPAP Changes Summary:
+2025-12-12 16:34:20,430 - Review.reviews.edwp_review - INFO - Inclusions: 9
+2025-12-12 16:34:20,430 - Review.reviews.edwp_review - INFO - Exclusions: 4
+2025-12-12 16:34:20,453 - Review.reviews.edwp_review - INFO - 
+EUSP Changes Summary:
+2025-12-12 16:34:20,453 - Review.reviews.edwp_review - INFO - Inclusions: 9
+2025-12-12 16:34:20,454 - Review.reviews.edwp_review - INFO - Exclusions: 23
+2025-12-12 16:34:20,480 - Review.reviews.edwp_review - INFO - 
+EJPP Changes Summary:
+2025-12-12 16:34:20,480 - Review.reviews.edwp_review - INFO - Inclusions: 13
+2025-12-12 16:34:20,480 - Review.reviews.edwp_review - INFO - Exclusions: 29
+2025-12-12 16:34:20,492 - Review.reviews.edwp_review - INFO - 
+ECHP Changes Summary:
+2025-12-12 16:34:20,493 - Review.reviews.edwp_review - INFO - Inclusions: 1
+2025-12-12 16:34:20,493 - Review.reviews.edwp_review - INFO - Exclusions: 2
+2025-12-12 16:34:20,507 - Review.reviews.edwp_review - INFO - 
+EUKP Changes Summary:
+2025-12-12 16:34:20,507 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-12-12 16:34:20,507 - Review.reviews.edwp_review - INFO - Exclusions: 7
+2025-12-12 16:34:20,523 - Review.reviews.edwp_review - INFO - 
+CANP Changes Summary:
+2025-12-12 16:34:20,524 - Review.reviews.edwp_review - INFO - Inclusions: 4
+2025-12-12 16:34:20,524 - Review.reviews.edwp_review - INFO - Exclusions: 3
+2025-12-12 16:34:21,540 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:23,586 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:25,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:26,071 - Review.reviews.edwp_review - INFO - Saving individual composition file for EDWP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,205 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEUP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,255 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEZP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,289 - Review.reviews.edwp_review - INFO - Saving individual composition file for DAPPR to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPR_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,377 - Review.reviews.edwp_review - INFO - Saving individual composition file for DNAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,453 - Review.reviews.edwp_review - INFO - Saving individual composition file for DASP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,490 - Review.reviews.edwp_review - INFO - Saving individual composition file for DPAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,538 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUSP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,602 - Review.reviews.edwp_review - INFO - Saving individual composition file for EJPP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,639 - Review.reviews.edwp_review - INFO - Saving individual composition file for ECHP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,677 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUKP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,706 - Review.reviews.edwp_review - INFO - Saving individual composition file for CANP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANP_Composition_20251212_163420.xlsx
+2025-12-12 16:34:26,750 - Review.reviews.edwp_review - INFO - Individual composition files saved: 12
+2025-12-12 16:34:26,769 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+2025-12-12 16:34:27,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:28,922 - Review.reviews.edwpt_review - INFO - EDWPT: Processing 13494 companies after filtering
+2025-12-12 16:34:28,993 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2025-12-12 16:34:28,995 - Review.reviews.edwpt_review - INFO - Total companies selected: 5313
+2025-12-12 16:34:28,996 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.82%
+2025-12-12 16:34:29,001 - Review.reviews.edwpt_review - INFO - DEUPT: Filtering out CA and US ISINs
+2025-12-12 16:34:29,004 - Review.reviews.edwpt_review - INFO - DEUPT: Processing 3193 companies after filtering
+2025-12-12 16:34:29,044 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2025-12-12 16:34:29,046 - Review.reviews.edwpt_review - INFO - Total companies selected: 1252
+2025-12-12 16:34:29,048 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.58%
+2025-12-12 16:34:29,054 - Review.reviews.edwpt_review - INFO - DEZPT: Filtering out CA and US ISINs
+2025-12-12 16:34:29,058 - Review.reviews.edwpt_review - INFO - DEZPT: Processing 1275 companies after filtering
+2025-12-12 16:34:29,092 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2025-12-12 16:34:29,092 - Review.reviews.edwpt_review - INFO - Total companies selected: 495
+2025-12-12 16:34:29,092 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.46%
+2025-12-12 16:34:29,092 - Review.reviews.edwpt_review - INFO - DAPPT: Processing 5105 companies after filtering
+2025-12-12 16:34:29,126 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2025-12-12 16:34:29,126 - Review.reviews.edwpt_review - INFO - Total companies selected: 1895
+2025-12-12 16:34:29,129 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2025-12-12 16:34:29,129 - Review.reviews.edwpt_review - INFO - DNAPT: Processing 4893 companies after filtering
+2025-12-12 16:34:29,140 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2025-12-12 16:34:29,140 - Review.reviews.edwpt_review - INFO - Total companies selected: 1670
+2025-12-12 16:34:29,140 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.15%
+2025-12-12 16:34:29,160 - Review.reviews.edwpt_review - INFO - DASPT: Processing 4106 companies after filtering
+2025-12-12 16:34:29,173 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2025-12-12 16:34:29,173 - Review.reviews.edwpt_review - INFO - Total companies selected: 1535
+2025-12-12 16:34:29,173 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.05%
+2025-12-12 16:34:29,182 - Review.reviews.edwpt_review - INFO - DPAPT: Processing 999 companies after filtering
+2025-12-12 16:34:29,190 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2025-12-12 16:34:29,190 - Review.reviews.edwpt_review - INFO - Total companies selected: 352
+2025-12-12 16:34:29,190 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.03%
+2025-12-12 16:34:29,190 - Review.reviews.edwpt_review - INFO - EUSPT: Processing 4393 companies after filtering
+2025-12-12 16:34:29,207 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2025-12-12 16:34:29,207 - Review.reviews.edwpt_review - INFO - Total companies selected: 1401
+2025-12-12 16:34:29,207 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-12-12 16:34:29,207 - Review.reviews.edwpt_review - INFO - EJPPT: Processing 3656 companies after filtering
+2025-12-12 16:34:29,221 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2025-12-12 16:34:29,223 - Review.reviews.edwpt_review - INFO - Total companies selected: 1349
+2025-12-12 16:34:29,223 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2025-12-12 16:34:29,226 - Review.reviews.edwpt_review - INFO - ECHPT: Processing 157 companies after filtering
+2025-12-12 16:34:29,226 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2025-12-12 16:34:29,226 - Review.reviews.edwpt_review - INFO - Total companies selected: 76
+2025-12-12 16:34:29,226 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.03%
+2025-12-12 16:34:29,239 - Review.reviews.edwpt_review - INFO - EUKPT: Processing 841 companies after filtering
+2025-12-12 16:34:29,240 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2025-12-12 16:34:29,240 - Review.reviews.edwpt_review - INFO - Total companies selected: 267
+2025-12-12 16:34:29,240 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2025-12-12 16:34:29,249 - Review.reviews.edwpt_review - INFO - CANPT: Processing 500 companies after filtering
+2025-12-12 16:34:29,251 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2025-12-12 16:34:29,251 - Review.reviews.edwpt_review - INFO - Total companies selected: 223
+2025-12-12 16:34:29,256 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2025-12-12 16:34:29,256 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2025-12-12 16:34:29,256 - Review.reviews.edwpt_review - INFO - Total companies selected: 5313
+2025-12-12 16:34:29,269 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.82%
+2025-12-12 16:34:29,273 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2025-12-12 16:34:29,273 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  8.636321e+08                0
+BATS     1  2.298240e+10                1
+DSME     1  1.117565e+07                0
+FSME     2  4.179218e+08                2
+MERK     2  2.709760e+08                2
+MTAA   251  6.566315e+11               84
+NEOE     1  4.911360e+07                0
+SSME    15  4.087461e+09               11
+WBAH    25  7.232654e+10               17
+XAMS    83  1.210451e+12               46
+XASE     3  8.042835e+09                3
+XASX   943  1.469870e+12              315
+XBRU    65  2.388090e+11               35
+XCSE    97  3.691187e+11               36
+XESM     3  2.059088e+09                3
+XETR   239  1.735885e+12              105
+XHEL   136  2.387672e+11               49
+XHKG   288  5.378789e+11               92
+XLIS    17  4.049522e+10               12
+XLON   841  2.488872e+12              267
+XMAD   101  6.657485e+11               42
+XNAS     2  4.299946e+11                2
+XNCM    33  9.086017e+10               26
+XNGS  2579  2.928931e+13              673
+XNMS    61  1.866260e+11               58
+XNYS  1714  2.595318e+13             1083
+XNZE    56  5.624452e+10               36
+XOSL   221  1.736930e+11              116
+XPAR   352  1.937294e+12               90
+XSES   162  3.321319e+11               79
+XSTO   596  7.080121e+11              200
+XSWX   157  1.722407e+12               86
+XTAE   291  2.691930e+11              170
+XTKS  3656  5.393683e+12             1349
+XTSE   499  2.536982e+12              223
+2025-12-12 16:34:29,306 - Review.reviews.edwpt_review - INFO - Saving main output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20251212_163429.xlsx
+2025-12-12 16:34:29,555 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:29,668 - Review.reviews.edwpt_review - INFO - 
+EDWPT Changes Summary:
+2025-12-12 16:34:29,668 - Review.reviews.edwpt_review - INFO - Inclusions: 209
+2025-12-12 16:34:29,668 - Review.reviews.edwpt_review - INFO - Exclusions: 254
+2025-12-12 16:34:29,723 - Review.reviews.edwpt_review - INFO - 
+DEUPT Changes Summary:
+2025-12-12 16:34:29,723 - Review.reviews.edwpt_review - INFO - Inclusions: 52
+2025-12-12 16:34:29,723 - Review.reviews.edwpt_review - INFO - Exclusions: 81
+2025-12-12 16:34:29,754 - Review.reviews.edwpt_review - INFO - 
+DEZPT Changes Summary:
+2025-12-12 16:34:29,755 - Review.reviews.edwpt_review - INFO - Inclusions: 28
+2025-12-12 16:34:29,755 - Review.reviews.edwpt_review - INFO - Exclusions: 34
+2025-12-12 16:34:29,882 - Review.reviews.edwpt_review - INFO - 
+DAPPT Changes Summary:
+2025-12-12 16:34:29,882 - Review.reviews.edwpt_review - INFO - Inclusions: 63
+2025-12-12 16:34:29,883 - Review.reviews.edwpt_review - INFO - Exclusions: 95
+2025-12-12 16:34:30,049 - Review.reviews.edwpt_review - INFO - 
+DNAPT Changes Summary:
+2025-12-12 16:34:30,049 - Review.reviews.edwpt_review - INFO - Inclusions: 73
+2025-12-12 16:34:30,049 - Review.reviews.edwpt_review - INFO - Exclusions: 87
+2025-12-12 16:34:30,135 - Review.reviews.edwpt_review - INFO - 
+DASPT Changes Summary:
+2025-12-12 16:34:30,136 - Review.reviews.edwpt_review - INFO - Inclusions: 32
+2025-12-12 16:34:30,136 - Review.reviews.edwpt_review - INFO - Exclusions: 85
+2025-12-12 16:34:30,161 - Review.reviews.edwpt_review - INFO - 
+DPAPT Changes Summary:
+2025-12-12 16:34:30,161 - Review.reviews.edwpt_review - INFO - Inclusions: 33
+2025-12-12 16:34:30,162 - Review.reviews.edwpt_review - INFO - Exclusions: 9
+2025-12-12 16:34:30,247 - Review.reviews.edwpt_review - INFO - 
+EUSPT Changes Summary:
+2025-12-12 16:34:30,247 - Review.reviews.edwpt_review - INFO - Inclusions: 62
+2025-12-12 16:34:30,248 - Review.reviews.edwpt_review - INFO - Exclusions: 73
+2025-12-12 16:34:30,357 - Review.reviews.edwpt_review - INFO - 
+EJPPT Changes Summary:
+2025-12-12 16:34:30,357 - Review.reviews.edwpt_review - INFO - Inclusions: 18
+2025-12-12 16:34:30,357 - Review.reviews.edwpt_review - INFO - Exclusions: 71
+2025-12-12 16:34:30,367 - Review.reviews.edwpt_review - INFO - 
+ECHPT Changes Summary:
+2025-12-12 16:34:30,367 - Review.reviews.edwpt_review - INFO - Inclusions: 3
+2025-12-12 16:34:30,367 - Review.reviews.edwpt_review - INFO - Exclusions: 5
+2025-12-12 16:34:30,393 - Review.reviews.edwpt_review - INFO - 
+EUKPT Changes Summary:
+2025-12-12 16:34:30,393 - Review.reviews.edwpt_review - INFO - Inclusions: 8
+2025-12-12 16:34:30,393 - Review.reviews.edwpt_review - INFO - Exclusions: 14
+2025-12-12 16:34:30,415 - Review.reviews.edwpt_review - INFO - 
+CANPT Changes Summary:
+2025-12-12 16:34:30,416 - Review.reviews.edwpt_review - INFO - Inclusions: 8
+2025-12-12 16:34:30,416 - Review.reviews.edwpt_review - INFO - Exclusions: 7
+2025-12-12 16:34:31,588 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:33,605 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:35,508 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:36,183 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EDWPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:36,547 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEUPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:36,650 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEZPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:36,733 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DAPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:36,877 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DNAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,000 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DASPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,172 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DPAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,229 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUSPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,340 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EJPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,472 - Review.reviews.edwpt_review - INFO - Saving individual composition file for ECHPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,502 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUKPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,524 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:37,556 - Review.reviews.edwpt_review - INFO - Saving individual composition file for CANPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANPT_Composition_20251212_163429.xlsx
+2025-12-12 16:34:37,618 - Review.reviews.edwpt_review - INFO - Main file successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPT_df_20251212_163429.xlsx
+2025-12-12 16:34:37,619 - Review.reviews.edwpt_review - INFO - Individual composition files saved: 12
+2025-12-12 16:34:37,638 - Review.reviews.eedf_review - INFO - Loading EOD data...
+2025-12-12 16:34:38,899 - Review.reviews.eedf_review - INFO - Loading reference data...
+2025-12-12 16:34:39,512 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:40,040 - Review.reviews.eedf_review - INFO - Saving EEDF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEDF_df_20251212_163440.xlsx
+2025-12-12 16:34:40,085 - Review.reviews.eefap_review - INFO - Loading EOD data...
+2025-12-12 16:34:41,076 - Review.reviews.eefap_review - INFO - Loading reference data...
+2025-12-12 16:34:41,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:42,105 - Review.reviews.eefap_review - INFO - Saving EEFAP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEFAP_df_20251212_163442.xlsx
+2025-12-12 16:34:42,139 - Review.reviews.eemsc_review - INFO - Starting EEMSC review calculation
+2025-12-12 16:34:43,510 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:43] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:44,179 - Review.reviews.eemsc_review - INFO - Found 1018 existing companies in EEMSC
+2025-12-12 16:34:44,184 - Review.reviews.eemsc_review - INFO - 
+Overall EEMSC Selection Summary:
+2025-12-12 16:34:44,184 - Review.reviews.eemsc_review - INFO - Total companies selected: 1092
+2025-12-12 16:34:44,184 - Review.reviews.eemsc_review - INFO -   - Existing companies selected: 1016
+2025-12-12 16:34:44,184 - Review.reviews.eemsc_review - INFO -   - New companies selected: 76
+2025-12-12 16:34:44,184 - Review.reviews.eemsc_review - INFO - Total FFMC covered: 30.92%
+2025-12-12 16:34:44,184 - Review.reviews.eemsc_review - INFO - 
+Applying proportional capping
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO -   Total companies: 1092
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:34:44,189 - utils.capping_proportional - INFO -   Max weight after capping: 0.015222
+2025-12-12 16:34:44,207 - Review.reviews.eemsc_review - INFO - 
+EEMSC Changes Summary:
+2025-12-12 16:34:44,207 - Review.reviews.eemsc_review - INFO - Inclusions: 76
+2025-12-12 16:34:44,207 - Review.reviews.eemsc_review - INFO - Exclusions: 76
+2025-12-12 16:34:44,207 - Review.reviews.eemsc_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251212_163444.xlsx
+2025-12-12 16:34:44,699 - Review.reviews.eemsc_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251212_163444.xlsx
+2025-12-12 16:34:44,710 - Review.reviews.ees2_review - INFO - Loading EOD data...
+2025-12-12 16:34:45,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:45] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:45,640 - Review.reviews.ees2_review - INFO - Loading reference data...
+2025-12-12 16:34:46,600 - Review.reviews.ees2_review - INFO - Saving EES2 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EES2_df_20251212_163446.xlsx
+2025-12-12 16:34:46,645 - Review.reviews.eesf_review - INFO - Loading EOD data...
+2025-12-12 16:34:47,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:47] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:47,724 - Review.reviews.eesf_review - INFO - Loading reference data...
+2025-12-12 16:34:48,822 - Review.reviews.eesf_review - INFO - Saving EESF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESF_df_20251212_163448.xlsx
+2025-12-12 16:34:48,879 - Review.reviews.eesl_review - INFO - Starting EESL review calculation
+2025-12-12 16:34:49,506 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:49] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:51,423 - Review.reviews.eesl_review - INFO - Found 843 existing companies in EESL
+2025-12-12 16:34:51,439 - Review.reviews.eesl_review - INFO - 
+Overall EESL Selection Summary:
+2025-12-12 16:34:51,439 - Review.reviews.eesl_review - INFO - Total companies selected: 920
+2025-12-12 16:34:51,439 - Review.reviews.eesl_review - INFO -   - Existing companies selected: 837
+2025-12-12 16:34:51,439 - Review.reviews.eesl_review - INFO -   - New companies selected: 83
+2025-12-12 16:34:51,439 - Review.reviews.eesl_review - INFO - Total FFMC covered: 15.28%
+2025-12-12 16:34:51,439 - Review.reviews.eesl_review - INFO - 
+Applying proportional capping
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO -   Total companies: 920
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:34:51,439 - utils.capping_proportional - INFO -   Max weight after capping: 0.013594
+2025-12-12 16:34:51,459 - Review.reviews.eesl_review - INFO - 
+EESL Changes Summary:
+2025-12-12 16:34:51,459 - Review.reviews.eesl_review - INFO - Inclusions: 83
+2025-12-12 16:34:51,459 - Review.reviews.eesl_review - INFO - Exclusions: 79
+2025-12-12 16:34:51,459 - Review.reviews.eesl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESL_Review_20251212_163451.xlsx
+2025-12-12 16:34:51,570 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:51] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:51,972 - Review.reviews.eesl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EESL_Review_20251212_163451.xlsx
+2025-12-12 16:34:51,988 - Review.reviews.efesp_review - INFO - Loading EOD data...
+2025-12-12 16:34:52,939 - Review.reviews.efesp_review - INFO - Loading reference data...
+2025-12-12 16:34:53,522 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:53] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:55,539 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:55] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:57,508 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:57] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:34:59,538 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:34:59] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:01,511 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:01] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:03,519 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:03] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:03,592 - Review.reviews.efesp_review - INFO - Creating eligible companies dataframe...
+2025-12-12 16:35:03,600 - Review.reviews.efesp_review - INFO - Group 1 (ICB 501010): 5 selected out of 22 companies
+2025-12-12 16:35:03,603 - Review.reviews.efesp_review - INFO - Group 2 (ICB 502010): 5 selected out of 15 companies
+2025-12-12 16:35:03,605 - Review.reviews.efesp_review - INFO - Group 3 (ICB 502040): 5 selected out of 16 companies
+2025-12-12 16:35:03,606 - Review.reviews.efesp_review - INFO - Group 4 (ICB 502020): 5 selected out of 12 companies
+2025-12-12 16:35:03,607 - Review.reviews.efesp_review - INFO - Group 5 (ICB 101010): 5 selected out of 14 companies
+2025-12-12 16:35:03,607 - Review.reviews.efesp_review - INFO - Group 6 (ICB 502060): 5 selected out of 11 companies
+2025-12-12 16:35:03,617 - Review.reviews.efesp_review - INFO - Total eligible companies: 90
+2025-12-12 16:35:03,617 - Review.reviews.efesp_review - INFO - Total selected companies: 30
+2025-12-12 16:35:03,617 - Review.reviews.efesp_review - INFO - Total selected FFMC: 1,671,753,243,082.22
+2025-12-12 16:35:03,618 - Review.reviews.efesp_review - INFO - Weight sum check for selected companies: 1.000000
+2025-12-12 16:35:03,624 - Review.reviews.efesp_review - INFO - Saving EFESP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EFESP_df_20251212_163503.xlsx
+2025-12-12 16:35:04,011 - Review.reviews.efmep_review - INFO - Loading EOD data...
+2025-12-12 16:35:05,396 - Review.reviews.efmep_review - INFO - Loading reference data...
+2025-12-12 16:35:05,516 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:05] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:06,222 - Review.reviews.efmep_review - INFO - Total universe: 300 companies
+2025-12-12 16:35:06,222 - Review.reviews.efmep_review - INFO - Excluded by MIC filter: 64 companies
+2025-12-12 16:35:06,222 - Review.reviews.efmep_review - INFO - Eligible for selection: 236 companies
+2025-12-12 16:35:06,222 - Review.reviews.efmep_review - INFO - Selecting top 50 companies with highest FFMC from eligible companies...
+2025-12-12 16:35:06,239 - Review.reviews.efmep_review - INFO - Saving EFMEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EFMEP_df_20251212_163506.xlsx
+2025-12-12 16:35:06,329 - Review.reviews.ehcf_review - INFO - Loading EOD data...
+2025-12-12 16:35:07,273 - Review.reviews.ehcf_review - INFO - Loading reference data...
+2025-12-12 16:35:07,512 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:07] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:08,056 - Review.reviews.ehcf_review - INFO - Saving EHCF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EHCF_df_20251212_163508.xlsx
+2025-12-12 16:35:08,096 - Review.reviews.ehni_review - INFO - Loading EOD data...
+2025-12-12 16:35:08,980 - Review.reviews.ehni_review - INFO - Loading reference data...
+2025-12-12 16:35:09,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:09] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:11,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:11] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:12,356 - Review.reviews.ehni_review - INFO - Merging Sustainalytics data...
+2025-12-12 16:35:12,362 - Review.reviews.ehni_review - INFO - Sustainalytics merge completed. Added 17 columns.
+2025-12-12 16:35:12,362 - Review.reviews.ehni_review - INFO - Applying exclusion criteria...
+2025-12-12 16:35:12,367 - Review.reviews.ehni_review - INFO - Exclusion criteria applied. 0 companies excluded.
+2025-12-12 16:35:12,375 - Review.reviews.ehni_review - INFO - Saving EHNI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EHNI_df_20251212_163512.xlsx
+2025-12-12 16:35:12,412 - Review.reviews.eiapr_review - INFO - Loading EOD data...
+2025-12-12 16:35:13,509 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:13] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:13,573 - Review.reviews.eiapr_review - INFO - Loading reference data...
+2025-12-12 16:35:14,306 - Review.reviews.eiapr_review - INFO - Saving EIAPR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EIAPR_df_20251212_163514.xlsx
+2025-12-12 16:35:14,340 - Review.reviews.elecp_review - INFO - Loading EOD data...
+2025-12-12 16:35:15,510 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:15] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:15,593 - Review.reviews.elecp_review - INFO - Loading reference data...
+2025-12-12 16:35:16,390 - Review.reviews.elecp_review - INFO - Saving ELECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELECP_df_20251212_163516.xlsx
+2025-12-12 16:35:16,425 - Review.reviews.eltfp_review - INFO - Loading EOD data...
+2025-12-12 16:35:17,307 - Review.reviews.eltfp_review - INFO - Loading reference data...
+2025-12-12 16:35:17,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:17] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:18,139 - Review.reviews.eltfp_review - INFO - Saving ELTFP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELTFP_df_20251212_163518.xlsx
+2025-12-12 16:35:18,178 - Review.reviews.elux_review - INFO - Loading EOD data...
+2025-12-12 16:35:19,056 - Review.reviews.elux_review - INFO - Loading reference data...
+2025-12-12 16:35:19,529 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:19] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:19,856 - Review.reviews.elux_review - INFO - Saving ELUX output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUX_df_20251212_163519.xlsx
+2025-12-12 16:35:19,897 - Review.reviews.eluxp_review - INFO - Loading EOD data...
+2025-12-12 16:35:20,806 - Review.reviews.eluxp_review - INFO - Loading reference data...
+2025-12-12 16:35:21,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:21,641 - Review.reviews.eluxp_review - INFO - Saving ELUXP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUXP_df_20251212_163521.xlsx
+2025-12-12 16:35:21,670 - Review.reviews.emls_review - INFO - Loading EOD data...
+2025-12-12 16:35:22,557 - Review.reviews.emls_review - INFO - Loading reference data...
+2025-12-12 16:35:23,323 - Review.reviews.emls_review - INFO - Saving EMLS output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EMLS_df_20251212_163523.xlsx
+2025-12-12 16:35:23,365 - Review.reviews.envb_review - INFO - Loading EOD data...
+2025-12-12 16:35:23,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:24,226 - Review.reviews.envb_review - INFO - Loading reference data...
+2025-12-12 16:35:25,573 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:27,514 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:29,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:31,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:33,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Starting universe size: 500 stocks
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Step 1: Filtering Index Universe to AMS/BRU/LUX exchanges...
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Universe size after exchange filtering: 45 stocks
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Step 2: Applying ESG compliance screening...
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Universe size after ESG screening: 45 stocks
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Step 4: Selecting top 20 constituents...
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Selected 20 constituents for ENVB index
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Calculating ESG-based weights...
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Applying 10% weight cap...
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Capping completed in 0 iterations
+2025-12-12 16:35:34,542 - Review.reviews.envb_review - INFO - Weight range: 3.58% to 6.51%
+2025-12-12 16:35:34,556 - Review.reviews.envb_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-12 16:35:34,561 - Review.reviews.envb_review - INFO - Inclusions: 3, Exclusions: 3
+2025-12-12 16:35:34,562 - Review.reviews.envb_review - INFO - Saving ENVB output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVB_df_20251212_163534.xlsx
+2025-12-12 16:35:34,623 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-12-12 16:35:35,519 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:37,505 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:39,057 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-12-12 16:35:39,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:40,235 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-12-12 16:35:40,237 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                  Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+289            VERBUND AG                  10.00000  4.249033e+09                1                        Excluded: 100 days avg turnover < €22M
+100        EDP RENOVAVEIS                  10.00000  3.559849e+09                2                        Excluded: 100 days avg turnover < €22M
+38             AURUBIS AG                  10.00000  2.859248e+09                3  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+224                  RELX                   9.94863  6.728146e+10                4                                                              
+235          SAINT GOBAIN                   9.94863  3.651676e+10                5                                                              
+175               KPN KON                   9.94863  1.528350e+10                6                                                              
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10                7                                                              
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10                8                                                              
+106                ENDESA                   9.94863  9.808279e+09                9                        Excluded: 100 days avg turnover < €22M
+124            FORTUM OYJ                   9.94863  8.162864e+09               10                        Excluded: 100 days avg turnover < €22M
+2025-12-12 16:35:40,239 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+224                  RELX                   9.94863  6.728146e+10               1.0
+235          SAINT GOBAIN                   9.94863  3.651676e+10               2.0
+175               KPN KON                   9.94863  1.528350e+10               3.0
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10               4.0
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10               5.0
+238                SANOFI                   9.75000  1.006574e+11               6.0
+111      ESSILORLUXOTTICA                   9.75000  9.920577e+10               7.0
+277                   UCB                   9.75000  2.945788e+10               8.0
+128     FRESENIUS SE & CO                   9.75000  1.982877e+10               9.0
+189             MERCK KGA                   9.75000  1.451390e+10              10.0
+2025-12-12 16:35:40,239 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-12-12 16:35:40,239 - Review.reviews.eri5p_review - INFO - Total excluded: 178 companies
+2025-12-12 16:35:40,240 - Review.reviews.eri5p_review - INFO - Eligible for selection: 122 companies
+2025-12-12 16:35:40,240 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-12-12 16:35:40,246 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20251212_163540.xlsx
+2025-12-12 16:35:40,346 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2025-12-12 16:35:41,191 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2025-12-12 16:35:41,531 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:43,531 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:43] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:45,507 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:45] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:47,529 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:47] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:49,007 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2025-12-12 16:35:49,007 - Review.reviews.es2pr_review - INFO - Starting Step 1: Individual capping
+2025-12-12 16:35:49,025 - Review.reviews.es2pr_review - INFO - Individual capping satisfied after 3 iterations
+2025-12-12 16:35:49,025 - Review.reviews.es2pr_review - INFO - Starting Step 2: Sector capping
+2025-12-12 16:35:49,032 - Review.reviews.es2pr_review - INFO - Sector capping satisfied after 2 iterations
+2025-12-12 16:35:49,033 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.7196162109895199
+2025-12-12 16:35:49,041 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ES2PR_df_20251212_163549.xlsx
+2025-12-12 16:35:49,109 - Review.reviews.esvep_review - INFO - Loading EOD data...
+2025-12-12 16:35:49,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:49] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:50,208 - Review.reviews.esvep_review - INFO - Loading reference data...
+2025-12-12 16:35:50,922 - Review.reviews.esvep_review - INFO - Saving ESVEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ESVEP_df_20251212_163550.xlsx
+2025-12-12 16:35:50,960 - Review.reviews.etpfb_review - INFO - Loading EOD data...
+2025-12-12 16:35:51,521 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:51] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:51,798 - Review.reviews.etpfb_review - INFO - Loading reference data...
+2025-12-12 16:35:52,652 - Review.reviews.etpfb_review - INFO - Saving ETPFB output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ETPFB_df_20251212_163552.xlsx
+2025-12-12 16:35:52,674 - Review.reviews.etsep_review - INFO - Loading EOD data...
+2025-12-12 16:35:53,501 - Review.reviews.etsep_review - INFO - Loading reference data...
+2025-12-12 16:35:53,530 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:53] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:54,271 - Review.reviews.etsep_review - INFO - Saving ETSEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ETSEP_df_20251212_163554.xlsx
+2025-12-12 16:35:54,311 - Review.reviews.euadp_review - INFO - Loading EOD data...
+2025-12-12 16:35:55,156 - Review.reviews.euadp_review - INFO - Loading reference data...
+2025-12-12 16:35:55,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:55] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:57,544 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:57] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:35:59,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:35:59] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:01,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:01] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:03,520 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:03] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:05,150 - Review.reviews.euadp_review - INFO - Calculating initial weights...
+2025-12-12 16:36:05,150 - Review.reviews.euadp_review - INFO - Total FFMC of non-excluded companies: €547,707,205,996
+2025-12-12 16:36:05,150 - Review.reviews.euadp_review - INFO - Applying weight capping...
+2025-12-12 16:36:05,150 - Review.reviews.euadp_review - INFO - Total capped weights sum: 1.000000
+2025-12-12 16:36:05,175 - Review.reviews.euadp_review - INFO - Selected top 50 companies
+2025-12-12 16:36:05,175 - Review.reviews.euadp_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-12 16:36:05,175 - Review.reviews.euadp_review - INFO - Saving EUADP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUADP_df_20251212_163605.xlsx
+2025-12-12 16:36:05,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:05] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:05,749 - Review.reviews.euadp_review - INFO - EUADP review completed successfully
+2025-12-12 16:36:05,783 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+2025-12-12 16:36:07,520 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:07] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:08,459 - Review.reviews.eums_review - INFO - Found 1200 existing companies in EUMS
+2025-12-12 16:36:08,477 - Review.reviews.eums_review - INFO - 
+EUMS Selection Summary by Country:
+2025-12-12 16:36:08,479 - Review.reviews.eums_review - INFO - United States: 1270 total (1199 existing, 71 new)
+2025-12-12 16:36:08,479 - Review.reviews.eums_review - INFO - 
+Overall EUMS Selection Summary:
+2025-12-12 16:36:08,480 - Review.reviews.eums_review - INFO - Total companies selected: 1270
+2025-12-12 16:36:08,484 - Review.reviews.eums_review - INFO -   - Existing companies selected: 1199
+2025-12-12 16:36:08,484 - Review.reviews.eums_review - INFO -   - New companies selected: 71
+2025-12-12 16:36:08,486 - Review.reviews.eums_review - INFO - Total FFMC covered: 29.06%
+2025-12-12 16:36:08,486 - Review.reviews.eums_review - INFO - 
+Applying proportional capping
+2025-12-12 16:36:08,487 - Review.reviews.eums_review - INFO - 
+=== SELECTION DEBUGGING ===
+2025-12-12 16:36:08,487 - Review.reviews.eums_review - INFO - Total universe size: 1401
+2025-12-12 16:36:08,487 - Review.reviews.eums_review - INFO - Companies with EUMS_selection == 1: 1270
+2025-12-12 16:36:08,487 - Review.reviews.eums_review - INFO - Companies with Is_Existing == 1: 1200
+2025-12-12 16:36:08,488 - Review.reviews.eums_review - INFO - 
+Existing companies meeting 68% threshold: 1199
+2025-12-12 16:36:08,488 - Review.reviews.eums_review - INFO - New companies meeting 72% threshold: 71
+2025-12-12 16:36:08,488 - Review.reviews.eums_review - INFO - 
+NaN values in key columns:
+2025-12-12 16:36:08,488 - Review.reviews.eums_review - INFO -   Country: 0
+2025-12-12 16:36:08,488 - Review.reviews.eums_review - INFO -   Mcap in EUR: 1
+2025-12-12 16:36:08,489 - Review.reviews.eums_review - INFO -   Country_Cumulative_Percentage: 1
+2025-12-12 16:36:08,489 - Review.reviews.eums_review - INFO - 
+Sample of selection logic:
+2025-12-12 16:36:08,491 - Review.reviews.eums_review - INFO - 
+                   Company        Country  Is_Existing   Mcap in EUR  Country_Cumulative_Percentage  EUMS_selection
+928            NVIDIA CORP  United States            0  3.214526e+12                       6.897028               0
+99                   APPLE  United States            0  2.966676e+12                      13.262274               0
+851         MICROSOFT CORP  United States            0  2.335456e+12                      18.273185               0
+61                  AMAZON  United States            0  1.570220e+12                      21.642221               0
+57        ALPHABET CLASS A  United States            0  1.289292e+12                      24.408503               0
+216          BROADCOM INC.  United States            0  1.188072e+12                      26.957609               0
+58        ALPHABET INC - C  United States            0  1.138265e+12                      29.399849               0
+842       META PLTFORM ORD  United States            0  9.570927e+11                      31.453370               0
+1224             TESLA INC  United States            0  8.176044e+11                      33.207607               0
+453       ELI LILLY AND CO  United States            0  6.297366e+11                      34.558758               0
+722   JP MORGAN CHASE & CO  United States            0  5.999628e+11                      35.846027               0
+175   BERKSHIRE HATHAWAY B  United States            0  5.117144e+11                      36.943952               0
+1329              VISA INC  United States            0  4.093300e+11                      37.822203               0
+501            EXXON MOBIL  United States            0  3.651340e+11                      38.605628               0
+719      JOHNSON & JOHNSON  United States            0  3.632923e+11                      39.385101               0
+1341           WALMART INC  United States            0  3.415357e+11                      40.117894               0
+894           NETFLIX INC.  United States            0  3.268636e+11                      40.819206               0
+820         MASTERCARD INC  United States            0  3.205608e+11                      41.506996               0
+5              ABBVIE INC.  United States            0  3.088212e+11                      42.169597               0
+363   COSTCO WHOLES. CORP.  United States            0  2.946408e+11                      42.801773               0
+2025-12-12 16:36:08,491 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:36:08,493 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:36:08,493 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:36:08,493 - utils.capping_proportional - INFO -   Total companies: 1270
+2025-12-12 16:36:08,493 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:36:08,493 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:36:08,493 - utils.capping_proportional - INFO -   Max weight after capping: 0.004975
+2025-12-12 16:36:08,510 - Review.reviews.eums_review - INFO - 
+EUMS Changes Summary:
+2025-12-12 16:36:08,510 - Review.reviews.eums_review - INFO - Inclusions: 71
+2025-12-12 16:36:08,511 - Review.reviews.eums_review - INFO - Exclusions: 73
+2025-12-12 16:36:08,512 - Review.reviews.eums_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251212_163608.xlsx
+2025-12-12 16:36:08,991 - Review.reviews.eums_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUMS_Review_20251212_163608.xlsx
+2025-12-12 16:36:09,010 - Review.reviews.eurep_review - INFO - Loading EOD data...
+2025-12-12 16:36:09,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:09] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:10,114 - Review.reviews.eurep_review - INFO - Loading reference data...
+2025-12-12 16:36:11,541 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:11] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:13,510 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:13] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:15,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:15] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:17,518 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:17] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:19,525 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:19] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:21,239 - Review.reviews.eurep_review - INFO - Creating eligible companies dataframe...
+2025-12-12 16:36:21,242 - Review.reviews.eurep_review - INFO - Companies with capping applied: 0
+2025-12-12 16:36:21,250 - Review.reviews.eurep_review - INFO - Saving EUREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUREP_df_20251212_163621.xlsx
+2025-12-12 16:36:21,509 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:21,599 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-12-12 16:36:22,947 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-12-12 16:36:23,531 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:25,541 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:27,533 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:29,516 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:31,514 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:33,616 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:34,828 - Review.reviews.eus5p_review - INFO - Eurozone companies (EZ300): 300
+2025-12-12 16:36:34,828 - Review.reviews.eus5p_review - INFO - North America companies (NA500, excluding XTSE): 458
+2025-12-12 16:36:35,057 - Review.reviews.eus5p_review - INFO - Saving EUS5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUS5P_df_20251212_163635.xlsx
+2025-12-12 16:36:35,352 - Review.reviews.eusl_review - INFO - Starting EUSL review calculation
+2025-12-12 16:36:35,516 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:37,515 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:39,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:41,521 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:41,954 - Review.reviews.eusl_review - INFO - Found 1002 existing companies in EUSL
+2025-12-12 16:36:41,958 - Review.reviews.eusl_review - INFO - 
+EUSL Selection Summary by Country:
+2025-12-12 16:36:41,958 - Review.reviews.eusl_review - INFO - United States: 1069 total (996 existing, 73 new)
+2025-12-12 16:36:41,960 - Review.reviews.eusl_review - INFO - 
+Overall EUSL Selection Summary:
+2025-12-12 16:36:41,960 - Review.reviews.eusl_review - INFO - Total companies selected: 1069
+2025-12-12 16:36:41,960 - Review.reviews.eusl_review - INFO -   - Existing companies selected: 996
+2025-12-12 16:36:41,960 - Review.reviews.eusl_review - INFO -   - New companies selected: 73
+2025-12-12 16:36:41,960 - Review.reviews.eusl_review - INFO - Total FFMC covered: 14.14%
+2025-12-12 16:36:41,960 - Review.reviews.eusl_review - INFO - 
+Applying proportional capping
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO -   Total companies: 1069
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:36:41,960 - utils.capping_proportional - INFO -   Max weight after capping: 0.003568
+2025-12-12 16:36:41,970 - Review.reviews.eusl_review - INFO - 
+EUSL Changes Summary:
+2025-12-12 16:36:41,970 - Review.reviews.eusl_review - INFO - Inclusions: 73
+2025-12-12 16:36:41,970 - Review.reviews.eusl_review - INFO - Exclusions: 77
+2025-12-12 16:36:41,974 - Review.reviews.eusl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251212_163641.xlsx
+2025-12-12 16:36:42,377 - Review.reviews.eusl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSL_Review_20251212_163641.xlsx
+2025-12-12 16:36:42,401 - Review.reviews.ewms_review - INFO - Starting EWMS review calculation
+2025-12-12 16:36:43,538 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:43] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:45,058 - Review.reviews.ewms_review - INFO - Found 4528 existing companies in EWMS
+2025-12-12 16:36:45,078 - Review.reviews.ewms_review - INFO - 
+Overall EWMS Selection Summary:
+2025-12-12 16:36:45,078 - Review.reviews.ewms_review - INFO - Total companies selected: 4777
+2025-12-12 16:36:45,084 - Review.reviews.ewms_review - INFO -   - Existing companies selected: 4521
+2025-12-12 16:36:45,084 - Review.reviews.ewms_review - INFO -   - New companies selected: 256
+2025-12-12 16:36:45,084 - Review.reviews.ewms_review - INFO - Total FFMC covered: 29.58%
+2025-12-12 16:36:45,084 - Review.reviews.ewms_review - INFO - 
+Applying proportional capping
+2025-12-12 16:36:45,090 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:36:45,092 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:36:45,092 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:36:45,092 - utils.capping_proportional - INFO -   Total companies: 4777
+2025-12-12 16:36:45,092 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:36:45,092 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:36:45,092 - utils.capping_proportional - INFO -   Max weight after capping: 0.003895
+2025-12-12 16:36:45,115 - Review.reviews.ewms_review - INFO - 
+EWMS Changes Summary:
+2025-12-12 16:36:45,115 - Review.reviews.ewms_review - INFO - Inclusions: 256
+2025-12-12 16:36:45,115 - Review.reviews.ewms_review - INFO - Exclusions: 247
+2025-12-12 16:36:45,115 - Review.reviews.ewms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWMS_Review_20251212_163645.xlsx
+2025-12-12 16:36:45,623 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:45] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:46,584 - Review.reviews.ewms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWMS_Review_20251212_163645.xlsx
+2025-12-12 16:36:46,609 - Review.reviews.ewsl_review - INFO - Starting EWSL review calculation
+2025-12-12 16:36:47,525 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:47] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:49,518 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:49] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:49,663 - Review.reviews.ewsl_review - INFO - Found 3834 existing companies in EWSL
+2025-12-12 16:36:49,668 - Review.reviews.ewsl_review - INFO - 
+Overall EWSL Selection Summary:
+2025-12-12 16:36:49,668 - Review.reviews.ewsl_review - INFO - Total companies selected: 4083
+2025-12-12 16:36:49,668 - Review.reviews.ewsl_review - INFO -   - Existing companies selected: 3813
+2025-12-12 16:36:49,670 - Review.reviews.ewsl_review - INFO -   - New companies selected: 270
+2025-12-12 16:36:49,671 - Review.reviews.ewsl_review - INFO - Total FFMC covered: 14.72%
+2025-12-12 16:36:49,671 - Review.reviews.ewsl_review - INFO - 
+Applying proportional capping
+2025-12-12 16:36:49,673 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:36:49,674 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:36:49,674 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:36:49,674 - utils.capping_proportional - INFO -   Total companies: 4083
+2025-12-12 16:36:49,674 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:36:49,674 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:36:49,674 - utils.capping_proportional - INFO -   Max weight after capping: 0.002733
+2025-12-12 16:36:49,689 - Review.reviews.ewsl_review - INFO - 
+EWSL Changes Summary:
+2025-12-12 16:36:49,689 - Review.reviews.ewsl_review - INFO - Inclusions: 270
+2025-12-12 16:36:49,690 - Review.reviews.ewsl_review - INFO - Exclusions: 259
+2025-12-12 16:36:49,690 - Review.reviews.ewsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251212_163649.xlsx
+2025-12-12 16:36:51,233 - Review.reviews.ewsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWSL_Review_20251212_163649.xlsx
+2025-12-12 16:36:51,252 - Review.reviews.ez15p_review - INFO - Loading EOD data...
+2025-12-12 16:36:51,525 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:51] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:52,325 - Review.reviews.ez15p_review - INFO - Loading reference data...
+2025-12-12 16:36:53,336 - Review.reviews.ez15p_review - INFO - Total universe: 300 companies
+2025-12-12 16:36:53,336 - Review.reviews.ez15p_review - INFO - Excluded by turnover filter: 65 companies
+2025-12-12 16:36:53,336 - Review.reviews.ez15p_review - INFO - Eligible for selection: 235 companies
+2025-12-12 16:36:53,336 - Review.reviews.ez15p_review - INFO - Selecting top 150 companies with highest FFMC from eligible companies...
+2025-12-12 16:36:53,345 - Review.reviews.ez15p_review - INFO - Saving EZ15P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ15P_df_20251212_163653.xlsx
+2025-12-12 16:36:53,481 - Review.reviews.ez40p_review - INFO - Loading EOD data...
+2025-12-12 16:36:53,523 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:53] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:54,441 - Review.reviews.ez40p_review - INFO - Loading reference data...
+2025-12-12 16:36:55,474 - Review.reviews.ez40p_review - INFO - Selecting top 40 companies with highest FFMC...
+2025-12-12 16:36:55,474 - Review.reviews.ez40p_review - INFO - Saving EZ40P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ40P_df_20251212_163655.xlsx
+2025-12-12 16:36:55,563 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:55] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:55,631 - Review.reviews.ez60p_review - INFO - Loading EOD data...
+2025-12-12 16:36:56,541 - Review.reviews.ez60p_review - INFO - Loading reference data...
+2025-12-12 16:36:57,540 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:57] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:36:57,676 - Review.reviews.ez60p_review - INFO - Selecting top 60 companies with highest FFMC...
+2025-12-12 16:36:57,686 - Review.reviews.ez60p_review - INFO - Saving EZ60P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ60P_df_20251212_163657.xlsx
+2025-12-12 16:36:57,860 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+2025-12-12 16:36:58,394 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2025-12-12 16:36:59,519 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:36:59] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:01,530 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:01] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:03,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:03] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:04,001 - Review.reviews.ezcla_review - INFO - Total companies in universe: 300
+2025-12-12 16:37:04,002 - Review.reviews.ezcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 240.0
+2025-12-12 16:37:04,002 - Review.reviews.ezcla_review - INFO - Total companies excluded by Carbon Budget (rank > 240.0): 60
+2025-12-12 16:37:05,521 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:05] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:07,525 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:07] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:09,520 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:09] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:11,525 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:11] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:12,312 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2025-12-12 16:37:12,312 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2025-12-12 16:37:12,316 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZCLA_df_20251212_163712.xlsx
+2025-12-12 16:37:12,587 - Review.reviews.ezms_review - INFO - Starting EZMS review calculation
+2025-12-12 16:37:13,513 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:13] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:15,519 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:15] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:15,662 - Review.reviews.ezms_review - INFO - Found 392 existing companies in EZMS
+2025-12-12 16:37:15,666 - Review.reviews.ezms_review - INFO - 
+Overall EZMS Selection Summary:
+2025-12-12 16:37:15,666 - Review.reviews.ezms_review - INFO - Total companies selected: 426
+2025-12-12 16:37:15,666 - Review.reviews.ezms_review - INFO -   - Existing companies selected: 390
+2025-12-12 16:37:15,667 - Review.reviews.ezms_review - INFO -   - New companies selected: 36
+2025-12-12 16:37:15,667 - Review.reviews.ezms_review - INFO - Total FFMC covered: 31.64%
+2025-12-12 16:37:15,667 - Review.reviews.ezms_review - INFO - 
+Applying proportional capping
+2025-12-12 16:37:15,668 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:37:15,669 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:37:15,670 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:37:15,670 - utils.capping_proportional - INFO -   Total companies: 426
+2025-12-12 16:37:15,671 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:37:15,671 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:37:15,671 - utils.capping_proportional - INFO -   Max weight after capping: 0.019344
+2025-12-12 16:37:15,683 - Review.reviews.ezms_review - INFO - 
+EZMS Changes Summary:
+2025-12-12 16:37:15,684 - Review.reviews.ezms_review - INFO - Inclusions: 36
+2025-12-12 16:37:15,684 - Review.reviews.ezms_review - INFO - Exclusions: 32
+2025-12-12 16:37:15,684 - Review.reviews.ezms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZMS_Review_20251212_163715.xlsx
+2025-12-12 16:37:15,812 - Review.reviews.ezms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZMS_Review_20251212_163715.xlsx
+2025-12-12 16:37:15,830 - Review.reviews.ezn1p_review - INFO - Loading EOD data...
+2025-12-12 16:37:17,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:17] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:18,197 - Review.reviews.ezn1p_review - INFO - Loading reference data...
+2025-12-12 16:37:19,426 - Review.reviews.ezn1p_review - INFO - Total universe: 300 companies
+2025-12-12 16:37:19,427 - Review.reviews.ezn1p_review - INFO - Excluded by turnover filter: 65 companies
+2025-12-12 16:37:19,427 - Review.reviews.ezn1p_review - INFO - Eligible for selection: 235 companies
+2025-12-12 16:37:19,427 - Review.reviews.ezn1p_review - INFO - Selecting top 150 companies with highest FFMC from eligible companies...
+2025-12-12 16:37:19,434 - Review.reviews.ezn1p_review - INFO - Saving EZN1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZN1P_df_20251212_163719.xlsx
+2025-12-12 16:37:19,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:19] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:19,566 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO - Found 322 existing companies in EZSL
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO - Total companies selected: 354
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 318
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO -   - New companies selected: 36
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 15.02%
+2025-12-12 16:37:21,239 - Review.reviews.ezsl_review - INFO - 
+Applying proportional capping
+2025-12-12 16:37:21,239 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:37:21,250 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-12 16:37:21,251 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:37:21,251 - utils.capping_proportional - INFO -   Total companies: 354
+2025-12-12 16:37:21,251 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-12 16:37:21,251 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:37:21,252 - utils.capping_proportional - INFO -   Max weight after capping: 0.017979
+2025-12-12 16:37:21,259 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2025-12-12 16:37:21,260 - Review.reviews.ezsl_review - INFO - Inclusions: 36
+2025-12-12 16:37:21,260 - Review.reviews.ezsl_review - INFO - Exclusions: 33
+2025-12-12 16:37:21,261 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251212_163721.xlsx
+2025-12-12 16:37:21,393 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZSL_Review_20251212_163721.xlsx
+2025-12-12 16:37:21,405 - Review.reviews.f4rip_review - INFO - Loading EOD data...
+2025-12-12 16:37:21,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:22,211 - Review.reviews.f4rip_review - INFO - Loading reference data...
+2025-12-12 16:37:22,639 - Review.reviews.f4rip_review - INFO - Saving F4RIP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\F4RIP_df_20251212_163722.xlsx
+2025-12-12 16:37:22,675 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+2025-12-12 16:37:23,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:23,601 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2025-12-12 16:37:25,511 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:27,542 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:28,182 - Review.reviews.fclsp_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-12 16:37:28,182 - Review.reviews.fclsp_review - INFO - Remaining universe size: 120 companies
+2025-12-12 16:37:28,182 - Review.reviews.fclsp_review - INFO - Merging Price from Master Report...
+2025-12-12 16:37:28,182 - Review.reviews.fclsp_review - INFO - Merging Oekom data points early...
+2025-12-12 16:37:28,195 - Review.reviews.fclsp_review - INFO - Oekom data merged successfully
+2025-12-12 16:37:28,195 - Review.reviews.fclsp_review - INFO - Trust Metric exclusions: 4
+2025-12-12 16:37:28,196 - Review.reviews.fclsp_review - INFO - NBR Overall Flag exclusions: 0
+2025-12-12 16:37:28,196 - Review.reviews.fclsp_review - INFO - APMines exclusions: 1
+2025-12-12 16:37:28,196 - Review.reviews.fclsp_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-12 16:37:28,196 - Review.reviews.fclsp_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-12 16:37:28,196 - Review.reviews.fclsp_review - INFO - ClusterMunitions exclusions: 1
+2025-12-12 16:37:28,201 - Review.reviews.fclsp_review - INFO - DepletedUranium exclusions: 1
+2025-12-12 16:37:28,201 - Review.reviews.fclsp_review - INFO - IncendiaryWeapons exclusions: 3
+2025-12-12 16:37:28,202 - Review.reviews.fclsp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-12 16:37:28,203 - Review.reviews.fclsp_review - INFO - WhitePhosphorus exclusions: 1
+2025-12-12 16:37:28,203 - Review.reviews.fclsp_review - INFO - Coal Mining exclusions: 0
+2025-12-12 16:37:28,204 - Review.reviews.fclsp_review - INFO - Thermal Power exclusions: 2
+2025-12-12 16:37:28,205 - Review.reviews.fclsp_review - INFO - Oil Sands exclusions: 0
+2025-12-12 16:37:28,206 - Review.reviews.fclsp_review - INFO - Shale Oil/Gas exclusions: 1
+2025-12-12 16:37:28,206 - Review.reviews.fclsp_review - INFO - Total companies in universe: 120
+2025-12-12 16:37:28,206 - Review.reviews.fclsp_review - INFO - Carbon Budget cutoff rank (80th percentile): 96.0
+2025-12-12 16:37:28,206 - Review.reviews.fclsp_review - INFO - Carbon Budget exclusions (rank > 96.0): 24
+2025-12-12 16:37:28,207 - Review.reviews.fclsp_review - INFO - Tobacco Production exclusions: 0
+2025-12-12 16:37:28,212 - Review.reviews.fclsp_review - INFO - Companies remaining after exclusions: 89
+2025-12-12 16:37:28,216 - Review.reviews.fclsp_review - INFO - Selected top 60 companies
+2025-12-12 16:37:28,615 - Review.reviews.fclsp_review - INFO - Checking IsinCode FRESG0001478 in index_eod_df
+2025-12-12 16:37:28,615 - Review.reviews.fclsp_review - INFO - Found 1 matching rows
+2025-12-12 16:37:28,615 - Review.reviews.fclsp_review - INFO - Index market cap: 1164743061538.7268
+2025-12-12 16:37:28,615 - Review.reviews.fclsp_review - INFO - Applying proportional capping with 10% max weight...
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO -   Total companies: 60
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO -   Companies capped: 1
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-12 16:37:28,615 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-12 16:37:28,615 - Review.reviews.fclsp_review - INFO - Saving FCLSP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FCLSP_df_20251212_163728.xlsx
+2025-12-12 16:37:28,747 - Review.reviews.fr20p_review - INFO - Loading EOD data...
+2025-12-12 16:37:29,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:29,761 - Review.reviews.fr20p_review - INFO - Loading reference data...
+2025-12-12 16:37:31,134 - Review.reviews.fr20p_review - INFO - Selecting top 20 companies with highest FFMC...
+2025-12-12 16:37:31,139 - Review.reviews.fr20p_review - INFO - Saving FR20P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FR20P_df_20251212_163731.xlsx
+2025-12-12 16:37:31,177 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-12-12 16:37:31,525 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:32,042 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-12-12 16:37:33,534 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:35,576 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:37,537 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:39,580 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:41,559 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: AS, group size: 47
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: EU, group size: 24
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 1010.0, area: NA, group size: 81
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 81, to exclude: 16
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: AS, group size: 10
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: EU, group size: 19
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 1510.0, area: NA, group size: 11
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: AS, group size: 29
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 29, to exclude: 5
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: EU, group size: 45
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 45, to exclude: 8
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 2010.0, area: NA, group size: 48
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: AS, group size: 32
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: EU, group size: 48
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 3010.0, area: NA, group size: 19
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: AS, group size: 16
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-12-12 16:37:43,258 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: EU, group size: 34
+2025-12-12 16:37:43,273 - Review.reviews.frd4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-12-12 16:37:43,273 - Review.reviews.frd4p_review - INFO - Processing sector: 3020.0, area: NA, group size: 31
+2025-12-12 16:37:43,274 - Review.reviews.frd4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-12-12 16:37:43,274 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: AS, group size: 16
+2025-12-12 16:37:43,275 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-12-12 16:37:43,275 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: EU, group size: 28
+2025-12-12 16:37:43,276 - Review.reviews.frd4p_review - INFO - Companies in group: 28, to exclude: 5
+2025-12-12 16:37:43,276 - Review.reviews.frd4p_review - INFO - Processing sector: 3030.0, area: NA, group size: 24
+2025-12-12 16:37:43,277 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-12-12 16:37:43,277 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: AS, group size: 46
+2025-12-12 16:37:43,277 - Review.reviews.frd4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-12-12 16:37:43,277 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: EU, group size: 26
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 3510.0, area: NA, group size: 18
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: AS, group size: 16
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: EU, group size: 15
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: AS, group size: 26
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: EU, group size: 22
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4020.0, area: NA, group size: 18
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: AS, group size: 5
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 5, to exclude: 0
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - WARNING - No companies to exclude for sector 4030.0 and area AS
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: EU, group size: 8
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 8, to exclude: 1
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4030.0, area: NA, group size: 6
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: AS, group size: 15
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:37:43,278 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: EU, group size: 9
+2025-12-12 16:37:43,284 - Review.reviews.frd4p_review - INFO - Companies in group: 9, to exclude: 1
+2025-12-12 16:37:43,284 - Review.reviews.frd4p_review - INFO - Processing sector: 4040.0, area: NA, group size: 21
+2025-12-12 16:37:43,284 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-12-12 16:37:43,284 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-12-12 16:37:43,285 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:37:43,285 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: EU, group size: 13
+2025-12-12 16:37:43,285 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-12-12 16:37:43,285 - Review.reviews.frd4p_review - INFO - Processing sector: 4050.0, area: NA, group size: 19
+2025-12-12 16:37:43,285 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:37:43,286 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: AS, group size: 24
+2025-12-12 16:37:43,286 - Review.reviews.frd4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-12-12 16:37:43,286 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: EU, group size: 25
+2025-12-12 16:37:43,286 - Review.reviews.frd4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-12-12 16:37:43,286 - Review.reviews.frd4p_review - INFO - Processing sector: 4510.0, area: NA, group size: 15
+2025-12-12 16:37:43,287 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:37:43,287 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: AS, group size: 15
+2025-12-12 16:37:43,287 - Review.reviews.frd4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:37:43,287 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: EU, group size: 11
+2025-12-12 16:37:43,288 - Review.reviews.frd4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-12-12 16:37:43,288 - Review.reviews.frd4p_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-12-12 16:37:43,288 - Review.reviews.frd4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-12-12 16:37:43,288 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: AS, group size: 21
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: EU, group size: 30
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Processing sector: 5010.0, area: NA, group size: 10
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: AS, group size: 89
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Companies in group: 89, to exclude: 17
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: EU, group size: 95
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Companies in group: 95, to exclude: 18
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Processing sector: 5020.0, area: NA, group size: 78
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Companies in group: 78, to exclude: 15
+2025-12-12 16:37:43,289 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: AS, group size: 27
+2025-12-12 16:37:43,292 - Review.reviews.frd4p_review - INFO - Companies in group: 27, to exclude: 5
+2025-12-12 16:37:43,292 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: EU, group size: 17
+2025-12-12 16:37:43,292 - Review.reviews.frd4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-12-12 16:37:43,292 - Review.reviews.frd4p_review - INFO - Processing sector: 5510.0, area: NA, group size: 13
+2025-12-12 16:37:43,293 - Review.reviews.frd4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-12-12 16:37:43,293 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: AS, group size: 17
+2025-12-12 16:37:43,294 - Review.reviews.frd4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-12-12 16:37:43,294 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: EU, group size: 17
+2025-12-12 16:37:43,295 - Review.reviews.frd4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-12-12 16:37:43,295 - Review.reviews.frd4p_review - INFO - Processing sector: 5520.0, area: NA, group size: 5
+2025-12-12 16:37:43,295 - Review.reviews.frd4p_review - INFO - Companies in group: 5, to exclude: 0
+2025-12-12 16:37:43,295 - Review.reviews.frd4p_review - WARNING - No companies to exclude for sector 5520.0 and area NA
+2025-12-12 16:37:43,295 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: AS, group size: 11
+2025-12-12 16:37:43,296 - Review.reviews.frd4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-12-12 16:37:43,296 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: EU, group size: 22
+2025-12-12 16:37:43,297 - Review.reviews.frd4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-12-12 16:37:43,297 - Review.reviews.frd4p_review - INFO - Processing sector: 6010.0, area: NA, group size: 34
+2025-12-12 16:37:43,298 - Review.reviews.frd4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-12-12 16:37:43,298 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: AS, group size: 19
+2025-12-12 16:37:43,298 - Review.reviews.frd4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:37:43,299 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: EU, group size: 26
+2025-12-12 16:37:43,299 - Review.reviews.frd4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-12-12 16:37:43,299 - Review.reviews.frd4p_review - INFO - Processing sector: 6510.0, area: NA, group size: 33
+2025-12-12 16:37:43,299 - Review.reviews.frd4p_review - INFO - Companies in group: 33, to exclude: 6
+2025-12-12 16:37:43,311 - Review.reviews.frd4p_review - INFO - Checking IsinCode FRIX00003031 in index_eod_df
+2025-12-12 16:37:43,311 - Review.reviews.frd4p_review - INFO - Found 1 matching rows
+2025-12-12 16:37:43,327 - Review.reviews.frd4p_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRD4P_df_20251212_163743.xlsx
+2025-12-12 16:37:43,593 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:43] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:43,809 - Review.reviews.frecp_review - INFO - Loading EOD data...
+2025-12-12 16:37:45,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:45] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:47,312 - Review.reviews.frecp_review - INFO - Loading reference data...
+2025-12-12 16:37:47,520 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:47] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:48,614 - Review.reviews.frecp_review - INFO - Selecting top 20 companies with lowest FFMC...
+2025-12-12 16:37:48,614 - Review.reviews.frecp_review - INFO - Saving FRECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRECP_df_20251212_163748.xlsx
+2025-12-12 16:37:48,649 - Review.reviews.fri4p_review - INFO - Loading EOD data...
+2025-12-12 16:37:49,502 - Review.reviews.fri4p_review - INFO - Loading reference data...
+2025-12-12 16:37:49,535 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:49] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:51,546 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:51] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:53,529 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:53] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:55,559 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:55] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:57,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:57] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:37:59,557 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:37:59] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: AS, group size: 47
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 47, to exclude: 9
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: EU, group size: 24
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 1010.0, area: NA, group size: 81
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 81, to exclude: 16
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: AS, group size: 10
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: EU, group size: 19
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 1510.0, area: NA, group size: 11
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: AS, group size: 29
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 29, to exclude: 5
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: EU, group size: 45
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 45, to exclude: 8
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 2010.0, area: NA, group size: 48
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: AS, group size: 32
+2025-12-12 16:38:00,592 - Review.reviews.fri4p_review - INFO - Companies in group: 32, to exclude: 6
+2025-12-12 16:38:00,605 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: EU, group size: 48
+2025-12-12 16:38:00,605 - Review.reviews.fri4p_review - INFO - Companies in group: 48, to exclude: 9
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Processing sector: 3010.0, area: NA, group size: 19
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: AS, group size: 16
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: EU, group size: 34
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-12-12 16:38:00,606 - Review.reviews.fri4p_review - INFO - Processing sector: 3020.0, area: NA, group size: 31
+2025-12-12 16:38:00,607 - Review.reviews.fri4p_review - INFO - Companies in group: 31, to exclude: 6
+2025-12-12 16:38:00,607 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: AS, group size: 16
+2025-12-12 16:38:00,607 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-12-12 16:38:00,607 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: EU, group size: 28
+2025-12-12 16:38:00,608 - Review.reviews.fri4p_review - INFO - Companies in group: 28, to exclude: 5
+2025-12-12 16:38:00,608 - Review.reviews.fri4p_review - INFO - Processing sector: 3030.0, area: NA, group size: 24
+2025-12-12 16:38:00,608 - Review.reviews.fri4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-12-12 16:38:00,608 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: AS, group size: 46
+2025-12-12 16:38:00,609 - Review.reviews.fri4p_review - INFO - Companies in group: 46, to exclude: 9
+2025-12-12 16:38:00,609 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: EU, group size: 26
+2025-12-12 16:38:00,610 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-12-12 16:38:00,611 - Review.reviews.fri4p_review - INFO - Processing sector: 3510.0, area: NA, group size: 18
+2025-12-12 16:38:00,611 - Review.reviews.fri4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-12-12 16:38:00,611 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: AS, group size: 16
+2025-12-12 16:38:00,612 - Review.reviews.fri4p_review - INFO - Companies in group: 16, to exclude: 3
+2025-12-12 16:38:00,612 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: EU, group size: 15
+2025-12-12 16:38:00,612 - Review.reviews.fri4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:38:00,612 - Review.reviews.fri4p_review - INFO - Processing sector: 4010.0, area: NA, group size: 4
+2025-12-12 16:38:00,612 - Review.reviews.fri4p_review - INFO - Companies in group: 4, to exclude: 0
+2025-12-12 16:38:00,613 - Review.reviews.fri4p_review - WARNING - No companies to exclude for sector 4010.0 and area NA
+2025-12-12 16:38:00,613 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: AS, group size: 26
+2025-12-12 16:38:00,613 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-12-12 16:38:00,613 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: EU, group size: 22
+2025-12-12 16:38:00,613 - Review.reviews.fri4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-12-12 16:38:00,613 - Review.reviews.fri4p_review - INFO - Processing sector: 4020.0, area: NA, group size: 18
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - INFO - Companies in group: 18, to exclude: 3
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: AS, group size: 5
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - INFO - Companies in group: 5, to exclude: 0
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - WARNING - No companies to exclude for sector 4030.0 and area AS
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: EU, group size: 8
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - INFO - Companies in group: 8, to exclude: 1
+2025-12-12 16:38:00,614 - Review.reviews.fri4p_review - INFO - Processing sector: 4030.0, area: NA, group size: 6
+2025-12-12 16:38:00,615 - Review.reviews.fri4p_review - INFO - Companies in group: 6, to exclude: 1
+2025-12-12 16:38:00,615 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: AS, group size: 15
+2025-12-12 16:38:00,615 - Review.reviews.fri4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:38:00,616 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: EU, group size: 9
+2025-12-12 16:38:00,616 - Review.reviews.fri4p_review - INFO - Companies in group: 9, to exclude: 1
+2025-12-12 16:38:00,616 - Review.reviews.fri4p_review - INFO - Processing sector: 4040.0, area: NA, group size: 21
+2025-12-12 16:38:00,616 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-12-12 16:38:00,616 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: AS, group size: 19
+2025-12-12 16:38:00,618 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:38:00,618 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: EU, group size: 13
+2025-12-12 16:38:00,618 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-12-12 16:38:00,619 - Review.reviews.fri4p_review - INFO - Processing sector: 4050.0, area: NA, group size: 19
+2025-12-12 16:38:00,619 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:38:00,619 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: AS, group size: 24
+2025-12-12 16:38:00,619 - Review.reviews.fri4p_review - INFO - Companies in group: 24, to exclude: 4
+2025-12-12 16:38:00,619 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: EU, group size: 25
+2025-12-12 16:38:00,620 - Review.reviews.fri4p_review - INFO - Companies in group: 25, to exclude: 4
+2025-12-12 16:38:00,620 - Review.reviews.fri4p_review - INFO - Processing sector: 4510.0, area: NA, group size: 15
+2025-12-12 16:38:00,620 - Review.reviews.fri4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:38:00,621 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: AS, group size: 15
+2025-12-12 16:38:00,621 - Review.reviews.fri4p_review - INFO - Companies in group: 15, to exclude: 2
+2025-12-12 16:38:00,621 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: EU, group size: 11
+2025-12-12 16:38:00,622 - Review.reviews.fri4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-12-12 16:38:00,622 - Review.reviews.fri4p_review - INFO - Processing sector: 4520.0, area: NA, group size: 12
+2025-12-12 16:38:00,623 - Review.reviews.fri4p_review - INFO - Companies in group: 12, to exclude: 2
+2025-12-12 16:38:00,623 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: AS, group size: 21
+2025-12-12 16:38:00,623 - Review.reviews.fri4p_review - INFO - Companies in group: 21, to exclude: 4
+2025-12-12 16:38:00,623 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: EU, group size: 30
+2025-12-12 16:38:00,623 - Review.reviews.fri4p_review - INFO - Companies in group: 30, to exclude: 5
+2025-12-12 16:38:00,624 - Review.reviews.fri4p_review - INFO - Processing sector: 5010.0, area: NA, group size: 10
+2025-12-12 16:38:00,624 - Review.reviews.fri4p_review - INFO - Companies in group: 10, to exclude: 1
+2025-12-12 16:38:00,624 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: AS, group size: 89
+2025-12-12 16:38:00,625 - Review.reviews.fri4p_review - INFO - Companies in group: 89, to exclude: 17
+2025-12-12 16:38:00,625 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: EU, group size: 95
+2025-12-12 16:38:00,625 - Review.reviews.fri4p_review - INFO - Companies in group: 95, to exclude: 18
+2025-12-12 16:38:00,626 - Review.reviews.fri4p_review - INFO - Processing sector: 5020.0, area: NA, group size: 78
+2025-12-12 16:38:00,627 - Review.reviews.fri4p_review - INFO - Companies in group: 78, to exclude: 15
+2025-12-12 16:38:00,627 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: AS, group size: 27
+2025-12-12 16:38:00,628 - Review.reviews.fri4p_review - INFO - Companies in group: 27, to exclude: 5
+2025-12-12 16:38:00,629 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: EU, group size: 17
+2025-12-12 16:38:00,629 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-12-12 16:38:00,629 - Review.reviews.fri4p_review - INFO - Processing sector: 5510.0, area: NA, group size: 13
+2025-12-12 16:38:00,629 - Review.reviews.fri4p_review - INFO - Companies in group: 13, to exclude: 2
+2025-12-12 16:38:00,629 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: AS, group size: 17
+2025-12-12 16:38:00,630 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-12-12 16:38:00,630 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: EU, group size: 17
+2025-12-12 16:38:00,630 - Review.reviews.fri4p_review - INFO - Companies in group: 17, to exclude: 3
+2025-12-12 16:38:00,631 - Review.reviews.fri4p_review - INFO - Processing sector: 5520.0, area: NA, group size: 5
+2025-12-12 16:38:00,631 - Review.reviews.fri4p_review - INFO - Companies in group: 5, to exclude: 0
+2025-12-12 16:38:00,631 - Review.reviews.fri4p_review - WARNING - No companies to exclude for sector 5520.0 and area NA
+2025-12-12 16:38:00,631 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: AS, group size: 11
+2025-12-12 16:38:00,631 - Review.reviews.fri4p_review - INFO - Companies in group: 11, to exclude: 2
+2025-12-12 16:38:00,632 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: EU, group size: 22
+2025-12-12 16:38:00,632 - Review.reviews.fri4p_review - INFO - Companies in group: 22, to exclude: 4
+2025-12-12 16:38:00,632 - Review.reviews.fri4p_review - INFO - Processing sector: 6010.0, area: NA, group size: 34
+2025-12-12 16:38:00,632 - Review.reviews.fri4p_review - INFO - Companies in group: 34, to exclude: 6
+2025-12-12 16:38:00,632 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: AS, group size: 19
+2025-12-12 16:38:00,633 - Review.reviews.fri4p_review - INFO - Companies in group: 19, to exclude: 3
+2025-12-12 16:38:00,633 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: EU, group size: 26
+2025-12-12 16:38:00,634 - Review.reviews.fri4p_review - INFO - Companies in group: 26, to exclude: 5
+2025-12-12 16:38:00,634 - Review.reviews.fri4p_review - INFO - Processing sector: 6510.0, area: NA, group size: 33
+2025-12-12 16:38:00,634 - Review.reviews.fri4p_review - INFO - Companies in group: 33, to exclude: 6
+2025-12-12 16:38:00,637 - Review.reviews.fri4p_review - INFO - sesamm_df: 2359 rows -> 2312 unique ISINs after deduplication
+2025-12-12 16:38:00,637 - Review.reviews.fri4p_review - WARNING - Removed 47 duplicate ISIN records from sesamm_df
+2025-12-12 16:38:01,541 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:01] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:03,533 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:03] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:05,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:05] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:07,524 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:07] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:09,557 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:09] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:11,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:11] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:13,526 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:13] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:15,558 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:15] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:17,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:17] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:19,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:19] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:21,042 - Review.reviews.fri4p_review - INFO - Checking IsinCode FRIX00003643 in index_eod_df
+2025-12-12 16:38:21,042 - Review.reviews.fri4p_review - INFO - Found 1 matching rows
+2025-12-12 16:38:21,061 - Review.reviews.fri4p_review - INFO - Saving FRI4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRI4P_df_20251212_163821.xlsx
+2025-12-12 16:38:21,424 - Review.reviews.frn4p_review - INFO - Loading EOD data...
+2025-12-12 16:38:21,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:21] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:23,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:23] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:23,961 - Review.reviews.frn4p_review - INFO - Loading reference data...
+2025-12-12 16:38:25,232 - Review.reviews.frn4p_review - INFO - Selecting companies ranked 41-80 by FFMC (40 companies total)...
+2025-12-12 16:38:25,232 - Review.reviews.frn4p_review - INFO - Saving FRN4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRN4P_df_20251212_163825.xlsx
+2025-12-12 16:38:25,283 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-12-12 16:38:25,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:25] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:26,094 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-12-12 16:38:27,577 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:27] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:29,545 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:29] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:31,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:31] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:33,646 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:33] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:33,828 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-12-12 16:38:33,880 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-12-12 16:38:33,880 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-12-12 16:38:33,880 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-12-12 16:38:33,961 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) weight: 60.0000% (target: 60.00%)
+2025-12-12 16:38:33,961 - Review.reviews.gicp_review - INFO - Group 2 (NA500) weight: 40.0000% (target: 40.00%)
+2025-12-12 16:38:33,962 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-12-12 16:38:33,963 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) final weight: 60.0000%
+2025-12-12 16:38:33,963 - Review.reviews.gicp_review - INFO - Group 2 (NA500) final weight: 40.0000%
+2025-12-12 16:38:33,963 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.7811%
+2025-12-12 16:38:33,968 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20251212_163833.xlsx
+2025-12-12 16:38:34,193 - Review.reviews.gscsp_review - INFO - Loading EOD data...
+2025-12-12 16:38:35,361 - Review.reviews.gscsp_review - INFO - Loading reference data...
+2025-12-12 16:38:35,361 - Review.reviews.gscsp_review - INFO - Creating selection_df from GSCSP constituents...
+2025-12-12 16:38:35,361 - Review.reviews.gscsp_review - INFO - Found 3 GSCSP constituents
+2025-12-12 16:38:35,380 - Review.reviews.gscsp_review - INFO - Saving GSCSP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GSCSP_df_20251212_163835.xlsx
+2025-12-12 16:38:35,409 - Review.reviews.gsfbp_review - INFO - Loading EOD data...
+2025-12-12 16:38:35,527 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:35] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:36,298 - Review.reviews.gsfbp_review - INFO - Loading reference data...
+2025-12-12 16:38:37,128 - Review.reviews.gsfbp_review - INFO - Saving GSFBP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GSFBP_df_20251212_163837.xlsx
+2025-12-12 16:38:37,150 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-12 16:38:37,529 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:37] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:37,961 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-12 16:38:39,542 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:39] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:41,530 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:41] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:38:42,006 - Review.reviews.jpcla_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-12 16:38:42,007 - Review.reviews.jpcla_review - INFO - Remaining universe size: 500 companies
+2025-12-12 16:38:42,007 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-12 16:38:42,011 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
+2025-12-12 16:38:42,016 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-12 16:38:42,017 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 46
+2025-12-12 16:38:42,019 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-12 16:38:42,019 - Review.reviews.jpcla_review - INFO - APMines exclusions: 1
+2025-12-12 16:38:42,020 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-12 16:38:42,021 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-12 16:38:42,021 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 1
+2025-12-12 16:38:42,022 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 1
+2025-12-12 16:38:42,023 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 1
+2025-12-12 16:38:42,023 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-12 16:38:42,024 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 3
+2025-12-12 16:38:42,025 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 16
+2025-12-12 16:38:42,025 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 19
+2025-12-12 16:38:42,026 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-12 16:38:42,027 - Review.reviews.jpcla_review - INFO - Total companies in universe: 500
+2025-12-12 16:38:42,027 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 400.0
+2025-12-12 16:38:42,028 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 400.0): 100
+2025-12-12 16:38:42,030 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 344
+2025-12-12 16:38:42,047 - Review.reviews.jpcla_review - INFO - Selected top 250 companies by ESG Performance Score

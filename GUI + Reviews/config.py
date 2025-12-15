@@ -124,7 +124,7 @@ INDEX_CONFIGS = {
     "EZ15P": {
         "index": "EZ15P",
         "isin": "NL0012949101",
-        "output_key": "ez60p_path"
+        "output_key": "ez15p_path"
     },
     "EZN1P": {
         "index": "EZN1P",
@@ -467,9 +467,10 @@ ALL_MNEMOS = [
     "EQGFP", "ENFRP", "ES4PP", "EZ6PP", "FREMP", "EBLPP", "BIOEP", "JPCLE", "JPCLA", "EBSEP", 
     "CAPAP", "EGSPP", "EPSP", "PFLCE", "PFLC1", "PFEBL", "DUMEU", "BELS", "BELM", "BEL20", 
     "BELAS", "BIRUT", "ESGBP", "BERE", "EESF", "ETPFB", "ETSEP", "ELTFP", "ELECP", "EUADP",
-    "EEFAP", "EES2", "EFESP", "AEXAT", "AETAW", "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS",
-    "EUMS", "EUSL", "EESL", "EWSL", "EHNI", "EMLS", "EIAPR", "EHCF", "EAIB", "EEDF"
-    
+    "EEFAP", "EES2", "EFESP",  "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS", "EDEFP", "ELUX",
+    "EUMS", "EUSL", "EESL", "EWSL", "EHNI", "EMLS", "EIAPR", "EHCF", "EAIB", "EEDF", "EUOG",
+    "EEUS", "EWHC", "EZ60P", "EEAPP", "EEOG", "EEUU", "EEBRP", "EECP", "EWAP", "EWBR", "EWOU",
+    "EWOG"
 ]
 
 

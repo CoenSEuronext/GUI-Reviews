@@ -356,7 +356,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 'isincode': 'NLIX00007590',
                 'starting_universe': 'deup',
                 'classification_type': 'subsector',
-                'industry_code': 10102010
+                'industry_code': [10102020, 10102010]
             },
             'EEAPP': {
                 'isincode': 'NLIX00007657',

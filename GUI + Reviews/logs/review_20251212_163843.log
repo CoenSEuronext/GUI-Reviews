@@ -1,0 +1,38 @@
+2025-12-12 16:38:44,875 - werkzeug - WARNING -  * Debugger is active!
+2025-12-12 16:38:44,879 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-12 16:38:44,901 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:38:44] "GET /task-status/4f7d939a-40dd-46fc-bec0-70e58e7feb8a HTTP/1.1" 200 -
+2025-12-12 16:39:55,819 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:39:55] "POST /calculate HTTP/1.1" 200 -
+2025-12-12 16:39:55,819 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-12 16:39:55,831 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:39:55] "GET /task-status/65f76e7e-5b73-4d0b-8a74-aae7f919c72a HTTP/1.1" 200 -
+2025-12-12 16:39:57,832 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:39:57] "GET /task-status/65f76e7e-5b73-4d0b-8a74-aae7f919c72a HTTP/1.1" 200 -
+2025-12-12 16:39:59,079 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-12 16:39:59,846 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:39:59] "GET /task-status/65f76e7e-5b73-4d0b-8a74-aae7f919c72a HTTP/1.1" 200 -
+2025-12-12 16:40:01,832 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:40:01] "GET /task-status/65f76e7e-5b73-4d0b-8a74-aae7f919c72a HTTP/1.1" 200 -
+2025-12-12 16:40:03,196 - Review.reviews.jpcla_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-12 16:40:03,197 - Review.reviews.jpcla_review - INFO - Remaining universe size: 500 companies
+2025-12-12 16:40:03,197 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-12 16:40:03,203 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-12 16:40:03,204 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 46
+2025-12-12 16:40:03,205 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-12 16:40:03,206 - Review.reviews.jpcla_review - INFO - APMines exclusions: 1
+2025-12-12 16:40:03,206 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-12 16:40:03,207 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-12 16:40:03,208 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 1
+2025-12-12 16:40:03,208 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 1
+2025-12-12 16:40:03,209 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 1
+2025-12-12 16:40:03,210 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-12 16:40:03,211 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 3
+2025-12-12 16:40:03,213 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 16
+2025-12-12 16:40:03,214 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 19
+2025-12-12 16:40:03,215 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-12 16:40:03,215 - Review.reviews.jpcla_review - INFO - Total companies in universe: 500
+2025-12-12 16:40:03,215 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 400.0
+2025-12-12 16:40:03,215 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 400.0): 100
+2025-12-12 16:40:03,231 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 344
+2025-12-12 16:40:03,233 - Review.reviews.jpcla_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-12 16:40:03,850 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:40:03] "GET /task-status/65f76e7e-5b73-4d0b-8a74-aae7f919c72a HTTP/1.1" 200 -
+2025-12-12 16:40:04,942 - Review.reviews.jpcla_review - INFO - Selected top 25 companies by FFMC
+2025-12-12 16:40:04,942 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2025-12-12 16:40:04,942 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2025-12-12 16:40:04,942 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLA_df_20251212_164004.xlsx
+2025-12-12 16:40:05,830 - werkzeug - INFO - 127.0.0.1 - - [12/Dec/2025 16:40:05] "GET /task-status/65f76e7e-5b73-4d0b-8a74-aae7f919c72a HTTP/1.1" 200 -

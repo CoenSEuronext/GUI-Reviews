@@ -131,6 +131,7 @@ def run_ewsl_review(date, effective_date, co_date, index="EWSL", isin="NLIX00008
         # Create MIC to Country mapping
         mic_to_country = {
             "XNGS": "United States",
+            "XNAS": "United States",
             "XOSL": "Norway",
             "XLON": "Great Britain",
             "XNYS": "United States",

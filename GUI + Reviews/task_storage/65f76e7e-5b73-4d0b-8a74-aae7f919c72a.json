@@ -1,0 +1,26 @@
+{
+  "task_id": "65f76e7e-5b73-4d0b-8a74-aae7f919c72a",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-12T16:39:55.819193",
+  "started_at": "2025-12-12T16:39:55.819193",
+  "completed_at": "2025-12-12T16:40:05.303009",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "jpcla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\JPCLA_df_20251212_164004.xlsx"
+  },
+  "review_type": "JPCLA",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "JPCLA",
+    "isin": "FRESG0000181",
+    "currency": "EUR",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": 9.483816
+}
