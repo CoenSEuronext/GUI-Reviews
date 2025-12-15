@@ -66,6 +66,9 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
             how='left'
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float',
                                                      'Name': 'Company'})
+        
+        # Drop duplicates based on ISIN
+        eurozone_300_df = eurozone_300_df.drop_duplicates(subset=['ISIN'], keep='first')
 
         # Step 2a: FFMC Screening - Keep top 150 by Free Float Market Cap
         logger.info("Step 2a: Calculating FFMC and filtering top 150...")
@@ -82,203 +85,9 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
         eurozone_300_df = eurozone_300_df[eurozone_300_df['FFMC Rank'] <= 150].copy()
         logger.info(f"After FFMC screening: {len(eurozone_300_df)} companies remain (top 150)")
 
-        # Initialize exclusion columns
-        exclusion_count = 1
-        
-        # Step 2b: Trust Metric screening
-        logger.info("Step 2b: Trust Metric screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_TrustMetric'] = None
-
-        # Get ISINs with Trust Metric < 0.6 or 'Not Collected'
-        # First, convert to numeric but keep original column for 'Not Collected' check
-        Oekom_TrustCarbon_df['Trust Metric Numeric'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['Reported Emissions - Emissions Trust Metric'], 
-            errors='coerce'
-        )
-
-        excluded_trust_metric = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Trust Metric Numeric'] < 0.6) |
-            (Oekom_TrustCarbon_df['Reported Emissions - Emissions Trust Metric'] == 'Not Collected')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_TrustMetric'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_trust_metric),
-            'exclude_TrustMetric',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2c: NBR Overall Flag exclusion (UNGC Violators)
-        logger.info("Step 2c: NBR Overall Flag (UNGC Violators) screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_NBROverallFlag'] = None
-        NBR_Overall_Flag_Red = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['NBR Overall Flag'] == 'RED') |
-            (Oekom_TrustCarbon_df['NBR Overall Flag'] == 'Not Collected')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_NBROverallFlag'] = np.where(
-            eurozone_300_df['ISIN'].isin(NBR_Overall_Flag_Red),
-            'exclude_NBROverallFlag',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2d: Controversial Weapons screening
-        logger.info("Step 2d: Controversial Weapons screening...")
-        weapons_columns = {
-            'Anti-personnel Mines - Overall Flag': ('exclude_APMines', 'APMines'),
-            'Biological Weapons - Overall Flag': ('exclude_BiologicalWeapons', 'BiologicalWeapons'),
-            'Chemical Weapons - Overall Flag': ('exclude_ChemicalWeapons', 'ChemicalWeapons'),
-            'Cluster Munitions - Overall Flag': ('exclude_ClusterMunitions', 'ClusterMunitions'),
-            'Depleted Uranium - Overall Flag': ('exclude_DepletedUranium', 'DepletedUranium'),
-            'Incendiary Weapons - Overall Flag': ('exclude_IncendiaryWeapons', 'IncendiaryWeapons'),
-            'Nuclear Weapons Outside NPT - Overall Flag': ('exclude_NuclearWeaponsNonNPT', 'NuclearWeaponsNonNPT'),
-            'White Phosphorous Weapons - Overall Flag': ('exclude_WhitePhosphorus', 'WhitePhosphorus')
-        }
-
-        for column, (exclude_value, label) in weapons_columns.items():
-            eurozone_300_df[f'exclusion_{exclusion_count}_{label}'] = None
-            
-            # Get ISINs for this weapon type (Red or 'Not Collected')
-            flagged_isins = Oekom_TrustCarbon_df[
-                (Oekom_TrustCarbon_df[column] == 'RED') |
-                (Oekom_TrustCarbon_df[column] == 'Not Collected')
-            ]['ISIN'].tolist()
-            
-            eurozone_300_df[f'exclusion_{exclusion_count}_{label}'] = np.where(
-                eurozone_300_df['ISIN'].isin(flagged_isins),
-                exclude_value,
-                None
-            )
-            exclusion_count += 1
-
-        # Step 2e: Thermal Coal Mining screening
-        logger.info("Step 2e: Thermal Coal Mining screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_CoalMining'] = None
-
-        # Keep original column for 'Not Collected' and 'Not Disclosed' check
-        Oekom_TrustCarbon_df['Coal Mining Numeric'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'], 
-            errors='coerce'
-        )
-
-        excluded_coal_mining = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Coal Mining Numeric'] > 0) |
-            (Oekom_TrustCarbon_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'] == 'Not Collected') |
-            (Oekom_TrustCarbon_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_CoalMining'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_coal_mining),
-            'exclude_CoalMining',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2f: Thermal Coal Power Generation screening
-        logger.info("Step 2f: Thermal Coal Power Generation screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_ThermalPower'] = None
-
-        # Keep original column for 'Not Collected' and 'Not Disclosed' check
-        Oekom_TrustCarbon_df['Thermal Power Numeric'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'], 
-            errors='coerce'
-        )
-
-        excluded_thermal_power = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Thermal Power Numeric'] > 0.1) |
-            (Oekom_TrustCarbon_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'] == 'Not Collected') |
-            (Oekom_TrustCarbon_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_ThermalPower'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_thermal_power),
-            'exclude_ThermalPower',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2g: Oil Sands screening (NEW)
-        logger.info("Step 2g: Oil Sands screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_OilSands'] = None
-
-        Oekom_TrustCarbon_df['Oil Sands Numeric'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['Oil Sands - Production Maximum Percentage of Revenues (%)'], 
-            errors='coerce'
-        )
-
-        excluded_oil_sands = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Oil Sands Numeric'] > 0) |
-            (Oekom_TrustCarbon_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Collected') |
-            (Oekom_TrustCarbon_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_OilSands'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_oil_sands),
-            'exclude_OilSands',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2h: Shale Oil and/or Gas screening (moved from 2f)
-        logger.info("Step 2h: Shale Oil and/or Gas screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = None
-
-        excluded_shale = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Shale Oil and/or Gas - Involvement tie'] == 'Production') |
-            (Oekom_TrustCarbon_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Collected') |
-            (Oekom_TrustCarbon_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Disclosed')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_shale),
-            'exclude_ShaleOilGas',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2i: Arctic Drilling screening (NEW)
-        logger.info("Step 2i: Arctic Drilling screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_ArcticDrilling'] = None
-
-        Oekom_TrustCarbon_df['Arctic Drilling Numeric'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['arctic_drilling_involvement'], 
-            errors='coerce'
-        )
-
-        excluded_arctic = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['Arctic Drilling Numeric'] > 0) |
-            (Oekom_TrustCarbon_df['arctic_drilling_involvement'] == 'Not Collected')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_ArcticDrilling'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_arctic),
-            'exclude_ArcticDrilling',
-            None
-        )
-        exclusion_count += 1
-
-        # Step 2j: Deepwater Drilling screening (NEW)
-        logger.info("Step 2j: Deepwater Drilling screening...")
-        eurozone_300_df[f'exclusion_{exclusion_count}_DeepwaterDrilling'] = None
-
-        excluded_deepwater = Oekom_TrustCarbon_df[
-            (Oekom_TrustCarbon_df['deepwater_drilling_involvement'] == 'Not Collected') |
-            (Oekom_TrustCarbon_df['deepwater_drilling_involvement'] == 'T')
-        ]['ISIN'].tolist()
-
-        eurozone_300_df[f'exclusion_{exclusion_count}_DeepwaterDrilling'] = np.where(
-            eurozone_300_df['ISIN'].isin(excluded_deepwater),
-            'exclude_DeepwaterDrilling',
-            None
-        )
-        exclusion_count += 1
-
-        # Create list of all exclusion columns
-        exclusion_columns = [col for col in eurozone_300_df.columns if col.startswith('exclusion_')]
-
-        # Merge ALL relevant columns from Oekom data BEFORE creating summary columns
-        # This ensures all datapoints appear before exclusion columns in output
+        # FIRST: Merge ALL relevant columns from Oekom data BEFORE creating exclusions
+        # This ensures we have all the data we need to properly evaluate exclusions
+        logger.info("Merging Oekom ESG data...")
         oekom_columns_to_merge = [
             'ISIN',
             'ClimateCuAlignIEANZTgt2050-values',
@@ -301,12 +110,6 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
             'deepwater_drilling_involvement'
         ]
 
-        # Store exclusion columns temporarily
-        exclusion_data = eurozone_300_df[exclusion_columns].copy()
-
-        # Drop exclusion columns before merge
-        eurozone_300_df = eurozone_300_df.drop(columns=exclusion_columns)
-
         # Merge Oekom data
         eurozone_300_df = eurozone_300_df.merge(
             Oekom_TrustCarbon_df[oekom_columns_to_merge],
@@ -314,6 +117,154 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
             how='left',
             suffixes=('', '_oekom')
         )
+
+        # NOW perform all exclusion screenings based on merged data
+        # Initialize exclusion columns
+        exclusion_count = 1
+        
+        # Step 2b: Trust Metric screening
+        logger.info("Step 2b: Trust Metric screening...")
+        # Convert to numeric for comparison
+        trust_metric_numeric = pd.to_numeric(
+            eurozone_300_df['Reported Emissions - Emissions Trust Metric'], 
+            errors='coerce'
+        )
+        
+        eurozone_300_df[f'exclusion_{exclusion_count}_TrustMetric'] = np.where(
+            (trust_metric_numeric < 0.6) |
+            (eurozone_300_df['Reported Emissions - Emissions Trust Metric'] == 'Not Collected') |
+            (eurozone_300_df['Reported Emissions - Emissions Trust Metric'].isna()),
+            'exclude_TrustMetric',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2c: NBR Overall Flag exclusion (UNGC Violators)
+        logger.info("Step 2c: NBR Overall Flag (UNGC Violators) screening...")
+        eurozone_300_df[f'exclusion_{exclusion_count}_NBROverallFlag'] = np.where(
+            (eurozone_300_df['NBR Overall Flag'] == 'RED') |
+            (eurozone_300_df['NBR Overall Flag'] == 'Not Collected') |
+            (eurozone_300_df['NBR Overall Flag'].isna()),
+            'exclude_NBROverallFlag',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2d: Controversial Weapons screening
+        logger.info("Step 2d: Controversial Weapons screening...")
+        weapons_columns = {
+            'Anti-personnel Mines - Overall Flag': ('exclude_APMines', 'APMines'),
+            'Biological Weapons - Overall Flag': ('exclude_BiologicalWeapons', 'BiologicalWeapons'),
+            'Chemical Weapons - Overall Flag': ('exclude_ChemicalWeapons', 'ChemicalWeapons'),
+            'Cluster Munitions - Overall Flag': ('exclude_ClusterMunitions', 'ClusterMunitions'),
+            'Depleted Uranium - Overall Flag': ('exclude_DepletedUranium', 'DepletedUranium'),
+            'Incendiary Weapons - Overall Flag': ('exclude_IncendiaryWeapons', 'IncendiaryWeapons'),
+            'Nuclear Weapons Outside NPT - Overall Flag': ('exclude_NuclearWeaponsNonNPT', 'NuclearWeaponsNonNPT'),
+            'White Phosphorous Weapons - Overall Flag': ('exclude_WhitePhosphorus', 'WhitePhosphorus')
+        }
+
+        for column, (exclude_value, label) in weapons_columns.items():
+            eurozone_300_df[f'exclusion_{exclusion_count}_{label}'] = np.where(
+                (eurozone_300_df[column] == 'RED') |
+                (eurozone_300_df[column] == 'Not Collected') |
+                (eurozone_300_df[column].isna()),
+                exclude_value,
+                None
+            )
+            exclusion_count += 1
+
+        # Step 2e: Thermal Coal Mining screening
+        logger.info("Step 2e: Thermal Coal Mining screening...")
+        coal_mining_numeric = pd.to_numeric(
+            eurozone_300_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'], 
+            errors='coerce'
+        )
+        
+        eurozone_300_df[f'exclusion_{exclusion_count}_CoalMining'] = np.where(
+            (coal_mining_numeric > 0) |
+            (eurozone_300_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'] == 'Not Collected') |
+            (eurozone_300_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'] == 'Not Disclosed') |
+            (eurozone_300_df['Thermal Coal Mining - Maximum Percentage of Revenues (%)'].isna()),
+            'exclude_CoalMining',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2f: Thermal Coal Power Generation screening
+        logger.info("Step 2f: Thermal Coal Power Generation screening...")
+        thermal_power_numeric = pd.to_numeric(
+            eurozone_300_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'], 
+            errors='coerce'
+        )
+        
+        eurozone_300_df[f'exclusion_{exclusion_count}_ThermalPower'] = np.where(
+            (thermal_power_numeric > 0.1) |
+            (eurozone_300_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'] == 'Not Collected') |
+            (eurozone_300_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'] == 'Not Disclosed') |
+            (eurozone_300_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'].isna()),
+            'exclude_ThermalPower',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2g: Oil Sands screening
+        logger.info("Step 2g: Oil Sands screening...")
+        oil_sands_numeric = pd.to_numeric(
+            eurozone_300_df['Oil Sands - Production Maximum Percentage of Revenues (%)'], 
+            errors='coerce'
+        )
+        
+        eurozone_300_df[f'exclusion_{exclusion_count}_OilSands'] = np.where(
+            (oil_sands_numeric > 0) |
+            (eurozone_300_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Collected') |
+            (eurozone_300_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Disclosed') |
+            (eurozone_300_df['Oil Sands - Production Maximum Percentage of Revenues (%)'].isna()),
+            'exclude_OilSands',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2h: Shale Oil and/or Gas screening
+        logger.info("Step 2h: Shale Oil and/or Gas screening...")
+        eurozone_300_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = np.where(
+            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Production') |
+            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Collected') |
+            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Disclosed') |
+            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'].isna()),
+            'exclude_ShaleOilGas',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2i: Arctic Drilling screening
+        logger.info("Step 2i: Arctic Drilling screening...")
+        arctic_drilling_numeric = pd.to_numeric(
+            eurozone_300_df['arctic_drilling_involvement'], 
+            errors='coerce'
+        )
+        
+        eurozone_300_df[f'exclusion_{exclusion_count}_ArcticDrilling'] = np.where(
+            (arctic_drilling_numeric > 0) |
+            (eurozone_300_df['arctic_drilling_involvement'] == 'Not Collected') |
+            (eurozone_300_df['arctic_drilling_involvement'].isna()),
+            'exclude_ArcticDrilling',
+            None
+        )
+        exclusion_count += 1
+
+        # Step 2j: Deepwater Drilling screening
+        logger.info("Step 2j: Deepwater Drilling screening...")
+        eurozone_300_df[f'exclusion_{exclusion_count}_DeepwaterDrilling'] = np.where(
+            (eurozone_300_df['deepwater_drilling_involvement'] == 'Not Collected') |
+            (eurozone_300_df['deepwater_drilling_involvement'] == 'T') |
+            (eurozone_300_df['deepwater_drilling_involvement'].isna()),
+            'exclude_DeepwaterDrilling',
+            None
+        )
+        exclusion_count += 1
+
+        # Create list of all exclusion columns
+        exclusion_columns = [col for col in eurozone_300_df.columns if col.startswith('exclusion_')]
 
         # Convert to numeric for ranking
         eurozone_300_df['ClimateCuAlignIEANZTgt2050-values'] = pd.to_numeric(
@@ -338,10 +289,6 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
             method='min',
             ascending=True
         )
-
-        # NOW add back the exclusion columns (these will appear AFTER all datapoints)
-        for col in exclusion_columns:
-            eurozone_300_df[col] = exclusion_data[col]
 
         # Create the exclusion summary columns
         def summarize_exclusions(row, exclusion_cols):

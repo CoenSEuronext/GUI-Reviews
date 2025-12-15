@@ -132,7 +132,7 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
         # Merge Price from Master Report
         logger.info("Merging Price from Master Report...")
         sbf_120_df = sbf_120_df.merge(
-            master_report_df[['ISIN', 'MIC of MoR', 'Last price']],
+            master_report_df[['ISIN', 'MIC of MoR', 'Last price', 'Number of issued shares']],
             left_on=['ISIN', 'MIC'],
             right_on=['ISIN', 'MIC of MoR'],
             how='left'
@@ -434,7 +434,7 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
         logger.info(f"Companies remaining after exclusions: {len(selection_df)}")
         
         # Calculate FFMC_MR using Price MR
-        selection_df['FFMC_MR'] = selection_df['Free Float'] * selection_df['Price MR'] * selection_df['NOSH']
+        selection_df['FFMC_MR'] = selection_df['Free Float'] * selection_df['Price MR'] * selection_df['Number of issued shares']
         
         # Rank by Carbon Budget (lower is better), then by FFMC_MR (higher is better)
         selection_df['Selection Carbon Budget Rank'] = selection_df['ClimateCuAlignIEANZTgt2050-values'].rank(
@@ -499,7 +499,7 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
             raise ValueError(f"No matching index found for ISIN {isin}")
 
         logger.info(f"Index market cap: {index_mcap}")
-        final_selection_df['FFMC'] = final_selection_df['Free Float'] * final_selection_df['Close Prc_EOD'] * final_selection_df['NOSH'] 
+        final_selection_df['FFMC'] = final_selection_df['Free Float'] * final_selection_df['Close Prc_EOD'] * final_selection_df['Number of issued shares'] 
         # Apply proportional capping using FFMC
         logger.info("Applying proportional capping with 10% max weight...")
         final_selection_df = apply_proportional_capping(
@@ -530,7 +530,7 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
             'Company', 
             'ISIN', 
             'MIC', 
-            'NOSH',
+            'Number of issued shares',
             'Free Float',
             'Capping Factor',
             'Effective Date of Review',
@@ -540,7 +540,7 @@ def run_fclsp_review(date, co_date, effective_date, index="FCLSP", isin="FRESG00
         # Rename columns and sort
         FCLSP_df = FCLSP_df.rename(columns={
             'ISIN': 'ISIN Code',
-            'NOSH': 'Number of Shares',
+            'Number of issued shares': 'Number of Shares',
             'Currency (Local)': 'Currency'
         })
         FCLSP_df = FCLSP_df.sort_values('Company')

@@ -119,8 +119,6 @@ def run_efesp_review(date, co_date, effective_date, index="EFESP", isin="NLIX000
         # Turnover filter - keep only companies with 3-month average turnover > 10M EUR
         selection_df['inclusion_turnover'] = selection_df['3M AVG Turnover EUR'] > 10000000
 
-        # Remove the old MIC exclusion logic completely
-        # selection_df['exclusion_mic'] = ~selection_df['MIC'].isin(['XLIS', 'XTAE'])  # Remove this line
 
         # Updated eligible companies filter - must pass BOTH ICB and turnover filters
         logger.info("Creating eligible companies dataframe...")
@@ -147,10 +145,10 @@ def run_efesp_review(date, co_date, effective_date, index="EFESP", isin="NLIX000
         eligible_df['Group'] = eligible_df['Subsector Code'].astype(str).str[:6].map(icb_to_group)
 
         # Add Rank column based on FFMC (higher FFMC = lower rank number)
-        eligible_df['Rank'] = eligible_df['FFMC_WD'].rank(method='dense', ascending=False).astype(int)
+        eligible_df['Rank'] = eligible_df['FFMC'].rank(method='dense', ascending=False).astype(int)
 
         # Add Selection column - select top 5 companies per group based on FFMC_WD
-        eligible_df['Rank_within_Group'] = eligible_df.groupby('Group')['FFMC_WD'].rank(method='dense', ascending=False).astype(int)
+        eligible_df['Rank_within_Group'] = eligible_df.groupby('Group')['FFMC'].rank(method='dense', ascending=False).astype(int)
         eligible_df['Selection'] = (eligible_df['Rank_within_Group'] <= 5).astype(int)
 
         # Optional: Log selection summary

@@ -1,0 +1,50 @@
+2025-12-15 11:56:59,183 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 11:56:59,199 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 11:57:00,334 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:57:00] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 11:57:00,339 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+2025-12-15 11:57:00,339 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:57:00] "GET /task-status/58d066a7-3854-4d24-9207-71963ba40c92 HTTP/1.1" 200 -
+2025-12-15 11:57:00,849 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2025-12-15 11:57:02,366 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:57:02] "GET /task-status/58d066a7-3854-4d24-9207-71963ba40c92 HTTP/1.1" 200 -
+2025-12-15 11:57:04,352 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:57:04] "GET /task-status/58d066a7-3854-4d24-9207-71963ba40c92 HTTP/1.1" 200 -
+2025-12-15 11:57:06,360 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:57:06] "GET /task-status/58d066a7-3854-4d24-9207-71963ba40c92 HTTP/1.1" 200 -
+2025-12-15 11:57:07,161 - Review.reviews.fclsp_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-15 11:57:07,161 - Review.reviews.fclsp_review - INFO - Remaining universe size: 120 companies
+2025-12-15 11:57:07,161 - Review.reviews.fclsp_review - INFO - Merging Price from Master Report...
+2025-12-15 11:57:07,165 - Review.reviews.fclsp_review - INFO - Merging Oekom data points early...
+2025-12-15 11:57:07,176 - Review.reviews.fclsp_review - INFO - Oekom data merged successfully
+2025-12-15 11:57:07,176 - Review.reviews.fclsp_review - INFO - Trust Metric exclusions: 4
+2025-12-15 11:57:07,176 - Review.reviews.fclsp_review - INFO - NBR Overall Flag exclusions: 0
+2025-12-15 11:57:07,176 - Review.reviews.fclsp_review - INFO - APMines exclusions: 1
+2025-12-15 11:57:07,181 - Review.reviews.fclsp_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-15 11:57:07,181 - Review.reviews.fclsp_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-15 11:57:07,182 - Review.reviews.fclsp_review - INFO - ClusterMunitions exclusions: 1
+2025-12-15 11:57:07,183 - Review.reviews.fclsp_review - INFO - DepletedUranium exclusions: 1
+2025-12-15 11:57:07,184 - Review.reviews.fclsp_review - INFO - IncendiaryWeapons exclusions: 3
+2025-12-15 11:57:07,184 - Review.reviews.fclsp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-15 11:57:07,185 - Review.reviews.fclsp_review - INFO - WhitePhosphorus exclusions: 1
+2025-12-15 11:57:07,185 - Review.reviews.fclsp_review - INFO - Coal Mining exclusions: 0
+2025-12-15 11:57:07,185 - Review.reviews.fclsp_review - INFO - Thermal Power exclusions: 2
+2025-12-15 11:57:07,185 - Review.reviews.fclsp_review - INFO - Oil Sands exclusions: 0
+2025-12-15 11:57:07,189 - Review.reviews.fclsp_review - INFO - Shale Oil/Gas exclusions: 1
+2025-12-15 11:57:07,189 - Review.reviews.fclsp_review - INFO - Total companies in universe: 120
+2025-12-15 11:57:07,189 - Review.reviews.fclsp_review - INFO - Carbon Budget cutoff rank (80th percentile): 96.0
+2025-12-15 11:57:07,189 - Review.reviews.fclsp_review - INFO - Carbon Budget exclusions (rank > 96.0): 24
+2025-12-15 11:57:07,191 - Review.reviews.fclsp_review - INFO - Tobacco Production exclusions: 0
+2025-12-15 11:57:07,200 - Review.reviews.fclsp_review - INFO - Companies remaining after exclusions: 89
+2025-12-15 11:57:07,201 - Review.reviews.fclsp_review - INFO - Selected top 60 companies
+2025-12-15 11:57:07,733 - Review.reviews.fclsp_review - INFO - Checking IsinCode FRESG0001478 in index_eod_df
+2025-12-15 11:57:07,733 - Review.reviews.fclsp_review - INFO - Found 1 matching rows
+2025-12-15 11:57:07,733 - Review.reviews.fclsp_review - INFO - Index market cap: 1164743061538.7268
+2025-12-15 11:57:07,733 - Review.reviews.fclsp_review - INFO - Applying proportional capping with 10% max weight...
+2025-12-15 11:57:07,733 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-15 11:57:07,733 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2025-12-15 11:57:07,733 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 11:57:07,748 - utils.capping_proportional - INFO -   Total companies: 60
+2025-12-15 11:57:07,748 - utils.capping_proportional - INFO -   Companies capped: 2
+2025-12-15 11:57:07,748 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 11:57:07,749 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-15 11:57:07,755 - Review.reviews.fclsp_review - INFO - Saving FCLSP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FCLSP_df_20251215_115707.xlsx
+2025-12-15 11:57:08,350 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:57:08] "GET /task-status/58d066a7-3854-4d24-9207-71963ba40c92 HTTP/1.1" 200 -
+2025-12-15 11:58:15,171 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
+2025-12-15 11:58:15,171 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
+2025-12-15 11:58:15,171 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading

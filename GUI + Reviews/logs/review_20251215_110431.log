@@ -1,0 +1,34 @@
+2025-12-15 11:04:32,241 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 11:04:32,241 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 11:04:38,235 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:04:38] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 11:04:38,242 - Review.reviews.eemsc_review - INFO - Starting EEMSC review calculation
+2025-12-15 11:04:38,242 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:04:38] "GET /task-status/06a79db1-23dd-4c78-b1ae-581d96154866 HTTP/1.1" 200 -
+2025-12-15 11:04:39,925 - Review.reviews.eemsc_review - INFO - Found 1018 existing companies in EEMSC
+2025-12-15 11:04:39,935 - Review.reviews.eemsc_review - INFO - 
+Overall EEMSC Selection Summary:
+2025-12-15 11:04:39,935 - Review.reviews.eemsc_review - INFO - Total companies selected: 1090
+2025-12-15 11:04:39,935 - Review.reviews.eemsc_review - INFO -   - Existing companies selected: 1016
+2025-12-15 11:04:39,935 - Review.reviews.eemsc_review - INFO -   - New companies selected: 74
+2025-12-15 11:04:39,935 - Review.reviews.eemsc_review - INFO - Total FFMC covered: 30.56%
+2025-12-15 11:04:39,935 - Review.reviews.eemsc_review - INFO - 
+Applying proportional capping
+2025-12-15 11:04:39,935 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-15 11:04:39,935 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 11:04:39,935 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 11:04:39,935 - utils.capping_proportional - INFO -   Total companies: 1090
+2025-12-15 11:04:39,935 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 11:04:39,941 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 11:04:39,941 - utils.capping_proportional - INFO -   Max weight after capping: 0.011094
+2025-12-15 11:04:39,945 - Review.reviews.eemsc_review - INFO - 
+EEMSC Changes Summary:
+2025-12-15 11:04:39,945 - Review.reviews.eemsc_review - INFO - Inclusions: 74
+2025-12-15 11:04:39,945 - Review.reviews.eemsc_review - INFO - Exclusions: 76
+2025-12-15 11:04:39,945 - Review.reviews.eemsc_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251215_110439.xlsx
+2025-12-15 11:04:40,251 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:04:40] "GET /task-status/06a79db1-23dd-4c78-b1ae-581d96154866 HTTP/1.1" 200 -
+2025-12-15 11:04:40,334 - Review.reviews.eemsc_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEMSC_Review_20251215_110439.xlsx
+2025-12-15 11:04:42,251 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:04:42] "GET /task-status/06a79db1-23dd-4c78-b1ae-581d96154866 HTTP/1.1" 200 -
+2025-12-15 11:04:45,952 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:04:45] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 11:04:45,952 - Review.reviews.eemsc_review - INFO - Starting EEMSC review calculation
+2025-12-15 11:04:45,960 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 11:04:45] "GET /task-status/c4298f0b-a121-4b7c-9bdd-b6dc76a3dd2a HTTP/1.1" 200 -
+2025-12-15 11:04:46,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eemsc_review.py', reloading
+2025-12-15 11:04:46,941 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eemsc_review.py', reloading

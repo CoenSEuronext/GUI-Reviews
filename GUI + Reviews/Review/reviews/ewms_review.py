@@ -183,7 +183,7 @@ def run_ewms_review(date, effective_date, co_date, index="EWMS", isin="NLIX00008
         logger.info(f"Found {universe_df['Is_Existing'].sum()} existing companies in {index}")
         
         # Calculate market cap
-        universe_df['Mcap in EUR'] = universe_df['FX/Index Ccy'] * universe_df['Number of Shares'] * universe_df['Price (Eur) '] * universe_df['Free Float']
+        universe_df['Mcap in EUR'] = universe_df['Number of Shares'] * universe_df['Price (Eur) '] * universe_df['Free Float']
         
         # Sort by Country and then by Mcap descending within each country
         universe_df = universe_df.sort_values(['Country', 'Mcap in EUR'], ascending=[True, False])

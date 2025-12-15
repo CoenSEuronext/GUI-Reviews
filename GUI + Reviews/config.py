@@ -1,6 +1,6 @@
 # config.py
 # Network paths
-DLF_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
+DLF_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202512\DLF"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
 DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
 
