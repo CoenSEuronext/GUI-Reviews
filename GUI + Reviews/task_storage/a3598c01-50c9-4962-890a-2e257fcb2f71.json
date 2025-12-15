@@ -1,0 +1,24 @@
+{
+  "task_id": "a3598c01-50c9-4962-890a-2e257fcb2f71",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-15T17:00:22.316730",
+  "started_at": "2025-12-15T17:00:22.322062",
+  "completed_at": "2025-12-15T17:00:38.716272",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: Length of values (2) does not match length of index (314)",
+  "error": "Error during review calculation: Length of values (2) does not match length of index (314)",
+  "result_data": null,
+  "review_type": "FRD4P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "FRD4P",
+    "isin": "FRIX00003031",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 16.39421
+}

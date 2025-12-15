@@ -1,0 +1,27 @@
+2025-12-15 13:05:34,669 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 13:05:34,669 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 13:05:41,214 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:41] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:05:41,214 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-12-15 13:05:41,214 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:41] "GET /task-status/d0821b17-4983-4f3d-a1c6-c4f1767bd088 HTTP/1.1" 200 -
+2025-12-15 13:05:41,680 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-12-15 13:05:43,237 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:43] "GET /task-status/d0821b17-4983-4f3d-a1c6-c4f1767bd088 HTTP/1.1" 200 -
+2025-12-15 13:05:45,233 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:45] "GET /task-status/d0821b17-4983-4f3d-a1c6-c4f1767bd088 HTTP/1.1" 200 -
+2025-12-15 13:05:47,230 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:47] "GET /task-status/d0821b17-4983-4f3d-a1c6-c4f1767bd088 HTTP/1.1" 200 -
+2025-12-15 13:05:49,267 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:49] "GET /task-status/d0821b17-4983-4f3d-a1c6-c4f1767bd088 HTTP/1.1" 200 -
+2025-12-15 13:05:49,430 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-12-15 13:05:49,484 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-12-15 13:05:49,484 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-12-15 13:05:49,484 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-12-15 13:05:49,547 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) weight: 60.0000% (target: 60.00%)
+2025-12-15 13:05:49,553 - Review.reviews.gicp_review - INFO - Group 2 (NA500) weight: 40.0000% (target: 40.00%)
+2025-12-15 13:05:49,553 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-12-15 13:05:49,553 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) final weight: 60.0000%
+2025-12-15 13:05:49,553 - Review.reviews.gicp_review - INFO - Group 2 (NA500) final weight: 40.0000%
+2025-12-15 13:05:49,553 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 10.7811%
+2025-12-15 13:05:49,557 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20251215_130549.xlsx
+2025-12-15 13:05:51,223 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:05:51] "GET /task-status/d0821b17-4983-4f3d-a1c6-c4f1767bd088 HTTP/1.1" 200 -
+2025-12-15 13:06:24,200 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-12-15 13:06:24,200 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-12-15 13:06:24,230 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-12-15 13:06:24,232 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading

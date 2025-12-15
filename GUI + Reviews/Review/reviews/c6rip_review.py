@@ -11,7 +11,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_c6rip_review(date, co_date, effective_date, index="c6rip", isin="QS0011256235", 
+def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS0011256235", 
                     area="US", area2="EU", type="STOCK", universe="cac_family", 
                     feed="Reuters", currency="EUR", year=None):
    
@@ -203,7 +203,7 @@ def run_c6rip_review(date, co_date, effective_date, index="c6rip", isin="QS00112
            
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            c6rip_path = os.path.join(output_dir, f'c6rip_df_{timestamp}.xlsx')
+            c6rip_path = os.path.join(output_dir, f'C6RIP_df_{timestamp}.xlsx')
            
             # Save output with multiple sheets
             logger.info(f"Saving c6rip output to: {c6rip_path}")

@@ -1,0 +1,159 @@
+2025-12-15 14:17:25,771 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 14:17:25,773 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 14:17:56,966 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:17:56] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-15 14:17:56,966 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:17:56] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:17:56,971 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-15 14:17:57,404 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-12-15 14:17:57,606 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-15 14:17:57,651 - Review.reviews.aetaw_review - INFO - 
+Initial weights calculated. Starting two-step capping process...
+2025-12-15 14:17:57,651 - Review.reviews.aetaw_review - INFO - 
+========== STEP 1: Cap all companies at 9% ==========
+2025-12-15 14:17:57,651 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 1 ---
+2025-12-15 14:17:57,651 - Review.reviews.aetaw_review - INFO - Capped 3 companies at 9%
+2025-12-15 14:17:57,651 - Review.reviews.aetaw_review - INFO - Excess weight: 27.00%
+2025-12-15 14:17:57,651 - Review.reviews.aetaw_review - INFO - Redistributed to 72 companies below 9%
+2025-12-15 14:17:57,654 - Review.reviews.aetaw_review - INFO - Max weight change: 20.1671%
+2025-12-15 14:17:57,654 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 2 ---
+2025-12-15 14:17:57,654 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 1 converged after 2 iterations
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO - 
+Step 1 complete: 3 companies at 9%
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO - 
+========== STEP 2: Apply collective constraint (36% rule) ==========
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO - Top 4 companies by initial market cap (protected at 9%):
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO -   1. ASML HOLDING: Initial 29.17%, After Step 1: 9.00%
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO -   2. SHELL PLC: Initial 14.59%, After Step 1: 9.00%
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO -   3. UNILEVER: Initial 10.24%, After Step 1: 9.00%
+2025-12-15 14:17:57,655 - Review.reviews.aetaw_review - INFO -   4. ING GROEP N.V.: Initial 5.59%, After Step 1: 8.87%
+2025-12-15 14:17:57,657 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 1 ---
+2025-12-15 14:17:57,657 - Review.reviews.aetaw_review - INFO - Capped 3 companies (outside top 4) to 4.5%
+2025-12-15 14:17:57,659 - Review.reviews.aetaw_review - INFO - Total companies locked at 4.5%: 3
+2025-12-15 14:17:57,659 - Review.reviews.aetaw_review - INFO - Excess weight: 8.57%
+2025-12-15 14:17:57,660 - Review.reviews.aetaw_review - INFO - Redistributed to 68 companies (not locked at 4.5%)
+2025-12-15 14:17:57,660 - Review.reviews.aetaw_review - INFO -   WARNING: 1 companies (outside top 4) now ABOVE 4.5% after redistribution
+2025-12-15 14:17:57,660 - Review.reviews.aetaw_review - INFO - Max weight change: 4.1701%
+2025-12-15 14:17:57,660 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 2 ---
+2025-12-15 14:17:57,661 - Review.reviews.aetaw_review - INFO - Capped 1 companies (outside top 4) to 4.5%
+2025-12-15 14:17:57,661 - Review.reviews.aetaw_review - INFO - Total companies locked at 4.5%: 4
+2025-12-15 14:17:57,662 - Review.reviews.aetaw_review - INFO - Excess weight: 0.26%
+2025-12-15 14:17:57,662 - Review.reviews.aetaw_review - INFO - Redistributed to 67 companies (not locked at 4.5%)
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - Max weight change: 0.2561%
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 3 ---
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 2 converged after 3 iterations
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - 
+========== Final Results ==========
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - Companies at 9.00%: 3
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - Companies locked at 4.50%: 4
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - Total weight OVER 4.5%: 35.87% (limit: 36.00%)
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - [SUCCESS] Collective cap satisfied
+2025-12-15 14:17:57,663 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 64
+2025-12-15 14:17:57,671 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251215_141757.xlsx
+2025-12-15 14:17:57,742 - Review.reviews.aexat_review - INFO - Loading EOD data...
+2025-12-15 14:17:58,155 - Review.reviews.aexat_review - INFO - Loading reference data...
+2025-12-15 14:17:58,205 - Review.reviews.aexat_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-15 14:17:58,257 - Review.reviews.aexat_review - INFO - Applied 15% capping. Companies capped: 35
+2025-12-15 14:17:58,261 - Review.reviews.aexat_review - INFO - Saving AEXAT output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXAT_df_20251215_141758.xlsx
+2025-12-15 14:17:58,304 - Review.reviews.aexew_review - INFO - Loading EOD data...
+2025-12-15 14:17:58,722 - Review.reviews.aexew_review - INFO - Loading reference data...
+2025-12-15 14:17:58,782 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20251215_141758.xlsx
+2025-12-15 14:17:58,815 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2025-12-15 14:17:58,974 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:17:58] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:17:59,271 - Review.reviews.be1p_review - INFO - Loading reference data...
+2025-12-15 14:18:00,976 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:00] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:02,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:02] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:04,974 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:04] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 93 companies
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 272 companies
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 62 companies
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Total excluded (any criteria): 283 companies
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Eligible for selection: 17 companies
+2025-12-15 14:18:06,777 - Review.reviews.be1p_review - INFO - Selecting top 10 companies with highest FFMC from eligible companies...
+2025-12-15 14:18:06,800 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BE1P_df_20251215_141806.xlsx
+2025-12-15 14:18:06,906 - Review.reviews.bnew_review - INFO - Loading EOD data...
+2025-12-15 14:18:06,974 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:06] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:07,338 - Review.reviews.bnew_review - INFO - Loading reference data...
+2025-12-15 14:18:08,662 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BNEW_df_20251215_141808.xlsx
+2025-12-15 14:18:08,708 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-15 14:18:08,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:08] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:09,140 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-15 14:18:10,982 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:10] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:12,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:12] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:14,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:14] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:16,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:16] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:18,988 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:18] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:19,095 - Review.reviews.c6rip_review - INFO - Starting universe size: 40 stocks
+2025-12-15 14:18:19,098 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-15 14:18:19,098 - Review.reviews.c6rip_review - INFO - Universe size: 40 stocks
+2025-12-15 14:18:19,098 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-15 14:18:19,098 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-15 14:18:19,098 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-15 14:18:19,100 - Review.reviews.c6rip_review - INFO - Selected 40 constituents for c6rip index
+2025-12-15 14:18:19,100 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-15 14:18:19,100 - Review.reviews.c6rip_review - INFO - Weight range: 1.2500% to 2.5000%
+2025-12-15 14:18:19,100 - Review.reviews.c6rip_review - INFO - Total weight: 81.2500%
+2025-12-15 14:18:19,100 - Review.reviews.c6rip_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-15 14:18:19,106 - Review.reviews.c6rip_review - INFO - Inclusions: 0, Exclusions: 20
+2025-12-15 14:18:19,106 - Review.reviews.c6rip_review - INFO - Saving c6rip output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\c6rip_df_20251215_141819.xlsx
+2025-12-15 14:18:19,196 - Review.reviews.cacew_review - INFO - Loading EOD data...
+2025-12-15 14:18:19,619 - Review.reviews.cacew_review - INFO - Loading reference data...
+2025-12-15 14:18:19,688 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CACEW_df_20251215_141819.xlsx
+2025-12-15 14:18:19,722 - Review.reviews.clamp_review - INFO - Loading EOD data...
+2025-12-15 14:18:20,138 - Review.reviews.clamp_review - INFO - Loading reference data...
+2025-12-15 14:18:20,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:20] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:22,981 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:22] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:23,986 - Review.reviews.clamp_review - INFO - Step 2a: Calculating FFMC and filtering top 150...
+2025-12-15 14:18:23,988 - Review.reviews.clamp_review - INFO - After FFMC screening: 150 companies remain (top 150)
+2025-12-15 14:18:23,988 - Review.reviews.clamp_review - INFO - Merging Oekom ESG data...
+2025-12-15 14:18:23,990 - Review.reviews.clamp_review - INFO - Step 2b: Trust Metric screening...
+2025-12-15 14:18:23,993 - Review.reviews.clamp_review - INFO - Step 2c: NBR Overall Flag (UNGC Violators) screening...
+2025-12-15 14:18:23,993 - Review.reviews.clamp_review - INFO - Step 2d: Controversial Weapons screening...
+2025-12-15 14:18:23,996 - Review.reviews.clamp_review - INFO - Step 2e: Thermal Coal Mining screening...
+2025-12-15 14:18:23,997 - Review.reviews.clamp_review - INFO - Step 2f: Thermal Coal Power Generation screening...
+2025-12-15 14:18:23,997 - Review.reviews.clamp_review - INFO - Step 2g: Oil Sands screening...
+2025-12-15 14:18:23,998 - Review.reviews.clamp_review - INFO - Step 2h: Shale Oil and/or Gas screening...
+2025-12-15 14:18:23,998 - Review.reviews.clamp_review - INFO - Step 2i: Arctic Drilling screening...
+2025-12-15 14:18:23,998 - Review.reviews.clamp_review - INFO - Step 2j: Deepwater Drilling screening...
+2025-12-15 14:18:24,003 - Review.reviews.clamp_review - INFO - Step 3a: Carbon Budget Selection - selecting top 75 best Carbon Budget scorers...
+2025-12-15 14:18:24,004 - Review.reviews.clamp_review - INFO - Companies passing all exclusions: 0
+2025-12-15 14:18:24,005 - Review.reviews.clamp_review - INFO - Top 75 Carbon Budget scorers selected: 0
+2025-12-15 14:18:24,006 - Review.reviews.clamp_review - INFO - Step 3b: Ranking top 75 by FFMC...
+2025-12-15 14:18:24,011 - Review.reviews.clamp_review - INFO - Step 3c: Selecting top 40 by FFMC from top 75...
+2025-12-15 14:18:24,011 - Review.reviews.clamp_review - INFO - Final selection: 0 companies
+2025-12-15 14:18:24,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:24] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:26,972 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:26] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:28,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:28] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:30,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:30] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:32,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:32] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:34,972 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:34] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:36,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:36] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:38,971 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:38] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:41,048 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:41] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:42,979 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:18:42] "GET /task-status/b3b217cb-9d18-49aa-9416-8d451a685321 HTTP/1.1" 200 -
+2025-12-15 14:18:43,696 - Review.reviews.clamp_review - ERROR - Error during review calculation: Columns must be same length as key
+2025-12-15 14:18:43,698 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clamp_review.py', reloading
+2025-12-15 14:18:43,706 - Review.reviews.clamp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\clamp_review.py", line 402, in run_clamp_review
+    final_selection_df[['Symbol', 'Close Prc_EOD', 'FX/Index Ccy']] = final_selection_df.apply(
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4299, in __setitem__
+    self._setitem_array(key, value)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4341, in _setitem_array
+    check_key_length(self.columns, key, value)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexers\utils.py", line 390, in check_key_length
+    raise ValueError("Columns must be same length as key")
+ValueError: Columns must be same length as key
+
+2025-12-15 14:18:43,706 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexers\\utils.py', reloading
+2025-12-15 14:18:43,718 - Review.reviews.clew_review - INFO - Loading EOD data...
+2025-12-15 14:18:44,139 - Review.reviews.clew_review - INFO - Loading reference data...
+2025-12-15 14:18:44,200 - Review.reviews.clew_review - INFO - Saving CLEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CLEW_df_20251215_141844.xlsx
+2025-12-15 14:18:44,239 - Review.reviews.darep_review - INFO - Loading EOD data...
+2025-12-15 14:18:44,656 - Review.reviews.darep_review - INFO - Loading reference data...

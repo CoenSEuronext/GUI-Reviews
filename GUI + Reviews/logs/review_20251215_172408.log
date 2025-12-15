@@ -1,0 +1,47 @@
+2025-12-15 17:24:09,024 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 17:24:09,024 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 17:24:16,934 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:16] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 17:24:16,934 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-12-15 17:24:16,934 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:16] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:17,468 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-12-15 17:24:18,957 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:18] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:20,950 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:20] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:22,949 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:22] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:24,954 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:24] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:26,950 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:26] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:28,943 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:28] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:29,133 - Review.reviews.frd4p_review - INFO - Merging all reference data points early...
+2025-12-15 17:24:29,133 - Review.reviews.frd4p_review - INFO - Deduplicating reference dataframes...
+2025-12-15 17:24:29,157 - Review.reviews.frd4p_review - INFO - Merging Oekom data...
+2025-12-15 17:24:29,160 - Review.reviews.frd4p_review - INFO - Merging NACE data...
+2025-12-15 17:24:29,164 - Review.reviews.frd4p_review - INFO - Merging ICB data...
+2025-12-15 17:24:29,183 - Review.reviews.frd4p_review - INFO - Merging SesamM data...
+2025-12-15 17:24:29,185 - Review.reviews.frd4p_review - INFO - Converting numeric columns...
+2025-12-15 17:24:29,185 - Review.reviews.frd4p_review - ERROR - Error during review calculation: 'Job_score_3Y Numeric'
+2025-12-15 17:24:29,189 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Job_score_3Y Numeric'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 237, in run_frd4p_review
+    developed_market_df['Job_score_3Y Numeric'] = developed_market_df['Job_score_3Y Numeric'].fillna(0)
+                                                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Job_score_3Y Numeric'
+
+2025-12-15 17:24:30,943 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:24:30] "GET /task-status/de393faa-db53-4869-ba0d-8bc0ea72851c HTTP/1.1" 200 -
+2025-12-15 17:24:45,934 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-12-15 17:24:45,935 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-12-15 17:24:45,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading

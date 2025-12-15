@@ -1,0 +1,24 @@
+{
+  "task_id": "f1f55935-6398-4157-a900-821aeae5f3ab",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-15T13:18:35.989186",
+  "started_at": "2025-12-15T13:18:35.989186",
+  "completed_at": "2025-12-15T13:18:44.864595",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: Capping procedure did not converge after 200 iterations",
+  "error": "Error during review calculation: Capping procedure did not converge after 200 iterations",
+  "result_data": null,
+  "review_type": "GICP",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "GICP",
+    "isin": "NLIX00005321",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 8.871187
+}

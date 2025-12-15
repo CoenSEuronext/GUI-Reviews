@@ -106,7 +106,7 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         )
         
         Oekom_TrustCarbon_df['ESG Performance Score'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['ESG Performance Score'].replace('Not Collected', np.nan),
+            Oekom_TrustCarbon_df['ESG Performance Score'],
             errors='coerce'
         )
         
@@ -127,7 +127,8 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
             'White Phosphorous Weapons - Overall Flag',
             'Thermal Coal Mining - Maximum Percentage of Revenues (%)',
             'Power Generation - Thermal Maximum Percentage of Revenues (%)',
-            'Shale Oil and/or Gas - Involvement tie'
+            'Shale Oil and/or Gas - Involvement tie',
+            'Oil Sands - Production Maximum Percentage of Revenues (%)'
         ]
         
         # Merge all Oekom data early
@@ -150,6 +151,10 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         
         north_america_500_df['Thermal Power Numeric'] = pd.to_numeric(
             north_america_500_df['Power Generation - Thermal Maximum Percentage of Revenues (%)'], 
+            errors='coerce'
+        )
+        north_america_500_df['Oil Sands Numeric'] = pd.to_numeric(
+            north_america_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'], 
             errors='coerce'
         )
         
@@ -267,6 +272,24 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         logger.info(f"Thermal Power exclusions: {len(excluded_thermal_power)}")
         exclusion_count += 1
 
+        # Step 2f: Oil Sands screening
+        north_america_500_df[f'exclusion_{exclusion_count}_OilSands'] = None
+
+        excluded_oil_sands = north_america_500_df[
+            (north_america_500_df['Oil Sands Numeric'] > 0) |
+            (north_america_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Collected') |
+            (north_america_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
+        ]['ISIN'].tolist()
+
+        north_america_500_df[f'exclusion_{exclusion_count}_OilSands'] = np.where(
+            north_america_500_df['ISIN'].isin(excluded_oil_sands),
+            'exclude_OilSands',
+            None
+        )
+        logger.info(f"Oil Sands exclusions: {len(excluded_oil_sands)}")
+        exclusion_count += 1
+        
+        
         # Step 2f: Shale Oil and/or Gas screening
         north_america_500_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = None
 

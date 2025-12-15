@@ -1,0 +1,74 @@
+2025-12-15 16:57:56,773 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 16:57:56,773 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 16:57:59,163 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:59] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 16:57:59,164 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-12-15 16:57:59,164 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:59] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:57:59,655 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-12-15 16:58:01,183 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:01] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:03,185 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:03] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:05,197 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:05] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:07,180 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:07] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:09,193 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:09] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:11,178 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:11] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:11,602 - Review.reviews.frd4p_review - INFO - Merging all reference data points early...
+2025-12-15 16:58:11,602 - Review.reviews.frd4p_review - INFO - Merging Oekom data...
+2025-12-15 16:58:11,607 - Review.reviews.frd4p_review - INFO - Merging NACE data...
+2025-12-15 16:58:11,610 - Review.reviews.frd4p_review - INFO - Merging ICB data...
+2025-12-15 16:58:11,739 - Review.reviews.frd4p_review - INFO - Merging SesamM data...
+2025-12-15 16:58:11,776 - Review.reviews.frd4p_review - INFO - Converting numeric columns...
+2025-12-15 16:58:11,872 - Review.reviews.frd4p_review - INFO - All reference data merged successfully
+2025-12-15 16:58:11,872 - Review.reviews.frd4p_review - INFO - Universe size after merges: 158509 companies
+2025-12-15 16:58:11,872 - Review.reviews.frd4p_review - INFO - Applying currency exclusion...
+2025-12-15 16:58:11,947 - Review.reviews.frd4p_review - INFO - Currency exclusions: 156433
+2025-12-15 16:58:11,947 - Review.reviews.frd4p_review - INFO - Applying SesamM data availability exclusion...
+2025-12-15 16:58:12,020 - Review.reviews.frd4p_review - INFO - SesamM data unavailable exclusions: 157901
+2025-12-15 16:58:12,020 - Review.reviews.frd4p_review - INFO - Applying turnover exclusion...
+2025-12-15 16:58:12,026 - Review.reviews.frd4p_review - INFO - Turnover exclusions: 259
+2025-12-15 16:58:12,026 - Review.reviews.frd4p_review - INFO - Applying NBR Overall Flag exclusion...
+2025-12-15 16:58:12,032 - Review.reviews.frd4p_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-15 16:58:12,032 - Review.reviews.frd4p_review - INFO - Applying controversial weapons exclusions...
+2025-12-15 16:58:12,041 - Review.reviews.frd4p_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-15 16:58:12,049 - Review.reviews.frd4p_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-15 16:58:12,056 - Review.reviews.frd4p_review - INFO - NuclearWeapons exclusions: 82
+2025-12-15 16:58:12,064 - Review.reviews.frd4p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-15 16:58:12,071 - Review.reviews.frd4p_review - INFO - ClusterMunitions exclusions: 13
+2025-12-15 16:58:12,077 - Review.reviews.frd4p_review - INFO - DepletedUranium exclusions: 12
+2025-12-15 16:58:12,083 - Review.reviews.frd4p_review - INFO - APMines exclusions: 11
+2025-12-15 16:58:12,089 - Review.reviews.frd4p_review - INFO - WhitePhosphorus exclusions: 15
+2025-12-15 16:58:12,089 - Review.reviews.frd4p_review - INFO - Applying coal mining exclusion...
+2025-12-15 16:58:12,092 - Review.reviews.frd4p_review - INFO - Coal Mining exclusions: 129
+2025-12-15 16:58:12,092 - Review.reviews.frd4p_review - INFO - Applying fossil fuel exclusion...
+2025-12-15 16:58:12,099 - Review.reviews.frd4p_review - INFO - Fossil Fuel exclusions: 226
+2025-12-15 16:58:12,099 - Review.reviews.frd4p_review - INFO - Applying thermal power exclusion...
+2025-12-15 16:58:12,104 - Review.reviews.frd4p_review - INFO - Thermal Power exclusions: 11
+2025-12-15 16:58:12,104 - Review.reviews.frd4p_review - INFO - Applying SBT alignment exclusion...
+2025-12-15 16:58:12,116 - Review.reviews.frd4p_review - INFO - SBT alignment exclusions: 0
+2025-12-15 16:58:12,117 - Review.reviews.frd4p_review - INFO - Applying tobacco production exclusion...
+2025-12-15 16:58:12,121 - Review.reviews.frd4p_review - INFO - Tobacco Production exclusions: 15
+2025-12-15 16:58:12,121 - Review.reviews.frd4p_review - INFO - Applying tobacco distribution exclusion...
+2025-12-15 16:58:12,125 - Review.reviews.frd4p_review - INFO - Tobacco Distribution exclusions: 3
+2025-12-15 16:58:12,126 - Review.reviews.frd4p_review - INFO - Applying layoff screening exclusion...
+2025-12-15 16:58:12,128 - Review.reviews.frd4p_review - INFO - Layoff exclusions: 18
+2025-12-15 16:58:12,128 - Review.reviews.frd4p_review - INFO - Applying staff rating exclusion...
+2025-12-15 16:58:12,232 - Review.reviews.frd4p_review - INFO - Staff Rating exclusions: 473
+2025-12-15 16:58:13,208 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:13] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:15,231 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:58:15] "GET /task-status/693412a6-b95d-49d5-ab85-927fa3786641 HTTP/1.1" 200 -
+2025-12-15 16:58:15,998 - Review.reviews.frd4p_review - INFO - Companies remaining after exclusions: 314
+2025-12-15 16:58:15,998 - Review.reviews.frd4p_review - INFO - Eligible companies - XPAR: 81, Non-XPAR: 233
+2025-12-15 16:58:16,008 - Review.reviews.frd4p_review - ERROR - Error during review calculation: Length of values (2) does not match length of index (314)
+2025-12-15 16:58:16,015 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 536, in run_frd4p_review
+    selection_df['Combined Rank'] = selection_df.groupby('MIC_Type').apply(
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4311, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4524, in _set_item
+    value, refs = self._sanitize_column(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 5266, in _sanitize_column
+    com.require_length_match(value, self.index)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\common.py", line 573, in require_length_match
+    raise ValueError(
+ValueError: Length of values (2) does not match length of index (314)
+
+2025-12-15 16:58:16,015 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\common.py', reloading

@@ -1,0 +1,39 @@
+2025-12-15 13:31:03,356 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 13:31:03,358 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 13:31:07,179 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:31:07] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:31:07,186 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-15 13:31:07,189 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:31:07] "GET /task-status/ea86e3f9-324a-4d54-a991-1dc83fc44208 HTTP/1.1" 200 -
+2025-12-15 13:31:07,645 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-15 13:31:09,192 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:31:09] "GET /task-status/ea86e3f9-324a-4d54-a991-1dc83fc44208 HTTP/1.1" 200 -
+2025-12-15 13:31:11,201 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:31:11] "GET /task-status/ea86e3f9-324a-4d54-a991-1dc83fc44208 HTTP/1.1" 200 -
+2025-12-15 13:31:12,114 - Review.reviews.jpcla_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-15 13:31:12,114 - Review.reviews.jpcla_review - INFO - Remaining universe size: 500 companies
+2025-12-15 13:31:12,114 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-15 13:31:12,124 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-15 13:31:12,131 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 46
+2025-12-15 13:31:12,132 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 3
+2025-12-15 13:31:12,132 - Review.reviews.jpcla_review - INFO - APMines exclusions: 1
+2025-12-15 13:31:12,133 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-15 13:31:12,133 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-15 13:31:12,134 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 1
+2025-12-15 13:31:12,135 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 1
+2025-12-15 13:31:12,135 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 1
+2025-12-15 13:31:12,136 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-15 13:31:12,137 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 3
+2025-12-15 13:31:12,138 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 16
+2025-12-15 13:31:12,139 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 19
+2025-12-15 13:31:12,140 - Review.reviews.jpcla_review - INFO - Oil Sands exclusions: 2
+2025-12-15 13:31:12,141 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-15 13:31:12,141 - Review.reviews.jpcla_review - INFO - Total companies in universe: 500
+2025-12-15 13:31:12,141 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 400.0
+2025-12-15 13:31:12,142 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 400.0): 100
+2025-12-15 13:31:12,147 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 344
+2025-12-15 13:31:12,159 - Review.reviews.jpcla_review - INFO - Selected top 150 companies by ESG Performance Score
+2025-12-15 13:31:13,149 - Review.reviews.jpcla_review - INFO - Selected top 30 companies by FFMC
+2025-12-15 13:31:13,149 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2025-12-15 13:31:13,158 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2025-12-15 13:31:13,160 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLA_df_20251215_133113.xlsx
+2025-12-15 13:31:13,606 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:31:13] "GET /task-status/ea86e3f9-324a-4d54-a991-1dc83fc44208 HTTP/1.1" 200 -
+2025-12-15 13:38:52,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
+2025-12-15 13:38:52,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
+2025-12-15 13:38:52,107 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading

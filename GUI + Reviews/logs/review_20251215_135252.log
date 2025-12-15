@@ -1,0 +1,28 @@
+2025-12-15 13:52:53,179 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 13:52:53,179 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 13:52:56,926 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:52:56] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:52:56,926 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2025-12-15 13:52:56,926 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:52:56] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:52:57,469 - Review.reviews.ses5p_review - INFO - Loading reference data...
+2025-12-15 13:52:58,946 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:52:58] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:53:00,955 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:53:00] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:53:02,941 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:53:02] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:53:04,991 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:53:04] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:53:07,003 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:53:07] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO - Total selected companies: 50
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO - Applying 10% capping...
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO -   Total companies: 50
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO -   Companies capped: 2
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:53:07,291 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO - Capping Summary:
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO -   Total companies capped: 2
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO -   Total weight: 1.000000 (target: 1.000000)
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO -   Maximum constituent weight: 10.0000% (max allowed: 10.00%)
+2025-12-15 13:53:07,291 - Review.reviews.ses5p_review - INFO -   Maximum weight delta: 1.030769
+2025-12-15 13:53:07,309 - Review.reviews.ses5p_review - INFO - Saving SES5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\SES5P_df_20251215_135307.xlsx
+2025-12-15 13:53:08,946 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:53:08] "GET /task-status/486e9f22-81f1-46f5-86ef-41b19355cc71 HTTP/1.1" 200 -
+2025-12-15 13:58:16,051 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\sectorial_review.py', reloading

@@ -1,0 +1,29 @@
+2025-12-15 16:11:13,938 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 16:11:13,938 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 16:11:13,956 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:13] "GET /task-status/e179f431-b8df-4db9-b4ff-6198a88c4423 HTTP/1.1" 200 -
+2025-12-15 16:11:16,868 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:16] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 16:11:16,868 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-15 16:11:16,874 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:16] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:17,384 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-15 16:11:18,883 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:18] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:20,883 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:20] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:22,889 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:22] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:24,950 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:24] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:26,888 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:26] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:27,887 - Review.reviews.c6rip_review - INFO - Starting universe size: 40 stocks
+2025-12-15 16:11:27,887 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-15 16:11:27,887 - Review.reviews.c6rip_review - INFO - Universe size: 40 stocks
+2025-12-15 16:11:27,887 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-15 16:11:27,887 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-15 16:11:27,887 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-15 16:11:27,891 - Review.reviews.c6rip_review - INFO - Selected 40 constituents for c6rip index
+2025-12-15 16:11:27,891 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-15 16:11:27,891 - Review.reviews.c6rip_review - INFO - Weight range: 1.2500% to 2.5000%
+2025-12-15 16:11:27,891 - Review.reviews.c6rip_review - INFO - Total weight: 81.2500%
+2025-12-15 16:11:27,891 - Review.reviews.c6rip_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-15 16:11:27,898 - Review.reviews.c6rip_review - INFO - Inclusions: 0, Exclusions: 20
+2025-12-15 16:11:27,899 - Review.reviews.c6rip_review - INFO - Saving c6rip output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\c6rip_df_20251215_161127.xlsx
+2025-12-15 16:11:28,884 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:28] "GET /task-status/807c9d5c-45f4-4e54-b11a-943fc21fb833 HTTP/1.1" 200 -
+2025-12-15 16:11:41,931 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading
+2025-12-15 16:11:41,931 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading
+2025-12-15 16:11:41,931 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading

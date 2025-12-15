@@ -1,0 +1,27 @@
+2025-12-15 13:12:04,195 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 13:12:04,199 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 13:12:07,216 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:12:07] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:12:07,216 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-12-15 13:12:07,216 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:12:07] "GET /task-status/c2fe6a69-dbd0-4a7c-b527-736b24dd183c HTTP/1.1" 200 -
+2025-12-15 13:12:07,671 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-12-15 13:12:09,233 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:12:09] "GET /task-status/c2fe6a69-dbd0-4a7c-b527-736b24dd183c HTTP/1.1" 200 -
+2025-12-15 13:12:11,231 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:12:11] "GET /task-status/c2fe6a69-dbd0-4a7c-b527-736b24dd183c HTTP/1.1" 200 -
+2025-12-15 13:12:13,224 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:12:13] "GET /task-status/c2fe6a69-dbd0-4a7c-b527-736b24dd183c HTTP/1.1" 200 -
+2025-12-15 13:12:15,281 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:12:15] "GET /task-status/c2fe6a69-dbd0-4a7c-b527-736b24dd183c HTTP/1.1" 200 -
+2025-12-15 13:12:15,481 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-12-15 13:12:15,534 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-12-15 13:12:15,534 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-12-15 13:12:15,534 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-12-15 13:12:15,592 - Review.reviews.gicp_review - INFO - Applying group-based weighting with capping...
+2025-12-15 13:12:15,592 - Review.reviews.gicp_review - INFO - Processing Group 1 (EZ300) with 15 companies...
+2025-12-15 13:12:15,597 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 16.666666666666668%
+2025-12-15 13:12:15,681 - Review.reviews.gicp_review - ERROR - Error during review calculation: Capping procedure did not converge after 100 iterations
+2025-12-15 13:12:15,683 - Review.reviews.gicp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\gicp_review.py", line 306, in run_gicp_review
+    group1_df = apply_proportional_capping(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\capping_proportional.py", line 101, in apply_proportional_capping
+    raise Exception(f"Capping procedure did not converge after {max_iterations} iterations")
+Exception: Capping procedure did not converge after 100 iterations
+
+2025-12-15 13:12:15,684 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_proportional.py', reloading

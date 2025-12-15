@@ -1,0 +1,40 @@
+2025-12-15 13:43:49,008 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 13:43:49,009 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 13:43:49,040 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:43:49] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:43:49,040 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-15 13:43:49,040 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:43:49] "GET /task-status/1de2106d-daa9-4d85-b27a-d018aea28665 HTTP/1.1" 200 -
+2025-12-15 13:43:49,561 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-15 13:43:51,066 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:43:51] "GET /task-status/1de2106d-daa9-4d85-b27a-d018aea28665 HTTP/1.1" 200 -
+2025-12-15 13:43:53,083 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:43:53] "GET /task-status/1de2106d-daa9-4d85-b27a-d018aea28665 HTTP/1.1" 200 -
+2025-12-15 13:43:53,897 - Review.reviews.jpcla_review - INFO - Initial universe size: 500 companies
+2025-12-15 13:43:53,897 - Review.reviews.jpcla_review - INFO - Filtered to MIC = 'XTKS' (Japan): 342 companies
+2025-12-15 13:43:53,897 - Review.reviews.jpcla_review - INFO - Removed 158 companies with MIC != 'XTKS'
+2025-12-15 13:43:53,941 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-15 13:43:53,951 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-15 13:43:53,954 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 32
+2025-12-15 13:43:53,954 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 13:43:53,955 - Review.reviews.jpcla_review - INFO - APMines exclusions: 0
+2025-12-15 13:43:53,956 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-15 13:43:53,958 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-15 13:43:53,958 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 0
+2025-12-15 13:43:53,959 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 0
+2025-12-15 13:43:53,960 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-15 13:43:53,960 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-15 13:43:53,961 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-15 13:43:53,962 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 8
+2025-12-15 13:43:53,963 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 11
+2025-12-15 13:43:53,964 - Review.reviews.jpcla_review - INFO - Oil Sands exclusions: 0
+2025-12-15 13:43:53,965 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 7
+2025-12-15 13:43:53,965 - Review.reviews.jpcla_review - INFO - Total companies in XTKS universe: 342
+2025-12-15 13:43:53,965 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 273.6
+2025-12-15 13:43:53,966 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 273.6): 69
+2025-12-15 13:43:53,973 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 239
+2025-12-15 13:43:53,980 - Review.reviews.jpcla_review - INFO - Selected top 150 companies by ESG Performance Score
+2025-12-15 13:43:55,056 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:43:55] "GET /task-status/1de2106d-daa9-4d85-b27a-d018aea28665 HTTP/1.1" 200 -
+2025-12-15 13:43:55,056 - Review.reviews.jpcla_review - INFO - Selected top 30 companies by FFMC
+2025-12-15 13:43:55,056 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2025-12-15 13:43:55,056 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2025-12-15 13:43:55,065 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLA_df_20251215_134355.xlsx
+2025-12-15 13:43:57,056 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:43:57] "GET /task-status/1de2106d-daa9-4d85-b27a-d018aea28665 HTTP/1.1" 200 -
+2025-12-15 13:44:47,096 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
+2025-12-15 13:44:47,102 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading

@@ -1,0 +1,76 @@
+{
+  "task_id": "1ffb601e-952b-416e-bc40-cd894c131a81",
+  "task_type": "batch",
+  "status": "completed",
+  "created_at": "2025-12-15T14:33:56.946772",
+  "started_at": "2025-12-15T14:33:56.948903",
+  "completed_at": "2025-12-15T14:34:23.527952",
+  "progress": 100,
+  "message": "Batch completed: 4/4 successful",
+  "error": null,
+  "result_data": {
+    "results": [
+      {
+        "review_type": "USCLA",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "uscla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\USCLA_df_20251215_143403.xlsx"
+        },
+        "duration_seconds": 6.574692,
+        "completed_at": "2025-12-15T14:34:03.527508"
+      },
+      {
+        "review_type": "USCLE",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "uscle_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\USCLE_df_20251215_143409.xlsx"
+        },
+        "duration_seconds": 6.397772,
+        "completed_at": "2025-12-15T14:34:09.925280"
+      },
+      {
+        "review_type": "WCAMP",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "wcamp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\WCAMP_df_20251215_143410.xlsx"
+        },
+        "duration_seconds": 0.467977,
+        "completed_at": "2025-12-15T14:34:10.393257"
+      },
+      {
+        "review_type": "WIFRP",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "wifrp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\WIFRP_df_20251215_143423.xlsx"
+        },
+        "duration_seconds": 13.134695,
+        "completed_at": "2025-12-15T14:34:23.527952"
+      }
+    ],
+    "summary": {
+      "total": 4,
+      "successful": 4,
+      "failed": 0
+    }
+  },
+  "review_type": null,
+  "parameters": {
+    "review_types": [
+      "USCLA",
+      "USCLE",
+      "WCAMP",
+      "WIFRP"
+    ],
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "currency": "EUR",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": 26.579049
+}

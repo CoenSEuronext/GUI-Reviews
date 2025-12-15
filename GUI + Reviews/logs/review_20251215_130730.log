@@ -1,0 +1,125 @@
+2025-12-15 13:07:30,875 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 13:07:30,875 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 13:07:30,902 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:30] "GET /task-status/a0a93227-0492-4052-b9b9-752f2ffc1efc HTTP/1.1" 200 -
+2025-12-15 13:07:32,376 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:32] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:07:32,376 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-12-15 13:07:32,382 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:32] "GET /task-status/2767343b-da56-47e1-8de4-8bd182458919 HTTP/1.1" 200 -
+2025-12-15 13:07:32,824 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-12-15 13:07:34,407 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:34] "GET /task-status/2767343b-da56-47e1-8de4-8bd182458919 HTTP/1.1" 200 -
+2025-12-15 13:07:36,380 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:36] "GET /task-status/2767343b-da56-47e1-8de4-8bd182458919 HTTP/1.1" 200 -
+2025-12-15 13:07:38,390 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:38] "GET /task-status/2767343b-da56-47e1-8de4-8bd182458919 HTTP/1.1" 200 -
+2025-12-15 13:07:40,424 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:40] "GET /task-status/2767343b-da56-47e1-8de4-8bd182458919 HTTP/1.1" 200 -
+2025-12-15 13:07:40,631 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-12-15 13:07:40,687 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-12-15 13:07:40,687 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-12-15 13:07:40,687 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-12-15 13:07:40,750 - Review.reviews.gicp_review - INFO - Applying group-based weighting with capping...
+2025-12-15 13:07:40,750 - Review.reviews.gicp_review - INFO - Processing Group 1 (EZ300) with 15 companies...
+2025-12-15 13:07:40,751 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 13:07:40,751 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 13:07:40,753 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:07:40,753 - utils.capping_proportional - INFO -   Total companies: 15
+2025-12-15 13:07:40,753 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 13:07:40,753 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:07:40,753 - utils.capping_proportional - INFO -   Max weight after capping: 0.179684
+2025-12-15 13:07:40,754 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) total weight: 100.0000% (target: 60.00%)
+2025-12-15 13:07:40,754 - Review.reviews.gicp_review - INFO - Group 1 max weight: 17.9684%
+2025-12-15 13:07:40,755 - Review.reviews.gicp_review - INFO - Processing Group 2 (NA500) with 15 companies...
+2025-12-15 13:07:40,755 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 13:07:40,756 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 13:07:40,756 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:07:40,756 - utils.capping_proportional - INFO -   Total companies: 15
+2025-12-15 13:07:40,757 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 13:07:40,757 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:07:40,757 - utils.capping_proportional - INFO -   Max weight after capping: 0.183185
+2025-12-15 13:07:40,757 - Review.reviews.gicp_review - INFO - Group 2 (NA500) total weight: 100.0000% (target: 40.00%)
+2025-12-15 13:07:40,757 - Review.reviews.gicp_review - INFO - Group 2 max weight: 18.3185%
+2025-12-15 13:07:40,758 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-12-15 13:07:40,758 - Review.reviews.gicp_review - INFO - Total portfolio weight: 2.000000 (target: 1.000000)
+2025-12-15 13:07:40,758 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 18.3185%
+2025-12-15 13:07:40,758 - Review.reviews.gicp_review - INFO - Maximum capping factor before normalization: 11.043857
+2025-12-15 13:07:40,761 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20251215_130740.xlsx
+2025-12-15 13:07:42,381 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:42] "GET /task-status/2767343b-da56-47e1-8de4-8bd182458919 HTTP/1.1" 200 -
+2025-12-15 13:07:50,734 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:50] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:07:50,742 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-12-15 13:07:50,744 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:50] "GET /task-status/fd16f518-f93c-4b79-a6d0-9da1fb6ad583 HTTP/1.1" 200 -
+2025-12-15 13:07:51,187 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-12-15 13:07:52,747 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:52] "GET /task-status/fd16f518-f93c-4b79-a6d0-9da1fb6ad583 HTTP/1.1" 200 -
+2025-12-15 13:07:54,749 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:54] "GET /task-status/fd16f518-f93c-4b79-a6d0-9da1fb6ad583 HTTP/1.1" 200 -
+2025-12-15 13:07:56,753 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:56] "GET /task-status/fd16f518-f93c-4b79-a6d0-9da1fb6ad583 HTTP/1.1" 200 -
+2025-12-15 13:07:58,747 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:07:58] "GET /task-status/fd16f518-f93c-4b79-a6d0-9da1fb6ad583 HTTP/1.1" 200 -
+2025-12-15 13:07:58,787 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-12-15 13:07:58,841 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-12-15 13:07:58,842 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-12-15 13:07:58,842 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-12-15 13:07:58,898 - Review.reviews.gicp_review - INFO - Applying group-based weighting with capping...
+2025-12-15 13:07:58,898 - Review.reviews.gicp_review - INFO - Processing Group 1 (EZ300) with 15 companies...
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO -   Total companies: 15
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO -   Max weight after capping: 0.179684
+2025-12-15 13:07:58,908 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) total weight: 100.0000% (target: 60.00%)
+2025-12-15 13:07:58,908 - Review.reviews.gicp_review - INFO - Group 1 max weight: 17.9684%
+2025-12-15 13:07:58,908 - Review.reviews.gicp_review - INFO - Processing Group 2 (NA500) with 15 companies...
+2025-12-15 13:07:58,908 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 13:07:58,913 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 13:07:58,913 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:07:58,913 - utils.capping_proportional - INFO -   Total companies: 15
+2025-12-15 13:07:58,913 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 13:07:58,913 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:07:58,914 - utils.capping_proportional - INFO -   Max weight after capping: 0.183185
+2025-12-15 13:07:58,915 - Review.reviews.gicp_review - INFO - Group 2 (NA500) total weight: 100.0000% (target: 40.00%)
+2025-12-15 13:07:58,915 - Review.reviews.gicp_review - INFO - Group 2 max weight: 18.3185%
+2025-12-15 13:07:58,915 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-12-15 13:07:58,916 - Review.reviews.gicp_review - INFO - Total portfolio weight: 2.000000 (target: 1.000000)
+2025-12-15 13:07:58,916 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 18.3185%
+2025-12-15 13:07:58,916 - Review.reviews.gicp_review - INFO - Maximum capping factor before normalization: 11.043857
+2025-12-15 13:07:58,918 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20251215_130758.xlsx
+2025-12-15 13:08:00,749 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:00] "GET /task-status/fd16f518-f93c-4b79-a6d0-9da1fb6ad583 HTTP/1.1" 200 -
+2025-12-15 13:08:37,125 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:37] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 13:08:37,130 - Review.reviews.gicp_review - INFO - Loading EOD data...
+2025-12-15 13:08:37,132 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:37] "GET /task-status/b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d HTTP/1.1" 200 -
+2025-12-15 13:08:37,564 - Review.reviews.gicp_review - INFO - Loading reference data...
+2025-12-15 13:08:39,134 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:39] "GET /task-status/b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d HTTP/1.1" 200 -
+2025-12-15 13:08:41,147 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:41] "GET /task-status/b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d HTTP/1.1" 200 -
+2025-12-15 13:08:43,145 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:43] "GET /task-status/b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d HTTP/1.1" 200 -
+2025-12-15 13:08:45,158 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:45] "GET /task-status/b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d HTTP/1.1" 200 -
+2025-12-15 13:08:45,229 - Review.reviews.gicp_review - INFO - Processing market data...
+2025-12-15 13:08:45,275 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 1 (EZ300)
+2025-12-15 13:08:45,276 - Review.reviews.gicp_review - INFO - Selected 15 companies from Group 2 (NA500)
+2025-12-15 13:08:45,276 - Review.reviews.gicp_review - INFO - Total selected: 30 companies
+2025-12-15 13:08:45,333 - Review.reviews.gicp_review - INFO - Applying group-based weighting with capping...
+2025-12-15 13:08:45,333 - Review.reviews.gicp_review - INFO - Processing Group 1 (EZ300) with 15 companies...
+2025-12-15 13:08:45,333 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 13:08:45,341 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 13:08:45,341 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:08:45,341 - utils.capping_proportional - INFO -   Total companies: 15
+2025-12-15 13:08:45,341 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 13:08:45,343 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:08:45,343 - utils.capping_proportional - INFO -   Max weight after capping: 0.179684
+2025-12-15 13:08:45,343 - Review.reviews.gicp_review - INFO - Group 1 (EZ300) total weight: 100.0000% (target: 60.00%)
+2025-12-15 13:08:45,343 - Review.reviews.gicp_review - INFO - Group 1 max weight: 17.9684%
+2025-12-15 13:08:45,343 - Review.reviews.gicp_review - INFO - Processing Group 2 (NA500) with 15 companies...
+2025-12-15 13:08:45,343 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 13:08:45,346 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 13:08:45,346 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 13:08:45,346 - utils.capping_proportional - INFO -   Total companies: 15
+2025-12-15 13:08:45,346 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 13:08:45,346 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 13:08:45,346 - utils.capping_proportional - INFO -   Max weight after capping: 0.183185
+2025-12-15 13:08:45,347 - Review.reviews.gicp_review - INFO - Group 2 (NA500) total weight: 100.0000% (target: 40.00%)
+2025-12-15 13:08:45,347 - Review.reviews.gicp_review - INFO - Group 2 max weight: 18.3185%
+2025-12-15 13:08:45,348 - Review.reviews.gicp_review - INFO - 
+Final Weight Verification:
+2025-12-15 13:08:45,348 - Review.reviews.gicp_review - INFO - Total portfolio weight: 2.000000 (target: 1.000000)
+2025-12-15 13:08:45,348 - Review.reviews.gicp_review - INFO - Maximum constituent weight: 18.3185%
+2025-12-15 13:08:45,348 - Review.reviews.gicp_review - INFO - Maximum capping factor before normalization: 11.043857
+2025-12-15 13:08:45,351 - Review.reviews.gicp_review - INFO - Saving GICP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\GICP_df_20251215_130845.xlsx
+2025-12-15 13:08:47,141 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 13:08:47] "GET /task-status/b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d HTTP/1.1" 200 -
+2025-12-15 13:12:02,617 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading
+2025-12-15 13:12:02,622 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading

@@ -1,0 +1,10 @@
+2025-12-15 16:11:11,388 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 16:11:11,390 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 16:11:11,422 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:11] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 16:11:11,423 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-15 16:11:11,428 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading
+2025-12-15 16:11:11,429 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:11:11] "GET /task-status/e179f431-b8df-4db9-b4ff-6198a88c4423 HTTP/1.1" 200 -
+2025-12-15 16:11:12,004 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-15 16:11:12,040 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
+2025-12-15 16:11:12,059 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
+2025-12-15 16:11:12,061 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

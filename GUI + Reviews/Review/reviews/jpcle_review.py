@@ -115,7 +115,7 @@ def run_jpcle_review(date, co_date, effective_date, index="JPCLE", isin="FRESG00
         )
         
         Oekom_TrustCarbon_df['ESG Performance Score'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['ESG Performance Score'].replace('Not Collected', np.nan),
+            Oekom_TrustCarbon_df['ESG Performance Score'],
             errors='coerce'
         )
         

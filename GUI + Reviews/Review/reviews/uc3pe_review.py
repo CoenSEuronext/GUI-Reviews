@@ -106,7 +106,7 @@ def run_uc3pe_review(date, co_date, effective_date, index="UC3PE", isin="FR00140
         )
         
         Oekom_TrustCarbon_df['ESG Performance Score'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['ESG Performance Score'].replace('Not Collected', np.nan),
+            Oekom_TrustCarbon_df['ESG Performance Score'],
             errors='coerce'
         )
         

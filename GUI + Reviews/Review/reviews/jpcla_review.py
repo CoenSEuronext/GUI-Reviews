@@ -12,7 +12,7 @@ logger = setup_logging(__name__)
 
 def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG0000181", 
                     area="EU", area2="US", type="STOCK", universe="asia_pacific_500", 
-                    feed="Reuters", currency="USD", year=None):
+                    feed="Reuters", currency="JPY", year=None):
     """
     Run the JPCLA index review calculation
 
@@ -56,6 +56,18 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
         if any(df is None for df in [ff_df, asia_pacific_500_df, Oekom_TrustCarbon_df]):
             raise ValueError("Failed to load one or more required reference data files")
 
+        # ===================================================================
+        # FILTER TO ONLY XTKS (JAPAN) - MUST BE FIRST STEP
+        # ===================================================================
+        initial_count = len(asia_pacific_500_df)
+        asia_pacific_500_df = asia_pacific_500_df[asia_pacific_500_df['MIC'] == 'XTKS'].copy()
+        filtered_count = len(asia_pacific_500_df)
+        removed_count = initial_count - filtered_count
+        
+        logger.info(f"Initial universe size: {initial_count} companies")
+        logger.info(f"Filtered to MIC = 'XTKS' (Japan): {filtered_count} companies")
+        logger.info(f"Removed {removed_count} companies with MIC != 'XTKS'")
+
         ff_df = ff_df.drop_duplicates(subset=['ISIN Code:'], keep='first')
         
         # Add Free Float data
@@ -87,13 +99,6 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
             how='left'
         )
 
-        # Remove companies with MIC = 'XTSE' from the universe entirely
-        initial_count = len(asia_pacific_500_df)
-        asia_pacific_500_df = asia_pacific_500_df[asia_pacific_500_df['MIC'] != 'XTSE'].copy()
-        removed_xtse_count = initial_count - len(asia_pacific_500_df)
-        logger.info(f"Removed {removed_xtse_count} companies with MIC = 'XTSE' from universe")
-        logger.info(f"Remaining universe size: {len(asia_pacific_500_df)} companies")
-
         # ===================================================================
         # EARLY MERGE: Merge ALL Oekom data points at the beginning
         # ===================================================================
@@ -106,7 +111,7 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
         )
         
         Oekom_TrustCarbon_df['ESG Performance Score'] = pd.to_numeric(
-            Oekom_TrustCarbon_df['ESG Performance Score'].replace('Not Collected', np.nan),
+            Oekom_TrustCarbon_df['ESG Performance Score'],
             errors='coerce'
         )
         
@@ -127,6 +132,7 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
             'White Phosphorous Weapons - Overall Flag',
             'Thermal Coal Mining - Maximum Percentage of Revenues (%)',
             'Power Generation - Thermal Maximum Percentage of Revenues (%)',
+            'Oil Sands - Production Maximum Percentage of Revenues (%)',
             'Shale Oil and/or Gas - Involvement tie'
         ]
         
@@ -153,7 +159,13 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
             errors='coerce'
         )
         
+        asia_pacific_500_df['Oil Sands Numeric'] = pd.to_numeric(
+            asia_pacific_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'], 
+            errors='coerce'
+        )
+        
         # Calculate Carbon Budget Rank EARLY for ALL companies (LOWER score is BETTER)
+        # Only rank companies that remain after MIC filtering
         temp_rank = asia_pacific_500_df['ClimateCuAlignIEANZTgt2050-values'].rank(
             method='min',
             ascending=True,
@@ -267,7 +279,24 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
         logger.info(f"Thermal Power exclusions: {len(excluded_thermal_power)}")
         exclusion_count += 1
 
-        # Step 2f: Shale Oil and/or Gas screening
+        # Step 2f: Oil Sands screening
+        asia_pacific_500_df[f'exclusion_{exclusion_count}_OilSands'] = None
+
+        excluded_oil_sands = asia_pacific_500_df[
+            (asia_pacific_500_df['Oil Sands Numeric'] > 0) |
+            (asia_pacific_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Collected') |
+            (asia_pacific_500_df['Oil Sands - Production Maximum Percentage of Revenues (%)'] == 'Not Disclosed')
+        ]['ISIN'].tolist()
+
+        asia_pacific_500_df[f'exclusion_{exclusion_count}_OilSands'] = np.where(
+            asia_pacific_500_df['ISIN'].isin(excluded_oil_sands),
+            'exclude_OilSands',
+            None
+        )
+        logger.info(f"Oil Sands exclusions: {len(excluded_oil_sands)}")
+        exclusion_count += 1
+
+        # Step 2g: Shale Oil and/or Gas screening
         asia_pacific_500_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = None
 
         excluded_shale = asia_pacific_500_df[
@@ -284,15 +313,14 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
         logger.info(f"Shale Oil/Gas exclusions: {len(excluded_shale)}")
         exclusion_count += 1
 
-        # Step 2g: Carbon Budget screening (exclude worst 20% by ranking)
-        # Now using the Carbon Budget Rank that was calculated early
+        # Step 2h: Carbon Budget screening (exclude worst 20% by ranking)
         asia_pacific_500_df[f'exclusion_{exclusion_count}_CarbonBudget'] = None
 
-        # Calculate the cutoff rank for worst 20%
+        # Calculate the cutoff rank for worst 20% (based on XTKS companies only)
         total_companies = len(asia_pacific_500_df)
         cutoff_rank = total_companies * 0.8
 
-        logger.info(f"Total companies in universe: {total_companies}")
+        logger.info(f"Total companies in XTKS universe: {total_companies}")
         logger.info(f"Carbon Budget cutoff rank (80th percentile): {cutoff_rank}")
 
         # Exclude companies with ranks > cutoff (worst 20%)
@@ -337,7 +365,7 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
         # ===================================================================
         # SELECTION PROCESS
         # ===================================================================
-        # Step 2h: Select companies with no exclusions
+        # Step 2i: Select companies with no exclusions
         selection_df = asia_pacific_500_df[
             asia_pacific_500_df[exclusion_columns].isna().all(axis=1)
         ].copy()
@@ -367,9 +395,9 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
             na_position='last'
         )
         
-        # Select top 250 eligible companies
-        top_250_df = selection_df.head(250).copy()
-        logger.info(f"Selected top 250 companies by ESG Performance Score")
+        # Select top 150 eligible companies
+        top_150_df = selection_df.head(150).copy()
+        logger.info(f"Selected top 150 companies by ESG Performance Score")
         
         # ===================================================================
         # PRICE AND FX DATA
@@ -396,26 +424,26 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
             return pd.Series({'Symbol': None, 'Close Prc_EOD': None})
 
         # Add Symbol and Price columns
-        top_250_df[['Symbol', 'Close Prc_EOD']] = top_250_df.apply(
+        top_150_df[['Symbol', 'Close Prc_EOD']] = top_150_df.apply(
             lambda row: get_stock_info(row, stock_eod_df), axis=1
         )
         
         # FX/Index Ccy is already in the dataframe from the early merge
 
         # Calculate FFMC (Free Float Market Cap)
-        top_250_df['FFMC'] = top_250_df['Close Prc_EOD'] * top_250_df['NOSH'] * top_250_df['Free Float']
+        top_150_df['FFMC'] = top_150_df['Price (EUR) '] * top_150_df['NOSH'] * top_150_df['Free Float']
 
         # Add FFMC Ranking (higher FFMC = better rank)
-        top_250_df['FFMC Rank'] = top_250_df['FFMC'].rank(
+        top_150_df['FFMC Rank'] = top_150_df['FFMC'].rank(
             method='min',
             ascending=False,
             na_option='bottom'
         )
         
-        # Rank by FFMC and select top 25
-        top_250_df = top_250_df.sort_values('FFMC', ascending=False)
-        final_selection_df = top_250_df.head(30).copy()
-        logger.info(f"Selected top 25 companies by FFMC")
+        # Rank by FFMC and select top 30
+        top_150_df = top_150_df.sort_values('FFMC', ascending=False)
+        final_selection_df = top_150_df.head(30).copy()
+        logger.info(f"Selected top 30 companies by FFMC")
 
         # ===================================================================
         # EQUAL WEIGHTING CALCULATION
@@ -497,7 +525,7 @@ def run_jpcla_review(date, co_date, effective_date, index="JPCLA", isin="FRESG00
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 asia_pacific_500_df.to_excel(writer, sheet_name='Full Universe', index=False)
-                top_250_df.to_excel(writer, sheet_name='Top 250', index=False)
+                top_150_df.to_excel(writer, sheet_name='Top 150', index=False)
                 final_selection_df.to_excel(writer, sheet_name='Final Selection', index=False)
                 
             return {

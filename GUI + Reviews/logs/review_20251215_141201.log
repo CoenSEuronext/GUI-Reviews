@@ -1,0 +1,52 @@
+2025-12-15 14:12:02,537 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 14:12:02,539 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 14:12:02,561 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:12:02] "GET /task-status/e4613bdb-65ab-4012-8dcc-4a594feb111f HTTP/1.1" 200 -
+2025-12-15 14:12:03,766 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:12:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 14:12:03,766 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-15 14:12:03,766 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:12:03] "GET /task-status/3cd5b649-a10f-4248-a60d-189e70fb6501 HTTP/1.1" 200 -
+2025-12-15 14:12:04,316 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-15 14:12:05,787 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:12:05] "GET /task-status/3cd5b649-a10f-4248-a60d-189e70fb6501 HTTP/1.1" 200 -
+2025-12-15 14:12:07,782 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:12:07] "GET /task-status/3cd5b649-a10f-4248-a60d-189e70fb6501 HTTP/1.1" 200 -
+2025-12-15 14:12:09,716 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-15 14:12:09,716 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2025-12-15 14:12:09,716 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 28
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2025-12-15 14:12:09,723 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2025-12-15 14:12:09,731 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 6
+2025-12-15 14:12:09,732 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-15 14:12:09,734 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-15 14:12:09,735 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2025-12-15 14:12:09,735 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 21
+2025-12-15 14:12:09,735 - Review.reviews.usc3p_review - ERROR - Error during review calculation: 'Oil Sands Numeric'
+2025-12-15 14:12:09,735 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-12-15 14:12:09,735 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-12-15 14:12:09,749 - Review.reviews.usc3p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Oil Sands Numeric'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\usc3p_review.py", line 275, in run_usc3p_review
+    (north_america_500_df['Oil Sands Numeric'] > 0) |
+     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Oil Sands Numeric'
+
+2025-12-15 14:12:09,784 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:12:09] "GET /task-status/3cd5b649-a10f-4248-a60d-189e70fb6501 HTTP/1.1" 200 -

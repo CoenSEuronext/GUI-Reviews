@@ -1,0 +1,26 @@
+{
+  "task_id": "b955b2ba-e7ef-4d8a-b14b-bcba4b26a76d",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-15T13:08:37.125655",
+  "started_at": "2025-12-15T13:08:37.125655",
+  "completed_at": "2025-12-15T13:08:45.602662",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "gicp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\GICP_df_20251215_130845.xlsx"
+  },
+  "review_type": "GICP",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "GICP",
+    "isin": "NLIX00005321",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 8.471863
+}

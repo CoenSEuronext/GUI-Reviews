@@ -1,0 +1,72 @@
+2025-12-15 14:28:01,143 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 14:28:01,143 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 14:28:01,736 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:28:01] "GET /task-status/2c1de059-5059-41d7-b2cf-6c77c362892b HTTP/1.1" 200 -
+2025-12-15 14:29:22,093 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:22] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-15 14:29:22,108 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2025-12-15 14:29:22,109 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:22] "GET /task-status/5cf69839-7d5b-4dc8-bb1a-c18afd07484d HTTP/1.1" 200 -
+2025-12-15 14:29:22,550 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2025-12-15 14:29:24,109 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:24] "GET /task-status/5cf69839-7d5b-4dc8-bb1a-c18afd07484d HTTP/1.1" 200 -
+2025-12-15 14:29:26,142 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:26] "GET /task-status/5cf69839-7d5b-4dc8-bb1a-c18afd07484d HTTP/1.1" 200 -
+2025-12-15 14:29:26,625 - Review.reviews.jpcla_review - INFO - Initial universe size: 500 companies
+2025-12-15 14:29:26,625 - Review.reviews.jpcla_review - INFO - Filtered to MIC = 'XTKS' (Japan): 342 companies
+2025-12-15 14:29:26,625 - Review.reviews.jpcla_review - INFO - Removed 158 companies with MIC != 'XTKS'
+2025-12-15 14:29:26,676 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2025-12-15 14:29:26,676 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2025-12-15 14:29:26,686 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 32
+2025-12-15 14:29:26,687 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 14:29:26,687 - Review.reviews.jpcla_review - INFO - APMines exclusions: 0
+2025-12-15 14:29:26,688 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-15 14:29:26,689 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-15 14:29:26,690 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 0
+2025-12-15 14:29:26,690 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 0
+2025-12-15 14:29:26,691 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-15 14:29:26,692 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-15 14:29:26,693 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-15 14:29:26,695 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 8
+2025-12-15 14:29:26,696 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 11
+2025-12-15 14:29:26,697 - Review.reviews.jpcla_review - INFO - Oil Sands exclusions: 0
+2025-12-15 14:29:26,697 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 7
+2025-12-15 14:29:26,697 - Review.reviews.jpcla_review - INFO - Total companies in XTKS universe: 342
+2025-12-15 14:29:26,697 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 273.6
+2025-12-15 14:29:26,698 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 273.6): 69
+2025-12-15 14:29:26,711 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 239
+2025-12-15 14:29:26,713 - Review.reviews.jpcla_review - INFO - Selected top 150 companies by ESG Performance Score
+2025-12-15 14:29:27,658 - Review.reviews.jpcla_review - INFO - Selected top 30 companies by FFMC
+2025-12-15 14:29:27,658 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2025-12-15 14:29:27,658 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2025-12-15 14:29:27,669 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\JPCLA_df_20251215_142927.xlsx
+2025-12-15 14:29:27,891 - Review.reviews.jpcle_review - INFO - Loading EOD data...
+2025-12-15 14:29:28,109 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:28] "GET /task-status/5cf69839-7d5b-4dc8-bb1a-c18afd07484d HTTP/1.1" 200 -
+2025-12-15 14:29:28,336 - Review.reviews.jpcle_review - INFO - Loading reference data...
+2025-12-15 14:29:30,110 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:30] "GET /task-status/5cf69839-7d5b-4dc8-bb1a-c18afd07484d HTTP/1.1" 200 -
+2025-12-15 14:29:32,120 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:29:32] "GET /task-status/5cf69839-7d5b-4dc8-bb1a-c18afd07484d HTTP/1.1" 200 -
+2025-12-15 14:29:32,187 - Review.reviews.jpcle_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2025-12-15 14:29:32,187 - Review.reviews.jpcle_review - INFO - Remaining universe size: 500 companies
+2025-12-15 14:29:32,188 - Review.reviews.jpcle_review - INFO - Kept 342 companies with MIC = 'XTKS' (Tokyo Stock Exchange)
+2025-12-15 14:29:32,188 - Review.reviews.jpcle_review - INFO - Removed 158 companies with other MICs
+2025-12-15 14:29:32,188 - Review.reviews.jpcle_review - INFO - Final universe size after MIC filtering: 342 companies
+2025-12-15 14:29:32,188 - Review.reviews.jpcle_review - INFO - Merging Oekom data points early...
+2025-12-15 14:29:32,191 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcle_review.py', reloading
+2025-12-15 14:29:32,192 - Review.reviews.jpcle_review - INFO - Oekom data merged successfully
+2025-12-15 14:29:32,197 - Review.reviews.jpcle_review - INFO - Trust Metric exclusions: 32
+2025-12-15 14:29:32,198 - Review.reviews.jpcle_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 14:29:32,199 - Review.reviews.jpcle_review - INFO - APMines exclusions: 0
+2025-12-15 14:29:32,199 - Review.reviews.jpcle_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-15 14:29:32,200 - Review.reviews.jpcle_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-15 14:29:32,201 - Review.reviews.jpcle_review - INFO - ClusterMunitions exclusions: 0
+2025-12-15 14:29:32,202 - Review.reviews.jpcle_review - INFO - DepletedUranium exclusions: 0
+2025-12-15 14:29:32,202 - Review.reviews.jpcle_review - INFO - IncendiaryWeapons exclusions: 0
+2025-12-15 14:29:32,202 - Review.reviews.jpcle_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2025-12-15 14:29:32,203 - Review.reviews.jpcle_review - INFO - WhitePhosphorus exclusions: 2
+2025-12-15 14:29:32,204 - Review.reviews.jpcle_review - INFO - Coal Mining exclusions: 8
+2025-12-15 14:29:32,209 - Review.reviews.jpcle_review - INFO - Thermal Power exclusions: 11
+2025-12-15 14:29:32,211 - Review.reviews.jpcle_review - INFO - Oil Sands exclusions: 0
+2025-12-15 14:29:32,212 - Review.reviews.jpcle_review - INFO - Shale Oil/Gas exclusions: 7
+2025-12-15 14:29:32,212 - Review.reviews.jpcle_review - INFO - Total companies in universe: 342
+2025-12-15 14:29:32,212 - Review.reviews.jpcle_review - INFO - Carbon Budget cutoff rank (80th percentile): 273.6
+2025-12-15 14:29:32,213 - Review.reviews.jpcle_review - INFO - Carbon Budget exclusions (rank > 273.6): 69
+2025-12-15 14:29:32,216 - Review.reviews.jpcle_review - INFO - Companies remaining after exclusions: 239
+2025-12-15 14:29:32,222 - Review.reviews.jpcle_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-15 14:29:33,192 - Review.reviews.jpcle_review - INFO - Selected top 25 companies by FFMC
+2025-12-15 14:29:33,192 - Review.reviews.jpcle_review - INFO - Checking IsinCode FRESG0000215 in index_eod_df
+2025-12-15 14:29:33,192 - Review.reviews.jpcle_review - INFO - Found 1 matching rows

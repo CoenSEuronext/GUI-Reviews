@@ -1,0 +1,33 @@
+2025-12-15 16:57:02,002 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 16:57:02,004 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 16:57:02,028 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:02] "GET /task-status/817fd89f-5834-4a29-b683-ec0912cfb733 HTTP/1.1" 200 -
+2025-12-15 16:57:04,127 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:04] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 16:57:04,127 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-12-15 16:57:04,135 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:04] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -
+2025-12-15 16:57:04,638 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-12-15 16:57:06,144 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:06] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -
+2025-12-15 16:57:08,137 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:08] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -
+2025-12-15 16:57:10,140 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:10] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -
+2025-12-15 16:57:12,238 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:12] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -
+2025-12-15 16:57:14,138 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:14] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -
+2025-12-15 16:57:15,928 - Review.reviews.frd4p_review - INFO - Merging all reference data points early...
+2025-12-15 16:57:15,928 - Review.reviews.frd4p_review - INFO - Merging Oekom data...
+2025-12-15 16:57:15,928 - Review.reviews.frd4p_review - INFO - Merging NACE data...
+2025-12-15 16:57:15,937 - Review.reviews.frd4p_review - INFO - Merging ICB data...
+2025-12-15 16:57:15,938 - Review.reviews.frd4p_review - ERROR - Error during review calculation: "['Supersector Name'] not in index"
+2025-12-15 16:57:15,940 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-12-15 16:57:15,940 - Review.reviews.frd4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\frd4p_review.py", line 196, in run_frd4p_review
+    icb_df[['ISIN Code', 'Supersector Code', 'Supersector Name']],
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Supersector Name'] not in index"
+
+2025-12-15 16:57:15,940 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-12-15 16:57:16,139 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 16:57:16] "GET /task-status/1e47fca1-86be-4083-a99d-5cc51d2383b3 HTTP/1.1" 200 -

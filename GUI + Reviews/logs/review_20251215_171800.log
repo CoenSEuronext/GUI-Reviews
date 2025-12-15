@@ -1,0 +1,91 @@
+2025-12-15 17:18:01,455 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 17:18:01,455 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 17:18:05,890 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:05] "POST /calculate HTTP/1.1" 200 -
+2025-12-15 17:18:05,890 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2025-12-15 17:18:05,897 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:05] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:06,483 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2025-12-15 17:18:08,822 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:08] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:10,813 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:10] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:12,816 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:12] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:14,797 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:14] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:16,810 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:16] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:18,155 - Review.reviews.frd4p_review - INFO - Merging all reference data points early...
+2025-12-15 17:18:18,155 - Review.reviews.frd4p_review - INFO - Deduplicating reference dataframes...
+2025-12-15 17:18:18,175 - Review.reviews.frd4p_review - INFO - Merging Oekom data...
+2025-12-15 17:18:18,180 - Review.reviews.frd4p_review - INFO - Merging NACE data...
+2025-12-15 17:18:18,183 - Review.reviews.frd4p_review - INFO - Merging ICB data...
+2025-12-15 17:18:18,200 - Review.reviews.frd4p_review - INFO - Merging SesamM data...
+2025-12-15 17:18:18,202 - Review.reviews.frd4p_review - INFO - Converting numeric columns...
+2025-12-15 17:18:18,207 - Review.reviews.frd4p_review - INFO - All reference data merged successfully
+2025-12-15 17:18:18,207 - Review.reviews.frd4p_review - INFO - Universe size after merges: 1800 companies
+2025-12-15 17:18:18,207 - Review.reviews.frd4p_review - INFO - Applying currency exclusion...
+2025-12-15 17:18:18,209 - Review.reviews.frd4p_review - INFO - Currency exclusions: 552
+2025-12-15 17:18:18,209 - Review.reviews.frd4p_review - INFO - Applying SesamM data availability exclusion...
+2025-12-15 17:18:18,209 - Review.reviews.frd4p_review - INFO - SesamM data unavailable exclusions: 1479
+2025-12-15 17:18:18,209 - Review.reviews.frd4p_review - INFO - Applying turnover exclusion...
+2025-12-15 17:18:18,209 - Review.reviews.frd4p_review - INFO - Turnover exclusions: 186
+2025-12-15 17:18:18,209 - Review.reviews.frd4p_review - INFO - Applying NBR Overall Flag exclusion...
+2025-12-15 17:18:18,212 - Review.reviews.frd4p_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 17:18:18,212 - Review.reviews.frd4p_review - INFO - Applying controversial weapons exclusions...
+2025-12-15 17:18:18,212 - Review.reviews.frd4p_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-15 17:18:18,213 - Review.reviews.frd4p_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-15 17:18:18,214 - Review.reviews.frd4p_review - INFO - NuclearWeapons exclusions: 44
+2025-12-15 17:18:18,215 - Review.reviews.frd4p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-15 17:18:18,217 - Review.reviews.frd4p_review - INFO - ClusterMunitions exclusions: 5
+2025-12-15 17:18:18,220 - Review.reviews.frd4p_review - INFO - DepletedUranium exclusions: 7
+2025-12-15 17:18:18,222 - Review.reviews.frd4p_review - INFO - APMines exclusions: 4
+2025-12-15 17:18:18,224 - Review.reviews.frd4p_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-15 17:18:18,224 - Review.reviews.frd4p_review - INFO - Applying coal mining exclusion...
+2025-12-15 17:18:18,226 - Review.reviews.frd4p_review - INFO - Coal Mining exclusions: 79
+2025-12-15 17:18:18,226 - Review.reviews.frd4p_review - INFO - Applying fossil fuel exclusion...
+2025-12-15 17:18:18,228 - Review.reviews.frd4p_review - INFO - Fossil Fuel exclusions: 135
+2025-12-15 17:18:18,228 - Review.reviews.frd4p_review - INFO - Applying thermal power exclusion...
+2025-12-15 17:18:18,230 - Review.reviews.frd4p_review - INFO - Thermal Power exclusions: 10
+2025-12-15 17:18:18,230 - Review.reviews.frd4p_review - INFO - Applying SBT alignment exclusion...
+2025-12-15 17:18:18,232 - Review.reviews.frd4p_review - INFO - Companies with non-Approved SBT: 821
+2025-12-15 17:18:18,232 - Review.reviews.frd4p_review - INFO - NACE Climate Impact distribution:
+2025-12-15 17:18:18,232 - Review.reviews.frd4p_review - INFO -   High: 1015
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO -   Low: 520
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO -   Unknown: 265
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO - SBT alignment exclusions: 760
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO - Amazon debug - ISIN: US0231351067, ClimateGHGReductionTargets: Non-Ambitious Target, NACE: G, NACE Climate Impact: High, Excluded: exclude_SBT_NACE
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO - Applying tobacco production exclusion...
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO - Tobacco Production exclusions: 6
+2025-12-15 17:18:18,235 - Review.reviews.frd4p_review - INFO - Applying tobacco distribution exclusion...
+2025-12-15 17:18:18,243 - Review.reviews.frd4p_review - INFO - Tobacco Distribution exclusions: 1
+2025-12-15 17:18:18,243 - Review.reviews.frd4p_review - INFO - Applying layoff screening exclusion...
+2025-12-15 17:18:18,243 - Review.reviews.frd4p_review - INFO - Layoff exclusions: 9
+2025-12-15 17:18:18,243 - Review.reviews.frd4p_review - INFO - Applying staff rating exclusion...
+2025-12-15 17:18:18,271 - Review.reviews.frd4p_review - INFO - Staff Rating exclusions: 283
+2025-12-15 17:18:18,315 - Review.reviews.frd4p_review - INFO - Companies remaining after exclusions: 146
+2025-12-15 17:18:18,315 - Review.reviews.frd4p_review - INFO - Eligible companies - XPAR: 37, Non-XPAR: 109
+2025-12-15 17:18:18,327 - Review.reviews.frd4p_review - INFO - Checking IsinCode FRIX00003031 in index_eod_df
+2025-12-15 17:18:18,327 - Review.reviews.frd4p_review - INFO - Found 1 matching rows
+2025-12-15 17:18:18,330 - Review.reviews.frd4p_review - INFO - Index market cap: 1635365996320.3389
+2025-12-15 17:18:18,330 - Review.reviews.frd4p_review - INFO - XPAR region total mcap: 894,045,400,386
+2025-12-15 17:18:18,330 - Review.reviews.frd4p_review - INFO - Non-XPAR region total mcap: 1,583,661,291,223
+2025-12-15 17:18:18,331 - Review.reviews.frd4p_review - INFO - Applying capping: max 20% per stock within each region (= 10% of total index)...
+2025-12-15 17:18:18,332 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 17:18:18,333 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 17:18:18,333 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 17:18:18,333 - utils.capping_proportional - INFO -   Total companies: 20
+2025-12-15 17:18:18,333 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 17:18:18,333 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 17:18:18,334 - utils.capping_proportional - INFO -   Max weight after capping: 0.174015
+2025-12-15 17:18:18,334 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-15 17:18:18,335 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-15 17:18:18,335 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-15 17:18:18,335 - utils.capping_proportional - INFO -   Total companies: 20
+2025-12-15 17:18:18,335 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-15 17:18:18,335 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-15 17:18:18,336 - utils.capping_proportional - INFO -   Max weight after capping: 0.152133
+2025-12-15 17:18:18,336 - Review.reviews.frd4p_review - INFO - XPAR region - Index weight sum: 0.5000 (should be ~0.50)
+2025-12-15 17:18:18,336 - Review.reviews.frd4p_review - INFO - XPAR region - Max index weight: 0.0870 (should be <= 0.10)
+2025-12-15 17:18:18,336 - Review.reviews.frd4p_review - INFO - Non-XPAR region - Index weight sum: 0.5000 (should be ~0.50)
+2025-12-15 17:18:18,336 - Review.reviews.frd4p_review - INFO - Non-XPAR region - Max index weight: 0.0761 (should be <= 0.10)
+2025-12-15 17:18:18,342 - Review.reviews.frd4p_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FRD4P_df_20251215_171818.xlsx
+2025-12-15 17:18:18,861 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:18] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:18:20,812 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 17:18:20] "GET /task-status/08ed6f8f-0d76-425c-985c-96b097f589fd HTTP/1.1" 200 -
+2025-12-15 17:24:07,197 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-12-15 17:24:07,203 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading
+2025-12-15 17:24:07,203 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\frd4p_review.py', reloading

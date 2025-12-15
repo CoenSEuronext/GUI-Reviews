@@ -1,0 +1,38 @@
+2025-12-15 14:33:36,971 - werkzeug - WARNING -  * Debugger is active!
+2025-12-15 14:33:36,973 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-15 14:33:37,283 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:33:37] "POST /calculate-batch HTTP/1.1" 200 -
+2025-12-15 14:33:37,287 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:33:37] "GET /task-status/e5cdd5f3-6504-44d9-a618-b2824c995849 HTTP/1.1" 200 -
+2025-12-15 14:33:37,287 - Review.reviews.uscla_review - INFO - Loading EOD data...
+2025-12-15 14:33:37,769 - Review.reviews.uscla_review - INFO - Loading reference data...
+2025-12-15 14:33:39,325 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:33:39] "GET /task-status/e5cdd5f3-6504-44d9-a618-b2824c995849 HTTP/1.1" 200 -
+2025-12-15 14:33:41,292 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:33:41] "GET /task-status/e5cdd5f3-6504-44d9-a618-b2824c995849 HTTP/1.1" 200 -
+2025-12-15 14:33:42,133 - Review.reviews.uscla_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-15 14:33:42,133 - Review.reviews.uscla_review - INFO - Remaining universe size: 458 companies
+2025-12-15 14:33:42,135 - Review.reviews.uscla_review - INFO - Merging Oekom data points early...
+2025-12-15 14:33:42,139 - Review.reviews.uscla_review - INFO - Oekom data merged successfully
+2025-12-15 14:33:42,141 - Review.reviews.uscla_review - INFO - Trust Metric exclusions: 28
+2025-12-15 14:33:42,142 - Review.reviews.uscla_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-15 14:33:42,143 - Review.reviews.uscla_review - INFO - APMines exclusions: 2
+2025-12-15 14:33:42,143 - Review.reviews.uscla_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-15 14:33:42,144 - Review.reviews.uscla_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-15 14:33:42,145 - Review.reviews.uscla_review - INFO - ClusterMunitions exclusions: 2
+2025-12-15 14:33:42,146 - Review.reviews.uscla_review - INFO - DepletedUranium exclusions: 4
+2025-12-15 14:33:42,147 - Review.reviews.uscla_review - INFO - IncendiaryWeapons exclusions: 6
+2025-12-15 14:33:42,147 - Review.reviews.uscla_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-15 14:33:42,148 - Review.reviews.uscla_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-15 14:33:42,149 - Review.reviews.uscla_review - INFO - Coal Mining exclusions: 5
+2025-12-15 14:33:42,150 - Review.reviews.uscla_review - INFO - Thermal Power exclusions: 21
+2025-12-15 14:33:42,151 - Review.reviews.uscla_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-15 14:33:42,151 - Review.reviews.uscla_review - INFO - Total companies in universe: 460
+2025-12-15 14:33:42,151 - Review.reviews.uscla_review - INFO - Carbon Budget cutoff rank (80th percentile): 368.0
+2025-12-15 14:33:42,151 - Review.reviews.uscla_review - INFO - Carbon Budget exclusions (rank > 368.0): 92
+2025-12-15 14:33:42,167 - Review.reviews.uscla_review - INFO - Companies remaining after exclusions: 324
+2025-12-15 14:33:42,169 - Review.reviews.uscla_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-15 14:33:43,304 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:33:43] "GET /task-status/e5cdd5f3-6504-44d9-a618-b2824c995849 HTTP/1.1" 200 -
+2025-12-15 14:33:44,009 - Review.reviews.uscla_review - INFO - Selected top 25 companies by FFMC
+2025-12-15 14:33:44,009 - Review.reviews.uscla_review - INFO - Checking IsinCode FR0014005GE2 in index_eod_df
+2025-12-15 14:33:44,009 - Review.reviews.uscla_review - INFO - Found 1 matching rows
+2025-12-15 14:33:44,018 - Review.reviews.uscla_review - INFO - Saving USCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USCLA_df_20251215_143344.xlsx
+2025-12-15 14:33:44,333 - Review.reviews.uscle_review - INFO - Loading EOD data...
+2025-12-15 14:33:44,705 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscle_review.py', reloading
+2025-12-15 14:33:44,822 - Review.reviews.uscle_review - INFO - Loading reference data...
