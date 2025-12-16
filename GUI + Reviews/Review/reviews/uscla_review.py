@@ -403,7 +403,7 @@ def run_uscla_review(date, co_date, effective_date, index="USCLA", isin="FR00140
         # FX/Index Ccy is already in the dataframe from the early merge
 
         # Calculate FFMC (Free Float Market Cap)
-        top_250_df['FFMC'] = top_250_df['Close Prc_EOD'] * top_250_df['NOSH'] * top_250_df['Free Float']
+        top_250_df['FFMC'] = top_250_df['Price (EUR) '] * top_250_df['NOSH'] * top_250_df['Free Float']
 
         # Add FFMC Ranking (higher FFMC = better rank)
         top_250_df['FFMC Rank'] = top_250_df['FFMC'].rank(

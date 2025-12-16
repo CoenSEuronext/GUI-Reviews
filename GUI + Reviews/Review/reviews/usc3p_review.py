@@ -395,7 +395,7 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FRESG00
         # CALCULATE FFMC AND SELECT TOP 35
         # ===================================================================
         # Calculate FFMC (Free Float Market Cap) - prices and FX already merged
-        top_250_df['FFMC'] = top_250_df['Close Prc_EOD'] * top_250_df['NOSH'] * top_250_df['Free Float']
+        top_250_df['FFMC'] = top_250_df['Price (EUR) '] * top_250_df['NOSH'] * top_250_df['Free Float']
 
         # Add FFMC Ranking (higher FFMC = better rank)
         top_250_df['FFMC Rank'] = top_250_df['FFMC'].rank(
