@@ -1,0 +1,26 @@
+{
+  "task_id": "3b13dc19-b208-451b-9622-ef56b3a1763d",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-16T15:36:11.531843",
+  "started_at": "2025-12-16T15:36:11.531843",
+  "completed_at": "2025-12-16T15:36:25.309547",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "infrp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\INFRP_df_20251216_153624.xlsx"
+  },
+  "review_type": "INFRP",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "INFRP",
+    "isin": "FRIX00002876",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.772562
+}

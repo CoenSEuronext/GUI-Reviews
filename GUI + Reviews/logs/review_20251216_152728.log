@@ -4,3 +4,12 @@
  * Running on http://10.199.43.185:5000
 2025-12-16 15:27:29,018 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
 2025-12-16 15:27:29,018 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:28:26,488 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:28:34,489 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:28:40,011 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:29:16,214 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:34:56,759 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:35:34,204 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:36:00,810 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:40:39,058 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-16 15:40:51,712 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

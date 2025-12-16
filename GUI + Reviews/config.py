@@ -400,6 +400,11 @@ INDEX_CONFIGS = {
         "index": "C6RIP",
         "isin": "FR0013376258",
         "output_key": "c6rip_path"
+    },
+    "INFRP": {
+        "index": "INFRP",
+        "isin": "FRIX00002876",
+        "output_key": "infrp_path"
     }
     # Add new indices here following the same pattern
 }

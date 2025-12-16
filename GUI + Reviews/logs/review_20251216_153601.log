@@ -1,0 +1,158 @@
+2025-12-16 15:36:02,283 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 15:36:02,285 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 15:36:06,767 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:06] "GET / HTTP/1.1" 200 -
+2025-12-16 15:36:06,826 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:06] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2025-12-16 15:36:11,531 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:11] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 15:36:11,536 - Review.reviews.infrp_review - INFO - Loading EOD data...
+2025-12-16 15:36:11,536 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:11] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:12,081 - Review.reviews.infrp_review - INFO - Loading reference data...
+2025-12-16 15:36:13,575 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:13] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:15,558 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:15] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:17,551 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:17] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:19,593 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:19] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:21,587 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:21] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:23,562 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:23] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:36:24,192 - Review.reviews.infrp_review - INFO - Merging all reference data points early...
+2025-12-16 15:36:24,192 - Review.reviews.infrp_review - INFO - Deduplicating reference dataframes...
+2025-12-16 15:36:24,214 - Review.reviews.infrp_review - INFO - Merging Oekom data...
+2025-12-16 15:36:24,227 - Review.reviews.infrp_review - INFO - Merging ICB data...
+2025-12-16 15:36:24,247 - Review.reviews.infrp_review - INFO - Merging SesamM data...
+2025-12-16 15:36:24,247 - Review.reviews.infrp_review - INFO - Converting numeric columns...
+2025-12-16 15:36:24,253 - Review.reviews.infrp_review - INFO - Staff Rating distribution: Min=1.091, Max=4.0
+2025-12-16 15:36:24,254 - Review.reviews.infrp_review - INFO - Companies with staff rating = 4 (Missing or Not Collected): 43
+2025-12-16 15:36:24,254 - Review.reviews.infrp_review - INFO - All reference data merged successfully
+2025-12-16 15:36:24,254 - Review.reviews.infrp_review - INFO - Universe size after merges: 1536 companies
+2025-12-16 15:36:24,254 - Review.reviews.infrp_review - INFO - Calculating percentiles and rankings for staff rating...
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Percentile and ranking calculations completed
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Staff Rating Percentile range: 1.05 to 100.00
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Companies with percentiles calculated: 1536
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Applying SesamM data availability exclusion...
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - SesamM data unavailable exclusions: 1215
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Applying turnover exclusion...
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Turnover exclusions: 186
+2025-12-16 15:36:24,310 - Review.reviews.infrp_review - INFO - Applying NBR Overall Flag exclusion...
+2025-12-16 15:36:24,321 - Review.reviews.infrp_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-16 15:36:24,321 - Review.reviews.infrp_review - INFO - Applying controversial weapons exclusions...
+2025-12-16 15:36:24,321 - Review.reviews.infrp_review - INFO - BiologicalWeapons exclusions: 0
+2025-12-16 15:36:24,322 - Review.reviews.infrp_review - INFO - ChemicalWeapons exclusions: 0
+2025-12-16 15:36:24,323 - Review.reviews.infrp_review - INFO - NuclearWeapons exclusions: 44
+2025-12-16 15:36:24,324 - Review.reviews.infrp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-16 15:36:24,324 - Review.reviews.infrp_review - INFO - ClusterMunitions exclusions: 5
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - DepletedUranium exclusions: 7
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - APMines exclusions: 4
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - Applying animal welfare exclusions...
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - Animal Welfare exclusions: 261
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - Animal Testing exclusions: 236
+2025-12-16 15:36:24,326 - Review.reviews.infrp_review - INFO - Applying energy screening exclusions...
+2025-12-16 15:36:24,332 - Review.reviews.infrp_review - INFO - Coal Mining exclusions: 94
+2025-12-16 15:36:24,333 - Review.reviews.infrp_review - INFO - Fossil Fuel exclusions: 331
+2025-12-16 15:36:24,334 - Review.reviews.infrp_review - INFO - Thermal Power exclusions: 117
+2025-12-16 15:36:24,334 - Review.reviews.infrp_review - INFO - Applying tobacco screening exclusions...
+2025-12-16 15:36:24,335 - Review.reviews.infrp_review - INFO - Tobacco Production exclusions: 0
+2025-12-16 15:36:24,336 - Review.reviews.infrp_review - INFO - Tobacco Distribution exclusions: 0
+2025-12-16 15:36:24,336 - Review.reviews.infrp_review - INFO - Applying layoff screening exclusion...
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO - Layoff exclusions: 1220
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO - Applying staff rating exclusion...
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO - Companies with percentile < 20: 271
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO - Companies near 20th percentile boundary: 33
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO -   A2 MILK CO LTD: 20.83% - INCLUDED
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO -   AB SAGAX CLASS B: 19.23% - EXCLUDED
+2025-12-16 15:36:24,337 - Review.reviews.infrp_review - INFO -   AZIMUT: 20.59% - INCLUDED
+2025-12-16 15:36:24,341 - Review.reviews.infrp_review - INFO -   BARCLAYS PLC: 20.83% - INCLUDED
+2025-12-16 15:36:24,341 - Review.reviews.infrp_review - INFO -   BROOKFIELD CORP: 19.35% - EXCLUDED
+2025-12-16 15:36:24,341 - Review.reviews.infrp_review - INFO -   BROTHER INDS LTD: 19.15% - EXCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   CANADIAN NATURAL RES: 20.59% - INCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   COMFORT SYSTEMS USA: 20.00% - INCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   DOLLAR GENERAL CORP.: 19.05% - EXCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   E.ON SE: 19.23% - EXCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   EBOS GROUP LTD: 20.69% - INCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   FAIR ISAAC CORP.: 19.23% - EXCLUDED
+2025-12-16 15:36:24,342 - Review.reviews.infrp_review - INFO -   FORTINET INC.: 19.75% - EXCLUDED
+2025-12-16 15:36:24,344 - Review.reviews.infrp_review - INFO -   FUJI MEDIA HOLDINGS: 20.00% - INCLUDED
+2025-12-16 15:36:24,344 - Review.reviews.infrp_review - INFO -   GILEAD SCIENCES INC.: 20.83% - INCLUDED
+2025-12-16 15:36:24,344 - Review.reviews.infrp_review - INFO -   HEXAGON AB-B: 20.83% - INCLUDED
+2025-12-16 15:36:24,344 - Review.reviews.infrp_review - INFO -   HIKARI TSUSHIN: 20.00% - INCLUDED
+2025-12-16 15:36:24,345 - Review.reviews.infrp_review - INFO -   HIROSE ELECTRIC: 19.15% - EXCLUDED
+2025-12-16 15:36:24,345 - Review.reviews.infrp_review - INFO -   JGC HOLDINGS COR: 19.05% - EXCLUDED
+2025-12-16 15:36:24,345 - Review.reviews.infrp_review - INFO -   KINTETSU GROUP H: 19.10% - EXCLUDED
+2025-12-16 15:36:24,345 - Review.reviews.infrp_review - INFO -   LINDE PLC: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   MONSTER BEVERAGE: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   NITORI HOLDINGS: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   PERNOD RICARD: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   PORSCHE AG: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   POWER CORP CANADA: 20.83% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   SCHINDLER HLDG AG: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   SHIMANO INC: 19.23% - EXCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   STRAUMANN HOLDING AG: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   SUGI HD: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   SUN HUNG KAI PROPERT: 19.57% - EXCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   W.W. GRAINGER INC.: 20.51% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO -   WIENERBERGER AG: 20.00% - INCLUDED
+2025-12-16 15:36:24,346 - Review.reviews.infrp_review - INFO - Staff Rating exclusions: 271
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Companies remaining after exclusions: 116
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Eligible companies - XPAR: 25, Non-XPAR: 91
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Calculating FFMC for ranking...
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Selecting top 20 companies by FFMC from each group (XPAR and Non-XPAR)...
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Selected - XPAR: 20, Non-XPAR: 20
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Applying group-based capping: 50% XPAR, 50% Non-XPAR, max 10% per stock...
+2025-12-16 15:36:24,409 - Review.reviews.infrp_review - INFO - Index market cap: 829471456558.7039
+2025-12-16 15:36:24,415 - Review.reviews.infrp_review - INFO - XPAR group total mcap: 488,634,202,966
+2025-12-16 15:36:24,415 - Review.reviews.infrp_review - INFO - Non-XPAR group total mcap: 7,688,327,816,889
+2025-12-16 15:36:24,416 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-16 15:36:24,417 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2025-12-16 15:36:24,417 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-16 15:36:24,418 - utils.capping_proportional - INFO -   Total companies: 20
+2025-12-16 15:36:24,418 - utils.capping_proportional - INFO -   Companies capped: 0
+2025-12-16 15:36:24,418 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-16 15:36:24,418 - utils.capping_proportional - INFO -   Max weight after capping: 0.189027
+2025-12-16 15:36:24,418 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2025-12-16 15:36:24,424 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2025-12-16 15:36:24,424 - utils.capping_proportional - INFO - Capping Summary:
+2025-12-16 15:36:24,425 - utils.capping_proportional - INFO -   Total companies: 20
+2025-12-16 15:36:24,425 - utils.capping_proportional - INFO -   Companies capped: 2
+2025-12-16 15:36:24,425 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2025-12-16 15:36:24,425 - utils.capping_proportional - INFO -   Max weight after capping: 0.200000
+2025-12-16 15:36:24,426 - Review.reviews.infrp_review - INFO - XPAR group - Index weight sum: 0.5000 (should be ~0.50)
+2025-12-16 15:36:24,426 - Review.reviews.infrp_review - INFO - XPAR group - Max index weight: 0.0945 (should be <= 0.10)
+2025-12-16 15:36:24,426 - Review.reviews.infrp_review - INFO - Non-XPAR group - Index weight sum: 0.5000 (should be ~0.50)
+2025-12-16 15:36:24,427 - Review.reviews.infrp_review - INFO - Non-XPAR group - Max index weight: 0.1000 (should be <= 0.10)
+2025-12-16 15:36:24,431 - Review.reviews.infrp_review - INFO - Saving INFRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\INFRP_df_20251216_153624.xlsx
+2025-12-16 15:36:25,541 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:36:25] "GET /task-status/3b13dc19-b208-451b-9622-ef56b3a1763d HTTP/1.1" 200 -
+2025-12-16 15:38:34,407 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:38:34] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 15:38:34,416 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-16 15:38:34,418 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:38:34] "GET /task-status/9c231792-c704-467a-803d-4431e509d10e HTTP/1.1" 200 -
+2025-12-16 15:38:35,046 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-16 15:38:36,438 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:38:36] "GET /task-status/9c231792-c704-467a-803d-4431e509d10e HTTP/1.1" 200 -
+2025-12-16 15:38:38,425 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:38:38] "GET /task-status/9c231792-c704-467a-803d-4431e509d10e HTTP/1.1" 200 -
+2025-12-16 15:38:39,393 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-16 15:38:39,393 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2025-12-16 15:38:39,393 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2025-12-16 15:38:39,398 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2025-12-16 15:38:39,403 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 28
+2025-12-16 15:38:39,403 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-16 15:38:39,404 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2025-12-16 15:38:39,405 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-16 15:38:39,406 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-16 15:38:39,407 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2025-12-16 15:38:39,408 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2025-12-16 15:38:39,409 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 6
+2025-12-16 15:38:39,411 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-16 15:38:39,411 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-16 15:38:39,413 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2025-12-16 15:38:39,414 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 21
+2025-12-16 15:38:39,414 - Review.reviews.usc3p_review - INFO - Oil Sands exclusions: 4
+2025-12-16 15:38:39,415 - Review.reviews.usc3p_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-16 15:38:39,416 - Review.reviews.usc3p_review - INFO - Total companies in universe: 460
+2025-12-16 15:38:39,416 - Review.reviews.usc3p_review - INFO - Carbon Budget cutoff rank (80th percentile): 368.0
+2025-12-16 15:38:39,416 - Review.reviews.usc3p_review - INFO - Carbon Budget exclusions (rank > 368.0): 92
+2025-12-16 15:38:39,431 - Review.reviews.usc3p_review - INFO - Companies remaining after exclusions: 324
+2025-12-16 15:38:39,436 - Review.reviews.usc3p_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-16 15:38:39,437 - Review.reviews.usc3p_review - INFO - Selected top 35 companies by FFMC
+2025-12-16 15:38:39,437 - Review.reviews.usc3p_review - INFO - Checking IsinCode FRESG0000249 in index_eod_df
+2025-12-16 15:38:39,438 - Review.reviews.usc3p_review - INFO - Found 1 matching rows
+2025-12-16 15:38:39,444 - Review.reviews.usc3p_review - INFO - Saving USC3P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USC3P_df_20251216_153839.xlsx
+2025-12-16 15:38:40,427 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:38:40] "GET /task-status/9c231792-c704-467a-803d-4431e509d10e HTTP/1.1" 200 -
+2025-12-16 15:40:38,549 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-12-16 15:40:38,550 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading
+2025-12-16 15:40:38,550 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\review_logic.py', reloading

@@ -81,6 +81,7 @@ from .reviews.ehcf_review import run_ehcf_review
 from .reviews.eiapr_review import run_eiapr_review
 from .reviews.emls_review import run_emls_review
 from .reviews.c6rip_review import run_c6rip_review
+from .reviews.infrp_review import run_infrp_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -165,7 +166,8 @@ REVIEW_FUNCTIONS = {
     "EHCF": run_ehcf_review,
     "EIAPR": run_eiapr_review,
     "EMLS": run_emls_review,
-    "C6RIP": run_c6rip_review
+    "C6RIP": run_c6rip_review,
+    "INFRP": run_infrp_review
 }
 
 def run_review(review_type, **kwargs):

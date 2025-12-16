@@ -109,3 +109,5 @@
 2025-12-16 15:27:47,006 - Review.reviews.wifrp_review - INFO - Companies capped: 2
 2025-12-16 15:27:47,010 - Review.reviews.wifrp_review - INFO - Saving WIFRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\WIFRP_df_20251216_152747.xlsx
 2025-12-16 15:27:48,996 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:27:48] "GET /task-status/d4e0007b-57a9-40b8-b56d-97b3519a812f HTTP/1.1" 200 -
+2025-12-16 15:28:25,647 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-12-16 15:28:25,661 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading
