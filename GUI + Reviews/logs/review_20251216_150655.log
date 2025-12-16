@@ -1,0 +1,5 @@
+2025-12-16 15:06:56,377 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 15:06:56,377 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 15:06:56,407 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:06:56] "GET /task-status/98f279af-8360-4a80-b1fb-4504740ae64c HTTP/1.1" 200 -
+2025-12-16 15:08:30,347 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clamp_review.py', reloading
+2025-12-16 15:08:30,347 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\clamp_review.py', reloading

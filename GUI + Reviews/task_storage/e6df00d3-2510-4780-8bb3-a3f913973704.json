@@ -1,0 +1,24 @@
+{
+  "task_id": "e6df00d3-2510-4780-8bb3-a3f913973704",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-16T15:25:41.619378",
+  "started_at": "2025-12-16T15:25:41.619378",
+  "completed_at": "2025-12-16T15:25:44.345219",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "WIFRP",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "WIFRP",
+    "isin": "FRIX00002777",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

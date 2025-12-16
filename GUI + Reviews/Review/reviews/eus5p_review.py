@@ -147,7 +147,11 @@ def run_eus5p_review(date, co_date, effective_date, index="EUS5P", isin="NL00129
         
         # Use the merged Free Float Round value, fallback to original Free Float if not available
         selection_df["Free Float"] = selection_df["Free Float Round:"]
-        selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Close Prc_CO'] * selection_df['FX/Index Ccy']
+        selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Price (EUR) ']
+        
+        # Add ranking columns by universe
+        selection_df['Rank_EZ300'] = selection_df[selection_df['Universe'] == 'EZ300']['FFMC'].rank(ascending=False, method='first')
+        selection_df['Rank_NA500'] = selection_df[selection_df['Universe'] == 'NA500']['FFMC'].rank(ascending=False, method='first')
         
         # All companies are eligible (no exclusions)
         eligible_df = selection_df.copy()
@@ -188,7 +192,7 @@ def run_eus5p_review(date, co_date, effective_date, index="EUS5P", isin="NL00129
             .rename(columns={'Rounded NOSH': 'Number of Shares'})
             .rename(columns={'ISIN code': 'ISIN Code'})
             .rename(columns={'Currency (Local)': 'Currency'})
-            .sort_values('Company')  # Sort by Universe first, then by Company name
+            .sort_values('Company')
         )
 
         # Perform Inclusion/Exclusion Analysis
@@ -216,6 +220,7 @@ def run_eus5p_review(date, co_date, effective_date, index="EUS5P", isin="NL00129
                 EUS5P_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
+                top_companies_df.to_excel(writer, sheet_name='Selection', index=False)
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
                 pd.DataFrame({'Index Market Cap': [index_mcap]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
 

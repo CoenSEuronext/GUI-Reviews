@@ -1,0 +1,50 @@
+2025-12-16 11:44:54,862 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 11:44:54,864 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 11:44:54,898 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:44:54] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 11:44:54,900 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-16 11:44:54,903 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:44:54] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -
+2025-12-16 11:44:55,395 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-16 11:44:56,913 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:44:56] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -
+2025-12-16 11:44:59,705 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:44:59] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -
+2025-12-16 11:45:01,694 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:45:01] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -
+2025-12-16 11:45:03,690 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:45:03] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -
+2025-12-16 11:45:05,699 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:45:05] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -
+2025-12-16 11:45:07,615 - Review.reviews.c6rip_review - INFO - Starting universe size: 60 stocks
+2025-12-16 11:45:07,616 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-16 11:45:07,616 - Review.reviews.c6rip_review - INFO - Universe size: 60 stocks
+2025-12-16 11:45:07,616 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-16 11:45:07,616 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-16 11:45:07,617 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-16 11:45:07,618 - Review.reviews.c6rip_review - INFO - Selected 60 constituents for c6rip index
+2025-12-16 11:45:07,618 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-16 11:45:07,618 - Review.reviews.c6rip_review - ERROR - Error during review calculation: 'float' object has no attribute 'round'
+2025-12-16 11:45:07,627 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\series.py', reloading
+2025-12-16 11:45:07,628 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\apply.py', reloading
+2025-12-16 11:45:07,629 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\base.py', reloading
+2025-12-16 11:45:07,630 - Review.reviews.c6rip_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\c6rip_review.py", line 149, in run_c6rip_review
+    selection_df['Weight_Final'] = selection_df['Rank'].apply(assign_weight_by_rank)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\series.py", line 4924, in apply
+    ).apply()
+      ^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\c6rip_review.py", line 141, in assign_weight_by_rank
+    return (31.25 / 15 / 100).round(14)  # 2.083%
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'round'
+
+2025-12-16 11:45:07,630 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\algorithms.py', reloading
+2025-12-16 11:45:07,690 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:45:07] "GET /task-status/c04d858d-04c1-4173-898b-8c61cd12ec44 HTTP/1.1" 200 -

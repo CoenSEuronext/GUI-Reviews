@@ -1,0 +1,26 @@
+{
+  "task_id": "9c921a6d-7eb4-43c2-b2df-e7d33dfb10ac",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-16T14:07:13.358565",
+  "started_at": "2025-12-16T14:07:13.362054",
+  "completed_at": "2025-12-16T14:07:20.466221",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "usc3p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\USC3P_df_20251216_140720.xlsx"
+  },
+  "review_type": "USC3P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "USC3P",
+    "isin": "FRESG0000249",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 7.100043
+}

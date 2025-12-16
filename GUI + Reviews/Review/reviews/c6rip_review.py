@@ -11,7 +11,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS0011256235", 
+def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="FR0013376258", 
                     area="US", area2="EU", type="STOCK", universe="cac_family", 
                     feed="Reuters", currency="EUR", year=None):
    
@@ -27,12 +27,16 @@ def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS00112
         index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         logger.info("Loading reference data...")
-        # Load CAC Family (CACLG sheet), plus Sustainalytics data
-        ref_data = load_reference_data(current_data_folder, ['ff', 'cac_family', 'icb', 'sustainalytics'])
+        # Load CAC Family (CACLG sheet), plus oekom_score data
+        ref_data = load_reference_data(
+            current_data_folder, 
+            ['ff', 'cac_family', 'icb', 'oekom_score'],
+            sheet_names={'cac_family': 'CACLG'}
+        )
         
         # Filter symbols once
         symbols_filtered = stock_eod_df[
-            stock_eod_df['#Symbol'].str.len() < 12
+            stock_eod_df['#Symbol'].str.len() == 12
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
 
         # Chain all data preparation operations
@@ -47,8 +51,8 @@ def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS00112
             .drop('Isin Code', axis=1)
             # Merge FX data
             .merge(
-                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
-                on='#Symbol',
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'MIC', 'FX/Index Ccy']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
                 how='left'
             )
             # Merge EOD prices
@@ -67,7 +71,7 @@ def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS00112
             )
             # Merge Sustainalytics ESG data (Mirova/ISS-oekom score)
             .merge(
-                ref_data['sustainalytics'][['ISIN', 'ESG Risk Score']].drop_duplicates(subset='ISIN', keep='first'),
+                ref_data['oekom_score'][['ISIN', 'New Sustainability Score']].drop_duplicates(subset='ISIN', keep='first'),
                 left_on='ISIN code',
                 right_on='ISIN',
                 how='left'
@@ -110,11 +114,11 @@ def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS00112
         logger.info("Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...")
         
         # Handle missing ESG ratings (put them at the end)
-        universe_df['Sustainability_Score'] = universe_df['ESG Risk Score'].fillna(999)
+        universe_df['Sustainability_Score'] = universe_df['New Sustainability Score'].fillna(999)
         
         universe_df = universe_df.sort_values(
             by=['Sustainability_Score', 'FF_Market_Cap'],
-            ascending=[True, False]  # Lower ESG risk ranks higher, higher market cap ranks higher
+            ascending=[False, False]  # Now sorts highest score first
         ).reset_index(drop=True)
         
         # STEP 4: Select all constituents (60 companies)
@@ -134,11 +138,11 @@ def run_c6rip_review(date, co_date, effective_date, index="C6RIP", isin="QS00112
             if 1 <= rank <= 15:
                 return 0.025  # 2.500%
             elif 16 <= rank <= 30:
-                return 31.25 / 15 / 100  # 2.083%
+                return round(31.25 / 15 / 100, 14)  # 2.083%
             elif 31 <= rank <= 45:
                 return 0.0125  # 1.250%
             elif 46 <= rank <= 60:
-                return 12.5 / 15 / 100  # 0.833%
+                return round(12.5 / 15 / 100, 14)  # 0.833%
             else:
                 return 0
         

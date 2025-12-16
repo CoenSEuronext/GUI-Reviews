@@ -1,0 +1,47 @@
+2025-12-16 13:53:02,228 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 13:53:02,230 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 13:53:02,269 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:02] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 13:53:02,270 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-12-16 13:53:02,273 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:02] "GET /task-status/ae133c85-af88-4a5f-8efa-aece092fa90e HTTP/1.1" 200 -
+2025-12-16 13:53:02,847 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-12-16 13:53:04,284 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:04] "GET /task-status/ae133c85-af88-4a5f-8efa-aece092fa90e HTTP/1.1" 200 -
+2025-12-16 13:53:06,281 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:06] "GET /task-status/ae133c85-af88-4a5f-8efa-aece092fa90e HTTP/1.1" 200 -
+2025-12-16 13:53:08,278 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:08] "GET /task-status/ae133c85-af88-4a5f-8efa-aece092fa90e HTTP/1.1" 200 -
+2025-12-16 13:53:10,286 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:10] "GET /task-status/ae133c85-af88-4a5f-8efa-aece092fa90e HTTP/1.1" 200 -
+2025-12-16 13:53:11,051 - Review.reviews.eus5p_review - ERROR - Error during review calculation: 'NoneType' object is not subscriptable
+2025-12-16 13:53:11,061 - Review.reviews.eus5p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\eus5p_review.py", line 42, in run_eus5p_review
+    (developed_market_df['index'] == 'EZ300') |
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-12-16 13:53:12,278 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:12] "GET /task-status/ae133c85-af88-4a5f-8efa-aece092fa90e HTTP/1.1" 200 -
+2025-12-16 13:53:18,428 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:18] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 13:53:18,428 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+2025-12-16 13:53:18,438 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:18] "GET /task-status/2586d59c-78a6-4fed-9604-a049a6da7a7d HTTP/1.1" 200 -
+2025-12-16 13:53:18,952 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2025-12-16 13:53:20,473 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:20] "GET /task-status/2586d59c-78a6-4fed-9604-a049a6da7a7d HTTP/1.1" 200 -
+2025-12-16 13:53:22,451 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:22] "GET /task-status/2586d59c-78a6-4fed-9604-a049a6da7a7d HTTP/1.1" 200 -
+2025-12-16 13:53:24,445 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:24] "GET /task-status/2586d59c-78a6-4fed-9604-a049a6da7a7d HTTP/1.1" 200 -
+2025-12-16 13:53:26,452 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:26] "GET /task-status/2586d59c-78a6-4fed-9604-a049a6da7a7d HTTP/1.1" 200 -
+2025-12-16 13:53:26,912 - Review.reviews.eus5p_review - INFO - Eurozone companies (EZ300): 300
+2025-12-16 13:53:26,912 - Review.reviews.eus5p_review - INFO - North America companies (NA500, excluding XTSE): 458
+2025-12-16 13:53:27,042 - Review.reviews.eus5p_review - INFO - Saving EUS5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUS5P_df_20251216_135327.xlsx
+2025-12-16 13:53:28,444 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:53:28] "GET /task-status/2586d59c-78a6-4fed-9604-a049a6da7a7d HTTP/1.1" 200 -
+2025-12-16 13:55:17,111 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:17] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 13:55:17,111 - Review.reviews.darep_review - INFO - Loading EOD data...
+2025-12-16 13:55:17,118 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:17] "GET /task-status/e6eb87dd-7bd0-46bd-9aa4-06dc9ef4d5a1 HTTP/1.1" 200 -
+2025-12-16 13:55:17,571 - Review.reviews.darep_review - INFO - Loading reference data...
+2025-12-16 13:55:19,129 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:19] "GET /task-status/e6eb87dd-7bd0-46bd-9aa4-06dc9ef4d5a1 HTTP/1.1" 200 -
+2025-12-16 13:55:21,121 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:21] "GET /task-status/e6eb87dd-7bd0-46bd-9aa4-06dc9ef4d5a1 HTTP/1.1" 200 -
+2025-12-16 13:55:23,118 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:23] "GET /task-status/e6eb87dd-7bd0-46bd-9aa4-06dc9ef4d5a1 HTTP/1.1" 200 -
+2025-12-16 13:55:25,128 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:25] "GET /task-status/e6eb87dd-7bd0-46bd-9aa4-06dc9ef4d5a1 HTTP/1.1" 200 -
+2025-12-16 13:55:25,599 - Review.reviews.darep_review - INFO - Creating eligible companies dataframe...
+2025-12-16 13:55:25,601 - Review.reviews.darep_review - INFO - Companies with capping applied: 0
+2025-12-16 13:55:25,607 - Review.reviews.darep_review - INFO - Saving DAREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAREP_df_20251216_135525.xlsx
+2025-12-16 13:55:27,119 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:55:27] "GET /task-status/e6eb87dd-7bd0-46bd-9aa4-06dc9ef4d5a1 HTTP/1.1" 200 -
+2025-12-16 13:57:25,021 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:25] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 13:57:25,021 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-16 13:57:25,031 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:25] "GET /task-status/b25eb38d-f80d-49ee-b07d-ecd9bc95324a HTTP/1.1" 200 -
+2025-12-16 13:57:25,487 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-16 13:57:25,809 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\gicp_review.py', reloading

@@ -1,0 +1,26 @@
+{
+  "task_id": "fe491c84-4320-48dd-a20d-9acf1125af91",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-16T15:12:45.901268",
+  "started_at": "2025-12-16T15:12:45.901268",
+  "completed_at": "2025-12-16T15:12:59.449392",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "wifrp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\WIFRP_df_20251216_151258.xlsx"
+  },
+  "review_type": "WIFRP",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "WIFRP",
+    "isin": "FRIX00002777",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.548124
+}

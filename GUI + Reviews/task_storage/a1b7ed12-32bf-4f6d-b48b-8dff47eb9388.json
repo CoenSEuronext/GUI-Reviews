@@ -1,0 +1,24 @@
+{
+  "task_id": "a1b7ed12-32bf-4f6d-b48b-8dff47eb9388",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-16T14:21:58.728580",
+  "started_at": "2025-12-16T14:21:58.738767",
+  "completed_at": "2025-12-16T14:22:00.672044",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "USC3P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "USC3P",
+    "isin": "FRESG0000249",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

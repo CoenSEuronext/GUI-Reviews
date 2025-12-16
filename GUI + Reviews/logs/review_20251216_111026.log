@@ -1,0 +1,40 @@
+2025-12-16 11:10:27,406 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 11:10:27,406 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 11:10:29,196 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:10:29] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 11:10:29,196 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-12-16 11:10:29,203 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:10:29] "GET /task-status/d7866528-c43a-4055-9cc0-3ffc4b91f89e HTTP/1.1" 200 -
+2025-12-16 11:10:29,685 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-12-16 11:10:31,141 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-12-16 11:10:31,141 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                 Company  New Sustainability Score          FFMC  Overall_Ranking                                         All_Exclusion_Reasons
+282             UNILEVER                     100.0  1.298788e+11                1                                                              
+143  HENKEL AG & CO PREF                     100.0  1.125954e+10                2                                                              
+184               MAGNUM                     100.0  6.586781e+09                3                        Excluded: 100 days avg turnover < €22M
+180    LOTTOMATICA GROUP                     100.0  5.193652e+09                4                        Excluded: 100 days avg turnover < €22M
+226           RENK GROUP                     100.0  4.323100e+09                5                                                              
+273         TKMS AG & CO                     100.0  3.874942e+09                6                                                              
+139            HAL TRUST                     100.0  2.494236e+09                7  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+82                   CTP                     100.0  2.146353e+09                8  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+44         BAM GROEP KON                     100.0  2.079440e+09                9  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+37               AUMOVIO                     100.0  2.030535e+09               10  Excluded: FFMC < €3B; Excluded: 100 days avg turnover < €22M
+2025-12-16 11:10:31,151 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+282              UNILEVER                 100.00000  1.298788e+11               1.0
+143   HENKEL AG & CO PREF                 100.00000  1.125954e+10               2.0
+226            RENK GROUP                 100.00000  4.323100e+09               3.0
+273          TKMS AG & CO                 100.00000  3.874942e+09               4.0
+224                  RELX                   9.94863  6.728146e+10               5.0
+235          SAINT GOBAIN                   9.94863  3.651676e+10               6.0
+175               KPN KON                   9.94863  1.528350e+10               7.0
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10               8.0
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10               9.0
+238                SANOFI                   9.75000  1.006574e+11              10.0
+2025-12-16 11:10:31,152 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-12-16 11:10:31,152 - Review.reviews.eri5p_review - INFO - Total excluded: 178 companies
+2025-12-16 11:10:31,152 - Review.reviews.eri5p_review - INFO - Eligible for selection: 122 companies
+2025-12-16 11:10:31,153 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-12-16 11:10:31,159 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20251216_111031.xlsx
+2025-12-16 11:10:31,224 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:10:31] "GET /task-status/d7866528-c43a-4055-9cc0-3ffc4b91f89e HTTP/1.1" 200 -
+2025-12-16 11:10:33,202 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:10:33] "GET /task-status/d7866528-c43a-4055-9cc0-3ffc4b91f89e HTTP/1.1" 200 -
+2025-12-16 11:10:43,020 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-12-16 11:10:43,020 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading

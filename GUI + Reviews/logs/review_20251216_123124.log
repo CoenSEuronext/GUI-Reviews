@@ -1,0 +1,26 @@
+2025-12-16 12:31:25,040 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 12:31:25,040 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 12:31:29,008 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:29] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 12:31:29,011 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-16 12:31:29,011 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:29] "GET /task-status/4df11d52-ccbc-4377-a222-84dc72e470e4 HTTP/1.1" 200 -
+2025-12-16 12:31:29,449 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-16 12:31:31,017 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:31] "GET /task-status/4df11d52-ccbc-4377-a222-84dc72e470e4 HTTP/1.1" 200 -
+2025-12-16 12:31:33,022 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:33] "GET /task-status/4df11d52-ccbc-4377-a222-84dc72e470e4 HTTP/1.1" 200 -
+2025-12-16 12:31:35,015 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:35] "GET /task-status/4df11d52-ccbc-4377-a222-84dc72e470e4 HTTP/1.1" 200 -
+2025-12-16 12:31:37,058 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:37] "GET /task-status/4df11d52-ccbc-4377-a222-84dc72e470e4 HTTP/1.1" 200 -
+2025-12-16 12:31:37,705 - Review.reviews.c6rip_review - INFO - Starting universe size: 60 stocks
+2025-12-16 12:31:37,705 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-16 12:31:37,705 - Review.reviews.c6rip_review - INFO - Universe size: 60 stocks
+2025-12-16 12:31:37,706 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-16 12:31:37,707 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-16 12:31:37,708 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-16 12:31:37,708 - Review.reviews.c6rip_review - INFO - Selected 60 constituents for c6rip index
+2025-12-16 12:31:37,708 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-16 12:31:37,708 - Review.reviews.c6rip_review - INFO - Weight range: 0.8333% to 2.5000%
+2025-12-16 12:31:37,709 - Review.reviews.c6rip_review - INFO - Total weight: 100.0000%
+2025-12-16 12:31:37,710 - Review.reviews.c6rip_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-16 12:31:37,715 - Review.reviews.c6rip_review - INFO - Inclusions: 0, Exclusions: 0
+2025-12-16 12:31:37,716 - Review.reviews.c6rip_review - INFO - Saving c6rip output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\C6RIP_df_20251216_123137.xlsx
+2025-12-16 12:31:39,015 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 12:31:39] "GET /task-status/4df11d52-ccbc-4377-a222-84dc72e470e4 HTTP/1.1" 200 -
+2025-12-16 12:31:59,989 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading
+2025-12-16 12:31:59,989 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\c6rip_review.py', reloading

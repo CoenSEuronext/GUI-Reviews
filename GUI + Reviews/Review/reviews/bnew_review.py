@@ -81,15 +81,10 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
             
             # Merge Currency Data - only get FX/Index Ccy since Currency already exists
             .merge(
-                stock_eod_df[['Isin Code', 'MIC', 'FX/Index Ccy']]
-                .drop_duplicates(subset=['Isin Code', 'MIC'], keep='first'),
-                left_on=['ISIN', 'MIC'],
-                right_on=['Isin Code', 'MIC'],
-                how='left',
-                suffixes=('', '_stock')  # Add suffix to avoid conflicts
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'MIC', 'FX/Index Ccy']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
+                how='left'
             )
-            .drop('Isin Code', axis=1)
-            
             # Merge Turnover Data
             .merge(
                 master_report_df[['ISIN', 'MIC of MoR', 'Turnover in euro (Total)']],

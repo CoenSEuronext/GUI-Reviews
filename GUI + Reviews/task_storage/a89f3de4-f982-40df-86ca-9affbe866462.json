@@ -1,0 +1,24 @@
+{
+  "task_id": "a89f3de4-f982-40df-86ca-9affbe866462",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-16T14:22:02.030067",
+  "started_at": "2025-12-16T14:22:02.030067",
+  "completed_at": "2025-12-16T14:22:06.702635",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'Close Prc_EOD'",
+  "error": "Error during review calculation: 'Close Prc_EOD'",
+  "result_data": null,
+  "review_type": "USC3P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "USC3P",
+    "isin": "FRESG0000249",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 4.672568
+}

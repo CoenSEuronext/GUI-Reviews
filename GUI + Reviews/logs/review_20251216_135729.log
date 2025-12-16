@@ -1,0 +1,39 @@
+2025-12-16 13:57:29,727 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 13:57:29,728 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 13:57:30,307 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:30] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 13:57:30,310 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-16 13:57:30,310 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:30] "GET /task-status/d09c10ce-70d9-4dd9-a42f-88cade7664d8 HTTP/1.1" 200 -
+2025-12-16 13:57:30,803 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-16 13:57:32,317 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:32] "GET /task-status/d09c10ce-70d9-4dd9-a42f-88cade7664d8 HTTP/1.1" 200 -
+2025-12-16 13:57:34,317 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:34] "GET /task-status/d09c10ce-70d9-4dd9-a42f-88cade7664d8 HTTP/1.1" 200 -
+2025-12-16 13:57:34,976 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-16 13:57:34,976 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2025-12-16 13:57:34,976 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2025-12-16 13:57:34,984 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2025-12-16 13:57:34,988 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 28
+2025-12-16 13:57:34,989 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-16 13:57:34,990 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2025-12-16 13:57:34,990 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-16 13:57:34,991 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-16 13:57:34,993 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2025-12-16 13:57:34,994 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2025-12-16 13:57:34,995 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 6
+2025-12-16 13:57:34,996 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-16 13:57:34,998 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-16 13:57:35,001 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2025-12-16 13:57:35,002 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 21
+2025-12-16 13:57:35,002 - Review.reviews.usc3p_review - INFO - Oil Sands exclusions: 4
+2025-12-16 13:57:35,002 - Review.reviews.usc3p_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-16 13:57:35,002 - Review.reviews.usc3p_review - INFO - Total companies in universe: 460
+2025-12-16 13:57:35,002 - Review.reviews.usc3p_review - INFO - Carbon Budget cutoff rank (80th percentile): 368.0
+2025-12-16 13:57:35,002 - Review.reviews.usc3p_review - INFO - Carbon Budget exclusions (rank > 368.0): 92
+2025-12-16 13:57:35,018 - Review.reviews.usc3p_review - INFO - Companies remaining after exclusions: 324
+2025-12-16 13:57:35,026 - Review.reviews.usc3p_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-16 13:57:36,317 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:36] "GET /task-status/d09c10ce-70d9-4dd9-a42f-88cade7664d8 HTTP/1.1" 200 -
+2025-12-16 13:57:36,800 - Review.reviews.usc3p_review - INFO - Selected top 25 companies by FFMC
+2025-12-16 13:57:36,800 - Review.reviews.usc3p_review - INFO - Checking IsinCode FRESG0000249 in index_eod_df
+2025-12-16 13:57:36,810 - Review.reviews.usc3p_review - INFO - Found 1 matching rows
+2025-12-16 13:57:36,810 - Review.reviews.usc3p_review - INFO - Saving USC3P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\USC3P_df_20251216_135736.xlsx
+2025-12-16 13:57:38,310 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:38] "GET /task-status/d09c10ce-70d9-4dd9-a42f-88cade7664d8 HTTP/1.1" 200 -
+2025-12-16 14:04:56,926 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading
+2025-12-16 14:04:56,926 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading

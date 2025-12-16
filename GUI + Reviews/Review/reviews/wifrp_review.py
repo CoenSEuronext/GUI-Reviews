@@ -523,25 +523,27 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
         logger.info("Applying staff rating exclusion...")
         developed_market_df[f'exclusion_{exclusion_count}_StaffRating'] = None
 
-        # CRStaffRatingNum already filled with 0 above
         excluded_staff_isins = []
 
-        if 'Supersector' in developed_market_df.columns and 'Region' in developed_market_df.columns:
-            for (sector, region), group in developed_market_df.groupby(['Supersector', 'Region']):
-                if pd.isna(sector) or pd.isna(region):
-                    continue
-                    
-                logger.debug(f"Processing sector: {sector}, region: {region}, group size: {len(group)}")
-                sorted_group = group.sort_values('CRStaffRatingNum Numeric')
-                n_companies = len(group)
-                n_to_exclude = int(np.floor(n_companies * 0.19999999999))
-                logger.debug(f"Companies in group: {n_companies}, to exclude: {n_to_exclude}")
-                
-                if n_companies > 0 and n_to_exclude > 0:
-                    bottom_isins = sorted_group['ISIN Code'].iloc[:n_to_exclude].tolist()
-                    excluded_staff_isins.extend(bottom_isins)
+        if 'StaffRating_Regional_Sector_Percentile' in developed_market_df.columns:
+            # Exclude companies with percentile STRICTLY LESS THAN 20 (not equal to 20)
+            excluded_staff_isins = developed_market_df[
+                developed_market_df['StaffRating_Regional_Sector_Percentile'] < 20
+            ]['ISIN Code'].tolist()
+            
+            logger.info(f"Companies with percentile < 20: {len(excluded_staff_isins)}")
+            
+            # Log boundary cases for debugging
+            boundary_companies = developed_market_df[
+                (developed_market_df['StaffRating_Regional_Sector_Percentile'] >= 19) & 
+                (developed_market_df['StaffRating_Regional_Sector_Percentile'] <= 21)
+            ]
+            if len(boundary_companies) > 0:
+                logger.info(f"Companies near 20th percentile boundary: {len(boundary_companies)}")
+                for idx, row in boundary_companies.iterrows():
+                    logger.info(f"  {row['Company']}: {row['StaffRating_Regional_Sector_Percentile']:.2f}% - {'EXCLUDED' if row['ISIN Code'] in excluded_staff_isins else 'INCLUDED'}")
         else:
-            logger.warning("Cannot apply staff rating exclusion. Missing Supersector or Region columns.")
+            logger.warning("Cannot apply staff rating exclusion. Missing StaffRating_Regional_Sector_Percentile column.")
 
         developed_market_df[f'exclusion_{exclusion_count}_StaffRating'] = np.where(
             developed_market_df['ISIN Code'].isin(excluded_staff_isins),
@@ -594,7 +596,7 @@ def run_wifrp_review(date, co_date, effective_date, index="WIFRP", isin="FRIX000
         
         # Calculate FFMC for ranking (using cut-off date data - Close Prc_CO)
         logger.info("Calculating FFMC for ranking...")
-        eligible_df['FFMC'] = eligible_df['Free Float'] * eligible_df['Number of Shares'] * eligible_df['Close Prc_CO'] * eligible_df['FX/Index Ccy']
+        eligible_df['FFMC'] = eligible_df['Free Float'] * eligible_df['Number of Shares'] * eligible_df["Price (EUR) "]
         
         # Rank by FFMC (descending)
         eligible_df = eligible_df.sort_values('FFMC', ascending=False)

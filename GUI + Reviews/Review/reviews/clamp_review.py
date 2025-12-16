@@ -227,10 +227,7 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
         # Step 2h: Shale Oil and/or Gas screening
         logger.info("Step 2h: Shale Oil and/or Gas screening...")
         eurozone_300_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = np.where(
-            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Production') |
-            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Collected') |
-            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Not Disclosed') |
-            (eurozone_300_df['Shale Oil and/or Gas - Involvement tie'].isna()),
+            eurozone_300_df['Shale Oil and/or Gas - Involvement tie'] == 'Production',  # Only exclude if 'Production'
             'exclude_ShaleOilGas',
             None
         )
@@ -242,11 +239,9 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
             eurozone_300_df['arctic_drilling_involvement'], 
             errors='coerce'
         )
-        
+
         eurozone_300_df[f'exclusion_{exclusion_count}_ArcticDrilling'] = np.where(
-            (arctic_drilling_numeric > 0) |
-            (eurozone_300_df['arctic_drilling_involvement'] == 'Not Collected') |
-            (eurozone_300_df['arctic_drilling_involvement'].isna()),
+            arctic_drilling_numeric > 0,  # Only exclude if actually involved (> 0%)
             'exclude_ArcticDrilling',
             None
         )
@@ -255,9 +250,7 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
         # Step 2j: Deepwater Drilling screening
         logger.info("Step 2j: Deepwater Drilling screening...")
         eurozone_300_df[f'exclusion_{exclusion_count}_DeepwaterDrilling'] = np.where(
-            (eurozone_300_df['deepwater_drilling_involvement'] == 'Not Collected') |
-            (eurozone_300_df['deepwater_drilling_involvement'] == 'T') |
-            (eurozone_300_df['deepwater_drilling_involvement'].isna()),
+            eurozone_300_df['deepwater_drilling_involvement'] == 'T',  # Only exclude if 'T'
             'exclude_DeepwaterDrilling',
             None
         )
@@ -265,6 +258,15 @@ def run_clamp_review(date, co_date, effective_date, index="CLAMP", isin="FR00140
 
         # Create list of all exclusion columns
         exclusion_columns = [col for col in eurozone_300_df.columns if col.startswith('exclusion_')]
+        
+        # Count exclusions by type
+        for col in exclusion_columns:
+            count = eurozone_300_df[col].notna().sum()
+            logger.info(f"{col}: {count} companies excluded")
+
+        # See how many companies have at least one exclusion
+        has_any_exclusion = eurozone_300_df[exclusion_columns].notna().any(axis=1).sum()
+        logger.info(f"Total companies with at least one exclusion: {has_any_exclusion}")
 
         # Convert to numeric for ranking
         eurozone_300_df['ClimateCuAlignIEANZTgt2050-values'] = pd.to_numeric(

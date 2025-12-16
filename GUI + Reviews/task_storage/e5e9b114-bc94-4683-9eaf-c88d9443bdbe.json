@@ -1,0 +1,24 @@
+{
+  "task_id": "e5e9b114-bc94-4683-9eaf-c88d9443bdbe",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-16T11:04:24.543383",
+  "started_at": "2025-12-16T11:04:24.543383",
+  "completed_at": "2025-12-16T11:04:26.773745",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "ERI5P",
+  "parameters": {
+    "date": "20251211",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ERI5P",
+    "isin": "NL0013217730",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

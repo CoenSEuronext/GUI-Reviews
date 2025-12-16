@@ -10,7 +10,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR0014005GE2", 
+def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FRESG0000249", 
                     area="EU", area2="US", type="STOCK", universe="north_america_500", 
                     feed="Reuters", currency="USD", year=None):
     """
@@ -21,13 +21,13 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         co_date (str): Close-out date in format YYYYMMDD
         effective_date (str): Effective date in format DD-MMM-YY
         index (str, optional): Index name. Defaults to "USC3P"
-        isin (str, optional): ISIN code. Defaults to "FR0014005IK5"
+        isin (str, optional): ISIN code. Defaults to "FRESG0000249"
         area (str, optional): Primary area. Defaults to "EU"
-        area2 (str, optional): Secondary area. Defaults to ""
+        area2 (str, optional): Secondary area. Defaults to "US"
         type (str, optional): Type of instrument. Defaults to "STOCK"
-        universe (str, optional): Universe name. Defaults to "eurozone_300"
+        universe (str, optional): Universe name. Defaults to "north_america_500"
         feed (str, optional): Feed source. Defaults to "Reuters"
-        currency (str, optional): Currency code. Defaults to "EUR"
+        currency (str, optional): Currency code. Defaults to "USD"
         year (str, optional): Year for calculation. Defaults to None (extracted from date)
 
     Returns:
@@ -67,27 +67,24 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         ).drop('ISIN Code:', axis=1).rename(columns={'Free Float Round:': 'Free Float',
                                                      'Name': 'Company'})
 
-        # Filter symbols once (Reuters symbols only, length < 12)
-        symbols_filtered = stock_eod_df[
-            stock_eod_df['#Symbol'].str.len() < 12
-        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
-        
-        # Add #Symbol column
-        north_america_500_df = north_america_500_df.merge(
-            symbols_filtered,
-            left_on='ISIN',
-            right_on='Isin Code',
-            how='left'
-        ).drop('Isin Code', axis=1)
-
-        # Add FX/Index Ccy data early based on currency parameter
-        north_america_500_df = north_america_500_df.merge(
-            stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
-            on='#Symbol',
-            how='left'
+        # Prepare symbols, prices, and FX data (merge all at once with ISIN+MIC keys)
+        symbols_prices_fx = stock_eod_df[
+            (stock_eod_df['#Symbol'].str.len() < 12) & 
+            (stock_eod_df['Index Curr'] == currency)
+        ][['Isin Code', 'MIC', '#Symbol', 'Close Prc', 'FX/Index Ccy']].drop_duplicates(
+            subset=['Isin Code', 'MIC'], 
+            keep='first'
         )
+        
+        # Merge symbols, prices, and FX in one operation
+        north_america_500_df = north_america_500_df.merge(
+            symbols_prices_fx,
+            left_on=['ISIN', 'MIC'],
+            right_on=['Isin Code', 'MIC'],
+            how='left'
+        ).drop('Isin Code', axis=1).rename(columns={'Close Prc': 'Close Prc_EOD'})
 
-        # Remove companies with MIC = 'XTSE' from the universe entirely
+        # Remove companies with MIC = 'XTSE' (Toronto Stock Exchange) - only US-listed stocks allowed
         initial_count = len(north_america_500_df)
         north_america_500_df = north_america_500_df[north_america_500_df['MIC'] != 'XTSE'].copy()
         removed_xtse_count = initial_count - len(north_america_500_df)
@@ -290,7 +287,7 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         exclusion_count += 1
         
         
-        # Step 2f: Shale Oil and/or Gas screening
+        # Step 2g: Shale Oil and/or Gas screening
         north_america_500_df[f'exclusion_{exclusion_count}_ShaleOilGas'] = None
 
         excluded_shale = north_america_500_df[
@@ -307,7 +304,7 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         logger.info(f"Shale Oil/Gas exclusions: {len(excluded_shale)}")
         exclusion_count += 1
 
-        # Step 2g: Carbon Budget screening (exclude worst 20% by ranking)
+        # Step 2h: Carbon Budget screening (exclude worst 20% by ranking)
         # Now using the Carbon Budget Rank that was calculated early
         north_america_500_df[f'exclusion_{exclusion_count}_CarbonBudget'] = None
 
@@ -360,7 +357,7 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         # ===================================================================
         # SELECTION PROCESS
         # ===================================================================
-        # Step 2h: Select companies with no exclusions
+        # Step 2i: Select companies with no exclusions
         selection_df = north_america_500_df[
             north_america_500_df[exclusion_columns].isna().all(axis=1)
         ].copy()
@@ -395,37 +392,9 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
         logger.info(f"Selected top 250 companies by ESG Performance Score")
         
         # ===================================================================
-        # PRICE AND FX DATA
+        # CALCULATE FFMC AND SELECT TOP 35
         # ===================================================================
-        # Step 3: Get price and FX data
-        stock_eod_df['Reuters/Optiq'] = stock_eod_df['#Symbol'].str.len().apply(
-            lambda x: 'Reuters' if x < 12 else 'Optiq'
-        )
-
-        def get_stock_info(row, stock_df):
-            mask = (stock_df['Isin Code'] == row['ISIN']) & \
-                   (stock_df['MIC'] == row['MIC']) & \
-                   (stock_df['Reuters/Optiq'] == 'Reuters')
-            
-            matches = stock_df[mask]
-            
-            if not matches.empty:
-                first_match = matches.iloc[0]
-                
-                return pd.Series({
-                    'Symbol': first_match['#Symbol'],
-                    'Close Prc_EOD': first_match['Close Prc']
-                })
-            return pd.Series({'Symbol': None, 'Close Prc_EOD': None})
-
-        # Add Symbol and Price columns
-        top_250_df[['Symbol', 'Close Prc_EOD']] = top_250_df.apply(
-            lambda row: get_stock_info(row, stock_eod_df), axis=1
-        )
-        
-        # FX/Index Ccy is already in the dataframe from the early merge
-
-        # Calculate FFMC (Free Float Market Cap)
+        # Calculate FFMC (Free Float Market Cap) - prices and FX already merged
         top_250_df['FFMC'] = top_250_df['Close Prc_EOD'] * top_250_df['NOSH'] * top_250_df['Free Float']
 
         # Add FFMC Ranking (higher FFMC = better rank)
@@ -435,10 +404,10 @@ def run_usc3p_review(date, co_date, effective_date, index="USC3P", isin="FR00140
             na_option='bottom'
         )
         
-        # Rank by FFMC and select top 25
+        # Rank by FFMC and select top 35
         top_250_df = top_250_df.sort_values('FFMC', ascending=False)
         final_selection_df = top_250_df.head(35).copy()
-        logger.info(f"Selected top 25 companies by FFMC")
+        logger.info(f"Selected top 35 companies by FFMC")
 
         # ===================================================================
         # EQUAL WEIGHTING CALCULATION

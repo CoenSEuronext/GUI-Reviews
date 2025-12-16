@@ -1,0 +1,133 @@
+2025-12-16 11:23:24,098 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 11:23:24,102 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 11:23:28,996 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:23:28] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 11:23:28,996 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-12-16 11:23:29,003 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:23:29] "GET /task-status/65ca184a-3ed1-46f0-a8dd-09c2d63773d8 HTTP/1.1" 200 -
+2025-12-16 11:23:29,501 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-12-16 11:23:30,862 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-12-16 11:23:30,862 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                 Company  New Sustainability Score          FFMC  Overall_Ranking                                                                                      All_Exclusion_Reasons
+282             UNILEVER                     100.0  1.298788e+11                1                                                                      Excluded: Opinion negative/risk/empty
+143  HENKEL AG & CO PREF                     100.0  1.125954e+10                2                                                                      Excluded: Opinion negative/risk/empty
+184               MAGNUM                     100.0  6.586781e+09                3                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+180    LOTTOMATICA GROUP                     100.0  5.193652e+09                4                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+226           RENK GROUP                     100.0  4.323100e+09                5                                                                      Excluded: Opinion negative/risk/empty
+273         TKMS AG & CO                     100.0  3.874942e+09                6                                                                      Excluded: Opinion negative/risk/empty
+139            HAL TRUST                     100.0  2.494236e+09                7  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+82                   CTP                     100.0  2.146353e+09                8  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+44         BAM GROEP KON                     100.0  2.079440e+09                9  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+37               AUMOVIO                     100.0  2.030535e+09               10  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+2025-12-16 11:23:30,868 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+224                  RELX                   9.94863  6.728146e+10               1.0
+235          SAINT GOBAIN                   9.94863  3.651676e+10               2.0
+175               KPN KON                   9.94863  1.528350e+10               3.0
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10               4.0
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10               5.0
+238                SANOFI                   9.75000  1.006574e+11               6.0
+111      ESSILORLUXOTTICA                   9.75000  9.920577e+10               7.0
+277                   UCB                   9.75000  2.945788e+10               8.0
+128     FRESENIUS SE & CO                   9.75000  1.982877e+10               9.0
+189             MERCK KGA                   9.75000  1.451390e+10              10.0
+2025-12-16 11:23:30,868 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-12-16 11:23:30,868 - Review.reviews.eri5p_review - INFO - Total excluded: 182 companies
+2025-12-16 11:23:30,868 - Review.reviews.eri5p_review - INFO - Eligible for selection: 118 companies
+2025-12-16 11:23:30,870 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-12-16 11:23:30,876 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20251216_112330.xlsx
+2025-12-16 11:23:31,003 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:23:31] "GET /task-status/65ca184a-3ed1-46f0-a8dd-09c2d63773d8 HTTP/1.1" 200 -
+2025-12-16 11:25:15,253 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:25:15] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 11:25:15,256 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-12-16 11:25:15,256 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:25:15] "GET /task-status/44d9778d-ff87-4208-912e-309babfe516c HTTP/1.1" 200 -
+2025-12-16 11:25:15,754 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-12-16 11:25:17,012 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-12-16 11:25:17,015 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+                 Company  New Sustainability Score          FFMC  Overall_Ranking                                                                                      All_Exclusion_Reasons
+282             UNILEVER                     100.0  1.298788e+11                1                                                                      Excluded: Opinion negative/risk/empty
+143  HENKEL AG & CO PREF                     100.0  1.125954e+10                2                                                                      Excluded: Opinion negative/risk/empty
+184               MAGNUM                     100.0  6.586781e+09                3                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+180    LOTTOMATICA GROUP                     100.0  5.193652e+09                4                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+226           RENK GROUP                     100.0  4.323100e+09                5                                                                      Excluded: Opinion negative/risk/empty
+273         TKMS AG & CO                     100.0  3.874942e+09                6                                                                      Excluded: Opinion negative/risk/empty
+139            HAL TRUST                     100.0  2.494236e+09                7  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+82                   CTP                     100.0  2.146353e+09                8  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+44         BAM GROEP KON                     100.0  2.079440e+09                9  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+37               AUMOVIO                     100.0  2.030535e+09               10  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+2025-12-16 11:25:17,018 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+224                  RELX                   9.94863  6.728146e+10               1.0
+235          SAINT GOBAIN                   9.94863  3.651676e+10               2.0
+175               KPN KON                   9.94863  1.528350e+10               3.0
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10               4.0
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10               5.0
+238                SANOFI                   9.75000  1.006574e+11               6.0
+111      ESSILORLUXOTTICA                   9.75000  9.920577e+10               7.0
+277                   UCB                   9.75000  2.945788e+10               8.0
+128     FRESENIUS SE & CO                   9.75000  1.982877e+10               9.0
+189             MERCK KGA                   9.75000  1.451390e+10              10.0
+2025-12-16 11:25:17,019 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-12-16 11:25:17,019 - Review.reviews.eri5p_review - INFO - Total excluded: 182 companies
+2025-12-16 11:25:17,019 - Review.reviews.eri5p_review - INFO - Eligible for selection: 118 companies
+2025-12-16 11:25:17,020 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-12-16 11:25:17,028 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20251216_112517.xlsx
+2025-12-16 11:25:17,271 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:25:17] "GET /task-status/44d9778d-ff87-4208-912e-309babfe516c HTTP/1.1" 200 -
+2025-12-16 11:36:57,063 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:36:57] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 11:36:57,065 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2025-12-16 11:36:57,072 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:36:57] "GET /task-status/90901898-8b64-47c3-9014-3513436c9c62 HTTP/1.1" 200 -
+2025-12-16 11:36:57,559 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2025-12-16 11:36:58,791 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2025-12-16 11:36:58,793 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+               Company  New Sustainability Score          FFMC  Overall_Ranking                                                                                      All_Exclusion_Reasons
+184             MAGNUM                     100.0  6.586781e+09                1                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+180  LOTTOMATICA GROUP                     100.0  5.193652e+09                2                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+226         RENK GROUP                     100.0  4.323100e+09                3                                                                      Excluded: Opinion negative/risk/empty
+273       TKMS AG & CO                     100.0  3.874942e+09                4                                                                      Excluded: Opinion negative/risk/empty
+139          HAL TRUST                     100.0  2.494236e+09                5  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+82                 CTP                     100.0  2.146353e+09                6  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+44       BAM GROEP KON                     100.0  2.079440e+09                7  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+37             AUMOVIO                     100.0  2.030535e+09                8  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+289         VERBUND AG                      10.0  4.249033e+09                9                                                                  Excluded: 100 days avg turnover < EUR 22M
+100     EDP RENOVAVEIS                      10.0  3.559849e+09               10                                                                  Excluded: 100 days avg turnover < EUR 22M
+2025-12-16 11:36:58,796 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+224                  RELX                   9.94863  6.728146e+10               1.0
+235          SAINT GOBAIN                   9.94863  3.651676e+10               2.0
+175               KPN KON                   9.94863  1.528350e+10               3.0
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10               4.0
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10               5.0
+238                SANOFI                   9.75000  1.006574e+11               6.0
+111      ESSILORLUXOTTICA                   9.75000  9.920577e+10               7.0
+277                   UCB                   9.75000  2.945788e+10               8.0
+128     FRESENIUS SE & CO                   9.75000  1.982877e+10               9.0
+189             MERCK KGA                   9.75000  1.451390e+10              10.0
+2025-12-16 11:36:58,797 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2025-12-16 11:36:58,797 - Review.reviews.eri5p_review - INFO - Total excluded: 180 companies
+2025-12-16 11:36:58,797 - Review.reviews.eri5p_review - INFO - Eligible for selection: 120 companies
+2025-12-16 11:36:58,798 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2025-12-16 11:36:58,806 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ERI5P_df_20251216_113658.xlsx
+2025-12-16 11:36:59,073 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:36:59] "GET /task-status/90901898-8b64-47c3-9014-3513436c9c62 HTTP/1.1" 200 -
+2025-12-16 11:38:31,494 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:31] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 11:38:31,496 - Review.reviews.c6rip_review - INFO - Loading EOD data...
+2025-12-16 11:38:31,498 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:31] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:38:31,977 - Review.reviews.c6rip_review - INFO - Loading reference data...
+2025-12-16 11:38:33,508 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:33] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:38:35,517 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:35] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:38:37,503 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:37] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:38:39,683 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:39] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:38:41,682 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:41] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:38:43,238 - Review.reviews.c6rip_review - INFO - Starting universe size: 40 stocks
+2025-12-16 11:38:43,239 - Review.reviews.c6rip_review - INFO - Step 1: Index Universe - CAC Large 60 constituents...
+2025-12-16 11:38:43,239 - Review.reviews.c6rip_review - INFO - Universe size: 40 stocks
+2025-12-16 11:38:43,239 - Review.reviews.c6rip_review - INFO - Step 2: No eligibility screening applied
+2025-12-16 11:38:43,240 - Review.reviews.c6rip_review - INFO - Step 3: Ranking by Sustainability Score (ESG Risk Score) and Free Float Market Cap...
+2025-12-16 11:38:43,241 - Review.reviews.c6rip_review - INFO - Step 4: Selecting all constituents...
+2025-12-16 11:38:43,241 - Review.reviews.c6rip_review - INFO - Selected 40 constituents for c6rip index
+2025-12-16 11:38:43,241 - Review.reviews.c6rip_review - INFO - Calculating rank-based weights...
+2025-12-16 11:38:43,248 - Review.reviews.c6rip_review - INFO - Weight range: 1.2500% to 2.5000%
+2025-12-16 11:38:43,248 - Review.reviews.c6rip_review - INFO - Total weight: 81.2500%
+2025-12-16 11:38:43,252 - Review.reviews.c6rip_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-16 11:38:43,257 - Review.reviews.c6rip_review - INFO - Inclusions: 0, Exclusions: 20
+2025-12-16 11:38:43,257 - Review.reviews.c6rip_review - INFO - Saving c6rip output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\C6RIP_df_20251216_113843.xlsx
+2025-12-16 11:38:43,673 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 11:38:43] "GET /task-status/2e0541f1-7cc7-4582-b379-1fa347992929 HTTP/1.1" 200 -
+2025-12-16 11:40:14,692 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-12-16 11:40:14,692 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading
+2025-12-16 11:40:14,696 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\eri5p_review.py', reloading

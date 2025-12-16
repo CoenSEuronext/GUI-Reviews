@@ -1,0 +1,61 @@
+2025-12-16 14:22:00,705 - werkzeug - WARNING -  * Debugger is active!
+2025-12-16 14:22:00,705 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-16 14:22:00,746 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 14:22:00] "GET /task-status/a1b7ed12-32bf-4f6d-b48b-8dff47eb9388 HTTP/1.1" 200 -
+2025-12-16 14:22:02,030 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 14:22:02] "POST /calculate HTTP/1.1" 200 -
+2025-12-16 14:22:02,030 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+2025-12-16 14:22:02,039 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 14:22:02] "GET /task-status/a89f3de4-f982-40df-86ca-9affbe866462 HTTP/1.1" 200 -
+2025-12-16 14:22:02,496 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2025-12-16 14:22:04,038 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 14:22:04] "GET /task-status/a89f3de4-f982-40df-86ca-9affbe866462 HTTP/1.1" 200 -
+2025-12-16 14:22:06,039 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 14:22:06] "GET /task-status/a89f3de4-f982-40df-86ca-9affbe866462 HTTP/1.1" 200 -
+2025-12-16 14:22:06,653 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2025-12-16 14:22:06,653 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2025-12-16 14:22:06,653 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2025-12-16 14:22:06,655 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2025-12-16 14:22:06,655 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 28
+2025-12-16 14:22:06,661 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 1
+2025-12-16 14:22:06,662 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2025-12-16 14:22:06,663 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2025-12-16 14:22:06,664 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2025-12-16 14:22:06,665 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2025-12-16 14:22:06,665 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2025-12-16 14:22:06,666 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 6
+2025-12-16 14:22:06,667 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2025-12-16 14:22:06,668 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 7
+2025-12-16 14:22:06,669 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2025-12-16 14:22:06,670 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 21
+2025-12-16 14:22:06,670 - Review.reviews.usc3p_review - INFO - Oil Sands exclusions: 4
+2025-12-16 14:22:06,671 - Review.reviews.usc3p_review - INFO - Shale Oil/Gas exclusions: 12
+2025-12-16 14:22:06,671 - Review.reviews.usc3p_review - INFO - Total companies in universe: 460
+2025-12-16 14:22:06,672 - Review.reviews.usc3p_review - INFO - Carbon Budget cutoff rank (80th percentile): 368.0
+2025-12-16 14:22:06,672 - Review.reviews.usc3p_review - INFO - Carbon Budget exclusions (rank > 368.0): 92
+2025-12-16 14:22:06,679 - Review.reviews.usc3p_review - INFO - Companies remaining after exclusions: 324
+2025-12-16 14:22:06,688 - Review.reviews.usc3p_review - INFO - Selected top 250 companies by ESG Performance Score
+2025-12-16 14:22:06,690 - Review.reviews.usc3p_review - INFO - Selected top 25 companies by FFMC
+2025-12-16 14:22:06,690 - Review.reviews.usc3p_review - INFO - Checking IsinCode FRESG0000249 in index_eod_df
+2025-12-16 14:22:06,690 - Review.reviews.usc3p_review - INFO - Found 1 matching rows
+2025-12-16 14:22:06,690 - Review.reviews.usc3p_review - ERROR - Error during review calculation: 'Close Prc_EOD'
+2025-12-16 14:22:06,695 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py', reloading
+2025-12-16 14:22:06,697 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-12-16 14:22:06,697 - Review.reviews.usc3p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Close Prc_EOD'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\usc3p_review.py", line 432, in run_usc3p_review
+    final_selection_df['Close Prc_EOD']
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Close Prc_EOD'
+
