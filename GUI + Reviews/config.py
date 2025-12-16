@@ -405,6 +405,11 @@ INDEX_CONFIGS = {
         "index": "INFRP",
         "isin": "FRIX00002876",
         "output_key": "infrp_path"
+    },
+    "ES2PR_BACKUP": {
+        "index": "ES2PR_backup",
+        "isin": "NLIX00008218",
+        "output_key": "es2pr_backup_path"
     }
     # Add new indices here following the same pattern
 }

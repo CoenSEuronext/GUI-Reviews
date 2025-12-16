@@ -170,7 +170,7 @@ def calculate_capping_factors(df, index_mcap, max_individual_weight=0.10, max_se
     
     return df, iterations_df, company_iterations_df, sector_summary
 
-def run_es2pr_review(date, co_date, effective_date, index="ES2PR", isin="NLIX00005982", 
+def run_es2pr_review_backup(date, co_date, effective_date, index="ES2PR_backup", isin="NLIX00005982", 
                    area="US", area2="EU", type="STOCK", universe="developed_market", 
                    feed="Reuters", currency="EUR", year=None):
 
@@ -313,8 +313,8 @@ def run_es2pr_review(date, co_date, effective_date, index="ES2PR", isin="NLIX000
         selection_df['Effective Date of Review'] = effective_date
         selection_df['Rounded NOSH'] = selection_df['NOSH']  # Adjust as needed
         
-        # Prepare ES2PR DataFrame
-        ES2PR_df = (
+        # Prepare ES2PR_backup DataFrame
+        ES2PR_backup_df = (
             selection_df[
                 ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
                 'Effective Date of Review', 'Currency']
@@ -341,12 +341,12 @@ def run_es2pr_review(date, co_date, effective_date, index="ES2PR", isin="NLIX000
            
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            es2pr_path = os.path.join(output_dir, f'ES2PR_df_{timestamp}.xlsx')
+            es2pr_backup_path = os.path.join(output_dir, f'ES2PR_backup_df_{timestamp}.xlsx')
            
             # Save output with multiple sheets
-            logger.info(f"Saving ES2PR output to: {es2pr_path}")
-            with pd.ExcelWriter(es2pr_path) as writer:
-                ES2PR_df.to_excel(writer, sheet_name='Index Composition', index=False)
+            logger.info(f"Saving ES2PR_backup output to: {es2pr_backup_path}")
+            with pd.ExcelWriter(es2pr_backup_path) as writer:
+                ES2PR_backup_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
@@ -358,7 +358,7 @@ def run_es2pr_review(date, co_date, effective_date, index="ES2PR", isin="NLIX000
             return {
                 "status": "success",
                 "message": "Review completed successfully",
-                "data": {"es2pr_path": es2pr_path}
+                "data": {"es2pr_backup_path": es2pr_backup_path}
             }
            
         except Exception as e:

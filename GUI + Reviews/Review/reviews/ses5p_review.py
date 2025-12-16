@@ -169,8 +169,7 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
             'Effective Date of Review', 'Currency']]
             .rename(columns={
                 'ISIN': 'ISIN Code',
-                'NOSH': 'Number of Shares',
-                'Currency': 'Currency (Local)'
+                'NOSH': 'Number of Shares'
             })
             .sort_values('Company')
         )
