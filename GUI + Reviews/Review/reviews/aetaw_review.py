@@ -128,9 +128,9 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
         total_ffmc = selection_df['Initial FF Market Cap'].sum()
         selection_df['Initial Weight'] = selection_df['Initial FF Market Cap'] / total_ffmc
 
-        logger.info(f"\nInitial weights calculated. Starting two-step capping process...")
+        logger.info(f"\nInitial weights calculated. Starting three-step capping process...")
 
-        # ===== TWO-STEP CAPPING PROCESS =====
+        # ===== THREE-STEP CAPPING PROCESS =====
         individual_cap = 0.09
         collective_threshold = 0.045
         collective_cap = 0.36
@@ -140,34 +140,35 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
         original_weights = selection_df['Initial Weight'].copy()
         current_weights = original_weights.copy()
 
+        # Track locked companies
+        locked_at_9 = pd.Series(False, index=selection_df.index)
+        locked_at_45 = pd.Series(False, index=selection_df.index)
+
         # ===== STEP 1: Cap all companies at 9% iteratively =====
-        logger.info("\n========== STEP 1: Cap all companies at 9% ==========")
-        
-        step1_iteration = 0
+        logger.info("\n========== STEP 1: Individual 9% Cap ==========")
+
         for iteration in range(max_iterations):
-            step1_iteration = iteration + 1
             logger.info(f"\n--- Step 1, Iteration {iteration + 1} ---")
             
-            # Track this iteration's data
             selection_df[f'Step1_Iter{iteration+1}_Weight'] = current_weights
             
             new_weights = current_weights.copy()
             changes_made = False
             
-            # Cap all companies at 9%
-            companies_over_9 = current_weights > individual_cap
-            selection_df[f'Step1_Iter{iteration+1}_Capped'] = companies_over_9
+            # Identify companies over 9%
+            companies_over_9 = current_weights > individual_cap + tolerance
             
             if companies_over_9.any():
                 excess_weight = (current_weights[companies_over_9] - individual_cap).sum()
                 new_weights[companies_over_9] = individual_cap
+                locked_at_9[companies_over_9] = True
                 changes_made = True
                 
                 logger.info(f"Capped {companies_over_9.sum()} companies at 9%")
-                logger.info(f"Excess weight: {excess_weight*100:.2f}%")
+                logger.info(f"Excess weight: {excess_weight*100:.4f}%")
                 
-                # Redistribute excess to companies below 9%
-                can_receive = new_weights < individual_cap
+                # Redistribute to ALL other companies (not locked at 9%)
+                can_receive = ~locked_at_9
                 
                 if can_receive.any() and excess_weight > tolerance:
                     eligible_weights = original_weights[can_receive]
@@ -178,19 +179,13 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
                         additional_weight = excess_weight * redistribution_shares
                         new_weights[can_receive] += additional_weight
                         
-                        logger.info(f"Redistributed to {can_receive.sum()} companies below 9%")
-                        
-                        # Check if any companies went above 9% after redistribution
-                        newly_over_9 = (new_weights > individual_cap) & (current_weights <= individual_cap)
-                        if newly_over_9.any():
-                            logger.info(f"  WARNING: {newly_over_9.sum()} companies now ABOVE 9% after redistribution")
+                        logger.info(f"Redistributed to {can_receive.sum()} companies")
             
-            # Save weights after redistribution
             selection_df[f'Step1_Iter{iteration+1}_Weight_After_Redist'] = new_weights
+            selection_df[f'Step1_Iter{iteration+1}_Locked_at_9'] = locked_at_9
             
-            # Check convergence
             max_change = abs(new_weights - current_weights).max()
-            logger.info(f"Max weight change: {max_change*100:.4f}%")
+            logger.info(f"Max weight change: {max_change*100:.6f}%")
             
             current_weights = new_weights
             
@@ -199,56 +194,46 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
                 break
         else:
             logger.warning(f"[WARNING] Step 1 did not converge after {max_iterations} iterations")
-        
-        # Log Step 1 results
-        selection_df['Step1_Final_Weight'] = current_weights
-        at_9_pct_step1 = (current_weights >= individual_cap - tolerance).sum()
-        logger.info(f"\nStep 1 complete: {at_9_pct_step1} companies at 9%")
 
-        # ===== STEP 2: Apply collective constraint iteratively =====
-        logger.info("\n========== STEP 2: Apply collective constraint (36% rule) ==========")
-        
-        # Identify top 4 companies by ORIGINAL weight (initial market cap) - FIXED
-        top_4_indices = original_weights.nlargest(4).index
-        selection_df['Top_4_Protected'] = selection_df.index.isin(top_4_indices)
-        
-        logger.info(f"Top 4 companies by initial market cap (protected at 9%):")
-        for rank, idx in enumerate(top_4_indices, 1):
-            company_name = selection_df.loc[idx, 'Company']
-            logger.info(f"  {rank}. {company_name}: Initial {original_weights[idx]*100:.2f}%, After Step 1: {current_weights[idx]*100:.2f}%")
-        
-        # Track companies that have been capped at 4.5% (they stay locked)
-        capped_at_45 = pd.Series(False, index=selection_df.index)
-        
-        step2_iteration = 0
+        logger.info(f"\nStep 1 complete: {locked_at_9.sum()} companies locked at 9%")
+        for idx in selection_df[locked_at_9].index:
+            logger.info(f"  {selection_df.loc[idx, 'Company']}: {current_weights[idx]*100:.4f}%")
+
+        # ===== STEP 2: Cap all except top 4 at 4.5% iteratively =====
+        logger.info("\n========== STEP 2: Collective 36% Constraint (Cap outside top 4 at 4.5%) ==========")
+
         for iteration in range(max_iterations):
-            step2_iteration = iteration + 1
             logger.info(f"\n--- Step 2, Iteration {iteration + 1} ---")
             
-            # Track this iteration's data
             selection_df[f'Step2_Iter{iteration+1}_Weight'] = current_weights
             
             new_weights = current_weights.copy()
             changes_made = False
             
-            # Cap all companies above 4.5% (except top 4) to exactly 4.5%
-            needs_capping_to_45 = (current_weights > collective_threshold) & (~selection_df.index.isin(top_4_indices))
-            selection_df[f'Step2_Iter{iteration+1}_Capped'] = needs_capping_to_45
+            # Identify top 4 companies by current weight
+            top_4_indices = current_weights.nlargest(4).index
+            is_top_4 = pd.Series(False, index=selection_df.index)
+            is_top_4[top_4_indices] = True
+            
+            logger.info(f"Top 4 companies:")
+            for idx in top_4_indices:
+                logger.info(f"  {selection_df.loc[idx, 'Company']}: {current_weights[idx]*100:.4f}%")
+            
+            # Cap all companies NOT in top 4 and above 4.5% at 4.5%
+            needs_capping_to_45 = (~is_top_4) & (current_weights > collective_threshold + tolerance) & (~locked_at_45)
             
             if needs_capping_to_45.any():
                 excess_weight = (current_weights[needs_capping_to_45] - collective_threshold).sum()
                 new_weights[needs_capping_to_45] = collective_threshold
-                capped_at_45[needs_capping_to_45] = True  # Mark as capped
+                locked_at_45[needs_capping_to_45] = True
                 changes_made = True
                 
-                logger.info(f"Capped {needs_capping_to_45.sum()} companies (outside top 4) to 4.5%")
-                logger.info(f"Total companies locked at 4.5%: {capped_at_45.sum()}")
-                logger.info(f"Excess weight: {excess_weight*100:.2f}%")
+                logger.info(f"Capped {needs_capping_to_45.sum()} companies (outside top 4) at 4.5%")
+                logger.info(f"Total companies locked at 4.5%: {locked_at_45.sum()}")
+                logger.info(f"Excess weight: {excess_weight*100:.4f}%")
                 
-                # Redistribute excess ONLY to companies that:
-                # 1. Are at or below 4.5% AND
-                # 2. Have NOT been capped at 4.5% (not locked)
-                can_receive = (new_weights <= collective_threshold) & (~capped_at_45)
+                # Redistribute to companies NOT locked at 9% and NOT locked at 4.5%
+                can_receive = (~locked_at_9) & (~locked_at_45)
                 
                 if can_receive.any() and excess_weight > tolerance:
                     eligible_weights = original_weights[can_receive]
@@ -259,27 +244,13 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
                         additional_weight = excess_weight * redistribution_shares
                         new_weights[can_receive] += additional_weight
                         
-                        logger.info(f"Redistributed to {can_receive.sum()} companies (not locked at 4.5%)")
-                        
-                        # Check if any companies (outside top 4) went above 4.5% after redistribution
-                        newly_over_45 = ((new_weights > collective_threshold) & 
-                                        (current_weights <= collective_threshold) & 
-                                        (~selection_df.index.isin(top_4_indices)))
-                        
-                        if newly_over_45.any():
-                            logger.info(f"  WARNING: {newly_over_45.sum()} companies (outside top 4) now ABOVE 4.5% after redistribution")
-                    elif total_eligible <= tolerance:
-                        logger.warning(f"  WARNING: Cannot redistribute {excess_weight*100:.2f}% - no eligible recipients")
-                elif not can_receive.any():
-                    logger.warning(f"  WARNING: Cannot redistribute {excess_weight*100:.2f}% - all companies either top 4 or locked at 4.5%")
+                        logger.info(f"Redistributed to {can_receive.sum()} companies (not locked at 9% or 4.5%)")
             
-            # Save weights after redistribution
             selection_df[f'Step2_Iter{iteration+1}_Weight_After_Redist'] = new_weights
-            selection_df[f'Step2_Iter{iteration+1}_Locked_at_4.5'] = capped_at_45
+            selection_df[f'Step2_Iter{iteration+1}_Locked_at_4.5'] = locked_at_45
             
-            # Check convergence
             max_change = abs(new_weights - current_weights).max()
-            logger.info(f"Max weight change: {max_change*100:.4f}%")
+            logger.info(f"Max weight change: {max_change*100:.6f}%")
             
             current_weights = new_weights
             
@@ -289,9 +260,63 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
         else:
             logger.warning(f"[WARNING] Step 2 did not converge after {max_iterations} iterations")
 
+        logger.info(f"\nStep 2 complete: {locked_at_45.sum()} companies locked at 4.5%")
+
+        # ===== STEP 3: Re-check 9% cap for top 4 =====
+        logger.info("\n========== STEP 3: Re-check 9% Cap for Top 4 ==========")
+
+        for iteration in range(max_iterations):
+            logger.info(f"\n--- Step 3, Iteration {iteration + 1} ---")
+            
+            selection_df[f'Step3_Iter{iteration+1}_Weight'] = current_weights
+            
+            new_weights = current_weights.copy()
+            changes_made = False
+            
+            # Check if any company (not already locked at 9%) went above 9%
+            companies_over_9 = (current_weights > individual_cap + tolerance) & (~locked_at_9)
+            
+            if companies_over_9.any():
+                excess_weight = (current_weights[companies_over_9] - individual_cap).sum()
+                new_weights[companies_over_9] = individual_cap
+                locked_at_9[companies_over_9] = True
+                changes_made = True
+                
+                logger.info(f"Capped {companies_over_9.sum()} companies at 9%")
+                logger.info(f"Excess weight: {excess_weight*100:.4f}%")
+                
+                # Redistribute to companies NOT locked at 9%, NOT locked at 4.5%, and below 4.5%
+                can_receive = (~locked_at_9) & (~locked_at_45) & (new_weights < collective_threshold)
+                
+                if can_receive.any() and excess_weight > tolerance:
+                    eligible_weights = original_weights[can_receive]
+                    total_eligible = eligible_weights.sum()
+                    
+                    if total_eligible > tolerance:
+                        redistribution_shares = eligible_weights / total_eligible
+                        additional_weight = excess_weight * redistribution_shares
+                        new_weights[can_receive] += additional_weight
+                        
+                        logger.info(f"Redistributed to {can_receive.sum()} companies (not locked, below 4.5%)")
+            
+            selection_df[f'Step3_Iter{iteration+1}_Weight_After_Redist'] = new_weights
+            selection_df[f'Step3_Iter{iteration+1}_Locked_at_9'] = locked_at_9
+            
+            max_change = abs(new_weights - current_weights).max()
+            logger.info(f"Max weight change: {max_change*100:.6f}%")
+            
+            current_weights = new_weights
+            
+            if not changes_made or max_change < tolerance:
+                logger.info(f"[SUCCESS] Step 3 converged after {iteration + 1} iterations")
+                break
+        else:
+            logger.warning(f"[WARNING] Step 3 did not converge after {max_iterations} iterations")
+
         # ===== Final Results =====
         selection_df['Final Weight'] = current_weights
-        selection_df['Final Locked at 4.5%'] = capped_at_45
+        selection_df['Final Locked at 9%'] = locked_at_9
+        selection_df['Final Locked at 4.5%'] = locked_at_45
         
         # Calculate final market cap based on final weights
         selection_df['Final FF Market Cap'] = selection_df['Final Weight'] * total_ffmc
@@ -313,10 +338,11 @@ def run_aetaw_review(date, co_date, effective_date, index="AETAW", isin="NL00106
         logger.info(f"\n========== Final Results ==========")
         logger.info(f"Companies at 9.00%: {at_9_pct}")
         logger.info(f"Companies locked at 4.50%: {at_45_pct}")
-        logger.info(f"Total weight OVER 4.5%: {final_collective*100:.2f}% (limit: {collective_cap*100:.2f}%)")
+        logger.info(f"Total weight OVER 4.5%: {final_collective*100:.4f}% (limit: {collective_cap*100:.2f}%)")
+        logger.info(f"Sum of all final weights: {current_weights.sum()*100:.6f}% (should be 100%)")
         
         if final_collective > collective_cap + tolerance:
-            logger.error(f"[ERROR] Collective cap VIOLATED by {(final_collective - collective_cap)*100:.2f}%!")
+            logger.error(f"[ERROR] Collective cap VIOLATED by {(final_collective - collective_cap)*100:.4f}%!")
         else:
             logger.info(f"[SUCCESS] Collective cap satisfied")
 

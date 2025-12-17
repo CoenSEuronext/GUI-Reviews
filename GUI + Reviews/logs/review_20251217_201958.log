@@ -1,0 +1,60 @@
+2025-12-17 20:19:59,147 - werkzeug - WARNING -  * Debugger is active!
+2025-12-17 20:19:59,149 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-17 20:19:59,181 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:19:59] "POST /calculate HTTP/1.1" 200 -
+2025-12-17 20:19:59,181 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-17 20:19:59,181 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:19:59] "GET /task-status/d5442b5e-8394-4191-b7bf-7ab43c9a0a7f HTTP/1.1" 200 -
+2025-12-17 20:19:59,495 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-12-17 20:19:59,689 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-17 20:19:59,713 - Review.reviews.aetaw_review - INFO - 
+Initial weights calculated. Starting two-step capping process...
+2025-12-17 20:19:59,714 - Review.reviews.aetaw_review - INFO - Top 4 companies by initial market cap (protected at 9%):
+2025-12-17 20:19:59,714 - Review.reviews.aetaw_review - INFO -   1. ASML HOLDING: Initial 27.80%
+2025-12-17 20:19:59,714 - Review.reviews.aetaw_review - INFO -   2. SHELL PLC: Initial 14.66%
+2025-12-17 20:19:59,715 - Review.reviews.aetaw_review - INFO -   3. UNILEVER: Initial 10.54%
+2025-12-17 20:19:59,715 - Review.reviews.aetaw_review - INFO -   4. ING GROEP N.V.: Initial 5.72%
+2025-12-17 20:19:59,715 - Review.reviews.aetaw_review - INFO - 
+========== Starting Iterative Capping Process ==========
+2025-12-17 20:19:59,715 - Review.reviews.aetaw_review - INFO - 
+========== ITERATION 1 ==========
+2025-12-17 20:19:59,715 - Review.reviews.aetaw_review - INFO - 
+--- Step 1: Check 9% cap (outside top 4) ---
+2025-12-17 20:19:59,716 - Review.reviews.aetaw_review - INFO - No companies above 9% (outside top 4)
+2025-12-17 20:19:59,716 - Review.reviews.aetaw_review - INFO - 
+--- Step 2: Check 4.5% cap (outside top 4) ---
+2025-12-17 20:19:59,717 - Review.reviews.aetaw_review - INFO - Capped 2 companies at 4.5%
+2025-12-17 20:19:59,717 - Review.reviews.aetaw_review - INFO - Excess weight: 1.79%
+2025-12-17 20:19:59,718 - Review.reviews.aetaw_review - INFO - Redistributed to 70 companies (below 9% and not at 4.5%)
+2025-12-17 20:19:59,719 - Review.reviews.aetaw_review - INFO - 
+Max weight change: inf%
+2025-12-17 20:19:59,719 - Review.reviews.aetaw_review - INFO - Companies at 9%: 4
+2025-12-17 20:19:59,719 - Review.reviews.aetaw_review - INFO - Companies at 4.5%: 2
+2025-12-17 20:19:59,719 - Review.reviews.aetaw_review - INFO - 
+========== ITERATION 2 ==========
+2025-12-17 20:19:59,720 - Review.reviews.aetaw_review - INFO - 
+--- Step 1: Check 9% cap (outside top 4) ---
+2025-12-17 20:19:59,720 - Review.reviews.aetaw_review - INFO - No companies above 9% (outside top 4)
+2025-12-17 20:19:59,720 - Review.reviews.aetaw_review - INFO - 
+--- Step 2: Check 4.5% cap (outside top 4) ---
+2025-12-17 20:19:59,720 - Review.reviews.aetaw_review - INFO - No companies above 4.5% (outside top 4)
+2025-12-17 20:19:59,721 - Review.reviews.aetaw_review - INFO - 
+Max weight change: 0.0000%
+2025-12-17 20:19:59,721 - Review.reviews.aetaw_review - INFO - Companies at 9%: 4
+2025-12-17 20:19:59,721 - Review.reviews.aetaw_review - INFO - Companies at 4.5%: 2
+2025-12-17 20:19:59,721 - Review.reviews.aetaw_review - INFO - 
+[SUCCESS] Process converged after 2 iterations
+2025-12-17 20:19:59,723 - Review.reviews.aetaw_review - INFO - 
+========== Final Results ==========
+2025-12-17 20:19:59,723 - Review.reviews.aetaw_review - INFO - Companies at 9.00%: 0
+2025-12-17 20:19:59,724 - Review.reviews.aetaw_review - INFO - Companies at 4.50%: 2
+2025-12-17 20:19:59,724 - Review.reviews.aetaw_review - INFO - Total weight OVER 4.5%: 59.00% (limit: 36.00%)
+2025-12-17 20:19:59,724 - Review.reviews.aetaw_review - ERROR - [ERROR] Collective cap VIOLATED by 23.00%!
+2025-12-17 20:19:59,724 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 6
+2025-12-17 20:19:59,728 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251217_201959.xlsx
+2025-12-17 20:20:01,189 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:20:01] "GET /task-status/d5442b5e-8394-4191-b7bf-7ab43c9a0a7f HTTP/1.1" 200 -
+2025-12-17 20:20:25,589 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-17 20:20:25,589 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-17 20:20:25,599 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-17 20:20:26,328 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:20:26] "POST /calculate HTTP/1.1" 200 -
+2025-12-17 20:20:26,328 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-17 20:20:26,328 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:20:26] "GET /task-status/79df275b-394b-4b30-ae19-b5582cad21f7 HTTP/1.1" 200 -
+2025-12-17 20:20:26,503 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading

@@ -1,0 +1,61 @@
+2025-12-17 20:12:57,030 - werkzeug - WARNING -  * Debugger is active!
+2025-12-17 20:12:57,030 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-17 20:12:57,100 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:12:57] "POST /calculate HTTP/1.1" 200 -
+2025-12-17 20:12:57,103 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-17 20:12:57,107 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:12:57] "GET /task-status/6e48d9d2-ae71-4afa-aae6-e9472f92b160 HTTP/1.1" 200 -
+2025-12-17 20:12:57,447 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2025-12-17 20:12:57,674 - Review.reviews.aetaw_review - INFO - Loaded 75 companies from AEX, AMX, and AScX
+2025-12-17 20:12:57,706 - Review.reviews.aetaw_review - INFO - 
+Initial weights calculated. Starting two-step capping process...
+2025-12-17 20:12:57,707 - Review.reviews.aetaw_review - INFO - 
+========== STEP 1: Cap all companies at 9% ==========
+2025-12-17 20:12:57,707 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 1 ---
+2025-12-17 20:12:57,708 - Review.reviews.aetaw_review - INFO - Capped 3 companies at 9%
+2025-12-17 20:12:57,708 - Review.reviews.aetaw_review - INFO - Excess weight: 26.00%
+2025-12-17 20:12:57,709 - Review.reviews.aetaw_review - INFO - Redistributed to 72 companies below 9%
+2025-12-17 20:12:57,710 - Review.reviews.aetaw_review - INFO - Max weight change: 18.8013%
+2025-12-17 20:12:57,710 - Review.reviews.aetaw_review - INFO - 
+--- Step 1, Iteration 2 ---
+2025-12-17 20:12:57,711 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-17 20:12:57,711 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 1 converged after 2 iterations
+2025-12-17 20:12:57,711 - Review.reviews.aetaw_review - INFO - 
+Step 1 complete: 3 companies at 9%
+2025-12-17 20:12:57,712 - Review.reviews.aetaw_review - INFO - 
+========== STEP 2: Apply collective constraint (36% rule) ==========
+2025-12-17 20:12:57,712 - Review.reviews.aetaw_review - INFO - Top 4 companies by initial market cap (protected at 9%):
+2025-12-17 20:12:57,712 - Review.reviews.aetaw_review - INFO -   1. ASML HOLDING: Initial 27.80%, After Step 1: 9.00%
+2025-12-17 20:12:57,712 - Review.reviews.aetaw_review - INFO -   2. SHELL PLC: Initial 14.66%, After Step 1: 9.00%
+2025-12-17 20:12:57,712 - Review.reviews.aetaw_review - INFO -   3. UNILEVER: Initial 10.54%, After Step 1: 9.00%
+2025-12-17 20:12:57,714 - Review.reviews.aetaw_review - INFO -   4. ING GROEP N.V.: Initial 5.72%, After Step 1: 8.88%
+2025-12-17 20:12:57,714 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 1 ---
+2025-12-17 20:12:57,715 - Review.reviews.aetaw_review - INFO - Capped 3 companies (outside top 4) to 4.5%
+2025-12-17 20:12:57,716 - Review.reviews.aetaw_review - INFO - Total companies locked at 4.5%: 3
+2025-12-17 20:12:57,716 - Review.reviews.aetaw_review - INFO - Excess weight: 8.52%
+2025-12-17 20:12:57,716 - Review.reviews.aetaw_review - INFO - Redistributed to 69 companies (below 9% and not locked at 4.5%)
+2025-12-17 20:12:57,717 - Review.reviews.aetaw_review - INFO -   INFO: 1 companies now ABOVE 9% after redistribution - will be capped in next iteration
+2025-12-17 20:12:57,718 - Review.reviews.aetaw_review - INFO - Max weight change: 3.9492%
+2025-12-17 20:12:57,718 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 2 ---
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - Capped 1 companies (outside top 4) to 4.5%
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - Total companies locked at 4.5%: 4
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - Excess weight: 0.11%
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - Redistributed to 67 companies (below 9% and not locked at 4.5%)
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - Max weight change: 0.1079%
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - 
+--- Step 2, Iteration 3 ---
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - Max weight change: 0.0000%
+2025-12-17 20:12:57,719 - Review.reviews.aetaw_review - INFO - [SUCCESS] Step 2 converged after 3 iterations
+2025-12-17 20:12:57,724 - Review.reviews.aetaw_review - INFO - 
+========== Final Results ==========
+2025-12-17 20:12:57,724 - Review.reviews.aetaw_review - INFO - Companies at 9.00%: 4
+2025-12-17 20:12:57,724 - Review.reviews.aetaw_review - INFO - Companies locked at 4.50%: 4
+2025-12-17 20:12:57,724 - Review.reviews.aetaw_review - INFO - Total weight OVER 4.5%: 37.36% (limit: 36.00%)
+2025-12-17 20:12:57,724 - Review.reviews.aetaw_review - ERROR - [ERROR] Collective cap VIOLATED by 1.36%!
+2025-12-17 20:12:57,725 - Review.reviews.aetaw_review - INFO - AETAW capping complete. Companies with CF < 1: 73
+2025-12-17 20:12:57,729 - Review.reviews.aetaw_review - INFO - Saving AETAW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AETAW_df_20251217_201257.xlsx
+2025-12-17 20:12:59,108 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 20:12:59] "GET /task-status/6e48d9d2-ae71-4afa-aae6-e9472f92b160 HTTP/1.1" 200 -
+2025-12-17 20:14:44,742 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-17 20:14:44,744 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-17 20:14:44,744 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading

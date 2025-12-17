@@ -1,0 +1,24 @@
+{
+  "task_id": "1eac5512-b237-44e0-9e84-117139bf0d73",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-17T19:48:11.244249",
+  "started_at": "2025-12-17T19:48:11.244249",
+  "completed_at": "2025-12-17T19:48:11.412093",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: No index EOD files found! At least one index file is required.",
+  "error": "Error during review calculation: No index EOD files found! At least one index file is required.",
+  "result_data": null,
+  "review_type": "AETAW",
+  "parameters": {
+    "date": "20241217",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "AETAW",
+    "isin": "NL0010614525",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 0.167844
+}

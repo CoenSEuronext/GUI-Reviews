@@ -15,7 +15,7 @@ INDEX_CONFIGS = {
         "index": "FRD4P",
         "isin": "FRIX00003031",
         "output_key": "frd4p_path"
-    },
+    },  
     "EGSPP": {
         "index": "EGSPP",
         "isin": "FRIX00003031",

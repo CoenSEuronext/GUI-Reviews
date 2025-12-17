@@ -35,3 +35,5 @@ Setup VENV
 Setup exception folder for the server restarts
 
 check if all contain Index_mcap sheet
+
+Capping rounding to 14

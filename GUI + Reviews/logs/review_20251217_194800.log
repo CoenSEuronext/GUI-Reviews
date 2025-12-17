@@ -1,0 +1,17 @@
+2025-12-17 19:48:01,368 - werkzeug - WARNING -  * Debugger is active!
+2025-12-17 19:48:01,370 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-17 19:48:07,209 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 19:48:07] "POST /calculate HTTP/1.1" 200 -
+2025-12-17 19:48:07,209 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2025-12-17 19:48:07,209 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 19:48:07] "GET /task-status/8cb65d82-9a50-4a50-aef2-19e19b5f4f73 HTTP/1.1" 200 -
+2025-12-17 19:48:07,224 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading
+2025-12-17 19:48:07,427 - Review.reviews.aetaw_review - ERROR - Error during review calculation: No index EOD files found! At least one index file is required.
+2025-12-17 19:48:07,427 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aetaw_review.py', reloading
+2025-12-17 19:48:07,427 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\data_loader.py', reloading
+2025-12-17 19:48:07,427 - Review.reviews.aetaw_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\aetaw_review.py", line 26, in run_aetaw_review
+    index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\utils\data_loader.py", line 39, in load_eod_data
+    raise ValueError("No index EOD files found! At least one index file is required.")
+ValueError: No index EOD files found! At least one index file is required.
+
