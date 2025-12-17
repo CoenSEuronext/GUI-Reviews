@@ -3,10 +3,11 @@ import datetime
 import os
 
 # Input EOD to be recalculated
-RELEVANT_EOD_DATE = "20251111"
+RELEVANT_EOD_DATE = "20251216"
 # Stock prices dictionary
 stock_prices = {
-"AAPL.O": 23.323
+    "LLYVA.O": 82.09,
+    "LLYVK.O": 84.78
 }
 
 # Get current timestamp for the output filename
@@ -29,22 +30,24 @@ def get_previous_business_day(date_str):
 
 # List of Price Index mnemonics to process
 mnemonics = [
-"WCAMP",
-"GSCSP",
-"TCAMP",
+    "EDWPT",
+    "EWSL",
+    "EWMS",
+    "DNAPT",
+    "EUSPT",
+    "EWSL",
+    "EUMS",
+    "EUSL"
 ]
 
 # Insert Index to be calculated + Underlying Index
 mnemonics_tr4_perc = {
-    "LC3WD": "FR0013522596",
 
     }
 
 # Insert Index to be calculated + Underlying Index
 mnemonics_tr4_points = {
-    "WCAMB": "FRESG0000355",
-    "GSCSD": "FRESG0000884",
-    "TCAMB": "FR0014005GG7"
+
 }
 def load_data_with_encoding_fallback():
     """Load data with encoding fallback mechanism - combines US and EU files"""
@@ -65,16 +68,16 @@ def load_data_with_encoding_fallback():
             print(f"Trying to load data with {encoding} encoding...")
             
             # US File paths
-            us_stock_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
-            us_index_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
-            us_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
-            us_index_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
+            us_stock_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_STOCK_{current_stock_eod_date}.csv")
+            us_index_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_INDEX_{current_index_eod_date}.csv")
+            us_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_STOCK_{prev_stock_eod_date}.csv")
+            us_index_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_INDEX_{prev_index_eod_date}.csv")
             
             # EU File paths
-            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
-            eu_index_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
-            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
-            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
+            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_STOCK_{current_stock_eod_date}.csv")
+            eu_index_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_INDEX_{current_index_eod_date}.csv")
+            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_STOCK_{prev_stock_eod_date}.csv")
+            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_INDEX_{prev_index_eod_date}.csv")
             
             # Load US dataframes
             us_stock_eod_df = pd.read_csv(us_stock_eod_path, sep=';', encoding=encoding)
@@ -219,7 +222,7 @@ def calculate_index_levels(stock_eod_df, index_eod_df, index_eod_df_t1, mnemonic
     return pd.DataFrame(results)
 
 def calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df, current_date, prev_date):
-    """Calculate decrement level using the formula: DIt = DIt−1 * (UIt / UIt−1 - Dcr * day / yearly_days)"""
+    """Calculate decrement level using the formula: DIt = DIt-1 * (UIt / UIt-1 - Dcr * day / yearly_days)"""
     result = {
         'Mnemo': mnemo,
         'ISIN': isin,
@@ -321,7 +324,7 @@ def calculate_decrement_level(mnemo, isin, index_eod_df, index_eod_df_t1, result
     return result
 
 def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1, results_df, current_date, prev_date):
-    """Calculate decrement points level using the formula: DPIt = DPIt−1 * (DuRt / DuRt−1 - Points * day / yearly_days)"""
+    """Calculate decrement points level using the formula: DPIt = DPIt-1 * (DuRt / DuRt-1 - Points * day / yearly_days)"""
     result = {
         'Mnemo': mnemo,
         'ISIN': isin,
@@ -481,7 +484,10 @@ try:
     
     decrement_df = pd.DataFrame(decrement_results)
     print(f"Calculated decrement levels for {len(decrement_df)} indices")
-    print(f"Successfully calculated levels: {decrement_df['Decrement_Level'].notna().sum()}")
+    if len(decrement_df) > 0 and 'Decrement_Level' in decrement_df.columns:
+        print(f"Successfully calculated levels: {decrement_df['Decrement_Level'].notna().sum()}")
+    else:
+        print("No decrement levels calculated (mnemonics_tr4_perc is empty)")
     
     # Calculate decrement points levels
     print("Calculating decrement points levels for TR4 points indices...")
@@ -492,7 +498,10 @@ try:
     
     decrement_points_df = pd.DataFrame(decrement_points_results)
     print(f"Calculated decrement points levels for {len(decrement_points_df)} indices")
-    print(f"Successfully calculated points levels: {decrement_points_df['Decrement_Points_Level'].notna().sum()}")
+    if len(decrement_points_df) > 0 and 'Decrement_Points_Level' in decrement_points_df.columns:
+        print(f"Successfully calculated points levels: {decrement_points_df['Decrement_Points_Level'].notna().sum()}")
+    else:
+        print("No decrement points levels calculated (mnemonics_tr4_points is empty)")
     
     # Save all results
     output_path = save_results_to_excel(results_df, decrement_df, decrement_points_df, stock_eod_df, stock_eod_df_t1, index_eod_df, index_eod_df_t1, timestamp)

@@ -13,7 +13,7 @@ END_DATE = "20250919"
 
 # Stock prices dictionary
 stock_prices = {
-    "/6028.T": 0,
+    "LLYVA.O": 0,
     "SPR.N": 0
 }
 
@@ -31,13 +31,14 @@ divisor_replacements = {
 
 # List of Price Index mnemonics to process
 mnemonics = [
-    "EDWSP",
-    "EDWPE",
-    "EDMPU",
-    "EDWP",
     "EDWPT",
-    "ENWP",
-    "ENDMP"
+    "EWSL",
+    "EWMS",
+    "DNAPT",
+    "EUSPT",
+    "EWSL",
+    "EUMS"
+    
 ]
 
 # Insert Index to be calculated + Underlying Index

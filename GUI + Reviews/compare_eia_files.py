@@ -224,32 +224,29 @@ def compare_files(coen_file, dataiku_file):
                     if field_display_name == 'Currency':
                         if not are_currencies_equivalent(coen_value, dataiku_value):
                             mismatches += 1
-                            if len(mismatch_examples) < 5:  # Limit to 5 examples
-                                mismatch_examples.append({
-                                    'ISIN': isin,
-                                    'Coen value': coen_value,
-                                    'Dataiku value': dataiku_value
-                                })
+                            mismatch_examples.append({
+                                'ISIN': isin,
+                                'Coen value': coen_value,
+                                'Dataiku value': dataiku_value
+                            })
                     # For numeric fields, use float comparison with tolerance
                     elif field_display_name in ['Number of Shares', 'Free Float']:
                         if not compare_float_values(coen_value, dataiku_value):
                             mismatches += 1
-                            if len(mismatch_examples) < 5:  # Limit to 5 examples
-                                mismatch_examples.append({
-                                    'ISIN': isin,
-                                    'Coen value': coen_value,
-                                    'Dataiku value': dataiku_value
-                                })
+                            mismatch_examples.append({
+                                'ISIN': isin,
+                                'Coen value': coen_value,
+                                'Dataiku value': dataiku_value
+                            })
                     else:
                         # For non-numeric fields, use direct equality
                         if coen_value != dataiku_value:
                             mismatches += 1
-                            if len(mismatch_examples) < 5:  # Limit to 5 examples
-                                mismatch_examples.append({
-                                    'ISIN': isin,
-                                    'Coen value': coen_value,
-                                    'Dataiku value': dataiku_value
-                                })
+                            mismatch_examples.append({
+                                'ISIN': isin,
+                                'Coen value': coen_value,
+                                'Dataiku value': dataiku_value
+                            })
                 
                 if mismatches > 0:
                     field_results[field_display_name] = {
@@ -295,12 +292,11 @@ def compare_files(coen_file, dataiku_file):
                 # Use float comparison with tolerance for capping values
                 if not compare_float_values(coen_value, dataiku_value):
                     mismatches += 1
-                    if len(mismatch_examples) < 5:  # Limit to 5 examples
-                        mismatch_examples.append({
-                            'ISIN': isin,
-                            'Coen value': coen_value,
-                            'Dataiku value': dataiku_value
-                        })
+                    mismatch_examples.append({
+                        'ISIN': isin,
+                        'Coen value': coen_value,
+                        'Dataiku value': dataiku_value
+                    })
             
             if mismatches > 0:
                 field_results[display_field_name] = {

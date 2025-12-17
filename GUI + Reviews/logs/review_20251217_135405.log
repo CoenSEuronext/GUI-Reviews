@@ -1,0 +1,178 @@
+2025-12-17 13:54:06,650 - werkzeug - WARNING -  * Debugger is active!
+2025-12-17 13:54:06,650 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-17 13:54:07,951 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:07] "POST /calculate HTTP/1.1" 200 -
+2025-12-17 13:54:07,951 - Review.reviews.edwp_review - INFO - Starting EDWP review calculation
+2025-12-17 13:54:07,971 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:07] "GET /task-status/4456ad1e-4326-4f42-8928-0e17e3b872a7 HTTP/1.1" 200 -
+2025-12-17 13:54:09,764 - Review.reviews.edwp_review - INFO - EDWP: Processing 13499 companies after filtering
+2025-12-17 13:54:09,864 - Review.reviews.edwp_review - INFO - 
+EDWP Selection Summary:
+2025-12-17 13:54:09,864 - Review.reviews.edwp_review - INFO - Total companies selected: 1537
+2025-12-17 13:54:09,864 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.83%
+2025-12-17 13:54:09,864 - Review.reviews.edwp_review - INFO - DEUP: Filtering out CA and US ISINs
+2025-12-17 13:54:09,864 - Review.reviews.edwp_review - INFO - DEUP: Processing 3203 companies after filtering
+2025-12-17 13:54:09,918 - Review.reviews.edwp_review - INFO - 
+DEUP Selection Summary:
+2025-12-17 13:54:09,918 - Review.reviews.edwp_review - INFO - Total companies selected: 422
+2025-12-17 13:54:09,918 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.60%
+2025-12-17 13:54:09,924 - Review.reviews.edwp_review - INFO - DEZP: Filtering out CA and US ISINs
+2025-12-17 13:54:09,928 - Review.reviews.edwp_review - INFO - DEZP: Processing 1285 companies after filtering
+2025-12-17 13:54:09,948 - Review.reviews.edwp_review - INFO - 
+DEZP Selection Summary:
+2025-12-17 13:54:09,948 - Review.reviews.edwp_review - INFO - Total companies selected: 174
+2025-12-17 13:54:09,948 - Review.reviews.edwp_review - INFO - Total FFMC covered: 87.92%
+2025-12-17 13:54:09,955 - Review.reviews.edwp_review - INFO - DAPPR: Processing 5104 companies after filtering
+2025-12-17 13:54:09,965 - Review.reviews.edwp_review - INFO - 
+DAPPR Selection Summary:
+2025-12-17 13:54:09,980 - Review.reviews.edwp_review - INFO - Total companies selected: 491
+2025-12-17 13:54:09,982 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.73%
+2025-12-17 13:54:09,982 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:09] "GET /task-status/4456ad1e-4326-4f42-8928-0e17e3b872a7 HTTP/1.1" 200 -
+2025-12-17 13:54:09,989 - Review.reviews.edwp_review - INFO - DNAP: Processing 4889 companies after filtering
+2025-12-17 13:54:09,997 - Review.reviews.edwp_review - INFO - 
+DNAP Selection Summary:
+2025-12-17 13:54:09,998 - Review.reviews.edwp_review - INFO - Total companies selected: 446
+2025-12-17 13:54:09,999 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.75%
+2025-12-17 13:54:09,999 - Review.reviews.edwp_review - INFO - DASP: Processing 4106 companies after filtering
+2025-12-17 13:54:10,016 - Review.reviews.edwp_review - INFO - 
+DASP Selection Summary:
+2025-12-17 13:54:10,016 - Review.reviews.edwp_review - INFO - Total companies selected: 386
+2025-12-17 13:54:10,016 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.50%
+2025-12-17 13:54:10,024 - Review.reviews.edwp_review - INFO - DPAP: Processing 998 companies after filtering
+2025-12-17 13:54:10,031 - Review.reviews.edwp_review - INFO - 
+DPAP Selection Summary:
+2025-12-17 13:54:10,032 - Review.reviews.edwp_review - INFO - Total companies selected: 102
+2025-12-17 13:54:10,032 - Review.reviews.edwp_review - INFO - Total FFMC covered: 86.17%
+2025-12-17 13:54:10,032 - Review.reviews.edwp_review - INFO - EUSP: Processing 4389 companies after filtering
+2025-12-17 13:54:10,048 - Review.reviews.edwp_review - INFO - 
+EUSP Selection Summary:
+2025-12-17 13:54:10,050 - Review.reviews.edwp_review - INFO - Total companies selected: 351
+2025-12-17 13:54:10,050 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.04%
+2025-12-17 13:54:10,055 - Review.reviews.edwp_review - INFO - EJPP: Processing 3656 companies after filtering
+2025-12-17 13:54:10,065 - Review.reviews.edwp_review - INFO - 
+EJPP Selection Summary:
+2025-12-17 13:54:10,065 - Review.reviews.edwp_review - INFO - Total companies selected: 325
+2025-12-17 13:54:10,065 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.04%
+2025-12-17 13:54:10,069 - Review.reviews.edwp_review - INFO - ECHP: Processing 157 companies after filtering
+2025-12-17 13:54:10,072 - Review.reviews.edwp_review - INFO - 
+ECHP Selection Summary:
+2025-12-17 13:54:10,072 - Review.reviews.edwp_review - INFO - Total companies selected: 24
+2025-12-17 13:54:10,072 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.70%
+2025-12-17 13:54:10,078 - Review.reviews.edwp_review - INFO - EUKP: Processing 841 companies after filtering
+2025-12-17 13:54:10,082 - Review.reviews.edwp_review - INFO - 
+EUKP Selection Summary:
+2025-12-17 13:54:10,082 - Review.reviews.edwp_review - INFO - Total companies selected: 73
+2025-12-17 13:54:10,082 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.06%
+2025-12-17 13:54:10,086 - Review.reviews.edwp_review - INFO - CANP: Processing 500 companies after filtering
+2025-12-17 13:54:10,089 - Review.reviews.edwp_review - INFO - 
+CANP Selection Summary:
+2025-12-17 13:54:10,089 - Review.reviews.edwp_review - INFO - Total companies selected: 75
+2025-12-17 13:54:10,089 - Review.reviews.edwp_review - INFO - Total FFMC covered: 85.20%
+2025-12-17 13:54:10,099 - Review.reviews.edwp_review - INFO - 
+Global Selection Summary:
+2025-12-17 13:54:10,099 - Review.reviews.edwp_review - INFO - Total companies selected: 1537
+2025-12-17 13:54:10,099 - Review.reviews.edwp_review - INFO - Total FFMC covered: 88.83%
+2025-12-17 13:54:10,115 - Review.reviews.edwp_review - INFO - 
+MIC-level Summary:
+2025-12-17 13:54:10,115 - Review.reviews.edwp_review - INFO -       ISIN          FFMC  EDWP_selection
+MIC                                     
+ALXP     1  8.636321e+08               0
+BATS     1  2.298240e+10               1
+DSME     1  1.117565e+07               0
+FSME     2  4.179218e+08               0
+MERK     2  2.709760e+08               0
+MTAA   250  6.565029e+11              26
+NEOE     1  4.911360e+07               0
+SSME    15  4.087461e+09               0
+WBAH    25  7.232654e+10               8
+XAMS    83  1.208804e+12              18
+XASE     3  8.042835e+09               0
+XASX   942  1.469525e+12              80
+XBRU    65  2.388090e+11              14
+XCSE    97  3.691187e+11              16
+XESM     3  2.059088e+09               0
+XETR   238  1.725624e+12              32
+XHEL   136  2.387672e+11              15
+XHKG   288  5.378789e+11              26
+XLIS    17  4.049522e+10               5
+XLON   841  2.488872e+12              73
+XMAD   101  6.657485e+11              13
+XMSM    12  8.941198e+10               5
+XNAS     2  4.299946e+11               2
+XNCM    33  9.086017e+10               1
+XNGS  2578  2.928861e+13             174
+XNMS    60  1.803113e+11               2
+XNYS  1712  2.594931e+13             349
+XNZE    56  5.624452e+10              16
+XOSL   221  1.736930e+11              40
+XPAR   352  1.937294e+12              29
+XSES   162  3.325147e+11              26
+XSTO   596  7.080121e+11              68
+XSWX   157  1.722407e+12              26
+XTAE   291  2.691930e+11              72
+XTKS  3656  5.393683e+12             325
+XTSE   499  2.536982e+12              75
+2025-12-17 13:54:10,133 - Review.reviews.edwp_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_df_20251217_135410.xlsx
+2025-12-17 13:54:10,255 - Review.reviews.edwp_review - INFO - 
+EDWP Changes Summary:
+2025-12-17 13:54:10,255 - Review.reviews.edwp_review - INFO - Inclusions: 67
+2025-12-17 13:54:10,255 - Review.reviews.edwp_review - INFO - Exclusions: 108
+2025-12-17 13:54:10,351 - Review.reviews.edwp_review - INFO - 
+DEUP Changes Summary:
+2025-12-17 13:54:10,351 - Review.reviews.edwp_review - INFO - Inclusions: 18
+2025-12-17 13:54:10,351 - Review.reviews.edwp_review - INFO - Exclusions: 31
+2025-12-17 13:54:10,381 - Review.reviews.edwp_review - INFO - 
+DEZP Changes Summary:
+2025-12-17 13:54:10,381 - Review.reviews.edwp_review - INFO - Inclusions: 5
+2025-12-17 13:54:10,381 - Review.reviews.edwp_review - INFO - Exclusions: 10
+2025-12-17 13:54:10,416 - Review.reviews.edwp_review - INFO - 
+DAPPR Changes Summary:
+2025-12-17 13:54:10,416 - Review.reviews.edwp_review - INFO - Inclusions: 26
+2025-12-17 13:54:10,416 - Review.reviews.edwp_review - INFO - Exclusions: 39
+2025-12-17 13:54:10,449 - Review.reviews.edwp_review - INFO - 
+DNAP Changes Summary:
+2025-12-17 13:54:10,449 - Review.reviews.edwp_review - INFO - Inclusions: 19
+2025-12-17 13:54:10,449 - Review.reviews.edwp_review - INFO - Exclusions: 33
+2025-12-17 13:54:10,474 - Review.reviews.edwp_review - INFO - 
+DASP Changes Summary:
+2025-12-17 13:54:10,476 - Review.reviews.edwp_review - INFO - Inclusions: 17
+2025-12-17 13:54:10,476 - Review.reviews.edwp_review - INFO - Exclusions: 32
+2025-12-17 13:54:10,482 - Review.reviews.edwp_review - INFO - 
+DPAP Changes Summary:
+2025-12-17 13:54:10,482 - Review.reviews.edwp_review - INFO - Inclusions: 9
+2025-12-17 13:54:10,482 - Review.reviews.edwp_review - INFO - Exclusions: 4
+2025-12-17 13:54:10,516 - Review.reviews.edwp_review - INFO - 
+EUSP Changes Summary:
+2025-12-17 13:54:10,516 - Review.reviews.edwp_review - INFO - Inclusions: 9
+2025-12-17 13:54:10,516 - Review.reviews.edwp_review - INFO - Exclusions: 23
+2025-12-17 13:54:10,555 - Review.reviews.edwp_review - INFO - 
+EJPP Changes Summary:
+2025-12-17 13:54:10,555 - Review.reviews.edwp_review - INFO - Inclusions: 13
+2025-12-17 13:54:10,555 - Review.reviews.edwp_review - INFO - Exclusions: 29
+2025-12-17 13:54:10,565 - Review.reviews.edwp_review - INFO - 
+ECHP Changes Summary:
+2025-12-17 13:54:10,565 - Review.reviews.edwp_review - INFO - Inclusions: 1
+2025-12-17 13:54:10,565 - Review.reviews.edwp_review - INFO - Exclusions: 2
+2025-12-17 13:54:10,583 - Review.reviews.edwp_review - INFO - 
+EUKP Changes Summary:
+2025-12-17 13:54:10,583 - Review.reviews.edwp_review - INFO - Inclusions: 2
+2025-12-17 13:54:10,583 - Review.reviews.edwp_review - INFO - Exclusions: 7
+2025-12-17 13:54:10,599 - Review.reviews.edwp_review - INFO - 
+CANP Changes Summary:
+2025-12-17 13:54:10,599 - Review.reviews.edwp_review - INFO - Inclusions: 4
+2025-12-17 13:54:10,599 - Review.reviews.edwp_review - INFO - Exclusions: 3
+2025-12-17 13:54:12,030 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:12] "GET /task-status/4456ad1e-4326-4f42-8928-0e17e3b872a7 HTTP/1.1" 200 -
+2025-12-17 13:54:14,063 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:14] "GET /task-status/4456ad1e-4326-4f42-8928-0e17e3b872a7 HTTP/1.1" 200 -
+2025-12-17 13:54:15,981 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:15] "GET /task-status/4456ad1e-4326-4f42-8928-0e17e3b872a7 HTTP/1.1" 200 -
+2025-12-17 13:54:16,018 - Review.reviews.edwp_review - INFO - Saving individual composition file for EDWP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,231 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEUP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEUP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,310 - Review.reviews.edwp_review - INFO - Saving individual composition file for DEZP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DEZP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,348 - Review.reviews.edwp_review - INFO - Saving individual composition file for DAPPR to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DAPPR_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,411 - Review.reviews.edwp_review - INFO - Saving individual composition file for DNAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DNAP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,493 - Review.reviews.edwp_review - INFO - Saving individual composition file for DASP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DASP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,545 - Review.reviews.edwp_review - INFO - Saving individual composition file for DPAP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DPAP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,565 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUSP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUSP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,642 - Review.reviews.edwp_review - INFO - Saving individual composition file for EJPP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EJPP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,713 - Review.reviews.edwp_review - INFO - Saving individual composition file for ECHP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ECHP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,734 - Review.reviews.edwp_review - INFO - Saving individual composition file for EUKP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUKP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,766 - Review.reviews.edwp_review - INFO - Saving individual composition file for CANP to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CANP_Composition_20251217_135410.xlsx
+2025-12-17 13:54:16,799 - Review.reviews.edwp_review - INFO - Individual composition files saved: 12
+2025-12-17 13:54:17,982 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2025 13:54:17] "GET /task-status/4456ad1e-4326-4f42-8928-0e17e3b872a7 HTTP/1.1" 200 -

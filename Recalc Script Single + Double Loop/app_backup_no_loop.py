@@ -3,12 +3,12 @@ import datetime
 import os
 
 # Input EOD to be recalculated
-RELEVANT_EOD_DATE = "20250623"
+RELEVANT_EOD_DATE = "20251216"
 
 # Stock prices dictionary
 stock_prices = {
-    "/6028.T": 0,
-    "SPR.N": 0
+    "LLYVA.O": 82.09,
+    "LLYVK.O": 84.78
 }
 
 
@@ -21,8 +21,7 @@ free_float_replacements = {
 # NEW: Divisor replacements
 # Format: {'Mnemo': new_divisor}
 divisor_replacements = {
-    'BREU': 136988305.520272,
-    'ENEU': 92295075.4649432,
+
 }
 
 # Get current timestamp for the output filename
@@ -45,20 +44,23 @@ def get_previous_business_day(date_str):
 
 # List of Price Index mnemonics to process
 mnemonics = [
-    "BREU",
-    "ENEU",
+    "EDWPT",
+    "EWSL",
+    "EWMS",
+    "DNAPT",
+    "EUSPT",
+    "EWSL",
+    "EUMS"
 ]
 
 # Insert Index to be calculated + Underlying Index
 mnemonics_tr4_perc = {
-    "BRD5": "NLIX00005578",
-    "ENED5": "NLIX00005537"
+
     }
 
 # Insert Index to be calculated + Underlying Index
 mnemonics_tr4_points = {
-    "BRD5P": "NLIX00005586",
-    "EED5P": "NLIX00005545"
+
 }
 
 def load_data_with_encoding_fallback():
@@ -73,17 +75,17 @@ def load_data_with_encoding_fallback():
     prev_index_eod_date = get_previous_business_day(current_index_eod_date)
     
     # Use only the primary path
-    base_path = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script - Copy\Data folder"
+    base_path = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
     
     for encoding in encodings:
         try:
             print(f"Trying to load data with {encoding} encoding...")
             
             # EU File paths only
-            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
-            eu_index_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
-            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
-            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
+            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
+            eu_index_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
+            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
+            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
             
             # Load EU dataframes only
             stock_eod_df = pd.read_csv(eu_stock_eod_path, sep=';', encoding=encoding)
@@ -612,7 +614,7 @@ def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1,
 
 def save_results_to_excel(results_df, decrement_df, decrement_points_df, stock_eod_df, stock_eod_df_t1, index_eod_df, index_eod_df_t1, timestamp):
     """Save all results to Excel with proper sheet names"""
-    output_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script - Copy\Output\Level_Recalc_{timestamp}.xlsx"
+    output_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Recalc Script Single + Double Loop\Output\Level_Recalc_{timestamp}.xlsx"
     
     with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         results_df.to_excel(writer, sheet_name='Index_Totals', index=False)
@@ -691,7 +693,10 @@ try:
     
     decrement_df = pd.DataFrame(decrement_results)
     print(f"Calculated decrement levels for {len(decrement_df)} indices")
-    print(f"Successfully calculated levels: {decrement_df['Decrement_Level'].notna().sum()}")
+    if len(decrement_df) > 0 and 'Decrement_Level' in decrement_df.columns:
+        print(f"Successfully calculated levels: {decrement_df['Decrement_Level'].notna().sum()}")
+    else:
+        print("No decrement percentage levels calculated (mnemonics_tr4_perc is empty)")
     print("="*80 + "\n")
     
     # Calculate decrement points levels
@@ -705,7 +710,10 @@ try:
     
     decrement_points_df = pd.DataFrame(decrement_points_results)
     print(f"Calculated decrement points levels for {len(decrement_points_df)} indices")
-    print(f"Successfully calculated points levels: {decrement_points_df['Decrement_Points_Level'].notna().sum()}")
+    if len(decrement_points_df) > 0 and 'Decrement_Points_Level' in decrement_points_df.columns:
+        print(f"Successfully calculated points levels: {decrement_points_df['Decrement_Points_Level'].notna().sum()}")
+    else:
+        print("No decrement points levels calculated (mnemonics_tr4_points is empty)")
     print("="*80 + "\n")
     
     # Save all results
