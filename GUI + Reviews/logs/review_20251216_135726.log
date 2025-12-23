@@ -1,4 +1,0 @@
-2025-12-16 13:57:27,410 - werkzeug - WARNING -  * Debugger is active!
-2025-12-16 13:57:27,417 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-16 13:57:27,436 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 13:57:27] "GET /task-status/b25eb38d-f80d-49ee-b07d-ecd9bc95324a HTTP/1.1" 200 -
-2025-12-16 13:57:27,800 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading

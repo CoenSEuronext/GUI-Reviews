@@ -1,0 +1,24 @@
+{
+  "task_id": "9b78acff-309a-44fb-aac9-f64f4508165c",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-23T15:41:09.749669",
+  "started_at": "2025-12-23T15:41:09.751670",
+  "completed_at": "2025-12-23T15:41:22.815221",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: \"['Currency (Local)'] not in index\"",
+  "error": "Error during review calculation: \"['Currency (Local)'] not in index\"",
+  "result_data": null,
+  "review_type": "ENVU",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "14-Jul-25",
+    "index": "ENVU",
+    "isin": "QS0011250931",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.061405
+}

@@ -1,6 +1,0 @@
-2025-12-15 14:30:46,295 - werkzeug - WARNING -  * Debugger is active!
-2025-12-15 14:30:46,295 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-15 14:30:46,322 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:30:46] "GET /task-status/02dc2089-f816-4ab6-8aca-1c9e37619fa7 HTTP/1.1" 200 -
-2025-12-15 14:30:57,114 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
-2025-12-15 14:30:57,114 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading
-2025-12-15 14:30:57,121 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\jpcla_review.py', reloading

@@ -1,6 +1,6 @@
 # config.py
 # Network paths
-DLF_FOLDER = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202512\DLF"
+DLF_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
 DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
 
@@ -410,6 +410,11 @@ INDEX_CONFIGS = {
         "index": "ES2PR_backup",
         "isin": "NLIX00008218",
         "output_key": "es2pr_backup_path"
+    },
+    "ENVU": {
+        "index": "ENVU",
+        "isin": "QS0011250931",
+        "output_key": "envu_path"
     }
     # Add new indices here following the same pattern
 }

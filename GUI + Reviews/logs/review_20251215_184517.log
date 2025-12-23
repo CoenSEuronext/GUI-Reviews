@@ -1,7 +1,0 @@
-2025-12-15 18:45:17,905 - werkzeug - WARNING -  * Debugger is active!
-2025-12-15 18:45:17,905 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-15 18:45:17,927 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 18:45:17] "GET /task-status/b74b72a8-8054-4346-9615-863eafda0a55 HTTP/1.1" 200 -
-2025-12-15 18:46:55,584 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
-2025-12-15 18:46:55,584 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
-2025-12-15 18:46:55,585 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading
-2025-12-15 18:46:55,586 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\wifrp_review.py', reloading

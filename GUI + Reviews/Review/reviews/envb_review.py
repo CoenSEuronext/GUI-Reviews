@@ -185,10 +185,11 @@ def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == str(isin).strip(), 'Mkt Cap'].iloc[0]
         
         selection_df['Target_Market_Cap'] = selection_df['Weight_Final'] * index_mcap
-        selection_df['Number_of_Shares_Calculated'] = np.floor(
+        
+        selection_df['Number_of_Shares_Calculated'] = (
             selection_df['Target_Market_Cap'] / 
             (selection_df['Close Prc_EOD'] * selection_df['FX/Index Ccy'])
-        )
+        ).round()
         
         # Calculate Capping Factor (for reference)
         selection_df['Capping_Factor'] = selection_df['Weight_Final'] / selection_df['Weight_Uncapped']
@@ -241,11 +242,11 @@ def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256
            
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            ENVB_path = os.path.join(output_dir, f'ENVB_df_{timestamp}.xlsx')
+            envb_path = os.path.join(output_dir, f'ENVB_df_{timestamp}.xlsx')
            
             # Save output with multiple sheets
-            logger.info(f"Saving ENVB output to: {ENVB_path}")
-            with pd.ExcelWriter(ENVB_path) as writer:
+            logger.info(f"Saving ENVB output to: {envb_path}")
+            with pd.ExcelWriter(envb_path) as writer:
                 ENVB_df.to_excel(writer, sheet_name=index + ' Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
@@ -258,7 +259,7 @@ def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256
                 "status": "success",
                 "message": "Review completed successfully",
                 "data": {
-                    "ENVB_path": ENVB_path}
+                    "envb_path": envb_path}
             }
            
         except Exception as e:

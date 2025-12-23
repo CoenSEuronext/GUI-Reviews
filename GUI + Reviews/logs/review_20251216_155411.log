@@ -1,6 +1,0 @@
-2025-12-16 15:54:12,340 - werkzeug - WARNING -  * Debugger is active!
-2025-12-16 15:54:12,340 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-16 15:54:12,550 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:54:12] "GET / HTTP/1.1" 200 -
-2025-12-16 15:54:12,579 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:54:12] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
-2025-12-16 15:57:06,127 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review_backup.py', reloading
-2025-12-16 15:57:06,134 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\es2pr_review_backup.py', reloading

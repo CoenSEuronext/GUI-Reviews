@@ -1,4 +1,0 @@
-2025-12-16 15:08:52,935 - werkzeug - WARNING -  * Debugger is active!
-2025-12-16 15:08:52,935 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-16 15:08:52,963 - werkzeug - INFO - 127.0.0.1 - - [16/Dec/2025 15:08:52] "GET /task-status/28e2e4d0-48db-4473-bdbb-d547d77c9368 HTTP/1.1" 200 -
-2025-12-16 15:10:18,218 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\__init__.py', reloading

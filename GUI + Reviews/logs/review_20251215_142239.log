@@ -1,6 +1,0 @@
-2025-12-15 14:22:40,208 - werkzeug - WARNING -  * Debugger is active!
-2025-12-15 14:22:40,208 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-12-15 14:22:40,236 - werkzeug - INFO - 127.0.0.1 - - [15/Dec/2025 14:22:40] "GET /task-status/2e721df4-3a46-480c-a766-8540c304b2db HTTP/1.1" 200 -
-2025-12-15 14:24:13,791 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
-2025-12-15 14:24:13,791 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
-2025-12-15 14:24:13,791 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fclsp_review.py', reloading
