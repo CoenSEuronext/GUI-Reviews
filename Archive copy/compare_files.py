@@ -68,7 +68,8 @@ COMPARISON_CONFIGS = {
         'use_previous_workday': True,
         'manual_folder': 'manual',
         'allow_overwrite': False,
-        'file_extension': 'xlsx'
+        'file_extension': 'xlsx',
+        'generate_from': '01:00'
     },
     'morning_index': {
         'file_suffix': 'INDEX',
@@ -78,7 +79,8 @@ COMPARISON_CONFIGS = {
         'use_previous_workday': True,
         'manual_folder': 'manual',
         'allow_overwrite': False,
-        'file_extension': 'xlsx'
+        'file_extension': 'xlsx',
+        'generate_from': '01:00'
     },
     'afternoon_stock': {
         'file_suffix': 'STOCK',
@@ -161,6 +163,70 @@ EXCLUDED_INDEX_VALUES = {
     
 }
 
+def get_next_workday(date=None):
+    """Get the next workday (excluding weekends and holidays)"""
+    if date is None:
+        date = datetime.now()
+    
+    next_day = date + timedelta(days=1)
+    
+    while True:
+        if next_day.weekday() >= 5:
+            next_day = next_day + timedelta(days=1)
+            continue
+        
+        date_str = next_day.strftime("%Y%m%d")
+        if date_str in HOLIDAYS:
+            next_day = next_day + timedelta(days=1)
+            continue
+        
+        break
+    
+    return next_day
+
+def get_dynamic_output_dir():
+    """Get the dynamic output directory based on next working day
+    
+    Returns the path: V:\\PM-Indices-IndexOperations\\General\\Daily Folders\\{yyyymm}\\{yyyymmdd}
+    Falls back to FALLBACK_OUTPUT_DIR if V:\\ drive is not accessible
+    """
+    try:
+        # Get next working day for effective date
+        next_workday = get_next_workday()
+        
+        # Format dates
+        year_month = next_workday.strftime("%Y%m")  # e.g., "202412"
+        year_month_day = next_workday.strftime("%Y%m%d")  # e.g., "20241224"
+        
+        # Build path
+        base_path = r"V:\PM-Indices-IndexOperations\General\Daily Folders"
+        output_dir = os.path.join(base_path, year_month, year_month_day)
+        
+        # Check if V:\ drive is accessible
+        if not os.path.exists(base_path):
+            logger.warning(f"V:\\ drive not accessible. Using fallback directory: {FALLBACK_OUTPUT_DIR}")
+            print(f"Warning: V:\\ drive not accessible. Using fallback directory.")
+            return FALLBACK_OUTPUT_DIR
+        
+        # Create directories if they don't exist
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            logger.info(f"Created output directory: {output_dir}")
+        
+        return output_dir
+        
+    except Exception as e:
+        logger.error(f"Error creating dynamic output directory: {str(e)}. Using fallback.")
+        print(f"Error creating dynamic output directory: {str(e)}. Using fallback.")
+        
+        # Ensure fallback directory exists
+        if not os.path.exists(FALLBACK_OUTPUT_DIR):
+            os.makedirs(FALLBACK_OUTPUT_DIR)
+            logger.info(f"Created fallback output directory: {FALLBACK_OUTPUT_DIR}")
+        
+        return FALLBACK_OUTPUT_DIR
+
+
 # Timer decorator for performance monitoring
 def timer(func):
     """Decorator to time function execution"""
@@ -210,11 +276,12 @@ MONITOR_FOLDERS = {
     'eod_manual': r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
 }
 
+
 OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output"
 
-if not os.path.exists(OUTPUT_DIR):
-    os.makedirs(OUTPUT_DIR)
-    logger.info(f"Created output directory: {OUTPUT_DIR}")
+# Fallback output directory (used if V:\ drive is not accessible)
+FALLBACK_OUTPUT_DIR = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Archive copy\destination\Check files output"
+
 
 def get_previous_workday(date=None):
     """Get the previous workday (excluding weekends and holidays)"""
@@ -628,8 +695,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
     Args:
         df1_indexed: First dataframe (Manual for morning, SOD for afternoon)
         df2_indexed: Second dataframe (SOD for morning, Manual for afternoon)
-        is_afternoon: If True, also include removals (rows in df1/SOD but not in df2/Manual)
-                      and additions (rows in df2/Manual but not in df1/SOD)
+        is_afternoon: If True, also include removals and additions
     """
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
@@ -643,6 +709,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
         
         has_differences = pd.Series(False, index=common_keys)
         
+        # Check critical fields for differences
         for field in critical_fields:
             if field in df1_common.columns and field in df2_common.columns:
                 if field in ['Shares', 'Free float-Coeff', 'Capping Factor-Coeff']:
@@ -656,7 +723,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 
                 has_differences |= field_diff
         
-        # Also include rows with formatting conditions of interest (even without differences)
+        # Also include rows with formatting conditions of interest
         has_formatting_interest = pd.Series(False, index=common_keys)
 
         # Check for BOTH Close Prc AND Adj Closing price empty or 0
@@ -670,26 +737,28 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             # Both must be empty/0 together (AND condition)
             has_formatting_interest |= (close_prc_empty & adj_closing_empty)
             
-            # For afternoon/evening: also include rows where Close Prc != Adj Closing price
+            # For afternoon: also include rows where Close Prc != Adj Closing price
+            # WITHIN THE MANUAL FILE (df2) - with tolerance of 1e-5 to ignore rounding differences
             if is_afternoon:
                 close_adj_different = (
                     (~close_prc_empty) & (~adj_closing_empty) & 
-                    (abs(close_prc_vals - adj_closing_vals) > 1e-10)
+                    (abs(close_prc_vals - adj_closing_vals) > 1e-5)
                 )
                 has_formatting_interest |= close_adj_different
             
             # For morning: check if Adj Closing price differs between Manual (df1) and SOD (df2)
+            # This is ONLY for the pink highlighting flag, NOT for including rows
             adj_closing_manual_sod_diff = pd.Series(False, index=common_keys)
             if not is_afternoon:
                 if 'Adj Closing price' in df1_common.columns:
                     adj_closing_manual = pd.to_numeric(df1_common['Adj Closing price'], errors='coerce').fillna(0)
                     adj_closing_sod = pd.to_numeric(df2_common['Adj Closing price'], errors='coerce').fillna(0)
                     
-                    adj_closing_changed = abs(adj_closing_manual - adj_closing_sod) > 1e-10
+                    # Use tolerance to ignore rounding differences
+                    adj_closing_changed = abs(adj_closing_manual - adj_closing_sod) > 1e-5
                     adj_closing_manual_sod_diff = adj_closing_changed
-                    has_formatting_interest |= adj_closing_changed
         
-        # For afternoon/evening: include rows with positive dividends
+        # For afternoon: include rows with positive dividends
         if is_afternoon:
             if 'Source net div' in df2_common.columns:
                 net_div_vals = pd.to_numeric(df2_common['Source net div'], errors='coerce').fillna(0)
@@ -709,10 +778,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
             df2_diff = df2_indexed.loc[diff_keys]
             
             # Perform Isin Code cross-reference lookup
-            # Get unique Isin Codes from the differences
             isin_codes = df1_diff.get('Isin Code', '').astype(str)
-            
-            # Prepare lookup column (column X) - for each Isin Code, find matching #Symbols in SOD
             cross_ref_symbols = []
             
             for isin_code in isin_codes:
@@ -720,16 +786,12 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                     cross_ref_symbols.append('')
                     continue
                 
-                # Filter df2_indexed for matching Isin Code and excluded Index values
                 if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
-                    # Find rows with matching Isin Code
                     matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
                     
-                    # Filter out excluded Index values
                     if len(matching_rows) > 0:
                         filtered_rows = matching_rows[~matching_rows['Index'].astype(str).str.strip().isin(EXCLUDED_INDEX_VALUES)]
                         
-                        # Get unique #Symbol values
                         if len(filtered_rows) > 0 and '#Symbol' in filtered_rows.columns:
                             unique_symbols = filtered_rows['#Symbol'].astype(str).str.strip().unique()
                             unique_symbols = [s for s in unique_symbols if s != '' and s != 'nan']
@@ -741,47 +803,208 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 else:
                     cross_ref_symbols.append('')
             
-            # FIXED: Always use Source dividend columns for all comparisons
-            differences_data = {
-                'Rank': range(1, len(diff_keys) + 1),
-                'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
-                '#Symbol': df1_diff['#Symbol'],
-                'Sys date': df1_diff.get('System date', ''),
-                'Adj. Reason': df2_diff.get('Adjust Reason', ''),
-                'Isin Code': df1_diff.get('Isin Code', ''),
-                'Cntry': df1_diff.get('Country', ''),
-                'Mnemo': df1_diff.get('Mnemo', ''),
-                'Name': df1_diff.get('Name', ''),
-                'MIC': df1_diff.get('MIC', ''),
-                'Prev ICB': df1_diff.get('ICBCode', ''),
-                'New ICB': df2_diff.get('ICBCode', ''),
-                'Close Prc': df2_diff.get('Close Prc', ''),
-                'Adj Closing price': df2_diff.get('Adj Closing price', ''),
-                'Net Div': df2_diff.get('Source net div', ''),
-                'Gross Div': df2_diff.get('Source gross div', ''),
-                'Index': df1_diff['Index'],
-                'Prev. Shares': df1_diff.get('Shares', ''),
-                'New Shares': df2_diff.get('Shares', ''),
-                'Prev FF': df1_diff.get('Free float-Coeff', ''),
-                'New FF': df2_diff.get('Free float-Coeff', ''),
-                'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
-                'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
-                'Cross-Ref Symbols': cross_ref_symbols,
-                '_adj_closing_manual_sod_diff': adj_closing_manual_sod_diff.loc[diff_keys] if not is_afternoon else pd.Series(False, index=diff_keys)
+            # NEW: Calculate afternoon-specific columns (X, Y, Z, AA, AB, AC) - ONLY FOR AFTERNOON
+            if is_afternoon:
+                removal_inclusion = []
+                dividend_flag = []
+                share_number_flag = []
+                free_float_flag = []
+                capping_flag = []
+                price_update_flag = []
                 
-            }
+                for idx in range(len(diff_keys)):
+                    row_key = diff_keys[idx]
+                    
+                    # Get values for this row
+                    symbol = str(df1_diff.loc[row_key, '#Symbol']).strip() if '#Symbol' in df1_diff.columns else ''
+                    
+                    new_shares = df2_diff.loc[row_key, 'Shares'] if 'Shares' in df2_diff.columns else np.nan
+                    prev_shares = df1_diff.loc[row_key, 'Shares'] if 'Shares' in df1_diff.columns else np.nan
+                    
+                    new_ff = df2_diff.loc[row_key, 'Free float-Coeff'] if 'Free float-Coeff' in df2_diff.columns else np.nan
+                    prev_ff = df1_diff.loc[row_key, 'Free float-Coeff'] if 'Free float-Coeff' in df1_diff.columns else np.nan
+                    
+                    new_capping = df2_diff.loc[row_key, 'Capping Factor-Coeff'] if 'Capping Factor-Coeff' in df2_diff.columns else np.nan
+                    prev_capping = df1_diff.loc[row_key, 'Capping Factor-Coeff'] if 'Capping Factor-Coeff' in df1_diff.columns else np.nan
+                    
+                    net_div = df2_diff.loc[row_key, 'Source net div'] if 'Source net div' in df2_diff.columns else np.nan
+                    
+                    close_prc = df2_diff.loc[row_key, 'Close Prc'] if 'Close Prc' in df2_diff.columns else np.nan
+                    adj_closing = df2_diff.loc[row_key, 'Adj Closing price'] if 'Adj Closing price' in df2_diff.columns else np.nan
+                    
+                    # Convert to numeric
+                    new_shares_num = pd.to_numeric(new_shares, errors='coerce')
+                    prev_shares_num = pd.to_numeric(prev_shares, errors='coerce')
+                    new_ff_num = pd.to_numeric(new_ff, errors='coerce')
+                    prev_ff_num = pd.to_numeric(prev_ff, errors='coerce')
+                    new_capping_num = pd.to_numeric(new_capping, errors='coerce')
+                    prev_capping_num = pd.to_numeric(prev_capping, errors='coerce')
+                    net_div_num = pd.to_numeric(net_div, errors='coerce')
+                    close_prc_num = pd.to_numeric(close_prc, errors='coerce')
+                    adj_closing_num = pd.to_numeric(adj_closing, errors='coerce')
+                    
+                    # Column X: Removal/Inclusion
+                    if symbol == '':
+                        removal_inclusion.append('')
+                    elif pd.isna(new_shares_num) and pd.isna(new_ff_num) and pd.isna(new_capping_num):
+                        removal_inclusion.append('Removal')
+                    elif (pd.isna(prev_shares_num) and not pd.isna(new_shares_num) and new_shares_num > 0 and 
+                          pd.isna(prev_ff_num) and not pd.isna(new_ff_num) and new_ff_num > 0 and 
+                          pd.isna(prev_capping_num) and not pd.isna(new_capping_num) and new_capping_num > 0):
+                        removal_inclusion.append('Inclusion')
+                    else:
+                        removal_inclusion.append('')
+                    
+                    # Column Y: Dividend
+                    if symbol == '':
+                        dividend_flag.append('')
+                    elif pd.isna(net_div_num):
+                        dividend_flag.append('')
+                    elif net_div_num != 0:
+                        dividend_flag.append('Dividend')
+                    else:
+                        dividend_flag.append('')
+                    
+                    # Column Z: Share number
+                    if symbol == '':
+                        share_number_flag.append('')
+                    elif pd.isna(new_shares_num):
+                        share_number_flag.append('Share number')
+                    elif pd.isna(prev_shares_num):
+                        if new_shares_num > 0:
+                            share_number_flag.append('Share number')
+                        else:
+                            share_number_flag.append('')
+                    elif abs(prev_shares_num - new_shares_num) > 1e-6:  # Use shares tolerance
+                        share_number_flag.append('Share number')
+                    else:
+                        share_number_flag.append('')
+                    
+                    # Column AA: Free float
+                    if symbol == '':
+                        free_float_flag.append('')
+                    elif pd.isna(new_ff_num):
+                        free_float_flag.append('Free float')
+                    elif pd.isna(prev_ff_num):
+                        if new_ff_num > 0:
+                            free_float_flag.append('Free float')
+                        else:
+                            free_float_flag.append('')
+                    elif abs(prev_ff_num - new_ff_num) > 1e-10:  # Use FF tolerance
+                        free_float_flag.append('Free float')
+                    else:
+                        free_float_flag.append('')
+                    
+                    # Column AB: Capping
+                    if symbol == '':
+                        capping_flag.append('')
+                    elif pd.isna(new_capping_num):
+                        capping_flag.append('Capping')
+                    elif pd.isna(prev_capping_num):
+                        if new_capping_num > 0:
+                            capping_flag.append('Capping')
+                        else:
+                            capping_flag.append('')
+                    elif abs(prev_capping_num - new_capping_num) > 1e-10:  # Use capping tolerance
+                        capping_flag.append('Capping')
+                    else:
+                        capping_flag.append('')
+                    
+                    # Column AC: Price update (with 1e-5 tolerance)
+                    if symbol == '':
+                        price_update_flag.append('')
+                    elif pd.isna(adj_closing_num):
+                        price_update_flag.append('')
+                    elif pd.isna(prev_shares_num) and not pd.isna(close_prc_num) and abs(close_prc_num - adj_closing_num) > 1e-5:
+                        price_update_flag.append('Price update')
+                    elif pd.isna(close_prc_num):
+                        if adj_closing_num > 0:
+                            price_update_flag.append('Price update')
+                        else:
+                            price_update_flag.append('')
+                    elif abs(close_prc_num - adj_closing_num) > 1e-5:
+                        price_update_flag.append('Price update')
+                    else:
+                        price_update_flag.append('')
+                
+                # Build differences_data with new columns FOR AFTERNOON
+                differences_data = {
+                    'Rank': range(1, len(diff_keys) + 1),
+                    'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
+                    '#Symbol': df1_diff['#Symbol'],
+                    'Sys date': df1_diff.get('System date', ''),
+                    'Adj. Reason': df2_diff.get('Adjust Reason', ''),
+                    'Isin Code': df1_diff.get('Isin Code', ''),
+                    'Cntry': df1_diff.get('Country', ''),
+                    'Mnemo': df1_diff.get('Mnemo', ''),
+                    'Name': df1_diff.get('Name', ''),
+                    'MIC': df1_diff.get('MIC', ''),
+                    'Prev ICB': df1_diff.get('ICBCode', ''),
+                    'New ICB': df2_diff.get('ICBCode', ''),
+                    'Close Prc': df2_diff.get('Close Prc', ''),
+                    'Adj Closing price': df2_diff.get('Adj Closing price', ''),
+                    'Net Div': df2_diff.get('Source net div', ''),
+                    'Gross Div': df2_diff.get('Source gross div', ''),
+                    'Index': df1_diff['Index'],
+                    'Prev. Shares': df1_diff.get('Shares', ''),
+                    'New Shares': df2_diff.get('Shares', ''),
+                    'Prev FF': df1_diff.get('Free float-Coeff', ''),
+                    'New FF': df2_diff.get('Free float-Coeff', ''),
+                    'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
+                    'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
+                    # NEW COLUMNS (X-AC)
+                    'Removal/Inclusion': removal_inclusion,
+                    'Dividend': dividend_flag,
+                    'Share number': share_number_flag,
+                    'Free float': free_float_flag,
+                    'Capping': capping_flag,
+                    'Price update': price_update_flag,
+                    # MOVED COLUMNS (AD, AE)
+                    'Cross-Ref Symbols': cross_ref_symbols,
+                    '_adj_closing_manual_sod_diff': pd.Series(False, index=diff_keys)
+                }
+            else:
+                # MORNING/EVENING: Keep original column structure (no new columns)
+                differences_data = {
+                    'Rank': range(1, len(diff_keys) + 1),
+                    'Code': df1_diff['#Symbol'].astype(str) + df1_diff['Index'].astype(str),
+                    '#Symbol': df1_diff['#Symbol'],
+                    'Sys date': df1_diff.get('System date', ''),
+                    'Adj. Reason': df2_diff.get('Adjust Reason', ''),
+                    'Isin Code': df1_diff.get('Isin Code', ''),
+                    'Cntry': df1_diff.get('Country', ''),
+                    'Mnemo': df1_diff.get('Mnemo', ''),
+                    'Name': df1_diff.get('Name', ''),
+                    'MIC': df1_diff.get('MIC', ''),
+                    'Prev ICB': df1_diff.get('ICBCode', ''),
+                    'New ICB': df2_diff.get('ICBCode', ''),
+                    'Close Prc': df2_diff.get('Close Prc', ''),
+                    'Adj Closing price': df2_diff.get('Adj Closing price', ''),
+                    'Net Div': df2_diff.get('Source net div', ''),
+                    'Gross Div': df2_diff.get('Source gross div', ''),
+                    'Index': df1_diff['Index'],
+                    'Prev. Shares': df1_diff.get('Shares', ''),
+                    'New Shares': df2_diff.get('Shares', ''),
+                    'Prev FF': df1_diff.get('Free float-Coeff', ''),
+                    'New FF': df2_diff.get('Free float-Coeff', ''),
+                    'Prev Capping': df1_diff.get('Capping Factor-Coeff', ''),
+                    'New Capping': df2_diff.get('Capping Factor-Coeff', ''),
+                    # ORIGINAL COLUMNS (X onwards - no changes for morning/evening)
+                    'Cross-Ref Symbols': cross_ref_symbols,
+                    '_adj_closing_manual_sod_diff': adj_closing_manual_sod_diff.loc[diff_keys] if not is_afternoon else pd.Series(False, index=diff_keys)
+                }
             
             diff_df = pd.DataFrame(differences_data)
     
     # For afternoon comparisons, also include removals and additions
     if is_afternoon:
-        # First handle removals (rows in SOD but not in Manual)
+        # Handle removals
         removed_keys = df1_indexed.index.difference(df2_indexed.index)
         
         if len(removed_keys) > 0:
             df1_removed = df1_indexed.loc[removed_keys]
             
-            # Perform Isin Code cross-reference lookup for removed rows
+            # Cross-reference lookup for removed rows
             isin_codes_removed = df1_removed.get('Isin Code', '').astype(str)
             cross_ref_symbols_removed = []
             
@@ -790,7 +1013,6 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                     cross_ref_symbols_removed.append('')
                     continue
                 
-                # Look up in df2_indexed (Manual file)
                 if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
                     matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
                     
@@ -808,48 +1030,53 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 else:
                     cross_ref_symbols_removed.append('')
             
-            # Create removal rows with SOD values and #N/A for Manual values
+            removal_count = len(removed_keys)
             removal_data = {
-                'Rank': range(len(diff_df) + 1, len(diff_df) + len(removed_keys) + 1),
+                'Rank': range(len(diff_df) + 1, len(diff_df) + removal_count + 1),
                 'Code': df1_removed['#Symbol'].astype(str) + df1_removed['Index'].astype(str),
                 '#Symbol': df1_removed['#Symbol'],
                 'Sys date': df1_removed.get('System date', ''),
-                'Adj. Reason': 'Removal',  # Special value for removals
+                'Adj. Reason': 'Removal',
                 'Isin Code': df1_removed.get('Isin Code', ''),
                 'Cntry': df1_removed.get('Country', ''),
                 'Mnemo': df1_removed.get('Mnemo', ''),
                 'Name': df1_removed.get('Name', ''),
                 'MIC': df1_removed.get('MIC', ''),
                 'Prev ICB': df1_removed.get('ICBCode', ''),
-                'New ICB': '#N/A',
-                'Close Prc': '#N/A',
-                'Adj Closing price': '#N/A',
-                'Net Div': '#N/A',
-                'Gross Div': '#N/A',
+                'New ICB': np.nan,
+                'Close Prc': np.nan,
+                'Adj Closing price': np.nan,
+                'Net Div': np.nan,
+                'Gross Div': np.nan,
                 'Index': df1_removed['Index'],
                 'Prev. Shares': df1_removed.get('Shares', ''),
-                'New Shares': '#N/A',
+                'New Shares': np.nan,
                 'Prev FF': df1_removed.get('Free float-Coeff', ''),
-                'New FF': '#N/A',
+                'New FF': np.nan,
                 'Prev Capping': df1_removed.get('Capping Factor-Coeff', ''),
-                'New Capping': '#N/A',
-                'Cross-Ref Symbols': cross_ref_symbols_removed
+                'New Capping': np.nan,
+                # NEW COLUMNS - Removals show "Removal" in X, empty strings elsewhere
+                'Removal/Inclusion': ['Removal'] * removal_count,
+                'Dividend': [''] * removal_count,
+                'Share number': [''] * removal_count,
+                'Free float': [''] * removal_count,
+                'Capping': [''] * removal_count,
+                'Price update': [''] * removal_count,
+                'Cross-Ref Symbols': cross_ref_symbols_removed,
+                '_adj_closing_manual_sod_diff': [False] * removal_count
             }
             
             removal_df = pd.DataFrame(removal_data)
-            
-            # Combine differences and removals
             diff_df = pd.concat([diff_df, removal_df], ignore_index=True)
-            # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
         
-        # Now handle additions (rows in Manual but not in SOD)
+        # Handle additions
         added_keys = df2_indexed.index.difference(df1_indexed.index)
         
         if len(added_keys) > 0:
             df2_added = df2_indexed.loc[added_keys]
             
-            # Perform Isin Code cross-reference lookup for added rows
+            # Cross-reference lookup for added rows
             isin_codes_added = df2_added.get('Isin Code', '').astype(str)
             cross_ref_symbols_added = []
             
@@ -858,7 +1085,6 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                     cross_ref_symbols_added.append('')
                     continue
                 
-                # Look up in df2_indexed (Manual file)
                 if 'Isin Code' in df2_indexed.columns and 'Index' in df2_indexed.columns:
                     matching_rows = df2_indexed[df2_indexed['Isin Code'].astype(str) == str(isin_code).strip()]
                     
@@ -876,56 +1102,62 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 else:
                     cross_ref_symbols_added.append('')
             
-            # FIXED: Create addition rows with Source dividend columns
+            addition_count = len(added_keys)
             addition_data = {
-                'Rank': range(len(diff_df) + 1, len(diff_df) + len(added_keys) + 1),
+                'Rank': range(len(diff_df) + 1, len(diff_df) + addition_count + 1),
                 'Code': df2_added['#Symbol'].astype(str) + df2_added['Index'].astype(str),
                 '#Symbol': df2_added['#Symbol'],
                 'Sys date': df2_added.get('System date', ''),
-                'Adj. Reason': 'Add Composition',  # Special value for additions
+                'Adj. Reason': 'Add Composition',
                 'Isin Code': df2_added.get('Isin Code', ''),
                 'Cntry': df2_added.get('Country', ''),
                 'Mnemo': df2_added.get('Mnemo', ''),
                 'Name': df2_added.get('Name', ''),
                 'MIC': df2_added.get('MIC', ''),
-                'Prev ICB': '#N/A',
+                'Prev ICB': np.nan,
                 'New ICB': df2_added.get('ICBCode', ''),
                 'Close Prc': df2_added.get('Close Prc', ''),
                 'Adj Closing price': df2_added.get('Adj Closing price', ''),
                 'Net Div': df2_added.get('Source net div', ''),
                 'Gross Div': df2_added.get('Source gross div', ''),
                 'Index': df2_added['Index'],
-                'Prev. Shares': '#N/A',
+                'Prev. Shares': np.nan,
                 'New Shares': df2_added.get('Shares', ''),
-                'Prev FF': '#N/A',
+                'Prev FF': np.nan,
                 'New FF': df2_added.get('Free float-Coeff', ''),
-                'Prev Capping': '#N/A',
+                'Prev Capping': np.nan,
                 'New Capping': df2_added.get('Capping Factor-Coeff', ''),
-                'Cross-Ref Symbols': cross_ref_symbols_added
+                # NEW COLUMNS - Additions show "Inclusion" in X, flags in Z/AA/AB
+                'Removal/Inclusion': ['Inclusion'] * addition_count,
+                'Dividend': [''] * addition_count,
+                'Share number': ['Share number'] * addition_count,
+                'Free float': ['Free float'] * addition_count,
+                'Capping': ['Capping'] * addition_count,
+                'Price update': [''] * addition_count,
+                'Cross-Ref Symbols': cross_ref_symbols_added,
+                '_adj_closing_manual_sod_diff': [False] * addition_count
             }
             
             addition_df = pd.DataFrame(addition_data)
-            
-            # Combine with existing data
             diff_df = pd.concat([diff_df, addition_df], ignore_index=True)
-            # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
     
-    # Filter out rows with Index in EXCLUDED_INDEX_VALUES
+    # Filter out excluded indices
     if not diff_df.empty and 'Index' in diff_df.columns:
         before = len(diff_df)
         diff_df = diff_df[~diff_df['Index'].isin(EXCLUDED_INDEX_VALUES)]
         if len(diff_df) < before:
-            logger.info(f"Excluded {before - len(diff_df)} row(s) with Index in EXCLUDED_INDEX_VALUES from stock comparison output")
+            logger.info(f"Excluded {before - len(diff_df)} row(s) with Index in EXCLUDED_INDEX_VALUES")
     
-    # Also filter out C4SD
     if not diff_df.empty and 'Index' in diff_df.columns:
         before = len(diff_df)
         diff_df = diff_df[diff_df['Index'] != 'C4SD']
         if len(diff_df) < before:
-            logger.info(f"Excluded {before - len(diff_df)} row(s) with Index='C4SD' from stock comparison output")
+            logger.info(f"Excluded {before - len(diff_df)} row(s) with Index='C4SD'")
+            diff_df['Rank'] = range(1, len(diff_df) + 1)
 
     return diff_df, common_keys
+
 
 @timer
 def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_afternoon=False):
@@ -934,8 +1166,7 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
     Args:
         df1_indexed: First dataframe (Manual for morning, SOD for afternoon)
         df2_indexed: Second dataframe (SOD for morning, Manual for afternoon)
-        is_afternoon: If True, also include removals (rows in df1/SOD but not in df2/Manual)
-                      and additions (rows in df2/Manual but not in df1/SOD)
+        is_afternoon: If True, also include removals and additions
     """
     common_keys = df1_indexed.index.intersection(df2_indexed.index)
     
@@ -992,13 +1223,12 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
     
     # For afternoon comparisons, also include removals and additions
     if is_afternoon:
-        # First handle removals (rows in SOD but not in Manual)
+        # Handle removals
         removed_keys = df1_indexed.index.difference(df2_indexed.index)
         
         if len(removed_keys) > 0:
             df1_removed = df1_indexed.loc[removed_keys]
             
-            # Create removal rows with SOD values and #N/A for Manual values
             removal_data = {
                 'Rank': range(len(diff_df) + 1, len(diff_df) + len(removed_keys) + 1),
                 '#Symbol': df1_removed['#Symbol'],
@@ -1009,31 +1239,27 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
                 'Name': df1_removed.get('Name', ''),
                 'MIC': df1_removed.get('MIC', ''),
                 'Prev Divisor': df1_removed.get('Divisor', ''),
-                'New Divisor': '#N/A',
+                'New Divisor': np.nan,
                 'Prev t0 IV': df1_removed.get('t0 IV', ''),
-                't0 IV   SOD': '#N/A',
+                't0 IV   SOD': np.nan,
                 'Prev t0 IV unround': df1_removed.get('t0 IV unround', ''),
-                't0 IV unround': '#N/A',
+                't0 IV unround': np.nan,
                 'Prev Mkt Cap': df1_removed.get('Mkt Cap', ''),
-                'New Mkt Cap': '#N/A',
+                'New Mkt Cap': np.nan,
                 'Prev Nr of comp': df1_removed.get('Nr of components', ''),
-                'Nr of comp': '#N/A'
+                'Nr of comp': np.nan
             }
             
             removal_df = pd.DataFrame(removal_data)
-            
-            # Combine differences and removals
             diff_df = pd.concat([diff_df, removal_df], ignore_index=True)
-            # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
         
-        # Now handle additions (rows in Manual but not in SOD)
+        # Handle additions
         added_keys = df2_indexed.index.difference(df1_indexed.index)
         
         if len(added_keys) > 0:
             df2_added = df2_indexed.loc[added_keys]
             
-            # Create addition rows with Manual values and #N/A for SOD values
             addition_data = {
                 'Rank': range(len(diff_df) + 1, len(diff_df) + len(added_keys) + 1),
                 '#Symbol': df2_added['#Symbol'],
@@ -1043,41 +1269,28 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
                 'Mnemo': df2_added.get('Mnemo', ''),
                 'Name': df2_added.get('Name', ''),
                 'MIC': df2_added.get('MIC', ''),
-                'Prev Divisor': '#N/A',
+                'Prev Divisor': np.nan,
                 'New Divisor': df2_added.get('Divisor', ''),
-                'Prev t0 IV': '#N/A',
+                'Prev t0 IV': np.nan,
                 't0 IV   SOD': df2_added.get('t0 IV', ''),
-                'Prev t0 IV unround': '#N/A',
+                'Prev t0 IV unround': np.nan,
                 't0 IV unround': df2_added.get('t0 IV unround', ''),
-                'Prev Mkt Cap': '#N/A',
+                'Prev Mkt Cap': np.nan,
                 'New Mkt Cap': df2_added.get('Mkt Cap', ''),
-                'Prev Nr of comp': '#N/A',
+                'Prev Nr of comp': np.nan,
                 'Nr of comp': df2_added.get('Nr of components', '')
             }
             
             addition_df = pd.DataFrame(addition_data)
-            
-            # Combine with existing data
             diff_df = pd.concat([diff_df, addition_df], ignore_index=True)
-            # Re-rank
             diff_df['Rank'] = range(1, len(diff_df) + 1)
-            
-            if 'Index' in diff_df.columns:
-                before = len(diff_df)
-                diff_df = diff_df[diff_df['Index'] != 'C4SD'].copy()
-                if len(diff_df) < before:
-                    excluded = before - len(diff_df)
-                    logger.info(f"Excluded {excluded} row(s) with Index='C4SD' from final stock output")
-                # Re-rank after exclusion
-                diff_df['Rank'] = range(1, len(diff_df) + 1)
     
-    # Filter out rows with Mnemo in EXCLUDED_INDEX_VALUES for Index comparison
+    # Filter out excluded mnemonics
     if not diff_df.empty and 'Mnemo' in diff_df.columns:
         before = len(diff_df)
         diff_df = diff_df[~diff_df['Mnemo'].isin(EXCLUDED_INDEX_VALUES)].copy()
         if len(diff_df) < before:
-            logger.info(f"Excluded {before - len(diff_df)} row(s) with Mnemo in EXCLUDED_INDEX_VALUES from index comparison output")
-            # Re-rank after exclusion
+            logger.info(f"Excluded {before - len(diff_df)} row(s) with Mnemo in EXCLUDED_INDEX_VALUES")
             diff_df['Rank'] = range(1, len(diff_df) + 1)
     
     return diff_df, common_keys
@@ -1340,11 +1553,13 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     new_ff_clean = '' if pd.isna(new_ff) else new_ff
                     
                     try:
-                        new_ff_numeric = float(new_ff_clean) if new_ff_clean != '' else None
+                        new_ff_numeric = float(new_ff_clean) if new_ff_clean != '' and not pd.isna(new_ff_clean) else None
                     except (ValueError, TypeError):
                         new_ff_numeric = None
-                    
-                    ff_red = new_ff_clean == '' or new_ff_numeric is None or (new_ff_numeric is not None and new_ff_numeric > 1)
+
+                    ff_red = (pd.isna(new_ff_clean) or new_ff_clean == '' or 
+                            new_ff_numeric is None or 
+                            (new_ff_numeric is not None and new_ff_numeric > 1))
                     ff_orange = not ff_red and pd.notna(new_ff) and pd.notna(prev_ff) and str(new_ff).strip() != str(prev_ff).strip()
                     
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_ff_red')] = ff_red
@@ -1505,7 +1720,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     name = str(diff_df.iloc[idx].get('Name', ''))
                     
                     new_divisor = str(diff_df.iloc[idx].get('New Divisor', '')).strip()
-                    is_removal = new_divisor == '#N/A'
+                    is_removal = pd.isna(new_divisor)
                     diff_df_formatted.iloc[idx, diff_df_formatted.columns.get_loc('_is_removal')] = is_removal
                     
                     for field_pair, flag_col in [
@@ -1675,7 +1890,7 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                     #    → do NOT make it red in that case
                     # --------------------------------------------------------------
                     new_ff_val = diff_df.iloc[row_idx]['New FF']
-                    is_na = pd.isna(new_ff_val) or str(new_ff_val).strip() in ("#N/A", "N/A", "NA")
+                    is_na = pd.isna(new_ff_val) or (isinstance(new_ff_val, str) and str(new_ff_val).strip() in ("#N/A", "N/A", "NA"))
 
                     if diff_df_formatted.iloc[row_idx]['_ff_red']:
                         # suppress red when it is a removal AND value is #N/A
@@ -1897,10 +2112,13 @@ def perform_comparison(comparison_type='morning_stock', silent=False):
             print(f"{'='*60}\n")
         
         # Generate output filename with current date
-        current_date = datetime.now().strftime("%Y%m%d")
         config = COMPARISON_CONFIGS[comparison_type]
-        output_filename = config['output_filename'].format(date=current_date)
-        output_path = os.path.join(OUTPUT_DIR, output_filename)
+        output_filename = config['output_filename'].format(date='CoenTest')
+
+
+        # Get dynamic output directory based on next working day
+        output_dir = get_dynamic_output_dir()
+        output_path = os.path.join(output_dir, output_filename)
         
         # Check if output file already exists and whether overwrite is allowed
         if os.path.exists(output_path):

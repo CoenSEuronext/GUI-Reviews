@@ -193,28 +193,41 @@ def safe_file_operation(operation, file_path, error_msg):
         return None
 
 def should_copy_file(src_path, dest_path):
-    """Check if file should be copied with network-safe operations - OPTIMIZED"""
+    """Check if file should be copied with network-safe operations - FIXED"""
     try:
         # If destination doesn't exist, definitely copy
         if not os.path.exists(dest_path):
             logger.debug(f"File {os.path.basename(src_path)} doesn't exist in destination - will copy")
             return True
         
-        # OPTIMIZED: Quick size check first (fastest comparison)
+        # Check size first (fast check)
         try:
             src_size = os.path.getsize(src_path)
             dest_size = os.path.getsize(dest_path)
             
+            # If sizes differ, definitely copy
             if src_size != dest_size:
                 logger.info(f"File {os.path.basename(src_path)} has different size - will copy")
                 return True
-        except (OSError, IOError):
-            # If we can't get sizes, assume we need to copy
+            
+            # FIXED: If sizes match, check modification time
+            # This catches files that were updated but kept the same size
+            src_mtime = os.path.getmtime(src_path)
+            dest_mtime = os.path.getmtime(dest_path)
+            
+            # Copy if source is newer (with 1 second tolerance for filesystem quirks)
+            if src_mtime > dest_mtime + 1:
+                logger.info(f"File {os.path.basename(src_path)} is newer than destination - will copy")
+                return True
+            
+            # File is up-to-date, skip copying
+            logger.debug(f"File {os.path.basename(src_path)} is up-to-date - skipping")
+            return False
+            
+        except (OSError, IOError) as e:
+            # If we can't get file info, assume we need to copy
+            logger.warning(f"Error comparing files, will copy: {str(e)}")
             return True
-        
-        # OPTIMIZED: Skip modification time check for speed (size check is usually sufficient)
-        # Files of same size are very likely to be identical
-        return False
             
     except Exception as e:
         logger.error(f"Error comparing files: {str(e)}")
