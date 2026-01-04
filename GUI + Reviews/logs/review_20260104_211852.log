@@ -1,0 +1,33 @@
+2026-01-04 21:18:53,053 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 21:18:53,060 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 21:18:53,099 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:18:53] "GET /task-status/2da171b2-d5d8-4c2d-842f-1ae8f8af09e4 HTTP/1.1" 200 -
+2026-01-04 21:19:49,225 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:49] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 21:19:49,229 - Review.reviews.envw_review - INFO - Loading EOD data...
+2026-01-04 21:19:49,234 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:49] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:19:51,245 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:51] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:19:51,359 - Review.reviews.envw_review - INFO - Loading reference data...
+2026-01-04 21:19:53,246 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:53] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:19:55,248 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:55] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:19:57,273 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:57] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:19:59,253 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:19:59] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:20:01,241 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:20:01] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:20:03,240 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:20:03] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:20:05,243 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:20:05] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:20:07,239 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:20:07] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -
+2026-01-04 21:20:07,711 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-04 21:20:07,800 - Review.reviews.envw_review - INFO - Universe rows: 5297 | Missing #Symbol: 25 | Missing FX: 165 | Missing EOD price: 25
+2026-01-04 21:20:07,800 - Review.reviews.envw_review - INFO - Starting universe size: 5297 stocks
+2026-01-04 21:20:07,800 - Review.reviews.envw_review - INFO - Step 1: Using universe 'EDWPT' as starting set...
+2026-01-04 21:20:07,802 - Review.reviews.envw_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 21:20:07,804 - Review.reviews.envw_review - INFO - Universe size after ESG screening: 5293 stocks
+2026-01-04 21:20:07,805 - Review.reviews.envw_review - INFO - Step 3: Ranking by ESG Risk Score and Free Float Market Cap...
+2026-01-04 21:20:07,813 - Review.reviews.envw_review - INFO - Step 4: Selecting top 120 constituents...
+2026-01-04 21:20:07,813 - Review.reviews.envw_review - INFO - Selected 120 constituents for ENVW index
+2026-01-04 21:20:07,813 - Review.reviews.envw_review - INFO - Calculating ESG-based weights...
+2026-01-04 21:20:07,818 - Review.reviews.envw_review - INFO - Applying 10% weight cap...
+2026-01-04 21:20:07,818 - Review.reviews.envw_review - INFO - Capping completed in 0 iterations
+2026-01-04 21:20:07,819 - Review.reviews.envw_review - INFO - Weight range: 0.70% to 1.59%
+2026-01-04 21:20:07,823 - Review.reviews.envw_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 21:20:07,831 - Review.reviews.envw_review - INFO - Inclusions: 113, Exclusions: 113
+2026-01-04 21:20:07,833 - Review.reviews.envw_review - INFO - Saving ENVW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVW_df_20260104_212007.xlsx
+2026-01-04 21:20:09,233 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:20:09] "GET /task-status/9f420d10-11a4-4620-bc84-e62cf837f459 HTTP/1.1" 200 -

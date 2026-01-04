@@ -241,7 +241,19 @@ def run_envw_review(
             pd.to_numeric(selection_df["Target_Market_Cap"], errors="coerce") / denom
         )
 
-        selection_df["Capping_Factor"] = selection_df["Weight_Final"] / selection_df["Weight_Uncapped"]
+        selection_df["Capping_Factor"] = np.where(
+            selection_df["Weight_Uncapped"] > 0,
+            selection_df["Weight_Final"] / selection_df["Weight_Uncapped"],
+            1.0
+        )
+
+        # Normalize capping factors by dividing by the maximum capping factor
+        max_capping = selection_df["Capping_Factor"].max()
+        if max_capping > 0 and np.isfinite(max_capping):
+            selection_df["Capping_Factor"] = selection_df["Capping_Factor"] / max_capping
+
+        # Round to 14 decimal places
+        selection_df["Capping_Factor"] = selection_df["Capping_Factor"].round(14)
         selection_df["Effective Date of Review"] = effective_date
         selection_df["Free Float companies"] = 1
 

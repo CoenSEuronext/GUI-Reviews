@@ -196,10 +196,10 @@ def run_enveu_review(
 
         universe_df["FF_Market_Cap"] = (
             pd.to_numeric(universe_df.get("NOSH"), errors="coerce")
-            * pd.to_numeric(universe_df.get("Close Prc_EOD"), errors="coerce")
+            * pd.to_numeric(universe_df.get("Price"), errors="coerce")  # ✅ Use Price from universe
             * pd.to_numeric(universe_df.get("Free Float Round:"), errors="coerce")
             / 100.0
-            * pd.to_numeric(universe_df.get("FX/Index Ccy"), errors="coerce")
+            # No FX needed - Price column is already in EUR
         )
 
         universe_df["ESG_Risk_Rating"] = pd.to_numeric(
@@ -296,7 +296,19 @@ def run_enveu_review(
         )
 
         selection_df["Free Float companies"] = 1
-        selection_df["Capping_Factor"] = selection_df["Weight_Final"] / selection_df["Weight_Uncapped"]
+        selection_df["Capping_Factor"] = np.where(
+            selection_df["Weight_Uncapped"] > 0,
+            selection_df["Weight_Final"] / selection_df["Weight_Uncapped"],
+            1.0
+        )
+
+        # Normalize capping factors by dividing by the maximum capping factor
+        max_capping = selection_df["Capping_Factor"].max()
+        if max_capping > 0 and np.isfinite(max_capping):
+            selection_df["Capping_Factor"] = selection_df["Capping_Factor"] / max_capping
+
+        # Round to 14 decimal places
+        selection_df["Capping_Factor"] = selection_df["Capping_Factor"].round(14)
         selection_df["Effective Date of Review"] = effective_date
 
         # Output: ALWAYS include Currency (Local) like other scripts

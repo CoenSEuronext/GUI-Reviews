@@ -1,0 +1,19 @@
+2026-01-04 20:48:57,063 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 20:48:57,065 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 20:48:57,356 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:48:57] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 20:48:57,359 - Review.reviews.envf_review - INFO - Loading EOD data...
+2026-01-04 20:48:57,362 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:48:57] "GET /task-status/ed22f610-a691-4bad-9e23-af1290f4b952 HTTP/1.1" 200 -
+2026-01-04 20:48:59,369 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:48:59] "GET /task-status/ed22f610-a691-4bad-9e23-af1290f4b952 HTTP/1.1" 200 -
+2026-01-04 20:48:59,564 - Review.reviews.envf_review - INFO - Loading reference data (CAC Family PX1 + Sustainalytics)...
+2026-01-04 20:49:01,367 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:49:01] "GET /task-status/ed22f610-a691-4bad-9e23-af1290f4b952 HTTP/1.1" 200 -
+2026-01-04 20:49:02,458 - Review.reviews.envf_review - INFO - Universe rows: 40 | Missing #Symbol: 0 | Missing FX: 0 | Missing EOD price: 0 | Missing CO price: 0
+2026-01-04 20:49:02,458 - Review.reviews.envf_review - ERROR - Error during review calculation: cannot access local variable 'universe_df' where it is not associated with a value
+2026-01-04 20:49:02,459 - Review.reviews.envf_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envf_review.py", line 169, in run_envf_review
+    universe_df["FF"] = pd.to_numeric(universe_df["Free Float"], errors="coerce")
+                                      ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'universe_df' where it is not associated with a value
+
+2026-01-04 20:49:03,374 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:49:03] "GET /task-status/ed22f610-a691-4bad-9e23-af1290f4b952 HTTP/1.1" 200 -
+2026-01-04 20:50:13,774 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envf_review.py', reloading
+2026-01-04 20:50:13,776 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envf_review.py', reloading

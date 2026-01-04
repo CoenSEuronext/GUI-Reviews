@@ -142,18 +142,26 @@ def run_envf_review(
             .drop_duplicates(subset="#Symbol", keep="first")
             .rename(columns={"Close Prc": "Close Prc_EOD"})
         )
+        # CO price (local) - ADD THIS
+        co_price_merge_df = (
+            stock_co_df[["#Symbol", "Close Prc"]]
+            .drop_duplicates(subset="#Symbol", keep="first")
+            .rename(columns={"Close Prc": "Close Prc_CO"})
+        )
 
         selection_df = (
             selection_base
             .merge(symbols_filtered, on=["ISIN", "MIC"], how="left")
             .merge(fx_merge_df, on="#Symbol", how="left")
             .merge(eod_price_merge_df, on="#Symbol", how="left")
+            .merge(co_price_merge_df, on="#Symbol", how="left")
         )
 
         logger.info(
             f"Universe rows: {len(selection_df)} | Missing #Symbol: {int(selection_df['#Symbol'].isna().sum())} "
             f"| Missing FX: {int(selection_df['FX/Index Ccy'].isna().sum())} "
-            f"| Missing EOD price: {int(selection_df['Close Prc_EOD'].isna().sum())}"
+            f"| Missing EOD price: {int(selection_df['Close Prc_EOD'].isna().sum())} "
+            f"| Missing CO price: {int(selection_df['Close Prc_CO'].isna().sum())}"  # ADD THIS
         )
 
         # STEP 2: Exclude Sustainalytics NON-COMPLIANT
@@ -167,13 +175,14 @@ def run_envf_review(
         # Tie-breaker FF Market Cap (EUR)
         # Use CAC file: shares * free float * capping * close * FX
         # (FX is basically 1 for CAC, but we keep it consistent)
+        # Around line 143 - Update FFMC calculation to use CO:
         universe_df["FF"] = pd.to_numeric(universe_df["Free Float"], errors="coerce")
         universe_df["CAP"] = pd.to_numeric(universe_df["Capping"], errors="coerce")
         universe_df["NOSH_CAC"] = pd.to_numeric(universe_df["Number of shares"], errors="coerce")
-        universe_df["PX_EOD"] = pd.to_numeric(universe_df["Close Prc_EOD"], errors="coerce")
+        universe_df["PX_CO"] = pd.to_numeric(universe_df["Close Prc_CO"], errors="coerce")  # CHANGED from PX_EOD
         universe_df["FX"] = pd.to_numeric(universe_df["FX/Index Ccy"], errors="coerce").fillna(1.0)
 
-        universe_df["FF_Market_Cap"] = universe_df["NOSH_CAC"] * universe_df["FF"] * universe_df["CAP"] * universe_df["PX_EOD"] * universe_df["FX"]
+        universe_df["FF_Market_Cap"] = universe_df["NOSH_CAC"] * universe_df["FF"] * universe_df["CAP"] * universe_df["PX_CO"] * universe_df["FX"]  # CHANGED to PX_CO
 
         # STEP 3: Rank by ESG Risk Score asc; tie-break by FFMC desc
         logger.info("Step 3: Ranking by ESG Risk Score and FF Market Cap...")
@@ -222,7 +231,20 @@ def run_envf_review(
             it += 1
 
         selection_df["Weight_Final"] = selection_df["Weight_Capped"] / selection_df["Weight_Capped"].sum()
-        selection_df["Capping_Factor"] = selection_df["Weight_Final"] / selection_df["Weight_Uncapped"]
+        # Calculate raw capping factor
+        selection_df["Capping_Factor"] = np.where(
+            selection_df["Weight_Uncapped"] > 0,
+            selection_df["Weight_Final"] / selection_df["Weight_Uncapped"],
+            1.0
+        )
+
+        # Normalize capping factors by dividing by the maximum capping factor
+        max_capping = selection_df["Capping_Factor"].max()
+        if max_capping > 0 and np.isfinite(max_capping):
+            selection_df["Capping_Factor"] = selection_df["Capping_Factor"] / max_capping
+
+        # Round to 14 decimal places
+        selection_df["Capping_Factor"] = selection_df["Capping_Factor"].round(14)
 
         # INDEX MARKET CAP ANCHOR
         if "#Symbol" not in index_eod_df.columns or "Mkt Cap" not in index_eod_df.columns:
@@ -234,7 +256,11 @@ def run_envf_review(
         index_mcap = float(index_eod_df.loc[idx_mask, "Mkt Cap"].iloc[0])
 
         # Shares: target mcap / price in index currency (EUR) = close * FX
-        selection_df["Price_Index_Ccy"] = selection_df["PX_EOD"] * selection_df["FX"]
+        # Around line 246:
+        selection_df["Price_Index_Ccy"] = (
+            pd.to_numeric(selection_df["Close Prc_EOD"], errors="coerce") 
+            * pd.to_numeric(selection_df["FX/Index Ccy"], errors="coerce").fillna(1.0)
+        )
         selection_df["Target_Market_Cap"] = selection_df["Weight_Final"] * index_mcap
         selection_df["Number_of_Shares_Calculated"] = (selection_df["Target_Market_Cap"] / selection_df["Price_Index_Ccy"]).round()
 

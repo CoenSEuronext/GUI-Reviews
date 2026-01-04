@@ -269,7 +269,20 @@ def run_envuk_review(
 
         # No capping step here (rulebook doesn't specify one)
         selection_df["Weight_Final"] = selection_df["Weight_Uncapped"] / selection_df["Weight_Uncapped"].sum()
-        selection_df["Capping_Factor"] = 1.0
+                # Calculate raw capping factor
+        selection_df["Capping_Factor"] = np.where(
+            selection_df["Weight_Uncapped"] > 0,
+            selection_df["Weight_Final"] / selection_df["Weight_Uncapped"],
+            1.0
+        )
+
+        # Normalize capping factors by dividing by the maximum capping factor
+        max_capping = selection_df["Capping_Factor"].max()
+        if max_capping > 0 and np.isfinite(max_capping):
+            selection_df["Capping_Factor"] = selection_df["Capping_Factor"] / max_capping
+
+        # Round to 14 decimal places
+        selection_df["Capping_Factor"] = selection_df["Capping_Factor"].round(14)
 
         logger.info(
             f"Weight range: {selection_df['Weight_Final'].min():.2%} to {selection_df['Weight_Final'].max():.2%}"

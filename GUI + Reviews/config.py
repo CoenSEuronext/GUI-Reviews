@@ -413,7 +413,7 @@ INDEX_CONFIGS = {
     },
     "ENVU": {
         "index": "ENVU",
-        "isin": "QS0011250931",
+        "isin": "QS0011256169",
         "output_key": "envu_path"
     },
     "ENVEO": {

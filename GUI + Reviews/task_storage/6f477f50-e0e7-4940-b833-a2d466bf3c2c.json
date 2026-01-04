@@ -1,0 +1,28 @@
+{
+  "task_id": "6f477f50-e0e7-4940-b833-a2d466bf3c2c",
+  "task_type": "batch",
+  "status": "failed",
+  "created_at": "2026-01-04T20:11:35.364834",
+  "started_at": "2026-01-04T20:11:35.365842",
+  "completed_at": "2026-01-04T20:11:40.694548",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": null,
+  "parameters": {
+    "review_types": [
+      "ENVB",
+      "ENVEO",
+      "ENVEU",
+      "ENVF",
+      "ENVUK"
+    ],
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

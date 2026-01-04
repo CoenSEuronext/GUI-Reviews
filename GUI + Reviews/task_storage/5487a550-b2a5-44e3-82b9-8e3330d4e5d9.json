@@ -1,13 +1,13 @@
 {
   "task_id": "5487a550-b2a5-44e3-82b9-8e3330d4e5d9",
   "task_type": "batch",
-  "status": "running",
+  "status": "failed",
   "created_at": "2026-01-04T19:41:09.835751",
   "started_at": "2026-01-04T19:41:09.839749",
-  "completed_at": null,
-  "progress": 9,
-  "message": "Processing AEXEW (4/87)",
-  "error": null,
+  "completed_at": "2026-01-04T20:05:56.427223",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
   "result_data": null,
   "review_type": null,
   "parameters": {

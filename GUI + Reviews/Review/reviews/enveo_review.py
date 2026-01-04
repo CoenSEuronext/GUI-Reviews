@@ -137,6 +137,11 @@ def run_enveo_review(
             .drop_duplicates(subset=["#Symbol"], keep="first")
             .rename(columns={"Close Prc": "Close_Prc_CO"})
         )
+        eod_price_df = (
+            stock_eod_df[["#Symbol", "Close Prc"]]
+            .drop_duplicates(subset=["#Symbol"], keep="first")
+            .rename(columns={"Close Prc": "Close_Prc_EOD"})
+        ) 
 
         # FX to index currency (EUR) per #Symbol, filtered on Index Curr == EUR
         co_fx_df = stock_co_df[stock_co_df["Index Curr"] == currency].copy()
@@ -145,13 +150,21 @@ def run_enveo_review(
             .drop_duplicates(subset=["#Symbol"], keep="first")
             .rename(columns={"FX/Index Ccy": "FX_CO"})
         )
-
+        # FX to index currency (EUR) per #Symbol, filtered on Index Curr == EUR
+        eod_fx_df = stock_eod_df[stock_eod_df["Index Curr"] == currency].copy()
+        eod_fx_df = (
+            eod_fx_df[["#Symbol", "FX/Index Ccy"]]
+            .drop_duplicates(subset=["#Symbol"], keep="first")
+            .rename(columns={"FX/Index Ccy": "FX_EOD"})
+        )
         # Merge symbols, CO close, FX
         base_df = (
             base_df
             .merge(symbols_filtered, on=["ISIN Code", "MIC"], how="left")
             .merge(co_price_df, on="#Symbol", how="left")
+            .merge(eod_price_df, on="#Symbol", how="left")
             .merge(co_fx_df, on="#Symbol", how="left")
+            .merge(eod_fx_df, on="#Symbol", how="left")
         )
 
         # Merge Sustainalytics (by ISIN)
@@ -195,17 +208,15 @@ def run_enveo_review(
         logger.info("Step 3: Ranking by ESG Risk Score and FF Market Cap (CO)...")
 
         eligible_df["NOSH_Ref"] = pd.to_numeric(eligible_df["NOSH_Ref"], errors="coerce")
-        eligible_df["Close_Prc_CO"] = pd.to_numeric(eligible_df["Close_Prc_CO"], errors="coerce")
+        eligible_df["Price"] = pd.to_numeric(eligible_df["Price"], errors="coerce")
         eligible_df["Free_Float_Pct"] = pd.to_numeric(eligible_df["Free_Float_Pct"], errors="coerce")
-        eligible_df["FX_CO"] = pd.to_numeric(eligible_df["FX_CO"], errors="coerce")
 
         eligible_df["ESG_Risk_Rating"] = pd.to_numeric(eligible_df["ESG Risk Score"], errors="coerce").fillna(999.0)
 
         eligible_df["FFMC_CO_EUR"] = (
             eligible_df["NOSH_Ref"]
-            * eligible_df["Close_Prc_CO"]
+            * eligible_df["Price"]
             * (eligible_df["Free_Float_Pct"] / 100.0)
-            * eligible_df["FX_CO"]
         )
 
         eligible_df = eligible_df.sort_values(
@@ -278,8 +289,16 @@ def run_enveo_review(
         selection_df["Capping_Factor"] = np.where(
             selection_df["Weight_Uncapped"] > 0,
             selection_df["Weight_Final"] / selection_df["Weight_Uncapped"],
-            1.0,
+            1.0
         )
+
+        # Normalize capping factors by dividing by the maximum capping factor
+        max_capping = selection_df["Capping_Factor"].max()
+        if max_capping > 0 and np.isfinite(max_capping):
+            selection_df["Capping_Factor"] = selection_df["Capping_Factor"] / max_capping
+
+        # Round to 14 decimal places
+        selection_df["Capping_Factor"] = selection_df["Capping_Factor"].round(14)
 
         logger.info(f"Capping iterations: {capping_iterations}")
         logger.info(
@@ -303,16 +322,16 @@ def run_enveo_review(
         index_mcap = float(index_eod_df.loc[idx_mask, "Mkt Cap"].iloc[0])
 
         # Price in index currency (EUR) on CO date: Close * FX
-        selection_df["Price_Index_Ccy_CO"] = (
-            pd.to_numeric(selection_df["Close_Prc_CO"], errors="coerce")
-            * pd.to_numeric(selection_df["FX_CO"], errors="coerce")
+        selection_df["Price_Index_Ccy_EOD"] = (
+            pd.to_numeric(selection_df["Close_Prc_EOD"], errors="coerce")
+            * pd.to_numeric(selection_df["FX_EOD"], errors="coerce")
         )
 
         # Target market cap and shares
         selection_df["Target_Market_Cap"] = selection_df["Weight_Final"] * index_mcap
         selection_df["Number_of_Shares_Calculated"] = np.round(
             pd.to_numeric(selection_df["Target_Market_Cap"], errors="coerce")
-            / pd.to_numeric(selection_df["Price_Index_Ccy_CO"], errors="coerce")
+            / pd.to_numeric(selection_df["Price_Index_Ccy_EOD"], errors="coerce")
         )
 
         # Final output
@@ -362,7 +381,7 @@ def run_enveo_review(
             os.makedirs(output_dir, exist_ok=True)
 
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            enveo_path = os.path.join(output_dir, f"ENVEO_review_{timestamp}.xlsx")
+            enveo_path = os.path.join(output_dir, f"ENVEO_df_{timestamp}.xlsx")
 
             logger.info(f"Saving ENVEO output to: {enveo_path}")
             with pd.ExcelWriter(enveo_path) as writer:
@@ -372,9 +391,9 @@ def run_enveo_review(
                 pd.DataFrame({"Index Market Cap": [index_mcap], "Index Currency": [currency]}).to_excel(
                     writer, sheet_name="Index Market Cap", index=False
                 )
-                selection_df.to_excel(writer, sheet_name="Selection (Debug)", index=False)
-                eligible_df.to_excel(writer, sheet_name="Eligible Universe (Debug)", index=False)
-                universe_df.to_excel(writer, sheet_name="Full Universe (Debug)", index=False)
+                selection_df.to_excel(writer, sheet_name="Selection", index=False)
+                eligible_df.to_excel(writer, sheet_name="Eligible Universe", index=False)
+                universe_df.to_excel(writer, sheet_name="Full Universe", index=False)
 
 
             return {

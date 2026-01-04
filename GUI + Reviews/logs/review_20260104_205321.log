@@ -1,0 +1,45 @@
+2026-01-04 20:53:22,358 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 20:53:22,360 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 20:53:22,409 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:53:22] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 20:53:22,412 - Review.reviews.envf_review - INFO - Loading EOD data...
+2026-01-04 20:53:22,419 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:53:22] "GET /task-status/be3bcf65-b752-46e5-b77e-444008840fb9 HTTP/1.1" 200 -
+2026-01-04 20:53:24,440 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:53:24] "GET /task-status/be3bcf65-b752-46e5-b77e-444008840fb9 HTTP/1.1" 200 -
+2026-01-04 20:53:24,575 - Review.reviews.envf_review - INFO - Loading reference data (CAC Family PX1 + Sustainalytics)...
+2026-01-04 20:53:26,432 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:53:26] "GET /task-status/be3bcf65-b752-46e5-b77e-444008840fb9 HTTP/1.1" 200 -
+2026-01-04 20:53:27,916 - Review.reviews.envf_review - INFO - Universe rows: 40 | Missing #Symbol: 0 | Missing FX: 0 | Missing EOD price: 0 | Missing CO price: 0
+2026-01-04 20:53:27,916 - Review.reviews.envf_review - INFO - Step 2: Applying Sustainalytics NON-COMPLIANT exclusion...
+2026-01-04 20:53:27,917 - Review.reviews.envf_review - INFO - Universe size after ESG screening: 40
+2026-01-04 20:53:27,918 - Review.reviews.envf_review - INFO - Step 3: Ranking by ESG Risk Score and FF Market Cap...
+2026-01-04 20:53:27,920 - Review.reviews.envf_review - INFO - Step 4: Selecting top 20 constituents...
+2026-01-04 20:53:27,920 - Review.reviews.envf_review - INFO - Calculating ESG-based weights and applying 10% cap...
+2026-01-04 20:53:27,924 - Review.reviews.envf_review - ERROR - Error during review calculation: 'PX_EOD'
+2026-01-04 20:53:27,931 - Review.reviews.envf_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'PX_EOD'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envf_review.py", line 246, in run_envf_review
+    selection_df["Price_Index_Ccy"] = selection_df["PX_EOD"] * selection_df["FX"]
+                                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'PX_EOD'
+
+2026-01-04 20:53:28,422 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:53:28] "GET /task-status/be3bcf65-b752-46e5-b77e-444008840fb9 HTTP/1.1" 200 -
+2026-01-04 20:54:13,670 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading
+2026-01-04 20:54:13,672 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\config.py', reloading
+2026-01-04 20:54:13,675 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\logging_utils.py', reloading
+2026-01-04 20:54:13,680 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\inclusion_exclusion.py', reloading
+2026-01-04 20:54:13,887 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2026-01-04 20:54:13,887 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_utils\\__init__.py', reloading

@@ -1,0 +1,25 @@
+{
+  "task_id": "80446812-f139-4d05-baaf-3930fee92fab",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-04T21:09:07.438760",
+  "started_at": "2026-01-04T21:09:07.441759",
+  "completed_at": "2026-01-04T21:09:21.954530",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "enveu_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVEU_df_20260104_210921.xlsx"
+  },
+  "review_type": "ENVEU",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVEU",
+    "isin": "QS0011250873",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 14.508171
+}

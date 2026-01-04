@@ -1,0 +1,25 @@
+{
+  "task_id": "e3b96fd2-3ec2-4f51-9f64-09e517bfb812",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-04T20:50:15.767807",
+  "started_at": "2026-01-04T20:50:15.771805",
+  "completed_at": "2026-01-04T20:50:21.108763",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "envf_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVF_df_20260104_205021.xlsx"
+  },
+  "review_type": "ENVF",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVF",
+    "isin": "QS0011250907",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.332956
+}

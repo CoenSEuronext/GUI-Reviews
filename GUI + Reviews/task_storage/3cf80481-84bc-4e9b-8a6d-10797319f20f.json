@@ -1,0 +1,84 @@
+{
+  "task_id": "3cf80481-84bc-4e9b-8a6d-10797319f20f",
+  "task_type": "batch",
+  "status": "completed",
+  "created_at": "2026-01-04T20:11:46.561221",
+  "started_at": "2026-01-04T20:11:46.564213",
+  "completed_at": "2026-01-04T20:12:52.381220",
+  "progress": 100,
+  "message": "Batch completed: 4/5 successful",
+  "error": null,
+  "result_data": {
+    "results": [
+      {
+        "review_type": "ENVB",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "envb_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVB_df_20260104_201159.xlsx"
+        },
+        "duration_seconds": 13.148272,
+        "completed_at": "2026-01-04T20:11:59.717491"
+      },
+      {
+        "review_type": "ENVEO",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "enveo_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVEO_review_20260104_201214.xlsx"
+        },
+        "duration_seconds": 14.764016,
+        "completed_at": "2026-01-04T20:12:14.681366"
+      },
+      {
+        "review_type": "ENVEU",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "enveu_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVEU_df_20260104_201232.xlsx"
+        },
+        "duration_seconds": 17.590368,
+        "completed_at": "2026-01-04T20:12:32.358778"
+      },
+      {
+        "review_type": "ENVF",
+        "status": "error",
+        "message": "Error during review calculation: Missing reference data: CAC Family.xlsx (sheet PX1)",
+        "data": null,
+        "duration_seconds": 5.965286,
+        "completed_at": "2026-01-04T20:12:38.426226"
+      },
+      {
+        "review_type": "ENVUK",
+        "status": "success",
+        "message": "Review completed successfully",
+        "data": {
+          "envuk_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVUK_df_20260104_201252.xlsx"
+        },
+        "duration_seconds": 13.879933,
+        "completed_at": "2026-01-04T20:12:52.309163"
+      }
+    ],
+    "summary": {
+      "total": 5,
+      "successful": 4,
+      "failed": 1
+    }
+  },
+  "review_type": null,
+  "parameters": {
+    "review_types": [
+      "ENVB",
+      "ENVEO",
+      "ENVEU",
+      "ENVF",
+      "ENVUK"
+    ],
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 65.817007
+}
