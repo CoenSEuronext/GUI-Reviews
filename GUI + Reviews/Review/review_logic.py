@@ -84,6 +84,11 @@ from .reviews.c6rip_review import run_c6rip_review
 from .reviews.infrp_review import run_infrp_review
 from .reviews.es2pr_review_backup import run_es2pr_review_backup
 from .reviews.envu_review import run_envu_review
+from .reviews.enveo_review import run_enveo_review
+from .reviews.enveu_review import run_enveu_review
+from .reviews.envf_review import run_envf_review
+from .reviews.envuk_review import run_envuk_review
+from .reviews.envw_review import run_envw_review
 
 # Add a thread-local storage for better error handling in concurrent scenarios
 thread_local = threading.local()
@@ -171,7 +176,12 @@ REVIEW_FUNCTIONS = {
     "C6RIP": run_c6rip_review,
     "INFRP": run_infrp_review,
     "ES2PR_BACKUP": run_es2pr_review_backup,
-    "ENVU": run_envu_review
+    "ENVU": run_envu_review,
+    "ENVUK": run_envuk_review,
+    "ENVEO": run_enveo_review,
+    "ENVEU": run_enveu_review,
+    "ENVF": run_envf_review,
+    "ENVW": run_envw_review,
 }
 
 def run_review(review_type, **kwargs):

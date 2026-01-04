@@ -144,8 +144,7 @@ class PersistentTaskManager:
                     co_date=task.parameters['co_date'],
                     effective_date=task.parameters['effective_date'],
                     index=task.parameters['index'],
-                    isin=task.parameters['isin'],
-                    currency=task.parameters['currency']
+                    isin=task.parameters['isin']
                 )
                 
                 # Update task with results
@@ -240,8 +239,7 @@ class PersistentTaskManager:
                             co_date=task.parameters['co_date'],
                             effective_date=task.parameters['effective_date'],
                             index=index_config["index"],
-                            isin=index_config["isin"],
-                            currency=task.parameters['currency']
+                            isin=index_config["isin"]
                         )
                         
                         # Format result for batch response

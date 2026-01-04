@@ -1,0 +1,26 @@
+{
+  "task_id": "220644bd-41e6-42b8-827b-29cee1ddbdb5",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-31T13:35:06.832696",
+  "started_at": "2025-12-31T13:35:06.836104",
+  "completed_at": "2025-12-31T13:35:18.311554",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "output_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVEO_review_20251231_133518.xlsx"
+  },
+  "review_type": "ENVEO",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVEO",
+    "isin": "QS0011256201",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 11.474467
+}

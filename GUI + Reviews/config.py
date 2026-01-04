@@ -415,6 +415,31 @@ INDEX_CONFIGS = {
         "index": "ENVU",
         "isin": "QS0011250931",
         "output_key": "envu_path"
+    },
+    "ENVEO": {
+        "index": "ENVEO",
+        "isin": "QS0011256201",
+        "output_key": "enveo_path"
+    },
+    "ENVEU": {
+        "index": "ENVEU",
+        "isin": "QS0011250873",
+        "output_key": "enveu_path"
+    },
+    "ENVF": {
+        "index": "ENVF",
+        "isin": "QS0011250907",
+        "output_key": "envf_path"
+    },
+    "ENVUK": {
+        "index": "ENVUK",
+        "isin": "QS0011250931",
+        "output_key": "envuk_path"
+    },
+    "ENVW": {
+        "index": "ENVW",
+        "isin": "QS0011250840",
+        "output_key": "envw_path"
     }
     # Add new indices here following the same pattern
 }

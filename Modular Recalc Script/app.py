@@ -1,14 +1,15 @@
 import pandas as pd
 import datetime
 import os
-
-# Input EOD to be recalculated
-RELEVANT_EOD_DATE = "20251216"
-# Stock prices dictionary
-stock_prices = {
-    "LLYVA.O": 82.09,
-    "LLYVK.O": 84.78
-}
+from config import (
+    RELEVANT_EOD_DATE,
+    stock_prices,
+    BASE_PATH,
+    OUTPUT_DIR,
+    mnemonics,
+    mnemonics_tr4_perc,
+    mnemonics_tr4_points
+)
 
 # Get current timestamp for the output filename
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -28,27 +29,6 @@ def get_previous_business_day(date_str):
     return prev_day.strftime("%Y%m%d")
 
 
-# List of Price Index mnemonics to process
-mnemonics = [
-    "EDWPT",
-    "EWSL",
-    "EWMS",
-    "DNAPT",
-    "EUSPT",
-    "EWSL",
-    "EUMS",
-    "EUSL"
-]
-
-# Insert Index to be calculated + Underlying Index
-mnemonics_tr4_perc = {
-
-    }
-
-# Insert Index to be calculated + Underlying Index
-mnemonics_tr4_points = {
-
-}
 def load_data_with_encoding_fallback():
     """Load data with encoding fallback mechanism - combines US and EU files"""
     encodings = ['latin1', 'windows-1252', 'utf-8']
@@ -60,24 +40,21 @@ def load_data_with_encoding_fallback():
     prev_stock_eod_date = get_previous_business_day(current_stock_eod_date)
     prev_index_eod_date = get_previous_business_day(current_index_eod_date)
     
-    # Use only the primary path
-    base_path = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
-    
     for encoding in encodings:
         try:
             print(f"Trying to load data with {encoding} encoding...")
             
             # US File paths
-            us_stock_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_STOCK_{current_stock_eod_date}.csv")
-            us_index_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_INDEX_{current_index_eod_date}.csv")
-            us_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_STOCK_{prev_stock_eod_date}.csv")
-            us_index_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_NXTD_INDEX_{prev_index_eod_date}.csv")
+            us_stock_eod_path = os.path.join(BASE_PATH, f"TTMIndexUS1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
+            us_index_eod_path = os.path.join(BASE_PATH, f"TTMIndexUS1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
+            us_stock_eod_t1_path = os.path.join(BASE_PATH, f"TTMIndexUS1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
+            us_index_eod_t1_path = os.path.join(BASE_PATH, f"TTMIndexUS1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
             
             # EU File paths
-            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_STOCK_{current_stock_eod_date}.csv")
-            eu_index_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_INDEX_{current_index_eod_date}.csv")
-            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_STOCK_{prev_stock_eod_date}.csv")
-            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_NXTD_INDEX_{prev_index_eod_date}.csv")
+            eu_stock_eod_path = os.path.join(BASE_PATH, f"TTMIndexEU1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
+            eu_index_eod_path = os.path.join(BASE_PATH, f"TTMIndexEU1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
+            eu_stock_eod_t1_path = os.path.join(BASE_PATH, f"TTMIndexEU1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
+            eu_index_eod_t1_path = os.path.join(BASE_PATH, f"TTMIndexEU1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
             
             # Load US dataframes
             us_stock_eod_df = pd.read_csv(us_stock_eod_path, sep=';', encoding=encoding)
@@ -435,7 +412,7 @@ def calculate_decrement_points_level(mnemo, isin, index_eod_df, index_eod_df_t1,
 
 def save_results_to_excel(results_df, decrement_df, decrement_points_df, stock_eod_df, stock_eod_df_t1, index_eod_df, index_eod_df_t1, timestamp):
     """Save all results to Excel with proper sheet names"""
-    output_path = fr"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script\Output\Level_Recalc_{timestamp}.xlsx"
+    output_path = os.path.join(OUTPUT_DIR, f"Level_Recalc_{timestamp}.xlsx")
     
     with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         results_df.to_excel(writer, sheet_name='Index_Totals', index=False)

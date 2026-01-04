@@ -1,0 +1,24 @@
+{
+  "task_id": "ecd87dc9-5687-411d-8683-de66be5ff6f4",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-31T13:29:26.221171",
+  "started_at": "2025-12-31T13:29:26.221171",
+  "completed_at": "2025-12-31T13:29:36.918596",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: Universe reference dataframe 'eurozone_300' is empty",
+  "error": "Error during review calculation: Universe reference dataframe 'eurozone_300' is empty",
+  "result_data": null,
+  "review_type": "ENVEO",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVEO",
+    "isin": "QS0011256201",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 10.685038
+}

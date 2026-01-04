@@ -1,0 +1,26 @@
+{
+  "task_id": "994bd7fd-2f62-420a-92d1-bfe7478a8660",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-31T14:51:46.056002",
+  "started_at": "2025-12-31T14:51:46.060763",
+  "completed_at": "2025-12-31T14:52:00.012618",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "envw_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVW_df_20251231_145158.xlsx"
+  },
+  "review_type": "ENVW",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVW",
+    "isin": "QS0011250840",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.951855
+}

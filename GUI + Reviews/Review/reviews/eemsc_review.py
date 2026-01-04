@@ -47,7 +47,7 @@ def run_eemsc_review(date, effective_date, co_date, index="EEMSC", isin="NLIX000
         # Set data folder for current month
         current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
 
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         ref_data = load_reference_data(
             current_data_folder, 

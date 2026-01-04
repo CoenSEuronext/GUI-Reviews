@@ -3,22 +3,20 @@ import datetime
 import os
 
 # Input EOD to be recalculated
-RELEVANT_EOD_DATE = "20251216"
+RELEVANT_EOD_DATE = "20251224"
 
 # Stock prices dictionary
 stock_prices = {
-    "LLYVA.O": 82.09,
-    "LLYVK.O": 84.78
+    "LLYVA.O": 0,
+    "SPR.N": 0
 }
 
 
-# NEW: Free Float Coefficient replacements
 # Format: {('ISIN', 'Index'): new_free_float_coeff}
 free_float_replacements = {
 
 }
 
-# NEW: Divisor replacements
 # Format: {'Mnemo': new_divisor}
 divisor_replacements = {
 
@@ -64,7 +62,7 @@ mnemonics_tr4_points = {
 }
 
 def load_data_with_encoding_fallback():
-    """Load data with encoding fallback mechanism - EU files only"""
+    """Load data with encoding fallback mechanism - combines US and EU files"""
     encodings = ['latin1', 'windows-1252', 'utf-8']
     
     # File date configuration
@@ -74,27 +72,45 @@ def load_data_with_encoding_fallback():
     prev_stock_eod_date = get_previous_business_day(current_stock_eod_date)
     prev_index_eod_date = get_previous_business_day(current_index_eod_date)
     
-    # Use only the primary path
+    # Base path
     base_path = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
     
     for encoding in encodings:
         try:
             print(f"Trying to load data with {encoding} encoding...")
             
-            # EU File paths only
-            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
-            eu_index_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
-            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
-            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
+            # US File paths
+            us_stock_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
+            us_index_eod_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
+            us_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
+            us_index_eod_t1_path = os.path.join(base_path, f"TTMIndexUS1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
             
-            # Load EU dataframes only
-            stock_eod_df = pd.read_csv(eu_stock_eod_path, sep=';', encoding=encoding)
-            index_eod_df = pd.read_csv(eu_index_eod_path, sep=';', encoding=encoding)
-            stock_eod_df_t1 = pd.read_csv(eu_stock_eod_t1_path, sep=';', encoding=encoding)
-            index_eod_df_t1 = pd.read_csv(eu_index_eod_t1_path, sep=';', encoding=encoding)
+            # EU File paths
+            eu_stock_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_STOCK_{current_stock_eod_date}.csv")
+            eu_index_eod_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_INDEX_{current_index_eod_date}.csv")
+            eu_stock_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_STOCK_{prev_stock_eod_date}.csv")
+            eu_index_eod_t1_path = os.path.join(base_path, f"TTMIndexEU1_GIS_EOD_INDEX_{prev_index_eod_date}.csv")
             
-            print(f"Successfully loaded EU data with {encoding} encoding")
-            print(f"EU data sizes:")
+            # Load US dataframes
+            us_stock_eod_df = pd.read_csv(us_stock_eod_path, sep=';', encoding=encoding)
+            us_index_eod_df = pd.read_csv(us_index_eod_path, sep=';', encoding=encoding)
+            us_stock_eod_df_t1 = pd.read_csv(us_stock_eod_t1_path, sep=';', encoding=encoding)
+            us_index_eod_df_t1 = pd.read_csv(us_index_eod_t1_path, sep=';', encoding=encoding)
+            
+            # Load EU dataframes
+            eu_stock_eod_df = pd.read_csv(eu_stock_eod_path, sep=';', encoding=encoding)
+            eu_index_eod_df = pd.read_csv(eu_index_eod_path, sep=';', encoding=encoding)
+            eu_stock_eod_df_t1 = pd.read_csv(eu_stock_eod_t1_path, sep=';', encoding=encoding)
+            eu_index_eod_df_t1 = pd.read_csv(eu_index_eod_t1_path, sep=';', encoding=encoding)
+            
+            # Combine US and EU dataframes
+            stock_eod_df = pd.concat([us_stock_eod_df, eu_stock_eod_df], ignore_index=True)
+            index_eod_df = pd.concat([us_index_eod_df, eu_index_eod_df], ignore_index=True)
+            stock_eod_df_t1 = pd.concat([us_stock_eod_df_t1, eu_stock_eod_df_t1], ignore_index=True)
+            index_eod_df_t1 = pd.concat([us_index_eod_df_t1, eu_index_eod_df_t1], ignore_index=True)
+            
+            print(f"Successfully loaded and combined US and EU data with {encoding} encoding")
+            print(f"Combined data sizes:")
             print(f"  Stock EOD: {len(stock_eod_df)} rows")
             print(f"  Index EOD: {len(index_eod_df)} rows")
             print(f"  Stock EOD T-1: {len(stock_eod_df_t1)} rows")

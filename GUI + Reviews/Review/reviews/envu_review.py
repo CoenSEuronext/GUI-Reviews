@@ -11,8 +11,8 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250857", 
-                    area="US", area2="EU", type="STOCK", universe="na500", 
+def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011256169", 
+                    area="US", area2="EU", type="STOCK", universe="north_america_500", 
                     feed="Reuters", currency="USD", year=None):
    
     try:
@@ -24,17 +24,25 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         logger.info("Loading reference data...")
         # Load Euronext North America 500, plus Sustainalytics data
-        ref_data = load_reference_data(current_data_folder, ['ff', 'north_america_500', 'icb', 'sustainalytics'])
+        ref_data = load_reference_data(current_data_folder, ['ff', universe, 'icb', 'sustainalytics'])
         
         # Filter symbols once
         symbols_filtered = stock_eod_df[
             stock_eod_df['#Symbol'].str.len() < 12
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
 
+        # Filter stock_eod_df for rows where Index Curr equals the currency parameter
+        fx_data_filtered = stock_eod_df[
+            stock_eod_df['Index Curr'] == currency
+        ][['Currency', '#Symbol', 'FX/Index Ccy', 'Index Curr']].drop_duplicates(subset='#Symbol', keep='first')
+
+        # Remove 'Index Curr' from the columns we're selecting
+        fx_data_filtered = fx_data_filtered[['Currency', '#Symbol', 'FX/Index Ccy']]
+        
         # Chain all data preparation operations
         base_df = (ref_data['north_america_500']
             # Merge symbols
@@ -45,12 +53,13 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
                 how='left'
             )
             .drop('Isin Code', axis=1)
-            # Merge FX data
+            # Merge FX data - matching Currency with Currency from stock_eod_df
             .merge(
-                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
-                on='#Symbol',
+                fx_data_filtered,
+                on=['#Symbol', 'Currency'],  # Simplified - merge on both columns
                 how='left'
             )
+            # Don't drop 'Currency' - we need it later
             # Merge EOD prices
             .merge(
                 stock_eod_df[['#Symbol', 'Close Prc']].drop_duplicates(subset='#Symbol', keep='first'),
@@ -79,7 +88,6 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
             )
             .drop('ISIN Code:', axis=1)
         )
-        
         # Validate data loading
         if base_df is None or len(base_df) == 0:
             raise ValueError("Failed to load one or more required reference data files")
@@ -177,7 +185,7 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
         # Calculate Number of Shares based on weights
         # This ensures each constituent's market cap reflects its target weight
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == str(isin).strip(), 'Mkt Cap'].iloc[0]
-        
+        index_mcap = 3248995.7727602
         selection_df['Target_Market_Cap'] = selection_df['Weight_Final'] * index_mcap
         selection_df['Number_of_Shares_Calculated'] = np.round(
             selection_df['Target_Market_Cap'] / 
@@ -207,7 +215,7 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
                 'ISIN': 'ISIN Code',
                 'Free Float companies': 'Free Float',
                 'Capping_Factor': 'Capping Factor', 
-                'Number_of_Shares_Calculated': 'Number of Shares'
+                'Number_of_Shares_Calculated': 'Number of Shares',
             })
             .sort_values('Company')
         )
@@ -232,11 +240,11 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
            
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            ENVU_path = os.path.join(output_dir, f'ENVU_df_{timestamp}.xlsx')
+            envu_path = os.path.join(output_dir, f'ENVU_df_{timestamp}.xlsx')
            
             # Save output with multiple sheets
-            logger.info(f"Saving ENVU output to: {ENVU_path}")
-            with pd.ExcelWriter(ENVU_path) as writer:
+            logger.info(f"Saving ENVU output to: {envu_path}")
+            with pd.ExcelWriter(envu_path) as writer:
                 ENVU_df.to_excel(writer, sheet_name=index + ' Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
@@ -249,7 +257,7 @@ def run_envu_review(date, co_date, effective_date, index="ENVU", isin="QS0011250
                 "status": "success",
                 "message": "Review completed successfully",
                 "data": {
-                    "ENVU_path": ENVU_path}
+                    "envu_path": envu_path}
             }
            
         except Exception as e:

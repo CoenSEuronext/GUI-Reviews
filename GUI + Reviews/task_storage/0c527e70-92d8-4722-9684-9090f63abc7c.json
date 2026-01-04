@@ -1,0 +1,23 @@
+{
+  "task_id": "0c527e70-92d8-4722-9684-9090f63abc7c",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-04T18:54:22.664092",
+  "started_at": "2026-01-04T18:54:22.666614",
+  "completed_at": "2026-01-04T18:54:36.721777",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'Currency'",
+  "error": "Error during review calculation: 'Currency'",
+  "result_data": null,
+  "review_type": "ENVW",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVW",
+    "isin": "QS0011250840",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 14.05313
+}

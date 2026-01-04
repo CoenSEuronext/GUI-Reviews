@@ -8,8 +8,8 @@ from collections import defaultdict
 # ============================================================================
 
 # Date range for recalculation
-START_DATE = "20250623"
-END_DATE = "20250919"
+START_DATE = "20251024"
+END_DATE = "20251224"
 
 # Stock prices dictionary
 stock_prices = {
@@ -38,7 +38,6 @@ mnemonics = [
     "EUSPT",
     "EWSL",
     "EUMS"
-    
 ]
 
 # Insert Index to be calculated + Underlying Index
@@ -57,7 +56,7 @@ mnemonics_tr4_points = {
 BASE_PATH = r"\\pbgfshqa08601v\gis_ttm\Archive"
 
 # Output path
-OUTPUT_BASE_PATH = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script - Copy\Output"
+OUTPUT_BASE_PATH = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Recalc Script Single + Double Loop\Output"
 
 # ============================================================================
 # UTILITY FUNCTIONS

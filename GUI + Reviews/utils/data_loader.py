@@ -77,8 +77,26 @@ def load_eod_data(date, co_date, area, area2, dlf_folder):
     )
     stock_co_df = stock_co_df.rename(columns={'Curr': 'Index Curr'}).drop(columns=['Mnemo_index'])
     
-    return index_eod_df, stock_eod_df, stock_co_df
+    # CREATE FX LOOKUP TABLE - All unique currency pairs with their FX rates
+    # This provides a comprehensive lookup for any Currency -> Index Curr conversion
+    fx_lookup_df = stock_eod_df[['Currency', 'Index Curr', 'FX/Index Ccy']].copy()
+    
+    # Normalize GBX to GBP (British pence to pounds)
+    fx_lookup_df['Currency_Normalized'] = fx_lookup_df['Currency'].replace({'GBX': 'GBP'})
+    
+    # Get unique currency pairs (take first occurrence for duplicates)
+    fx_lookup_df = fx_lookup_df[['Currency_Normalized', 'Index Curr', 'FX/Index Ccy']].drop_duplicates(
+        subset=['Currency_Normalized', 'Index Curr'], 
+        keep='first'
+    ).rename(columns={'Currency_Normalized': 'From_Currency', 'Index Curr': 'To_Currency'})
+    
+    print(f"Created FX lookup table with {len(fx_lookup_df)} unique currency pairs")
+    print(f"Available currency pairs: {fx_lookup_df['From_Currency'].nunique()} currencies -> {fx_lookup_df['To_Currency'].nunique()} index currencies")
+    
+    return index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df
 
+
+# Rest of load_reference_data stays the same...
 def load_reference_data(current_data_folder, required_files=None, universe_name=None, sheet_names=None):
     """
     Load reference data files

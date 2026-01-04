@@ -23,7 +23,7 @@ def run_elux_review(date, co_date, effective_date, index="ELUX", isin="NLIX00008
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         logger.info("Loading reference data...")
         

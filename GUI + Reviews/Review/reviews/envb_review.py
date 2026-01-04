@@ -24,7 +24,7 @@ def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         logger.info("Loading reference data...")
         # Load Euronext Europe 500, plus Sustainalytics data
@@ -47,7 +47,7 @@ def run_envb_review(date, co_date, effective_date, index="ENVB", isin="QS0011256
             .drop('Isin Code', axis=1)
             # Merge FX data
             .merge(
-                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
                 on='#Symbol',
                 how='left'
             )

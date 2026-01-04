@@ -1,0 +1,43 @@
+2026-01-04 18:04:27,374 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:04:27,377 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:09:46,919 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:46] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:09:46,923 - Review.reviews.envw_review - INFO - Loading EOD data...
+2026-01-04 18:09:46,926 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:46] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:09:48,928 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:48] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:09:49,218 - Review.reviews.envw_review - INFO - Loading reference data...
+2026-01-04 18:09:50,958 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:50] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:09:52,941 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:52] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:09:54,989 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:54] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:09:56,950 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:56] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:09:58,949 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:09:58] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:10:00,944 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:00] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:10:02,934 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:02] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:10:03,391 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-04 18:10:03,483 - Review.reviews.envw_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2026-01-04 18:10:03,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\util\\_decorators.py', reloading
+2026-01-04 18:10:03,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py', reloading
+2026-01-04 18:10:03,489 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\formats\\excel.py', reloading
+2026-01-04 18:10:03,490 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_xlsxwriter.py', reloading
+2026-01-04 18:10:03,493 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py', reloading
+2026-01-04 18:10:03,494 - Review.reviews.envw_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envw_review.py", line 78, in run_envw_review
+    stock_eod_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2026-01-04 18:10:03,494 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\common.py', reloading

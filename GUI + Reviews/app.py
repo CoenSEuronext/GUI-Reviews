@@ -40,7 +40,6 @@ def create_app():
             date = request.form['date']
             co_date = request.form['co_date']
             effective_date = request.form['effective_date']
-            currency = request.form['currency']
             auto_open = request.form.get('auto_open') == 'on'
             
             try:
@@ -68,7 +67,6 @@ def create_app():
                 effective_date=effective_date,
                 index=index_config["index"],
                 isin=index_config["isin"],
-                currency=currency,
                 auto_open=auto_open,
                 is_local_request=is_local_request
             )
@@ -100,7 +98,6 @@ def create_app():
             date = request.form['date']
             co_date = request.form['co_date']
             effective_date = request.form['effective_date']
-            currency = request.form['currency']
             auto_open = request.form.get('auto_open') == 'on'
             
             if not review_types:
@@ -130,7 +127,6 @@ def create_app():
                 date=date,
                 co_date=co_date,
                 effective_date=effective_date,
-                currency=currency,
                 auto_open=auto_open,
                 is_local_request=is_local_request
             )

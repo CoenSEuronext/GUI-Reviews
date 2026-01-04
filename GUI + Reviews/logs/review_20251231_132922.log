@@ -1,0 +1,21 @@
+2025-12-31 13:29:23,252 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 13:29:23,254 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 13:29:23,276 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:23] "GET /task-status/06031fdd-2cb2-468a-80e5-3483c717949a HTTP/1.1" 200 -
+2025-12-31 13:29:26,233 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:26] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 13:29:26,233 - Review.reviews.enveo_review - INFO - Loading EOD data...
+2025-12-31 13:29:26,233 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:26] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:26,625 - Review.reviews.enveo_review - INFO - Loading reference data...
+2025-12-31 13:29:28,267 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:28] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:30,267 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:30] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:32,246 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:32] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:34,250 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:34] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:36,240 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:36] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:36,903 - Review.reviews.enveo_review - ERROR - Error during review calculation: Universe reference dataframe 'eurozone_300' is empty
+2025-12-31 13:29:36,903 - Review.reviews.enveo_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\enveo_review.py", line 62, in run_enveo_review
+    raise ValueError("Universe reference dataframe 'eurozone_300' is empty")
+ValueError: Universe reference dataframe 'eurozone_300' is empty
+
+2025-12-31 13:29:38,253 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:29:38] "GET /task-status/ecd87dc9-5687-411d-8683-de66be5ff6f4 HTTP/1.1" 200 -
+2025-12-31 13:29:48,419 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2025-12-31 13:29:48,419 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\_typing\\_shape.py', reloading

@@ -1,0 +1,14 @@
+2026-01-04 18:10:06,985 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:10:06,990 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:10:07,043 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:07] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:10:07,049 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:07] "GET /task-status/e1c6984a-04e8-4852-bcc0-6d27abc3ddcd HTTP/1.1" 200 -
+2026-01-04 18:10:10,703 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:10] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:10:10,707 - Review.reviews.envw_review - INFO - Loading EOD data...
+2026-01-04 18:10:10,710 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:10] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:12,715 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:12] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:12,867 - Review.reviews.envw_review - INFO - Loading reference data...
+2026-01-04 18:10:14,729 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:14] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:16,722 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:16] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:18,726 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:18] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:20,723 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:20] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:22,718 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:22] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -

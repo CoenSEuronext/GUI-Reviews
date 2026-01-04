@@ -48,7 +48,7 @@ class BatchProcessor:
                 "timestamp": dt.datetime.now().isoformat()
             }
 
-def run_batch_reviews(review_types, date, co_date, effective_date, currency, auto_open=False):
+def run_batch_reviews(review_types, date, co_date, effective_date, auto_open=False):
     """
     Run multiple reviews sequentially (one after another) to avoid conflicts
     
@@ -57,7 +57,6 @@ def run_batch_reviews(review_types, date, co_date, effective_date, currency, aut
         date (str): Calculation date
         co_date (str): Cut off date
         effective_date (str): Effective date
-        currency (str): Currency code
         auto_open (bool): Whether to auto-open files
     
     Returns:
@@ -77,8 +76,7 @@ def run_batch_reviews(review_types, date, co_date, effective_date, currency, aut
     common_params = {
         'date': date,
         'co_date': co_date,
-        'effective_date': effective_date,
-        'currency': currency
+        'effective_date': effective_date
     }
     
     print(f"Starting sequential processing of {len(unique_review_types)} reviews...")
@@ -133,7 +131,7 @@ def run_batch_reviews(review_types, date, co_date, effective_date, currency, aut
     
     return results
 
-def run_batch_reviews_with_progress(review_types, date, co_date, effective_date, currency, auto_open=False):
+def run_batch_reviews_with_progress(review_types, date, co_date, effective_date, auto_open=False):
     """
     Run multiple reviews with progress updates (generator function for streaming)
     
@@ -147,8 +145,7 @@ def run_batch_reviews_with_progress(review_types, date, co_date, effective_date,
     common_params = {
         'date': date,
         'co_date': co_date,
-        'effective_date': effective_date,
-        'currency': currency
+        'effective_date': effective_date
     }
     
     # Yield initial progress

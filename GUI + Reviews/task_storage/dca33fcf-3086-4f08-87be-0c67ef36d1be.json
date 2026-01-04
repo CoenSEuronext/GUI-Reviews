@@ -1,0 +1,24 @@
+{
+  "task_id": "dca33fcf-3086-4f08-87be-0c67ef36d1be",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-04T18:26:03.127360",
+  "started_at": "2026-01-04T18:26:03.130894",
+  "completed_at": "2026-01-04T18:26:17.917456",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'Currency (Local)'",
+  "error": "Error during review calculation: 'Currency (Local)'",
+  "result_data": null,
+  "review_type": "ENVU",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVU",
+    "isin": "QS0011250931",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 14.782119
+}

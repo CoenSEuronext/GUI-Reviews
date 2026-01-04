@@ -193,7 +193,7 @@ def safe_file_operation(operation, file_path, error_msg):
         return None
 
 def should_copy_file(src_path, dest_path):
-    """Check if file should be copied with network-safe operations - FIXED"""
+    """Check if file should be copied with network-safe operations - IMPROVED"""
     try:
         # If destination doesn't exist, definitely copy
         if not os.path.exists(dest_path):
@@ -210,8 +210,35 @@ def should_copy_file(src_path, dest_path):
                 logger.info(f"File {os.path.basename(src_path)} has different size - will copy")
                 return True
             
-            # FIXED: If sizes match, check modification time
-            # This catches files that were updated but kept the same size
+            # NEW: For manual files specifically, always check content hash
+            # Manual files are regenerated and may have same size but different content
+            if "_GIS_MANUAL_" in os.path.basename(src_path):
+                import hashlib
+                
+                # Compare file hashes to detect content changes
+                def get_file_hash(filepath):
+                    hasher = hashlib.md5()
+                    with open(filepath, 'rb') as f:
+                        # Read in chunks to handle large files
+                        for chunk in iter(lambda: f.read(8192), b''):
+                            hasher.update(chunk)
+                    return hasher.hexdigest()
+                
+                try:
+                    src_hash = get_file_hash(src_path)
+                    dest_hash = get_file_hash(dest_path)
+                    
+                    if src_hash != dest_hash:
+                        logger.info(f"Manual file {os.path.basename(src_path)} has different content (hash mismatch) - will copy")
+                        return True
+                    else:
+                        logger.debug(f"Manual file {os.path.basename(src_path)} content is identical - skipping")
+                        return False
+                except Exception as e:
+                    logger.warning(f"Could not compare hashes for manual file, will copy: {str(e)}")
+                    return True
+            
+            # For non-manual files, check modification time
             src_mtime = os.path.getmtime(src_path)
             dest_mtime = os.path.getmtime(dest_path)
             

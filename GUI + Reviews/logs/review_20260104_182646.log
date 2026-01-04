@@ -1,0 +1,37 @@
+2026-01-04 18:26:46,902 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:26:46,904 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:26:46,946 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:46] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:26:46,949 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:26:46,954 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:46] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:26:48,964 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:48] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:26:49,173 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:26:50,966 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:50] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:26:52,974 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:52] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:26:54,976 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:54] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:26:56,957 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:56] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:26:58,966 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:26:58] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:27:00,676 - Review.reviews.envu_review - ERROR - Error during review calculation: 'Currency (Local) '
+2026-01-04 18:27:00,681 - Review.reviews.envu_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envu_review.py", line 54, in run_envu_review
+    .merge(
+     ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'Currency (Local) '
+
+2026-01-04 18:27:00,958 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:27:00] "GET /task-status/8be0891f-ddcb-4fe1-9c93-bf70c43ee9e8 HTTP/1.1" 200 -
+2026-01-04 18:27:53,707 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:27:53,707 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:27:53,713 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

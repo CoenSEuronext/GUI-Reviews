@@ -1,0 +1,66 @@
+2025-12-31 14:54:42,161 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 14:54:42,172 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 14:54:45,347 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:45] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 14:54:45,356 - Review.reviews.envw_review - INFO - Loading EOD data...
+2025-12-31 14:54:45,360 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:45] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:47,373 - Review.reviews.envw_review - INFO - Loading reference data...
+2025-12-31 14:54:47,373 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:47] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:49,379 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:49] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:51,406 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:51] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:53,423 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:53] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:55,438 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:55] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:57,378 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:57] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:54:57,955 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2025-12-31 14:54:58,012 - Review.reviews.envw_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2025-12-31 14:54:58,015 - Review.reviews.envw_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envw_review.py", line 85, in run_envw_review
+    fx_merge_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2025-12-31 14:54:59,358 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:59] "GET /task-status/6c8fffd6-b5ae-403f-9356-3ae8e1005099 HTTP/1.1" 200 -
+2025-12-31 14:55:03,206 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:03] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 14:55:03,207 - Review.reviews.envw_review - INFO - Loading EOD data...
+2025-12-31 14:55:03,207 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:03] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:05,227 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:05] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:05,274 - Review.reviews.envw_review - INFO - Loading reference data...
+2025-12-31 14:55:07,222 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:07] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:09,239 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:09] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:11,225 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:11] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:13,238 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:13] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:15,224 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:15] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:15,431 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2025-12-31 14:55:15,706 - Review.reviews.envw_review - INFO - Universe rows: 5297 | Missing #Symbol: 25 | Missing FX: 25 | Missing EOD price: 25
+2025-12-31 14:55:15,706 - Review.reviews.envw_review - INFO - Starting universe size: 5297 stocks
+2025-12-31 14:55:15,706 - Review.reviews.envw_review - INFO - Step 1: Using universe 'EDWPT' as starting set...
+2025-12-31 14:55:15,706 - Review.reviews.envw_review - INFO - Step 2: Applying ESG compliance screening...
+2025-12-31 14:55:15,706 - Review.reviews.envw_review - INFO - Universe size after ESG screening: 5293 stocks
+2025-12-31 14:55:15,706 - Review.reviews.envw_review - INFO - Step 3: Ranking by ESG Risk Score and Free Float Market Cap...
+2025-12-31 14:55:15,718 - Review.reviews.envw_review - INFO - Step 4: Selecting top 120 constituents...
+2025-12-31 14:55:15,718 - Review.reviews.envw_review - INFO - Selected 120 constituents for ENVW index
+2025-12-31 14:55:15,718 - Review.reviews.envw_review - INFO - Calculating ESG-based weights...
+2025-12-31 14:55:15,720 - Review.reviews.envw_review - INFO - Applying 10% weight cap...
+2025-12-31 14:55:15,720 - Review.reviews.envw_review - INFO - Capping completed in 0 iterations
+2025-12-31 14:55:15,720 - Review.reviews.envw_review - INFO - Weight range: 0.70% to 1.59%
+2025-12-31 14:55:15,724 - Review.reviews.envw_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-31 14:55:15,727 - Review.reviews.envw_review - INFO - Inclusions: 113, Exclusions: 113
+2025-12-31 14:55:15,727 - Review.reviews.envw_review - INFO - Saving ENVW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVW_df_20251231_145515.xlsx
+2025-12-31 14:55:17,215 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:55:17] "GET /task-status/4a574201-de54-4de6-a15e-31e0a1227af1 HTTP/1.1" 200 -
+2025-12-31 14:55:58,025 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2025-12-31 14:55:58,026 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2025-12-31 14:55:58,027 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading

@@ -1,0 +1,154 @@
+2026-01-04 18:37:33,438 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:37:33,441 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:37:33,709 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:33] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:37:33,711 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:37:33,714 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:33] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:35,716 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:35] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:35,871 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:37:37,728 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:37] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:39,766 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:39] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:41,720 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:41] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:43,718 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:43] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:45,730 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:45] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:47,555 - Review.reviews.envu_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2026-01-04 18:37:47,566 - Review.reviews.envu_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envu_review.py", line 53, in run_envu_review
+    stock_eod_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2026-01-04 18:37:47,721 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:47] "GET /task-status/aa657664-aee7-46c3-a3ac-1b5ec3dd8536 HTTP/1.1" 200 -
+2026-01-04 18:37:52,602 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:52] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:37:52,603 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:37:52,608 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:52] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:37:54,623 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:54] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:37:54,700 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:37:56,623 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:56] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:37:58,614 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:37:58] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:00,621 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:00] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:02,717 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:02] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:04,622 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:04] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:06,619 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:06] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:08,702 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:08] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:10,653 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:10] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:12,663 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:12] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:14,611 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:14] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:16,611 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:16] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:38:17,430 - Review.reviews.envu_review - INFO - Starting universe size: 500 stocks
+2026-01-04 18:38:17,430 - Review.reviews.envu_review - INFO - Step 1: Using Euronext North America 500 universe...
+2026-01-04 18:38:17,430 - Review.reviews.envu_review - INFO - Excluding companies with Main Listing on Toronto Stock Exchange (MIC: XTSE)...
+2026-01-04 18:38:17,432 - Review.reviews.envu_review - INFO - Universe size after TSX exclusion: 456 stocks
+2026-01-04 18:38:17,432 - Review.reviews.envu_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 18:38:17,433 - Review.reviews.envu_review - INFO - Universe size after ESG screening: 453 stocks
+2026-01-04 18:38:17,433 - Review.reviews.envu_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2026-01-04 18:38:17,435 - Review.reviews.envu_review - INFO - Step 4: Selecting top 50 constituents...
+2026-01-04 18:38:17,435 - Review.reviews.envu_review - INFO - Selected 50 constituents for ENVU index
+2026-01-04 18:38:17,435 - Review.reviews.envu_review - INFO - Calculating ESG-based weights...
+2026-01-04 18:38:17,436 - Review.reviews.envu_review - INFO - Applying 10% weight cap...
+2026-01-04 18:38:17,437 - Review.reviews.envu_review - INFO - Capping completed in 0 iterations
+2026-01-04 18:38:17,437 - Review.reviews.envu_review - INFO - Weight range: 1.69% to 2.99%
+2026-01-04 18:38:17,441 - Review.reviews.envu_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 18:38:17,448 - Review.reviews.envu_review - INFO - Inclusions: 45, Exclusions: 45
+2026-01-04 18:38:17,449 - Review.reviews.envu_review - INFO - Saving ENVU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVU_df_20260104_183817.xlsx
+2026-01-04 18:38:18,611 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:38:18] "GET /task-status/f2395fe2-912e-4bcb-8066-ceec8d3d0c7c HTTP/1.1" 200 -
+2026-01-04 18:39:09,688 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:09] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:39:09,692 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:39:09,695 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:09] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:11,698 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:11] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:11,817 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:39:13,730 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:13] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:15,704 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:15] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:17,725 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:17] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:19,710 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:19] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:21,714 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:21] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:23,707 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:23] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:23,973 - Review.reviews.envu_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2026-01-04 18:39:23,974 - Review.reviews.envu_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envu_review.py", line 53, in run_envu_review
+    stock_eod_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2026-01-04 18:39:25,696 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:25] "GET /task-status/83516d82-70d6-4590-ac06-27d28c2ba246 HTTP/1.1" 200 -
+2026-01-04 18:39:30,795 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:30] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:39:30,797 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:39:30,800 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:30] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:32,811 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:32] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:33,030 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:39:34,822 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:34] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:36,811 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:36] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:38,814 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:38] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:40,809 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:40] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:42,816 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:42] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:44,885 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:44] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:46,860 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:46] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:48,863 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:48] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:50,878 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:50] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:52,804 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:52] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:54,803 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:54] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:39:55,990 - Review.reviews.envu_review - INFO - Starting universe size: 500 stocks
+2026-01-04 18:39:55,991 - Review.reviews.envu_review - INFO - Step 1: Using Euronext North America 500 universe...
+2026-01-04 18:39:55,991 - Review.reviews.envu_review - INFO - Excluding companies with Main Listing on Toronto Stock Exchange (MIC: XTSE)...
+2026-01-04 18:39:55,993 - Review.reviews.envu_review - INFO - Universe size after TSX exclusion: 456 stocks
+2026-01-04 18:39:55,994 - Review.reviews.envu_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 18:39:55,995 - Review.reviews.envu_review - INFO - Universe size after ESG screening: 453 stocks
+2026-01-04 18:39:55,996 - Review.reviews.envu_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2026-01-04 18:39:56,001 - Review.reviews.envu_review - INFO - Step 4: Selecting top 50 constituents...
+2026-01-04 18:39:56,002 - Review.reviews.envu_review - INFO - Selected 50 constituents for ENVU index
+2026-01-04 18:39:56,003 - Review.reviews.envu_review - INFO - Calculating ESG-based weights...
+2026-01-04 18:39:56,006 - Review.reviews.envu_review - INFO - Applying 10% weight cap...
+2026-01-04 18:39:56,008 - Review.reviews.envu_review - INFO - Capping completed in 0 iterations
+2026-01-04 18:39:56,009 - Review.reviews.envu_review - INFO - Weight range: 1.69% to 2.99%
+2026-01-04 18:39:56,014 - Review.reviews.envu_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 18:39:56,024 - Review.reviews.envu_review - INFO - Inclusions: 45, Exclusions: 45
+2026-01-04 18:39:56,026 - Review.reviews.envu_review - INFO - Saving ENVU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVU_df_20260104_183956.xlsx
+2026-01-04 18:39:56,812 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:39:56] "GET /task-status/a179f392-7612-44f1-aa0c-69ebe9024b3d HTTP/1.1" 200 -
+2026-01-04 18:41:16,003 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\__init__.py', reloading
+2026-01-04 18:41:16,013 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\app.py', reloading
+2026-01-04 18:41:16,034 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2026-01-04 18:41:16,044 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2026-01-04 18:41:16,056 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\templating.py', reloading
+2026-01-04 18:41:16,056 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2026-01-04 18:41:16,064 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2026-01-04 18:41:16,097 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\globals.py', reloading
+2026-01-04 18:41:16,097 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\wrappers.py', reloading
+2026-01-04 18:41:16,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2026-01-04 18:41:16,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2026-01-04 18:41:16,112 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2026-01-04 18:41:16,115 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\json\\__init__.py', reloading
+2026-01-04 18:41:16,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2026-01-04 18:41:16,120 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2026-01-04 18:41:16,159 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\config.py', reloading
+2026-01-04 18:41:16,168 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\flask\\typing.py', reloading
+2026-01-04 18:41:16,172 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2026-01-04 18:41:16,176 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading

@@ -1,0 +1,42 @@
+2026-01-04 18:28:01,007 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:28:01,012 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:28:01,061 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:01] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:28:01,064 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:28:01,073 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:01] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:03,085 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:03] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:03,193 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:28:05,081 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:05] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:07,074 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:07] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:09,080 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:09] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:11,075 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:11] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:13,085 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:13] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:15,087 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:15] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:28:15,197 - Review.reviews.envu_review - INFO - Starting universe size: 500 stocks
+2026-01-04 18:28:15,197 - Review.reviews.envu_review - INFO - Step 1: Using Euronext North America 500 universe...
+2026-01-04 18:28:15,197 - Review.reviews.envu_review - INFO - Excluding companies with Main Listing on Toronto Stock Exchange (MIC: XTSE)...
+2026-01-04 18:28:15,198 - Review.reviews.envu_review - INFO - Universe size after TSX exclusion: 456 stocks
+2026-01-04 18:28:15,198 - Review.reviews.envu_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 18:28:15,199 - Review.reviews.envu_review - INFO - Universe size after ESG screening: 453 stocks
+2026-01-04 18:28:15,200 - Review.reviews.envu_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2026-01-04 18:28:15,201 - Review.reviews.envu_review - INFO - Step 4: Selecting top 50 constituents...
+2026-01-04 18:28:15,202 - Review.reviews.envu_review - INFO - Selected 50 constituents for ENVU index
+2026-01-04 18:28:15,202 - Review.reviews.envu_review - INFO - Calculating ESG-based weights...
+2026-01-04 18:28:15,203 - Review.reviews.envu_review - INFO - Applying 10% weight cap...
+2026-01-04 18:28:15,204 - Review.reviews.envu_review - INFO - Capping completed in 0 iterations
+2026-01-04 18:28:15,204 - Review.reviews.envu_review - INFO - Weight range: 1.69% to 2.99%
+2026-01-04 18:28:15,206 - Review.reviews.envu_review - ERROR - Error during review calculation: "['Currency'] not in index"
+2026-01-04 18:28:15,211 - Review.reviews.envu_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envu_review.py", line 201, in run_envu_review
+    selection_df[[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency'] not in index"
+
+2026-01-04 18:28:15,211 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2026-01-04 18:28:15,820 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:28:15,820 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

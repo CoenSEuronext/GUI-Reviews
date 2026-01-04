@@ -1,7 +1,12 @@
 What the project does:
+app.py
 It replaces incorrect prices in both EU and US downloadfiles and recalculates all indices that are asked to be recalculated.
+app_eu.py
+It replaces incorrect prices in both EU downloadfiles and recalculates all indices that are asked to be recalculated.
+app_us.py
+It replaces incorrect prices in both US downloadfiles and recalculates all indices that are asked to be recalculated.
 
-Perform the following steps in app.py
+All depend on the same config.py file that you need to configure by following the steps jotted down below:
 
 Step 1:
 input recalc date in RELEVANT_EOD_DATE

@@ -40,3 +40,4 @@ Capping rounding to 14
 
 Alle reviews openen en kijken of alle sheets alle benodigde datapunten + exclusion kolommen + capping kolommen + weighting kolommen hebben.
 
+Check of de addition colom van Index Currency HArd coded is in stock_eod_df data loader
