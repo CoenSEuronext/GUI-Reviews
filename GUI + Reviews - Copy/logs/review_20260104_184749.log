@@ -1,0 +1,40 @@
+2026-01-04 18:47:49,664 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:47:49,667 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:48:39,602 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:39] "GET / HTTP/1.1" 200 -
+2026-01-04 18:48:39,647 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:39] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2026-01-04 18:48:45,238 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:45] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:48:45,240 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:48:45,245 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:45] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:47,247 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:47] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:47,474 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:48:49,259 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:49] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:51,257 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:51] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:53,251 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:53] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:55,268 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:55] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:57,255 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:57] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:48:59,308 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:48:59] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:49:01,292 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:49:01] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:49:03,330 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:49:03] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:49:05,309 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:49:05] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:49:07,259 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:49:07] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:49:09,253 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:49:09] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:49:10,090 - Review.reviews.envu_review - INFO - Starting universe size: 500 stocks
+2026-01-04 18:49:10,091 - Review.reviews.envu_review - INFO - Step 1: Using Euronext North America 500 universe...
+2026-01-04 18:49:10,091 - Review.reviews.envu_review - INFO - Excluding companies with Main Listing on Toronto Stock Exchange (MIC: XTSE)...
+2026-01-04 18:49:10,092 - Review.reviews.envu_review - INFO - Universe size after TSX exclusion: 456 stocks
+2026-01-04 18:49:10,092 - Review.reviews.envu_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 18:49:10,093 - Review.reviews.envu_review - INFO - Universe size after ESG screening: 453 stocks
+2026-01-04 18:49:10,094 - Review.reviews.envu_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2026-01-04 18:49:10,097 - Review.reviews.envu_review - INFO - Step 4: Selecting top 50 constituents...
+2026-01-04 18:49:10,097 - Review.reviews.envu_review - INFO - Selected 50 constituents for ENVU index
+2026-01-04 18:49:10,097 - Review.reviews.envu_review - INFO - Calculating ESG-based weights...
+2026-01-04 18:49:10,099 - Review.reviews.envu_review - INFO - Applying 10% weight cap...
+2026-01-04 18:49:10,099 - Review.reviews.envu_review - INFO - Capping completed in 0 iterations
+2026-01-04 18:49:10,100 - Review.reviews.envu_review - INFO - Weight range: 1.69% to 2.99%
+2026-01-04 18:49:10,102 - Review.reviews.envu_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 18:49:10,106 - Review.reviews.envu_review - INFO - Inclusions: 45, Exclusions: 45
+2026-01-04 18:49:10,108 - Review.reviews.envu_review - INFO - Saving ENVU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVU_df_20260104_184910.xlsx
+2026-01-04 18:49:11,246 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:49:11] "GET /task-status/1ed15c4b-4800-40c9-b11b-ace3a4528146 HTTP/1.1" 200 -
+2026-01-04 18:50:39,319 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:50:39,320 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:50:39,320 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

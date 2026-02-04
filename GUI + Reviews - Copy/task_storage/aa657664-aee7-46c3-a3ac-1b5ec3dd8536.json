@@ -1,0 +1,24 @@
+{
+  "task_id": "aa657664-aee7-46c3-a3ac-1b5ec3dd8536",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-04T18:37:33.704372",
+  "started_at": "2026-01-04T18:37:33.709368",
+  "completed_at": "2026-01-04T18:37:47.602776",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'",
+  "error": "Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'",
+  "result_data": null,
+  "review_type": "ENVU",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVU",
+    "isin": "QS0011250931",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 13.891396
+}

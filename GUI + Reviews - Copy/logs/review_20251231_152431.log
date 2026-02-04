@@ -1,0 +1,33 @@
+2025-12-31 15:24:31,494 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 15:24:31,497 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 15:24:33,388 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:33] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 15:24:33,391 - Review.reviews.envu_review - INFO - Loading EOD data...
+2025-12-31 15:24:33,395 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:33] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:35,403 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:35] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:36,626 - Review.reviews.envu_review - INFO - Loading reference data...
+2025-12-31 15:24:37,411 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:37] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:39,411 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:39] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:41,404 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:41] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:43,420 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:43] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:45,414 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:45] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:47,424 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:47] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:24:47,921 - Review.reviews.envu_review - INFO - Starting universe size: 500 stocks
+2025-12-31 15:24:47,921 - Review.reviews.envu_review - INFO - Step 1: Using Euronext North America 500 universe...
+2025-12-31 15:24:47,922 - Review.reviews.envu_review - INFO - Excluding companies with Main Listing on Toronto Stock Exchange (MIC: XTSE)...
+2025-12-31 15:24:47,923 - Review.reviews.envu_review - INFO - Universe size after TSX exclusion: 456 stocks
+2025-12-31 15:24:47,923 - Review.reviews.envu_review - INFO - Step 2: Applying ESG compliance screening...
+2025-12-31 15:24:47,924 - Review.reviews.envu_review - INFO - Universe size after ESG screening: 453 stocks
+2025-12-31 15:24:47,926 - Review.reviews.envu_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2025-12-31 15:24:47,929 - Review.reviews.envu_review - INFO - Step 4: Selecting top 50 constituents...
+2025-12-31 15:24:47,929 - Review.reviews.envu_review - INFO - Selected 50 constituents for ENVU index
+2025-12-31 15:24:47,930 - Review.reviews.envu_review - INFO - Calculating ESG-based weights...
+2025-12-31 15:24:47,931 - Review.reviews.envu_review - INFO - Applying 10% weight cap...
+2025-12-31 15:24:47,932 - Review.reviews.envu_review - INFO - Capping completed in 0 iterations
+2025-12-31 15:24:47,932 - Review.reviews.envu_review - INFO - Weight range: 1.69% to 2.99%
+2025-12-31 15:24:47,937 - Review.reviews.envu_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-31 15:24:47,941 - Review.reviews.envu_review - INFO - Inclusions: 45, Exclusions: 45
+2025-12-31 15:24:47,942 - Review.reviews.envu_review - INFO - Saving ENVU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVU_df_20251231_152447.xlsx
+2025-12-31 15:24:49,409 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:24:49] "GET /task-status/6f4f17fa-4c8d-4e0b-aac3-494c7c10463b HTTP/1.1" 200 -
+2025-12-31 15:25:34,528 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2025-12-31 15:25:34,529 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2025-12-31 15:25:34,530 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

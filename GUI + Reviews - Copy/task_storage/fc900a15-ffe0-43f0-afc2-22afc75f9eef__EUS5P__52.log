@@ -1,0 +1,12 @@
+Starting EUS5P review at 2026-01-28 14:34:08.512795
+2026-01-28 14:34:08,812 - Review.reviews.eus5p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:09,379 - Review.reviews.eus5p_review - INFO - Loading reference data...
+2026-01-28 14:34:09,454 - Review.reviews.eus5p_review - INFO - Eurozone companies (EZ300): 300
+2026-01-28 14:34:09,454 - Review.reviews.eus5p_review - INFO - North America companies (NA500, excluding XTSE): 458
+2026-01-28 14:34:09,553 - Review.reviews.eus5p_review - INFO - Saving EUS5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUS5P_df_20260128_143409.xlsx
+Completed EUS5P review in 1.24 seconds

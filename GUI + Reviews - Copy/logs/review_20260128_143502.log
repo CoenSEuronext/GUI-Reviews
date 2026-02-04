@@ -1,0 +1,30 @@
+2026-01-28 14:35:02,863 - Review.reviews.jpcla_review - INFO - Loading EOD data...
+2026-01-28 14:35:03,648 - Review.reviews.jpcla_review - INFO - Loading reference data...
+2026-01-28 14:35:03,847 - Review.reviews.jpcla_review - INFO - Initial universe size: 500 companies
+2026-01-28 14:35:03,862 - Review.reviews.jpcla_review - INFO - Filtered to MIC = 'XTKS' (Japan): 342 companies
+2026-01-28 14:35:03,862 - Review.reviews.jpcla_review - INFO - Removed 158 companies with MIC != 'XTKS'
+2026-01-28 14:35:03,899 - Review.reviews.jpcla_review - INFO - Merging Oekom data points early...
+2026-01-28 14:35:03,904 - Review.reviews.jpcla_review - INFO - Oekom data merged successfully
+2026-01-28 14:35:03,904 - Review.reviews.jpcla_review - INFO - Trust Metric exclusions: 32
+2026-01-28 14:35:03,907 - Review.reviews.jpcla_review - INFO - NBR Overall Flag exclusions: 1
+2026-01-28 14:35:03,908 - Review.reviews.jpcla_review - INFO - APMines exclusions: 0
+2026-01-28 14:35:03,908 - Review.reviews.jpcla_review - INFO - BiologicalWeapons exclusions: 0
+2026-01-28 14:35:03,909 - Review.reviews.jpcla_review - INFO - ChemicalWeapons exclusions: 0
+2026-01-28 14:35:03,910 - Review.reviews.jpcla_review - INFO - ClusterMunitions exclusions: 0
+2026-01-28 14:35:03,910 - Review.reviews.jpcla_review - INFO - DepletedUranium exclusions: 0
+2026-01-28 14:35:03,911 - Review.reviews.jpcla_review - INFO - IncendiaryWeapons exclusions: 0
+2026-01-28 14:35:03,911 - Review.reviews.jpcla_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2026-01-28 14:35:03,912 - Review.reviews.jpcla_review - INFO - WhitePhosphorus exclusions: 2
+2026-01-28 14:35:03,912 - Review.reviews.jpcla_review - INFO - Coal Mining exclusions: 8
+2026-01-28 14:35:03,913 - Review.reviews.jpcla_review - INFO - Thermal Power exclusions: 11
+2026-01-28 14:35:03,914 - Review.reviews.jpcla_review - INFO - Oil Sands exclusions: 0
+2026-01-28 14:35:03,915 - Review.reviews.jpcla_review - INFO - Shale Oil/Gas exclusions: 7
+2026-01-28 14:35:03,915 - Review.reviews.jpcla_review - INFO - Total companies in XTKS universe: 342
+2026-01-28 14:35:03,915 - Review.reviews.jpcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 273.6
+2026-01-28 14:35:03,916 - Review.reviews.jpcla_review - INFO - Carbon Budget exclusions (rank > 273.6): 69
+2026-01-28 14:35:03,917 - Review.reviews.jpcla_review - INFO - Companies remaining after exclusions: 239
+2026-01-28 14:35:03,917 - Review.reviews.jpcla_review - INFO - Selected top 150 companies by ESG Performance Score
+2026-01-28 14:35:04,980 - Review.reviews.jpcla_review - INFO - Selected top 30 companies by FFMC
+2026-01-28 14:35:04,980 - Review.reviews.jpcla_review - INFO - Checking IsinCode FRESG0000181 in index_eod_df
+2026-01-28 14:35:04,980 - Review.reviews.jpcla_review - INFO - Found 1 matching rows
+2026-01-28 14:35:04,980 - Review.reviews.jpcla_review - INFO - Saving JPCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\JPCLA_df_20260128_143504.xlsx

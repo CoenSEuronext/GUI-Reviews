@@ -1,0 +1,6 @@
+2026-01-28 14:35:07,993 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+2026-01-28 14:35:08,580 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2026-01-28 14:35:08,763 - Review.reviews.sbf80_review - INFO - Initial selection_df shape: (120, 6)
+2026-01-28 14:35:08,798 - Review.reviews.sbf80_review - INFO - After merges, selection_df shape: (120, 11)
+2026-01-28 14:35:08,798 - Review.reviews.sbf80_review - INFO - FFMC CO calculated successfully
+2026-01-28 14:35:08,811 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\SBF80_df_20260128_143508.xlsx

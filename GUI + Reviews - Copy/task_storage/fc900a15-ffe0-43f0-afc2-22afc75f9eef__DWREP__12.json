@@ -1,0 +1,26 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__DWREP__12",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:33:03.008272",
+  "review_type": "DWREP",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "DWREP",
+    "isin": "NLIX00004894",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:33:03.043941",
+  "error": null,
+  "completed_at": "2026-01-28T14:33:05.465031",
+  "result_data": {
+    "dwrep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DWREP_df_20260128_143304.xlsx"
+  },
+  "duration_seconds": 2.405089,
+  "completed_at_review": "2026-01-28T14:33:05.465031"
+}

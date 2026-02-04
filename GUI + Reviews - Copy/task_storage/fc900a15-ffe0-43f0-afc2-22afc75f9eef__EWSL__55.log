@@ -1,0 +1,30 @@
+Starting EWSL review at 2026-01-28 14:34:13.567190
+2026-01-28 14:34:13,862 - Review.reviews.ewsl_review - INFO - Starting EWSL review calculation
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:14,497 - Review.reviews.ewsl_review - INFO - Found 3834 existing companies in EWSL
+2026-01-28 14:34:14,502 - Review.reviews.ewsl_review - INFO - 
+Overall EWSL Selection Summary:
+2026-01-28 14:34:14,502 - Review.reviews.ewsl_review - INFO - Total companies selected: 4079
+2026-01-28 14:34:14,503 - Review.reviews.ewsl_review - INFO -   - Existing companies selected: 3814
+2026-01-28 14:34:14,503 - Review.reviews.ewsl_review - INFO -   - New companies selected: 265
+2026-01-28 14:34:14,504 - Review.reviews.ewsl_review - INFO - Total FFMC covered: 14.73%
+2026-01-28 14:34:14,505 - Review.reviews.ewsl_review - INFO - 
+Applying proportional capping
+2026-01-28 14:34:14,507 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:34:14,508 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:14,508 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:14,508 - utils.capping_proportional - INFO -   Total companies: 4079
+2026-01-28 14:34:14,508 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:14,508 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:14,508 - utils.capping_proportional - INFO -   Max weight after capping: 0.002409
+2026-01-28 14:34:14,513 - Review.reviews.ewsl_review - INFO - 
+EWSL Changes Summary:
+2026-01-28 14:34:14,513 - Review.reviews.ewsl_review - INFO - Inclusions: 265
+2026-01-28 14:34:14,513 - Review.reviews.ewsl_review - INFO - Exclusions: 255
+2026-01-28 14:34:14,513 - Review.reviews.ewsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EWSL_Review_20260128_143414.xlsx
+2026-01-28 14:34:15,479 - Review.reviews.ewsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EWSL_Review_20260128_143414.xlsx
+Completed EWSL review in 1.93 seconds

@@ -1,73 +1,43 @@
-Step 1: 
-Replace index information in the main function of the new index review:
+Step 1:
+Look for a comparable review to use as your base review. Ask Coen if you can't find any.
+
+Step 2: 
+Replace index information in the main function of the new index review, leave
+area and area2 on "US" and "EU" and leave 'type', 'feed' and 'year' as is.
 
 def run_frd4p_review(date, co_date, effective_date, index="FRD4P", isin="FRIX00003031", 
-                    area="US", area2="EU", type="STOCK", universe="Developed Market", 
+                    area="US", area2="EU", type="STOCK", universe="developed_market", 
                     feed="Reuters", currency="EUR", year=None):
 
-Step 2:
-Add to Config.py in identical formatting:
+Step 3:
+replace all "frd4p" throughout the script with the index you will be making. Do this
+in a case sensitive way. These are the basis for may files to be able to function.
 
-    "EFESP": {
-        "index": "EFESP",
-        "isin": "NLIX00006584",
-        "output_key": "efesp_path"
+Step 4:
+Add to config.py in identical formatting:
+
+    "FRD4P": {
+        "index": "FRD4P",
+        "isin": "FRIX00003031",
+        "output_key": "frd4P_path"
     }
 
-Step 3:
+Also add to "ALL_MNEMOS" in the same config.py if not already there.(check this)
+
+Step 5:
 Add the review function to review_logic.py
 
     1. Import the review:
-        from .reviews.efesp_review import run_efesp_review
+        from .reviews.frd4p_review import run_frd4p_review
     2. Add to REVIEW_FUNCTIONS dictionary
 
-Step 4:
-Add to compare_eia_files.py
-    1. add the mnemo of your new review to the mnemos list
-    2. add the mnemo to the pattern list
+Step 6: 
+Look for the following piece of code:
+        symbols_filtered = stock_eod_df[
+            stock_eod_df['#Symbol'].str.len() < 12
+        ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
 
-Step 5:
-Add to compare.py
-    1. add the mnemo of your new review to the mnemos list
-    2. add the mnemo to the pattern list
-
-
-
-
-What does every file do?
-
-app.py
-This is the main function that launched the GUI 
-
-functions.py
-
-review_logic.py
-
-index.html
-
-utils folder:
-
-capping_standard.py
-
-data_loader
-
-inclusion_exclusion.py
-
-logging_utils.py
-
-weight_optimization.py
-
-batch_processor.py
-
-compare_eia_files.py
-
-compare.py
-
-config.py
-
-enhanced_task_manager.py
-
-task_manager.py
-
+For indices with RIC Codes: < 12
+For indices with ISIN Codes: == 12
 
 

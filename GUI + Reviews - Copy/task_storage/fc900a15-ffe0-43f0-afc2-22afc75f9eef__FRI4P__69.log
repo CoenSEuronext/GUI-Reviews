@@ -1,0 +1,75 @@
+Starting FRI4P review at 2026-01-28 14:34:53.630504
+2026-01-28 14:34:53,946 - Review.reviews.fri4p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:54,496 - Review.reviews.fri4p_review - INFO - Loading reference data...
+2026-01-28 14:34:54,664 - Review.reviews.fri4p_review - INFO - Merging all reference data points early...
+2026-01-28 14:34:54,664 - Review.reviews.fri4p_review - INFO - Deduplicating reference dataframes...
+2026-01-28 14:34:54,686 - Review.reviews.fri4p_review - INFO - Merging Oekom data...
+2026-01-28 14:34:54,691 - Review.reviews.fri4p_review - INFO - Merging ICB data...
+2026-01-28 14:34:54,704 - Review.reviews.fri4p_review - INFO - Merging SesamM data...
+2026-01-28 14:34:54,706 - Review.reviews.fri4p_review - INFO - Converting numeric columns...
+2026-01-28 14:34:54,709 - Review.reviews.fri4p_review - INFO - All reference data merged successfully
+2026-01-28 14:34:54,709 - Review.reviews.fri4p_review - INFO - Universe size after merges: 1800 companies
+2026-01-28 14:34:54,709 - Review.reviews.fri4p_review - INFO - Applying currency exclusion...
+2026-01-28 14:34:54,710 - Review.reviews.fri4p_review - INFO - Currency exclusions: 552
+2026-01-28 14:34:54,710 - Review.reviews.fri4p_review - INFO - Applying SesamM data availability exclusion...
+2026-01-28 14:34:54,712 - Review.reviews.fri4p_review - INFO - SesamM data unavailable exclusions: 1479
+2026-01-28 14:34:54,712 - Review.reviews.fri4p_review - INFO - Applying turnover exclusion...
+2026-01-28 14:34:54,712 - Review.reviews.fri4p_review - INFO - Turnover exclusions: 186
+2026-01-28 14:34:54,712 - Review.reviews.fri4p_review - INFO - Applying NBR Overall Flag exclusion...
+2026-01-28 14:34:54,714 - Review.reviews.fri4p_review - INFO - NBR Overall Flag exclusions: 1
+2026-01-28 14:34:54,714 - Review.reviews.fri4p_review - INFO - Applying controversial weapons exclusions...
+2026-01-28 14:34:54,714 - Review.reviews.fri4p_review - INFO - BiologicalWeapons exclusions: 0
+2026-01-28 14:34:54,715 - Review.reviews.fri4p_review - INFO - ChemicalWeapons exclusions: 0
+2026-01-28 14:34:54,716 - Review.reviews.fri4p_review - INFO - NuclearWeapons exclusions: 44
+2026-01-28 14:34:54,718 - Review.reviews.fri4p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2026-01-28 14:34:54,718 - Review.reviews.fri4p_review - INFO - ClusterMunitions exclusions: 5
+2026-01-28 14:34:54,719 - Review.reviews.fri4p_review - INFO - DepletedUranium exclusions: 7
+2026-01-28 14:34:54,720 - Review.reviews.fri4p_review - INFO - APMines exclusions: 4
+2026-01-28 14:34:54,721 - Review.reviews.fri4p_review - INFO - WhitePhosphorus exclusions: 7
+2026-01-28 14:34:54,721 - Review.reviews.fri4p_review - INFO - Applying coal mining exclusion...
+2026-01-28 14:34:54,721 - Review.reviews.fri4p_review - INFO - Coal Mining exclusions: 79
+2026-01-28 14:34:54,722 - Review.reviews.fri4p_review - INFO - Applying fossil fuel exclusion...
+2026-01-28 14:34:54,722 - Review.reviews.fri4p_review - INFO - Fossil Fuel exclusions: 135
+2026-01-28 14:34:54,723 - Review.reviews.fri4p_review - INFO - Applying thermal power exclusion...
+2026-01-28 14:34:54,723 - Review.reviews.fri4p_review - INFO - Thermal Power exclusions: 10
+2026-01-28 14:34:54,723 - Review.reviews.fri4p_review - INFO - Applying tobacco production exclusion...
+2026-01-28 14:34:54,724 - Review.reviews.fri4p_review - INFO - Tobacco Production exclusions: 6
+2026-01-28 14:34:54,724 - Review.reviews.fri4p_review - INFO - Applying tobacco distribution exclusion...
+2026-01-28 14:34:54,725 - Review.reviews.fri4p_review - INFO - Tobacco Distribution exclusions: 1
+2026-01-28 14:34:54,725 - Review.reviews.fri4p_review - INFO - Applying layoff screening exclusion...
+2026-01-28 14:34:54,725 - Review.reviews.fri4p_review - INFO - Layoff exclusions: 9
+2026-01-28 14:34:54,725 - Review.reviews.fri4p_review - INFO - Applying staff rating exclusion...
+2026-01-28 14:34:54,744 - Review.reviews.fri4p_review - INFO - Staff Rating exclusions: 283
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - Companies remaining after exclusions: 176
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - Eligible companies - XPAR: 41, Non-XPAR: 135
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - Checking IsinCode FRIX00003643 in index_eod_df
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - Found 1 matching rows
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - Index market cap: 1763094888286.1055
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - XPAR region total mcap: 881,616,619,368
+2026-01-28 14:34:54,781 - Review.reviews.fri4p_review - INFO - Non-XPAR region total mcap: 3,222,575,366,500
+2026-01-28 14:34:54,796 - Review.reviews.fri4p_review - INFO - Applying capping: max 20% per stock within each region (= 10% of total index)...
+2026-01-28 14:34:54,796 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2026-01-28 14:34:54,797 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:54,797 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:54,797 - utils.capping_proportional - INFO -   Total companies: 20
+2026-01-28 14:34:54,798 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:54,798 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:54,798 - utils.capping_proportional - INFO -   Max weight after capping: 0.178302
+2026-01-28 14:34:54,798 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2026-01-28 14:34:54,800 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2026-01-28 14:34:54,800 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:54,800 - utils.capping_proportional - INFO -   Total companies: 20
+2026-01-28 14:34:54,800 - utils.capping_proportional - INFO -   Companies capped: 1
+2026-01-28 14:34:54,800 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:54,800 - utils.capping_proportional - INFO -   Max weight after capping: 0.200000
+2026-01-28 14:34:54,801 - Review.reviews.fri4p_review - INFO - XPAR region - Index weight sum: 0.5000 (should be ~0.50)
+2026-01-28 14:34:54,801 - Review.reviews.fri4p_review - INFO - XPAR region - Max index weight: 0.0892 (should be <= 0.10)
+2026-01-28 14:34:54,801 - Review.reviews.fri4p_review - INFO - Non-XPAR region - Index weight sum: 0.5000 (should be ~0.50)
+2026-01-28 14:34:54,801 - Review.reviews.fri4p_review - INFO - Non-XPAR region - Max index weight: 0.1000 (should be <= 0.10)
+2026-01-28 14:34:54,807 - Review.reviews.fri4p_review - INFO - Saving FRI4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\FRI4P_df_20260128_143454.xlsx
+Completed FRI4P review in 1.96 seconds

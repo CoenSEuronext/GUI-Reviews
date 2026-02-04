@@ -1,0 +1,7 @@
+2026-02-03 13:30:11,646 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 13:30:11,650 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-02-03 13:30:11,682 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 13:30:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-03 13:30:45,062 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 13:30:45] "GET / HTTP/1.1" 200 -
+2026-02-03 13:30:45,400 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 13:30:45] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2026-02-03 13:30:47,233 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 13:30:47] "GET / HTTP/1.1" 200 -
+2026-02-03 13:30:47,289 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 13:30:47] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -

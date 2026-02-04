@@ -1,0 +1,12 @@
+Starting DEREP review at 2026-01-28 14:33:01.477736
+2026-01-28 14:33:01,777 - Review.reviews.derep_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:02,362 - Review.reviews.derep_review - INFO - Loading reference data...
+2026-01-28 14:33:02,693 - Review.reviews.derep_review - INFO - Creating eligible companies dataframe...
+2026-01-28 14:33:02,694 - Review.reviews.derep_review - INFO - Companies with capping applied: 0
+2026-01-28 14:33:02,694 - Review.reviews.derep_review - INFO - Saving DEREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DEREP_df_20260128_143302.xlsx
+Completed DEREP review in 1.45 seconds

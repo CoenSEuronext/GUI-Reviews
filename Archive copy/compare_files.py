@@ -1155,6 +1155,11 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
         if len(diff_df) < before:
             logger.info(f"Excluded {before - len(diff_df)} row(s) with Index='C4SD'")
             diff_df['Rank'] = range(1, len(diff_df) + 1)
+    
+    if not diff_df.empty and 'Name' in diff_df.columns:
+        diff_df = diff_df.sort_values('Name', na_position='last')
+        diff_df['Rank'] = range(1, len(diff_df) + 1)
+        logger.info(f"Sorted {len(diff_df)} rows alphabetically by Name")
 
     return diff_df, common_keys
 
@@ -1292,6 +1297,12 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
         if len(diff_df) < before:
             logger.info(f"Excluded {before - len(diff_df)} row(s) with Mnemo in EXCLUDED_INDEX_VALUES")
             diff_df['Rank'] = range(1, len(diff_df) + 1)
+    
+    # Sort alphabetically by Name column and reset Rank
+    if not diff_df.empty and 'Name' in diff_df.columns:
+        diff_df = diff_df.sort_values('Name', na_position='last')
+        diff_df['Rank'] = range(1, len(diff_df) + 1)
+        logger.info(f"Sorted {len(diff_df)} rows alphabetically by Name")
     
     return diff_df, common_keys
 

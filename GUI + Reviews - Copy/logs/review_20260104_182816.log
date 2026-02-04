@@ -1,0 +1,6 @@
+2026-01-04 18:28:17,470 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:28:17,474 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:28:17,513 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:28:17] "GET /task-status/59a8a83a-efa1-4b88-ad55-51f011a5da85 HTTP/1.1" 200 -
+2026-01-04 18:30:13,282 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:30:13,282 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:30:13,291 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

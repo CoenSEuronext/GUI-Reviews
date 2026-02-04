@@ -1,0 +1,10 @@
+Starting BNEW review at 2026-01-28 14:32:30.485980
+2026-01-28 14:32:30,827 - Review.reviews.bnew_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:32:31,431 - Review.reviews.bnew_review - INFO - Loading reference data...
+2026-01-28 14:32:32,294 - Review.reviews.bnew_review - INFO - Saving BNEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\BNEW_df_20260128_143232.xlsx
+Completed BNEW review in 1.88 seconds

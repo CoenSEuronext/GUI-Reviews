@@ -1,0 +1,26 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__DEREP__11",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:33:01.428462",
+  "review_type": "DEREP",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "DEREP",
+    "isin": "NLIX00004860",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:33:01.460989",
+  "error": null,
+  "completed_at": "2026-01-28T14:33:02.928150",
+  "result_data": {
+    "derep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEREP_df_20260128_143302.xlsx"
+  },
+  "duration_seconds": 1.450414,
+  "completed_at_review": "2026-01-28T14:33:02.928150"
+}

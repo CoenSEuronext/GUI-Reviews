@@ -1,0 +1,17 @@
+2026-01-28 14:35:17,380 - Review.reviews.ses5p_review - INFO - Loading EOD data...
+2026-01-28 14:35:18,182 - Review.reviews.ses5p_review - INFO - Loading reference data...
+2026-01-28 14:35:18,347 - Review.reviews.ses5p_review - INFO - Total selected companies: 50
+2026-01-28 14:35:18,347 - Review.reviews.ses5p_review - INFO - Applying 10% capping...
+2026-01-28 14:35:18,349 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:35:18,350 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2026-01-28 14:35:18,350 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:35:18,350 - utils.capping_proportional - INFO -   Total companies: 50
+2026-01-28 14:35:18,350 - utils.capping_proportional - INFO -   Companies capped: 2
+2026-01-28 14:35:18,350 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:35:18,350 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2026-01-28 14:35:18,350 - Review.reviews.ses5p_review - INFO - Capping Summary:
+2026-01-28 14:35:18,350 - Review.reviews.ses5p_review - INFO -   Total companies capped: 2
+2026-01-28 14:35:18,350 - Review.reviews.ses5p_review - INFO -   Total weight: 1.000000 (target: 1.000000)
+2026-01-28 14:35:18,350 - Review.reviews.ses5p_review - INFO -   Maximum constituent weight: 10.0000% (max allowed: 10.00%)
+2026-01-28 14:35:18,350 - Review.reviews.ses5p_review - INFO -   Maximum weight delta: 1.028753
+2026-01-28 14:35:18,357 - Review.reviews.ses5p_review - INFO - Saving SES5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\SES5P_df_20260128_143518.xlsx

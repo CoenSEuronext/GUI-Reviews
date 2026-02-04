@@ -23,18 +23,24 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         logger.info("Loading reference data...")
         
         ref_data = load_reference_data(
             current_data_folder,
-            ['ff', 'developed_market', 'icb']
+            ['ff', 'developed_market', 'icb', 'eusp', 'deup', 'edwp']
         )
 
+        # Original universes
         universe_df = ref_data['developed_market']
         ff_df = ref_data['ff']
         icb_df = ref_data['icb']
+        
+        # New universes
+        eusp_df = ref_data['eusp']
+        deup_df = ref_data['deup']
+        edwp_df = ref_data['edwp']
         
         # Filter dataframes based on index column
         na500_df = universe_df[universe_df['index'].str.contains('NA500', na=False)]
@@ -47,7 +53,23 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
 
         # Function to apply data preparation operations
-        def prepare_dataframe(df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, exclude_xtse=False):
+        def prepare_dataframe(df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                             exclude_xtse=False, adtv_column='3 months ADTV', adtv_threshold=5000000):
+            """
+            Prepare dataframe with flexible ADTV column name handling
+            
+            Args:
+                df: Input dataframe
+                symbols_filtered: Filtered symbols dataframe
+                stock_eod_df: EOD stock data
+                stock_co_df: CO stock data
+                ff_df: Free float data
+                icb_df: ICB classification data
+                currency: Target currency
+                exclude_xtse: Whether to exclude XTSE stocks
+                adtv_column: Name of ADTV column ('3 months ADTV' or '3M AVG Turnover EUR')
+                adtv_threshold: Minimum ADTV threshold
+            """
             result_df = (df
                 # Initial renaming
                 .rename(columns={
@@ -93,7 +115,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 .drop('ISIN Code:', axis=1)
                 # Merge ICB data for Subsector Code
                 .merge(
-                    icb_df[['ISIN Code', 'Subsector Code', 'Industry Code']].drop_duplicates(subset='ISIN Code', keep='first'),
+                    icb_df[['ISIN Code', 'Subsector Code', 'Industry Code', 'Sector Code', 'Supersector Code']].drop_duplicates(subset='ISIN Code', keep='first'),
                     left_on='ISIN code',
                     right_on='ISIN Code',
                     how='left'
@@ -101,9 +123,16 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 .drop('ISIN Code', axis=1)
             )
             
+            # Standardize ADTV column name to a common internal name
+            if adtv_column in result_df.columns:
+                result_df['ADTV'] = result_df[adtv_column]
+            else:
+                logger.warning(f"ADTV column '{adtv_column}' not found in dataframe. Available columns: {result_df.columns.tolist()}")
+                result_df['ADTV'] = np.nan
+            
             # Create general exclusion flags
             result_df['Exclusion_XTSE'] = result_df['MIC'].str.contains('XTSE', na=False) if exclude_xtse else False
-            result_df['Exclusion_3m_ADTV'] = (result_df['3 months ADTV'] < 5000000) | result_df['3 months ADTV'].isna()
+            result_df['Exclusion_3m_ADTV'] = (result_df['ADTV'] < adtv_threshold) | result_df['ADTV'].isna()
             
             # Create general exclusion flag (True if ANY exclusion criteria is met)
             result_df['General_Exclusion'] = result_df['Exclusion_XTSE'] | result_df['Exclusion_3m_ADTV']
@@ -113,162 +142,287 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
             
             return result_df
 
-        # Apply to all three dataframes
-        na500_selection_df = prepare_dataframe(na500_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, exclude_xtse=True)
-        transatlantic_selection_df = prepare_dataframe(transatlantic_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, exclude_xtse=True)
-        ez300_selection_df = prepare_dataframe(ez300_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, exclude_xtse=False)
+        # Apply to all universes with appropriate ADTV column names
+        logger.info("Preparing original universes (NA500, Transatlantic, EZ300)...")
+        na500_selection_df = prepare_dataframe(na500_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                                               exclude_xtse=True, adtv_column='3 months ADTV')
+        transatlantic_selection_df = prepare_dataframe(transatlantic_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                                                       exclude_xtse=True, adtv_column='3 months ADTV')
+        ez300_selection_df = prepare_dataframe(ez300_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                                               exclude_xtse=False, adtv_column='3 months ADTV')
         
-        # Updated sectorial indices dictionary with correct key names
+        logger.info("Preparing new universes (EUSP, DEUP, EDWP)...")
+        eusp_selection_df = prepare_dataframe(eusp_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                                              exclude_xtse=False, adtv_column='3M AVG Turnover EUR')
+        deup_selection_df = prepare_dataframe(deup_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                                              exclude_xtse=False, adtv_column='3M AVG Turnover EUR')
+        edwp_selection_df = prepare_dataframe(edwp_df, symbols_filtered, stock_eod_df, stock_co_df, ff_df, icb_df, currency, 
+                                              exclude_xtse=False, adtv_column='3M AVG Turnover EUR')
+        
+        # Dictionary of universe DataFrames for easy reference
+        universe_mapping = {
+            'na500': na500_selection_df,
+            'transatlantic': transatlantic_selection_df,
+            'ez300': ez300_selection_df,
+            'eusp': eusp_selection_df,
+            'deup': deup_selection_df,
+            'edwp': edwp_selection_df
+        }
+        
+        # Updated sectorial indices dictionary with both original and new indices
         sectorial_indices = {
+            # ===== ORIGINAL INDICES (Industry Code based) =====
             'TECHP': {
                 'isincode': 'NLIX00003359',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 10
             },
             'ENRGP': {
                 'isincode': 'NLIX00003318',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 60
             },
             'UTIL': {
                 'isincode': 'NLIX00003375',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 65
             },
             'BASM': {
                 'isincode': 'NLIX00003284',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 55
             },
             'FINA': {
                 'isincode': 'NLIX00003326',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 30
             },
             'CSTA': {
                 'isincode': 'NLIX00003300',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 45
             },
             'TELEP': {
                 'isincode': 'NLIX00003367',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 15
             },
             'HEAC': {
                 'isincode': 'NLIX00003334',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 20
             },
             'INDU': {
                 'isincode': 'NLIX00003342',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 50
             },
             'CDIS': {
                 'isincode': 'NLIX00003292',
-                'starting_universe': ez300_selection_df,
+                'starting_universe': 'ez300',
+                'classification_type': 'industry',
                 'industry_code': 40
             },
             'TBMA': {
                 'isincode': 'NLIX00003920',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 55
             },
             'TCDI': {
                 'isincode': 'NLIX00003771',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 40
             },
             'TCST': {
                 'isincode': 'NLIX00003748',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 45
             },
             'TENR': {
                 'isincode': 'NLIX00003714',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 60
             },
             'TFINP': {
                 'isincode': 'NLIX00003805',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 30
             },
             'THEC': {
                 'isincode': 'NLIX00003896',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 20
             },
             'TIND': {
                 'isincode': 'NLIX00003839',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 50
             },
             'TTEC': {
                 'isincode': 'NLIX00003680',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 10
             },
             'TTEL': {
                 'isincode': 'NLIX00003862',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 15
             },
             'TUTI': {
                 'isincode': 'NLIX00003953',
-                'starting_universe': transatlantic_selection_df,
+                'starting_universe': 'transatlantic',
+                'classification_type': 'industry',
                 'industry_code': 65
             },
             'UUTI': {
                 'isincode': 'NLIX00005206',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 65
             },
             'UTEL': {
                 'isincode': 'NLIX00005115',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 15
             },
             'UTEC': {
                 'isincode': 'NLIX00004936',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 10
             },
             'UIND': {
                 'isincode': 'NLIX00005081',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 50
             },
             'UHEC': {
                 'isincode': 'NLIX00005149',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 20
             },
             'UFIN': {
                 'isincode': 'NLIX00005057',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 30
             },
             'UENR': {
                 'isincode': 'NLIX00004969',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 60
             },
             'UCST': {
                 'isincode': 'NLIX00004993',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 45
             },
             'UCDI': {
                 'isincode': 'NLIX00005024',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 40
             },
             'UBMA': {
                 'isincode': 'NLIX00005172',
-                'starting_universe': na500_selection_df,
+                'starting_universe': 'na500',
+                'classification_type': 'industry',
                 'industry_code': 55
+            },
+            'EEUS': {
+                'isincode': 'NLIX00007590',
+                'starting_universe': 'deup',
+                'classification_type': 'subsector',
+                'industry_code': [10102020, 10102010]
+            },
+            'EEAPP': {
+                'isincode': 'NLIX00007657',
+                'starting_universe': 'deup',
+                'classification_type': 'sector',
+                'industry_code': 401010
+            },
+            'EECP': {
+                'isincode': 'NLIX00007715',
+                'starting_universe': 'deup',
+                'classification_type': 'supersector',
+                'industry_code': 4020
+            },
+            'EEBRP': {
+                'isincode': 'NLIX00007749',
+                'starting_universe': 'deup',
+                'classification_type': 'supersector',
+                'industry_code': 5510
+            },
+            'EEUU': {
+                'isincode': 'NLIX00007806',
+                'starting_universe': 'deup',
+                'classification_type': 'supersector',
+                'industry_code': 6510
+            },
+            'EEOG': {
+                'isincode': 'NLIX00007897',
+                'starting_universe': 'deup',
+                'classification_type': 'sector',
+                'industry_code': 601010
+            },
+            'EUOG': {
+                'isincode': 'NLIX00007921',
+                'starting_universe': 'eusp',
+                'classification_type': 'sector',
+                'industry_code': 601010
+            },
+            'EWHC': {
+                'isincode': 'NLIX00007624',
+                'starting_universe': 'edwp',
+                'classification_type': 'subsector',
+                'industry_code': [20102010, 20102020, 20102015, 20103010]  # Multiple codes
+            },
+            'EWAP': {
+                'isincode': 'NLIX00007681',
+                'starting_universe': 'edwp',
+                'classification_type': 'sector',
+                'industry_code': 401010
+            },
+            'EWBR': {
+                'isincode': 'NLIX00007772',
+                'starting_universe': 'edwp',
+                'classification_type': 'supersector',
+                'industry_code': 5510
+            },
+            'EWOU': {
+                'isincode': 'NLIX00007863',
+                'starting_universe': 'edwp',
+                'classification_type': 'supersector',
+                'industry_code': 6510
+            },
+            'EWOG': {
+                'isincode': 'NLIX00007954',
+                'starting_universe': 'edwp',
+                'classification_type': 'sector',
+                'industry_code': 601010
             }
         }
 
@@ -288,7 +442,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 tolerance: convergence tolerance
             
             Returns:
-                pandas Series of final capped weights (sum = 1.0, max ≤ cap_limit)
+                pandas Series of final capped weights (sum = 1.0, max <= cap_limit)
             """
             import pandas as pd
             
@@ -353,57 +507,74 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
             
             return current_weights
 
-        # Modify the process_sectorial_index function to include the appropriate DLF DataFrame
-
-        def process_sectorial_index(index_code, index_info, na500_dlf, transatlantic_dlf, ez300_dlf):
-            """Process a single sectorial index with CORRECTED weight calculation"""
+        def process_sectorial_index(index_code, index_info, universe_mapping):
+            """
+            Process a single sectorial index with flexible classification system support
+            
+            Args:
+                index_code: Index code (e.g., 'TECHP', 'EEUS')
+                index_info: Dictionary with index configuration
+                universe_mapping: Dictionary mapping universe names to DataFrames
+            """
             try:
                 isin = index_info['isincode']
-                universe_df = index_info['starting_universe']
-                industry_code = index_info['industry_code']
+                universe_name = index_info['starting_universe']
+                classification_type = index_info['classification_type']
+                industry_codes = index_info['industry_code']
                 
-                # Determine which DLF to use based on the starting universe
-                if universe_df is na500_selection_df:
-                    dlf_df = na500_dlf
-                    dlf_name = "NA500_DLF"
-                elif universe_df is transatlantic_selection_df:
-                    dlf_df = transatlantic_dlf
-                    dlf_name = "Transatlantic_DLF"
-                elif universe_df is ez300_selection_df:
-                    dlf_df = ez300_dlf
-                    dlf_name = "EZ300_DLF"
-                else:
-                    dlf_df = None
-                    dlf_name = "Unknown_DLF"
+                # Get the appropriate universe DataFrame
+                universe_df = universe_mapping[universe_name]
+                
+                # Determine the classification column based on type
+                classification_column_map = {
+                    'industry': 'Industry Code',
+                    'subsector': 'Subsector Code',
+                    'sector': 'Sector Code',
+                    'supersector': 'Supersector Code'
+                }
+                
+                classification_column = classification_column_map[classification_type]
+                
+                logger.info(f"Processing {index_code}: using {classification_column} from {universe_name} universe")
                 
                 # Get index market cap (for reference/logging only)
                 index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
                 
-                # Filter universe by industry code (using Industry Code column)
-                selection_df = universe_df[
-                    universe_df['Industry Code'] == industry_code
-                ].copy()
+                # Filter universe by classification code(s)
+                # Handle both single code and list of codes
+                if isinstance(industry_codes, list):
+                    logger.info(f"Filtering by multiple codes: {industry_codes}")
+                    selection_df = universe_df[
+                        universe_df[classification_column].isin(industry_codes)
+                    ].copy()
+                else:
+                    logger.info(f"Filtering by single code: {industry_codes}")
+                    selection_df = universe_df[
+                        universe_df[classification_column] == industry_codes
+                    ].copy()
                 
                 if selection_df.empty:
-                    logger.warning(f"No companies found for {index_code} with industry code {industry_code}")
+                    logger.warning(f"No companies found for {index_code} with {classification_column} = {industry_codes}")
                     return None
+                
+                logger.info(f"Found {len(selection_df)} companies for {index_code}")
                 
                 # Use the merged Free Float Round value, fallback to original Free Float if not available  
                 selection_df["Free Float"] = selection_df["Free Float Round:"]
                 selection_df['Original Market Cap'] = selection_df['Close Prc_EOD'] * selection_df['Number of Shares'] * selection_df['FX/Index Ccy'] * selection_df['Free Float']
                 
-                # FIXED WEIGHT CALCULATION: Divide by sum of selected companies' market caps
+                # Calculate weights: Divide by sum of selected companies' market caps
                 total_selected_mcap = selection_df['Original Market Cap'].sum()
                 selection_df['Weight'] = selection_df['Original Market Cap'] / total_selected_mcap
                 
-                # Verify weights sum to 1.0 (should be exactly 1.0 now)
+                # Verify weights sum to 1.0
                 weights_sum = selection_df['Weight'].sum()
                 logger.info(f"Total weight before capping for {index_code}: {weights_sum:.8f}")
                 
-                # This should now be very close to 1.0 (within floating point precision)
+                # This should be very close to 1.0 (within floating point precision)
                 assert abs(weights_sum - 1.0) < 1e-10, f"Weights don't sum to 1.0 for {index_code}: {weights_sum}"
 
-                # Calculate capped weights (now with proper input that sums to 1.0)
+                # Calculate capped weights
                 capped_weights = calculate_capped_weights(selection_df['Weight'], cap_limit=0.2)
                 selection_df['Capped Weight'] = capped_weights
                 
@@ -444,7 +615,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 coverage_ratio = total_selected_mcap / index_mcap if index_mcap > 0 else 0
                 logger.info(f"Coverage ratio (selected/index): {coverage_ratio:.4f}")
 
-                # These assertions should now pass
+                # Assertions
                 assert abs(total_capped_weight - 1.0) < 1e-8, f"Total weight {total_capped_weight} is not equal to 1.0 for {index_code}"
                 assert max_weight <= 0.2 + 1e-8, f"Max weight {max_weight} exceeds 20% cap for {index_code}"
                 
@@ -471,6 +642,9 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 return {
                     'index_code': index_code,
                     'isin': isin,
+                    'universe_name': universe_name,
+                    'classification_type': classification_type,
+                    'classification_codes': industry_codes,
                     'index_mcap': index_mcap,
                     'selected_mcap': total_selected_mcap,
                     'coverage_ratio': coverage_ratio,
@@ -478,28 +652,28 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     'selection_df': selection_df,
                     'inclusion_df': analysis_results['inclusion_df'],
                     'exclusion_df': analysis_results['exclusion_df'],
-                    'dlf_df': dlf_df,  # Add the appropriate DLF DataFrame
-                    'dlf_name': dlf_name  # Add the DLF name for sheet naming
+                    'dlf_df': universe_df,
+                    'dlf_name': f"{universe_name.upper()}_DLF"
                 }
                 
             except Exception as e:
                 logger.error(f"Error processing {index_code}: {str(e)}")
+                logger.error(traceback.format_exc())
                 return None
 
-        # Modify the main processing loop to pass the DLF DataFrames
-        logger.info("Processing all 30 sectorial indices...")
+        # Process all sectorial indices
+        logger.info(f"Processing all {len(sectorial_indices)} sectorial indices...")
         all_results = {}
 
         for index_code, index_info in sectorial_indices.items():
             logger.info(f"Processing {index_code}...")
-            result = process_sectorial_index(index_code, index_info, 
-                                        na500_selection_df, transatlantic_selection_df, ez300_selection_df)
+            result = process_sectorial_index(index_code, index_info, universe_mapping)
             if result:
                 all_results[index_code] = result
             else:
                 logger.warning(f"Failed to process {index_code}")
 
-        # Modify the Excel saving section to include DLF DataFrames
+        # Save results to Excel files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
             os.makedirs(output_dir, exist_ok=True)
@@ -524,17 +698,19 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                         result['dlf_df'].to_excel(writer, sheet_name=result['dlf_name'], index=False)
                         logger.info(f"Added {result['dlf_name']} sheet to {index_code}")
                     
-                    # Enhanced index info sheet with coverage metrics
+                    # Enhanced index info sheet with coverage metrics and classification info
                     index_info_df = pd.DataFrame({
-                        'Metric': ['Index Market Cap', 'Selected Companies Market Cap', 'Coverage Ratio', 'Number of Companies', 'DLF Universe'],
+                        'Metric': ['Index Market Cap', 'Selected Companies Market Cap', 'Coverage Ratio', 
+                                  'Number of Companies', 'DLF Universe', 'Classification Type', 'Classification Code(s)'],
                         'Value': [result['index_mcap'], result['selected_mcap'], result['coverage_ratio'], 
-                                len(result['composition_df']), result['dlf_name']]
+                                len(result['composition_df']), result['dlf_name'], 
+                                result['classification_type'], str(result['classification_codes'])]
                     })
                     index_info_df.to_excel(writer, sheet_name='Index Info', index=False)
                 
                 saved_files.append(file_path)
             
-            # Create summary file with all indices (modified to include DLF info)
+            # Create summary file with all indices
             summary_path = os.path.join(output_dir, f'All_Sectorial_Summary_{timestamp}.xlsx')
             logger.info(f"Creating summary file: {summary_path}")
             
@@ -546,6 +722,8 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                         'Index Code': index_code,
                         'ISIN': result['isin'],
                         'DLF Universe': result['dlf_name'],
+                        'Classification Type': result['classification_type'],
+                        'Classification Code(s)': str(result['classification_codes']),
                         'Index Market Cap': result['index_mcap'],
                         'Selected Market Cap': result['selected_mcap'],
                         'Coverage Ratio': result['coverage_ratio'],
@@ -560,6 +738,10 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                     if i < 35:  # Excel has a limit on number of sheets
                         result['composition_df'].to_excel(writer, sheet_name=f'{index_code}_Comp', index=False)
 
+            logger.info(f"Successfully processed {len(all_results)} sectorial indices")
+            logger.info(f"Individual files saved: {len(saved_files)}")
+            logger.info(f"Summary file: {summary_path}")
+
             return {
                 "status": "success",
                 "message": f"Review completed successfully for {len(all_results)} sectorial indices",
@@ -573,6 +755,7 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
         except Exception as e:
             error_msg = f"Error saving output files: {str(e)}"
             logger.error(error_msg)
+            logger.error(traceback.format_exc())
             return {"status": "error", "message": error_msg, "data": None}
    
     except Exception as e:

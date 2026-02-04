@@ -1,3 +1,5 @@
+# compare.py
+
 import os
 import pandas as pd
 import re
@@ -455,11 +457,11 @@ def create_excel_report(results, output_path):
 
 def main():
     # Set folder paths
-    coen_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202512\Review 202512\Coen"
-    dataiku_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\202512\Review 202512\Dataiku"
+    coen_folder = r"C:\Users\bjanse\VS Code\GUI + Reviews\output"
+    dataiku_folder = r"C:\Users\bjanse\VS Code\GUI + Reviews\output\Dataiku"
     
     # Set output folder path
-    output_folder = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review Comparison"
+    output_folder = r"C:\Users\bjanse\VS Code\GUI + Reviews\Review Comparison"
     os.makedirs(output_folder, exist_ok=True)  # Create folder if it doesn't exist
     
     # Find matching files

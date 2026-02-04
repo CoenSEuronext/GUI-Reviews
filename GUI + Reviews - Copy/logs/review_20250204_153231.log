@@ -1,9 +1,0 @@
-2025-02-04 15:32:31,488 - werkzeug - WARNING -  * Debugger is active!
-2025-02-04 15:32:31,491 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-04 15:32:31,556 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pyio.py', reloading
-2025-02-04 15:32:31,620 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\concurrent\\futures\\process.py', reloading
-2025-02-04 15:32:31,624 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\queues.py', reloading
-2025-02-04 15:32:31,927 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\getopt.py', reloading
-2025-02-04 15:32:32,474 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_collections_abc.py', reloading
-2025-02-04 15:32:32,487 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\abc.py', reloading
-2025-02-04 15:32:32,491 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_py_abc.py', reloading

@@ -1,0 +1,1354 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef",
+  "task_type": "batch",
+  "status": "completed",
+  "created_at": "2026-01-28T14:32:24.100231",
+  "started_at": "2026-01-28T14:32:24.645010",
+  "completed_at": "2026-01-28T14:35:34.531292",
+  "progress": 100,
+  "message": "Batch completed: 85/86 successful",
+  "error": null,
+  "result_data": {
+    "results": [
+      {
+        "review_type": "AETAW",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "aetaw_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\AETAW_df_20260128_143226.xlsx"
+        },
+        "duration_seconds": 1.617503,
+        "completed_at": "2026-01-28T14:32:26.333976",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__AETAW__1.log"
+      },
+      {
+        "review_type": "AEXAT",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "aexat_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\AEXAT_df_20260128_143227.xlsx"
+        },
+        "duration_seconds": 1.191393,
+        "completed_at": "2026-01-28T14:32:27.661795",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__AEXAT__2.log"
+      },
+      {
+        "review_type": "AEXEW",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "aexew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\AEXEW_df_20260128_143228.xlsx"
+        },
+        "duration_seconds": 1.133397,
+        "completed_at": "2026-01-28T14:32:28.955228",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__AEXEW__3.log"
+      },
+      {
+        "review_type": "BE1P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "be1p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\BE1P_df_20260128_143230.xlsx"
+        },
+        "duration_seconds": 1.29692,
+        "completed_at": "2026-01-28T14:32:30.360840",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__BE1P__4.log"
+      },
+      {
+        "review_type": "BNEW",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "bnew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\BNEW_df_20260128_143232.xlsx"
+        },
+        "duration_seconds": 1.883524,
+        "completed_at": "2026-01-28T14:32:32.369504",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__BNEW__5.log"
+      },
+      {
+        "review_type": "C6RIP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "c6rip_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\C6RIP_df_20260128_143234.xlsx"
+        },
+        "duration_seconds": 1.671246,
+        "completed_at": "2026-01-28T14:32:34.198314",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__C6RIP__6.log"
+      },
+      {
+        "review_type": "CACEW",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "cacew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CACEW_df_20260128_143235.xlsx"
+        },
+        "duration_seconds": 1.18611,
+        "completed_at": "2026-01-28T14:32:35.568090",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__CACEW__7.log"
+      },
+      {
+        "review_type": "CLAMP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "clamp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CLAMP_df_20260128_143257.xlsx"
+        },
+        "duration_seconds": 22.407652,
+        "completed_at": "2026-01-28T14:32:58.085283",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__CLAMP__8.log"
+      },
+      {
+        "review_type": "CLEW",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "clew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CLEW_df_20260128_143259.xlsx"
+        },
+        "duration_seconds": 1.435159,
+        "completed_at": "2026-01-28T14:32:59.646113",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__CLEW__9.log"
+      },
+      {
+        "review_type": "DAREP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "darep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DAREP_df_20260128_143300.xlsx"
+        },
+        "duration_seconds": 1.591319,
+        "completed_at": "2026-01-28T14:33:01.344534",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__DAREP__10.log"
+      },
+      {
+        "review_type": "DEREP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "derep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEREP_df_20260128_143302.xlsx"
+        },
+        "duration_seconds": 1.450414,
+        "completed_at": "2026-01-28T14:33:02.928150",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__DEREP__11.log"
+      },
+      {
+        "review_type": "DWREP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "dwrep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DWREP_df_20260128_143304.xlsx"
+        },
+        "duration_seconds": 2.405089,
+        "completed_at": "2026-01-28T14:33:05.465031",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__DWREP__12.log"
+      },
+      {
+        "review_type": "EAIB",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eaib_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EAIB_df_20260128_143306.xlsx"
+        },
+        "duration_seconds": 1.001555,
+        "completed_at": "2026-01-28T14:33:06.596114",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EAIB__13.log"
+      },
+      {
+        "review_type": "EDEFP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "edefp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EDEFP_df_20260128_143307.xlsx"
+        },
+        "duration_seconds": 1.033261,
+        "completed_at": "2026-01-28T14:33:07.741478",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EDEFP__14.log"
+      },
+      {
+        "review_type": "EDWP",
+        "status": "completed",
+        "message": "Review completed successfully - Individual files created",
+        "data": {
+          "individual_files": [
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EDWP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEUP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEZP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DAPPR_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DNAP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DASP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DPAP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUSP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EJPP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ECHP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUKP_Composition_20260128_143309.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CANP_Composition_20260128_143309.xlsx"
+          ],
+          "summary": {
+            "total_companies": 1537,
+            "total_ffmc_coverage": 88.8292417849294
+          }
+        },
+        "duration_seconds": 6.018904,
+        "completed_at": "2026-01-28T14:33:13.863453",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EDWP__15.log"
+      },
+      {
+        "review_type": "EDWPT",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "edwpt_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EDWPT_df_20260128_143315.xlsx",
+          "individual_files": [
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EDWPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEUPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEZPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DAPPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DNAPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DASPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DPAPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUSPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EJPPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ECHPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUKPT_Composition_20260128_143315.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CANPT_Composition_20260128_143315.xlsx"
+          ],
+          "summary": {
+            "total_companies": 5317,
+            "total_ffmc_coverage": 98.82348697129757
+          }
+        },
+        "duration_seconds": 7.151332,
+        "completed_at": "2026-01-28T14:33:21.129301",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EDWPT__16.log"
+      },
+      {
+        "review_type": "EEDF",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eedf_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEDF_df_20260128_143322.xlsx"
+        },
+        "duration_seconds": 0.994207,
+        "completed_at": "2026-01-28T14:33:22.255731",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EEDF__17.log"
+      },
+      {
+        "review_type": "EEFAP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eefap_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEFAP_df_20260128_143323.xlsx"
+        },
+        "duration_seconds": 0.982264,
+        "completed_at": "2026-01-28T14:33:23.345528",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EEFAP__18.log"
+      },
+      {
+        "review_type": "EEMSC",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eemsc_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEMSC_Review_20260128_143324.xlsx",
+          "summary": {
+            "total_companies": 1097,
+            "existing_companies_selected": 1022,
+            "new_companies_selected": 75,
+            "total_ffmc_coverage": 30.73176806789595,
+            "inclusions_count": 75,
+            "exclusions_count": 69,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.232887,
+        "completed_at": "2026-01-28T14:33:24.694560",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EEMSC__19.log"
+      },
+      {
+        "review_type": "EENS",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eens_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EENS_df_20260128_143326.xlsx"
+        },
+        "duration_seconds": 1.502046,
+        "completed_at": "2026-01-28T14:33:26.313644",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EENS__20.log"
+      },
+      {
+        "review_type": "EES2",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ees2_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EES2_df_20260128_143327.xlsx"
+        },
+        "duration_seconds": 0.9958,
+        "completed_at": "2026-01-28T14:33:27.436094",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EES2__21.log"
+      },
+      {
+        "review_type": "EESF",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eesf_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EESF_df_20260128_143328.xlsx"
+        },
+        "duration_seconds": 0.990661,
+        "completed_at": "2026-01-28T14:33:28.535346",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EESF__22.log"
+      },
+      {
+        "review_type": "EESL",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eesl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EESL_Review_20260128_143329.xlsx",
+          "summary": {
+            "total_companies": 920,
+            "existing_companies_selected": 841,
+            "new_companies_selected": 79,
+            "total_ffmc_coverage": 15.105010088896897,
+            "inclusions_count": 79,
+            "exclusions_count": 74,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.256758,
+        "completed_at": "2026-01-28T14:33:29.895189",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EESL__23.log"
+      },
+      {
+        "review_type": "EFESP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "efesp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EFESP_df_20260128_143331.xlsx"
+        },
+        "duration_seconds": 1.266652,
+        "completed_at": "2026-01-28T14:33:31.278014",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EFESP__24.log"
+      },
+      {
+        "review_type": "EFMEP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "efmep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EFMEP_df_20260128_143332.xlsx"
+        },
+        "duration_seconds": 1.038597,
+        "completed_at": "2026-01-28T14:33:32.433809",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EFMEP__25.log"
+      },
+      {
+        "review_type": "EGSPP",
+        "status": "failed",
+        "message": "Review failed: Error during review calculation: Failed to load one or more required reference data files",
+        "data": null,
+        "duration_seconds": 0.966697,
+        "completed_at": "2026-01-28T14:33:33.511446",
+        "runner_returncode": 1,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EGSPP__26.log"
+      },
+      {
+        "review_type": "EHCF",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ehcf_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EHCF_df_20260128_143334.xlsx"
+        },
+        "duration_seconds": 0.982759,
+        "completed_at": "2026-01-28T14:33:34.611493",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EHCF__27.log"
+      },
+      {
+        "review_type": "EHNI",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ehni_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EHNI_df_20260128_143338.xlsx"
+        },
+        "duration_seconds": 3.506464,
+        "completed_at": "2026-01-28T14:33:38.218415",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EHNI__28.log"
+      },
+      {
+        "review_type": "EIAPR",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eiapr_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EIAPR_df_20260128_143339.xlsx"
+        },
+        "duration_seconds": 1.224988,
+        "completed_at": "2026-01-28T14:33:39.579747",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EIAPR__29.log"
+      },
+      {
+        "review_type": "ELECP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "elecp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ELECP_df_20260128_143340.xlsx"
+        },
+        "duration_seconds": 0.964075,
+        "completed_at": "2026-01-28T14:33:40.651970",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ELECP__30.log"
+      },
+      {
+        "review_type": "ELTFP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eltfp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ELTFP_df_20260128_143341.xlsx"
+        },
+        "duration_seconds": 0.988744,
+        "completed_at": "2026-01-28T14:33:41.761186",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ELTFP__31.log"
+      },
+      {
+        "review_type": "ELUX",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "elux_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ELUX_df_20260128_143342.xlsx"
+        },
+        "duration_seconds": 0.982673,
+        "completed_at": "2026-01-28T14:33:42.850364",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ELUX__32.log"
+      },
+      {
+        "review_type": "ELUXP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eluxp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ELUXP_df_20260128_143343.xlsx"
+        },
+        "duration_seconds": 0.969992,
+        "completed_at": "2026-01-28T14:33:43.934817",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ELUXP__33.log"
+      },
+      {
+        "review_type": "EMLS",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "emls_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EMLS_df_20260128_143344.xlsx"
+        },
+        "duration_seconds": 0.988892,
+        "completed_at": "2026-01-28T14:33:45.034380",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EMLS__34.log"
+      },
+      {
+        "review_type": "ENTP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "entp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENTP_df_20260128_143346.xlsx"
+        },
+        "duration_seconds": 1.699827,
+        "completed_at": "2026-01-28T14:33:46.845980",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENTP__35.log"
+      },
+      {
+        "review_type": "ENVB",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "envb_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVB_df_20260128_143347.xlsx"
+        },
+        "duration_seconds": 1.074722,
+        "completed_at": "2026-01-28T14:33:48.046123",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVB__36.log"
+      },
+      {
+        "review_type": "ENVEO",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "enveo_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVEO_review_20260128_143349.xlsx"
+        },
+        "duration_seconds": 1.191527,
+        "completed_at": "2026-01-28T14:33:49.377771",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVEO__37.log"
+      },
+      {
+        "review_type": "ENVEU",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "enveu_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVEU_df_20260128_143350.xlsx"
+        },
+        "duration_seconds": 1.415182,
+        "completed_at": "2026-01-28T14:33:50.910402",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVEU__38.log"
+      },
+      {
+        "review_type": "ENVF",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "envf_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVF_df_20260128_143352.xlsx"
+        },
+        "duration_seconds": 1.153586,
+        "completed_at": "2026-01-28T14:33:52.182366",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVF__39.log"
+      },
+      {
+        "review_type": "ENVU",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "envu_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVU_df_20260128_143353.xlsx"
+        },
+        "duration_seconds": 1.148421,
+        "completed_at": "2026-01-28T14:33:53.445291",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVU__40.log"
+      },
+      {
+        "review_type": "ENVUK",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "envuk_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVUK_df_20260128_143354.xlsx"
+        },
+        "duration_seconds": 1.123905,
+        "completed_at": "2026-01-28T14:33:54.686252",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVUK__41.log"
+      },
+      {
+        "review_type": "ENVW",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "envw_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENVW_df_20260128_143355.xlsx"
+        },
+        "duration_seconds": 1.817444,
+        "completed_at": "2026-01-28T14:33:56.612872",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENVW__42.log"
+      },
+      {
+        "review_type": "ENZTP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "enztp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENZTP_df_20260128_143357.xlsx"
+        },
+        "duration_seconds": 1.300371,
+        "completed_at": "2026-01-28T14:33:58.029143",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ENZTP__43.log"
+      },
+      {
+        "review_type": "ERI5P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eri5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ERI5P_df_20260128_143359.xlsx"
+        },
+        "duration_seconds": 1.045913,
+        "completed_at": "2026-01-28T14:33:59.195369",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ERI5P__44.log"
+      },
+      {
+        "review_type": "ES2PR",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "es2pr_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ES2PR_df_20260128_143400.xlsx"
+        },
+        "duration_seconds": 1.068116,
+        "completed_at": "2026-01-28T14:34:00.363854",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ES2PR__45.log"
+      },
+      {
+        "review_type": "ESVEP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "esvep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ESVEP_df_20260128_143401.xlsx"
+        },
+        "duration_seconds": 1.226428,
+        "completed_at": "2026-01-28T14:34:01.720161",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ESVEP__46.log"
+      },
+      {
+        "review_type": "ETPFB",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "etpfb_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ETPFB_df_20260128_143402.xlsx"
+        },
+        "duration_seconds": 1.03688,
+        "completed_at": "2026-01-28T14:34:02.870210",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ETPFB__47.log"
+      },
+      {
+        "review_type": "ETSEP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "etsep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ETSEP_df_20260128_143403.xlsx"
+        },
+        "duration_seconds": 0.991212,
+        "completed_at": "2026-01-28T14:34:03.970042",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__ETSEP__48.log"
+      },
+      {
+        "review_type": "EUADP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "euadp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUADP_df_20260128_143405.xlsx",
+          "total_companies": 1260,
+          "non_excluded_companies": 14,
+          "top_50_companies": 14,
+          "total_ffmc": 541247241850.2759
+        },
+        "duration_seconds": 1.323163,
+        "completed_at": "2026-01-28T14:34:05.402594",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EUADP__49.log"
+      },
+      {
+        "review_type": "EUMS",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eums_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUMS_Review_20260128_143406.xlsx",
+          "summary": {
+            "total_companies": 1268,
+            "existing_companies_selected": 1196,
+            "new_companies_selected": 72,
+            "total_ffmc_coverage": 29.128240594148913,
+            "inclusions_count": 72,
+            "exclusions_count": 74,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.469502,
+        "completed_at": "2026-01-28T14:34:06.999760",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EUMS__50.log"
+      },
+      {
+        "review_type": "EUREP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eurep_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUREP_df_20260128_143408.xlsx"
+        },
+        "duration_seconds": 1.267096,
+        "completed_at": "2026-01-28T14:34:08.379945",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EUREP__51.log"
+      },
+      {
+        "review_type": "EUS5P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eus5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUS5P_df_20260128_143409.xlsx"
+        },
+        "duration_seconds": 1.2411,
+        "completed_at": "2026-01-28T14:34:09.753895",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EUS5P__52.log"
+      },
+      {
+        "review_type": "EUSL",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "eusl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUSL_Review_20260128_143410.xlsx",
+          "summary": {
+            "total_companies": 1068,
+            "existing_companies_selected": 993,
+            "new_companies_selected": 75,
+            "total_ffmc_coverage": 14.164422076527334,
+            "inclusions_count": 75,
+            "exclusions_count": 78,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.284628,
+        "completed_at": "2026-01-28T14:34:11.154722",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EUSL__53.log"
+      },
+      {
+        "review_type": "EWMS",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ewms_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWMS_Review_20260128_143412.xlsx",
+          "summary": {
+            "total_companies": 4779,
+            "existing_companies_selected": 4524,
+            "new_companies_selected": 255,
+            "total_ffmc_coverage": 29.677737265535164,
+            "inclusions_count": 255,
+            "exclusions_count": 240,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 2.183449,
+        "completed_at": "2026-01-28T14:34:13.446207",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EWMS__54.log"
+      },
+      {
+        "review_type": "EWSL",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ewsl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWSL_Review_20260128_143414.xlsx",
+          "summary": {
+            "total_companies": 4079,
+            "existing_companies_selected": 3814,
+            "new_companies_selected": 265,
+            "total_ffmc_coverage": 14.732064908000181,
+            "inclusions_count": 265,
+            "exclusions_count": 255,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.92864,
+        "completed_at": "2026-01-28T14:34:15.495830",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EWSL__55.log"
+      },
+      {
+        "review_type": "EZ15P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ez15p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZ15P_df_20260128_143416.xlsx"
+        },
+        "duration_seconds": 1.043006,
+        "completed_at": "2026-01-28T14:34:16.657875",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZ15P__56.log"
+      },
+      {
+        "review_type": "EZ40P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ez40p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZ40P_df_20260128_143417.xlsx"
+        },
+        "duration_seconds": 1.055914,
+        "completed_at": "2026-01-28T14:34:17.820630",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZ40P__57.log"
+      },
+      {
+        "review_type": "EZ60P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ez60p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZ60P_df_20260128_143418.xlsx"
+        },
+        "duration_seconds": 1.082715,
+        "completed_at": "2026-01-28T14:34:19.019440",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZ60P__58.log"
+      },
+      {
+        "review_type": "EZCLA",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ezcla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZCLA_df_20260128_143439.xlsx"
+        },
+        "duration_seconds": 20.349691,
+        "completed_at": "2026-01-28T14:34:39.479865",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZCLA__59.log"
+      },
+      {
+        "review_type": "EZMS",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ezms_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZMS_Review_20260128_143441.xlsx",
+          "summary": {
+            "total_companies": 431,
+            "existing_companies_selected": 396,
+            "new_companies_selected": 35,
+            "total_ffmc_coverage": 31.551431980803514,
+            "inclusions_count": 35,
+            "exclusions_count": 25,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.651916,
+        "completed_at": "2026-01-28T14:34:41.266768",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZMS__60.log"
+      },
+      {
+        "review_type": "EZN1P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ezn1p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZN1P_df_20260128_143442.xlsx"
+        },
+        "duration_seconds": 1.144975,
+        "completed_at": "2026-01-28T14:34:42.580746",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZN1P__61.log"
+      },
+      {
+        "review_type": "EZSL",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ezsl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZSL_Review_20260128_143443.xlsx",
+          "summary": {
+            "total_companies": 360,
+            "existing_companies_selected": 324,
+            "new_companies_selected": 36,
+            "total_ffmc_coverage": 15.097836992840854,
+            "inclusions_count": 36,
+            "exclusions_count": 26,
+            "capped_companies": 0
+          }
+        },
+        "duration_seconds": 1.106021,
+        "completed_at": "2026-01-28T14:34:43.802836",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZSL__62.log"
+      },
+      {
+        "review_type": "F4RIP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "f4rip_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\F4RIP_df_20260128_143445.xlsx"
+        },
+        "duration_seconds": 1.158153,
+        "completed_at": "2026-01-28T14:34:45.088123",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__F4RIP__63.log"
+      },
+      {
+        "review_type": "FCLSP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "fclsp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FCLSP_df_20260128_143446.xlsx"
+        },
+        "duration_seconds": 1.764496,
+        "completed_at": "2026-01-28T14:34:46.980775",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FCLSP__64.log"
+      },
+      {
+        "review_type": "FGINP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "fginp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FGINP_df_20260128_143448.xlsx"
+        },
+        "duration_seconds": 1.163897,
+        "completed_at": "2026-01-28T14:34:48.260783",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FGINP__65.log"
+      },
+      {
+        "review_type": "FR20P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "fr20p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FR20P_df_20260128_143449.xlsx"
+        },
+        "duration_seconds": 1.099537,
+        "completed_at": "2026-01-28T14:34:49.501398",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FR20P__66.log"
+      },
+      {
+        "review_type": "FRD4P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "frd4p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FRD4P_df_20260128_143451.xlsx"
+        },
+        "duration_seconds": 2.427213,
+        "completed_at": "2026-01-28T14:34:52.041149",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FRD4P__67.log"
+      },
+      {
+        "review_type": "FRECP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "frecp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FRECP_df_20260128_143453.xlsx"
+        },
+        "duration_seconds": 1.341252,
+        "completed_at": "2026-01-28T14:34:53.514983",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FRECP__68.log"
+      },
+      {
+        "review_type": "FRI4P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "fri4p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FRI4P_df_20260128_143454.xlsx"
+        },
+        "duration_seconds": 1.964777,
+        "completed_at": "2026-01-28T14:34:55.595281",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FRI4P__69.log"
+      },
+      {
+        "review_type": "FRN4P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "frn4p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FRN4P_df_20260128_143456.xlsx"
+        },
+        "duration_seconds": 0.985632,
+        "completed_at": "2026-01-28T14:34:56.703978",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__FRN4P__70.log"
+      },
+      {
+        "review_type": "GICP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "gicp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\GICP_df_20260128_143457.xlsx"
+        },
+        "duration_seconds": 1.311183,
+        "completed_at": "2026-01-28T14:34:58.141765",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__GICP__71.log"
+      },
+      {
+        "review_type": "GSCSP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "gscsp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\GSCSP_df_20260128_143459.xlsx"
+        },
+        "duration_seconds": 0.952232,
+        "completed_at": "2026-01-28T14:34:59.201072",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__GSCSP__72.log"
+      },
+      {
+        "review_type": "GSFBP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "gsfbp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\GSFBP_df_20260128_143500.xlsx"
+        },
+        "duration_seconds": 1.000645,
+        "completed_at": "2026-01-28T14:35:00.314790",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__GSFBP__73.log"
+      },
+      {
+        "review_type": "INFRP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "infrp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\INFRP_df_20260128_143501.xlsx"
+        },
+        "duration_seconds": 1.983973,
+        "completed_at": "2026-01-28T14:35:02.415903",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__INFRP__74.log"
+      },
+      {
+        "review_type": "JPCLA",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "jpcla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\JPCLA_df_20260128_143504.xlsx"
+        },
+        "duration_seconds": 2.632939,
+        "completed_at": "2026-01-28T14:35:05.180381",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__JPCLA__75.log"
+      },
+      {
+        "review_type": "JPCLE",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "jpcle_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\JPCLE_df_20260128_143507.xlsx"
+        },
+        "duration_seconds": 2.250043,
+        "completed_at": "2026-01-28T14:35:07.563834",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__JPCLE__76.log"
+      },
+      {
+        "review_type": "SBF80",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "sbf80_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\SBF80_df_20260128_143508.xlsx"
+        },
+        "duration_seconds": 1.205493,
+        "completed_at": "2026-01-28T14:35:08.885944",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__SBF80__77.log"
+      },
+      {
+        "review_type": "SECTORIAL",
+        "status": "completed",
+        "message": "Review completed successfully for 42 sectorial indices",
+        "data": {
+          "individual_files": [
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TECHP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ENRGP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UTIL_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\BASM_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\FINA_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CSTA_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TELEP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\HEAC_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\INDU_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CDIS_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TBMA_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TCDI_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TCST_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TENR_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TFINP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\THEC_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TIND_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TTEC_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TTEL_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TUTI_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UUTI_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UTEL_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UTEC_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UIND_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UHEC_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UFIN_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UENR_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UCST_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UCDI_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UBMA_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEUS_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEAPP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EECP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEBRP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEUU_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EEOG_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUOG_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWHC_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWAP_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWBR_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWOU_sectorial_20260128_143511.xlsx",
+            "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EWOG_sectorial_20260128_143511.xlsx"
+          ],
+          "summary_file": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\All_Sectorial_Summary_20260128_143511.xlsx",
+          "processed_indices": [
+            "TECHP",
+            "ENRGP",
+            "UTIL",
+            "BASM",
+            "FINA",
+            "CSTA",
+            "TELEP",
+            "HEAC",
+            "INDU",
+            "CDIS",
+            "TBMA",
+            "TCDI",
+            "TCST",
+            "TENR",
+            "TFINP",
+            "THEC",
+            "TIND",
+            "TTEC",
+            "TTEL",
+            "TUTI",
+            "UUTI",
+            "UTEL",
+            "UTEC",
+            "UIND",
+            "UHEC",
+            "UFIN",
+            "UENR",
+            "UCST",
+            "UCDI",
+            "UBMA",
+            "EEUS",
+            "EEAPP",
+            "EECP",
+            "EEBRP",
+            "EEUU",
+            "EEOG",
+            "EUOG",
+            "EWHC",
+            "EWAP",
+            "EWBR",
+            "EWOU",
+            "EWOG"
+          ]
+        },
+        "duration_seconds": 7.91043,
+        "completed_at": "2026-01-28T14:35:16.924681",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__SECTORIAL__78.log"
+      },
+      {
+        "review_type": "SES5P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "ses5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\SES5P_df_20260128_143518.xlsx"
+        },
+        "duration_seconds": 1.428169,
+        "completed_at": "2026-01-28T14:35:18.492697",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__SES5P__79.log"
+      },
+      {
+        "review_type": "TCAMP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "tcamp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\TCAMP_df_20260128_143519.xlsx"
+        },
+        "duration_seconds": 0.943422,
+        "completed_at": "2026-01-28T14:35:19.557511",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__TCAMP__80.log"
+      },
+      {
+        "review_type": "UC3PE",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "uc3pe_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\UC3PE_df_20260128_143522.xlsx"
+        },
+        "duration_seconds": 3.097673,
+        "completed_at": "2026-01-28T14:35:22.762335",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__UC3PE__81.log"
+      },
+      {
+        "review_type": "USC3P",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "usc3p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\USC3P_df_20260128_143523.xlsx"
+        },
+        "duration_seconds": 1.299489,
+        "completed_at": "2026-01-28T14:35:24.216815",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__USC3P__82.log"
+      },
+      {
+        "review_type": "USCLA",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "uscla_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\USCLA_df_20260128_143527.xlsx"
+        },
+        "duration_seconds": 3.114746,
+        "completed_at": "2026-01-28T14:35:27.447775",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__USCLA__83.log"
+      },
+      {
+        "review_type": "USCLE",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "uscle_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\USCLE_df_20260128_143530.xlsx"
+        },
+        "duration_seconds": 3.518427,
+        "completed_at": "2026-01-28T14:35:31.166549",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__USCLE__84.log"
+      },
+      {
+        "review_type": "WCAMP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "wcamp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\WCAMP_df_20260128_143532.xlsx"
+        },
+        "duration_seconds": 0.946794,
+        "completed_at": "2026-01-28T14:35:32.235223",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__WCAMP__85.log"
+      },
+      {
+        "review_type": "WIFRP",
+        "status": "completed",
+        "message": "Review completed successfully",
+        "data": {
+          "wifrp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\WIFRP_df_20260128_143533.xlsx"
+        },
+        "duration_seconds": 2.082461,
+        "completed_at": "2026-01-28T14:35:34.432329",
+        "runner_returncode": 0,
+        "runner_log_path": "task_storage\\fc900a15-ffe0-43f0-afc2-22afc75f9eef__WIFRP__86.log"
+      }
+    ],
+    "summary": {
+      "total": 86,
+      "successful": 85,
+      "failed": 1,
+      "duration_seconds": 189.87982249999186,
+      "avg_seconds_per_review": 2.207904912790603
+    }
+  },
+  "review_type": null,
+  "parameters": {
+    "review_types": [
+      "AETAW",
+      "AEXAT",
+      "AEXEW",
+      "BE1P",
+      "BNEW",
+      "C6RIP",
+      "CACEW",
+      "CLAMP",
+      "CLEW",
+      "DAREP",
+      "DEREP",
+      "DWREP",
+      "EAIB",
+      "EDEFP",
+      "EDWP",
+      "EDWPT",
+      "EEDF",
+      "EEFAP",
+      "EEMSC",
+      "EENS",
+      "EES2",
+      "EESF",
+      "EESL",
+      "EFESP",
+      "EFMEP",
+      "EGSPP",
+      "EHCF",
+      "EHNI",
+      "EIAPR",
+      "ELECP",
+      "ELTFP",
+      "ELUX",
+      "ELUXP",
+      "EMLS",
+      "ENTP",
+      "ENVB",
+      "ENVEO",
+      "ENVEU",
+      "ENVF",
+      "ENVU",
+      "ENVUK",
+      "ENVW",
+      "ENZTP",
+      "ERI5P",
+      "ES2PR",
+      "ESVEP",
+      "ETPFB",
+      "ETSEP",
+      "EUADP",
+      "EUMS",
+      "EUREP",
+      "EUS5P",
+      "EUSL",
+      "EWMS",
+      "EWSL",
+      "EZ15P",
+      "EZ40P",
+      "EZ60P",
+      "EZCLA",
+      "EZMS",
+      "EZN1P",
+      "EZSL",
+      "F4RIP",
+      "FCLSP",
+      "FGINP",
+      "FR20P",
+      "FRD4P",
+      "FRECP",
+      "FRI4P",
+      "FRN4P",
+      "GICP",
+      "GSCSP",
+      "GSFBP",
+      "INFRP",
+      "JPCLA",
+      "JPCLE",
+      "SBF80",
+      "SECTORIAL",
+      "SES5P",
+      "TCAMP",
+      "UC3PE",
+      "USC3P",
+      "USCLA",
+      "USCLE",
+      "WCAMP",
+      "WIFRP"
+    ],
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": 189.87982249999186,
+  "completed_at_review": null,
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

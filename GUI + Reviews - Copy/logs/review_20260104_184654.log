@@ -1,0 +1,5 @@
+2026-01-04 18:46:54,553 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:46:54,553 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:47:14,345 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:47:14] "GET / HTTP/1.1" 200 -
+2026-01-04 18:47:14,392 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:47:14] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2026-01-04 18:47:47,872 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\functions.py', reloading

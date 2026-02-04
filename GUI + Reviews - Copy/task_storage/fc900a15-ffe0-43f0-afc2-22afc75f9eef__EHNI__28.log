@@ -1,0 +1,14 @@
+Starting EHNI review at 2026-01-28 14:33:34.711951
+2026-01-28 14:33:35,011 - Review.reviews.ehni_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:35,595 - Review.reviews.ehni_review - INFO - Loading reference data...
+2026-01-28 14:33:38,160 - Review.reviews.ehni_review - INFO - Merging Sustainalytics data...
+2026-01-28 14:33:38,164 - Review.reviews.ehni_review - INFO - Sustainalytics merge completed. Added 17 columns.
+2026-01-28 14:33:38,164 - Review.reviews.ehni_review - INFO - Applying exclusion criteria...
+2026-01-28 14:33:38,170 - Review.reviews.ehni_review - INFO - Exclusion criteria applied. 0 companies excluded.
+2026-01-28 14:33:38,176 - Review.reviews.ehni_review - INFO - Saving EHNI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EHNI_df_20260128_143338.xlsx
+Completed EHNI review in 3.51 seconds

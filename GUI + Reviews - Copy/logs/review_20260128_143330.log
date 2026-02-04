@@ -1,0 +1,14 @@
+2026-01-28 14:33:30,313 - Review.reviews.efesp_review - INFO - Loading EOD data...
+2026-01-28 14:33:30,895 - Review.reviews.efesp_review - INFO - Loading reference data...
+2026-01-28 14:33:31,012 - Review.reviews.efesp_review - INFO - Creating eligible companies dataframe...
+2026-01-28 14:33:31,012 - Review.reviews.efesp_review - INFO - Group 1 (ICB 501010): 5 selected out of 23 companies
+2026-01-28 14:33:31,028 - Review.reviews.efesp_review - INFO - Group 2 (ICB 502010): 5 selected out of 15 companies
+2026-01-28 14:33:31,029 - Review.reviews.efesp_review - INFO - Group 3 (ICB 502040): 5 selected out of 16 companies
+2026-01-28 14:33:31,029 - Review.reviews.efesp_review - INFO - Group 4 (ICB 502020): 5 selected out of 12 companies
+2026-01-28 14:33:31,030 - Review.reviews.efesp_review - INFO - Group 5 (ICB 101010): 5 selected out of 14 companies
+2026-01-28 14:33:31,031 - Review.reviews.efesp_review - INFO - Group 6 (ICB 502060): 5 selected out of 11 companies
+2026-01-28 14:33:31,036 - Review.reviews.efesp_review - INFO - Total eligible companies: 91
+2026-01-28 14:33:31,036 - Review.reviews.efesp_review - INFO - Total selected companies: 30
+2026-01-28 14:33:31,036 - Review.reviews.efesp_review - INFO - Total selected FFMC: 1,645,320,656,217.95
+2026-01-28 14:33:31,036 - Review.reviews.efesp_review - INFO - Weight sum check for selected companies: 1.000000
+2026-01-28 14:33:31,042 - Review.reviews.efesp_review - INFO - Saving EFESP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EFESP_df_20260128_143331.xlsx

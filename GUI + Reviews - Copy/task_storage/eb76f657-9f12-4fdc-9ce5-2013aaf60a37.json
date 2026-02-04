@@ -1,0 +1,24 @@
+{
+  "task_id": "eb76f657-9f12-4fdc-9ce5-2013aaf60a37",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2025-12-23T15:41:52.503559",
+  "started_at": "2025-12-23T15:41:52.504548",
+  "completed_at": "2025-12-23T15:42:07.528564",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'NoneType' object has no attribute 'merge'",
+  "error": "Error during review calculation: 'NoneType' object has no attribute 'merge'",
+  "result_data": null,
+  "review_type": "ENVU",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "14-Jul-25",
+    "index": "ENVU",
+    "isin": "QS0011250931",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 15.021672
+}

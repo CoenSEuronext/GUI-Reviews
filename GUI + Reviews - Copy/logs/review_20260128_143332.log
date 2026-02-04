@@ -1,0 +1,6 @@
+2026-01-28 14:33:33,504 - Review.reviews.egspp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2026-01-28 14:33:33,506 - Review.reviews.egspp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\Review\reviews\egspp_review.py", line 43, in run_egspp_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+

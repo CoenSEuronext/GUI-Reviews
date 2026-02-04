@@ -1,0 +1,29 @@
+{
+  "task_id": "f0acf25b-0feb-419b-99ed-7702307ffb8a",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-28T14:19:20.123374",
+  "started_at": "2026-01-28T14:19:20.578298",
+  "completed_at": "2026-01-28T14:19:21.754876",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: All objects passed were None",
+  "error": "Error during review calculation: All objects passed were None",
+  "result_data": null,
+  "review_type": "AETAW",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "AETAW",
+    "isin": "NL0010614525",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.098363,
+  "completed_at_review": "2026-01-28T14:19:21.754162",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\Review\\reviews\\aetaw_review.py\", line 50, in run_aetaw_review\n    selection_df = pd.concat([\n                   ^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py\", line 382, in concat\n    op = _Concatenator(\n         ^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py\", line 445, in __init__\n    objs, keys = self._clean_keys_and_objs(objs, keys)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py\", line 541, in _clean_keys_and_objs\n    raise ValueError(\"All objects passed were None\")\nValueError: All objects passed were None\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting AETAW review at 2026-01-28 14:19:20.655799\n2026-01-28 14:19:21,022 - Review.reviews.aetaw_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - INFO - Loading reference data...\nError checking sheets in C:\\Users\\bjanse\\VS Code\\GUI + Reviews\\202512\\AEX Family.xlsx: file not found\nError checking sheets in C:\\Users\\bjanse\\VS Code\\GUI + Reviews\\202512\\AEX Family.xlsx: file not found\nError checking sheets in C:\\Users\\bjanse\\VS Code\\GUI + Reviews\\202512\\AEX Family.xlsx: file not found\n2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - ERROR - Error during review calculation: All objects passed were None\n2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\Review\\reviews\\aetaw_review.py\", line 50, in run_aetaw_review\n    selection_df = pd.concat([\n                   ^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py\", line 382, in concat\n    op = _Concatenator(\n         ^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py\", line 445, in __init__\n    objs, keys = self._clean_keys_and_objs(objs, keys)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\concat.py\", line 541, in _clean_keys_and_objs\n    raise ValueError(\"All objects passed were None\")\nValueError: All objects passed were None\nCompleted AETAW review in 1.10 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\f0acf25b-0feb-419b-99ed-7702307ffb8a.log"
+}

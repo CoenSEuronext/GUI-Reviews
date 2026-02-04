@@ -1,0 +1,9 @@
+2026-01-28 14:33:59,596 - Review.reviews.es2pr_review - INFO - Loading EOD data...
+2026-01-28 14:34:00,148 - Review.reviews.es2pr_review - INFO - Loading reference data...
+2026-01-28 14:34:00,281 - Review.reviews.es2pr_review - INFO - Calculating capping factors...
+2026-01-28 14:34:00,282 - Review.reviews.es2pr_review - INFO - Starting Step 1: Individual capping
+2026-01-28 14:34:00,284 - Review.reviews.es2pr_review - INFO - Individual capping satisfied after 4 iterations
+2026-01-28 14:34:00,284 - Review.reviews.es2pr_review - INFO - Starting Step 2: Sector capping
+2026-01-28 14:34:00,297 - Review.reviews.es2pr_review - INFO - Sector capping satisfied after 2 iterations
+2026-01-28 14:34:00,297 - Review.reviews.es2pr_review - INFO - Normalized capping factors by dividing by 1.7309409678029573
+2026-01-28 14:34:00,297 - Review.reviews.es2pr_review - INFO - Saving ES2PR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\ES2PR_df_20260128_143400.xlsx

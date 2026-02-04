@@ -1,7 +1,0 @@
-2025-04-15 15:00:58,759 - werkzeug - WARNING -  * Debugger is active!
-2025-04-15 15:00:58,761 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-04-15 15:00:59,198 - Review.reviews.lc3wp_review - INFO - Loading EOD data...
-2025-04-15 15:01:01,064 - Review.reviews.lc3wp_review - INFO - Loading reference data...
-2025-04-15 15:01:01,093 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\__init__.py', reloading
-2025-04-15 15:01:01,102 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementTree.py', reloading
-2025-04-15 15:01:01,105 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\xml\\etree\\ElementPath.py', reloading

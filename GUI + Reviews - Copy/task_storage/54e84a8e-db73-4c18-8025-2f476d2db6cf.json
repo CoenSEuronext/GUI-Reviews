@@ -1,0 +1,31 @@
+{
+  "task_id": "54e84a8e-db73-4c18-8025-2f476d2db6cf",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:21:57.321749",
+  "started_at": "2026-01-28T14:21:57.692867",
+  "completed_at": "2026-01-28T14:21:59.526829",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "aexew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\AEXEW_df_20260128_142159.xlsx"
+  },
+  "review_type": "AEXEW",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "AEXEW",
+    "isin": "QS0011159744",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.750307,
+  "completed_at_review": "2026-01-28T14:21:59.526829",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

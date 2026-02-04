@@ -1,0 +1,8 @@
+2026-01-28 14:19:16,521 - Review.reviews.aerdp_review - INFO - Loading EOD data...
+2026-01-28 14:19:17,121 - Review.reviews.aerdp_review - INFO - Loading reference data...
+2026-01-28 14:19:17,121 - Review.reviews.aerdp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files
+2026-01-28 14:19:17,137 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\Review\reviews\aerdp_review.py", line 60, in run_aerdp_review
+    raise ValueError("Failed to load one or more required reference data files")
+ValueError: Failed to load one or more required reference data files
+

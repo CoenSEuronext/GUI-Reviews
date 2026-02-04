@@ -1,0 +1,17 @@
+Starting EUADP review at 2026-01-28 14:34:04.079431
+2026-01-28 14:34:04,383 - Review.reviews.euadp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:04,930 - Review.reviews.euadp_review - INFO - Loading reference data...
+2026-01-28 14:34:05,070 - Review.reviews.euadp_review - INFO - Calculating initial weights...
+2026-01-28 14:34:05,070 - Review.reviews.euadp_review - INFO - Total FFMC of non-excluded companies: €541,247,241,850
+2026-01-28 14:34:05,071 - Review.reviews.euadp_review - INFO - Applying weight capping...
+2026-01-28 14:34:05,074 - Review.reviews.euadp_review - INFO - Total capped weights sum: 1.000000
+2026-01-28 14:34:05,076 - Review.reviews.euadp_review - INFO - Selected top 50 companies
+2026-01-28 14:34:05,077 - Review.reviews.euadp_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-28 14:34:05,081 - Review.reviews.euadp_review - INFO - Saving EUADP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUADP_df_20260128_143405.xlsx
+2026-01-28 14:34:05,396 - Review.reviews.euadp_review - INFO - EUADP review completed successfully
+Completed EUADP review in 1.32 seconds

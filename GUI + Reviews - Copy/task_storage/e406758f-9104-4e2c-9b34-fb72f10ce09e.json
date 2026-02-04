@@ -1,0 +1,29 @@
+{
+  "task_id": "e406758f-9104-4e2c-9b34-fb72f10ce09e",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-28T14:19:15.889843",
+  "started_at": "2026-01-28T14:19:16.044411",
+  "completed_at": "2026-01-28T14:19:17.138946",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: Failed to load one or more required reference data files",
+  "error": "Error during review calculation: Failed to load one or more required reference data files",
+  "result_data": null,
+  "review_type": "AERDP",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "AERDP",
+    "isin": "NLIX00003086",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.050125,
+  "completed_at_review": "2026-01-28T14:19:17.138946",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\Review\\reviews\\aerdp_review.py\", line 60, in run_aerdp_review\n    raise ValueError(\"Failed to load one or more required reference data files\")\nValueError: Failed to load one or more required reference data files\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting AERDP review at 2026-01-28 14:19:16.088821\n2026-01-28 14:19:16,521 - Review.reviews.aerdp_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-01-28 14:19:17,121 - Review.reviews.aerdp_review - INFO - Loading reference data...\n2026-01-28 14:19:17,121 - Review.reviews.aerdp_review - ERROR - Error during review calculation: Failed to load one or more required reference data files\n2026-01-28 14:19:17,137 - Review.reviews.aerdp_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\Review\\reviews\\aerdp_review.py\", line 60, in run_aerdp_review\n    raise ValueError(\"Failed to load one or more required reference data files\")\nValueError: Failed to load one or more required reference data files\nCompleted AERDP review in 1.05 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\e406758f-9104-4e2c-9b34-fb72f10ce09e.log"
+}

@@ -23,7 +23,7 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         logger.info("Loading reference data...")
         
@@ -105,19 +105,24 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
         selection_df['FFMC'] = selection_df['Capping Factor'] * selection_df['Number of Shares'] * selection_df['Free Float'] * selection_df['Price']
         
         # Add exclusion filters with separate columns
-        selection_df['FFMC_Exclusion'] = selection_df['FFMC'] < 3000000000  # Below €3B
-        selection_df['Turnover_Exclusion'] = selection_df['100 days aver. turn EUR'] < 22000000  # Below €22M
-        selection_df['Opinion_Exclusion'] = selection_df['Opinion'].isin(['negative', 'risk'])  # Opinion is negative or risk
+        selection_df['FFMC_Exclusion'] = selection_df['FFMC'] < 3000000000  # Below 3B EUR
+        selection_df['Turnover_Exclusion'] = selection_df['100 days aver. turn EUR'] < 22000000  # Below 22M EUR
+        # Opinion is negative, risk, or empty/null
+        selection_df['Opinion_Exclusion'] = (
+            selection_df['Opinion'].isin(['negative', 'risk']) | 
+            selection_df['Opinion'].isna() | 
+            (selection_df['Opinion'].astype(str).str.strip() == '')
+        )
         
         # Create individual exclusion reason columns
         selection_df['FFMC_Exclusion_Reason'] = selection_df['FFMC_Exclusion'].apply(
-            lambda x: 'Excluded: FFMC < €3B' if x else ''
+            lambda x: 'Excluded: FFMC < EUR 3B' if x else ''
         )
         selection_df['Turnover_Exclusion_Reason'] = selection_df['Turnover_Exclusion'].apply(
-            lambda x: 'Excluded: 100 days avg turnover < €22M' if x else ''
+            lambda x: 'Excluded: 100 days avg turnover < EUR 22M' if x else ''
         )
         selection_df['Opinion_Exclusion_Reason'] = selection_df['Opinion_Exclusion'].apply(
-            lambda x: 'Excluded: Opinion negative/risk' if x else ''
+            lambda x: 'Excluded: Opinion negative/risk/empty' if x else ''
         )
         
         # Create summary exclusion reason column
@@ -138,9 +143,8 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
         selection_df['New Sustainability Score'] = pd.to_numeric(selection_df['New Sustainability Score'], errors='coerce')
         selection_df['FFMC'] = pd.to_numeric(selection_df['FFMC'], errors='coerce')
         
-# Fill NaN values with very low values so they rank last
-        selection_df['New Sustainability Score'] = selection_df['New Sustainability Score'].fillna(-999999)
-        selection_df['FFMC'] = selection_df['FFMC'].fillna(-999999)
+        # Fill NaN values with very low values so they rank last
+        selection_df['New Sustainability Score'] = selection_df['New Sustainability Score'].fillna(100)
         
         # Add ranking columns for all companies - FIXED VERSION
         # Sort by Sustainability Score descending (higher is better), then by FFMC descending (higher is better)
@@ -234,14 +238,16 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
         top_50_df['Currency'] = currency
         selection_df['Unrounded NOSH'] = target_mcap_per_company / selection_df['Close Prc_EOD']
         
-        # Prepare ERI5P DataFrame
+        # Prepare ERI5P DataFrame with ranking columns
         ERI5P_df = (
             top_50_df[
-                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
-                'Effective Date of Review', 'Currency']
+                ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 
+                 'Capping Factor', 'Effective Date of Review', 'Currency']
             ]
-            .rename(columns={'Rounded NOSH': 'Number of Shares'})
-            .rename(columns={'ISIN code': 'ISIN Code'})
+            .rename(columns={
+                'Rounded NOSH': 'Number of Shares',
+                'ISIN code': 'ISIN Code',
+            })
             .sort_values('Company')
         )
 
@@ -254,6 +260,15 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
         )
         inclusion_df = analysis_results['inclusion_df']
         exclusion_df = analysis_results['exclusion_df']
+
+        # Prepare Full Universe output with ranking columns
+        full_universe_df = selection_df[[
+            'Overall_Ranking', 'Eligible_Ranking', 'Company', 'ISIN code', 'MIC', '#Symbol',
+            'New Sustainability Score', 'FFMC', 'Opinion', 'Free Float', 'Number of Shares',
+            'Price', 'Close Prc_EOD', 'Close Prc_CO', '100 days aver. turn EUR',
+            'All_Exclusion_Reasons', 'FFMC_Exclusion_Reason', 'Turnover_Exclusion_Reason', 
+            'Opinion_Exclusion_Reason'
+        ]].sort_values('Overall_Ranking')
 
         # Save output files
         try:
@@ -270,7 +285,7 @@ def run_eri5p_review(date, co_date, effective_date, index="ERI5P", isin="NL00129
                 ERI5P_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
-                selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                full_universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
                 pd.DataFrame({'Index Market Cap': [index_mcap]}).to_excel(writer, sheet_name='Index Market Cap', index=False)
 
             return {

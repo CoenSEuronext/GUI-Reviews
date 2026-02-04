@@ -1,6 +1,0 @@
-2025-06-24 13:39:00,711 - werkzeug - WARNING -  * Debugger is active!
-2025-06-24 13:39:00,713 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-06-24 13:39:04,993 - Review.reviews.aexew_review - INFO - Loading EOD data...
-2025-06-24 13:39:07,963 - Review.reviews.aexew_review - INFO - Loading reference data...
-2025-06-24 13:39:08,132 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AEXEW_df_20250624_133908.xlsx
-2025-06-24 13:39:08,269 - werkzeug - INFO - 127.0.0.1 - - [24/Jun/2025 13:39:08] "POST /calculate HTTP/1.1" 200 -

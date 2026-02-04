@@ -1,0 +1,39 @@
+Starting JPCLE review at 2026-01-28 14:35:05.313791
+2026-01-28 14:35:05,632 - Review.reviews.jpcle_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:35:06,224 - Review.reviews.jpcle_review - INFO - Loading reference data...
+2026-01-28 14:35:06,315 - Review.reviews.jpcle_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2026-01-28 14:35:06,315 - Review.reviews.jpcle_review - INFO - Remaining universe size: 500 companies
+2026-01-28 14:35:06,315 - Review.reviews.jpcle_review - INFO - Kept 342 companies with MIC = 'XTKS' (Tokyo Stock Exchange)
+2026-01-28 14:35:06,315 - Review.reviews.jpcle_review - INFO - Removed 158 companies with other MICs
+2026-01-28 14:35:06,316 - Review.reviews.jpcle_review - INFO - Final universe size after MIC filtering: 342 companies
+2026-01-28 14:35:06,316 - Review.reviews.jpcle_review - INFO - Merging Oekom data points early...
+2026-01-28 14:35:06,321 - Review.reviews.jpcle_review - INFO - Oekom data merged successfully
+2026-01-28 14:35:06,322 - Review.reviews.jpcle_review - INFO - Trust Metric exclusions: 32
+2026-01-28 14:35:06,322 - Review.reviews.jpcle_review - INFO - NBR Overall Flag exclusions: 1
+2026-01-28 14:35:06,323 - Review.reviews.jpcle_review - INFO - APMines exclusions: 0
+2026-01-28 14:35:06,323 - Review.reviews.jpcle_review - INFO - BiologicalWeapons exclusions: 0
+2026-01-28 14:35:06,324 - Review.reviews.jpcle_review - INFO - ChemicalWeapons exclusions: 0
+2026-01-28 14:35:06,324 - Review.reviews.jpcle_review - INFO - ClusterMunitions exclusions: 0
+2026-01-28 14:35:06,325 - Review.reviews.jpcle_review - INFO - DepletedUranium exclusions: 0
+2026-01-28 14:35:06,326 - Review.reviews.jpcle_review - INFO - IncendiaryWeapons exclusions: 0
+2026-01-28 14:35:06,326 - Review.reviews.jpcle_review - INFO - NuclearWeaponsNonNPT exclusions: 0
+2026-01-28 14:35:06,327 - Review.reviews.jpcle_review - INFO - WhitePhosphorus exclusions: 2
+2026-01-28 14:35:06,328 - Review.reviews.jpcle_review - INFO - Coal Mining exclusions: 8
+2026-01-28 14:35:06,328 - Review.reviews.jpcle_review - INFO - Thermal Power exclusions: 11
+2026-01-28 14:35:06,329 - Review.reviews.jpcle_review - INFO - Oil Sands exclusions: 0
+2026-01-28 14:35:06,330 - Review.reviews.jpcle_review - INFO - Shale Oil/Gas exclusions: 7
+2026-01-28 14:35:06,330 - Review.reviews.jpcle_review - INFO - Total companies in universe: 342
+2026-01-28 14:35:06,330 - Review.reviews.jpcle_review - INFO - Carbon Budget cutoff rank (80th percentile): 273.6
+2026-01-28 14:35:06,331 - Review.reviews.jpcle_review - INFO - Carbon Budget exclusions (rank > 273.6): 69
+2026-01-28 14:35:06,336 - Review.reviews.jpcle_review - INFO - Companies remaining after exclusions: 239
+2026-01-28 14:35:06,341 - Review.reviews.jpcle_review - INFO - Selected top 250 companies by ESG Performance Score
+2026-01-28 14:35:07,363 - Review.reviews.jpcle_review - INFO - Selected top 25 companies by FFMC
+2026-01-28 14:35:07,363 - Review.reviews.jpcle_review - INFO - Checking IsinCode FRESG0000215 in index_eod_df
+2026-01-28 14:35:07,363 - Review.reviews.jpcle_review - INFO - Found 1 matching rows
+2026-01-28 14:35:07,363 - Review.reviews.jpcle_review - INFO - Saving JPCLE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\JPCLE_df_20260128_143507.xlsx
+Completed JPCLE review in 2.25 seconds

@@ -1,0 +1,18 @@
+Starting EENS review at 2026-01-28 14:33:24.811598
+2026-01-28 14:33:25,128 - Review.reviews.eens_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:25,928 - Review.reviews.eens_review - INFO - Loading reference data...
+2026-01-28 14:33:25,993 - Review.reviews.eens_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-28 14:33:26,078 - Review.reviews.eens_review - INFO - Base rows: 1260 | Missing #Symbol: 0 | Missing FX: 0 | Missing Free Float%: 0 | Missing ICB: 0
+2026-01-28 14:33:26,078 - Review.reviews.eens_review - INFO - Universe size: 1260 | Eligible (ICB filter) size: 84
+2026-01-28 14:33:26,078 - Review.reviews.eens_review - INFO - Selected 84 constituents for EENS (all eligible).
+2026-01-28 14:33:26,078 - Review.reviews.eens_review - INFO - Calculating FFMC weights and applying 20% cap...
+2026-01-28 14:33:26,078 - Review.reviews.eens_review - INFO - Capping applied (CF < 1): 0 constituents | cap_limit=20%
+2026-01-28 14:33:26,086 - Review.reviews.eens_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-28 14:33:26,090 - Review.reviews.eens_review - INFO - Inclusions: 12, Exclusions: 6
+2026-01-28 14:33:26,090 - Review.reviews.eens_review - INFO - Saving EENS output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EENS_df_20260128_143326.xlsx
+Completed EENS review in 1.50 seconds

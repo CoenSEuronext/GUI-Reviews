@@ -1,0 +1,44 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__EDWPT__16",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:33:13.930762",
+  "review_type": "EDWPT",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "EDWPT",
+    "isin": "NLIX00001932",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:33:13.977969",
+  "error": null,
+  "completed_at": "2026-01-28T14:33:21.129301",
+  "result_data": {
+    "edwpt_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EDWPT_df_20260128_143315.xlsx",
+    "individual_files": [
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EDWPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEUPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DEZPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DAPPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DNAPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DASPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\DPAPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUSPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EJPPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\ECHPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EUKPT_Composition_20260128_143315.xlsx",
+      "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\CANPT_Composition_20260128_143315.xlsx"
+    ],
+    "summary": {
+      "total_companies": 5317,
+      "total_ffmc_coverage": 98.82348697129757
+    }
+  },
+  "duration_seconds": 7.151332,
+  "completed_at_review": "2026-01-28T14:33:21.129301"
+}

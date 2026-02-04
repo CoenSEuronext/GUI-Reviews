@@ -1,0 +1,14 @@
+Starting DWREP review at 2026-01-28 14:33:03.059942
+2026-01-28 14:33:03,360 - Review.reviews.dwrep_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:03,912 - Review.reviews.dwrep_review - INFO - Loading reference data...
+2026-01-28 14:33:04,520 - Review.reviews.dwrep_review - INFO - Creating eligible companies dataframe...
+2026-01-28 14:33:04,520 - Review.reviews.dwrep_review - INFO - Total eligible companies: 393
+2026-01-28 14:33:04,520 - Review.reviews.dwrep_review - INFO - Total eligible FFMC: 1,896,214,997,148.63
+2026-01-28 14:33:04,520 - Review.reviews.dwrep_review - INFO - Weight sum check: 1.000000
+2026-01-28 14:33:04,529 - Review.reviews.dwrep_review - INFO - Saving DWREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DWREP_df_20260128_143304.xlsx
+Completed DWREP review in 2.41 seconds

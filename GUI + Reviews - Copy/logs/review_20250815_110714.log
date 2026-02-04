@@ -1,9 +1,0 @@
-2025-08-15 11:07:15,239 - werkzeug - WARNING -  * Debugger is active!
-2025-08-15 11:07:15,239 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-08-15 11:07:16,079 - Review.reviews.dwrep_review - INFO - Loading EOD data...
-2025-08-15 11:07:16,895 - Review.reviews.dwrep_review - INFO - Loading reference data...
-2025-08-15 11:07:25,339 - Review.reviews.dwrep_review - INFO - Saving DWREP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\DWREP_df_20250815_110725.xlsx
-2025-08-15 11:07:26,740 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 11:07:26] "POST /calculate HTTP/1.1" 200 -
-2025-08-15 11:07:27,474 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading
-2025-08-15 11:07:28,027 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
-2025-08-15 11:07:28,031 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading

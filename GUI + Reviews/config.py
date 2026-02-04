@@ -2,7 +2,7 @@
 # Network paths
 DLF_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
-DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
+DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy"
 
 # Index Configurations
 INDEX_CONFIGS = {
@@ -440,8 +440,31 @@ INDEX_CONFIGS = {
         "index": "ENVW",
         "isin": "QS0011250840",
         "output_key": "envw_path"
+    },
+    "ENTP": {
+        "index": "ENTP",
+        "isin": "NLIX00000926",
+        "output_key": "entp_path"
+    },
+        "ENZTP": {
+        "index": "ENZTP",
+        "isin": "NLIX00001015",
+        "output_key": "enztp_path"
+    },
+        "EENS": {
+        "index": "EENS",
+        "isin": "NLIX00006246",
+        "output_key": "eens_path"
+    },
+        "FGINP": {
+        "index": "FGINP",
+        "isin": "NL0012730634",
+        "output_key": "fginp_path"
     }
-    # Add new indices here following the same pattern
+
+
+
+
 }
 BATCH_CONFIG = {
     "max_concurrent_reviews": 3,  # Adjust based on your system capacity

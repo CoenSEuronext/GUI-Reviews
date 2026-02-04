@@ -1,0 +1,10 @@
+Starting EESF review at 2026-01-28 14:33:27.544685
+2026-01-28 14:33:27,844 - Review.reviews.eesf_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:28,409 - Review.reviews.eesf_review - INFO - Loading reference data...
+2026-01-28 14:33:28,462 - Review.reviews.eesf_review - INFO - Saving EESF output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EESF_df_20260128_143328.xlsx
+Completed EESF review in 0.99 seconds

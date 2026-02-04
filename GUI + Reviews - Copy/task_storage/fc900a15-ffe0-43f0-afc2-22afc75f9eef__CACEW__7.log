@@ -1,0 +1,10 @@
+Starting CACEW review at 2026-01-28 14:32:34.381980
+2026-01-28 14:32:34,731 - Review.reviews.cacew_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:32:35,310 - Review.reviews.cacew_review - INFO - Loading reference data...
+2026-01-28 14:32:35,513 - Review.reviews.cacew_review - INFO - Saving CACEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\CACEW_df_20260128_143235.xlsx
+Completed CACEW review in 1.19 seconds

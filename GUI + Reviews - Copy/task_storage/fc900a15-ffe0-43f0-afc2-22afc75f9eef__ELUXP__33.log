@@ -1,0 +1,10 @@
+Starting ELUXP review at 2026-01-28 14:33:42.964825
+2026-01-28 14:33:43,261 - Review.reviews.eluxp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:43,815 - Review.reviews.eluxp_review - INFO - Loading reference data...
+2026-01-28 14:33:43,879 - Review.reviews.eluxp_review - INFO - Saving ELUXP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\ELUXP_df_20260128_143343.xlsx
+Completed ELUXP review in 0.97 seconds

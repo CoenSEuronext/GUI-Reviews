@@ -1,0 +1,29 @@
+{
+  "task_id": "3d77d791-7d25-412e-a35c-8d6cb05076b1",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-28T14:20:00.474477",
+  "started_at": "2026-01-28T14:20:01.053086",
+  "completed_at": "2026-01-28T14:20:02.468881",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: 'NoneType' object has no attribute 'rename'",
+  "error": "Error during review calculation: 'NoneType' object has no attribute 'rename'",
+  "result_data": null,
+  "review_type": "AEXEW",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "AEXEW",
+    "isin": "QS0011159744",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.32277,
+  "completed_at_review": "2026-01-28T14:20:02.468881",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\Review\\reviews\\aexew_review.py\", line 44, in run_aexew_review\n    .rename(columns={\n     ^^^^^^\nAttributeError: 'NoneType' object has no attribute 'rename'\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting AEXEW review at 2026-01-28 14:20:01.146111\n2026-01-28 14:20:01,511 - Review.reviews.aexew_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-01-28 14:20:02,439 - Review.reviews.aexew_review - INFO - Loading reference data...\nError checking sheets in C:\\Users\\bjanse\\VS Code\\GUI + Reviews\\202512\\AEX Family.xlsx: file not found\n2026-01-28 14:20:02,465 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'\n2026-01-28 14:20:02,466 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\Review\\reviews\\aexew_review.py\", line 44, in run_aexew_review\n    .rename(columns={\n     ^^^^^^\nAttributeError: 'NoneType' object has no attribute 'rename'\nCompleted AEXEW review in 1.32 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\3d77d791-7d25-412e-a35c-8d6cb05076b1.log"
+}

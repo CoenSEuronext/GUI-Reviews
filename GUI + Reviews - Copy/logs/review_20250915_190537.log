@@ -1,6 +1,0 @@
-2025-09-15 19:05:37,461 - werkzeug - WARNING -  * Debugger is active!
-2025-09-15 19:05:37,463 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-09-15 19:06:41,239 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:06:41] "POST /calculate-batch HTTP/1.1" 200 -
-2025-09-15 19:06:41,243 - Review.reviews.aexew_review - INFO - Loading EOD data...
-2025-09-15 19:06:41,249 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:06:41] "GET /task-status/07f633ea-6924-4d39-83b0-f692bb320641 HTTP/1.1" 200 -
-2025-09-15 19:06:43,243 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2025 19:06:43] "GET /task-status/07f633ea-6924-4d39-83b0-f692bb320641 HTTP/1.1" 200 -

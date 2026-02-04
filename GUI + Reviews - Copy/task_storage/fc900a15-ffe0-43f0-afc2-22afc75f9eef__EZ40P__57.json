@@ -1,0 +1,26 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZ40P__57",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:34:16.713038",
+  "review_type": "EZ40P",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "EZ40P",
+    "isin": "NL0012731871",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:34:16.763294",
+  "error": null,
+  "completed_at": "2026-01-28T14:34:17.820630",
+  "result_data": {
+    "ez40p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZ40P_df_20260128_143417.xlsx"
+  },
+  "duration_seconds": 1.055914,
+  "completed_at_review": "2026-01-28T14:34:17.820630"
+}

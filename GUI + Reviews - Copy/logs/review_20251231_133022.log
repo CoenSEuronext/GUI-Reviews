@@ -1,0 +1,29 @@
+2025-12-31 13:30:22,434 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 13:30:22,435 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 13:33:35,269 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:35] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 13:33:35,269 - Review.reviews.enveo_review - INFO - Loading EOD data...
+2025-12-31 13:33:35,277 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:35] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:33:36,292 - Review.reviews.enveo_review - INFO - Loading reference data...
+2025-12-31 13:33:37,287 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:37] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:33:39,295 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:39] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:33:41,293 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:41] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:33:43,285 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:43] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:33:45,295 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:45] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:33:46,560 - Review.reviews.enveo_review - INFO - Universe rows: 300 | Missing #Symbol: 2 | Missing CO price: 2 | Missing CO FX(EUR): 2 | Missing ESG score: 2 | Missing Free Float %: 0
+2025-12-31 13:33:46,560 - Review.reviews.enveo_review - INFO - Starting universe size: 300
+2025-12-31 13:33:46,560 - Review.reviews.enveo_review - INFO - Step 2: Excluding Sustainalytics Non-Compliant companies...
+2025-12-31 13:33:46,560 - Review.reviews.enveo_review - INFO - Universe size after Non-Compliant screening: 300
+2025-12-31 13:33:46,560 - Review.reviews.enveo_review - INFO - Step 3: Ranking by ESG Risk Score and FF Market Cap (CO)...
+2025-12-31 13:33:46,567 - Review.reviews.enveo_review - INFO - Step 4: Selecting top 120 constituents...
+2025-12-31 13:33:46,568 - Review.reviews.enveo_review - INFO - Selected 120 constituents for ENVEO
+2025-12-31 13:33:46,568 - Review.reviews.enveo_review - INFO - Calculating ESG-based weights (1 / ESG risk)...
+2025-12-31 13:33:46,571 - Review.reviews.enveo_review - INFO - Applying 10% max weight cap (iterative)...
+2025-12-31 13:33:46,572 - Review.reviews.enveo_review - INFO - Capping iterations: 0
+2025-12-31 13:33:46,572 - Review.reviews.enveo_review - INFO - Weight range: 0.59% to 2.28% (<= 10% expected)
+2025-12-31 13:33:46,580 - Review.reviews.enveo_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-31 13:33:46,588 - Review.reviews.enveo_review - INFO - Inclusions: 70, Exclusions: 70
+2025-12-31 13:33:46,590 - Review.reviews.enveo_review - INFO - Saving ENVEO output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVEO_review_20251231_133346.xlsx
+2025-12-31 13:33:47,287 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 13:33:47] "GET /task-status/14cf38a6-1900-420d-b689-cf838f7a89bb HTTP/1.1" 200 -
+2025-12-31 13:34:28,122 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envb_review.py', reloading
+2025-12-31 13:34:28,122 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envb_review.py', reloading
+2025-12-31 13:34:28,122 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envb_review.py', reloading

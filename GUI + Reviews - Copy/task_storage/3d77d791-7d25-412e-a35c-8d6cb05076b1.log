@@ -1,0 +1,16 @@
+Starting AEXEW review at 2026-01-28 14:20:01.146111
+2026-01-28 14:20:01,511 - Review.reviews.aexew_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:20:02,439 - Review.reviews.aexew_review - INFO - Loading reference data...
+Error checking sheets in C:\Users\bjanse\VS Code\GUI + Reviews\202512\AEX Family.xlsx: file not found
+2026-01-28 14:20:02,465 - Review.reviews.aexew_review - ERROR - Error during review calculation: 'NoneType' object has no attribute 'rename'
+2026-01-28 14:20:02,466 - Review.reviews.aexew_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\Review\reviews\aexew_review.py", line 44, in run_aexew_review
+    .rename(columns={
+     ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'rename'
+Completed AEXEW review in 1.32 seconds

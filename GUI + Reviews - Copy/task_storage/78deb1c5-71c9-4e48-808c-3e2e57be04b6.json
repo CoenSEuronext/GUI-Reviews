@@ -1,0 +1,23 @@
+{
+  "task_id": "78deb1c5-71c9-4e48-808c-3e2e57be04b6",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-04T19:00:32.806347",
+  "started_at": "2026-01-04T19:00:32.809070",
+  "completed_at": "2026-01-04T19:00:34.715019",
+  "progress": 0,
+  "message": "Task interrupted by server restart",
+  "error": "Server restarted during task execution",
+  "result_data": null,
+  "review_type": "ENVW",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVW",
+    "isin": "QS0011250840",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": null
+}

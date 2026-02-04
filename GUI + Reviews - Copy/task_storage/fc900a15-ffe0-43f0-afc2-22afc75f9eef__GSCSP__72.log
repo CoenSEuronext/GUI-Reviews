@@ -1,0 +1,12 @@
+Starting GSCSP review at 2026-01-28 14:34:58.248840
+2026-01-28 14:34:58,563 - Review.reviews.gscsp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:59,119 - Review.reviews.gscsp_review - INFO - Loading reference data...
+2026-01-28 14:34:59,119 - Review.reviews.gscsp_review - INFO - Creating selection_df from GSCSP constituents...
+2026-01-28 14:34:59,130 - Review.reviews.gscsp_review - INFO - Found 3 GSCSP constituents
+2026-01-28 14:34:59,136 - Review.reviews.gscsp_review - INFO - Saving GSCSP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\GSCSP_df_20260128_143459.xlsx
+Completed GSCSP review in 0.95 seconds

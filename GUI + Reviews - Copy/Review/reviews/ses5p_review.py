@@ -7,6 +7,7 @@ from config import DLF_FOLDER, DATA_FOLDER, DATA_FOLDER2
 from utils.logging_utils import setup_logging
 from utils.data_loader import load_eod_data, load_reference_data
 from utils.inclusion_exclusion import inclusion_exclusion_analysis
+from utils.capping_proportional import apply_proportional_capping
 
 logger = setup_logging(__name__)
 
@@ -20,7 +21,7 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
         
         logger.info("Loading reference data...")
         ref_data = load_reference_data(
@@ -57,7 +58,7 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
             .merge(symbols_filtered, left_on='ISIN', right_on='Isin Code', how='left')
             .drop('Isin Code', axis=1)
             .merge(
-                stock_eod_df[['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'FX/Index Ccy']].drop_duplicates(subset='#Symbol', keep='first'),
                 on='#Symbol',
                 how='left'
             )
@@ -107,16 +108,69 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
         # Rank and select final companies
         selection_df['Rank Universe'] = selection_df.loc[selection_df['Inclusion_Sector'], 'FFMC CO'].rank(ascending=False, method='first')
         selection_df['Final Selection'] = (selection_df['Inclusion_Sector'] & (selection_df['Rank Universe'] <= 50))
-        selection_df['Final Capping'] = 1
-        full_universe_df = selection_df
+        
+        # Store full universe before filtering
+        full_universe_df = selection_df.copy()
+        
+        # Get index market cap
         index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+        
+        # Filter to selected companies only
         selection_df = selection_df[selection_df['Final Selection']].copy()
+        
+        logger.info(f"Total selected companies: {len(selection_df)}")
+        
+        # ===================================================================
+        # APPLY CAPPING
+        # ===================================================================
+        logger.info("Applying 10% capping...")
+        
+        # Calculate market cap at weighting date (using Close Prc_EOD)
+        selection_df['Market Cap WD'] = (
+            selection_df['Close Prc_EOD'] * 
+            selection_df['NOSH'] * 
+            selection_df['Free Float'] * 
+            selection_df['FX/Index Ccy']
+        )
+        
+        # Calculate base FFMC weight (uncapped)
+        total_mcap = selection_df['Market Cap WD'].sum()
+        selection_df['Weight_FFMC'] = selection_df['Market Cap WD'] / total_mcap
+        
+        # Apply proportional capping with 10% max weight
+        selection_df = apply_proportional_capping(
+            selection_df,
+            mcap_column='Market Cap WD',
+            max_weight=0.10,
+            max_iterations=200
+        )
+        
+        # Calculate capping factor
+        selection_df['Weight_delta'] = selection_df['Current Weight'] / selection_df['Weight_FFMC']
+        
+        # Normalize capping factor so maximum = 1
+        max_weight_delta = selection_df['Weight_delta'].max()
+        selection_df['Final Capping'] = (selection_df['Weight_delta'] / max_weight_delta).round(14)
+        
+        # Log verification
+        total_weight = selection_df['Current Weight'].sum()
+        max_weight = selection_df['Current Weight'].max()
+        capped_count = selection_df['Is Capped'].sum()
+        
+        logger.info(f"Capping Summary:")
+        logger.info(f"  Total companies capped: {capped_count}")
+        logger.info(f"  Total weight: {total_weight:.6f} (target: 1.000000)")
+        logger.info(f"  Maximum constituent weight: {max_weight:.4%} (max allowed: 10.00%)")
+        logger.info(f"  Maximum weight delta: {max_weight_delta:.6f}")
 
-        # Then prepare SES5P_df
+        # Create final output DataFrame
         SES5P_df = (selection_df
             [['Company', 'ISIN', 'MIC', 'NOSH', 'Free Float', 'Final Capping', 
             'Effective Date of Review', 'Currency']]
-            .rename(columns={'Currency': 'Currency (Local)'})
+            .rename(columns={
+                'ISIN': 'ISIN Code',
+                'NOSH': 'Number of Shares'
+            })
             .sort_values('Company')
         )
 
@@ -125,11 +179,12 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
             selection_df, 
             stock_eod_df, 
             index, 
-            isin_column='ISIN'  # Explicitly specify the ISIN column name
+            isin_column='ISIN'
         )
 
         inclusion_df = analysis_results['inclusion_df']
         exclusion_df = analysis_results['exclusion_df']
+        
         # Save output files
         try:
             output_dir = os.path.join(os.getcwd(), 'output')
@@ -142,14 +197,14 @@ def run_ses5p_review(date, co_date, effective_date, index="SES5P", isin="NL00150
             # Save with timestamp to avoid any conflicts
             logger.info(f"Saving SES5P output to: {ses5p_path}")
             with pd.ExcelWriter(ses5p_path) as writer:
-                    # Write each DataFrame to a different sheet
-                    SES5P_df.to_excel(writer, sheet_name='Index Composition', index=False)
-                    inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
-                    exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
-                    full_universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
-                    index_mcap_df = pd.DataFrame({'Index Market Cap': [index_mcap]})
-                    index_mcap_df.to_excel(writer, sheet_name='Index Market Cap', index=False)
-
+                # Write each DataFrame to a different sheet
+                SES5P_df.to_excel(writer, sheet_name='Index Composition', index=False)
+                inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
+                exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
+                full_universe_df.to_excel(writer, sheet_name='Full Universe', index=False)
+                selection_df.to_excel(writer, sheet_name='Selected Companies', index=False)
+                index_mcap_df = pd.DataFrame({'Index Market Cap': [index_mcap]})
+                index_mcap_df.to_excel(writer, sheet_name='Index Market Cap', index=False)
                 
             return {
                 "status": "success",

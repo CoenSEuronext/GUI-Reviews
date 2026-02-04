@@ -1,0 +1,11 @@
+2026-01-04 21:18:42,879 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 21:18:42,881 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 21:18:44,389 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:18:44] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 21:18:44,391 - Review.reviews.envw_review - INFO - Loading EOD data...
+2026-01-04 21:18:44,393 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:18:44] "GET /task-status/2da171b2-d5d8-4c2d-842f-1ae8f8af09e4 HTTP/1.1" 200 -
+2026-01-04 21:18:46,399 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:18:46] "GET /task-status/2da171b2-d5d8-4c2d-842f-1ae8f8af09e4 HTTP/1.1" 200 -
+2026-01-04 21:18:46,554 - Review.reviews.envw_review - INFO - Loading reference data...
+2026-01-04 21:18:48,400 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:18:48] "GET /task-status/2da171b2-d5d8-4c2d-842f-1ae8f8af09e4 HTTP/1.1" 200 -
+2026-01-04 21:18:50,422 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2026-01-04 21:18:50,426 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 21:18:50] "GET /task-status/2da171b2-d5d8-4c2d-842f-1ae8f8af09e4 HTTP/1.1" 200 -
+2026-01-04 21:18:50,426 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading

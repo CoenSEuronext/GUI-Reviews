@@ -1,0 +1,26 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__BNEW__5",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:32:30.432434",
+  "review_type": "BNEW",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "BNEW",
+    "isin": "NL0011376116",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:32:30.483974",
+  "error": null,
+  "completed_at": "2026-01-28T14:32:32.369504",
+  "result_data": {
+    "bnew_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\BNEW_df_20260128_143232.xlsx"
+  },
+  "duration_seconds": 1.883524,
+  "completed_at_review": "2026-01-28T14:32:32.369504"
+}

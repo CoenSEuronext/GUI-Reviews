@@ -43,7 +43,7 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
         # Set data folder for current month
         current_data_folder = os.path.join(DATA_FOLDER2, date[:6])
 
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
 
         ref_data = load_reference_data(
             current_data_folder, 
@@ -96,8 +96,8 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
 
         # Create MIC grouping mapping
         mic_groups = {
-            'US': ['XNYS', 'XNGS', 'BATS', 'XNMS', 'XNCM', 'XASE'],
-            'SE': ['XSTO', 'XNGM', 'SSME'],
+            'US': ['XNYS', 'XNGS', 'BATS', 'XNMS', 'XNCM', 'XASE', 'XNAS'],
+            'SE': ['XSTO', 'SSME'],
             'IT': ['XMIL', 'MTAA'],
             'IE': ['XESM', 'XMSM'],
             'AU': ['XASX'],
@@ -185,18 +185,29 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
 
         # Function to calculate selection for a group
         def calculate_group_selection(df, group_name, countries):
-            # Create mask for countries in this group
-            group_mask = df['Country Group'].isin(countries)
+            # Filter out CA and US ISINs for DEUPT and DEZPT only
+            if group_name in ['DEUPT', 'DEZPT']:
+                # Create a mask for non-CA/US ISINs
+                isin_filter = ~df['ISIN'].str.startswith(('CA', 'US'))
+                logger.info(f"{group_name}: Filtering out CA and US ISINs")
+            else:
+                # No filtering for other indices
+                isin_filter = pd.Series(True, index=df.index)
+            
+            # Create mask for countries in this group AND apply ISIN filter
+            group_mask = df['Country Group'].isin(countries) & isin_filter
             
             # Initialize selection column
             df[f'{group_name}_selection'] = 0
             
-            # Calculate total FFMC for the group
+            # Calculate total FFMC for the group (with filters applied)
             group_total_ffmc = df.loc[group_mask, 'FFMC'].sum()
             
             if group_total_ffmc > 0:
                 # Sort group data by FFMC descending
                 group_df = df[group_mask].sort_values('FFMC', ascending=False).copy()
+                
+                logger.info(f"{group_name}: Processing {len(group_df)} companies after filtering")
                 
                 # Calculate group level cumulative stats
                 group_df[f'{group_name}_Cumulative_FFMC'] = group_df['FFMC'].cumsum()
@@ -204,8 +215,8 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                     group_df[f'{group_name}_Cumulative_FFMC'] / group_total_ffmc * 100
                 )
                 
-                # Add group percentage to main DataFrame
-                df.loc[group_mask, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage']
+                # Add group percentage to main DataFrame using values
+                df.loc[group_df.index, f'{group_name}_Group_Percentage'] = group_df[f'{group_name}_Cumulative_Percentage'].values
                 
                 # Select companies up to 98% plus first one exceeding
                 exceeds_98_group = group_df[f'{group_name}_Cumulative_Percentage'] > 98
@@ -225,8 +236,8 @@ def run_edwpt_review(date, effective_date, co_date, index="EDWPT", isin="NLIX000
                                 country_df['Country_Cumulative_FFMC'] / country_total * 100
                             )
                             
-                            # Add country percentage to main DataFrame
-                            df.loc[country_df.index, f'{group_name}_Country_Percentage'] = country_df['Country_Cumulative_Percentage']
+                            # Add country percentage to main DataFrame using values
+                            df.loc[country_df.index, f'{group_name}_Country_Percentage'] = country_df['Country_Cumulative_Percentage'].values
                             
                             # Select companies up to 98% plus first one exceeding
                             exceeds_98_country = country_df['Country_Cumulative_Percentage'] > 98

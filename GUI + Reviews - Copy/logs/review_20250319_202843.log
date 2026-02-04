@@ -1,6 +1,0 @@
-2025-03-19 20:28:43,364 - werkzeug - WARNING -  * Debugger is active!
-2025-03-19 20:28:43,367 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-03-19 20:28:47,558 - Review.reviews.fri4p_review - INFO - Loading EOD data...
-2025-03-19 20:28:47,561 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading
-2025-03-19 20:28:47,880 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading
-2025-03-19 20:28:47,881 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\fri4p_review.py', reloading

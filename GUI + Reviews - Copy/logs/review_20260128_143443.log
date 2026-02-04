@@ -1,0 +1,23 @@
+2026-01-28 14:34:43,015 - Review.reviews.ezsl_review - INFO - Starting EZSL review calculation
+2026-01-28 14:34:43,651 - Review.reviews.ezsl_review - INFO - Found 326 existing companies in EZSL
+2026-01-28 14:34:43,654 - Review.reviews.ezsl_review - INFO - 
+Overall EZSL Selection Summary:
+2026-01-28 14:34:43,655 - Review.reviews.ezsl_review - INFO - Total companies selected: 360
+2026-01-28 14:34:43,655 - Review.reviews.ezsl_review - INFO -   - Existing companies selected: 324
+2026-01-28 14:34:43,655 - Review.reviews.ezsl_review - INFO -   - New companies selected: 36
+2026-01-28 14:34:43,656 - Review.reviews.ezsl_review - INFO - Total FFMC covered: 15.10%
+2026-01-28 14:34:43,656 - Review.reviews.ezsl_review - INFO - 
+Applying proportional capping
+2026-01-28 14:34:43,657 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:34:43,657 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:43,658 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:43,658 - utils.capping_proportional - INFO -   Total companies: 360
+2026-01-28 14:34:43,658 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:43,658 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:43,658 - utils.capping_proportional - INFO -   Max weight after capping: 0.017681
+2026-01-28 14:34:43,664 - Review.reviews.ezsl_review - INFO - 
+EZSL Changes Summary:
+2026-01-28 14:34:43,664 - Review.reviews.ezsl_review - INFO - Inclusions: 36
+2026-01-28 14:34:43,664 - Review.reviews.ezsl_review - INFO - Exclusions: 26
+2026-01-28 14:34:43,664 - Review.reviews.ezsl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EZSL_Review_20260128_143443.xlsx
+2026-01-28 14:34:43,802 - Review.reviews.ezsl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EZSL_Review_20260128_143443.xlsx

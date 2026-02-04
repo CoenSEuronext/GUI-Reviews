@@ -1,0 +1,26 @@
+Starting AETAW review at 2026-01-28 14:19:20.655799
+2026-01-28 14:19:21,022 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - INFO - Loading reference data...
+Error checking sheets in C:\Users\bjanse\VS Code\GUI + Reviews\202512\AEX Family.xlsx: file not found
+Error checking sheets in C:\Users\bjanse\VS Code\GUI + Reviews\202512\AEX Family.xlsx: file not found
+Error checking sheets in C:\Users\bjanse\VS Code\GUI + Reviews\202512\AEX Family.xlsx: file not found
+2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - ERROR - Error during review calculation: All objects passed were None
+2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\Review\reviews\aetaw_review.py", line 50, in run_aetaw_review
+    selection_df = pd.concat([
+                   ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 382, in concat
+    op = _Concatenator(
+         ^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 541, in _clean_keys_and_objs
+    raise ValueError("All objects passed were None")
+ValueError: All objects passed were None
+Completed AETAW review in 1.10 seconds

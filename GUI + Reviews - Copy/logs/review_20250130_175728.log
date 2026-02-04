@@ -1,7 +1,0 @@
-2025-01-30 17:57:28,714 - werkzeug - WARNING -  * Debugger is active!
-2025-01-30 17:57:28,716 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-01-30 17:57:29,259 - Review.reviews.aerdp_review - INFO - Loading EOD data...
-2025-01-30 17:57:31,016 - Review.reviews.aerdp_review - INFO - Loading reference data...
-2025-01-30 17:57:37,907 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250130_175737.xlsx
-2025-01-30 17:57:38,247 - werkzeug - INFO - 127.0.0.1 - - [30/Jan/2025 17:57:38] "POST /calculate HTTP/1.1" 200 -
-2025-01-30 18:03:16,548 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\numpy\\__init__.py', reloading

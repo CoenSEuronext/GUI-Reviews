@@ -1,0 +1,38 @@
+2025-12-31 14:52:41,711 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 14:52:41,721 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 14:52:41,746 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:41] "GET /task-status/528cc842-9c7f-4d0e-823c-38ce4c222fe9 HTTP/1.1" 200 -
+2025-12-31 14:52:44,555 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:44] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 14:52:44,570 - Review.reviews.envw_review - INFO - Loading EOD data...
+2025-12-31 14:52:44,572 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:44] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:45,346 - Review.reviews.envw_review - INFO - Loading reference data...
+2025-12-31 14:52:46,605 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:46] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:48,584 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:48] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:50,588 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:50] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:52,574 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:52] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:54,605 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:54] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:56,017 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2025-12-31 14:52:56,637 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:56] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:52:58,654 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:58] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:53:00,720 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:53:00] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:53:02,637 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:53:02] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:53:04,574 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:53:04] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:53:06,187 - Review.reviews.envw_review - INFO - Universe rows: 5297 | Missing #Symbol: 25 | Missing FX: 25 | Missing EOD price: 25
+2025-12-31 14:53:06,187 - Review.reviews.envw_review - INFO - Starting universe size: 5297 stocks
+2025-12-31 14:53:06,187 - Review.reviews.envw_review - INFO - Step 1: Using universe 'EDWPT' as starting set...
+2025-12-31 14:53:06,188 - Review.reviews.envw_review - INFO - Step 2: Applying ESG compliance screening...
+2025-12-31 14:53:06,188 - Review.reviews.envw_review - INFO - Universe size after ESG screening: 5293 stocks
+2025-12-31 14:53:06,188 - Review.reviews.envw_review - INFO - Step 3: Ranking by ESG Risk Score and Free Float Market Cap...
+2025-12-31 14:53:06,195 - Review.reviews.envw_review - INFO - Step 4: Selecting top 120 constituents...
+2025-12-31 14:53:06,196 - Review.reviews.envw_review - INFO - Selected 120 constituents for ENVW index
+2025-12-31 14:53:06,196 - Review.reviews.envw_review - INFO - Calculating ESG-based weights...
+2025-12-31 14:53:06,198 - Review.reviews.envw_review - INFO - Applying 10% weight cap...
+2025-12-31 14:53:06,200 - Review.reviews.envw_review - INFO - Capping completed in 0 iterations
+2025-12-31 14:53:06,200 - Review.reviews.envw_review - INFO - Weight range: 0.70% to 1.59%
+2025-12-31 14:53:06,202 - Review.reviews.envw_review - INFO - Performing inclusion/exclusion analysis...
+2025-12-31 14:53:06,206 - Review.reviews.envw_review - INFO - Inclusions: 113, Exclusions: 113
+2025-12-31 14:53:06,207 - Review.reviews.envw_review - INFO - Saving ENVW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVW_df_20251231_145306.xlsx
+2025-12-31 14:53:06,638 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:53:06] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:53:08,581 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:53:08] "GET /task-status/e9b6d9bd-b428-411c-8b4a-585e58504834 HTTP/1.1" 200 -
+2025-12-31 14:54:22,183 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2025-12-31 14:54:22,184 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2025-12-31 14:54:22,185 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading

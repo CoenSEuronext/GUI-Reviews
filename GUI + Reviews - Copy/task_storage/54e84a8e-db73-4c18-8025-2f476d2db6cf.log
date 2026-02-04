@@ -1,0 +1,10 @@
+Starting AEXEW review at 2026-01-28 14:21:57.776522
+2026-01-28 14:21:58,173 - Review.reviews.aexew_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:21:59,137 - Review.reviews.aexew_review - INFO - Loading reference data...
+2026-01-28 14:21:59,447 - Review.reviews.aexew_review - INFO - Saving AEXEW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\AEXEW_df_20260128_142159.xlsx
+Completed AEXEW review in 1.75 seconds

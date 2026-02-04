@@ -1,0 +1,17 @@
+2026-01-28 14:19:21,022 - Review.reviews.aetaw_review - INFO - Loading EOD data...
+2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - INFO - Loading reference data...
+2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - ERROR - Error during review calculation: All objects passed were None
+2026-01-28 14:19:21,745 - Review.reviews.aetaw_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\Review\reviews\aetaw_review.py", line 50, in run_aetaw_review
+    selection_df = pd.concat([
+                   ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 382, in concat
+    op = _Concatenator(
+         ^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\concat.py", line 541, in _clean_keys_and_objs
+    raise ValueError("All objects passed were None")
+ValueError: All objects passed were None
+

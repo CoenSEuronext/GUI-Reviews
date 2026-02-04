@@ -1,0 +1,23 @@
+{
+  "task_id": "be3bcf65-b752-46e5-b77e-444008840fb9",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-04T20:53:22.407268",
+  "started_at": "2026-01-04T20:53:22.409271",
+  "completed_at": "2026-01-04T20:53:27.949989",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: 'PX_EOD'",
+  "error": "Error during review calculation: 'PX_EOD'",
+  "result_data": null,
+  "review_type": "ENVF",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVF",
+    "isin": "QS0011250907",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 5.538554
+}

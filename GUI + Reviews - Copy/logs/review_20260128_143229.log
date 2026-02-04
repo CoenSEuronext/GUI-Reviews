@@ -1,0 +1,10 @@
+2026-01-28 14:32:29,383 - Review.reviews.be1p_review - INFO - Loading EOD data...
+2026-01-28 14:32:29,938 - Review.reviews.be1p_review - INFO - Loading reference data...
+2026-01-28 14:32:30,244 - Review.reviews.be1p_review - INFO - Total universe: 300 companies
+2026-01-28 14:32:30,244 - Review.reviews.be1p_review - INFO - Excluded by MIC filter: 93 companies
+2026-01-28 14:32:30,244 - Review.reviews.be1p_review - INFO - Excluded by ICB subsector filter: 272 companies
+2026-01-28 14:32:30,244 - Review.reviews.be1p_review - INFO - Excluded by turnover filter: 62 companies
+2026-01-28 14:32:30,245 - Review.reviews.be1p_review - INFO - Total excluded (any criteria): 283 companies
+2026-01-28 14:32:30,245 - Review.reviews.be1p_review - INFO - Eligible for selection: 17 companies
+2026-01-28 14:32:30,245 - Review.reviews.be1p_review - INFO - Selecting top 10 companies with highest FFMC from eligible companies...
+2026-01-28 14:32:30,250 - Review.reviews.be1p_review - INFO - Saving BE1P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\BE1P_df_20260128_143230.xlsx

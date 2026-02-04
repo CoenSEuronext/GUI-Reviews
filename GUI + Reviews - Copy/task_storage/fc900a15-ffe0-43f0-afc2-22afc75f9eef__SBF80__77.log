@@ -1,0 +1,13 @@
+Starting SBF80 review at 2026-01-28 14:35:07.680451
+2026-01-28 14:35:07,993 - Review.reviews.sbf80_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:35:08,580 - Review.reviews.sbf80_review - INFO - Loading reference data...
+2026-01-28 14:35:08,763 - Review.reviews.sbf80_review - INFO - Initial selection_df shape: (120, 6)
+2026-01-28 14:35:08,798 - Review.reviews.sbf80_review - INFO - After merges, selection_df shape: (120, 11)
+2026-01-28 14:35:08,798 - Review.reviews.sbf80_review - INFO - FFMC CO calculated successfully
+2026-01-28 14:35:08,811 - Review.reviews.sbf80_review - INFO - Saving SBF80 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\SBF80_df_20260128_143508.xlsx
+Completed SBF80 review in 1.21 seconds

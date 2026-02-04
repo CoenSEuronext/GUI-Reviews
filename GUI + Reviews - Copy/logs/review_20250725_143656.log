@@ -1,9 +1,0 @@
-2025-07-25 14:36:56,506 - werkzeug - WARNING -  * Debugger is active!
-2025-07-25 14:36:56,508 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-07-25 14:36:56,534 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 14:36:56] "GET / HTTP/1.1" 200 -
-2025-07-25 14:36:56,576 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 14:36:56] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
-2025-07-25 14:37:00,648 - Review.reviews.eluxp_review - INFO - Loading EOD data...
-2025-07-25 14:37:04,979 - Review.reviews.eluxp_review - INFO - Loading reference data...
-2025-07-25 14:37:05,910 - Review.reviews.eluxp_review - INFO - Saving ELUXP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ELUXP_df_20250725_143705.xlsx
-2025-07-25 14:37:06,071 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 14:37:06] "POST /calculate HTTP/1.1" 200 -
-2025-07-25 14:44:44,976 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esvep_review.py', reloading

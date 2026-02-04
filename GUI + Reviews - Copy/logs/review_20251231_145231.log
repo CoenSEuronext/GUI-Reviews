@@ -1,0 +1,10 @@
+2025-12-31 14:52:32,324 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 14:52:32,327 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 14:52:37,722 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:37] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 14:52:37,722 - Review.reviews.envw_review - INFO - Loading EOD data...
+2025-12-31 14:52:37,722 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:37] "GET /task-status/528cc842-9c7f-4d0e-823c-38ce4c222fe9 HTTP/1.1" 200 -
+2025-12-31 14:52:39,743 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:52:39] "GET /task-status/528cc842-9c7f-4d0e-823c-38ce4c222fe9 HTTP/1.1" 200 -
+2025-12-31 14:52:39,811 - Review.reviews.envw_review - INFO - Loading reference data...
+2025-12-31 14:52:39,878 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2025-12-31 14:52:39,879 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2025-12-31 14:52:39,879 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading

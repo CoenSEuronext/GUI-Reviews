@@ -1,6 +1,0 @@
-2025-02-04 09:25:23,561 - werkzeug - WARNING -  * Debugger is active!
-2025-02-04 09:25:23,564 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-04 09:25:28,107 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\unicode_escape.py', reloading
-2025-02-04 09:25:28,110 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 09:25:28] "GET / HTTP/1.1" 200 -
-2025-02-04 09:25:28,294 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 09:25:28] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
-2025-02-04 09:25:28,326 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 09:25:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

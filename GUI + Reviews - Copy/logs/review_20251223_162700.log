@@ -1,0 +1,4 @@
+2025-12-23 16:27:01,026 - werkzeug - WARNING -  * Debugger is active!
+2025-12-23 16:27:01,026 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-23 16:27:01,065 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\usc3p_review.py', reloading
+2025-12-23 16:27:01,792 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\uscla_review.py', reloading

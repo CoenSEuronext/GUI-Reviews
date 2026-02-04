@@ -1,0 +1,17 @@
+Starting ENZTP review at 2026-01-28 14:33:56.728772
+2026-01-28 14:33:57,028 - Review.reviews.enztp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:57,612 - Review.reviews.enztp_review - INFO - Loading reference data...
+2026-01-28 14:33:57,618 - Review.reviews.enztp_review - INFO - Universe concat sizes: eurozone_300=300 | north_america_500=500 | combined=800
+2026-01-28 14:33:57,618 - Review.reviews.enztp_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-28 14:33:57,697 - Review.reviews.enztp_review - INFO - Combined universe rows: 800 | Missing #Symbol: 0 | Missing FX: 0 | Missing Free Float%: 0
+2026-01-28 14:33:57,698 - Review.reviews.enztp_review - INFO - Selection: taking all companies from Index Universe...
+2026-01-28 14:33:57,698 - Review.reviews.enztp_review - INFO - Selected 800 constituents for ENZTP
+2026-01-28 14:33:57,700 - Review.reviews.enztp_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-28 14:33:57,704 - Review.reviews.enztp_review - INFO - Inclusions: 30, Exclusions: 31
+2026-01-28 14:33:57,704 - Review.reviews.enztp_review - INFO - Saving ENZTP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\ENZTP_df_20260128_143357.xlsx
+Completed ENZTP review in 1.30 seconds

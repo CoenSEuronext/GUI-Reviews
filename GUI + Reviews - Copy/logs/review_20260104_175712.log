@@ -1,0 +1,38 @@
+2026-01-04 17:57:13,591 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 17:57:13,593 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 17:57:13,630 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:13] "GET /task-status/54a0e11d-fc89-48bb-a7ed-950109c47d9b HTTP/1.1" 200 -
+2026-01-04 17:57:26,198 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:26] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 17:57:26,201 - Review.reviews.envw_review - INFO - Loading EOD data...
+2026-01-04 17:57:26,205 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:26] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:28,212 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:28] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:28,367 - Review.reviews.envw_review - INFO - Loading reference data...
+2026-01-04 17:57:30,213 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:30] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:32,214 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:32] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:34,216 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:34] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:36,222 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:36] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:38,247 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:38] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:40,224 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:40] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:40,500 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-04 17:57:42,268 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:42] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:44,262 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:44] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:46,299 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:46] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:48,249 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:48] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:50,217 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:50] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:52,209 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:52] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 17:57:52,366 - Review.reviews.envw_review - INFO - Universe rows: 5297 | Missing #Symbol: 25 | Missing FX: 25 | Missing EOD price: 25
+2026-01-04 17:57:52,366 - Review.reviews.envw_review - INFO - Starting universe size: 5297 stocks
+2026-01-04 17:57:52,366 - Review.reviews.envw_review - INFO - Step 1: Using universe 'EDWPT' as starting set...
+2026-01-04 17:57:52,367 - Review.reviews.envw_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 17:57:52,369 - Review.reviews.envw_review - INFO - Universe size after ESG screening: 5293 stocks
+2026-01-04 17:57:52,372 - Review.reviews.envw_review - INFO - Step 3: Ranking by ESG Risk Score and Free Float Market Cap...
+2026-01-04 17:57:52,384 - Review.reviews.envw_review - INFO - Step 4: Selecting top 120 constituents...
+2026-01-04 17:57:52,384 - Review.reviews.envw_review - INFO - Selected 120 constituents for ENVW index
+2026-01-04 17:57:52,384 - Review.reviews.envw_review - INFO - Calculating ESG-based weights...
+2026-01-04 17:57:52,389 - Review.reviews.envw_review - INFO - Applying 10% weight cap...
+2026-01-04 17:57:52,390 - Review.reviews.envw_review - INFO - Capping completed in 0 iterations
+2026-01-04 17:57:52,391 - Review.reviews.envw_review - INFO - Weight range: 0.70% to 1.59%
+2026-01-04 17:57:52,399 - Review.reviews.envw_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 17:57:52,410 - Review.reviews.envw_review - INFO - Inclusions: 113, Exclusions: 113
+2026-01-04 17:57:52,411 - Review.reviews.envw_review - INFO - Saving ENVW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVW_df_20260104_175752.xlsx
+2026-01-04 17:57:54,208 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 17:57:54] "GET /task-status/125239d9-b8b8-48e5-a331-4f1bd2017734 HTTP/1.1" 200 -
+2026-01-04 18:04:24,965 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\os.py', reloading

@@ -1,0 +1,177 @@
+Starting EDWPT review at 2026-01-28 14:33:13.977969
+2026-01-28 14:33:14,295 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:15,153 - Review.reviews.edwpt_review - INFO - EDWPT: Processing 13499 companies after filtering
+2026-01-28 14:33:15,201 - Review.reviews.edwpt_review - INFO - 
+EDWPT Selection Summary:
+2026-01-28 14:33:15,201 - Review.reviews.edwpt_review - INFO - Total companies selected: 5317
+2026-01-28 14:33:15,210 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.82%
+2026-01-28 14:33:15,212 - Review.reviews.edwpt_review - INFO - DEUPT: Filtering out CA and US ISINs
+2026-01-28 14:33:15,218 - Review.reviews.edwpt_review - INFO - DEUPT: Processing 3203 companies after filtering
+2026-01-28 14:33:15,235 - Review.reviews.edwpt_review - INFO - 
+DEUPT Selection Summary:
+2026-01-28 14:33:15,235 - Review.reviews.edwpt_review - INFO - Total companies selected: 1260
+2026-01-28 14:33:15,242 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.58%
+2026-01-28 14:33:15,244 - Review.reviews.edwpt_review - INFO - DEZPT: Filtering out CA and US ISINs
+2026-01-28 14:33:15,247 - Review.reviews.edwpt_review - INFO - DEZPT: Processing 1285 companies after filtering
+2026-01-28 14:33:15,261 - Review.reviews.edwpt_review - INFO - 
+DEZPT Selection Summary:
+2026-01-28 14:33:15,262 - Review.reviews.edwpt_review - INFO - Total companies selected: 502
+2026-01-28 14:33:15,262 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.45%
+2026-01-28 14:33:15,262 - Review.reviews.edwpt_review - INFO - DAPPT: Processing 5104 companies after filtering
+2026-01-28 14:33:15,279 - Review.reviews.edwpt_review - INFO - 
+DAPPT Selection Summary:
+2026-01-28 14:33:15,279 - Review.reviews.edwpt_review - INFO - Total companies selected: 1894
+2026-01-28 14:33:15,279 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.07%
+2026-01-28 14:33:15,287 - Review.reviews.edwpt_review - INFO - DNAPT: Processing 4889 companies after filtering
+2026-01-28 14:33:15,294 - Review.reviews.edwpt_review - INFO - 
+DNAPT Selection Summary:
+2026-01-28 14:33:15,296 - Review.reviews.edwpt_review - INFO - Total companies selected: 1667
+2026-01-28 14:33:15,296 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.15%
+2026-01-28 14:33:15,301 - Review.reviews.edwpt_review - INFO - DASPT: Processing 4106 companies after filtering
+2026-01-28 14:33:15,308 - Review.reviews.edwpt_review - INFO - 
+DASPT Selection Summary:
+2026-01-28 14:33:15,308 - Review.reviews.edwpt_review - INFO - Total companies selected: 1535
+2026-01-28 14:33:15,311 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.05%
+2026-01-28 14:33:15,312 - Review.reviews.edwpt_review - INFO - DPAPT: Processing 998 companies after filtering
+2026-01-28 14:33:15,314 - Review.reviews.edwpt_review - INFO - 
+DPAPT Selection Summary:
+2026-01-28 14:33:15,314 - Review.reviews.edwpt_review - INFO - Total companies selected: 351
+2026-01-28 14:33:15,320 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.03%
+2026-01-28 14:33:15,324 - Review.reviews.edwpt_review - INFO - EUSPT: Processing 4389 companies after filtering
+2026-01-28 14:33:15,329 - Review.reviews.edwpt_review - INFO - 
+EUSPT Selection Summary:
+2026-01-28 14:33:15,331 - Review.reviews.edwpt_review - INFO - Total companies selected: 1398
+2026-01-28 14:33:15,333 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2026-01-28 14:33:15,336 - Review.reviews.edwpt_review - INFO - EJPPT: Processing 3656 companies after filtering
+2026-01-28 14:33:15,341 - Review.reviews.edwpt_review - INFO - 
+EJPPT Selection Summary:
+2026-01-28 14:33:15,342 - Review.reviews.edwpt_review - INFO - Total companies selected: 1349
+2026-01-28 14:33:15,342 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.00%
+2026-01-28 14:33:15,345 - Review.reviews.edwpt_review - INFO - ECHPT: Processing 157 companies after filtering
+2026-01-28 14:33:15,348 - Review.reviews.edwpt_review - INFO - 
+ECHPT Selection Summary:
+2026-01-28 14:33:15,349 - Review.reviews.edwpt_review - INFO - Total companies selected: 76
+2026-01-28 14:33:15,350 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.03%
+2026-01-28 14:33:15,352 - Review.reviews.edwpt_review - INFO - EUKPT: Processing 841 companies after filtering
+2026-01-28 14:33:15,355 - Review.reviews.edwpt_review - INFO - 
+EUKPT Selection Summary:
+2026-01-28 14:33:15,355 - Review.reviews.edwpt_review - INFO - Total companies selected: 267
+2026-01-28 14:33:15,356 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.01%
+2026-01-28 14:33:15,356 - Review.reviews.edwpt_review - INFO - CANPT: Processing 500 companies after filtering
+2026-01-28 14:33:15,361 - Review.reviews.edwpt_review - INFO - 
+CANPT Selection Summary:
+2026-01-28 14:33:15,361 - Review.reviews.edwpt_review - INFO - Total companies selected: 223
+2026-01-28 14:33:15,362 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.02%
+2026-01-28 14:33:15,364 - Review.reviews.edwpt_review - INFO - 
+Global Selection Summary:
+2026-01-28 14:33:15,364 - Review.reviews.edwpt_review - INFO - Total companies selected: 5317
+2026-01-28 14:33:15,373 - Review.reviews.edwpt_review - INFO - Total FFMC covered: 98.82%
+2026-01-28 14:33:15,375 - Review.reviews.edwpt_review - INFO - 
+MIC-level Summary:
+2026-01-28 14:33:15,375 - Review.reviews.edwpt_review - INFO -       ISIN          FFMC  EDWPT_selection
+MIC                                      
+ALXP     1  8.636321e+08                0
+BATS     1  2.298240e+10                1
+DSME     1  1.117565e+07                0
+FSME     2  4.179218e+08                2
+MERK     2  2.709760e+08                2
+MTAA   250  6.565029e+11               84
+NEOE     1  4.911360e+07                0
+SSME    15  4.087461e+09               11
+WBAH    25  7.232654e+10               17
+XAMS    83  1.208804e+12               46
+XASE     3  8.042835e+09                3
+XASX   942  1.469525e+12              314
+XBRU    65  2.388090e+11               35
+XCSE    97  3.691187e+11               36
+XESM     3  2.059088e+09                2
+XETR   238  1.725624e+12              104
+XHEL   136  2.387672e+11               49
+XHKG   288  5.378789e+11               92
+XLIS    17  4.049522e+10               12
+XLON   841  2.488872e+12              267
+XMAD   101  6.657485e+11               42
+XMSM    12  8.941198e+10                9
+XNAS     2  4.299946e+11                2
+XNCM    33  9.086017e+10               26
+XNGS  2578  2.928861e+13              673
+XNMS    60  1.803113e+11               57
+XNYS  1712  2.594931e+13             1082
+XNZE    56  5.624452e+10               36
+XOSL   221  1.736930e+11              116
+XPAR   352  1.937294e+12               90
+XSES   162  3.325147e+11               79
+XSTO   596  7.080121e+11              200
+XSWX   157  1.722407e+12               86
+XTAE   291  2.691930e+11              170
+XTKS  3656  5.393683e+12             1349
+XTSE   499  2.536982e+12              223
+2026-01-28 14:33:15,402 - Review.reviews.edwpt_review - INFO - Saving main output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EDWPT_df_20260128_143315.xlsx
+2026-01-28 14:33:15,611 - Review.reviews.edwpt_review - INFO - 
+EDWPT Changes Summary:
+2026-01-28 14:33:15,611 - Review.reviews.edwpt_review - INFO - Inclusions: 209
+2026-01-28 14:33:15,611 - Review.reviews.edwpt_review - INFO - Exclusions: 246
+2026-01-28 14:33:15,663 - Review.reviews.edwpt_review - INFO - 
+DEUPT Changes Summary:
+2026-01-28 14:33:15,663 - Review.reviews.edwpt_review - INFO - Inclusions: 52
+2026-01-28 14:33:15,663 - Review.reviews.edwpt_review - INFO - Exclusions: 72
+2026-01-28 14:33:15,684 - Review.reviews.edwpt_review - INFO - 
+DEZPT Changes Summary:
+2026-01-28 14:33:15,684 - Review.reviews.edwpt_review - INFO - Inclusions: 27
+2026-01-28 14:33:15,684 - Review.reviews.edwpt_review - INFO - Exclusions: 25
+2026-01-28 14:33:15,757 - Review.reviews.edwpt_review - INFO - 
+DAPPT Changes Summary:
+2026-01-28 14:33:15,757 - Review.reviews.edwpt_review - INFO - Inclusions: 62
+2026-01-28 14:33:15,757 - Review.reviews.edwpt_review - INFO - Exclusions: 94
+2026-01-28 14:33:15,831 - Review.reviews.edwpt_review - INFO - 
+DNAPT Changes Summary:
+2026-01-28 14:33:15,832 - Review.reviews.edwpt_review - INFO - Inclusions: 74
+2026-01-28 14:33:15,832 - Review.reviews.edwpt_review - INFO - Exclusions: 89
+2026-01-28 14:33:15,878 - Review.reviews.edwpt_review - INFO - 
+DASPT Changes Summary:
+2026-01-28 14:33:15,878 - Review.reviews.edwpt_review - INFO - Inclusions: 32
+2026-01-28 14:33:15,878 - Review.reviews.edwpt_review - INFO - Exclusions: 84
+2026-01-28 14:33:15,900 - Review.reviews.edwpt_review - INFO - 
+DPAPT Changes Summary:
+2026-01-28 14:33:15,900 - Review.reviews.edwpt_review - INFO - Inclusions: 32
+2026-01-28 14:33:15,900 - Review.reviews.edwpt_review - INFO - Exclusions: 9
+2026-01-28 14:33:15,945 - Review.reviews.edwpt_review - INFO - 
+EUSPT Changes Summary:
+2026-01-28 14:33:15,945 - Review.reviews.edwpt_review - INFO - Inclusions: 63
+2026-01-28 14:33:15,945 - Review.reviews.edwpt_review - INFO - Exclusions: 75
+2026-01-28 14:33:16,003 - Review.reviews.edwpt_review - INFO - 
+EJPPT Changes Summary:
+2026-01-28 14:33:16,003 - Review.reviews.edwpt_review - INFO - Inclusions: 18
+2026-01-28 14:33:16,011 - Review.reviews.edwpt_review - INFO - Exclusions: 70
+2026-01-28 14:33:16,012 - Review.reviews.edwpt_review - INFO - 
+ECHPT Changes Summary:
+2026-01-28 14:33:16,012 - Review.reviews.edwpt_review - INFO - Inclusions: 3
+2026-01-28 14:33:16,012 - Review.reviews.edwpt_review - INFO - Exclusions: 5
+2026-01-28 14:33:16,034 - Review.reviews.edwpt_review - INFO - 
+EUKPT Changes Summary:
+2026-01-28 14:33:16,034 - Review.reviews.edwpt_review - INFO - Inclusions: 8
+2026-01-28 14:33:16,034 - Review.reviews.edwpt_review - INFO - Exclusions: 14
+2026-01-28 14:33:16,047 - Review.reviews.edwpt_review - INFO - 
+CANPT Changes Summary:
+2026-01-28 14:33:16,048 - Review.reviews.edwpt_review - INFO - Inclusions: 8
+2026-01-28 14:33:16,048 - Review.reviews.edwpt_review - INFO - Exclusions: 7
+2026-01-28 14:33:20,132 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EDWPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EDWPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,431 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEUPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DEUPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,509 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DEZPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DEZPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,547 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DAPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DAPPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,660 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DNAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DNAPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,751 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DASPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DASPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,845 - Review.reviews.edwpt_review - INFO - Saving individual composition file for DPAPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\DPAPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,885 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUSPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUSPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:20,970 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EJPPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EJPPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:21,057 - Review.reviews.edwpt_review - INFO - Saving individual composition file for ECHPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\ECHPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:21,062 - Review.reviews.edwpt_review - INFO - Saving individual composition file for EUKPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUKPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:21,100 - Review.reviews.edwpt_review - INFO - Saving individual composition file for CANPT to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\CANPT_Composition_20260128_143315.xlsx
+2026-01-28 14:33:21,129 - Review.reviews.edwpt_review - INFO - Main file successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EDWPT_df_20260128_143315.xlsx
+2026-01-28 14:33:21,129 - Review.reviews.edwpt_review - INFO - Individual composition files saved: 12
+Completed EDWPT review in 7.15 seconds

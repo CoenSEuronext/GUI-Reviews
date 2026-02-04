@@ -1,0 +1,108 @@
+2026-01-28 14:35:00,730 - Review.reviews.infrp_review - INFO - Loading EOD data...
+2026-01-28 14:35:01,297 - Review.reviews.infrp_review - INFO - Loading reference data...
+2026-01-28 14:35:01,473 - Review.reviews.infrp_review - INFO - Merging all reference data points early...
+2026-01-28 14:35:01,473 - Review.reviews.infrp_review - INFO - Deduplicating reference dataframes...
+2026-01-28 14:35:01,486 - Review.reviews.infrp_review - INFO - Merging Oekom data...
+2026-01-28 14:35:01,493 - Review.reviews.infrp_review - INFO - Merging ICB data...
+2026-01-28 14:35:01,502 - Review.reviews.infrp_review - INFO - Merging SesamM data...
+2026-01-28 14:35:01,509 - Review.reviews.infrp_review - INFO - Converting numeric columns...
+2026-01-28 14:35:01,511 - Review.reviews.infrp_review - INFO - Staff Rating distribution: Min=1.091, Max=4.0
+2026-01-28 14:35:01,511 - Review.reviews.infrp_review - INFO - Companies with staff rating = 4 (Missing or Not Collected): 303
+2026-01-28 14:35:01,511 - Review.reviews.infrp_review - INFO - All reference data merged successfully
+2026-01-28 14:35:01,511 - Review.reviews.infrp_review - INFO - Universe size after merges: 1800 companies
+2026-01-28 14:35:01,511 - Review.reviews.infrp_review - INFO - Calculating percentiles and rankings for staff rating...
+2026-01-28 14:35:01,561 - Review.reviews.infrp_review - INFO - Percentile and ranking calculations completed
+2026-01-28 14:35:01,561 - Review.reviews.infrp_review - INFO - Staff Rating Percentile range: 1.05 to 100.00
+2026-01-28 14:35:01,561 - Review.reviews.infrp_review - INFO - Companies with percentiles calculated: 1536
+2026-01-28 14:35:01,561 - Review.reviews.infrp_review - INFO - Applying SesamM data availability exclusion...
+2026-01-28 14:35:01,563 - Review.reviews.infrp_review - INFO - SesamM data unavailable exclusions: 1479
+2026-01-28 14:35:01,563 - Review.reviews.infrp_review - INFO - Applying turnover exclusion...
+2026-01-28 14:35:01,564 - Review.reviews.infrp_review - INFO - Turnover exclusions: 186
+2026-01-28 14:35:01,564 - Review.reviews.infrp_review - INFO - Applying NBR Overall Flag exclusion...
+2026-01-28 14:35:01,565 - Review.reviews.infrp_review - INFO - NBR Overall Flag exclusions: 1
+2026-01-28 14:35:01,565 - Review.reviews.infrp_review - INFO - Applying controversial weapons exclusions...
+2026-01-28 14:35:01,565 - Review.reviews.infrp_review - INFO - BiologicalWeapons exclusions: 0
+2026-01-28 14:35:01,566 - Review.reviews.infrp_review - INFO - ChemicalWeapons exclusions: 0
+2026-01-28 14:35:01,567 - Review.reviews.infrp_review - INFO - NuclearWeapons exclusions: 44
+2026-01-28 14:35:01,567 - Review.reviews.infrp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2026-01-28 14:35:01,568 - Review.reviews.infrp_review - INFO - ClusterMunitions exclusions: 5
+2026-01-28 14:35:01,569 - Review.reviews.infrp_review - INFO - DepletedUranium exclusions: 7
+2026-01-28 14:35:01,570 - Review.reviews.infrp_review - INFO - APMines exclusions: 4
+2026-01-28 14:35:01,570 - Review.reviews.infrp_review - INFO - WhitePhosphorus exclusions: 7
+2026-01-28 14:35:01,571 - Review.reviews.infrp_review - INFO - Applying animal welfare exclusions...
+2026-01-28 14:35:01,572 - Review.reviews.infrp_review - INFO - Animal Welfare exclusions: 262
+2026-01-28 14:35:01,573 - Review.reviews.infrp_review - INFO - Animal Testing exclusions: 237
+2026-01-28 14:35:01,573 - Review.reviews.infrp_review - INFO - Applying energy screening exclusions...
+2026-01-28 14:35:01,573 - Review.reviews.infrp_review - INFO - Coal Mining exclusions: 94
+2026-01-28 14:35:01,575 - Review.reviews.infrp_review - INFO - Fossil Fuel exclusions: 331
+2026-01-28 14:35:01,576 - Review.reviews.infrp_review - INFO - Thermal Power exclusions: 117
+2026-01-28 14:35:01,576 - Review.reviews.infrp_review - INFO - Applying tobacco screening exclusions...
+2026-01-28 14:35:01,577 - Review.reviews.infrp_review - INFO - Tobacco Production exclusions: 0
+2026-01-28 14:35:01,577 - Review.reviews.infrp_review - INFO - Tobacco Distribution exclusions: 0
+2026-01-28 14:35:01,577 - Review.reviews.infrp_review - INFO - Applying layoff screening exclusion...
+2026-01-28 14:35:01,579 - Review.reviews.infrp_review - INFO - Layoff exclusions: 1484
+2026-01-28 14:35:01,579 - Review.reviews.infrp_review - INFO - Applying staff rating exclusion...
+2026-01-28 14:35:01,580 - Review.reviews.infrp_review - INFO - Companies with percentile < 20: 271
+2026-01-28 14:35:01,580 - Review.reviews.infrp_review - INFO - Companies near 20th percentile boundary: 33
+2026-01-28 14:35:01,580 - Review.reviews.infrp_review - INFO -   A2 MILK CO LTD: 20.83% - INCLUDED
+2026-01-28 14:35:01,580 - Review.reviews.infrp_review - INFO -   AB SAGAX CLASS B: 19.23% - EXCLUDED
+2026-01-28 14:35:01,580 - Review.reviews.infrp_review - INFO -   AZIMUT: 20.59% - INCLUDED
+2026-01-28 14:35:01,580 - Review.reviews.infrp_review - INFO -   BARCLAYS PLC: 20.83% - INCLUDED
+2026-01-28 14:35:01,581 - Review.reviews.infrp_review - INFO -   BROOKFIELD CORP: 19.35% - EXCLUDED
+2026-01-28 14:35:01,581 - Review.reviews.infrp_review - INFO -   BROTHER INDS LTD: 19.15% - EXCLUDED
+2026-01-28 14:35:01,581 - Review.reviews.infrp_review - INFO -   CANADIAN NATURAL RES: 20.59% - INCLUDED
+2026-01-28 14:35:01,581 - Review.reviews.infrp_review - INFO -   COMFORT SYSTEMS USA: 20.00% - INCLUDED
+2026-01-28 14:35:01,581 - Review.reviews.infrp_review - INFO -   DOLLAR GENERAL CORP.: 19.05% - EXCLUDED
+2026-01-28 14:35:01,581 - Review.reviews.infrp_review - INFO -   E.ON SE: 19.23% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   EBOS GROUP LTD: 20.69% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   FAIR ISAAC CORP.: 19.23% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   FORTINET INC.: 19.75% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   FUJI MEDIA HOLDINGS: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   GILEAD SCIENCES INC.: 20.83% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   HEXAGON AB-B: 20.83% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   HIKARI TSUSHIN: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   HIROSE ELECTRIC: 19.15% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   JGC HOLDINGS COR: 19.05% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   KINTETSU GROUP H: 19.10% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   LINDE PLC: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   MONSTER BEVERAGE: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   NITORI HOLDINGS: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   PORSCHE AG: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   POWER CORP CANADA: 20.83% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   ROYAL UNIBREW A/S: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   SCHINDLER HLDG AG: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   SHIMANO INC: 19.23% - EXCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   STRAUMANN HOLDING AG: 20.00% - INCLUDED
+2026-01-28 14:35:01,582 - Review.reviews.infrp_review - INFO -   SUGI HD: 20.00% - INCLUDED
+2026-01-28 14:35:01,583 - Review.reviews.infrp_review - INFO -   SUN HUNG KAI PROPERT: 19.57% - EXCLUDED
+2026-01-28 14:35:01,583 - Review.reviews.infrp_review - INFO -   W.W. GRAINGER INC.: 20.51% - INCLUDED
+2026-01-28 14:35:01,583 - Review.reviews.infrp_review - INFO -   WIENERBERGER AG: 20.00% - INCLUDED
+2026-01-28 14:35:01,584 - Review.reviews.infrp_review - INFO - Staff Rating exclusions: 271
+2026-01-28 14:35:01,620 - Review.reviews.infrp_review - INFO - Companies remaining after exclusions: 114
+2026-01-28 14:35:01,620 - Review.reviews.infrp_review - INFO - Eligible companies - XPAR: 25, Non-XPAR: 89
+2026-01-28 14:35:01,620 - Review.reviews.infrp_review - INFO - Calculating FFMC for ranking...
+2026-01-28 14:35:01,630 - Review.reviews.infrp_review - INFO - Selecting top 20 companies by FFMC from each group (XPAR and Non-XPAR)...
+2026-01-28 14:35:01,631 - Review.reviews.infrp_review - INFO - Selected - XPAR: 20, Non-XPAR: 20
+2026-01-28 14:35:01,631 - Review.reviews.infrp_review - INFO - Applying group-based capping: 50% XPAR, 50% Non-XPAR, max 10% per stock...
+2026-01-28 14:35:01,631 - Review.reviews.infrp_review - INFO - Index market cap: 829945624211.2607
+2026-01-28 14:35:01,631 - Review.reviews.infrp_review - INFO - XPAR group total mcap: 491,116,873,755
+2026-01-28 14:35:01,631 - Review.reviews.infrp_review - INFO - Non-XPAR group total mcap: 7,562,345,682,052
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO -   Total companies: 20
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO -   Max weight after capping: 0.180678
+2026-01-28 14:35:01,631 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2026-01-28 14:35:01,637 - utils.capping_proportional - INFO - Capping procedure converged after 2 iterations
+2026-01-28 14:35:01,637 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:35:01,637 - utils.capping_proportional - INFO -   Total companies: 20
+2026-01-28 14:35:01,637 - utils.capping_proportional - INFO -   Companies capped: 2
+2026-01-28 14:35:01,637 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:35:01,637 - utils.capping_proportional - INFO -   Max weight after capping: 0.200000
+2026-01-28 14:35:01,638 - Review.reviews.infrp_review - INFO - XPAR group - Index weight sum: 0.5000 (should be ~0.50)
+2026-01-28 14:35:01,638 - Review.reviews.infrp_review - INFO - XPAR group - Max index weight: 0.0903 (should be <= 0.10)
+2026-01-28 14:35:01,638 - Review.reviews.infrp_review - INFO - Non-XPAR group - Index weight sum: 0.5000 (should be ~0.50)
+2026-01-28 14:35:01,638 - Review.reviews.infrp_review - INFO - Non-XPAR group - Max index weight: 0.1000 (should be <= 0.10)
+2026-01-28 14:35:01,641 - Review.reviews.infrp_review - INFO - Saving INFRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\INFRP_df_20260128_143501.xlsx

@@ -1,0 +1,10 @@
+Starting GSFBP review at 2026-01-28 14:34:59.314145
+2026-01-28 14:34:59,631 - Review.reviews.gsfbp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:35:00,182 - Review.reviews.gsfbp_review - INFO - Loading reference data...
+2026-01-28 14:35:00,248 - Review.reviews.gsfbp_review - INFO - Saving GSFBP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\GSFBP_df_20260128_143500.xlsx
+Completed GSFBP review in 1.00 seconds

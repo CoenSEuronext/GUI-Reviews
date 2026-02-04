@@ -185,7 +185,7 @@ mnemonics_tr4_points = {
 BASE_PATH = r"\\pbgfshqa08601v\gis_ttm\Archive"
 
 # Output path
-OUTPUT_BASE_PATH = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Modular Recalc Script - Copy\Output"
+OUTPUT_BASE_PATH = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\Recalc Script Single + Double Loop\Output"
 
 # ============================================================================
 # UTILITY FUNCTIONS

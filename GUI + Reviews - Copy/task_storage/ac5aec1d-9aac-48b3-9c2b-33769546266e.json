@@ -1,0 +1,26 @@
+{
+  "task_id": "ac5aec1d-9aac-48b3-9c2b-33769546266e",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2025-12-31T15:13:38.024314",
+  "started_at": "2025-12-31T15:13:38.026315",
+  "completed_at": "2025-12-31T15:13:50.245683",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "envu_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ENVU_df_20251231_151350.xlsx"
+  },
+  "review_type": "ENVU",
+  "parameters": {
+    "date": "20250709",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVU",
+    "isin": "QS0011250931",
+    "currency": "EUR",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 12.21737
+}

@@ -1,0 +1,32 @@
+2026-01-28 14:33:58,445 - Review.reviews.eri5p_review - INFO - Loading EOD data...
+2026-01-28 14:33:59,012 - Review.reviews.eri5p_review - INFO - Loading reference data...
+2026-01-28 14:33:59,089 - Review.reviews.eri5p_review - INFO - Ranking validation:
+2026-01-28 14:33:59,091 - Review.reviews.eri5p_review - INFO - Top 10 companies by overall ranking:
+               Company  New Sustainability Score          FFMC  Overall_Ranking                                                                                      All_Exclusion_Reasons
+184             MAGNUM                     100.0  6.586781e+09                1                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+180  LOTTOMATICA GROUP                     100.0  5.193652e+09                2                           Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+226         RENK GROUP                     100.0  4.323100e+09                3                                                                      Excluded: Opinion negative/risk/empty
+273       TKMS AG & CO                     100.0  3.874942e+09                4                                                                      Excluded: Opinion negative/risk/empty
+139          HAL TRUST                     100.0  2.494236e+09                5  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+82                 CTP                     100.0  2.146353e+09                6  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+44       BAM GROEP KON                     100.0  2.079440e+09                7  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+37             AUMOVIO                     100.0  2.030535e+09                8  Excluded: FFMC < EUR 3B; Excluded: 100 days avg turnover < EUR 22M; Excluded: Opinion negative/risk/empty
+289         VERBUND AG                      10.0  4.249033e+09                9                                                                  Excluded: 100 days avg turnover < EUR 22M
+100     EDP RENOVAVEIS                      10.0  3.559849e+09               10                                                                  Excluded: 100 days avg turnover < EUR 22M
+2026-01-28 14:33:59,094 - Review.reviews.eri5p_review - INFO - Top 10 eligible companies:
+                  Company  New Sustainability Score          FFMC  Eligible_Ranking
+224                  RELX                   9.94863  6.728146e+10               1.0
+235          SAINT GOBAIN                   9.94863  3.651676e+10               2.0
+175               KPN KON                   9.94863  1.528350e+10               3.0
+251  SIEMENS HEALTHINEERS                   9.94863  1.413497e+10               4.0
+280    UNIBAIL-RODAMCO-WE                   9.94863  1.088517e+10               5.0
+238                SANOFI                   9.75000  1.006574e+11               6.0
+111      ESSILORLUXOTTICA                   9.75000  9.920577e+10               7.0
+277                   UCB                   9.75000  2.945788e+10               8.0
+128     FRESENIUS SE & CO                   9.75000  1.982877e+10               9.0
+189             MERCK KGA                   9.75000  1.451390e+10              10.0
+2026-01-28 14:33:59,094 - Review.reviews.eri5p_review - INFO - Total universe: 300 companies
+2026-01-28 14:33:59,094 - Review.reviews.eri5p_review - INFO - Total excluded: 180 companies
+2026-01-28 14:33:59,094 - Review.reviews.eri5p_review - INFO - Eligible for selection: 120 companies
+2026-01-28 14:33:59,094 - Review.reviews.eri5p_review - INFO - Selecting top 50 companies ranked by Sustainability Score (with FFMC as tiebreaker) from eligible companies...
+2026-01-28 14:33:59,100 - Review.reviews.eri5p_review - INFO - Saving ERI5P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\ERI5P_df_20260128_143359.xlsx

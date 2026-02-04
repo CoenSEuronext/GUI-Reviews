@@ -1,0 +1,35 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__EESL__23",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:33:28.593694",
+  "review_type": "EESL",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "EESL",
+    "isin": "NLIX00008598",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:33:28.628277",
+  "error": null,
+  "completed_at": "2026-01-28T14:33:29.895189",
+  "result_data": {
+    "eesl_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EESL_Review_20260128_143329.xlsx",
+    "summary": {
+      "total_companies": 920,
+      "existing_companies_selected": 841,
+      "new_companies_selected": 79,
+      "total_ffmc_coverage": 15.105010088896897,
+      "inclusions_count": 79,
+      "exclusions_count": 74,
+      "capped_companies": 0
+    }
+  },
+  "duration_seconds": 1.256758,
+  "completed_at_review": "2026-01-28T14:33:29.895189"
+}

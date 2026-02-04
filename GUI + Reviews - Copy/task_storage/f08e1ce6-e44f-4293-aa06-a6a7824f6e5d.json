@@ -1,0 +1,23 @@
+{
+  "task_id": "f08e1ce6-e44f-4293-aa06-a6a7824f6e5d",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-01-04T19:37:17.106078",
+  "started_at": "2026-01-04T19:37:17.110078",
+  "completed_at": "2026-01-04T19:37:19.302751",
+  "progress": 10,
+  "message": "Review failed: Error during review calculation: too many values to unpack (expected 3)",
+  "error": "Error during review calculation: too many values to unpack (expected 3)",
+  "result_data": null,
+  "review_type": "ENVU",
+  "parameters": {
+    "date": "20250708",
+    "co_date": "20250704",
+    "effective_date": "11-Jul-25",
+    "index": "ENVU",
+    "isin": "QS0011250931",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.189672
+}

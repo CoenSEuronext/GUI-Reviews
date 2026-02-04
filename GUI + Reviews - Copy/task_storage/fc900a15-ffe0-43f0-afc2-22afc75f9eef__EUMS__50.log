@@ -1,0 +1,70 @@
+Starting EUMS review at 2026-01-28 14:34:05.530258
+2026-01-28 14:34:05,829 - Review.reviews.eums_review - INFO - Starting EUMS review calculation
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO - Found 1196 existing companies in EUMS
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO - 
+EUMS Selection Summary by Country:
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO - United States: 1268 total (1196 existing, 72 new)
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO - 
+Overall EUMS Selection Summary:
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO - Total companies selected: 1268
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO -   - Existing companies selected: 1196
+2026-01-28 14:34:06,663 - Review.reviews.eums_review - INFO -   - New companies selected: 72
+2026-01-28 14:34:06,678 - Review.reviews.eums_review - INFO - Total FFMC covered: 29.13%
+2026-01-28 14:34:06,678 - Review.reviews.eums_review - INFO - 
+Applying proportional capping
+2026-01-28 14:34:06,679 - Review.reviews.eums_review - INFO - 
+=== SELECTION DEBUGGING ===
+2026-01-28 14:34:06,679 - Review.reviews.eums_review - INFO - Total universe size: 1398
+2026-01-28 14:34:06,679 - Review.reviews.eums_review - INFO - Companies with EUMS_selection == 1: 1268
+2026-01-28 14:34:06,679 - Review.reviews.eums_review - INFO - Companies with Is_Existing == 1: 1196
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO - 
+Existing companies meeting 68% threshold: 1196
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO - New companies meeting 72% threshold: 72
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO - 
+NaN values in key columns:
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO -   Country: 0
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO -   Mcap in EUR: 0
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO -   Country_Cumulative_Percentage: 0
+2026-01-28 14:34:06,680 - Review.reviews.eums_review - INFO - 
+Sample of selection logic:
+2026-01-28 14:34:06,682 - Review.reviews.eums_review - INFO - 
+                   Company        Country  Is_Existing   Mcap in EUR  Country_Cumulative_Percentage  EUMS_selection
+925            NVIDIA CORP  United States            0  3.779318e+12                       6.890143               0
+98                   APPLE  United States            0  3.487921e+12                      13.249035               0
+848         MICROSOFT CORP  United States            0  2.745796e+12                      18.254945               0
+60                  AMAZON  United States            0  1.846108e+12                      21.620618               0
+56        ALPHABET CLASS A  United States            0  1.515821e+12                      24.384138               0
+215          BROADCOM INC.  United States            0  1.396817e+12                      26.930700               0
+57        ALPHABET INC - C  United States            0  1.338258e+12                      29.370501               0
+839       META PLTFORM ORD  United States            0  1.125254e+12                      31.421972               0
+1221             TESLA INC  United States            0  9.612575e+11                      33.174458               0
+451       ELI LILLY AND CO  United States            0  7.403813e+11                      34.524261               0
+720   JP MORGAN CHASE & CO  United States            0  7.053762e+11                      35.810245               0
+174   BERKSHIRE HATHAWAY B  United States            0  6.016227e+11                      36.907074               0
+1326              VISA INC  United States            0  4.812492e+11                      37.784448               0
+499            EXXON MOBIL  United States            0  4.292880e+11                      38.567091               0
+717      JOHNSON & JOHNSON  United States            0  4.271227e+11                      39.345786               0
+1338           WALMART INC  United States            0  4.015436e+11                      40.077847               0
+891           NETFLIX INC.  United States            0  3.842935e+11                      40.778460               0
+818         MASTERCARD INC  United States            0  3.768833e+11                      41.465563               0
+5              ABBVIE INC.  United States            0  3.630811e+11                      42.127502               0
+361   COSTCO WHOLES. CORP.  United States            0  3.464092e+11                      42.759047               0
+2026-01-28 14:34:06,683 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:34:06,684 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:06,684 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:06,684 - utils.capping_proportional - INFO -   Total companies: 1268
+2026-01-28 14:34:06,684 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:06,684 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:06,684 - utils.capping_proportional - INFO -   Max weight after capping: 0.004958
+2026-01-28 14:34:06,685 - Review.reviews.eums_review - INFO - 
+EUMS Changes Summary:
+2026-01-28 14:34:06,685 - Review.reviews.eums_review - INFO - Inclusions: 72
+2026-01-28 14:34:06,685 - Review.reviews.eums_review - INFO - Exclusions: 74
+2026-01-28 14:34:06,685 - Review.reviews.eums_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUMS_Review_20260128_143406.xlsx
+2026-01-28 14:34:06,991 - Review.reviews.eums_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUMS_Review_20260128_143406.xlsx
+Completed EUMS review in 1.47 seconds

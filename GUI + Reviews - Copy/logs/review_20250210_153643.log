@@ -1,6 +1,0 @@
-2025-02-10 15:36:43,567 - werkzeug - WARNING -  * Debugger is active!
-2025-02-10 15:36:43,570 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-10 15:37:51,763 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\connection.py', reloading
-2025-02-10 15:37:51,777 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\popen_spawn_win32.py', reloading
-2025-02-10 15:37:51,779 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\spawn.py', reloading
-2025-02-10 15:37:51,786 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\multiprocessing\\resource_sharer.py', reloading

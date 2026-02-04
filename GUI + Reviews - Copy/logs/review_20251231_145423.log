@@ -1,0 +1,40 @@
+2025-12-31 14:54:24,292 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 14:54:24,307 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 14:54:24,356 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:24] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 14:54:24,359 - Review.reviews.envw_review - INFO - Loading EOD data...
+2025-12-31 14:54:24,363 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:24] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:26,372 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:26] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:26,939 - Review.reviews.envw_review - INFO - Loading reference data...
+2025-12-31 14:54:28,401 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:28] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:30,388 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:30] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:32,372 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:32] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:34,354 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:34] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:36,383 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:36] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -
+2025-12-31 14:54:37,922 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2025-12-31 14:54:37,991 - Review.reviews.envw_review - ERROR - Error during review calculation: [Errno 13] Permission denied: 'debug_output.xlsx'
+2025-12-31 14:54:37,997 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\util\\_decorators.py', reloading
+2025-12-31 14:54:37,999 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\formats\\excel.py', reloading
+2025-12-31 14:54:38,000 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_xlsxwriter.py', reloading
+2025-12-31 14:54:38,001 - Review.reviews.envw_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\envw_review.py", line 85, in run_envw_review
+    fx_merge_df.to_excel('debug_output.xlsx', index=False)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 2417, in to_excel
+    formatter.write(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+             ^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'debug_output.xlsx'
+
+2025-12-31 14:54:38,001 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\common.py', reloading
+2025-12-31 14:54:38,368 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 14:54:38] "GET /task-status/c0d2e7c9-0d3d-4e27-8b66-fb3b7c9e2124 HTTP/1.1" 200 -

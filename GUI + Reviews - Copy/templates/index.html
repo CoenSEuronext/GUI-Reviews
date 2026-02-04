@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +8,18 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Euronext Index Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Load the actual weights we use to avoid synthetic bold (blurry on Windows) -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         .logo {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 150px;
+            top: 28px;
+            left: 28px;
+            width: 140px;
             height: auto;
-            z-index: 1000;
+            z-index: 10;
         }
 
         :root {
@@ -29,18 +33,36 @@
         html {
             background-color: var(--primary-color);
         }
-        
+
+        /* Make body a plain container for text (no blur) */
         body {
             font-family: 'Barlow', Arial, sans-serif;
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(0, 141, 127, 0.75);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+
+            background: transparent;
             min-height: 100vh;
+
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        /* Create a blurred backdrop layer behind everything */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 141, 127, 0.75);
             backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: -1;
+        }
+
+        /* Improve text rasterization (won't help synthetic bold; weights above fix that) */
+        body, .container, label, .review-details, .review-name, h1, h2, p, span {
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
         }
 
         .container {
@@ -50,12 +72,15 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             background-color: white;
+            position: relative;
+            z-index: 0;
         }
 
         h1 {
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 30px;
+            font-weight: 600;
         }
 
         .mode-selector {
@@ -65,6 +90,7 @@
             background-color: var(--gray-2);
             border-radius: 8px;
             padding: 5px;
+            overflow: hidden;
         }
 
         .mode-btn {
@@ -75,7 +101,12 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: 600;
+
+            -webkit-appearance: none;
+            appearance: none;
+            background-clip: padding-box;
+            box-shadow: none;
         }
 
         .mode-btn.active {
@@ -83,14 +114,26 @@
             color: white;
         }
 
+        .mode-btn:focus,
+        .mode-btn:focus-visible {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .mode-btn::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
         .form-group {
             margin-bottom: 15px;
         }
 
+        /* Avoid "bold" (700) unless you loaded it; use real weight for sharper text */
         label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 600;
             color: var(--secondary-color-1);
         }
 
@@ -127,14 +170,21 @@
         }
 
         .select-all-btn {
+            display: inline-flex;
+            width: 350px;
+            height: 32px;
+            justify-content: center;
+            align-items: center;
+
             padding: 5px 10px;
             border: 1px solid var(--primary-color);
             background: white;
             color: var(--primary-color);
             border-radius: 4px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
 
         .select-all-btn:hover {
@@ -170,13 +220,14 @@
         }
 
         .review-name {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--secondary-color-1);
         }
 
         .review-details {
             font-size: 12px;
             color: #666;
+            font-weight: 500;
         }
 
         button {
@@ -189,6 +240,7 @@
             font-size: 16px;
             width: 100%;
             transition: background-color 0.3s ease;
+            font-weight: 600;
         }
 
         button:hover {
@@ -204,7 +256,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: normal;
+            font-weight: 500; /* keep crisp, avoid synthetic bold */
         }
 
         input[type="checkbox"] {
@@ -245,7 +297,7 @@
         .result-started {
             background-color: #cce5ff;
             border-left-color: #007bff;
-            color: #004085;
+            color: #000000;
         }
 
         .progress-container {
@@ -267,6 +319,7 @@
             margin-top: 5px;
             font-size: 14px;
             color: var(--secondary-color-1);
+            font-weight: 500;
         }
 
         .document-section {
@@ -291,6 +344,7 @@
             color: var(--secondary-color-1);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
 
         .doc-link:hover {
@@ -308,7 +362,6 @@
             display: none !important;
         }
 
-        /* Loading state styles */
         .loading {
             opacity: 0.6;
             pointer-events: none;
@@ -332,33 +385,31 @@
         .task-status {
             margin-top: 10px;
             font-size: 14px;
+            font-weight: 500;
         }
 
         .status-pending { color: #6c757d; }
-        .status-running { color: #ffc107; }
+        .status-running { color: #ffbf00; }
         .status-completed { color: var(--primary-color); }
         .status-failed { color: #dc3545; }
         .status-cancelled { color: #6c757d; }
     </style>
 </head>
 <body>
-    <img src="{{ url_for('static', filename='images/Euronext_Logo-RGB_black.png') }}" alt="Euronext Logo" class="logo">
     <div class="container">
+        <img src="{{ url_for('static', filename='images/Euronext_Logo-RGB_black.png') }}" alt="Euronext Logo" class="logo">
         <h1>Euronext Index Calculator</h1>
-        
+
         <div class="mode-selector">
             <button class="mode-btn active" data-mode="single">Single Review</button>
             <button class="mode-btn" data-mode="multiple">Multiple Reviews</button>
         </div>
 
         <form id="calculatorForm">
-            <!-- Single review mode -->
             <div id="single-mode">
                 <div class="form-group">
                     <label for="review_type">Review Type:</label>
-                    <select id="review_type" name="review_type">
-                        <!-- Options will be populated by JavaScript -->
-                    </select>
+                    <select id="review_type" name="review_type"></select>
                 </div>
 
                 <div class="form-group">
@@ -372,7 +423,6 @@
                 </div>
             </div>
 
-            <!-- Multiple review mode -->
             <div id="multiple-mode" class="hidden">
                 <div class="form-group">
                     <label>Select Reviews to Run:</label>
@@ -382,14 +432,16 @@
                             <button type="button" class="select-all-btn" id="selectNone">Select None</button>
                             <span id="selectionCount">0 selected</span>
                         </div>
-                        <div id="reviewOptions">
-                            <!-- Options will be populated by JavaScript -->
+
+                        <div style="padding: 10px; border-bottom: 1px solid var(--gray-1); background-color: white;">
+                            <input type="text" id="reviewSearch" placeholder="Search reviews..." autocomplete="off">
                         </div>
+
+                        <div id="reviewOptions"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Common fields -->
             <div class="form-group">
                 <label for="date">Calculation Date (YYYYMMDD):</label>
                 <input type="text" id="date" name="date" required pattern="\d{8}" placeholder="20241217">
@@ -403,16 +455,6 @@
             <div class="form-group">
                 <label for="effective_date">Effective Date (DD-MMM-YY):</label>
                 <input type="text" id="effective_date" name="effective_date" required placeholder="23-Dec-24">
-            </div>
-
-            <div class="form-group">
-                <label for="currency">Currency:</label>
-                <select id="currency" name="currency">
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                    <option value="GBP">GBP</option>
-                    <option value="JPY">JPY</option>
-                </select>
             </div>
 
             <div class="form-group">
@@ -430,36 +472,15 @@
         <div class="document-section">
             <h2>Related Documents</h2>
             <div class="document-links">
-                <a href="/docs/user-manual.pdf" class="doc-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                    User Manual
-                </a>
-                <a href="/docs/methodology.pdf" class="doc-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Methodology
-                </a>
-                <a href="/docs/quick-guide.pdf" class="doc-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Quick Guide
-                </a>
-                <a href="/docs/faq.pdf" class="doc-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    FAQ
-                </a>
+                <a href="/docs/user-manual.pdf" class="doc-link">User Manual</a>
+                <a href="/docs/methodology.pdf" class="doc-link">Methodology</a>
+                <a href="/docs/quick-guide.pdf" class="doc-link">Quick Guide</a>
+                <a href="/docs/faq.pdf" class="doc-link">FAQ</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Get the configurations from Flask backend
         const configs = {{ INDEX_CONFIGS|tojson|safe }};
 
         let currentMode = 'single';
@@ -475,22 +496,22 @@
         }
 
         function setupEventListeners() {
-            // Mode switcher
             document.querySelectorAll('.mode-btn').forEach(btn => {
                 btn.addEventListener('click', () => switchMode(btn.dataset.mode));
             });
 
-            // Review type change for single mode
             document.getElementById('review_type').addEventListener('change', updateIndexAndIsin);
 
-            // Multi-select controls
             document.getElementById('selectAll').addEventListener('click', selectAllReviews);
             document.getElementById('selectNone').addEventListener('click', selectNoReviews);
 
-            // Form submission
+            const searchInput = document.getElementById('reviewSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterReviewOptions);
+            }
+
             document.getElementById('calculatorForm').addEventListener('submit', handleFormSubmit);
 
-            // Handle checkbox clicks without triggering row click
             document.addEventListener('click', function(e) {
                 if (e.target.type === 'checkbox' && e.target.dataset.review) {
                     e.stopPropagation();
@@ -500,25 +521,26 @@
 
         function switchMode(mode) {
             currentMode = mode;
-            
-            // Update button states
+
             document.querySelectorAll('.mode-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.mode === mode);
             });
 
-            // Show/hide appropriate sections
             document.getElementById('single-mode').classList.toggle('hidden', mode !== 'single');
             document.getElementById('multiple-mode').classList.toggle('hidden', mode !== 'multiple');
 
-            // Update submit button text
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.textContent = mode === 'single' ? 'Calculate Index' : 'Calculate Selected Indices';
+
+            if (mode === 'multiple') {
+                filterReviewOptions();
+            }
         }
 
         function populateReviewTypes() {
             const selectElement = document.getElementById('review_type');
             selectElement.innerHTML = '';
-            
+
             Object.keys(configs).forEach(reviewType => {
                 const option = document.createElement('option');
                 option.value = reviewType;
@@ -534,6 +556,9 @@
             Object.entries(configs).forEach(([reviewType, config]) => {
                 const optionDiv = document.createElement('div');
                 optionDiv.className = 'review-option';
+                optionDiv.dataset.reviewType = reviewType;
+                optionDiv.dataset.index = (config && config.index) ? String(config.index) : '';
+                optionDiv.dataset.isin = (config && config.isin) ? String(config.isin) : '';
                 optionDiv.onclick = () => toggleReviewSelection(reviewType);
 
                 optionDiv.innerHTML = `
@@ -548,18 +573,36 @@
             });
 
             updateSelectionCount();
+            filterReviewOptions();
+        }
+
+        function filterReviewOptions() {
+            const searchInput = document.getElementById('reviewSearch');
+            const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+
+            const options = document.querySelectorAll('#reviewOptions .review-option');
+            options.forEach(opt => {
+                if (!q) {
+                    opt.style.display = '';
+                    return;
+                }
+
+                const reviewType = (opt.dataset.reviewType || '').toLowerCase();
+                const idx = (opt.dataset.index || '').toLowerCase();
+                const isin = (opt.dataset.isin || '').toLowerCase();
+
+                const match = reviewType.includes(q) || idx.includes(q) || isin.includes(q);
+                opt.style.display = match ? '' : 'none';
+            });
         }
 
         function toggleReviewSelection(reviewType) {
             const checkbox = document.getElementById(`review_${reviewType}`);
             checkbox.checked = !checkbox.checked;
-            
-            if (checkbox.checked) {
-                selectedReviews.add(reviewType);
-            } else {
-                selectedReviews.delete(reviewType);
-            }
-            
+
+            if (checkbox.checked) selectedReviews.add(reviewType);
+            else selectedReviews.delete(reviewType);
+
             updateSelectionCount();
         }
 
@@ -586,7 +629,7 @@
         function updateIndexAndIsin() {
             const reviewType = document.getElementById('review_type').value;
             const config = configs[reviewType];
-            
+
             if (config) {
                 document.getElementById('index').value = config.index;
                 document.getElementById('isin').value = config.isin;
@@ -595,16 +638,15 @@
 
         async function handleFormSubmit(e) {
             e.preventDefault();
-            
+
             const submitBtn = document.getElementById('submitBtn');
             const resultDiv = document.getElementById('result');
-            
+
             if (currentMode === 'multiple' && selectedReviews.size === 0) {
                 alert('Please select at least one review to run.');
                 return;
             }
 
-            // Clear any existing status check
             if (statusCheckInterval) {
                 clearInterval(statusCheckInterval);
                 statusCheckInterval = null;
@@ -615,11 +657,9 @@
             resultDiv.innerHTML = '';
 
             try {
-                // Start the task
                 const taskId = await startTask();
                 if (taskId) {
                     currentTaskId = taskId;
-                    // Start checking status
                     startStatusChecking(taskId);
                 }
             } catch (error) {
@@ -631,64 +671,46 @@
         async function startTask() {
             const formData = new FormData();
             const submitBtn = document.getElementById('submitBtn');
-            
+
             submitBtn.innerHTML = '<span class="spinner"></span>Starting task...';
 
             if (currentMode === 'single') {
-                // Single review
                 formData.append('review_type', document.getElementById('review_type').value);
                 formData.append('date', document.getElementById('date').value);
                 formData.append('co_date', document.getElementById('co_date').value);
                 formData.append('effective_date', document.getElementById('effective_date').value);
-                formData.append('currency', document.getElementById('currency').value);
-                
-                if (document.getElementById('auto_open').checked) {
-                    formData.append('auto_open', 'on');
-                }
 
-                const response = await fetch('/calculate', {
-                    method: 'POST',
-                    body: formData
-                });
-                
+                if (document.getElementById('auto_open').checked) formData.append('auto_open', 'on');
+
+                const response = await fetch('/calculate', { method: 'POST', body: formData });
                 const data = await response.json();
-                
+
                 if (data.status === 'started') {
                     displayTaskStarted(data);
                     return data.task_id;
-                } else {
-                    displayError(data.message);
-                    return null;
                 }
+                displayError(data.message);
+                return null;
             } else {
-                // Multiple reviews
                 Array.from(selectedReviews).forEach(reviewType => {
                     formData.append('review_types[]', reviewType);
                 });
-                
+
                 formData.append('date', document.getElementById('date').value);
                 formData.append('co_date', document.getElementById('co_date').value);
                 formData.append('effective_date', document.getElementById('effective_date').value);
-                formData.append('currency', document.getElementById('currency').value);
-                
-                if (document.getElementById('auto_open').checked) {
-                    formData.append('auto_open', 'on');
-                }
 
-                const response = await fetch('/calculate-batch', {
-                    method: 'POST',
-                    body: formData
-                });
-                
+                if (document.getElementById('auto_open').checked) formData.append('auto_open', 'on');
+
+                const response = await fetch('/calculate-batch', { method: 'POST', body: formData });
                 const data = await response.json();
-                
+
                 if (data.status === 'started') {
                     displayTaskStarted(data);
                     return data.task_id;
-                } else {
-                    displayError(data.message);
-                    return null;
                 }
+                displayError(data.message);
+                return null;
             }
         }
 
@@ -699,46 +721,39 @@
                     <h3>Task Started</h3>
                     <p>${data.message}</p>
                     <p><small>Task ID: ${data.task_id}</small></p>
-                    
+
                     <div class="progress-container">
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
                     <div class="progress-text" id="progressText">Initializing...</div>
-                    
+
                     <div class="task-status" id="taskStatus">
                         Status: <span class="status-pending">Pending</span>
                     </div>
-                    
+
                     <div id="taskResults"></div>
                 </div>
             `;
         }
 
         function startStatusChecking(taskId) {
-            // Check status immediately
             checkTaskStatus(taskId);
-            
-            // Then check every 2 seconds
-            statusCheckInterval = setInterval(() => {
-                checkTaskStatus(taskId);
-            }, 2000);
+            statusCheckInterval = setInterval(() => checkTaskStatus(taskId), 2000);
         }
 
         async function checkTaskStatus(taskId) {
             try {
                 const response = await fetch(`/task-status/${taskId}`);
                 const data = await response.json();
-                
+
                 if (data.status === 'success') {
                     updateTaskDisplay(data.task);
-                    
-                    // Stop checking if task is complete
+
                     if (['completed', 'failed', 'cancelled'].includes(data.task.status)) {
                         if (statusCheckInterval) {
                             clearInterval(statusCheckInterval);
                             statusCheckInterval = null;
                         }
-                        // Re-enable submit button
                         const submitBtn = document.getElementById('submitBtn');
                         submitBtn.disabled = false;
                         submitBtn.textContent = currentMode === 'single' ? 'Calculate Index' : 'Calculate Selected Indices';
@@ -754,20 +769,20 @@
             const progressText = document.getElementById('progressText');
             const taskStatus = document.getElementById('taskStatus');
             const taskResults = document.getElementById('taskResults');
-            
-            if (progressBar) {
-                progressBar.style.width = `${task.progress}%`;
-            }
-            
+
+            if (progressBar) progressBar.style.width = `${task.progress}%`;
+
             if (progressText) {
-                progressText.textContent = task.message;
+                if (task.status === 'completed') progressText.textContent = 'Completed';
+                else if (task.status === 'failed') progressText.textContent = 'Failed';
+                else if (task.status === 'cancelled') progressText.textContent = 'Cancelled';
+                else progressText.textContent = task.message;
             }
-            
+
             if (taskStatus) {
                 taskStatus.innerHTML = `Status: <span class="status-${task.status}">${task.status.charAt(0).toUpperCase() + task.status.slice(1)}</span>`;
             }
-            
-            // Show results when completed
+
             if (task.status === 'completed' && task.result_data && taskResults) {
                 displayTaskResults(task, taskResults);
             } else if (task.status === 'failed' && taskResults) {
@@ -780,35 +795,65 @@
             }
         }
 
+        function toNumber(v) {
+            if (v === null || v === undefined) return null;
+            const n = (typeof v === 'number') ? v : parseFloat(v);
+            return Number.isFinite(n) ? n : null;
+        }
+
+        function computeSecondsFromIso(startedAt, completedAt) {
+            if (!startedAt || !completedAt) return null;
+            const s = Date.parse(startedAt);
+            const c = Date.parse(completedAt);
+            if (!Number.isFinite(s) || !Number.isFinite(c)) return null;
+            const diff = (c - s) / 1000;
+            return Number.isFinite(diff) && diff >= 0 ? diff : null;
+        }
+
         function displayTaskResults(task, container) {
-            if (task.task_type === 'single') {
+            // Batch: only ONE summary line (no per-index blocks)
+            if (task.task_type === 'batch') {
+                const summary = (task.result_data && task.result_data.summary) ? task.result_data.summary : {};
+                const results = (task.result_data && Array.isArray(task.result_data.results)) ? task.result_data.results : [];
+
+                const total = toNumber(summary.total) ?? results.length;
+                const successful = toNumber(summary.successful) ?? 0;
+
+                // Total seconds: accept number OR numeric-string OR compute from timestamps
+                const totalSeconds =
+                    toNumber(task.duration_seconds) ??
+                    toNumber(summary.duration_seconds) ??
+                    computeSecondsFromIso(task.started_at, task.completed_at);
+
+                const avgSeconds =
+                    (totalSeconds !== null && total > 0) ? (totalSeconds / total) : null;
+
+                let line = `Summary: ${successful}/${total} reviews completed successfully`;
+                if (totalSeconds !== null && avgSeconds !== null) {
+                    line += ` in ${totalSeconds.toFixed(1)} seconds. ${avgSeconds.toFixed(1)} seconds per review.`;
+                }
+
                 container.innerHTML = `
                     <div class="result-item result-success">
-                        <h4>Review Completed Successfully</h4>
-                        <p>${task.message}</p>
-                        ${task.duration_seconds ? `<small>Completed in ${task.duration_seconds.toFixed(1)} seconds</small>` : ''}
+                        <h4>Batch Review Results</h4>
+                        <p>${line}</p>
                     </div>
                 `;
-            } else if (task.task_type === 'batch' && task.result_data.results) {
-                let html = '<h4>Batch Review Results</h4>';
-                
-                const summary = task.result_data.summary;
-                html += `<p>Summary: ${summary.successful}/${summary.total} reviews completed successfully</p>`;
-                
-                task.result_data.results.forEach(result => {
-                    const statusClass = result.status === 'success' ? 'result-success' : 'result-error';
-                    const duration = result.duration_seconds ? ` (${result.duration_seconds.toFixed(1)}s)` : '';
-                    
-                    html += `
-                        <div class="result-item ${statusClass}">
-                            <h5>${result.review_type}${duration}</h5>
-                            <p>${result.message}</p>
-                        </div>
-                    `;
-                });
-                
-                container.innerHTML = html;
+                return;
             }
+
+            // Single
+            container.innerHTML = `
+            <div class="result-item result-success">
+                <h4>Review Completed Successfully</h4>
+                <p>${task.message}</p>
+                ${
+                toNumber(task.duration_seconds) !== null
+                    ? `<small>Completed in <strong>${toNumber(task.duration_seconds).toFixed(1)}</strong> seconds</small>`
+                    : ''
+                }
+            </div>
+            `;
         }
 
         function displayError(message) {
@@ -822,7 +867,6 @@
             `;
         }
 
-        // Initialize the app when DOM is loaded
         document.addEventListener('DOMContentLoaded', initializeApp);
     </script>
 </body>

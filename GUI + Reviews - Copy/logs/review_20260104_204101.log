@@ -1,0 +1,54 @@
+2026-01-04 20:41:01,682 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 20:41:01,684 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 20:41:08,756 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:08] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 20:41:08,760 - Review.reviews.enveo_review - INFO - Loading EOD data...
+2026-01-04 20:41:08,765 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:08] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:10,767 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:10] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:11,033 - Review.reviews.enveo_review - INFO - Loading reference data...
+2026-01-04 20:41:12,776 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:12] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:14,789 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:14] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:16,818 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:16] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:18,771 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:18] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:20,860 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:20] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:22,809 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:22] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:23,123 - Review.reviews.enveo_review - INFO - Universe rows: 300 | Missing #Symbol: 1 | Missing CO price: 1 | Missing CO FX(EUR): 1 | Missing ESG score: 1 | Missing Free Float %: 1
+2026-01-04 20:41:23,124 - Review.reviews.enveo_review - INFO - Starting universe size: 300
+2026-01-04 20:41:23,124 - Review.reviews.enveo_review - INFO - Step 2: Excluding Sustainalytics Non-Compliant companies...
+2026-01-04 20:41:23,125 - Review.reviews.enveo_review - INFO - Universe size after Non-Compliant screening: 300
+2026-01-04 20:41:23,125 - Review.reviews.enveo_review - INFO - Step 3: Ranking by ESG Risk Score and FF Market Cap (CO)...
+2026-01-04 20:41:23,128 - Review.reviews.enveo_review - INFO - Step 4: Selecting top 120 constituents...
+2026-01-04 20:41:23,128 - Review.reviews.enveo_review - INFO - Selected 120 constituents for ENVEO
+2026-01-04 20:41:23,128 - Review.reviews.enveo_review - INFO - Calculating ESG-based weights (1 / ESG risk)...
+2026-01-04 20:41:23,130 - Review.reviews.enveo_review - INFO - Applying 10% max weight cap (iterative)...
+2026-01-04 20:41:23,130 - Review.reviews.enveo_review - INFO - Capping iterations: 0
+2026-01-04 20:41:23,131 - Review.reviews.enveo_review - INFO - Weight range: 0.59% to 2.28% (<= 10% expected)
+2026-01-04 20:41:23,132 - Review.reviews.enveo_review - ERROR - Error during review calculation: 'Price_Index_Ccy_CO'
+2026-01-04 20:41:23,137 - Review.reviews.enveo_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Price_Index_Ccy_CO'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\enveo_review.py", line 326, in run_enveo_review
+    / pd.to_numeric(selection_df["Price_Index_Ccy_CO"], errors="coerce")
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Price_Index_Ccy_CO'
+
+2026-01-04 20:41:24,772 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:24] "GET /task-status/b105c952-0968-4c73-b5fb-5fdd5a3fb9b0 HTTP/1.1" 200 -
+2026-01-04 20:41:25,532 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\enveo_review.py', reloading
+2026-01-04 20:41:25,533 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\enveo_review.py', reloading
+2026-01-04 20:41:25,934 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:25] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 20:41:25,936 - Review.reviews.enveo_review - INFO - Loading EOD data...
+2026-01-04 20:41:25,939 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 20:41:25] "GET /task-status/ab345eb1-a61f-4eec-92bf-3dfdfe4dfeb0 HTTP/1.1" 200 -

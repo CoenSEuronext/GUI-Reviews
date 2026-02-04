@@ -1,0 +1,15 @@
+2025-12-31 15:15:00,186 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 15:15:00,188 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 15:15:00,878 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:00] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 15:15:00,880 - Review.reviews.envu_review - INFO - Loading EOD data...
+2025-12-31 15:15:00,884 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:00] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:02,890 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:02] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:04,891 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:04] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:06,892 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:06] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:08,889 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:08] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:09,310 - Review.reviews.envu_review - INFO - Loading reference data...
+2025-12-31 15:15:10,922 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:10] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:12,894 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:12] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:14,897 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:15:14] "GET /task-status/11d1755f-5fac-4b05-897f-cd96e2ed4f0d HTTP/1.1" 200 -
+2025-12-31 15:15:15,058 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2025-12-31 15:15:15,060 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

@@ -1,0 +1,33 @@
+2026-01-04 18:56:02,756 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:56:02,761 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:56:03,351 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:03] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:56:03,354 - Review.reviews.envw_review - INFO - Loading EOD data...
+2026-01-04 18:56:03,359 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:03] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:05,364 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:05] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:05,580 - Review.reviews.envw_review - INFO - Loading reference data...
+2026-01-04 18:56:07,362 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:07] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:09,376 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:09] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:11,365 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:11] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:13,370 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:13] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:15,407 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:15] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:17,364 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:17] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 18:56:18,196 - Review.reviews.envw_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-04 18:56:18,254 - Review.reviews.envw_review - INFO - Universe rows: 5297 | Missing #Symbol: 25 | Missing FX: 3584 | Missing EOD price: 25
+2026-01-04 18:56:18,254 - Review.reviews.envw_review - INFO - Starting universe size: 5297 stocks
+2026-01-04 18:56:18,254 - Review.reviews.envw_review - INFO - Step 1: Using universe 'EDWPT' as starting set...
+2026-01-04 18:56:18,255 - Review.reviews.envw_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 18:56:18,258 - Review.reviews.envw_review - INFO - Universe size after ESG screening: 5293 stocks
+2026-01-04 18:56:18,259 - Review.reviews.envw_review - INFO - Step 3: Ranking by ESG Risk Score and Free Float Market Cap...
+2026-01-04 18:56:18,264 - Review.reviews.envw_review - INFO - Step 4: Selecting top 120 constituents...
+2026-01-04 18:56:18,265 - Review.reviews.envw_review - INFO - Selected 120 constituents for ENVW index
+2026-01-04 18:56:18,265 - Review.reviews.envw_review - INFO - Calculating ESG-based weights...
+2026-01-04 18:56:18,267 - Review.reviews.envw_review - INFO - Applying 10% weight cap...
+2026-01-04 18:56:18,268 - Review.reviews.envw_review - INFO - Capping completed in 0 iterations
+2026-01-04 18:56:18,268 - Review.reviews.envw_review - INFO - Weight range: 0.70% to 1.59%
+2026-01-04 18:56:18,275 - Review.reviews.envw_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 18:56:18,280 - Review.reviews.envw_review - INFO - Inclusions: 113, Exclusions: 113
+2026-01-04 18:56:18,281 - Review.reviews.envw_review - INFO - Saving ENVW output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVW_df_20260104_185618.xlsx
+2026-01-04 18:56:19,359 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:56:19] "GET /task-status/ac4db62c-6170-4137-8ac5-9ee80df6391b HTTP/1.1" 200 -
+2026-01-04 19:00:29,902 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2026-01-04 19:00:29,902 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading
+2026-01-04 19:00:29,908 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envw_review.py', reloading

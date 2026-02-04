@@ -1,0 +1,26 @@
+{
+  "task_id": "fc900a15-ffe0-43f0-afc2-22afc75f9eef__EZ15P__56",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-01-28T14:34:15.570736",
+  "review_type": "EZ15P",
+  "parameters": {
+    "date": "20251217",
+    "co_date": "20251121",
+    "effective_date": "23-Dec-25",
+    "index": "EZ15P",
+    "isin": "NL0012949101",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "message": "Review completed successfully",
+  "progress": 100,
+  "started_at": "2026-01-28T14:34:15.614869",
+  "error": null,
+  "completed_at": "2026-01-28T14:34:16.657875",
+  "result_data": {
+    "ez15p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews - Copy\\output\\EZ15P_df_20260128_143416.xlsx"
+  },
+  "duration_seconds": 1.043006,
+  "completed_at_review": "2026-01-28T14:34:16.657875"
+}

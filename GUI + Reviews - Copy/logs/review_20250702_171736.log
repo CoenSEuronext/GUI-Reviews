@@ -1,7 +1,0 @@
-2025-07-02 17:17:36,775 - werkzeug - WARNING -  * Debugger is active!
-2025-07-02 17:17:36,775 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-07-02 19:04:58,699 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\handlers.py', reloading
-2025-07-02 19:04:58,746 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\stat.py', reloading
-2025-07-02 19:04:58,746 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\datetime.py', reloading
-2025-07-02 19:04:58,756 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\_pydatetime.py', reloading
-2025-07-02 19:04:58,909 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\functools.py', reloading

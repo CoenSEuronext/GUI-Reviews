@@ -1,0 +1,77 @@
+2026-01-28 14:34:49,913 - Review.reviews.frd4p_review - INFO - Loading EOD data...
+2026-01-28 14:34:50,513 - Review.reviews.frd4p_review - INFO - Loading reference data...
+2026-01-28 14:34:51,030 - Review.reviews.frd4p_review - INFO - Merging all reference data points early...
+2026-01-28 14:34:51,030 - Review.reviews.frd4p_review - INFO - Deduplicating reference dataframes...
+2026-01-28 14:34:51,048 - Review.reviews.frd4p_review - INFO - Merging Oekom data...
+2026-01-28 14:34:51,056 - Review.reviews.frd4p_review - INFO - Merging NACE data...
+2026-01-28 14:34:51,058 - Review.reviews.frd4p_review - INFO - Merging ICB data...
+2026-01-28 14:34:51,070 - Review.reviews.frd4p_review - INFO - Merging SesamM data...
+2026-01-28 14:34:51,070 - Review.reviews.frd4p_review - INFO - Converting numeric columns...
+2026-01-28 14:34:51,080 - Review.reviews.frd4p_review - INFO - All reference data merged successfully
+2026-01-28 14:34:51,080 - Review.reviews.frd4p_review - INFO - Universe size after merges: 1800 companies
+2026-01-28 14:34:51,080 - Review.reviews.frd4p_review - INFO - Applying currency exclusion...
+2026-01-28 14:34:51,082 - Review.reviews.frd4p_review - INFO - Currency exclusions: 552
+2026-01-28 14:34:51,082 - Review.reviews.frd4p_review - INFO - Applying SesamM data availability exclusion...
+2026-01-28 14:34:51,083 - Review.reviews.frd4p_review - INFO - SesamM data unavailable exclusions: 1479
+2026-01-28 14:34:51,083 - Review.reviews.frd4p_review - INFO - Applying turnover exclusion...
+2026-01-28 14:34:51,085 - Review.reviews.frd4p_review - INFO - Turnover exclusions: 186
+2026-01-28 14:34:51,085 - Review.reviews.frd4p_review - INFO - Applying NBR Overall Flag exclusion...
+2026-01-28 14:34:51,086 - Review.reviews.frd4p_review - INFO - NBR Overall Flag exclusions: 1
+2026-01-28 14:34:51,087 - Review.reviews.frd4p_review - INFO - Applying controversial weapons exclusions...
+2026-01-28 14:34:51,087 - Review.reviews.frd4p_review - INFO - BiologicalWeapons exclusions: 0
+2026-01-28 14:34:51,088 - Review.reviews.frd4p_review - INFO - ChemicalWeapons exclusions: 0
+2026-01-28 14:34:51,089 - Review.reviews.frd4p_review - INFO - NuclearWeapons exclusions: 44
+2026-01-28 14:34:51,089 - Review.reviews.frd4p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2026-01-28 14:34:51,089 - Review.reviews.frd4p_review - INFO - ClusterMunitions exclusions: 5
+2026-01-28 14:34:51,091 - Review.reviews.frd4p_review - INFO - DepletedUranium exclusions: 7
+2026-01-28 14:34:51,091 - Review.reviews.frd4p_review - INFO - APMines exclusions: 4
+2026-01-28 14:34:51,092 - Review.reviews.frd4p_review - INFO - WhitePhosphorus exclusions: 7
+2026-01-28 14:34:51,092 - Review.reviews.frd4p_review - INFO - Applying coal mining exclusion...
+2026-01-28 14:34:51,093 - Review.reviews.frd4p_review - INFO - Coal Mining exclusions: 79
+2026-01-28 14:34:51,093 - Review.reviews.frd4p_review - INFO - Applying fossil fuel exclusion...
+2026-01-28 14:34:51,094 - Review.reviews.frd4p_review - INFO - Fossil Fuel exclusions: 135
+2026-01-28 14:34:51,094 - Review.reviews.frd4p_review - INFO - Applying thermal power exclusion...
+2026-01-28 14:34:51,094 - Review.reviews.frd4p_review - INFO - Thermal Power exclusions: 10
+2026-01-28 14:34:51,094 - Review.reviews.frd4p_review - INFO - Applying SBT alignment exclusion...
+2026-01-28 14:34:51,095 - Review.reviews.frd4p_review - INFO - Companies with non-Approved SBT: 823
+2026-01-28 14:34:51,095 - Review.reviews.frd4p_review - INFO - NACE Climate Impact distribution:
+2026-01-28 14:34:51,095 - Review.reviews.frd4p_review - INFO -   High: 1015
+2026-01-28 14:34:51,096 - Review.reviews.frd4p_review - INFO -   Low: 520
+2026-01-28 14:34:51,096 - Review.reviews.frd4p_review - INFO -   Unknown: 265
+2026-01-28 14:34:51,097 - Review.reviews.frd4p_review - INFO - SBT alignment exclusions: 758
+2026-01-28 14:34:51,100 - Review.reviews.frd4p_review - INFO - Amazon debug - ISIN: US0231351067, ClimateGHGReductionTargets: Non-Ambitious Target, NACE: G, NACE Climate Impact: High, Excluded: exclude_SBT_NACE
+2026-01-28 14:34:51,100 - Review.reviews.frd4p_review - INFO - Applying tobacco production exclusion...
+2026-01-28 14:34:51,102 - Review.reviews.frd4p_review - INFO - Tobacco Production exclusions: 6
+2026-01-28 14:34:51,102 - Review.reviews.frd4p_review - INFO - Applying tobacco distribution exclusion...
+2026-01-28 14:34:51,102 - Review.reviews.frd4p_review - INFO - Tobacco Distribution exclusions: 1
+2026-01-28 14:34:51,102 - Review.reviews.frd4p_review - INFO - Applying layoff screening exclusion...
+2026-01-28 14:34:51,103 - Review.reviews.frd4p_review - INFO - Layoff exclusions: 9
+2026-01-28 14:34:51,103 - Review.reviews.frd4p_review - INFO - Applying staff rating exclusion...
+2026-01-28 14:34:51,120 - Review.reviews.frd4p_review - INFO - Staff Rating exclusions: 283
+2026-01-28 14:34:51,165 - Review.reviews.frd4p_review - INFO - Companies remaining after exclusions: 149
+2026-01-28 14:34:51,165 - Review.reviews.frd4p_review - INFO - Eligible companies - XPAR: 38, Non-XPAR: 111
+2026-01-28 14:34:51,165 - Review.reviews.frd4p_review - INFO - Checking IsinCode FRIX00003031 in index_eod_df
+2026-01-28 14:34:51,180 - Review.reviews.frd4p_review - INFO - Found 1 matching rows
+2026-01-28 14:34:51,180 - Review.reviews.frd4p_review - INFO - Index market cap: 1626111876928.2937
+2026-01-28 14:34:51,180 - Review.reviews.frd4p_review - INFO - XPAR region total mcap: 883,318,669,452
+2026-01-28 14:34:51,180 - Review.reviews.frd4p_review - INFO - Non-XPAR region total mcap: 1,583,126,334,444
+2026-01-28 14:34:51,181 - Review.reviews.frd4p_review - INFO - Applying capping: max 20% per stock within each region (= 10% of total index)...
+2026-01-28 14:34:51,181 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2026-01-28 14:34:51,182 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:51,182 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:51,183 - utils.capping_proportional - INFO -   Total companies: 20
+2026-01-28 14:34:51,183 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:51,183 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:51,183 - utils.capping_proportional - INFO -   Max weight after capping: 0.177959
+2026-01-28 14:34:51,183 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 20.0%
+2026-01-28 14:34:51,185 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:51,185 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:51,185 - utils.capping_proportional - INFO -   Total companies: 20
+2026-01-28 14:34:51,185 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:51,185 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:51,185 - utils.capping_proportional - INFO -   Max weight after capping: 0.151342
+2026-01-28 14:34:51,186 - Review.reviews.frd4p_review - INFO - XPAR region - Index weight sum: 0.5000 (should be ~0.50)
+2026-01-28 14:34:51,186 - Review.reviews.frd4p_review - INFO - XPAR region - Max index weight: 0.0890 (should be <= 0.10)
+2026-01-28 14:34:51,186 - Review.reviews.frd4p_review - INFO - Non-XPAR region - Index weight sum: 0.5000 (should be ~0.50)
+2026-01-28 14:34:51,186 - Review.reviews.frd4p_review - INFO - Non-XPAR region - Max index weight: 0.0757 (should be <= 0.10)
+2026-01-28 14:34:51,192 - Review.reviews.frd4p_review - INFO - Saving FRD4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\FRD4P_df_20260128_143451.xlsx

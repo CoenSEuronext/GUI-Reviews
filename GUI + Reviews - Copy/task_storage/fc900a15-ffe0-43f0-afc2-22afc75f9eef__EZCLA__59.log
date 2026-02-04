@@ -1,0 +1,15 @@
+Starting EZCLA review at 2026-01-28 14:34:19.130174
+2026-01-28 14:34:19,448 - Review.reviews.ezcla_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:19,979 - Review.reviews.ezcla_review - INFO - Loading reference data...
+2026-01-28 14:34:20,047 - Review.reviews.ezcla_review - INFO - Total companies in universe: 300
+2026-01-28 14:34:20,047 - Review.reviews.ezcla_review - INFO - Carbon Budget cutoff rank (80th percentile): 240.0
+2026-01-28 14:34:20,047 - Review.reviews.ezcla_review - INFO - Total companies excluded by Carbon Budget (rank > 240.0): 60
+2026-01-28 14:34:39,271 - Review.reviews.ezcla_review - INFO - Checking IsinCode FR0014005IK5 in index_eod_df
+2026-01-28 14:34:39,273 - Review.reviews.ezcla_review - INFO - Found 1 matching rows
+2026-01-28 14:34:39,278 - Review.reviews.ezcla_review - INFO - Saving EZCLA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EZCLA_df_20260128_143439.xlsx
+Completed EZCLA review in 20.35 seconds

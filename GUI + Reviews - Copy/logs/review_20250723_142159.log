@@ -1,5 +1,0 @@
-2025-07-23 14:21:59,561 - werkzeug - WARNING -  * Debugger is active!
-2025-07-23 14:21:59,563 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-07-23 14:21:59,642 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez15p_review.py', reloading
-2025-07-23 14:21:59,705 - Review.reviews.ez15p_review - INFO - Loading EOD data...
-2025-07-23 14:21:59,707 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\encodings\\latin_1.py', reloading

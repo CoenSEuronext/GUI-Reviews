@@ -1,0 +1,12 @@
+2025-12-31 15:13:24,951 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 15:13:24,952 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2025-12-31 15:13:24,985 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:24] "GET /task-status/c723d436-224d-470e-b129-c7082dc732dd HTTP/1.1" 200 -
+2025-12-31 15:13:26,600 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:26] "POST /calculate HTTP/1.1" 200 -
+2025-12-31 15:13:26,602 - Review.reviews.envu_review - INFO - Loading EOD data...
+2025-12-31 15:13:26,605 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:26] "GET /task-status/cf4906d1-635b-4508-959b-22d1a4fe52a7 HTTP/1.1" 200 -
+2025-12-31 15:13:27,647 - Review.reviews.envu_review - INFO - Loading reference data...
+2025-12-31 15:13:28,616 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:28] "GET /task-status/cf4906d1-635b-4508-959b-22d1a4fe52a7 HTTP/1.1" 200 -
+2025-12-31 15:13:30,617 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:30] "GET /task-status/cf4906d1-635b-4508-959b-22d1a4fe52a7 HTTP/1.1" 200 -
+2025-12-31 15:13:32,613 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:32] "GET /task-status/cf4906d1-635b-4508-959b-22d1a4fe52a7 HTTP/1.1" 200 -
+2025-12-31 15:13:33,539 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2025-12-31 15:13:34,618 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 15:13:34] "GET /task-status/cf4906d1-635b-4508-959b-22d1a4fe52a7 HTTP/1.1" 200 -

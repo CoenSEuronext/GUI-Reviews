@@ -1,0 +1,30 @@
+Starting EWMS review at 2026-01-28 14:34:11.262758
+2026-01-28 14:34:11,563 - Review.reviews.ewms_review - INFO - Starting EWMS review calculation
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:12,424 - Review.reviews.ewms_review - INFO - Found 4529 existing companies in EWMS
+2026-01-28 14:34:12,432 - Review.reviews.ewms_review - INFO - 
+Overall EWMS Selection Summary:
+2026-01-28 14:34:12,432 - Review.reviews.ewms_review - INFO - Total companies selected: 4779
+2026-01-28 14:34:12,433 - Review.reviews.ewms_review - INFO -   - Existing companies selected: 4524
+2026-01-28 14:34:12,433 - Review.reviews.ewms_review - INFO -   - New companies selected: 255
+2026-01-28 14:34:12,439 - Review.reviews.ewms_review - INFO - Total FFMC covered: 29.68%
+2026-01-28 14:34:12,439 - Review.reviews.ewms_review - INFO - 
+Applying proportional capping
+2026-01-28 14:34:12,440 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:34:12,441 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:12,441 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:12,441 - utils.capping_proportional - INFO -   Total companies: 4779
+2026-01-28 14:34:12,441 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:12,441 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:12,441 - utils.capping_proportional - INFO -   Max weight after capping: 0.003423
+2026-01-28 14:34:12,447 - Review.reviews.ewms_review - INFO - 
+EWMS Changes Summary:
+2026-01-28 14:34:12,447 - Review.reviews.ewms_review - INFO - Inclusions: 255
+2026-01-28 14:34:12,447 - Review.reviews.ewms_review - INFO - Exclusions: 240
+2026-01-28 14:34:12,447 - Review.reviews.ewms_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EWMS_Review_20260128_143412.xlsx
+2026-01-28 14:34:13,430 - Review.reviews.ewms_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EWMS_Review_20260128_143412.xlsx
+Completed EWMS review in 2.18 seconds

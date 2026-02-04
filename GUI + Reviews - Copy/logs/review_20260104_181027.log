@@ -1,0 +1,36 @@
+2026-01-04 18:10:28,153 - werkzeug - WARNING -  * Debugger is active!
+2026-01-04 18:10:28,157 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-01-04 18:10:28,208 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:28] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:28,212 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:28] "GET /task-status/c59286bc-d72e-4f9b-9b46-34ae7d8d0518 HTTP/1.1" 200 -
+2026-01-04 18:10:28,217 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:28] "GET / HTTP/1.1" 200 -
+2026-01-04 18:10:28,275 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:28] "[36mGET /static/images/Euronext_Logo-RGB_black.png HTTP/1.1[0m" 304 -
+2026-01-04 18:10:32,826 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:32] "POST /calculate HTTP/1.1" 200 -
+2026-01-04 18:10:32,829 - Review.reviews.envu_review - INFO - Loading EOD data...
+2026-01-04 18:10:32,832 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:32] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:34,835 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:34] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:34,943 - Review.reviews.envu_review - INFO - Loading reference data...
+2026-01-04 18:10:36,848 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:36] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:38,842 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:38] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:40,843 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:40] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:42,847 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:42] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:44,842 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:44] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:10:46,512 - Review.reviews.envu_review - INFO - Starting universe size: 500 stocks
+2026-01-04 18:10:46,512 - Review.reviews.envu_review - INFO - Step 1: Using Euronext North America 500 universe...
+2026-01-04 18:10:46,512 - Review.reviews.envu_review - INFO - Excluding companies with Main Listing on Toronto Stock Exchange (MIC: XTSE)...
+2026-01-04 18:10:46,513 - Review.reviews.envu_review - INFO - Universe size after TSX exclusion: 456 stocks
+2026-01-04 18:10:46,513 - Review.reviews.envu_review - INFO - Step 2: Applying ESG compliance screening...
+2026-01-04 18:10:46,513 - Review.reviews.envu_review - INFO - Universe size after ESG screening: 453 stocks
+2026-01-04 18:10:46,514 - Review.reviews.envu_review - INFO - Step 3: Ranking by ESG Risk Rating and Free Float Market Cap...
+2026-01-04 18:10:46,518 - Review.reviews.envu_review - INFO - Step 4: Selecting top 50 constituents...
+2026-01-04 18:10:46,519 - Review.reviews.envu_review - INFO - Selected 50 constituents for ENVU index
+2026-01-04 18:10:46,519 - Review.reviews.envu_review - INFO - Calculating ESG-based weights...
+2026-01-04 18:10:46,520 - Review.reviews.envu_review - INFO - Applying 10% weight cap...
+2026-01-04 18:10:46,523 - Review.reviews.envu_review - INFO - Capping completed in 0 iterations
+2026-01-04 18:10:46,524 - Review.reviews.envu_review - INFO - Weight range: 1.69% to 2.99%
+2026-01-04 18:10:46,528 - Review.reviews.envu_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-04 18:10:46,535 - Review.reviews.envu_review - INFO - Inclusions: 45, Exclusions: 45
+2026-01-04 18:10:46,536 - Review.reviews.envu_review - INFO - Saving ENVU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENVU_df_20260104_181046.xlsx
+2026-01-04 18:10:46,835 - werkzeug - INFO - 127.0.0.1 - - [04/Jan/2026 18:10:46] "GET /task-status/d5af080e-bf79-49c7-9960-af481d0adb2d HTTP/1.1" 200 -
+2026-01-04 18:17:32,063 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:17:32,063 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading
+2026-01-04 18:17:32,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\envu_review.py', reloading

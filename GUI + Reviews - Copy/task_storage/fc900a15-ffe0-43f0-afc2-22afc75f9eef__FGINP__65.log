@@ -1,0 +1,18 @@
+Starting FGINP review at 2026-01-28 14:34:47.096886
+2026-01-28 14:34:47,413 - Review.reviews.fginp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:47,997 - Review.reviews.fginp_review - INFO - Loading reference data...
+2026-01-28 14:34:48,064 - Review.reviews.fginp_review - INFO - Universe after MIC filter (XPAR/XETR): 222 rows
+2026-01-28 14:34:48,082 - Review.reviews.fginp_review - INFO - Rows: 222 | Missing Industry Code: 0
+2026-01-28 14:34:48,083 - Review.reviews.fginp_review - INFO - Eligible (Industry Code 50): 48 rows
+2026-01-28 14:34:48,086 - Review.reviews.fginp_review - INFO - Selected top 30 constituents for FGINP by 6M turnover EUR.
+2026-01-28 14:34:48,086 - Review.reviews.fginp_review - INFO - Building ISIN+MIC -> #Symbol mapping (RIC mode, len(#Symbol) < 12)...
+2026-01-28 14:34:48,161 - Review.reviews.fginp_review - INFO - Selection rows: 30 | Missing #Symbol: 0 | Missing FX: 0 | Missing EOD Close: 0
+2026-01-28 14:34:48,163 - Review.reviews.fginp_review - INFO - Performing inclusion/exclusion analysis...
+2026-01-28 14:34:48,167 - Review.reviews.fginp_review - INFO - Inclusions: 0, Exclusions: 1
+2026-01-28 14:34:48,167 - Review.reviews.fginp_review - INFO - Saving FGINP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\FGINP_df_20260128_143448.xlsx
+Completed FGINP review in 1.16 seconds

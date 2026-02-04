@@ -1,3 +1,0 @@
-2025-02-10 15:45:22,335 - werkzeug - WARNING -  * Debugger is active!
-2025-02-10 15:45:22,337 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-10 15:52:42,175 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\httpx\\_decoders.py', reloading

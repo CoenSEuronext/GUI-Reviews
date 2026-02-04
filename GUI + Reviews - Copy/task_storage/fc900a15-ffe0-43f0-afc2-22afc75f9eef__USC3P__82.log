@@ -1,0 +1,36 @@
+Starting USC3P review at 2026-01-28 14:35:22.917326
+2026-01-28 14:35:23,243 - Review.reviews.usc3p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:35:23,831 - Review.reviews.usc3p_review - INFO - Loading reference data...
+2026-01-28 14:35:23,910 - Review.reviews.usc3p_review - INFO - Removed 42 companies with MIC = 'XTSE' from universe
+2026-01-28 14:35:23,910 - Review.reviews.usc3p_review - INFO - Remaining universe size: 458 companies
+2026-01-28 14:35:23,910 - Review.reviews.usc3p_review - INFO - Merging Oekom data points early...
+2026-01-28 14:35:23,917 - Review.reviews.usc3p_review - INFO - Oekom data merged successfully
+2026-01-28 14:35:23,918 - Review.reviews.usc3p_review - INFO - Trust Metric exclusions: 28
+2026-01-28 14:35:23,919 - Review.reviews.usc3p_review - INFO - NBR Overall Flag exclusions: 1
+2026-01-28 14:35:23,920 - Review.reviews.usc3p_review - INFO - APMines exclusions: 2
+2026-01-28 14:35:23,920 - Review.reviews.usc3p_review - INFO - BiologicalWeapons exclusions: 1
+2026-01-28 14:35:23,921 - Review.reviews.usc3p_review - INFO - ChemicalWeapons exclusions: 1
+2026-01-28 14:35:23,922 - Review.reviews.usc3p_review - INFO - ClusterMunitions exclusions: 2
+2026-01-28 14:35:23,922 - Review.reviews.usc3p_review - INFO - DepletedUranium exclusions: 4
+2026-01-28 14:35:23,923 - Review.reviews.usc3p_review - INFO - IncendiaryWeapons exclusions: 6
+2026-01-28 14:35:23,924 - Review.reviews.usc3p_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2026-01-28 14:35:23,925 - Review.reviews.usc3p_review - INFO - WhitePhosphorus exclusions: 7
+2026-01-28 14:35:23,925 - Review.reviews.usc3p_review - INFO - Coal Mining exclusions: 5
+2026-01-28 14:35:23,926 - Review.reviews.usc3p_review - INFO - Thermal Power exclusions: 21
+2026-01-28 14:35:23,927 - Review.reviews.usc3p_review - INFO - Oil Sands exclusions: 4
+2026-01-28 14:35:23,928 - Review.reviews.usc3p_review - INFO - Shale Oil/Gas exclusions: 12
+2026-01-28 14:35:23,928 - Review.reviews.usc3p_review - INFO - Total companies in universe: 460
+2026-01-28 14:35:23,928 - Review.reviews.usc3p_review - INFO - Carbon Budget cutoff rank (80th percentile): 368.0
+2026-01-28 14:35:23,928 - Review.reviews.usc3p_review - INFO - Carbon Budget exclusions (rank > 368.0): 92
+2026-01-28 14:35:23,938 - Review.reviews.usc3p_review - INFO - Companies remaining after exclusions: 324
+2026-01-28 14:35:23,939 - Review.reviews.usc3p_review - INFO - Selected top 250 companies by ESG Performance Score
+2026-01-28 14:35:23,939 - Review.reviews.usc3p_review - INFO - Selected top 35 companies by FFMC
+2026-01-28 14:35:23,939 - Review.reviews.usc3p_review - INFO - Checking IsinCode FRESG0000249 in index_eod_df
+2026-01-28 14:35:23,939 - Review.reviews.usc3p_review - INFO - Found 1 matching rows
+2026-01-28 14:35:23,947 - Review.reviews.usc3p_review - INFO - Saving USC3P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\USC3P_df_20260128_143523.xlsx
+Completed USC3P review in 1.30 seconds

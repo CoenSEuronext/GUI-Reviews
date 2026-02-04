@@ -1,0 +1,12 @@
+Starting WCAMP review at 2026-01-28 14:35:31.288429
+2026-01-28 14:35:31,598 - Review.reviews.wcamp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:35:32,161 - Review.reviews.wcamp_review - INFO - Loading reference data...
+2026-01-28 14:35:32,161 - Review.reviews.wcamp_review - INFO - Creating selection_df from WCAMP constituents...
+2026-01-28 14:35:32,164 - Review.reviews.wcamp_review - INFO - Found 3 WCAMP constituents
+2026-01-28 14:35:32,166 - Review.reviews.wcamp_review - INFO - Saving WCAMP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\WCAMP_df_20260128_143532.xlsx
+Completed WCAMP review in 0.95 seconds

@@ -1,0 +1,11 @@
+Starting FRECP review at 2026-01-28 14:34:52.173731
+2026-01-28 14:34:52,463 - Review.reviews.frecp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:53,264 - Review.reviews.frecp_review - INFO - Loading reference data...
+2026-01-28 14:34:53,449 - Review.reviews.frecp_review - INFO - Selecting top 20 companies with lowest FFMC...
+2026-01-28 14:34:53,463 - Review.reviews.frecp_review - INFO - Saving FRECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\FRECP_df_20260128_143453.xlsx
+Completed FRECP review in 1.34 seconds

@@ -1,0 +1,46 @@
+Starting FCLSP review at 2026-01-28 14:34:45.216279
+2026-01-28 14:34:45,580 - Review.reviews.fclsp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:46,163 - Review.reviews.fclsp_review - INFO - Loading reference data...
+2026-01-28 14:34:46,407 - Review.reviews.fclsp_review - INFO - Removed 0 companies with MIC = 'XTSE' from universe
+2026-01-28 14:34:46,407 - Review.reviews.fclsp_review - INFO - Remaining universe size: 120 companies
+2026-01-28 14:34:46,407 - Review.reviews.fclsp_review - INFO - Merging Price from Master Report...
+2026-01-28 14:34:46,409 - Review.reviews.fclsp_review - INFO - Merging Oekom data points early...
+2026-01-28 14:34:46,415 - Review.reviews.fclsp_review - INFO - Oekom data merged successfully
+2026-01-28 14:34:46,415 - Review.reviews.fclsp_review - INFO - Trust Metric exclusions: 4
+2026-01-28 14:34:46,416 - Review.reviews.fclsp_review - INFO - NBR Overall Flag exclusions: 0
+2026-01-28 14:34:46,417 - Review.reviews.fclsp_review - INFO - APMines exclusions: 1
+2026-01-28 14:34:46,417 - Review.reviews.fclsp_review - INFO - BiologicalWeapons exclusions: 1
+2026-01-28 14:34:46,417 - Review.reviews.fclsp_review - INFO - ChemicalWeapons exclusions: 1
+2026-01-28 14:34:46,418 - Review.reviews.fclsp_review - INFO - ClusterMunitions exclusions: 1
+2026-01-28 14:34:46,419 - Review.reviews.fclsp_review - INFO - DepletedUranium exclusions: 1
+2026-01-28 14:34:46,419 - Review.reviews.fclsp_review - INFO - IncendiaryWeapons exclusions: 3
+2026-01-28 14:34:46,420 - Review.reviews.fclsp_review - INFO - NuclearWeaponsNonNPT exclusions: 1
+2026-01-28 14:34:46,421 - Review.reviews.fclsp_review - INFO - WhitePhosphorus exclusions: 1
+2026-01-28 14:34:46,422 - Review.reviews.fclsp_review - INFO - Coal Mining exclusions: 0
+2026-01-28 14:34:46,422 - Review.reviews.fclsp_review - INFO - Thermal Power exclusions: 2
+2026-01-28 14:34:46,423 - Review.reviews.fclsp_review - INFO - Oil Sands exclusions: 0
+2026-01-28 14:34:46,424 - Review.reviews.fclsp_review - INFO - Shale Oil/Gas exclusions: 1
+2026-01-28 14:34:46,424 - Review.reviews.fclsp_review - INFO - Total companies in universe: 120
+2026-01-28 14:34:46,424 - Review.reviews.fclsp_review - INFO - Carbon Budget cutoff rank (80th percentile): 96.0
+2026-01-28 14:34:46,424 - Review.reviews.fclsp_review - INFO - Carbon Budget exclusions (rank > 96.0): 24
+2026-01-28 14:34:46,425 - Review.reviews.fclsp_review - INFO - Tobacco Production exclusions: 0
+2026-01-28 14:34:46,428 - Review.reviews.fclsp_review - INFO - Companies remaining after exclusions: 89
+2026-01-28 14:34:46,430 - Review.reviews.fclsp_review - INFO - Selected top 60 companies
+2026-01-28 14:34:46,830 - Review.reviews.fclsp_review - INFO - Checking IsinCode FRESG0001478 in index_eod_df
+2026-01-28 14:34:46,830 - Review.reviews.fclsp_review - INFO - Found 1 matching rows
+2026-01-28 14:34:46,830 - Review.reviews.fclsp_review - INFO - Index market cap: 1166159266209.1482
+2026-01-28 14:34:46,830 - Review.reviews.fclsp_review - INFO - Applying proportional capping with 10% max weight...
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO -   Total companies: 60
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO -   Companies capped: 1
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:46,830 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2026-01-28 14:34:46,850 - Review.reviews.fclsp_review - INFO - Saving FCLSP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\FCLSP_df_20260128_143446.xlsx
+Completed FCLSP review in 1.76 seconds

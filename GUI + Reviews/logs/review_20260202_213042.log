@@ -1,0 +1,6 @@
+2026-02-02 21:30:43,503 - werkzeug - WARNING -  * Debugger is active!
+2026-02-02 21:30:43,507 - werkzeug - INFO -  * Debugger PIN: 691-175-853
+2026-02-02 21:30:44,236 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2026-02-02 21:30:44,247 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2026-02-02 21:30:44,251 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2026-02-02 21:30:44,259 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading

@@ -1,0 +1,26 @@
+2026-01-28 14:34:10,181 - Review.reviews.eusl_review - INFO - Starting EUSL review calculation
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO - Found 998 existing companies in EUSL
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO - 
+EUSL Selection Summary by Country:
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO - United States: 1068 total (993 existing, 75 new)
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO - 
+Overall EUSL Selection Summary:
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO - Total companies selected: 1068
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO -   - Existing companies selected: 993
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO -   - New companies selected: 75
+2026-01-28 14:34:10,830 - Review.reviews.eusl_review - INFO - Total FFMC covered: 14.16%
+2026-01-28 14:34:10,845 - Review.reviews.eusl_review - INFO - 
+Applying proportional capping
+2026-01-28 14:34:10,845 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-01-28 14:34:10,846 - utils.capping_proportional - INFO - Capping procedure converged after 0 iterations
+2026-01-28 14:34:10,846 - utils.capping_proportional - INFO - Capping Summary:
+2026-01-28 14:34:10,846 - utils.capping_proportional - INFO -   Total companies: 1068
+2026-01-28 14:34:10,846 - utils.capping_proportional - INFO -   Companies capped: 0
+2026-01-28 14:34:10,846 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-01-28 14:34:10,846 - utils.capping_proportional - INFO -   Max weight after capping: 0.003562
+2026-01-28 14:34:10,850 - Review.reviews.eusl_review - INFO - 
+EUSL Changes Summary:
+2026-01-28 14:34:10,850 - Review.reviews.eusl_review - INFO - Inclusions: 75
+2026-01-28 14:34:10,850 - Review.reviews.eusl_review - INFO - Exclusions: 78
+2026-01-28 14:34:10,850 - Review.reviews.eusl_review - INFO - Saving output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUSL_Review_20260128_143410.xlsx
+2026-01-28 14:34:11,145 - Review.reviews.eusl_review - INFO - File successfully saved to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EUSL_Review_20260128_143410.xlsx

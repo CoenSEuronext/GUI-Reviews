@@ -1,3 +1,5 @@
+# functions.py
+
 import pandas as pd
 
 def read_semicolon_csv(file_path, encoding="utf-8"):

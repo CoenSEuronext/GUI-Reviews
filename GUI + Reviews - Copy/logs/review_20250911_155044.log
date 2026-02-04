@@ -1,9 +1,0 @@
-2025-09-11 15:50:45,150 - werkzeug - WARNING -  * Debugger is active!
-2025-09-11 15:50:45,152 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-09-11 15:50:50,443 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:50:50] "POST /calculate HTTP/1.1" 200 -
-2025-09-11 15:50:50,443 - Review.reviews.edwpt_review - INFO - Starting EDWPT review calculation
-2025-09-11 15:50:50,447 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:50:50] "GET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1" 200 -
-2025-09-11 15:50:52,457 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:50:52] "GET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1" 200 -
-2025-09-11 15:50:54,450 - werkzeug - INFO - 127.0.0.1 - - [11/Sep/2025 15:50:54] "GET /task-status/d5ad77d2-a099-41bc-802f-6c0b388ac8af HTTP/1.1" 200 -
-2025-09-11 15:50:55,818 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading
-2025-09-11 15:50:55,820 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpt_review.py', reloading

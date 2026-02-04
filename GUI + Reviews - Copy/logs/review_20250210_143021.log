@@ -1,9 +1,0 @@
-2025-02-10 14:30:21,604 - werkzeug - WARNING -  * Debugger is active!
-2025-02-10 14:30:21,606 - werkzeug - INFO -  * Debugger PIN: 691-175-853
-2025-02-10 14:30:23,593 - Review.reviews.aerdp_review - INFO - Loading EOD data...
-2025-02-10 14:30:26,215 - Review.reviews.aerdp_review - INFO - Loading reference data...
-2025-02-10 14:30:33,729 - Review.reviews.aerdp_review - INFO - Saving AERDP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\AERDP_df_20250210_143033.xlsx
-2025-02-10 14:30:34,122 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 14:30:34] "POST /calculate HTTP/1.1" 200 -
-2025-02-10 14:30:38,269 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
-2025-02-10 14:30:38,270 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading
-2025-02-10 14:30:38,271 - werkzeug - INFO -  * Detected change in 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\aerdp_review.py', reloading

@@ -22,7 +22,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
 
         # Load data with error handling
         logger.info("Loading EOD data...")
-        index_eod_df, stock_eod_df, stock_co_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
+        index_eod_df, stock_eod_df, stock_co_df, fx_lookup_df = load_eod_data(date, co_date, area, area2, DLF_FOLDER)
         
         logger.info("Loading reference data...")
         ref_data = load_reference_data(
@@ -38,8 +38,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
                 'ISIN code': 'ISIN', 
                 'Preliminary number of shares': 'NOSH'
             }
-        )
-        
+        ).drop_duplicates(subset=['ISIN'], keep='first')  # Add this line
         # Validate data loading
         if any(df is None for df in [ff_df, aex_bel_df]):
             raise ValueError("Failed to load one or more required reference data files")
@@ -82,15 +81,10 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
             
             # Merge Currency Data - only get FX/Index Ccy since Currency already exists
             .merge(
-                stock_eod_df[['Isin Code', 'MIC', 'FX/Index Ccy']]
-                .drop_duplicates(subset=['Isin Code', 'MIC'], keep='first'),
-                left_on=['ISIN', 'MIC'],
-                right_on=['Isin Code', 'MIC'],
-                how='left',
-                suffixes=('', '_stock')  # Add suffix to avoid conflicts
+                stock_eod_df[stock_eod_df['Index Curr'] == currency][['#Symbol', 'MIC', 'FX/Index Ccy']].drop_duplicates(subset=['#Symbol', 'MIC'], keep='first'),
+                on=['#Symbol', 'MIC'],
+                how='left'
             )
-            .drop('Isin Code', axis=1)
-            
             # Merge Turnover Data
             .merge(
                 master_report_df[['ISIN', 'MIC of MoR', 'Turnover in euro (Total)']],
@@ -110,8 +104,7 @@ def run_bnew_review(date, co_date, effective_date, index="BNEW", isin="NL0011376
             .drop('ISIN Code:', axis=1)
             .rename(columns={'Free Float Round:': 'Free Float'})
         )
-        aex_bel_df.to_excel('debug_output.xlsx', index=False)
-        os.startfile('debug_output.xlsx')
+
         # Calculate Price in Index Currency
         aex_bel_df['Price in index currency'] = aex_bel_df['Close Prc_EOD'] * (
             aex_bel_df['FX/Index Ccy'] if 'FX/Index Ccy' in aex_bel_df.columns else 1.0

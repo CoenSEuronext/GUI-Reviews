@@ -1,0 +1,10 @@
+Starting EES2 review at 2026-01-28 14:33:26.439295
+2026-01-28 14:33:26,749 - Review.reviews.ees2_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:33:27,312 - Review.reviews.ees2_review - INFO - Loading reference data...
+2026-01-28 14:33:27,379 - Review.reviews.ees2_review - INFO - Saving EES2 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\EES2_df_20260128_143327.xlsx
+Completed EES2 review in 1.00 seconds

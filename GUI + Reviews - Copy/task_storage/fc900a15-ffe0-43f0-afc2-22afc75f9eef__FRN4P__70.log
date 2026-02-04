@@ -1,0 +1,11 @@
+Starting FRN4P review at 2026-01-28 14:34:55.718346
+2026-01-28 14:34:56,013 - Review.reviews.frn4p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:34:56,572 - Review.reviews.frn4p_review - INFO - Loading reference data...
+2026-01-28 14:34:56,619 - Review.reviews.frn4p_review - INFO - Selecting companies ranked 41-80 by FFMC (40 companies total)...
+2026-01-28 14:34:56,620 - Review.reviews.frn4p_review - INFO - Saving FRN4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\FRN4P_df_20260128_143456.xlsx
+Completed FRN4P review in 0.99 seconds

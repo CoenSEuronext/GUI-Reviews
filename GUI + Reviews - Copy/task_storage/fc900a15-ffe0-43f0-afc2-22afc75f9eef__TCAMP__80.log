@@ -1,0 +1,12 @@
+Starting TCAMP review at 2026-01-28 14:35:18.614089
+2026-01-28 14:35:18,930 - Review.reviews.tcamp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-01-28 14:35:19,481 - Review.reviews.tcamp_review - INFO - Loading reference data...
+2026-01-28 14:35:19,481 - Review.reviews.tcamp_review - INFO - Creating selection_df from TCAMP constituents...
+2026-01-28 14:35:19,496 - Review.reviews.tcamp_review - INFO - Found 2 TCAMP constituents
+2026-01-28 14:35:19,497 - Review.reviews.tcamp_review - INFO - Saving TCAMP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy\output\TCAMP_df_20260128_143519.xlsx
+Completed TCAMP review in 0.94 seconds
