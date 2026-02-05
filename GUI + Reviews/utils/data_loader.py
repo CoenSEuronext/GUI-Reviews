@@ -259,6 +259,10 @@ def load_reference_data(current_data_folder, required_files=None, universe_name=
             "filename": "DEZPT.xlsx",
             "loader": lambda f: _cached_excel(f, cache_tag="dezpt"),
         },
+        "physical_risk_score": {
+            "filename": "Physical_Risk_Score.csv",
+            "loader": lambda f: _cached_csv_semicolon(f, cache_tag="physical_risk_score"),
+        },
     }
 
     if required_files is None:

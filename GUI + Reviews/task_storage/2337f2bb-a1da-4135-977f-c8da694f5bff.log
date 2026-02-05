@@ -1,0 +1,35 @@
+Starting EZ3R review at 2026-02-04 15:55:29.820545
+2026-02-04 15:55:30,169 - Review.reviews.ez3r_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-04 15:55:31,210 - Review.reviews.ez3r_review - INFO - Loading reference data...
+2026-02-04 15:55:31,288 - Review.reviews.ez3r_review - INFO - Starting universe size: 300
+2026-02-04 15:55:31,353 - Review.reviews.ez3r_review - INFO - Step 1: Filtering to Eurozone countries...
+2026-02-04 15:55:31,353 - Review.reviews.ez3r_review - INFO - After Eurozone filter: 292 companies
+2026-02-04 15:55:31,353 - Review.reviews.ez3r_review - INFO - Step 2: Calculating FFMC and selecting top 100...
+2026-02-04 15:55:31,363 - Review.reviews.ez3r_review - INFO - Top 100 by FFMC selected: 100 companies
+2026-02-04 15:55:31,363 - Review.reviews.ez3r_review - INFO - Merging Sustainalytics data...
+2026-02-04 15:55:31,367 - Review.reviews.ez3r_review - INFO - Sustainalytics merge completed. Added 30 columns.
+2026-02-04 15:55:31,367 - Review.reviews.ez3r_review - INFO - Applying exclusion criteria...
+2026-02-04 15:55:31,375 - Review.reviews.ez3r_review - INFO - Exclusion criteria applied. 20 companies excluded.
+2026-02-04 15:55:31,378 - Review.reviews.ez3r_review - INFO - After exclusions: 80 companies eligible
+2026-02-04 15:55:31,378 - Review.reviews.ez3r_review - INFO - PLACEHOLDER: Physical Risk Score ranking (not yet implemented)
+2026-02-04 15:55:31,378 - Review.reviews.ez3r_review - INFO - Applying sector screening...
+2026-02-04 15:55:31,378 - Review.reviews.ez3r_review - INFO - Sector screening: 14 companies excluded from industries ['15', '20', '45', '65']
+2026-02-04 15:55:31,378 - Review.reviews.ez3r_review - INFO - After sector screening: 66 companies eligible
+2026-02-04 15:55:31,379 - Review.reviews.ez3r_review - INFO - Ranking by FFMC...
+2026-02-04 15:55:31,379 - Review.reviews.ez3r_review - INFO - Selecting top 30 companies...
+2026-02-04 15:55:31,379 - Review.reviews.ez3r_review - INFO - Final selection: 30 companies
+2026-02-04 15:55:31,379 - Review.reviews.ez3r_review - INFO - Applying 10% capping using most recent pricing data...
+2026-02-04 15:55:31,380 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-02-04 15:55:31,381 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2026-02-04 15:55:31,381 - utils.capping_proportional - INFO - Capping Summary:
+2026-02-04 15:55:31,381 - utils.capping_proportional - INFO -   Total companies: 30
+2026-02-04 15:55:31,382 - utils.capping_proportional - INFO -   Companies capped: 1
+2026-02-04 15:55:31,382 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-02-04 15:55:31,382 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2026-02-04 15:55:31,387 - Review.reviews.ez3r_review - INFO - Saving EZ3R output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ3R_df_20260204_155531.xlsx
+Completed EZ3R review in 1.72 seconds

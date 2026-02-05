@@ -97,6 +97,11 @@ def apply_proportional_capping(df, mcap_column='Mcap in EUR', max_weight=0.1, ma
         # Update capping factors based on new weights
         # Capping Factor = (Current Weight * Total Market Cap) / Original Market Cap
         df['Capping Factor'] = (df['Current Weight'] * total_mcap) / df[mcap_column]
+        
+        # Normalize capping factors so the maximum is 1.0
+        max_capping = df['Capping Factor'].max()
+        if max_capping > 0 and np.isfinite(max_capping):
+            df['Capping Factor'] = df['Capping Factor'] / max_capping
     else:
         raise Exception(f"Capping procedure did not converge after {max_iterations} iterations")
     

@@ -1,0 +1,8 @@
+2026-02-04 15:36:57,533 - Review.reviews.ez3r_review - INFO - Loading EOD data...
+2026-02-04 15:37:00,431 - Review.reviews.ez3r_review - INFO - Loading reference data...
+2026-02-04 15:37:00,431 - Review.reviews.ez3r_review - ERROR - Error during review calculation: Failed to load eurozone_300 universe data
+2026-02-04 15:37:00,431 - Review.reviews.ez3r_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ez3r_review.py", line 38, in run_ez3r_review
+    raise ValueError("Failed to load eurozone_300 universe data")
+ValueError: Failed to load eurozone_300 universe data
+

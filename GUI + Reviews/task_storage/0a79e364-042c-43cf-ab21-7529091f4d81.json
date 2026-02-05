@@ -1,0 +1,31 @@
+{
+  "task_id": "0a79e364-042c-43cf-ab21-7529091f4d81",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-04T16:05:41.310316",
+  "started_at": "2026-02-04T16:05:41.590412",
+  "completed_at": "2026-02-04T16:05:43.178745",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ez3r_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZ3R_df_20260204_160543.xlsx"
+  },
+  "review_type": "EZ3R",
+  "parameters": {
+    "date": "20260105",
+    "co_date": "20260105",
+    "effective_date": "02-Feb-26",
+    "index": "EZ3R",
+    "isin": "FRESG0003391",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.538867,
+  "completed_at_review": "2026-02-04T16:05:43.178745",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

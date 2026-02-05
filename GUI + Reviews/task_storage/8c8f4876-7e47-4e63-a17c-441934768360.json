@@ -1,0 +1,29 @@
+{
+  "task_id": "8c8f4876-7e47-4e63-a17c-441934768360",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-04T15:39:36.515387",
+  "started_at": "2026-02-04T15:39:36.925870",
+  "completed_at": "2026-02-04T15:39:38.169623",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: Failed to load eurozone_300 universe data",
+  "error": "Error during review calculation: Failed to load eurozone_300 universe data",
+  "result_data": null,
+  "review_type": "EZ3R",
+  "parameters": {
+    "date": "20260105",
+    "co_date": "20260105",
+    "effective_date": "02-Feb-26",
+    "index": "EZ3R",
+    "isin": "FRESG0003391",
+    "auto_open": false,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.160734,
+  "completed_at_review": "2026-02-04T15:39:38.169623",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez3r_review.py\", line 38, in run_ez3r_review\n    raise ValueError(\"Failed to load eurozone_300 universe data\")\nValueError: Failed to load eurozone_300 universe data\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting EZ3R review at 2026-02-04 15:39:37.008889\n2026-02-04 15:39:37,341 - Review.reviews.ez3r_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-04 15:39:38,166 - Review.reviews.ez3r_review - INFO - Loading reference data...\n2026-02-04 15:39:38,166 - Review.reviews.ez3r_review - ERROR - Error during review calculation: Failed to load eurozone_300 universe data\n2026-02-04 15:39:38,166 - Review.reviews.ez3r_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez3r_review.py\", line 38, in run_ez3r_review\n    raise ValueError(\"Failed to load eurozone_300 universe data\")\nValueError: Failed to load eurozone_300 universe data\nCompleted EZ3R review in 1.16 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\8c8f4876-7e47-4e63-a17c-441934768360.log"
+}

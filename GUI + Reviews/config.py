@@ -2,7 +2,7 @@
 # Network paths
 DLF_FOLDER = r"\\pbgfshqa08601v\gis_ttm\Archive"
 DATA_FOLDER = r"V:\PM-Indices-IndexOperations\Review Files"
-DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews - Copy"
+DATA_FOLDER2 = r"C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews"
 
 # Index Configurations
 INDEX_CONFIGS = {
@@ -446,20 +446,25 @@ INDEX_CONFIGS = {
         "isin": "NLIX00000926",
         "output_key": "entp_path"
     },
-        "ENZTP": {
+    "ENZTP": {
         "index": "ENZTP",
         "isin": "NLIX00001015",
         "output_key": "enztp_path"
     },
-        "EENS": {
+    "EENS": {
         "index": "EENS",
         "isin": "NLIX00006246",
         "output_key": "eens_path"
     },
-        "FGINP": {
+    "FGINP": {
         "index": "FGINP",
         "isin": "NL0012730634",
         "output_key": "fginp_path"
+    },
+    "EZ3R": {
+        "index": "EZ3R",
+        "isin": "FRESG0003391",
+        "output_key": "ez3r_path"
     }
 
 
@@ -533,7 +538,7 @@ ALL_MNEMOS = [
     "EEFAP", "EES2", "EFESP",  "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS", "EDEFP", "ELUX",
     "EUMS", "EUSL", "EESL", "EWSL", "EHNI", "EMLS", "EIAPR", "EHCF", "EAIB", "EEDF", "EUOG",
     "EEUS", "EWHC", "EZ60P", "EEAPP", "EEOG", "EEUU", "EEBRP", "EECP", "EWAP", "EWBR", "EWOU",
-    "EWOG"
+    "EWOG", "EZ3R"
 ]
 
 

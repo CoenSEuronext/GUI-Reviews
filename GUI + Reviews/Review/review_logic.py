@@ -99,6 +99,7 @@ REVIEW_TARGETS: Dict[str, Tuple[str, str]] = {
     "ENZTP": ("Review.reviews.enztp_review", "run_enztp_review"),
     "EENS": ("Review.reviews.eens_review", "run_eens_review"),
     "FGINP": ("Review.reviews.fginp_review", "run_fginp_review"),
+    "EZ3R": ("Review.reviews.ez3r_review", "run_ez3r_review"),
 }
 
 _RESOLVED: Dict[str, Callable] = {}
