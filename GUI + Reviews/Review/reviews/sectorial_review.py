@@ -423,7 +423,139 @@ def run_sectorial_review(date, co_date, effective_date, index="ETPFB", isin="NLI
                 'starting_universe': 'edwp',
                 'classification_type': 'sector',
                 'industry_code': 601010
-            }
+            },
+            'IECDP': {
+                'isincode': 'NLIX00009133',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 40
+            },
+            'IECSP': {
+                'isincode': 'NLIX00009166',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 45
+            },
+            'IETCP': {
+                'isincode': 'NLIX00009190',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 15
+            },
+            'IEENP': {
+                'isincode': 'NLIX00009224',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 60
+            },
+            'IEFIP': {
+                'isincode': 'NLIX00009257',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 30
+            },
+            'IEHCP': {
+                'isincode': 'NLIX00009281',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 20
+            },
+            'IETLP': {
+                'isincode': 'NLIX00009315',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 10
+            },
+            'IEINP': {
+                'isincode': 'NLIX00009349',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 50
+            },
+            'IEBMP': {
+                'isincode': 'NLIX00009372',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 55
+            },
+            'IEUTP': {
+                'isincode': 'NLIX00009406',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 65
+            },
+            'IEREP': {
+                'isincode': 'NLIX00009430',
+                'starting_universe': 'deup',
+                'classification_type': 'industry',
+                'industry_code': 35
+            },
+            'IWBMP': {
+                'isincode': 'NLIX00009802',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 55
+            },
+            'IWCDP': {
+                'isincode': 'NLIX00009562',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 40
+            },
+            'IWCSP': {
+                'isincode': 'NLIX00009596',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 45
+            },
+            'IWENP': {
+                'isincode': 'NLIX00009653',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 60
+            },
+            'IWFIP': {
+                'isincode': 'NLIX00009687',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 30
+            },
+            'IWHCP': {
+                'isincode': 'NLIX00009711',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 20
+            },
+            'IWINP': {
+                'isincode': 'NLIX00009778',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 50
+            },
+            'IWREP': {
+                'isincode': 'NLIX00009869',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 35
+            },
+            'IWTCP': {
+                'isincode': 'NLIX00009745',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 10
+            },
+            'IWTLP': {
+                'isincode': 'NLIX00009620',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 15
+            },
+            'IWUTP': {
+                'isincode': 'NLIX00009836',
+                'starting_universe': 'edwp',
+                'classification_type': 'industry',
+                'industry_code': 65
+            },
         }
 
         def calculate_capped_weights(weights, cap_limit=0.2, max_iterations=100, tolerance=1e-8):

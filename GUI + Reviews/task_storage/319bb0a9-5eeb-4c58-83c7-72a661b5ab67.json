@@ -1,0 +1,29 @@
+{
+  "task_id": "319bb0a9-5eeb-4c58-83c7-72a661b5ab67",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-06T10:07:56.732785",
+  "started_at": "2026-02-06T10:07:57.451920",
+  "completed_at": "2026-02-06T10:07:59.327405",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: single positional indexer is out-of-bounds",
+  "error": "Error during review calculation: single positional indexer is out-of-bounds",
+  "result_data": null,
+  "review_type": "EZ20P",
+  "parameters": {
+    "date": "20260105",
+    "co_date": "20260105",
+    "effective_date": "02-Feb-26",
+    "index": "EZ20P",
+    "isin": "NLIX00009463",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.76181,
+  "completed_at_review": "2026-02-06T10:07:59.327405",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez20p_review.py\", line 192, in run_ez20p_review\n    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]\n                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py\", line 1191, in __getitem__\n    return self._getitem_axis(maybe_callable, axis=axis)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py\", line 1752, in _getitem_axis\n    self._validate_integer(key, axis)\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py\", line 1685, in _validate_integer\n    raise IndexError(\"single positional indexer is out-of-bounds\")\nIndexError: single positional indexer is out-of-bounds\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting EZ20P review at 2026-02-06 10:07:57.565595\n2026-02-06 10:07:58,340 - Review.reviews.ez20p_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-06 10:07:59,224 - Review.reviews.ez20p_review - INFO - Loading reference data...\n2026-02-06 10:07:59,316 - Review.reviews.ez20p_review - ERROR - Error during review calculation: single positional indexer is out-of-bounds\n2026-02-06 10:07:59,319 - Review.reviews.ez20p_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ez20p_review.py\", line 192, in run_ez20p_review\n    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]\n                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py\", line 1191, in __getitem__\n    return self._getitem_axis(maybe_callable, axis=axis)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py\", line 1752, in _getitem_axis\n    self._validate_integer(key, axis)\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexing.py\", line 1685, in _validate_integer\n    raise IndexError(\"single positional indexer is out-of-bounds\")\nIndexError: single positional indexer is out-of-bounds\nCompleted EZ20P review in 1.76 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\319bb0a9-5eeb-4c58-83c7-72a661b5ab67.log"
+}

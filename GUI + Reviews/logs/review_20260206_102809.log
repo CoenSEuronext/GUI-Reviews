@@ -1,0 +1,1368 @@
+2026-02-06 10:28:09,024 - Review.reviews.sectorial_review - INFO - Loading EOD data...
+2026-02-06 10:28:09,981 - Review.reviews.sectorial_review - INFO - Loading reference data...
+2026-02-06 10:28:10,465 - Review.reviews.sectorial_review - INFO - Preparing original universes (NA500, Transatlantic, EZ300)...
+2026-02-06 10:28:10,618 - Review.reviews.sectorial_review - INFO - Preparing new universes (EUSP, DEUP, EDWP)...
+2026-02-06 10:28:10,798 - Review.reviews.sectorial_review - INFO - Processing all 53 sectorial indices...
+2026-02-06 10:28:10,798 - Review.reviews.sectorial_review - INFO - Processing TECHP...
+2026-02-06 10:28:10,799 - Review.reviews.sectorial_review - INFO - Processing TECHP: using Industry Code from ez300 universe
+2026-02-06 10:28:10,800 - Review.reviews.sectorial_review - INFO - Filtering by single code: 10
+2026-02-06 10:28:10,800 - Review.reviews.sectorial_review - INFO - Found 16 companies for TECHP
+2026-02-06 10:28:10,802 - Review.reviews.sectorial_review - INFO - Total weight before capping for TECHP: 1.00000000
+2026-02-06 10:28:10,802 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TECHP (max factor was 1.761056)
+2026-02-06 10:28:10,802 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.268324 to 1.000000
+2026-02-06 10:28:10,802 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in TECHP:
+2026-02-06 10:28:10,802 - Review.reviews.sectorial_review - INFO -   ASML HOLDING: 0.4232 -> 0.2000
+2026-02-06 10:28:10,808 - Review.reviews.sectorial_review - INFO -   SAP: 0.2360 -> 0.2000
+2026-02-06 10:28:10,808 - Review.reviews.sectorial_review - INFO - Boosted 14 companies due to redistribution in TECHP:
+2026-02-06 10:28:10,808 - Review.reviews.sectorial_review - INFO -   AMADEUS IT GROUP: 0.0295 -> 0.0519
+2026-02-06 10:28:10,808 - Review.reviews.sectorial_review - INFO -   ASM INTERNATIONAL: 0.0294 -> 0.0519
+2026-02-06 10:28:10,808 - Review.reviews.sectorial_review - INFO -   BE SEMICONDUCTOR: 0.0116 -> 0.0205
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   BECHTLE AG: 0.0038 -> 0.0067
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   CAPGEMINI: 0.0217 -> 0.0382
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   DASSAULT SYSTEMES: 0.0167 -> 0.0294
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   INDRA SISTEMAS SA: 0.0045 -> 0.0079
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   INFINEON TECHNOLOGIE: 0.0540 -> 0.0950
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   NEMETSCHEK SE: 0.0066 -> 0.0117
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   PROSUS: 0.0674 -> 0.1187
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   RELX: 0.0706 -> 0.1243
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   REPLY: 0.0029 -> 0.0051
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   SCOUT24 SE: 0.0064 -> 0.0112
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO -   STMICROELECTRONICS: 0.0157 -> 0.0276
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO - Total weight after capping for TECHP: 1.000000
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TECHP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO - Index market cap for TECHP: 553,823,024,219
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 965,853,744,395
+2026-02-06 10:28:10,809 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.7440
+2026-02-06 10:28:10,814 - Review.reviews.sectorial_review - INFO - Processing ENRGP...
+2026-02-06 10:28:10,815 - Review.reviews.sectorial_review - INFO - Processing ENRGP: using Industry Code from ez300 universe
+2026-02-06 10:28:10,815 - Review.reviews.sectorial_review - INFO - Filtering by single code: 60
+2026-02-06 10:28:10,815 - Review.reviews.sectorial_review - INFO - Found 17 companies for ENRGP
+2026-02-06 10:28:10,816 - Review.reviews.sectorial_review - INFO - Total weight before capping for ENRGP: 1.00000000
+2026-02-06 10:28:10,823 - Review.reviews.sectorial_review - INFO - Scaled capping factors for ENRGP (max factor was 1.735684)
+2026-02-06 10:28:10,824 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.315396 to 1.000000
+2026-02-06 10:28:10,824 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in ENRGP:
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   SHELL PLC: 0.3653 -> 0.2000
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   TOTALENERGIES: 0.2136 -> 0.2000
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in ENRGP:
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   ENAGAS: 0.0061 -> 0.0106
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   ENI: 0.0655 -> 0.1136
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   GALP ENERGIA-NOM: 0.0118 -> 0.0206
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   GTT: 0.0113 -> 0.0196
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   NESTE OIL OYJ: 0.0166 -> 0.0288
+2026-02-06 10:28:10,825 - Review.reviews.sectorial_review - INFO -   NORDEX SE: 0.0079 -> 0.0136
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   OMV AG: 0.0137 -> 0.0239
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   REPSOL: 0.0369 -> 0.0641
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   SAIPEM: 0.0065 -> 0.0112
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   SBM OFFSHORE: 0.0059 -> 0.0102
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   SIEMENS ENERGY AG: 0.1906 -> 0.2000
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   SNAM: 0.0220 -> 0.0382
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   TECHNIP ENERGIES: 0.0086 -> 0.0150
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   TENARIS: 0.0125 -> 0.0216
+2026-02-06 10:28:10,826 - Review.reviews.sectorial_review - INFO -   VALLOUREC: 0.0051 -> 0.0089
+2026-02-06 10:28:10,827 - Review.reviews.sectorial_review - INFO - Total weight after capping for ENRGP: 1.000000
+2026-02-06 10:28:10,827 - Review.reviews.sectorial_review - INFO - Maximum individual weight for ENRGP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,827 - Review.reviews.sectorial_review - INFO - Index market cap for ENRGP: 296,681,977,873
+2026-02-06 10:28:10,827 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 518,670,301,848
+2026-02-06 10:28:10,827 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.7482
+2026-02-06 10:28:10,833 - Review.reviews.sectorial_review - INFO - Processing UTIL...
+2026-02-06 10:28:10,833 - Review.reviews.sectorial_review - INFO - Processing UTIL: using Industry Code from ez300 universe
+2026-02-06 10:28:10,833 - Review.reviews.sectorial_review - INFO - Filtering by single code: 65
+2026-02-06 10:28:10,834 - Review.reviews.sectorial_review - INFO - Found 18 companies for UTIL
+2026-02-06 10:28:10,835 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTIL: 1.00000000
+2026-02-06 10:28:10,838 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTIL (max factor was 1.119243)
+2026-02-06 10:28:10,839 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.626482 to 1.000000
+2026-02-06 10:28:10,839 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UTIL:
+2026-02-06 10:28:10,839 - Review.reviews.sectorial_review - INFO -   IBERDROLA: 0.2852 -> 0.2000
+2026-02-06 10:28:10,839 - Review.reviews.sectorial_review - INFO - Boosted 17 companies due to redistribution in UTIL:
+2026-02-06 10:28:10,839 - Review.reviews.sectorial_review - INFO -   A2A: 0.0092 -> 0.0103
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   E.ON SE: 0.0935 -> 0.1046
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   EDP: 0.0301 -> 0.0337
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   EDP RENOVAVEIS: 0.0102 -> 0.0115
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   ELIA GROUP: 0.0142 -> 0.0158
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   ENDESA: 0.0253 -> 0.0283
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   ENEL: 0.1761 -> 0.1971
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   ENGIE: 0.1066 -> 0.1193
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   FORTUM OYJ: 0.0213 -> 0.0238
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   HERA: 0.0084 -> 0.0094
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   ITALGAS: 0.0162 -> 0.0182
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   NATURGY ENERGY GROUP: 0.0158 -> 0.0176
+2026-02-06 10:28:10,840 - Review.reviews.sectorial_review - INFO -   REDEIA CORP: 0.0158 -> 0.0177
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO -   RWE AG: 0.0806 -> 0.0902
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO -   TERNA: 0.0326 -> 0.0364
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO -   VEOLIA ENVIRON.: 0.0482 -> 0.0539
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO -   VERBUND AG: 0.0108 -> 0.0121
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTIL: 1.000000
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTIL: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO - Index market cap for UTIL: 350,084,536,483
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 392,537,851,866
+2026-02-06 10:28:10,841 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1213
+2026-02-06 10:28:10,845 - Review.reviews.sectorial_review - INFO - Processing BASM...
+2026-02-06 10:28:10,845 - Review.reviews.sectorial_review - INFO - Processing BASM: using Industry Code from ez300 universe
+2026-02-06 10:28:10,846 - Review.reviews.sectorial_review - INFO - Filtering by single code: 55
+2026-02-06 10:28:10,848 - Review.reviews.sectorial_review - INFO - Found 17 companies for BASM
+2026-02-06 10:28:10,850 - Review.reviews.sectorial_review - INFO - Total weight before capping for BASM: 1.00000000
+2026-02-06 10:28:10,852 - Review.reviews.sectorial_review - INFO - Scaled capping factors for BASM (max factor was 1.365652)
+2026-02-06 10:28:10,852 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.374040 to 1.000000
+2026-02-06 10:28:10,852 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in BASM:
+2026-02-06 10:28:10,852 - Review.reviews.sectorial_review - INFO -   AIR LIQUIDE: 0.3915 -> 0.2000
+2026-02-06 10:28:10,852 - Review.reviews.sectorial_review - INFO - Boosted 16 companies due to redistribution in BASM:
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   ACERINOX SA: 0.0105 -> 0.0144
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   AKZO NOBEL: 0.0420 -> 0.0573
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   ARCELORMITTAL SA: 0.0725 -> 0.0991
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   ARKEMA: 0.0120 -> 0.0164
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   AURUBIS AG: 0.0150 -> 0.0204
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   BASF: 0.1691 -> 0.2000
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   BRENNTAG SE: 0.0263 -> 0.0360
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   EVONIK INDUSTRIES AG: 0.0148 -> 0.0202
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   HENKEL AG & CO PREF: 0.0484 -> 0.0661
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   IMCD: 0.0192 -> 0.0262
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   STORA ENSO OYJ: 0.0284 -> 0.0388
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   SYENSQO: 0.0219 -> 0.0298
+2026-02-06 10:28:10,856 - Review.reviews.sectorial_review - INFO -   SYMRISE AG: 0.0389 -> 0.0531
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO -   UMICORE: 0.0153 -> 0.0209
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO -   UPM-KYMMENE OYJ: 0.0565 -> 0.0771
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO -   VOESTALPINE AG: 0.0177 -> 0.0241
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO - Total weight after capping for BASM: 1.000000
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO - Maximum individual weight for BASM: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO - Index market cap for BASM: 167,005,603,136
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 231,983,122,285
+2026-02-06 10:28:10,857 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.3891
+2026-02-06 10:28:10,861 - Review.reviews.sectorial_review - INFO - Processing FINA...
+2026-02-06 10:28:10,861 - Review.reviews.sectorial_review - INFO - Processing FINA: using Industry Code from ez300 universe
+2026-02-06 10:28:10,862 - Review.reviews.sectorial_review - INFO - Filtering by single code: 30
+2026-02-06 10:28:10,863 - Review.reviews.sectorial_review - INFO - Found 54 companies for FINA
+2026-02-06 10:28:10,864 - Review.reviews.sectorial_review - INFO - Total weight before capping for FINA: 1.00000000
+2026-02-06 10:28:10,866 - Review.reviews.sectorial_review - INFO - Scaled capping factors for FINA (max factor was 1.000000)
+2026-02-06 10:28:10,866 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,867 - Review.reviews.sectorial_review - INFO - Total weight after capping for FINA: 1.000000
+2026-02-06 10:28:10,867 - Review.reviews.sectorial_review - INFO - Maximum individual weight for FINA: 0.092995 (cap: 0.200000)
+2026-02-06 10:28:10,867 - Review.reviews.sectorial_review - INFO - Index market cap for FINA: 1,652,835,752,691
+2026-02-06 10:28:10,867 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,652,835,752,691
+2026-02-06 10:28:10,867 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:10,869 - Review.reviews.sectorial_review - INFO - Processing CSTA...
+2026-02-06 10:28:10,869 - Review.reviews.sectorial_review - INFO - Processing CSTA: using Industry Code from ez300 universe
+2026-02-06 10:28:10,869 - Review.reviews.sectorial_review - INFO - Filtering by single code: 45
+2026-02-06 10:28:10,869 - Review.reviews.sectorial_review - INFO - Found 16 companies for CSTA
+2026-02-06 10:28:10,869 - Review.reviews.sectorial_review - INFO - Total weight before capping for CSTA: 1.00000000
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO - Scaled capping factors for CSTA (max factor was 1.232341)
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.462598 to 1.000000
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in CSTA:
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   UNILEVER: 0.3508 -> 0.2000
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in CSTA:
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   AB INBEV: 0.1469 -> 0.1810
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   AHOLD DEL: 0.0848 -> 0.1045
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   BEIERSDORF AG: 0.0219 -> 0.0270
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   CAMPARI: 0.0095 -> 0.0117
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   CARREFOUR: 0.0274 -> 0.0338
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   DANONE: 0.1326 -> 0.1634
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   DSM FIRMENICH AG: 0.0378 -> 0.0466
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   GLANBIA PLC: 0.0077 -> 0.0095
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   HEINEKEN: 0.0539 -> 0.0665
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   J.MARTINS,SGPS: 0.0162 -> 0.0199
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   JDE PEET'S: 0.0128 -> 0.0158
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   KERRY GROUP PLC: 0.0331 -> 0.0407
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   KESKO B: 0.0144 -> 0.0178
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   LOTUS BAKERIES: 0.0093 -> 0.0115
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO -   PERNOD RICARD: 0.0408 -> 0.0503
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO - Total weight after capping for CSTA: 1.000000
+2026-02-06 10:28:10,876 - Review.reviews.sectorial_review - INFO - Maximum individual weight for CSTA: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,878 - Review.reviews.sectorial_review - INFO - Index market cap for CSTA: 295,309,558,753
+2026-02-06 10:28:10,878 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 363,231,905,289
+2026-02-06 10:28:10,878 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.2300
+2026-02-06 10:28:10,882 - Review.reviews.sectorial_review - INFO - Processing TELEP...
+2026-02-06 10:28:10,882 - Review.reviews.sectorial_review - INFO - Processing TELEP: using Industry Code from ez300 universe
+2026-02-06 10:28:10,882 - Review.reviews.sectorial_review - INFO - Filtering by single code: 15
+2026-02-06 10:28:10,882 - Review.reviews.sectorial_review - INFO - Found 10 companies for TELEP
+2026-02-06 10:28:10,883 - Review.reviews.sectorial_review - INFO - Total weight before capping for TELEP: 1.00000000
+2026-02-06 10:28:10,888 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TELEP (max factor was 1.466908)
+2026-02-06 10:28:10,888 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.304945 to 1.000000
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TELEP:
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO -   DEUTSCHE TELEKOM AG: 0.4471 -> 0.2000
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO - Boosted 9 companies due to redistribution in TELEP:
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO -   CELLNEX TELECOM: 0.0780 -> 0.1144
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO -   ELISA OYJ: 0.0266 -> 0.0391
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO -   FREENET AG: 0.0166 -> 0.0244
+2026-02-06 10:28:10,889 - Review.reviews.sectorial_review - INFO -   INWIT: 0.0104 -> 0.0153
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO -   KPN KON: 0.0729 -> 0.1070
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO -   NOKIA: 0.1439 -> 0.2000
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO -   ORANGE: 0.1160 -> 0.1702
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO -   TELECOM ITALIA: 0.0280 -> 0.0410
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO -   TELEFONICA: 0.0605 -> 0.0887
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO - Total weight after capping for TELEP: 1.000000
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TELEP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO - Index market cap for TELEP: 144,539,783,545
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 210,963,162,723
+2026-02-06 10:28:10,890 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.4596
+2026-02-06 10:28:10,895 - Review.reviews.sectorial_review - INFO - Processing HEAC...
+2026-02-06 10:28:10,895 - Review.reviews.sectorial_review - INFO - Processing HEAC: using Industry Code from ez300 universe
+2026-02-06 10:28:10,895 - Review.reviews.sectorial_review - INFO - Filtering by single code: 20
+2026-02-06 10:28:10,896 - Review.reviews.sectorial_review - INFO - Found 21 companies for HEAC
+2026-02-06 10:28:10,896 - Review.reviews.sectorial_review - INFO - Total weight before capping for HEAC: 1.00000000
+2026-02-06 10:28:10,901 - Review.reviews.sectorial_review - INFO - Scaled capping factors for HEAC (max factor was 1.030330)
+2026-02-06 10:28:10,901 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.883962 to 1.000000
+2026-02-06 10:28:10,901 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in HEAC:
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   SANOFI: 0.2196 -> 0.2000
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO - Boosted 20 companies due to redistribution in HEAC:
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   ABIVAX: 0.0141 -> 0.0145
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   ARGENX SE: 0.0976 -> 0.1006
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   BAYER AG: 0.0870 -> 0.0897
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   BIOMERIEUX: 0.0123 -> 0.0127
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   ESSILORLUXOTTICA: 0.1981 -> 0.2000
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   EUROFINS SCIENT.: 0.0184 -> 0.0190
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   FRESENIUS MEDICAL: 0.0193 -> 0.0199
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   FRESENIUS SE & CO: 0.0467 -> 0.0481
+2026-02-06 10:28:10,902 - Review.reviews.sectorial_review - INFO -   GRIFOLS SA: 0.0073 -> 0.0075
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   IPSEN: 0.0091 -> 0.0094
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   MERCK KGA: 0.0369 -> 0.0380
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   ORION OYJ CLASS B: 0.0160 -> 0.0165
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   PHILIPS KON: 0.0425 -> 0.0438
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   QIAGEN NV: 0.0195 -> 0.0201
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   RECORDATI ORD: 0.0126 -> 0.0130
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   SARTORIUS AG PREF: 0.0144 -> 0.0148
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   SARTORIUS STED BIO: 0.0145 -> 0.0150
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   SIEMENS HEALTHINEERS: 0.0352 -> 0.0363
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   TUBIZE-FIN: 0.0098 -> 0.0101
+2026-02-06 10:28:10,903 - Review.reviews.sectorial_review - INFO -   UCB: 0.0689 -> 0.0710
+2026-02-06 10:28:10,904 - Review.reviews.sectorial_review - INFO - Total weight after capping for HEAC: 1.000000
+2026-02-06 10:28:10,904 - Review.reviews.sectorial_review - INFO - Maximum individual weight for HEAC: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,904 - Review.reviews.sectorial_review - INFO - Index market cap for HEAC: 411,383,425,881
+2026-02-06 10:28:10,904 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 431,138,048,288
+2026-02-06 10:28:10,904 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0480
+2026-02-06 10:28:10,908 - Review.reviews.sectorial_review - INFO - Processing INDU...
+2026-02-06 10:28:10,908 - Review.reviews.sectorial_review - INFO - Processing INDU: using Industry Code from ez300 universe
+2026-02-06 10:28:10,908 - Review.reviews.sectorial_review - INFO - Filtering by single code: 50
+2026-02-06 10:28:10,908 - Review.reviews.sectorial_review - INFO - Found 65 companies for INDU
+2026-02-06 10:28:10,908 - Review.reviews.sectorial_review - INFO - Total weight before capping for INDU: 1.00000000
+2026-02-06 10:28:10,908 - Review.reviews.sectorial_review - INFO - Scaled capping factors for INDU (max factor was 1.000000)
+2026-02-06 10:28:10,911 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,911 - Review.reviews.sectorial_review - INFO - Total weight after capping for INDU: 1.000000
+2026-02-06 10:28:10,911 - Review.reviews.sectorial_review - INFO - Maximum individual weight for INDU: 0.139303 (cap: 0.200000)
+2026-02-06 10:28:10,911 - Review.reviews.sectorial_review - INFO - Index market cap for INDU: 1,334,474,798,569
+2026-02-06 10:28:10,911 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,334,474,798,569
+2026-02-06 10:28:10,911 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:10,917 - Review.reviews.sectorial_review - INFO - Processing CDIS...
+2026-02-06 10:28:10,917 - Review.reviews.sectorial_review - INFO - Processing CDIS: using Industry Code from ez300 universe
+2026-02-06 10:28:10,917 - Review.reviews.sectorial_review - INFO - Filtering by single code: 40
+2026-02-06 10:28:10,918 - Review.reviews.sectorial_review - INFO - Found 37 companies for CDIS
+2026-02-06 10:28:10,919 - Review.reviews.sectorial_review - INFO - Total weight before capping for CDIS: 1.00000000
+2026-02-06 10:28:10,922 - Review.reviews.sectorial_review - INFO - Scaled capping factors for CDIS (max factor was 1.004694)
+2026-02-06 10:28:10,922 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.977068 to 1.000000
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in CDIS:
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   LVMH: 0.2037 -> 0.2000
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO - Boosted 36 companies due to redistribution in CDIS:
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   ACCOR: 0.0111 -> 0.0112
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   ADIDAS AG: 0.0370 -> 0.0372
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   AUMOVIO: 0.0031 -> 0.0031
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   AUTO1 GROUP SE: 0.0051 -> 0.0051
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   AYVENS: 0.0055 -> 0.0055
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   BMW: 0.0335 -> 0.0336
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   BRUNELLO CUCINELLI: 0.0041 -> 0.0041
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   CONTINENTAL AG: 0.0095 -> 0.0095
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   CTS EVENTIM AG: 0.0059 -> 0.0059
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   DELIVERY HERO SE: 0.0061 -> 0.0061
+2026-02-06 10:28:10,923 - Review.reviews.sectorial_review - INFO -   D'IETEREN GROUP: 0.0043 -> 0.0043
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   FDJ UNITED: 0.0035 -> 0.0036
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   FERRARI: 0.0476 -> 0.0479
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   HERMES INTL: 0.0852 -> 0.0856
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   INDITEX: 0.0781 -> 0.0785
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   KERING: 0.0288 -> 0.0289
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   L'OREAL: 0.1112 -> 0.1117
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   LOTTOMATICA GROUP: 0.0074 -> 0.0075
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   LUFTHANSA: 0.0112 -> 0.0113
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   MERCEDES-BENZ GROUP: 0.0556 -> 0.0559
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   MICHELIN: 0.0261 -> 0.0262
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   MONCLER: 0.0152 -> 0.0153
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   PIRELLI & C: 0.0026 -> 0.0027
+2026-02-06 10:28:10,925 - Review.reviews.sectorial_review - INFO -   PORSCHE AG: 0.0068 -> 0.0068
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   PORSCHE PREF: 0.0077 -> 0.0077
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   PUBLICIS GROUPE SA: 0.0270 -> 0.0272
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   RATIONAL AG: 0.0043 -> 0.0043
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   RENAULT: 0.0087 -> 0.0088
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   RYANAIR HOLD. PLC: 0.0402 -> 0.0404
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   SODEXO: 0.0045 -> 0.0045
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   STELLANTIS NV: 0.0248 -> 0.0249
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   TUI AG: 0.0052 -> 0.0053
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   UMG: 0.0313 -> 0.0314
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   VALEO: 0.0033 -> 0.0033
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   VOLKSWAGEN PREF: 0.0271 -> 0.0273
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO -   ZALANDO SE: 0.0074 -> 0.0075
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO - Total weight after capping for CDIS: 1.000000
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO - Maximum individual weight for CDIS: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO - Index market cap for CDIS: 783,466,887,888
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 785,110,117,556
+2026-02-06 10:28:10,926 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0021
+2026-02-06 10:28:10,929 - Review.reviews.sectorial_review - INFO - Processing TBMA...
+2026-02-06 10:28:10,929 - Review.reviews.sectorial_review - INFO - Processing TBMA: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,931 - Review.reviews.sectorial_review - INFO - Filtering by single code: 55
+2026-02-06 10:28:10,931 - Review.reviews.sectorial_review - INFO - Found 40 companies for TBMA
+2026-02-06 10:28:10,932 - Review.reviews.sectorial_review - INFO - Total weight before capping for TBMA: 1.00000000
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TBMA (max factor was 1.000000)
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Total weight after capping for TBMA: 1.000000
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TBMA: 0.156560 (cap: 0.200000)
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Index market cap for TBMA: 1,103,628,793,513
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,103,628,793,513
+2026-02-06 10:28:10,934 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:10,937 - Review.reviews.sectorial_review - INFO - Processing TCDI...
+2026-02-06 10:28:10,937 - Review.reviews.sectorial_review - INFO - Processing TCDI: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,937 - Review.reviews.sectorial_review - INFO - Filtering by single code: 40
+2026-02-06 10:28:10,937 - Review.reviews.sectorial_review - INFO - Found 124 companies for TCDI
+2026-02-06 10:28:10,941 - Review.reviews.sectorial_review - INFO - Total weight before capping for TCDI: 1.00000000
+2026-02-06 10:28:10,944 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TCDI (max factor was 1.041042)
+2026-02-06 10:28:10,944 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.829731 to 1.000000
+2026-02-06 10:28:10,944 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TCDI:
+2026-02-06 10:28:10,944 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2315 -> 0.2000
+2026-02-06 10:28:10,944 - Review.reviews.sectorial_review - INFO - Boosted 123 companies due to redistribution in TCDI:
+2026-02-06 10:28:10,945 - Review.reviews.sectorial_review - INFO -   ACCOR: 0.0011 -> 0.0011
+2026-02-06 10:28:10,945 - Review.reviews.sectorial_review - INFO -   ADIDAS AG: 0.0035 -> 0.0037
+2026-02-06 10:28:10,945 - Review.reviews.sectorial_review - INFO -   AIRBNB INC. CLASS A: 0.0060 -> 0.0062
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   AUTO1 GROUP SE: 0.0005 -> 0.0005
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   AUTOZONE INC.: 0.0056 -> 0.0058
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   AVOLTA AG: 0.0006 -> 0.0006
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   AYVENS: 0.0005 -> 0.0005
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BARRATT REDROW PLC: 0.0007 -> 0.0008
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BELLWAY P.L.C.: 0.0005 -> 0.0005
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BERKELEY GROUP HLD: 0.0005 -> 0.0006
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BMW: 0.0032 -> 0.0033
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BOOKING HOLDINGS INC: 0.0179 -> 0.0186
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BRUNELLO CUCINELLI: 0.0004 -> 0.0004
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BURBERRY GROUP: 0.0007 -> 0.0007
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   BURLINGTON STORES: 0.0020 -> 0.0021
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   CARNIVAL CORPORATION: 0.0034 -> 0.0036
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   CARVANA CO: 0.0063 -> 0.0065
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   CHIPOTLE MEX. GRILL: 0.0052 -> 0.0054
+2026-02-06 10:28:10,946 - Review.reviews.sectorial_review - INFO -   CIE FIN RICHEMONT: 0.0121 -> 0.0126
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   COMPASS GROUP PLC: 0.0055 -> 0.0057
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   CONTINENTAL AG: 0.0009 -> 0.0009
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   COPART INC.: 0.0035 -> 0.0036
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   COSTCO WHOLES. CORP.: 0.0401 -> 0.0417
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   COUPANG INC. CLASS A: 0.0034 -> 0.0035
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   CTS EVENTIM AG: 0.0006 -> 0.0006
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   D.R. HORTON INC.: 0.0042 -> 0.0044
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   DARDEN RESTAURANTS: 0.0023 -> 0.0024
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   DELIVERY HERO SE: 0.0006 -> 0.0006
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   DELTA AIR LINES INC.: 0.0048 -> 0.0050
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   D'IETEREN GROUP: 0.0004 -> 0.0004
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   DOLLAR GENERAL CORP.: 0.0032 -> 0.0033
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   DOLLAR TREE INC.: 0.0026 -> 0.0027
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   EASYJET: 0.0004 -> 0.0004
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   EBAY INC.: 0.0042 -> 0.0044
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   ELECTRONIC ARTS INC.: 0.0047 -> 0.0049
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   ENTAIN PLC: 0.0007 -> 0.0007
+2026-02-06 10:28:10,947 - Review.reviews.sectorial_review - INFO -   ESTEE LAUDER COS INC: 0.0026 -> 0.0027
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   EVOLUTION AB: 0.0010 -> 0.0010
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   EXPEDIA GROUP INC.: 0.0035 -> 0.0036
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   FDJ UNITED: 0.0003 -> 0.0004
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   FERRARI: 0.0045 -> 0.0047
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   FLUTTER ENTERTAINMEN: 0.0036 -> 0.0038
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0054 -> 0.0057
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   GAMES WORKSHOP GROUP: 0.0009 -> 0.0009
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   GARMIN LTD.: 0.0034 -> 0.0036
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0080 -> 0.0083
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0018 -> 0.0018
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   HENNES & MAURITZ AB: 0.0010 -> 0.0011
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   HERMES INTL: 0.0081 -> 0.0084
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   HILTON WORLDWIDE: 0.0069 -> 0.0071
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   HOME DEPOT INC: 0.0354 -> 0.0368
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   HOWDEN JOINERY GROUP: 0.0006 -> 0.0007
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   INDITEX: 0.0074 -> 0.0077
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   INFORMA: 0.0016 -> 0.0017
+2026-02-06 10:28:10,948 - Review.reviews.sectorial_review - INFO -   INTERCONTINENTAL HTL: 0.0020 -> 0.0021
+2026-02-06 10:28:10,949 - Review.reviews.sectorial_review - INFO -   INTL CONS AIRLINES: 0.0018 -> 0.0018
+2026-02-06 10:28:10,949 - Review.reviews.sectorial_review - INFO -   ITV: 0.0004 -> 0.0004
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   KERING: 0.0027 -> 0.0028
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   KINGFISHER: 0.0007 -> 0.0007
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LAS VEGAS SANDS CORP: 0.0020 -> 0.0021
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LENNAR CORP A: 0.0024 -> 0.0025
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LIBERTY MEDIA CORP.: 0.0023 -> 0.0024
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LIVE NATION ENTERT: 0.0024 -> 0.0025
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   L'OREAL: 0.0105 -> 0.0110
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LOTTOMATICA GROUP: 0.0007 -> 0.0007
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LOWE'S COMPANIES INC: 0.0142 -> 0.0148
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LUFTHANSA: 0.0011 -> 0.0011
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LULULEMON ATHLETICA: 0.0022 -> 0.0023
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   LVMH: 0.0193 -> 0.0201
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   MARRIOTT INTERN. INC: 0.0069 -> 0.0072
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   MCDONALD'S CORP: 0.0221 -> 0.0230
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   MERCADOLIBRE INC.: 0.0107 -> 0.0111
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   MERCEDES-BENZ GROUP: 0.0053 -> 0.0055
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   MICHELIN: 0.0025 -> 0.0026
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   MONCLER: 0.0014 -> 0.0015
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   NETFLIX INC.: 0.0400 -> 0.0417
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   NEXT: 0.0022 -> 0.0023
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   NIKE INC: 0.0079 -> 0.0082
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   NVR INC.: 0.0021 -> 0.0022
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   O'REILLY AUTOMOTIVE: 0.0079 -> 0.0082
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PANDORA A/S: 0.0009 -> 0.0009
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PEARSON: 0.0008 -> 0.0008
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PERSIMMON: 0.0006 -> 0.0006
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PORSCHE AG: 0.0006 -> 0.0007
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PORSCHE PREF: 0.0007 -> 0.0008
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PUBLICIS GROUPE SA: 0.0026 -> 0.0027
+2026-02-06 10:28:10,950 - Review.reviews.sectorial_review - INFO -   PULTEGROUP INC: 0.0024 -> 0.0025
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   RATIONAL AG: 0.0004 -> 0.0004
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   RENAULT: 0.0008 -> 0.0009
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   ROBLOX CORP. - A: 0.0055 -> 0.0057
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   ROLLINS. INC.: 0.0019 -> 0.0020
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   ROSS STORES INC.: 0.0063 -> 0.0065
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   ROYAL CARIBBEAN: 0.0075 -> 0.0078
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   RYANAIR HOLD. PLC: 0.0038 -> 0.0040
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   SODEXO: 0.0004 -> 0.0004
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   SOMNIGROUP INT: 0.0018 -> 0.0019
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   SPOTIFY TECHNOLOGY: 0.0095 -> 0.0099
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   STARBUCKS CORP.: 0.0102 -> 0.0106
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   STELLANTIS NV: 0.0024 -> 0.0025
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   SWATCH GROUP-BR: 0.0006 -> 0.0007
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   TAKE-TWO INTERACTIVE: 0.0047 -> 0.0049
+2026-02-06 10:28:10,952 - Review.reviews.sectorial_review - INFO -   TAPESTRY INC.: 0.0027 -> 0.0028
+2026-02-06 10:28:10,953 - Review.reviews.sectorial_review - INFO -   TARGET CORPORATION: 0.0048 -> 0.0050
+2026-02-06 10:28:10,953 - Review.reviews.sectorial_review - INFO -   TAYLOR WIMPEY PLC: 0.0005 -> 0.0006
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.1318 -> 0.1373
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   THE WALT DISNEY COMP: 0.0210 -> 0.0219
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   TJX COMPANIES INC: 0.0177 -> 0.0184
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   TRACTOR SUPPLY COMP.: 0.0027 -> 0.0028
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   TRADE DESK INC.: 0.0018 -> 0.0019
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   TUI AG: 0.0005 -> 0.0005
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   UBER TECHNOLOGIES: 0.0173 -> 0.0180
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   ULTA BEAUTY INC: 0.0029 -> 0.0030
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   UMG: 0.0030 -> 0.0031
+2026-02-06 10:28:10,954 - Review.reviews.sectorial_review - INFO -   UNITED AIRLINES HLD: 0.0038 -> 0.0040
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   VOLKSWAGEN PREF: 0.0026 -> 0.0027
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   WALMART INC: 0.0510 -> 0.0531
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   WARNER BROS DISCOVER: 0.0073 -> 0.0076
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   WHITBREAD: 0.0006 -> 0.0006
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   WILLIAMS-SONOMA.: 0.0023 -> 0.0024
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   WPP: 0.0005 -> 0.0005
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   YUM CHINA HOLDINGS: 0.0017 -> 0.0018
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   YUM! BRANDS INC.: 0.0043 -> 0.0045
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO -   ZALANDO SE: 0.0007 -> 0.0007
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCDI: 1.000000
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TCDI: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO - Index market cap for TCDI: 8,051,152,825,872
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 8,274,078,033,954
+2026-02-06 10:28:10,955 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0277
+2026-02-06 10:28:10,959 - Review.reviews.sectorial_review - INFO - Processing TCST...
+2026-02-06 10:28:10,959 - Review.reviews.sectorial_review - INFO - Processing TCST: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,959 - Review.reviews.sectorial_review - INFO - Filtering by single code: 45
+2026-02-06 10:28:10,959 - Review.reviews.sectorial_review - INFO - Found 62 companies for TCST
+2026-02-06 10:28:10,961 - Review.reviews.sectorial_review - INFO - Total weight before capping for TCST: 1.00000000
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TCST (max factor was 1.000000)
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Total weight after capping for TCST: 1.000000
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TCST: 0.106303 (cap: 0.200000)
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Index market cap for TCST: 2,636,237,017,658
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,636,237,017,658
+2026-02-06 10:28:10,962 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:10,968 - Review.reviews.sectorial_review - INFO - Processing TENR...
+2026-02-06 10:28:10,968 - Review.reviews.sectorial_review - INFO - Processing TENR: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,969 - Review.reviews.sectorial_review - INFO - Filtering by single code: 60
+2026-02-06 10:28:10,969 - Review.reviews.sectorial_review - INFO - Found 48 companies for TENR
+2026-02-06 10:28:10,970 - Review.reviews.sectorial_review - INFO - Total weight before capping for TENR: 1.00000000
+2026-02-06 10:28:10,971 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TENR (max factor was 1.000000)
+2026-02-06 10:28:10,972 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Total weight after capping for TENR: 1.000000
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TENR: 0.197627 (cap: 0.200000)
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Index market cap for TENR: 2,297,179,364,472
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,285,496,176,550
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9949
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Processing TFINP...
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Processing TFINP: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Filtering by single code: 30
+2026-02-06 10:28:10,973 - Review.reviews.sectorial_review - INFO - Found 157 companies for TFINP
+2026-02-06 10:28:10,979 - Review.reviews.sectorial_review - INFO - Total weight before capping for TFINP: 1.00000000
+2026-02-06 10:28:10,980 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TFINP (max factor was 1.000000)
+2026-02-06 10:28:10,980 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,980 - Review.reviews.sectorial_review - INFO - Total weight after capping for TFINP: 1.000000
+2026-02-06 10:28:10,981 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TFINP: 0.094627 (cap: 0.200000)
+2026-02-06 10:28:10,981 - Review.reviews.sectorial_review - INFO - Index market cap for TFINP: 8,210,314,004,252
+2026-02-06 10:28:10,981 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 8,210,314,004,252
+2026-02-06 10:28:10,981 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Processing THEC...
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Processing THEC: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Filtering by single code: 20
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Found 91 companies for THEC
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Total weight before capping for THEC: 1.00000000
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Scaled capping factors for THEC (max factor was 1.000000)
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Total weight after capping for THEC: 1.000000
+2026-02-06 10:28:10,984 - Review.reviews.sectorial_review - INFO - Maximum individual weight for THEC: 0.114446 (cap: 0.200000)
+2026-02-06 10:28:10,990 - Review.reviews.sectorial_review - INFO - Index market cap for THEC: 6,247,928,276,591
+2026-02-06 10:28:10,990 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 6,247,928,276,591
+2026-02-06 10:28:10,990 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Processing TIND...
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Processing TIND: using Industry Code from transatlantic universe
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Filtering by single code: 50
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Found 194 companies for TIND
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Total weight before capping for TIND: 1.00000000
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TIND (max factor was 1.000000)
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Total weight after capping for TIND: 1.000000
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TIND: 0.063862 (cap: 0.200000)
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Index market cap for TIND: 7,987,975,613,554
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,987,975,613,554
+2026-02-06 10:28:10,994 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Processing TTEC...
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Processing TTEC: using Industry Code from transatlantic universe
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Filtering by single code: 10
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Found 99 companies for TTEC
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Total weight before capping for TTEC: 1.00000000
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TTEC (max factor was 1.000000)
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEC: 1.000000
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TTEC: 0.189371 (cap: 0.200000)
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Index market cap for TTEC: 20,729,031,480,182
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 20,624,111,833,890
+2026-02-06 10:28:11,000 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9949
+2026-02-06 10:28:11,011 - Review.reviews.sectorial_review - INFO - Processing TTEL...
+2026-02-06 10:28:11,011 - Review.reviews.sectorial_review - INFO - Processing TTEL: using Industry Code from transatlantic universe
+2026-02-06 10:28:11,011 - Review.reviews.sectorial_review - INFO - Filtering by single code: 15
+2026-02-06 10:28:11,012 - Review.reviews.sectorial_review - INFO - Found 26 companies for TTEL
+2026-02-06 10:28:11,013 - Review.reviews.sectorial_review - INFO - Total weight before capping for TTEL: 1.00000000
+2026-02-06 10:28:11,019 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TTEL (max factor was 1.001389)
+2026-02-06 10:28:11,019 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.993104 to 1.000000
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in TTEL:
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO -   CISCO SYSTEMS INC: 0.2011 -> 0.2000
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO - Boosted 25 companies due to redistribution in TTEL:
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO -   ARISTA NETWORKS INC.: 0.0989 -> 0.0990
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO -   AT&T INC: 0.1180 -> 0.1181
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO -   BT GROUP PLC: 0.0049 -> 0.0049
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO -   CELLNEX TELECOM: 0.0130 -> 0.0130
+2026-02-06 10:28:11,021 - Review.reviews.sectorial_review - INFO -   CIENA CORPORATION: 0.0219 -> 0.0220
+2026-02-06 10:28:11,022 - Review.reviews.sectorial_review - INFO -   COMCAST: 0.0689 -> 0.0689
+2026-02-06 10:28:11,022 - Review.reviews.sectorial_review - INFO -   DEUTSCHE TELEKOM AG: 0.0743 -> 0.0745
+2026-02-06 10:28:11,022 - Review.reviews.sectorial_review - INFO -   ELISA OYJ: 0.0044 -> 0.0044
+2026-02-06 10:28:11,022 - Review.reviews.sectorial_review - INFO -   ERICSSON B: 0.0194 -> 0.0194
+2026-02-06 10:28:11,022 - Review.reviews.sectorial_review - INFO -   FREENET AG: 0.0028 -> 0.0028
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   KPN KON: 0.0121 -> 0.0121
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   LUMENTUM HOLDINGS: 0.0170 -> 0.0171
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   MOTOROLA SOLUTIONS: 0.0429 -> 0.0430
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   NOKIA: 0.0239 -> 0.0240
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   ORANGE: 0.0193 -> 0.0193
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   SUNRISE COMMUNIC. AG: 0.0025 -> 0.0025
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   SWISSCOM AG: 0.0127 -> 0.0127
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   TELE2 AB CLASS B: 0.0062 -> 0.0062
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   TELECOM ITALIA: 0.0046 -> 0.0047
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   TELEFONICA: 0.0101 -> 0.0101
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   TELENOR: 0.0060 -> 0.0060
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   TELIA COMPANY: 0.0068 -> 0.0068
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   T-MOBILE US INC.: 0.0757 -> 0.0758
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   VERIZON: 0.1142 -> 0.1144
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO -   VODAFONE GROUP: 0.0184 -> 0.0184
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO - Total weight after capping for TTEL: 1.000000
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TTEL: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO - Index market cap for TTEL: 1,259,556,695,496
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,268,641,886,398
+2026-02-06 10:28:11,023 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0072
+2026-02-06 10:28:11,030 - Review.reviews.sectorial_review - INFO - Processing TUTI...
+2026-02-06 10:28:11,030 - Review.reviews.sectorial_review - INFO - Processing TUTI: using Industry Code from transatlantic universe
+2026-02-06 10:28:11,030 - Review.reviews.sectorial_review - INFO - Filtering by single code: 65
+2026-02-06 10:28:11,030 - Review.reviews.sectorial_review - INFO - Found 57 companies for TUTI
+2026-02-06 10:28:11,033 - Review.reviews.sectorial_review - INFO - Total weight before capping for TUTI: 1.00000000
+2026-02-06 10:28:11,033 - Review.reviews.sectorial_review - INFO - Scaled capping factors for TUTI (max factor was 1.000000)
+2026-02-06 10:28:11,033 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,033 - Review.reviews.sectorial_review - INFO - Total weight after capping for TUTI: 1.000000
+2026-02-06 10:28:11,033 - Review.reviews.sectorial_review - INFO - Maximum individual weight for TUTI: 0.082741 (cap: 0.200000)
+2026-02-06 10:28:11,037 - Review.reviews.sectorial_review - INFO - Index market cap for TUTI: 1,748,763,466,764
+2026-02-06 10:28:11,037 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,748,763,466,764
+2026-02-06 10:28:11,037 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,041 - Review.reviews.sectorial_review - INFO - Processing UUTI...
+2026-02-06 10:28:11,041 - Review.reviews.sectorial_review - INFO - Processing UUTI: using Industry Code from na500 universe
+2026-02-06 10:28:11,042 - Review.reviews.sectorial_review - INFO - Filtering by single code: 65
+2026-02-06 10:28:11,042 - Review.reviews.sectorial_review - INFO - Found 31 companies for UUTI
+2026-02-06 10:28:11,042 - Review.reviews.sectorial_review - INFO - Total weight before capping for UUTI: 1.00000000
+2026-02-06 10:28:11,043 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UUTI (max factor was 1.000000)
+2026-02-06 10:28:11,043 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,044 - Review.reviews.sectorial_review - INFO - Total weight after capping for UUTI: 1.000000
+2026-02-06 10:28:11,044 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UUTI: 0.119035 (cap: 0.200000)
+2026-02-06 10:28:11,044 - Review.reviews.sectorial_review - INFO - Index market cap for UUTI: 1,215,565,788,349
+2026-02-06 10:28:11,044 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,215,565,788,349
+2026-02-06 10:28:11,044 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,049 - Review.reviews.sectorial_review - INFO - Processing UTEL...
+2026-02-06 10:28:11,049 - Review.reviews.sectorial_review - INFO - Processing UTEL: using Industry Code from na500 universe
+2026-02-06 10:28:11,050 - Review.reviews.sectorial_review - INFO - Filtering by single code: 15
+2026-02-06 10:28:11,051 - Review.reviews.sectorial_review - INFO - Found 9 companies for UTEL
+2026-02-06 10:28:11,051 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTEL: 1.00000000
+2026-02-06 10:28:11,054 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTEL (max factor was 1.088579)
+2026-02-06 10:28:11,054 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.693050 to 1.000000
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UTEL:
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   CISCO SYSTEMS INC: 0.2651 -> 0.2000
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Boosted 8 companies due to redistribution in UTEL:
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   ARISTA NETWORKS INC.: 0.1304 -> 0.1419
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   AT&T INC: 0.1555 -> 0.1693
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   CIENA CORPORATION: 0.0289 -> 0.0315
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   COMCAST: 0.0908 -> 0.0988
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   LUMENTUM HOLDINGS: 0.0225 -> 0.0245
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   MOTOROLA SOLUTIONS: 0.0566 -> 0.0616
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   T-MOBILE US INC.: 0.0997 -> 0.1086
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO -   VERIZON: 0.1506 -> 0.1639
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEL: 1.000000
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTEL: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Index market cap for UTEL: 880,706,322,705
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 962,423,470,452
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0928
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Processing UTEC...
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Processing UTEC: using Industry Code from na500 universe
+2026-02-06 10:28:11,055 - Review.reviews.sectorial_review - INFO - Filtering by single code: 10
+2026-02-06 10:28:11,061 - Review.reviews.sectorial_review - INFO - Found 78 companies for UTEC
+2026-02-06 10:28:11,061 - Review.reviews.sectorial_review - INFO - Total weight before capping for UTEC: 1.00000000
+2026-02-06 10:28:11,062 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UTEC (max factor was 1.000000)
+2026-02-06 10:28:11,062 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,062 - Review.reviews.sectorial_review - INFO - Total weight after capping for UTEC: 1.000000
+2026-02-06 10:28:11,063 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UTEC: 0.199247 (cap: 0.200000)
+2026-02-06 10:28:11,063 - Review.reviews.sectorial_review - INFO - Index market cap for UTEC: 19,706,725,530,928
+2026-02-06 10:28:11,063 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 19,601,805,884,637
+2026-02-06 10:28:11,063 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9947
+2026-02-06 10:28:11,069 - Review.reviews.sectorial_review - INFO - Processing UIND...
+2026-02-06 10:28:11,069 - Review.reviews.sectorial_review - INFO - Processing UIND: using Industry Code from na500 universe
+2026-02-06 10:28:11,069 - Review.reviews.sectorial_review - INFO - Filtering by single code: 50
+2026-02-06 10:28:11,070 - Review.reviews.sectorial_review - INFO - Found 85 companies for UIND
+2026-02-06 10:28:11,071 - Review.reviews.sectorial_review - INFO - Total weight before capping for UIND: 1.00000000
+2026-02-06 10:28:11,072 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UIND (max factor was 1.000000)
+2026-02-06 10:28:11,072 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,073 - Review.reviews.sectorial_review - INFO - Total weight after capping for UIND: 1.000000
+2026-02-06 10:28:11,073 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UIND: 0.089330 (cap: 0.200000)
+2026-02-06 10:28:11,073 - Review.reviews.sectorial_review - INFO - Index market cap for UIND: 5,710,610,344,065
+2026-02-06 10:28:11,073 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 5,710,610,344,065
+2026-02-06 10:28:11,073 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,077 - Review.reviews.sectorial_review - INFO - Processing UHEC...
+2026-02-06 10:28:11,077 - Review.reviews.sectorial_review - INFO - Processing UHEC: using Industry Code from na500 universe
+2026-02-06 10:28:11,078 - Review.reviews.sectorial_review - INFO - Filtering by single code: 20
+2026-02-06 10:28:11,078 - Review.reviews.sectorial_review - INFO - Found 48 companies for UHEC
+2026-02-06 10:28:11,078 - Review.reviews.sectorial_review - INFO - Total weight before capping for UHEC: 1.00000000
+2026-02-06 10:28:11,079 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UHEC (max factor was 1.000000)
+2026-02-06 10:28:11,079 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,080 - Review.reviews.sectorial_review - INFO - Total weight after capping for UHEC: 1.000000
+2026-02-06 10:28:11,080 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UHEC: 0.155786 (cap: 0.200000)
+2026-02-06 10:28:11,080 - Review.reviews.sectorial_review - INFO - Index market cap for UHEC: 4,589,961,468,025
+2026-02-06 10:28:11,080 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 4,589,961,468,025
+2026-02-06 10:28:11,080 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,084 - Review.reviews.sectorial_review - INFO - Processing UFIN...
+2026-02-06 10:28:11,084 - Review.reviews.sectorial_review - INFO - Processing UFIN: using Industry Code from na500 universe
+2026-02-06 10:28:11,084 - Review.reviews.sectorial_review - INFO - Filtering by single code: 30
+2026-02-06 10:28:11,084 - Review.reviews.sectorial_review - INFO - Found 61 companies for UFIN
+2026-02-06 10:28:11,086 - Review.reviews.sectorial_review - INFO - Total weight before capping for UFIN: 1.00000000
+2026-02-06 10:28:11,087 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UFIN (max factor was 1.000000)
+2026-02-06 10:28:11,087 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,088 - Review.reviews.sectorial_review - INFO - Total weight after capping for UFIN: 1.000000
+2026-02-06 10:28:11,088 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UFIN: 0.147193 (cap: 0.200000)
+2026-02-06 10:28:11,088 - Review.reviews.sectorial_review - INFO - Index market cap for UFIN: 5,278,232,162,763
+2026-02-06 10:28:11,088 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 5,278,232,162,763
+2026-02-06 10:28:11,088 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,091 - Review.reviews.sectorial_review - INFO - Processing UENR...
+2026-02-06 10:28:11,091 - Review.reviews.sectorial_review - INFO - Processing UENR: using Industry Code from na500 universe
+2026-02-06 10:28:11,091 - Review.reviews.sectorial_review - INFO - Filtering by single code: 60
+2026-02-06 10:28:11,091 - Review.reviews.sectorial_review - INFO - Found 27 companies for UENR
+2026-02-06 10:28:11,094 - Review.reviews.sectorial_review - INFO - Total weight before capping for UENR: 1.00000000
+2026-02-06 10:28:11,097 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UENR (max factor was 1.104817)
+2026-02-06 10:28:11,097 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.656132 to 1.000000
+2026-02-06 10:28:11,098 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UENR:
+2026-02-06 10:28:11,098 - Review.reviews.sectorial_review - INFO -   EXXON MOBIL: 0.2759 -> 0.2000
+2026-02-06 10:28:11,098 - Review.reviews.sectorial_review - INFO - Boosted 26 companies due to redistribution in UENR:
+2026-02-06 10:28:11,098 - Review.reviews.sectorial_review - INFO -   BAKER HUGHES COMPANY: 0.0253 -> 0.0279
+2026-02-06 10:28:11,098 - Review.reviews.sectorial_review - INFO -   CHENIERE ENERGY: 0.0223 -> 0.0247
+2026-02-06 10:28:11,098 - Review.reviews.sectorial_review - INFO -   CHEVRON CORPORATION: 0.1636 -> 0.1807
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   CONOCOPHILLIPS: 0.0640 -> 0.0707
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   COTERRA ENERGY INC.: 0.0103 -> 0.0113
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   DEVON ENERGY CORP: 0.0120 -> 0.0132
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   DIAMONDBACK ENERGY: 0.0143 -> 0.0158
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   ENERGY TRANSFER L.P.: 0.0265 -> 0.0293
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   ENTERPRISE PRODUCTS: 0.0254 -> 0.0281
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   EOG RESOURCES INC.: 0.0301 -> 0.0332
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   EQT CORPORATION: 0.0174 -> 0.0192
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   EXPAND ENERGY: 0.0133 -> 0.0147
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   FIRST SOLAR INC: 0.0152 -> 0.0168
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   HALLIBURTON COMPANY: 0.0140 -> 0.0155
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   KINDER MORGAN INC.: 0.0275 -> 0.0304
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   MARATHON PETROLEUM: 0.0274 -> 0.0303
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   MPLX LP: 0.0099 -> 0.0109
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   OCCIDENTAL PETROLEUM: 0.0159 -> 0.0176
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   ONEOK INC.: 0.0242 -> 0.0267
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   PHILLIPS 66: 0.0294 -> 0.0325
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   SCHLUMBERGER LTD: 0.0341 -> 0.0377
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   TARGA RESOURCES CORP: 0.0206 -> 0.0227
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   TECHNIPFMC PLC: 0.0102 -> 0.0113
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   TEXAS PACIFIC LAND: 0.0036 -> 0.0039
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   VALERO ENERGY CORP.: 0.0287 -> 0.0318
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO -   WILLIAMS COMPANIES: 0.0390 -> 0.0431
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO - Total weight after capping for UENR: 1.000000
+2026-02-06 10:28:11,099 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UENR: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Index market cap for UENR: 1,503,138,202,400
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,637,111,067,508
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0891
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Processing UCST...
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Processing UCST: using Industry Code from na500 universe
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Filtering by single code: 45
+2026-02-06 10:28:11,101 - Review.reviews.sectorial_review - INFO - Found 26 companies for UCST
+2026-02-06 10:28:11,107 - Review.reviews.sectorial_review - INFO - Total weight before capping for UCST: 1.00000000
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UCST (max factor was 1.000000)
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCST: 1.000000
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UCST: 0.164297 (cap: 0.200000)
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Index market cap for UCST: 1,705,689,447,049
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,705,689,447,049
+2026-02-06 10:28:11,108 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,113 - Review.reviews.sectorial_review - INFO - Processing UCDI...
+2026-02-06 10:28:11,113 - Review.reviews.sectorial_review - INFO - Processing UCDI: using Industry Code from na500 universe
+2026-02-06 10:28:11,113 - Review.reviews.sectorial_review - INFO - Filtering by single code: 40
+2026-02-06 10:28:11,114 - Review.reviews.sectorial_review - INFO - Found 64 companies for UCDI
+2026-02-06 10:28:11,114 - Review.reviews.sectorial_review - INFO - Total weight before capping for UCDI: 1.00000000
+2026-02-06 10:28:11,117 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UCDI (max factor was 1.091175)
+2026-02-06 10:28:11,117 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.686872 to 1.000000
+2026-02-06 10:28:11,118 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UCDI:
+2026-02-06 10:28:11,118 - Review.reviews.sectorial_review - INFO -   AMAZON: 0.2668 -> 0.2000
+2026-02-06 10:28:11,118 - Review.reviews.sectorial_review - INFO - Boosted 63 companies due to redistribution in UCDI:
+2026-02-06 10:28:11,118 - Review.reviews.sectorial_review - INFO -   AIRBNB INC. CLASS A: 0.0069 -> 0.0075
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   AUTOZONE INC.: 0.0065 -> 0.0071
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   BOOKING HOLDINGS INC: 0.0206 -> 0.0225
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   BURLINGTON STORES: 0.0023 -> 0.0025
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   CARNIVAL CORPORATION: 0.0039 -> 0.0043
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   CARVANA CO: 0.0072 -> 0.0079
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   CHIPOTLE MEX. GRILL: 0.0060 -> 0.0066
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   COPART INC.: 0.0040 -> 0.0044
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   COSTCO WHOLES. CORP.: 0.0462 -> 0.0504
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   COUPANG INC. CLASS A: 0.0039 -> 0.0042
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   D.R. HORTON INC.: 0.0048 -> 0.0053
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   DARDEN RESTAURANTS: 0.0027 -> 0.0029
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   DELTA AIR LINES INC.: 0.0056 -> 0.0061
+2026-02-06 10:28:11,119 - Review.reviews.sectorial_review - INFO -   DOLLAR GENERAL CORP.: 0.0036 -> 0.0040
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   DOLLAR TREE INC.: 0.0030 -> 0.0032
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   EBAY INC.: 0.0049 -> 0.0053
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   ELECTRONIC ARTS INC.: 0.0055 -> 0.0060
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   ESTEE LAUDER COS INC: 0.0030 -> 0.0033
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   EXPEDIA GROUP INC.: 0.0040 -> 0.0044
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   FLUTTER ENTERTAINMEN: 0.0042 -> 0.0045
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0063 -> 0.0068
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   GARMIN LTD.: 0.0040 -> 0.0043
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0092 -> 0.0101
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0020 -> 0.0022
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   HILTON WORLDWIDE: 0.0079 -> 0.0086
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   HOME DEPOT INC: 0.0408 -> 0.0445
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   LAS VEGAS SANDS CORP: 0.0023 -> 0.0026
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   LENNAR CORP A: 0.0028 -> 0.0031
+2026-02-06 10:28:11,120 - Review.reviews.sectorial_review - INFO -   LIBERTY MEDIA CORP.: 0.0026 -> 0.0029
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   LIVE NATION ENTERT: 0.0028 -> 0.0031
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   LOWE'S COMPANIES INC: 0.0163 -> 0.0178
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   LULULEMON ATHLETICA: 0.0026 -> 0.0028
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   MARRIOTT INTERN. INC: 0.0079 -> 0.0087
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   MCDONALD'S CORP: 0.0254 -> 0.0277
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   MERCADOLIBRE INC.: 0.0123 -> 0.0134
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   NETFLIX INC.: 0.0461 -> 0.0503
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   NIKE INC: 0.0091 -> 0.0100
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   NVR INC.: 0.0025 -> 0.0027
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   O'REILLY AUTOMOTIVE: 0.0091 -> 0.0099
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   PULTEGROUP INC: 0.0028 -> 0.0030
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   ROBLOX CORP. - A: 0.0063 -> 0.0069
+2026-02-06 10:28:11,121 - Review.reviews.sectorial_review - INFO -   ROLLINS. INC.: 0.0022 -> 0.0024
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   ROSS STORES INC.: 0.0072 -> 0.0079
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   ROYAL CARIBBEAN: 0.0086 -> 0.0094
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   SOMNIGROUP INT: 0.0021 -> 0.0023
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   SPOTIFY TECHNOLOGY: 0.0109 -> 0.0119
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   STARBUCKS CORP.: 0.0117 -> 0.0128
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TAKE-TWO INTERACTIVE: 0.0054 -> 0.0059
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TAPESTRY INC.: 0.0031 -> 0.0034
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TARGET CORPORATION: 0.0055 -> 0.0060
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.1520 -> 0.1658
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   THE WALT DISNEY COMP: 0.0242 -> 0.0264
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TJX COMPANIES INC: 0.0204 -> 0.0222
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TRACTOR SUPPLY COMP.: 0.0031 -> 0.0034
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   TRADE DESK INC.: 0.0021 -> 0.0023
+2026-02-06 10:28:11,122 - Review.reviews.sectorial_review - INFO -   UBER TECHNOLOGIES: 0.0200 -> 0.0218
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   ULTA BEAUTY INC: 0.0034 -> 0.0037
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   UNITED AIRLINES HLD: 0.0044 -> 0.0048
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   WALMART INC: 0.0588 -> 0.0642
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   WARNER BROS DISCOVER: 0.0084 -> 0.0092
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   WILLIAMS-SONOMA.: 0.0026 -> 0.0029
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   YUM CHINA HOLDINGS: 0.0020 -> 0.0022
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO -   YUM! BRANDS INC.: 0.0050 -> 0.0054
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO - Total weight after capping for UCDI: 1.000000
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UCDI: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO - Index market cap for UCDI: 6,669,765,162,760
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 7,179,334,331,337
+2026-02-06 10:28:11,123 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0764
+2026-02-06 10:28:11,124 - Review.reviews.sectorial_review - INFO - Processing UBMA...
+2026-02-06 10:28:11,124 - Review.reviews.sectorial_review - INFO - Processing UBMA: using Industry Code from na500 universe
+2026-02-06 10:28:11,124 - Review.reviews.sectorial_review - INFO - Filtering by single code: 55
+2026-02-06 10:28:11,124 - Review.reviews.sectorial_review - INFO - Found 11 companies for UBMA
+2026-02-06 10:28:11,129 - Review.reviews.sectorial_review - INFO - Total weight before capping for UBMA: 1.00000000
+2026-02-06 10:28:11,131 - Review.reviews.sectorial_review - INFO - Scaled capping factors for UBMA (max factor was 1.118823)
+2026-02-06 10:28:11,131 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.627306 to 1.000000
+2026-02-06 10:28:11,132 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in UBMA:
+2026-02-06 10:28:11,132 - Review.reviews.sectorial_review - INFO -   LINDE PLC: 0.2850 -> 0.2000
+2026-02-06 10:28:11,132 - Review.reviews.sectorial_review - INFO - Boosted 10 companies due to redistribution in UBMA:
+2026-02-06 10:28:11,133 - Review.reviews.sectorial_review - INFO -   AIR PROD & CHEMICALS: 0.0796 -> 0.0891
+2026-02-06 10:28:11,133 - Review.reviews.sectorial_review - INFO -   ANGLOGOLD ASHANTI: 0.0629 -> 0.0704
+2026-02-06 10:28:11,133 - Review.reviews.sectorial_review - INFO -   ECOLAB INC: 0.0945 -> 0.1058
+2026-02-06 10:28:11,133 - Review.reviews.sectorial_review - INFO -   FASTENAL COMPANY: 0.0666 -> 0.0745
+2026-02-06 10:28:11,133 - Review.reviews.sectorial_review - INFO -   FREEPORT-MCMORAN: 0.1101 -> 0.1232
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO -   INTERNATIONAL PAPER: 0.0301 -> 0.0337
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO -   INTL FLAVORS & FRAGR: 0.0242 -> 0.0270
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO -   NEWMONT COR: 0.1592 -> 0.1781
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO -   NUCOR CORPORATION: 0.0542 -> 0.0607
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO -   STEEL DYNAMICS INC.: 0.0336 -> 0.0376
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO - Total weight after capping for UBMA: 1.000000
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO - Maximum individual weight for UBMA: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO - Index market cap for UBMA: 539,245,045,962
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 606,339,751,046
+2026-02-06 10:28:11,134 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1244
+2026-02-06 10:28:11,135 - Review.reviews.sectorial_review - INFO - Processing EEUS...
+2026-02-06 10:28:11,135 - Review.reviews.sectorial_review - INFO - Processing EEUS: using Subsector Code from deup universe
+2026-02-06 10:28:11,135 - Review.reviews.sectorial_review - INFO - Filtering by multiple codes: [10102020, 10102010]
+2026-02-06 10:28:11,140 - Review.reviews.sectorial_review - INFO - Found 6 companies for EEUS
+2026-02-06 10:28:11,140 - Review.reviews.sectorial_review - INFO - Total weight before capping for EEUS: 1.00000000
+2026-02-06 10:28:11,145 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EEUS (max factor was 7.775931)
+2026-02-06 10:28:11,145 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.032580 to 1.000000
+2026-02-06 10:28:11,145 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EEUS:
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO -   ASML HOLDING: 0.7894 -> 0.2000
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO - Boosted 5 companies due to redistribution in EEUS:
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO -   ASM INTERNATIONAL: 0.0549 -> 0.2000
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO -   BE SEMICONDUCTOR: 0.0217 -> 0.1686
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO -   INFINEON TECHNOLOGIE: 0.1006 -> 0.2000
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO -   NORDIC SEMICONDUC: 0.0040 -> 0.0314
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO -   STMICROELECTRONICS: 0.0293 -> 0.2000
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO - Total weight after capping for EEUS: 1.000000
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EEUS: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO - Index market cap for EEUS: 65,491,191,458
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 517,828,085,933
+2026-02-06 10:28:11,147 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 7.9068
+2026-02-06 10:28:11,152 - Review.reviews.sectorial_review - INFO - Processing EEAPP...
+2026-02-06 10:28:11,152 - Review.reviews.sectorial_review - INFO - Processing EEAPP: using Sector Code from deup universe
+2026-02-06 10:28:11,152 - Review.reviews.sectorial_review - INFO - Filtering by single code: 401010
+2026-02-06 10:28:11,152 - Review.reviews.sectorial_review - INFO - Found 10 companies for EEAPP
+2026-02-06 10:28:11,153 - Review.reviews.sectorial_review - INFO - Total weight before capping for EEAPP: 1.00000000
+2026-02-06 10:28:11,157 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EEAPP (max factor was 1.054802)
+2026-02-06 10:28:11,157 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.816513 to 1.000000
+2026-02-06 10:28:11,158 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EEAPP:
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   MERCEDES-BENZ GROUP: 0.2322 -> 0.2000
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO - Boosted 9 companies due to redistribution in EEAPP:
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   BMW: 0.1397 -> 0.1474
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   CONTINENTAL AG: 0.0396 -> 0.0418
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   D'IETEREN GROUP: 0.0178 -> 0.0188
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   FERRARI: 0.1990 -> 0.2000
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   MICHELIN: 0.1089 -> 0.1148
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   RENAULT: 0.0364 -> 0.0384
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   STELLANTIS: 0.1036 -> 0.1093
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   VOLKSWAGEN PREF: 0.1134 -> 0.1196
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO -   VOLVO CAR AB CLASS B: 0.0093 -> 0.0098
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO - Total weight after capping for EEAPP: 1.000000
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EEAPP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO - Index market cap for EEAPP: 179,822,903,006
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 187,963,102,337
+2026-02-06 10:28:11,159 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0453
+2026-02-06 10:28:11,163 - Review.reviews.sectorial_review - INFO - Processing EECP...
+2026-02-06 10:28:11,163 - Review.reviews.sectorial_review - INFO - Processing EECP: using Supersector Code from deup universe
+2026-02-06 10:28:11,164 - Review.reviews.sectorial_review - INFO - Filtering by single code: 4020
+2026-02-06 10:28:11,164 - Review.reviews.sectorial_review - INFO - Found 12 companies for EECP
+2026-02-06 10:28:11,164 - Review.reviews.sectorial_review - INFO - Total weight before capping for EECP: 1.00000000
+2026-02-06 10:28:11,170 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EECP (max factor was 1.146278)
+2026-02-06 10:28:11,170 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.595255 to 1.000000
+2026-02-06 10:28:11,170 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EECP:
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   LVMH: 0.2931 -> 0.2000
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO - Boosted 11 companies due to redistribution in EECP:
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   ADIDAS AG: 0.0532 -> 0.0610
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   BARRATT REDROW PLC: 0.0110 -> 0.0126
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   CIE FIN RICHEMONT: 0.1835 -> 0.2000
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   COMPASS GROUP PLC: 0.0831 -> 0.0953
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   GAMES WORKSHOP GROUP: 0.0129 -> 0.0148
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   HERMES INTL: 0.1226 -> 0.1406
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   KERING: 0.0414 -> 0.0474
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   L'OREAL: 0.1599 -> 0.1833
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   MONCLER: 0.0219 -> 0.0251
+2026-02-06 10:28:11,171 - Review.reviews.sectorial_review - INFO -   PANDORA A/S: 0.0131 -> 0.0150
+2026-02-06 10:28:11,172 - Review.reviews.sectorial_review - INFO -   THULE GROUP AB: 0.0042 -> 0.0048
+2026-02-06 10:28:11,172 - Review.reviews.sectorial_review - INFO - Total weight after capping for EECP: 1.000000
+2026-02-06 10:28:11,172 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EECP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,172 - Review.reviews.sectorial_review - INFO - Index market cap for EECP: 483,214,141,789
+2026-02-06 10:28:11,172 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 545,714,387,166
+2026-02-06 10:28:11,172 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1293
+2026-02-06 10:28:11,176 - Review.reviews.sectorial_review - INFO - Processing EEBRP...
+2026-02-06 10:28:11,176 - Review.reviews.sectorial_review - INFO - Processing EEBRP: using Supersector Code from deup universe
+2026-02-06 10:28:11,176 - Review.reviews.sectorial_review - INFO - Filtering by single code: 5510
+2026-02-06 10:28:11,177 - Review.reviews.sectorial_review - INFO - Found 16 companies for EEBRP
+2026-02-06 10:28:11,177 - Review.reviews.sectorial_review - INFO - Total weight before capping for EEBRP: 1.00000000
+2026-02-06 10:28:11,179 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EEBRP (max factor was 1.098630)
+2026-02-06 10:28:11,179 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.669726 to 1.000000
+2026-02-06 10:28:11,180 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EEBRP:
+2026-02-06 10:28:11,180 - Review.reviews.sectorial_review - INFO -   RIO TINTO PLC: 0.2718 -> 0.2000
+2026-02-06 10:28:11,180 - Review.reviews.sectorial_review - INFO - Boosted 15 companies due to redistribution in EEBRP:
+2026-02-06 10:28:11,180 - Review.reviews.sectorial_review - INFO -   ANGLO AMERICAN PLC: 0.1549 -> 0.1702
+2026-02-06 10:28:11,180 - Review.reviews.sectorial_review - INFO -   ANTOFAGASTA PLC: 0.0571 -> 0.0627
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   ARCELORMITTAL SA: 0.0610 -> 0.0671
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   BOLIDEN AB: 0.0515 -> 0.0566
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   ENDEAVOUR MINING PLC: 0.0254 -> 0.0279
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   GLENCORE PLC: 0.1653 -> 0.1816
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   HOLMEN B: 0.0089 -> 0.0098
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   NORSK HYDRO: 0.0324 -> 0.0356
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   SKF: 0.0298 -> 0.0328
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   SSAB AB CLASS B: 0.0148 -> 0.0162
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   STORA ENSO OYJ: 0.0239 -> 0.0263
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   SVENSKA CELLULOSA B: 0.0223 -> 0.0245
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   SYENSQO: 0.0184 -> 0.0202
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   UPM-KYMMENE OYJ: 0.0475 -> 0.0522
+2026-02-06 10:28:11,181 - Review.reviews.sectorial_review - INFO -   VOESTALPINE AG: 0.0149 -> 0.0163
+2026-02-06 10:28:11,182 - Review.reviews.sectorial_review - INFO - Total weight after capping for EEBRP: 1.000000
+2026-02-06 10:28:11,182 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EEBRP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,182 - Review.reviews.sectorial_review - INFO - Index market cap for EEBRP: 250,746,853,985
+2026-02-06 10:28:11,182 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 275,630,529,134
+2026-02-06 10:28:11,182 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0992
+2026-02-06 10:28:11,187 - Review.reviews.sectorial_review - INFO - Processing EEUU...
+2026-02-06 10:28:11,187 - Review.reviews.sectorial_review - INFO - Processing EEUU: using Supersector Code from deup universe
+2026-02-06 10:28:11,189 - Review.reviews.sectorial_review - INFO - Filtering by single code: 6510
+2026-02-06 10:28:11,189 - Review.reviews.sectorial_review - INFO - Found 21 companies for EEUU
+2026-02-06 10:28:11,190 - Review.reviews.sectorial_review - INFO - Total weight before capping for EEUU: 1.00000000
+2026-02-06 10:28:11,192 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EEUU (max factor was 1.025291)
+2026-02-06 10:28:11,192 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.887741 to 1.000000
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EEUU:
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   IBERDROLA: 0.2197 -> 0.2000
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO - Boosted 20 companies due to redistribution in EEUU:
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   A2A: 0.0071 -> 0.0073
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   CENTRICA: 0.0182 -> 0.0186
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   E.ON SE: 0.0720 -> 0.0738
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   EDP: 0.0232 -> 0.0238
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   EDP RENOVAVEIS: 0.0079 -> 0.0081
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   ELIA GROUP: 0.0109 -> 0.0112
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   ENDESA: 0.0195 -> 0.0200
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   ENEL: 0.1357 -> 0.1391
+2026-02-06 10:28:11,193 - Review.reviews.sectorial_review - INFO -   ENGIE: 0.0821 -> 0.0842
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   FORTUM OYJ: 0.0164 -> 0.0168
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   ITALGAS: 0.0125 -> 0.0128
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   NATIONAL GRID: 0.1292 -> 0.1325
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   ORSTED: 0.0157 -> 0.0161
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   RWE AG: 0.0621 -> 0.0636
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   SEVERN TRENT: 0.0172 -> 0.0177
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   SSE PLC: 0.0616 -> 0.0632
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   TERNA: 0.0251 -> 0.0257
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   UNTD UTILITIES GRP: 0.0185 -> 0.0190
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   VEOLIA ENVIRON.: 0.0371 -> 0.0380
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO -   VERBUND AG: 0.0084 -> 0.0086
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO - Total weight after capping for EEUU: 1.000000
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EEUU: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO - Index market cap for EEUU: 496,104,090,374
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 509,544,218,934
+2026-02-06 10:28:11,194 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0271
+2026-02-06 10:28:11,206 - Review.reviews.sectorial_review - INFO - Processing EEOG...
+2026-02-06 10:28:11,206 - Review.reviews.sectorial_review - INFO - Processing EEOG: using Sector Code from deup universe
+2026-02-06 10:28:11,206 - Review.reviews.sectorial_review - INFO - Filtering by single code: 601010
+2026-02-06 10:28:11,215 - Review.reviews.sectorial_review - INFO - Found 15 companies for EEOG
+2026-02-06 10:28:11,216 - Review.reviews.sectorial_review - INFO - Total weight before capping for EEOG: 1.00000000
+2026-02-06 10:28:11,220 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EEOG (max factor was 1.609567)
+2026-02-06 10:28:11,220 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.330631 to 1.000000
+2026-02-06 10:28:11,221 - Review.reviews.sectorial_review - INFO - Capped 2 companies to 20% in EEOG:
+2026-02-06 10:28:11,221 - Review.reviews.sectorial_review - INFO -   SHELL PLC: 0.3758 -> 0.2000
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   TOTALENERGIES: 0.2197 -> 0.2000
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO - Boosted 13 companies due to redistribution in EEOG:
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   AKER BP: 0.0136 -> 0.0219
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   BP P.L.C.: 0.1559 -> 0.2000
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   BW LPG: 0.0021 -> 0.0034
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   ENI: 0.0673 -> 0.1084
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   EQUINOR: 0.0359 -> 0.0577
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   GALP ENERGIA-NOM: 0.0122 -> 0.0196
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   NESTE OIL OYJ: 0.0170 -> 0.0274
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   OMV AG: 0.0141 -> 0.0228
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   REPSOL: 0.0380 -> 0.0612
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   SNAM: 0.0227 -> 0.0365
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   SUBSEA 7: 0.0079 -> 0.0127
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   TENARIS: 0.0128 -> 0.0206
+2026-02-06 10:28:11,222 - Review.reviews.sectorial_review - INFO -   VAaR ENERGI: 0.0048 -> 0.0077
+2026-02-06 10:28:11,223 - Review.reviews.sectorial_review - INFO - Total weight after capping for EEOG: 1.000000
+2026-02-06 10:28:11,223 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EEOG: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,223 - Review.reviews.sectorial_review - INFO - Index market cap for EEOG: 308,422,773,687
+2026-02-06 10:28:11,223 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 504,217,866,312
+2026-02-06 10:28:11,223 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.6348
+2026-02-06 10:28:11,227 - Review.reviews.sectorial_review - INFO - Processing EUOG...
+2026-02-06 10:28:11,227 - Review.reviews.sectorial_review - INFO - Processing EUOG: using Sector Code from eusp universe
+2026-02-06 10:28:11,227 - Review.reviews.sectorial_review - INFO - Filtering by single code: 601010
+2026-02-06 10:28:11,227 - Review.reviews.sectorial_review - INFO - Found 18 companies for EUOG
+2026-02-06 10:28:11,228 - Review.reviews.sectorial_review - INFO - Total weight before capping for EUOG: 1.00000000
+2026-02-06 10:28:11,233 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EUOG (max factor was 1.208259)
+2026-02-06 10:28:11,233 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.523742 to 1.000000
+2026-02-06 10:28:11,233 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EUOG:
+2026-02-06 10:28:11,233 - Review.reviews.sectorial_review - INFO -   EXXON MOBIL: 0.3160 -> 0.2000
+2026-02-06 10:28:11,233 - Review.reviews.sectorial_review - INFO - Boosted 17 companies due to redistribution in EUOG:
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   BAKER HUGHES COMPANY: 0.0289 -> 0.0350
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   CHENIERE ENERGY: 0.0256 -> 0.0309
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   CHEVRON CORPORATION: 0.1874 -> 0.2000
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   CONOCOPHILLIPS: 0.0733 -> 0.0885
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   DIAMONDBACK ENERGY: 0.0164 -> 0.0198
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   EOG RESOURCES INC.: 0.0344 -> 0.0416
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   EQT CORPORATION: 0.0199 -> 0.0240
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   EXPAND ENERGY: 0.0152 -> 0.0184
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   KINDER MORGAN INC.: 0.0315 -> 0.0381
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   MARATHON PETROLEUM: 0.0314 -> 0.0380
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   OCCIDENTAL PETROLEUM: 0.0182 -> 0.0220
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   ONEOK INC.: 0.0277 -> 0.0335
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   PHILLIPS 66: 0.0337 -> 0.0407
+2026-02-06 10:28:11,234 - Review.reviews.sectorial_review - INFO -   SCHLUMBERGER LTD: 0.0391 -> 0.0473
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO -   TARGA RESOURCES CORP: 0.0235 -> 0.0284
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO -   VALERO ENERGY CORP.: 0.0329 -> 0.0398
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO -   WILLIAMS COMPANIES: 0.0447 -> 0.0540
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO - Total weight after capping for EUOG: 1.000000
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EUOG: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO - Index market cap for EUOG: 1,202,776,736,706
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,429,136,944,779
+2026-02-06 10:28:11,235 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.1882
+2026-02-06 10:28:11,239 - Review.reviews.sectorial_review - INFO - Processing EWHC...
+2026-02-06 10:28:11,239 - Review.reviews.sectorial_review - INFO - Processing EWHC: using Subsector Code from edwp universe
+2026-02-06 10:28:11,239 - Review.reviews.sectorial_review - INFO - Filtering by multiple codes: [20102010, 20102020, 20102015, 20103010]
+2026-02-06 10:28:11,241 - Review.reviews.sectorial_review - INFO - Found 61 companies for EWHC
+2026-02-06 10:28:11,241 - Review.reviews.sectorial_review - INFO - Total weight before capping for EWHC: 1.00000000
+2026-02-06 10:28:11,242 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EWHC (max factor was 1.000000)
+2026-02-06 10:28:11,242 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,243 - Review.reviews.sectorial_review - INFO - Total weight after capping for EWHC: 1.000000
+2026-02-06 10:28:11,243 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EWHC: 0.088141 (cap: 0.200000)
+2026-02-06 10:28:11,243 - Review.reviews.sectorial_review - INFO - Index market cap for EWHC: 2,225,874,890,969
+2026-02-06 10:28:11,243 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,225,874,890,969
+2026-02-06 10:28:11,243 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,246 - Review.reviews.sectorial_review - INFO - Processing EWAP...
+2026-02-06 10:28:11,246 - Review.reviews.sectorial_review - INFO - Processing EWAP: using Sector Code from edwp universe
+2026-02-06 10:28:11,246 - Review.reviews.sectorial_review - INFO - Filtering by single code: 401010
+2026-02-06 10:28:11,248 - Review.reviews.sectorial_review - INFO - Found 29 companies for EWAP
+2026-02-06 10:28:11,250 - Review.reviews.sectorial_review - INFO - Total weight before capping for EWAP: 1.00000000
+2026-02-06 10:28:11,254 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EWAP (max factor was 2.116212)
+2026-02-06 10:28:11,254 - Review.reviews.sectorial_review - INFO - Capping factors now range from 0.158473 to 1.000000
+2026-02-06 10:28:11,254 - Review.reviews.sectorial_review - INFO - Capped 1 companies to 20% in EWAP:
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   TESLA INC: 0.5964 -> 0.2000
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO - Boosted 28 companies due to redistribution in EWAP:
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   AISIN CORP: 0.0054 -> 0.0115
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   APTIV PLC: 0.0081 -> 0.0172
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   BMW: 0.0144 -> 0.0304
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   BRIDGESTONE CORP: 0.0060 -> 0.0127
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   D'IETEREN GROUP: 0.0018 -> 0.0039
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   DENSO CORP: 0.0123 -> 0.0260
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   FERRARI: 0.0204 -> 0.0433
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   FORD MOTOR CO: 0.0246 -> 0.0521
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   GENERAL MOTORS COMP.: 0.0362 -> 0.0767
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   GENUINE PARTS COMP.: 0.0080 -> 0.0170
+2026-02-06 10:28:11,256 - Review.reviews.sectorial_review - INFO -   HONDA MOTOR COMPANY: 0.0184 -> 0.0389
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   KOITO MFG CO: 0.0015 -> 0.0032
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   MAGNA INTERNATIONAL: 0.0069 -> 0.0146
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   MAZDA MOTOR: 0.0022 -> 0.0047
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   MERCEDES-BENZ GROUP: 0.0239 -> 0.0505
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   MICHELIN: 0.0112 -> 0.0237
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   NISSAN MOTOR CO: 0.0028 -> 0.0060
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   NITERRA: 0.0035 -> 0.0074
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   STELLANTIS: 0.0106 -> 0.0225
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   SUBARU CORP: 0.0060 -> 0.0128
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   SUMITOMO ELEC IN: 0.0159 -> 0.0336
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   SUZUKI MOTOR: 0.0140 -> 0.0297
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   TOYO TIRE CORP: 0.0016 -> 0.0034
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   TOYOTA INDUSTRIE: 0.0122 -> 0.0259
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   TOYOTA MOTOR CORP: 0.1201 -> 0.2000
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   VOLKSWAGEN PREF: 0.0117 -> 0.0247
+2026-02-06 10:28:11,257 - Review.reviews.sectorial_review - INFO -   VOLVO CAR AB CLASS B: 0.0010 -> 0.0020
+2026-02-06 10:28:11,258 - Review.reviews.sectorial_review - INFO -   YOKOHAMA RUBBER CO.: 0.0027 -> 0.0057
+2026-02-06 10:28:11,258 - Review.reviews.sectorial_review - INFO - Total weight after capping for EWAP: 1.000000
+2026-02-06 10:28:11,258 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EWAP: 0.200000 (cap: 0.200000)
+2026-02-06 10:28:11,258 - Review.reviews.sectorial_review - INFO - Index market cap for EWAP: 870,924,215,516
+2026-02-06 10:28:11,258 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,829,236,689,148
+2026-02-06 10:28:11,258 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 2.1003
+2026-02-06 10:28:11,261 - Review.reviews.sectorial_review - INFO - Processing EWBR...
+2026-02-06 10:28:11,261 - Review.reviews.sectorial_review - INFO - Processing EWBR: using Supersector Code from edwp universe
+2026-02-06 10:28:11,261 - Review.reviews.sectorial_review - INFO - Filtering by single code: 5510
+2026-02-06 10:28:11,263 - Review.reviews.sectorial_review - INFO - Found 64 companies for EWBR
+2026-02-06 10:28:11,263 - Review.reviews.sectorial_review - INFO - Total weight before capping for EWBR: 1.00000000
+2026-02-06 10:28:11,264 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EWBR (max factor was 1.000000)
+2026-02-06 10:28:11,264 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,265 - Review.reviews.sectorial_review - INFO - Total weight after capping for EWBR: 1.000000
+2026-02-06 10:28:11,265 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EWBR: 0.099514 (cap: 0.200000)
+2026-02-06 10:28:11,265 - Review.reviews.sectorial_review - INFO - Index market cap for EWBR: 1,359,669,308,644
+2026-02-06 10:28:11,265 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,359,669,308,644
+2026-02-06 10:28:11,265 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,268 - Review.reviews.sectorial_review - INFO - Processing EWOU...
+2026-02-06 10:28:11,268 - Review.reviews.sectorial_review - INFO - Processing EWOU: using Supersector Code from edwp universe
+2026-02-06 10:28:11,268 - Review.reviews.sectorial_review - INFO - Filtering by single code: 6510
+2026-02-06 10:28:11,271 - Review.reviews.sectorial_review - INFO - Found 76 companies for EWOU
+2026-02-06 10:28:11,272 - Review.reviews.sectorial_review - INFO - Total weight before capping for EWOU: 1.00000000
+2026-02-06 10:28:11,272 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EWOU (max factor was 1.000000)
+2026-02-06 10:28:11,273 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,273 - Review.reviews.sectorial_review - INFO - Total weight after capping for EWOU: 1.000000
+2026-02-06 10:28:11,273 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EWOU: 0.073833 (cap: 0.200000)
+2026-02-06 10:28:11,273 - Review.reviews.sectorial_review - INFO - Index market cap for EWOU: 1,959,752,308,016
+2026-02-06 10:28:11,273 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 1,959,752,308,016
+2026-02-06 10:28:11,273 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 1.0000
+2026-02-06 10:28:11,277 - Review.reviews.sectorial_review - INFO - Processing EWOG...
+2026-02-06 10:28:11,277 - Review.reviews.sectorial_review - INFO - Processing EWOG: using Sector Code from edwp universe
+2026-02-06 10:28:11,277 - Review.reviews.sectorial_review - INFO - Filtering by single code: 601010
+2026-02-06 10:28:11,278 - Review.reviews.sectorial_review - INFO - Found 61 companies for EWOG
+2026-02-06 10:28:11,278 - Review.reviews.sectorial_review - INFO - Total weight before capping for EWOG: 1.00000000
+2026-02-06 10:28:11,279 - Review.reviews.sectorial_review - INFO - Scaled capping factors for EWOG (max factor was 1.000000)
+2026-02-06 10:28:11,279 - Review.reviews.sectorial_review - INFO - Capping factors now range from 1.000000 to 1.000000
+2026-02-06 10:28:11,280 - Review.reviews.sectorial_review - INFO - Total weight after capping for EWOG: 1.000000
+2026-02-06 10:28:11,280 - Review.reviews.sectorial_review - INFO - Maximum individual weight for EWOG: 0.184910 (cap: 0.200000)
+2026-02-06 10:28:11,280 - Review.reviews.sectorial_review - INFO - Index market cap for EWOG: 2,454,360,393,219
+2026-02-06 10:28:11,280 - Review.reviews.sectorial_review - INFO - Sum of selected companies market cap: 2,442,677,205,298
+2026-02-06 10:28:11,280 - Review.reviews.sectorial_review - INFO - Coverage ratio (selected/index): 0.9952
+2026-02-06 10:28:11,286 - Review.reviews.sectorial_review - INFO - Processing IECDP...
+2026-02-06 10:28:11,286 - Review.reviews.sectorial_review - INFO - Processing IECDP: using Industry Code from deup universe
+2026-02-06 10:28:11,287 - Review.reviews.sectorial_review - ERROR - Error processing IECDP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - WARNING - Failed to process IECDP
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - INFO - Processing IECSP...
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - INFO - Processing IECSP: using Industry Code from deup universe
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - ERROR - Error processing IECSP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - WARNING - Failed to process IECSP
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - INFO - Processing IETCP...
+2026-02-06 10:28:11,290 - Review.reviews.sectorial_review - INFO - Processing IETCP: using Industry Code from deup universe
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - ERROR - Error processing IETCP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - WARNING - Failed to process IETCP
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - INFO - Processing IEENP...
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - INFO - Processing IEENP: using Industry Code from deup universe
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - ERROR - Error processing IEENP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - WARNING - Failed to process IEENP
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - INFO - Processing IEFIP...
+2026-02-06 10:28:11,291 - Review.reviews.sectorial_review - INFO - Processing IEFIP: using Industry Code from deup universe
+2026-02-06 10:28:11,292 - Review.reviews.sectorial_review - ERROR - Error processing IEFIP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,292 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,292 - Review.reviews.sectorial_review - WARNING - Failed to process IEFIP
+2026-02-06 10:28:11,292 - Review.reviews.sectorial_review - INFO - Processing IEHCP...
+2026-02-06 10:28:11,292 - Review.reviews.sectorial_review - INFO - Processing IEHCP: using Industry Code from deup universe
+2026-02-06 10:28:11,292 - Review.reviews.sectorial_review - ERROR - Error processing IEHCP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - WARNING - Failed to process IEHCP
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - INFO - Processing IETLP...
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - INFO - Processing IETLP: using Industry Code from deup universe
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - ERROR - Error processing IETLP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - WARNING - Failed to process IETLP
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - INFO - Processing IEINP...
+2026-02-06 10:28:11,293 - Review.reviews.sectorial_review - INFO - Processing IEINP: using Industry Code from deup universe
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - ERROR - Error processing IEINP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - WARNING - Failed to process IEINP
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - INFO - Processing IEBMP...
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - INFO - Processing IEBMP: using Industry Code from deup universe
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - ERROR - Error processing IEBMP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,294 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,295 - Review.reviews.sectorial_review - WARNING - Failed to process IEBMP
+2026-02-06 10:28:11,295 - Review.reviews.sectorial_review - INFO - Processing IEUTP...
+2026-02-06 10:28:11,295 - Review.reviews.sectorial_review - INFO - Processing IEUTP: using Industry Code from deup universe
+2026-02-06 10:28:11,295 - Review.reviews.sectorial_review - ERROR - Error processing IEUTP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - WARNING - Failed to process IEUTP
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - INFO - Processing IEREP...
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - INFO - Processing IEREP: using Industry Code from deup universe
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - ERROR - Error processing IEREP: single positional indexer is out-of-bounds
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\sectorial_review.py", line 607, in process_sectorial_index
+    index_mcap = index_eod_df.loc[index_eod_df['#Symbol'] == isin, 'Mkt Cap'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - WARNING - Failed to process IEREP
+2026-02-06 10:28:11,296 - Review.reviews.sectorial_review - INFO - Saving TECHP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TECHP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,350 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to TECHP
+2026-02-06 10:28:11,399 - Review.reviews.sectorial_review - INFO - Saving ENRGP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ENRGP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,433 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to ENRGP
+2026-02-06 10:28:11,473 - Review.reviews.sectorial_review - INFO - Saving UTIL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTIL_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,500 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to UTIL
+2026-02-06 10:28:11,533 - Review.reviews.sectorial_review - INFO - Saving BASM output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\BASM_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,571 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to BASM
+2026-02-06 10:28:11,620 - Review.reviews.sectorial_review - INFO - Saving FINA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\FINA_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,650 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to FINA
+2026-02-06 10:28:11,707 - Review.reviews.sectorial_review - INFO - Saving CSTA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CSTA_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,752 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to CSTA
+2026-02-06 10:28:11,799 - Review.reviews.sectorial_review - INFO - Saving TELEP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TELEP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,833 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to TELEP
+2026-02-06 10:28:11,872 - Review.reviews.sectorial_review - INFO - Saving HEAC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\HEAC_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,903 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to HEAC
+2026-02-06 10:28:11,949 - Review.reviews.sectorial_review - INFO - Saving INDU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\INDU_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:11,982 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to INDU
+2026-02-06 10:28:12,033 - Review.reviews.sectorial_review - INFO - Saving CDIS output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\CDIS_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:12,066 - Review.reviews.sectorial_review - INFO - Added EZ300_DLF sheet to CDIS
+2026-02-06 10:28:12,114 - Review.reviews.sectorial_review - INFO - Saving TBMA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TBMA_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:12,221 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TBMA
+2026-02-06 10:28:12,298 - Review.reviews.sectorial_review - INFO - Saving TCDI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TCDI_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:12,416 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TCDI
+2026-02-06 10:28:12,522 - Review.reviews.sectorial_review - INFO - Saving TCST output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TCST_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:12,619 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TCST
+2026-02-06 10:28:12,716 - Review.reviews.sectorial_review - INFO - Saving TENR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TENR_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:12,832 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TENR
+2026-02-06 10:28:12,915 - Review.reviews.sectorial_review - INFO - Saving TFINP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TFINP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:13,023 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TFINP
+2026-02-06 10:28:13,117 - Review.reviews.sectorial_review - INFO - Saving THEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\THEC_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:13,213 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to THEC
+2026-02-06 10:28:13,282 - Review.reviews.sectorial_review - INFO - Saving TIND output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TIND_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:13,427 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TIND
+2026-02-06 10:28:13,524 - Review.reviews.sectorial_review - INFO - Saving TTEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TTEC_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:13,642 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TTEC
+2026-02-06 10:28:13,726 - Review.reviews.sectorial_review - INFO - Saving TTEL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TTEL_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:13,837 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TTEL
+2026-02-06 10:28:13,914 - Review.reviews.sectorial_review - INFO - Saving TUTI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\TUTI_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,010 - Review.reviews.sectorial_review - INFO - Added TRANSATLANTIC_DLF sheet to TUTI
+2026-02-06 10:28:14,081 - Review.reviews.sectorial_review - INFO - Saving UUTI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UUTI_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,155 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UUTI
+2026-02-06 10:28:14,207 - Review.reviews.sectorial_review - INFO - Saving UTEL output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTEL_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,260 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UTEL
+2026-02-06 10:28:14,309 - Review.reviews.sectorial_review - INFO - Saving UTEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UTEC_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,364 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UTEC
+2026-02-06 10:28:14,418 - Review.reviews.sectorial_review - INFO - Saving UIND output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UIND_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,477 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UIND
+2026-02-06 10:28:14,530 - Review.reviews.sectorial_review - INFO - Saving UHEC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UHEC_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,581 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UHEC
+2026-02-06 10:28:14,633 - Review.reviews.sectorial_review - INFO - Saving UFIN output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UFIN_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,686 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UFIN
+2026-02-06 10:28:14,738 - Review.reviews.sectorial_review - INFO - Saving UENR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UENR_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,791 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UENR
+2026-02-06 10:28:14,839 - Review.reviews.sectorial_review - INFO - Saving UCST output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UCST_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:14,911 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UCST
+2026-02-06 10:28:14,980 - Review.reviews.sectorial_review - INFO - Saving UCDI output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UCDI_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,040 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UCDI
+2026-02-06 10:28:15,098 - Review.reviews.sectorial_review - INFO - Saving UBMA output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\UBMA_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,151 - Review.reviews.sectorial_review - INFO - Added NA500_DLF sheet to UBMA
+2026-02-06 10:28:15,201 - Review.reviews.sectorial_review - INFO - Saving EEUS output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEUS_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,232 - Review.reviews.sectorial_review - INFO - Added DEUP_DLF sheet to EEUS
+2026-02-06 10:28:15,293 - Review.reviews.sectorial_review - INFO - Saving EEAPP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEAPP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,335 - Review.reviews.sectorial_review - INFO - Added DEUP_DLF sheet to EEAPP
+2026-02-06 10:28:15,381 - Review.reviews.sectorial_review - INFO - Saving EECP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EECP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,417 - Review.reviews.sectorial_review - INFO - Added DEUP_DLF sheet to EECP
+2026-02-06 10:28:15,474 - Review.reviews.sectorial_review - INFO - Saving EEBRP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEBRP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,521 - Review.reviews.sectorial_review - INFO - Added DEUP_DLF sheet to EEBRP
+2026-02-06 10:28:15,571 - Review.reviews.sectorial_review - INFO - Saving EEUU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEUU_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,621 - Review.reviews.sectorial_review - INFO - Added DEUP_DLF sheet to EEUU
+2026-02-06 10:28:15,671 - Review.reviews.sectorial_review - INFO - Saving EEOG output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EEOG_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,727 - Review.reviews.sectorial_review - INFO - Added DEUP_DLF sheet to EEOG
+2026-02-06 10:28:15,772 - Review.reviews.sectorial_review - INFO - Saving EUOG output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EUOG_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:15,800 - Review.reviews.sectorial_review - INFO - Added EUSP_DLF sheet to EUOG
+2026-02-06 10:28:15,857 - Review.reviews.sectorial_review - INFO - Saving EWHC output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWHC_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:16,017 - Review.reviews.sectorial_review - INFO - Added EDWP_DLF sheet to EWHC
+2026-02-06 10:28:16,132 - Review.reviews.sectorial_review - INFO - Saving EWAP output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWAP_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:16,281 - Review.reviews.sectorial_review - INFO - Added EDWP_DLF sheet to EWAP
+2026-02-06 10:28:16,409 - Review.reviews.sectorial_review - INFO - Saving EWBR output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWBR_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:16,564 - Review.reviews.sectorial_review - INFO - Added EDWP_DLF sheet to EWBR
+2026-02-06 10:28:16,682 - Review.reviews.sectorial_review - INFO - Saving EWOU output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWOU_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:16,837 - Review.reviews.sectorial_review - INFO - Added EDWP_DLF sheet to EWOU
+2026-02-06 10:28:16,953 - Review.reviews.sectorial_review - INFO - Saving EWOG output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EWOG_sectorial_20260206_102811.xlsx
+2026-02-06 10:28:17,116 - Review.reviews.sectorial_review - INFO - Added EDWP_DLF sheet to EWOG
+2026-02-06 10:28:17,235 - Review.reviews.sectorial_review - INFO - Creating summary file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\All_Sectorial_Summary_20260206_102811.xlsx
+2026-02-06 10:28:17,393 - Review.reviews.sectorial_review - INFO - Successfully processed 42 sectorial indices
+2026-02-06 10:28:17,394 - Review.reviews.sectorial_review - INFO - Individual files saved: 42
+2026-02-06 10:28:17,394 - Review.reviews.sectorial_review - INFO - Summary file: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\All_Sectorial_Summary_20260206_102811.xlsx

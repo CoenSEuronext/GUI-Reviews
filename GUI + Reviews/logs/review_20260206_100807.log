@@ -1,0 +1,9 @@
+2026-02-06 10:08:07,352 - Review.reviews.ez20p_review - INFO - Loading EOD data...
+2026-02-06 10:08:10,398 - Review.reviews.ez20p_review - INFO - Loading reference data...
+2026-02-06 10:08:10,466 - Review.reviews.ez20p_review - ERROR - Error during review calculation: 'NoneType' object is not subscriptable
+2026-02-06 10:08:10,475 - Review.reviews.ez20p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ez20p_review.py", line 180, in run_ez20p_review
+    ff_df[['ISIN Code:', 'Free Float Round:']].drop_duplicates(subset='ISIN Code:', keep='first'),
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
