@@ -2574,7 +2574,7 @@ def load_data_with_encoding_fallback():
     prev_index_eod_date = get_previous_day(current_index_eod_date)
     
     # Use only the primary path
-    base_path = r"V:\PM-Indices-IndexOperations\General\Daily downloadfiles\Monthly Archive"
+    base_path = r"\\pbgfshqa08601v\gis_ttm\Archive"
     
     for encoding in encodings:
         try:

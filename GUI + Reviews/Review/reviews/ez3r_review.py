@@ -334,7 +334,7 @@ def run_ez3r_review(date, co_date, effective_date, index="EZ3R", isin="FRESG0003
             selection_df['exclusion_controversial_weapons_non_tailormade'] = False
         
         # EXCLUSION 4: Military Contracting - Weapons
-        # 172111112999 > 0%
+        # 172111112999 - Level of Involvement ID > 0 (any involvement)
         col_172111112999 = find_column_by_code(selection_df, '172111112999')
         if col_172111112999:
             selection_df['exclusion_military_contracting_weapons'] = safe_numeric(selection_df[col_172111112999]) > 0
@@ -353,7 +353,7 @@ def run_ez3r_review(date, co_date, effective_date, index="EZ3R", isin="FRESG0003
         selection_df['exclusion_military_contracting_related'] = sum_military_related >= 5
         
         # EXCLUSION 6: Small Arms
-        # 171713112999 > 0%
+        # 171713112999 - Level of Involvement ID > 0 (any involvement)
         col_171713112999 = find_column_by_code(selection_df, '171713112999')
         if col_171713112999:
             selection_df['exclusion_small_arms'] = safe_numeric(selection_df[col_171713112999]) > 0
@@ -380,10 +380,10 @@ def run_ez3r_review(date, co_date, effective_date, index="EZ3R", isin="FRESG0003
         selection_df['exclusion_tobacco_retail'] = sum_tobacco_retail >= 10
         
         # EXCLUSION 9: Alcoholic Beverages - Production
-        # 171311112999 >= 5%
+        # 171311112999 - Level of Involvement ID >= 2 (5% or more: ranges 2,3,4,5)
         col_171311112999 = find_column_by_code(selection_df, '171311112999')
         if col_171311112999:
-            selection_df['exclusion_alcohol_production'] = safe_numeric(selection_df[col_171311112999]) >= 5
+            selection_df['exclusion_alcohol_production'] = safe_numeric(selection_df[col_171311112999]) >= 2
         else:
             selection_df['exclusion_alcohol_production'] = False
         
@@ -399,10 +399,10 @@ def run_ez3r_review(date, co_date, effective_date, index="EZ3R", isin="FRESG0003
         selection_df['exclusion_alcohol_retail'] = sum_alcohol_retail >= 10
         
         # EXCLUSION 11: Gambling - Operations
-        # 171911112999 >= 5%
+        # 171911112999 - Level of Involvement ID >= 2 (5% or more: ranges 2,3,4,5)
         col_171911112999 = find_column_by_code(selection_df, '171911112999')
         if col_171911112999:
-            selection_df['exclusion_gambling_operations'] = safe_numeric(selection_df[col_171911112999]) >= 5
+            selection_df['exclusion_gambling_operations'] = safe_numeric(selection_df[col_171911112999]) >= 2
         else:
             selection_df['exclusion_gambling_operations'] = False
         
@@ -418,7 +418,7 @@ def run_ez3r_review(date, co_date, effective_date, index="EZ3R", isin="FRESG0003
         selection_df['exclusion_gambling_support'] = sum_gambling_support >= 10
         
         # EXCLUSION 13: Oil & Gas - Generation
-        # 173316171899 > 0%
+        # 173316171899 - Level of Involvement ID > 0 (any involvement)
         col_173316171899 = find_column_by_code(selection_df, '173316171899')
         if col_173316171899:
             selection_df['exclusion_oil_gas_generation'] = safe_numeric(selection_df[col_173316171899]) > 0
