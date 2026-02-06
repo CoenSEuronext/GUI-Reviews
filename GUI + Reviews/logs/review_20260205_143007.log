@@ -1,0 +1,23 @@
+2026-02-05 14:30:07,417 - Review.reviews.ebmfp_review - INFO - Loading EOD data...
+2026-02-05 14:30:08,249 - Review.reviews.ebmfp_review - INFO - Loading reference data...
+2026-02-05 14:30:08,284 - Review.reviews.ebmfp_review - ERROR - Error during review calculation: 'ISIN code'
+2026-02-05 14:30:08,298 - Review.reviews.ebmfp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ebmfp_review.py", line 112, in run_ebmfp_review
+    .merge(
+     ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'ISIN code'
+

@@ -465,11 +465,17 @@ INDEX_CONFIGS = {
         "index": "EZ3R",
         "isin": "FRESG0003391",
         "output_key": "ez3r_path"
+    },
+    "EBMFP": {
+        "index": "EBMFP",
+        "isin": "NLIX00009067",
+        "output_key": "ebmfp_path"
+    },
+    "EZ20P": {
+        "index": "EZ20P",
+        "isin": "NLIX00009463",
+        "output_key": "ez20p_path"
     }
-
-
-
-
 }
 BATCH_CONFIG = {
     "max_concurrent_reviews": 3,  # Adjust based on your system capacity
@@ -538,7 +544,7 @@ ALL_MNEMOS = [
     "EEFAP", "EES2", "EFESP",  "ES2PR", "EZSL", "EWMS", "EEMSC", "EZMS", "EDEFP", "ELUX",
     "EUMS", "EUSL", "EESL", "EWSL", "EHNI", "EMLS", "EIAPR", "EHCF", "EAIB", "EEDF", "EUOG",
     "EEUS", "EWHC", "EZ60P", "EEAPP", "EEOG", "EEUU", "EEBRP", "EECP", "EWAP", "EWBR", "EWOU",
-    "EWOG", "EZ3R"
+    "EWOG", "EZ3R", "EBMFP", "EZ20P"
 ]
 
 

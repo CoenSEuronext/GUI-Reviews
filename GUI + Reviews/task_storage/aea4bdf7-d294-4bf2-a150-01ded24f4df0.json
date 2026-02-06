@@ -1,0 +1,31 @@
+{
+  "task_id": "aea4bdf7-d294-4bf2-a150-01ded24f4df0",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-05T14:29:46.512732",
+  "started_at": "2026-02-05T14:29:46.691655",
+  "completed_at": "2026-02-05T14:29:48.808280",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "aerdp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\AERDP_df_20260205_142948.xlsx"
+  },
+  "review_type": "AERDP",
+  "parameters": {
+    "date": "20260105",
+    "co_date": "20260105",
+    "effective_date": "22-Sep-25",
+    "index": "AERDP",
+    "isin": "NLIX00003086",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.058515,
+  "completed_at_review": "2026-02-05T14:29:48.808280",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

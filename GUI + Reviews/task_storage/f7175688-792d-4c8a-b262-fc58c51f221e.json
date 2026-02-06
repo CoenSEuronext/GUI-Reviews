@@ -1,0 +1,31 @@
+{
+  "task_id": "f7175688-792d-4c8a-b262-fc58c51f221e",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-06T09:59:13.349279",
+  "started_at": "2026-02-06T09:59:13.881730",
+  "completed_at": "2026-02-06T09:59:15.240769",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ebmfp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EBMFP_df_20260206_095915.xlsx"
+  },
+  "review_type": "EBMFP",
+  "parameters": {
+    "date": "20260105",
+    "co_date": "20260105",
+    "effective_date": "02-Feb-26",
+    "index": "EBMFP",
+    "isin": "NLIX00009067",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.293556,
+  "completed_at_review": "2026-02-06T09:59:15.240769",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

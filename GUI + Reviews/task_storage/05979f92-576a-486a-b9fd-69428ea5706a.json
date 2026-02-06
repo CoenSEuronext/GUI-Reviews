@@ -1,0 +1,29 @@
+{
+  "task_id": "05979f92-576a-486a-b9fd-69428ea5706a",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-05T14:28:13.841625",
+  "started_at": "2026-02-05T14:28:14.199583",
+  "completed_at": "2026-02-05T14:28:15.961049",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: 'ISIN code'",
+  "error": "Error during review calculation: 'ISIN code'",
+  "result_data": null,
+  "review_type": "EBMFP",
+  "parameters": {
+    "date": "20260105",
+    "co_date": "20260105",
+    "effective_date": "09-Feb-26",
+    "index": "EBMFP",
+    "isin": "NLIX00009067",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.695482,
+  "completed_at_review": "2026-02-05T14:28:15.961049",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ebmfp_review.py\", line 112, in run_ebmfp_review\n    .merge(\n     ^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 10832, in merge\n    return merge(\n           ^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py\", line 170, in merge\n    op = _MergeOperation(\n         ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py\", line 794, in __init__\n    ) = self._get_merge_keys()\n        ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py\", line 1310, in _get_merge_keys\n    left_keys.append(left._get_label_or_level_values(lk))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py\", line 1911, in _get_label_or_level_values\n    raise KeyError(key)\nKeyError: 'ISIN code'\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting EBMFP review at 2026-02-05 14:28:14.265567\n2026-02-05 14:28:14,919 - Review.reviews.ebmfp_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-05 14:28:15,898 - Review.reviews.ebmfp_review - INFO - Loading reference data...\n2026-02-05 14:28:15,944 - Review.reviews.ebmfp_review - ERROR - Error during review calculation: 'ISIN code'\n2026-02-05 14:28:15,954 - Review.reviews.ebmfp_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ebmfp_review.py\", line 112, in run_ebmfp_review\n    .merge(\n     ^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 10832, in merge\n    return merge(\n           ^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py\", line 170, in merge\n    op = _MergeOperation(\n         ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py\", line 794, in __init__\n    ) = self._get_merge_keys()\n        ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\reshape\\merge.py\", line 1310, in _get_merge_keys\n    left_keys.append(left._get_label_or_level_values(lk))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\generic.py\", line 1911, in _get_label_or_level_values\n    raise KeyError(key)\nKeyError: 'ISIN code'\nCompleted EBMFP review in 1.70 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\05979f92-576a-486a-b9fd-69428ea5706a.log"
+}

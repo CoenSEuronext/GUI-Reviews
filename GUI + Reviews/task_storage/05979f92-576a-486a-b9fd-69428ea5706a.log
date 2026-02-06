@@ -1,0 +1,29 @@
+Starting EBMFP review at 2026-02-05 14:28:14.265567
+2026-02-05 14:28:14,919 - Review.reviews.ebmfp_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-05 14:28:15,898 - Review.reviews.ebmfp_review - INFO - Loading reference data...
+2026-02-05 14:28:15,944 - Review.reviews.ebmfp_review - ERROR - Error during review calculation: 'ISIN code'
+2026-02-05 14:28:15,954 - Review.reviews.ebmfp_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ebmfp_review.py", line 112, in run_ebmfp_review
+    .merge(
+     ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 10832, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\reshape\merge.py", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'ISIN code'
+Completed EBMFP review in 1.70 seconds

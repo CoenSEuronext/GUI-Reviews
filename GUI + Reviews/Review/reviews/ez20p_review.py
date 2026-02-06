@@ -10,7 +10,7 @@ from utils.inclusion_exclusion import inclusion_exclusion_analysis
 
 logger = setup_logging(__name__)
 
-def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX00009067", 
+def run_ez20p_review(date, co_date, effective_date, index="EZ20P", isin="NLIX00009463", 
                    area="US", area2="EU", type="STOCK", universe="fixed_basket", 
                    feed="Reuters", currency="EUR", year=None):
 
@@ -32,27 +32,55 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
             ['ff']
         )
 
-        # EBMFP universe
-        # EBMFP universe
-        ebmfp_universe = {
-            "RIO TINTO PLC": {
-                "ISIN code": "GB0007188757",
-                "MIC": "XLON",
-                "Currency": "GBP"
+        ez20p_universe = {
+            "DELIVERY HERO SE": {
+                "ISIN code": "DE000A2E4K43",
+                "MIC": "XETR",
+                "Currency": "EUR"
             },
-            "ANTOFAGASTA PLC": {
-                "ISIN code": "GB0000456144",
-                "MIC": "XLON",
-                "Currency": "GBP"
+            "SIEMENS AG": {
+                "ISIN code": "DE0007236101",
+                "MIC": "XETR",
+                "Currency": "EUR"
             },
-            "ANGLO AMERICAN PLC": {
-                "ISIN code": "GB00BTK05J60",
-                "MIC": "XLON",
-                "Currency": "GBP"
+            "INFINEON TECHNOLOGIE": {
+                "ISIN code": "DE0006231004",
+                "MIC": "XETR",
+                "Currency": "EUR"
             },
-            "UPM-KYMMENE OYJ": {
-                "ISIN code": "FI0009005987",
-                "MIC": "XHEL",
+            "THYSSENKRUPP AG": {
+                "ISIN code": "DE0007500001",
+                "MIC": "XETR",
+                "Currency": "EUR"
+            },
+            "STELLANTIS": {
+                "ISIN code": "NL00150001Q9",
+                "MIC": "MTAA",
+                "Currency": "EUR"
+            },
+            "ASML HOLDING": {
+                "ISIN code": "NL0010273215",
+                "MIC": "XAMS",
+                "Currency": "EUR"
+            },
+            "ADYEN": {
+                "ISIN code": "NL0012969182",
+                "MIC": "XAMS",
+                "Currency": "EUR"
+            },
+            "BE SEMICONDUCTOR": {
+                "ISIN code": "NL0012866412",
+                "MIC": "XAMS",
+                "Currency": "EUR"
+            },
+            "ASM INTERNATIONAL": {
+                "ISIN code": "NL0000334118",
+                "MIC": "XAMS",
+                "Currency": "EUR"
+            },
+            "STMICROELECTRONICS": {
+                "ISIN code": "NL0000226223",
+                "MIC": "XPAR",
                 "Currency": "EUR"
             },
             "ARCELORMITTAL SA": {
@@ -60,41 +88,51 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
                 "MIC": "XAMS",
                 "Currency": "EUR"
             },
-            "NEWMONT COR": {
-                "ISIN code": "US6516391066",
-                "MIC": "XNYS",
-                "Currency": "USD"
+            "SCHNEIDER ELECTRIC": {
+                "ISIN code": "FR0000121972",
+                "MIC": "XPAR",
+                "Currency": "EUR"
             },
-            "NUCOR CORPORATION": {
-                "ISIN code": "US6703461052",
-                "MIC": "XNYS",
-                "Currency": "USD"
+            "ALSTOM": {
+                "ISIN code": "FR0010220475",
+                "MIC": "XPAR",
+                "Currency": "EUR"
             },
-            "STEEL DYNAMICS INC.": {
-                "ISIN code": "US8581191009",
-                "MIC": "XNGS",
-                "Currency": "USD"
+            "SAINT GOBAIN": {
+                "ISIN code": "FR0000125007",
+                "MIC": "XPAR",
+                "Currency": "EUR"
             },
-            "FREEPORT-MCMORAN": {
-                "ISIN code": "US35671D8570",
-                "MIC": "XNYS",
-                "Currency": "USD"
+            "BANCA MPS": {
+                "ISIN code": "IT0005508921",
+                "MIC": "MTAA",
+                "Currency": "EUR"
             },
-            "VALE S.A. SPONSORED ADR": {
-                "ISIN code": "US91912E1055",
-                "MIC": "XNYS",
-                "Currency": "USD"
+            "UNICREDIT": {
+                "ISIN code": "IT0005239360",
+                "MIC": "MTAA",
+                "Currency": "EUR"
+            },
+            "BPER BANCA": {
+                "ISIN code": "IT0000066123",
+                "MIC": "MTAA",
+                "Currency": "EUR"
+            },
+            "AUMOVIO": {
+                "ISIN code": "DE000AUM0V10",
+                "MIC": "XETR",
+                "Currency": "EUR"
             }
         }
         # Convert to DataFrame when needed
-        ebmfp_df = pd.DataFrame(ebmfp_universe).T.reset_index()
-        ebmfp_df = ebmfp_df.rename(columns={'index': 'Company'})
+        ez20p_df = pd.DataFrame(ez20p_universe).T.reset_index()
+        ez20p_df = ez20p_df.rename(columns={'index': 'Company'})
         ff_df = ref_data['ff']
 
         
         # Add the required columns to the combined dataframe
-        ebmfp_df['Capping Factor'] = 1
-        ebmfp_df['Effective Date of Review'] = effective_date
+        ez20p_df['Capping Factor'] = 1
+        ez20p_df['Effective Date of Review'] = effective_date
 
         # Filter symbols once
         symbols_filtered = stock_eod_df[
@@ -102,7 +140,7 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
         ][['Isin Code', '#Symbol']].drop_duplicates(subset=['Isin Code'], keep='first')
         
         # Chain all data preparation operations using the combined dataframe
-        selection_df = (ebmfp_df
+        selection_df = (ez20p_df
            # Initial renaming
            .rename(columns={
                'NOSH': 'Number of Shares',
@@ -157,9 +195,9 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
         selection_df["Free Float"] = selection_df["Free Float Round:"]
 
         # Select top companies from each universe based on FFMC
-        top_n = 10  # 15 companies in EBMFP universe
+        top_n = 15  # 15 companies in EZ20P universe
 
-        # Calculate the target market cap per company (equal weighting across all 10 companies)
+        # Calculate the target market cap per company (equal weighting across all 15 companies)
         target_mcap_per_company = index_mcap / top_n
         selection_df['Unrounded NOSH'] = target_mcap_per_company / (selection_df['Close Prc_EOD'] * selection_df['FX/Index Ccy'])
         selection_df['Rounded NOSH'] = selection_df['Unrounded NOSH'].round()
@@ -167,8 +205,8 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
         selection_df['Effective Date of Review'] = effective_date
         selection_df['Unrounded NOSH'] = target_mcap_per_company / selection_df['Close Prc_EOD']
         
-        # Prepare EBMFP DataFrame
-        EBMFP_df = (
+        # Prepare EZ20P DataFrame
+        EZ20P_df = (
             selection_df[
                 ['Company', 'ISIN code', 'MIC', 'Rounded NOSH', 'Free Float', 'Capping Factor', 
                 'Effective Date of Review', 'Currency']
@@ -195,12 +233,12 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
            
             # Create filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            ebmfp_path = os.path.join(output_dir, f'EBMFP_df_{timestamp}.xlsx')
+            ez20p_path = os.path.join(output_dir, f'EZ20P_df_{timestamp}.xlsx')
            
             # Save output with multiple sheets
-            logger.info(f"Saving EBMFP output to: {ebmfp_path}")
-            with pd.ExcelWriter(ebmfp_path) as writer:
-                EBMFP_df.to_excel(writer, sheet_name='Index Composition', index=False)
+            logger.info(f"Saving EZ20P output to: {ez20p_path}")
+            with pd.ExcelWriter(ez20p_path) as writer:
+                EZ20P_df.to_excel(writer, sheet_name='Index Composition', index=False)
                 inclusion_df.to_excel(writer, sheet_name='Inclusion', index=False)
                 exclusion_df.to_excel(writer, sheet_name='Exclusion', index=False)
                 selection_df.to_excel(writer, sheet_name='Full Universe', index=False)
@@ -209,7 +247,7 @@ def run_ebmfp_review(date, co_date, effective_date, index="EBMFP", isin="NLIX000
             return {
                 "status": "success",
                 "message": "Review completed successfully",
-                "data": {"ebmfp_path": ebmfp_path}
+                "data": {"ez20p_path": ez20p_path}
             }
            
         except Exception as e:
