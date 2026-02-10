@@ -1,0 +1,29 @@
+{
+  "task_id": "d9ea0285-1472-4e49-9b66-1a12dc957c75",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-10T10:21:27.251391",
+  "started_at": "2026-02-10T10:21:27.502995",
+  "completed_at": "2026-02-10T10:21:29.070226",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: \"['Currency'] not in index\"",
+  "error": "Error during review calculation: \"['Currency'] not in index\"",
+  "result_data": null,
+  "review_type": "ESF4P",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ESF4P",
+    "isin": "FR0013317732",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.514261,
+  "completed_at_review": "2026-02-10T10:21:29.070226",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esf4p_review.py\", line 223, in run_esf4p_review\n    top_40_df[\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4108, in __getitem__\n    indexer = self.columns._get_indexer_strict(key, \"columns\")[1]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6200, in _get_indexer_strict\n    self._raise_if_missing(keyarr, indexer, axis_name)\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6252, in _raise_if_missing\n    raise KeyError(f\"{not_found} not in index\")\nKeyError: \"['Currency'] not in index\"\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting ESF4P review at 2026-02-10 10:21:27.555965\n2026-02-10 10:21:27,896 - Review.reviews.esf4p_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-10 10:21:28,833 - Review.reviews.esf4p_review - INFO - Loading reference data...\n2026-02-10 10:21:28,999 - Review.reviews.esf4p_review - INFO - Starting universe size: 60\n2026-02-10 10:21:29,056 - Review.reviews.esf4p_review - INFO - Step 2: No additional eligibility screening required\n2026-02-10 10:21:29,056 - Review.reviews.esf4p_review - INFO - Merging Sustainalytics data...\n2026-02-10 10:21:29,056 - Review.reviews.esf4p_review - INFO - Sustainalytics ESG Risk Score merge completed.\n2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Step 3: Ranking by ESG Risk Score (lower is better)...\n2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Companies with ESG Risk Score: 60\n2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - ESG Risk Score ranking completed for 60 companies\n2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Step 4: Selecting top 40 companies with lowest ESG Risk Score...\n2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Selected 40 companies for index\n2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - ERROR - Error during review calculation: \"['Currency'] not in index\"\n2026-02-10 10:21:29,066 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esf4p_review.py\", line 223, in run_esf4p_review\n    top_40_df[\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4108, in __getitem__\n    indexer = self.columns._get_indexer_strict(key, \"columns\")[1]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6200, in _get_indexer_strict\n    self._raise_if_missing(keyarr, indexer, axis_name)\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6252, in _raise_if_missing\n    raise KeyError(f\"{not_found} not in index\")\nKeyError: \"['Currency'] not in index\"\nCompleted ESF4P review in 1.51 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\d9ea0285-1472-4e49-9b66-1a12dc957c75.log"
+}

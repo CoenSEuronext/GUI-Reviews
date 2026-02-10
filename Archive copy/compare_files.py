@@ -651,10 +651,24 @@ def read_excel_file(file_path):
                 # Read Excel file
                 df = pd.read_excel(file_path, engine='openpyxl')
             
-            # Clean up string columns
+            # Clean up string columns - but preserve date columns
+            date_columns = ['Sys date']  # All possible date column names
+
             for col in df.columns:
                 if df[col].dtype == 'object':
-                    df[col] = df[col].astype(str).str.strip()
+                    # Skip date columns - don't convert them to string
+                    if col not in date_columns:
+                        df[col] = df[col].astype(str).str.strip()
+                    else:
+                        # For date columns, try to parse them properly
+                        try:
+                            # Convert to datetime with explicit DD-MM-YYYY format
+                            df[col] = pd.to_datetime(df[col], format='%d-%m-%Y', errors='coerce')
+                            logger.info(f"Converted {col} column to date format using DD-MM-YYYY")
+                        except Exception as e:
+                            logger.warning(f"Could not convert {col} to date: {str(e)}")
+                            # If conversion fails, at least strip whitespace
+                            df[col] = df[col].astype(str).str.strip()
             
         except ImportError:
             print("Error: openpyxl is not installed. Please install it using:")
@@ -1108,7 +1122,7 @@ def find_differences_vectorized_morning_stock(df1_indexed, df2_indexed, is_after
                 'Code': df2_added['#Symbol'].astype(str) + df2_added['Index'].astype(str),
                 '#Symbol': df2_added['#Symbol'],
                 'Sys date': df2_added.get('System date', ''),
-                'Adj. Reason': 'Add Composition',
+                'Adj. Reason': df2_added.get('Adjust Reason', ''),
                 'Isin Code': df2_added.get('Isin Code', ''),
                 'Cntry': df2_added.get('Country', ''),
                 'Mnemo': df2_added.get('Mnemo', ''),
@@ -1181,7 +1195,7 @@ def find_differences_vectorized_morning_index(df1_indexed, df2_indexed, is_after
         df1_common = df1_indexed.loc[common_keys]
         df2_common = df2_indexed.loc[common_keys]
         
-        critical_fields = ['Divisor', 't0 IV', 't0 IV unround', 'Mkt Cap', 'Nr of components']
+        critical_fields = ['Divisor', 't0 IV', 't0 IV unround', 'Nr of components']
         
         has_differences = pd.Series(False, index=common_keys)
         
@@ -1432,6 +1446,11 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
             'font_name': 'Verdana',
             'font_size': 10,
             'bg_color': '#D9D9D9'
+        })
+        date_format = workbook.add_format({
+            'num_format': 'yyyy-mm-dd',
+            'font_name': 'Verdana',
+            'font_size': 10
         })
         
         # Determine if this is a stock or index comparison
@@ -1821,9 +1840,22 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 worksheet1.write(data_start_row - 2, col_num, value, header_format)
             
             # Re-write the data at the correct position
+            sys_date_col = diff_df_main.columns.get_loc('Sys date') if 'Sys date' in diff_df_main.columns else -1
+            sys_date_col_alt = diff_df_main.columns.get_loc('Sys Date') if 'Sys Date' in diff_df_main.columns else -1
+
             for row_idx in range(len(diff_df_main)):
                 for col_idx, col_name in enumerate(diff_df_main.columns):
-                    worksheet1.write(data_start_row + row_idx, col_idx, diff_df_main.iloc[row_idx, col_idx], normal_format)
+                    value = diff_df_main.iloc[row_idx, col_idx]
+                    
+                    # Apply date formatting to Sys date columns
+                    if col_idx == sys_date_col or col_idx == sys_date_col_alt:
+                        # Check if value is a datetime object
+                        if pd.notna(value) and isinstance(value, (pd.Timestamp, datetime)):
+                            worksheet1.write_datetime(data_start_row + row_idx, col_idx, value, date_format)
+                        else:
+                            worksheet1.write(data_start_row + row_idx, col_idx, value, normal_format)
+                    else:
+                        worksheet1.write(data_start_row + row_idx, col_idx, value, normal_format)
             
             data_end_row = data_start_row + len(diff_df) - 1
             
@@ -1982,9 +2014,24 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                         worksheet1.write(excel_row, name_col, diff_df.iloc[row_idx]['Name'], purple_format)
         
         else:
+            # No differences found - create sheet with headers but no data
             worksheet1 = workbook.add_worksheet('Differences')
-            worksheet1.write(0, 0, 0, normal_format)
-            for col_num, value in enumerate(diff_df.columns.values):
+            worksheet1.write(0, 0, 0, normal_format)  # Write 0 to indicate no differences
+            
+            # Still write the headers even when empty
+            if is_stock:
+                headers = ['Rank', 'Code', '#Symbol', 'Sys date', 'Adj. Reason', 'Isin Code', 'Cntry', 
+                        'Mnemo', 'Name', 'MIC', 'Prev ICB', 'New ICB', 'Close Prc', 'Adj Closing price',
+                        'Net Div', 'Gross Div', 'Index', 'Prev. Shares', 'New Shares', 'Prev FF', 
+                        'New FF', 'Prev Capping', 'New Capping', 'Cross-Ref Symbols']
+            elif is_index:
+                headers = ['Rank', '#Symbol', 'Sys Date', 'IsinCode', 'Cntry', 'Mnemo', 'Name', 'MIC',
+                        'Prev Divisor', 'New Divisor', 'Prev t0 IV', 't0 IV   SOD', 
+                        'Prev t0 IV unround', 't0 IV unround', 'Prev Nr of comp', 'Nr of comp']
+            else:
+                headers = []
+            
+            for col_num, value in enumerate(headers):
                 worksheet1.write(2, col_num, value, header_format)
         
         for i, col in enumerate(diff_df.columns):
@@ -1996,17 +2043,23 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
         # Sheet 3 (or 2 for index): Raw Data File 1
         df1_clean_output = df1_clean.drop('composite_key', axis=1, errors='ignore')
         df1_clean_output = df1_clean_output.replace([np.inf, -np.inf], np.nan)
-        
+
         for col in df1_clean_output.columns:
             if df1_clean_output[col].dtype == 'object':
                 df1_clean_output[col] = df1_clean_output[col].fillna('')
-        
+
         if not df1_clean_output.empty:
             for col in df1_clean_output.select_dtypes(include=['object']).columns:
                 df1_clean_output[col] = df1_clean_output[col].astype(str).replace(['nan', 'NaN', 'None'], '')
             
             df1_clean_output.to_excel(writer, sheet_name='Raw Data File 1', index=False, startrow=4, header=False)
-            worksheet2 = writer.sheets['Raw Data File 1']
+            worksheet2 = writer.sheets['Raw Data File 1']  # ADD THIS LINE
+            
+            # Apply date formatting to Sys date column if it exists
+            if 'System date' in df1_clean_output.columns or 'Sys date' in df1_clean_output.columns:
+                sys_date_col_name = 'System date' if 'System date' in df1_clean_output.columns else 'Sys date'
+                sys_date_col_idx = df1_clean_output.columns.get_loc(sys_date_col_name)
+                worksheet2.set_column(sys_date_col_idx, sys_date_col_idx, None, date_format)
             
             for col_num, value in enumerate(df1_clean_output.columns.values):
                 worksheet2.write(2, col_num, value, header_format)
@@ -2020,41 +2073,45 @@ def write_excel_optimized(diff_df, df1_clean, df2_clean, output_path, comparison
                 })
         else:
             worksheet2 = workbook.add_worksheet('Raw Data File 1')
-        
+
         for i, col in enumerate(df1_clean_output.columns):
             max_length = max(len(str(col)), 10)
             if not df1_clean_output.empty:
                 max_length = max(max_length, df1_clean_output[col].astype(str).str.len().max())
             worksheet2.set_column(i, i, min(max_length + 2, 50))
-        
+
         # Sheet 4 (or 3 for index): Raw Data File 2
         df2_clean_output = df2_clean.drop('composite_key', axis=1, errors='ignore')
         df2_clean_output = df2_clean_output.replace([np.inf, -np.inf], np.nan)
-        
+
         for col in df2_clean_output.columns:
             if df2_clean_output[col].dtype == 'object':
                 df2_clean_output[col] = df2_clean_output[col].fillna('')
-        
+
         if not df2_clean_output.empty:
             for col in df2_clean_output.select_dtypes(include=['object']).columns:
                 df2_clean_output[col] = df2_clean_output[col].astype(str).replace(['nan', 'NaN', 'None'], '')
+
+        df2_clean_output.to_excel(writer, sheet_name='Raw Data File 2', index=False, startrow=4, header=False)
+        worksheet3 = writer.sheets['Raw Data File 2']  # ADD THIS LINE
             
-            df2_clean_output.to_excel(writer, sheet_name='Raw Data File 2', index=False, startrow=4, header=False)
-            worksheet3 = writer.sheets['Raw Data File 2']
+        # Apply date formatting to Sys date column if it exists
+        if 'System date' in df2_clean_output.columns or 'Sys date' in df2_clean_output.columns:
+            sys_date_col_name = 'System date' if 'System date' in df2_clean_output.columns else 'Sys date'
+            sys_date_col_idx = df2_clean_output.columns.get_loc(sys_date_col_name)
+            worksheet3.set_column(sys_date_col_idx, sys_date_col_idx, None, date_format)
             
-            for col_num, value in enumerate(df2_clean_output.columns.values):
-                worksheet3.write(2, col_num, value, header_format)
-            
-            if len(df2_clean_output) > 0:
-                end_col_name = excel_column_name(len(df2_clean_output.columns) - 1)
-                data_range = f"A5:{end_col_name}{4 + len(df2_clean_output)}"
-                worksheet3.conditional_format(data_range, {
-                    'type': 'no_blanks',
-                    'format': normal_format
-                })
-        else:
-            worksheet3 = workbook.add_worksheet('Raw Data File 2')
-        
+        for col_num, value in enumerate(df2_clean_output.columns.values):
+            worksheet3.write(2, col_num, value, header_format)
+
+        if len(df2_clean_output) > 0:
+            end_col_name = excel_column_name(len(df2_clean_output.columns) - 1)
+            data_range = f"A5:{end_col_name}{4 + len(df2_clean_output)}"
+            worksheet3.conditional_format(data_range, {
+                'type': 'no_blanks',
+                'format': normal_format
+            })
+
         for i, col in enumerate(df2_clean_output.columns):
             max_length = max(len(str(col)), 10)
             if not df2_clean_output.empty:
@@ -2234,7 +2291,7 @@ def perform_comparison(comparison_type='morning_stock', silent=False):
             print(f"  Common records: {len(common_keys)}")
             logger.info(f"{comparison_type.upper()} comparison completed. Changes: {len(diff_df)}, Common records: {len(common_keys)}")
         else:
-            print(f"\n  Failed to write {comparison_type.UPPER()} output file")
+            print(f"\n  Failed to write {comparison_type.upper()} output file")
             logger.error(f"Failed to write {comparison_type.upper()} output file")
         
         return success

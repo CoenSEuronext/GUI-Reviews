@@ -1,0 +1,28 @@
+2026-02-10 10:10:04,825 - Review.reviews.esf4p_review - INFO - Loading EOD data...
+2026-02-10 10:10:07,854 - Review.reviews.esf4p_review - INFO - Loading reference data...
+2026-02-10 10:10:07,854 - Review.reviews.esf4p_review - INFO - Step 1: Loading CAC Large 60 universe...
+2026-02-10 10:10:11,373 - Review.reviews.esf4p_review - INFO - CAC Large 60 universe size: 60
+2026-02-10 10:10:11,429 - Review.reviews.esf4p_review - WARNING - Could not calculate FFMC - missing required columns
+2026-02-10 10:10:11,429 - Review.reviews.esf4p_review - INFO - Step 2: No additional eligibility screening required
+2026-02-10 10:10:11,429 - Review.reviews.esf4p_review - INFO - Step 3: Merging Sustainalytics data for ESG Risk Score...
+2026-02-10 10:10:11,433 - Review.reviews.esf4p_review - INFO - Sustainalytics ESG Risk Score merge completed.
+2026-02-10 10:10:11,433 - Review.reviews.esf4p_review - INFO - Ranking by ESG Risk Score (lower is better)...
+2026-02-10 10:10:11,433 - Review.reviews.esf4p_review - INFO - Companies with ESG Risk Score: 60
+2026-02-10 10:10:11,438 - Review.reviews.esf4p_review - INFO - ESG Risk Score ranking completed for 60 companies
+2026-02-10 10:10:11,438 - Review.reviews.esf4p_review - INFO - Step 4: Selecting top 40 companies with lowest ESG Risk Score...
+2026-02-10 10:10:11,438 - Review.reviews.esf4p_review - INFO - Selected 40 companies for index
+2026-02-10 10:10:11,438 - Review.reviews.esf4p_review - INFO - Calculating Equal Weight Number of Shares...
+2026-02-10 10:10:11,441 - Review.reviews.esf4p_review - ERROR - Error during review calculation: "['Ccy'] not in index"
+2026-02-10 10:10:11,445 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\esf4p_review.py", line 308, in run_esf4p_review
+    currency_df = stock_eod_df[['#Symbol', 'Ccy']].drop_duplicates(subset='#Symbol', keep='first')
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Ccy'] not in index"
+

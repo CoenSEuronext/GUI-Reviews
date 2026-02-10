@@ -674,6 +674,16 @@ def convert_single_csv_to_xlsx(csv_path, output_path):
         # Read the CSV file with pandas - using latin1 encoding and semicolon delimiter
         df = read_csv_safe(csv_path)
         
+        if len(df.columns) > 1:
+            col_B_name = df.columns[1]
+            try:
+                # Convert to datetime with explicit DD/MM/YYYY format (European date format)
+                df[col_B_name] = pd.to_datetime(df[col_B_name], format='%d-%m-%Y', errors='coerce')
+                # Convert to date only (removes time component completely)
+                df[col_B_name] = df[col_B_name].dt.date
+                logger.info(f"Converted column B to date format using DD/MM/YYYY")
+            except Exception as e:
+                logger.warning(f"Could not convert column B to date: {str(e)}")
         # Make sure the output path has .xlsx extension
         if not output_path.endswith('.xlsx'):
             output_path = output_path.replace('.csv', '.xlsx')
@@ -714,7 +724,7 @@ def convert_single_csv_to_xlsx(csv_path, output_path):
         
         # Apply date formatting to column B (typically the date column)
         date_format = workbook.add_format({
-            'num_format': 'mm/dd/yyyy;@',
+            'num_format': 'yyyy-mm-dd',
             'font_name': 'Verdana',
             'font_size': 10
         })
@@ -752,6 +762,17 @@ def merge_csv_files(file1_path, file2_path, output_path):
         merged_df = pd.concat([df1, df2])
         
         del df1, df2
+
+        if len(merged_df.columns) > 1:
+            col_B_name = merged_df.columns[1]
+            try:
+                # Convert to datetime with explicit DD/MM/YYYY format (European date format)
+                merged_df[col_B_name] = pd.to_datetime(merged_df[col_B_name], format='%d-%m-%Y', errors='coerce')
+                # Convert to date only (removes time component completely)
+                merged_df[col_B_name] = merged_df[col_B_name].dt.date
+                logger.info(f"Converted column B to date format using DD/MM/YYYY")
+            except Exception as e:
+                logger.warning(f"Could not convert column B to date: {str(e)}")
         # Convert column I to numeric if it exists (8th column, 0-indexed)
         if len(merged_df.columns) > 8:
             col_I_name = merged_df.columns[8]
@@ -807,7 +828,7 @@ def merge_csv_files(file1_path, file2_path, output_path):
         
         # Apply date formatting to column B (typically the date column)
         date_format = workbook.add_format({
-            'num_format': 'mm/dd/yyyy;@',
+            'num_format': 'yyyy-mm-dd',
             'font_name': 'Verdana',
             'font_size': 10
         })

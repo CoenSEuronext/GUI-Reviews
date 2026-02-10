@@ -1,0 +1,31 @@
+{
+  "task_id": "b6bb1469-4e3a-4f16-aaa4-1b5d4800327a",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-10T10:25:34.989587",
+  "started_at": "2026-02-10T10:25:35.189281",
+  "completed_at": "2026-02-10T10:25:36.911946",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "esf4p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ESF4P_df_20260210_102536.xlsx"
+  },
+  "review_type": "ESF4P",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ESF4P",
+    "isin": "FR0013317732",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.651409,
+  "completed_at_review": "2026-02-10T10:25:36.911946",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

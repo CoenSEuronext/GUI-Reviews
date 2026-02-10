@@ -1,0 +1,18 @@
+Starting ESG50 review at 2026-02-10 11:14:08.375629
+2026-02-10 11:14:08,742 - Review.reviews.esg50_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-10 11:14:09,707 - Review.reviews.esg50_review - INFO - Loading reference data...
+2026-02-10 11:14:09,794 - Review.reviews.esg50_review - INFO - Starting universe size: 300
+2026-02-10 11:14:09,855 - Review.reviews.esg50_review - INFO - Loading Sustainalytics ESG Risk Score data...
+2026-02-10 11:14:09,860 - Review.reviews.esg50_review - INFO - Sustainalytics ESG Risk Score merge completed.
+2026-02-10 11:14:09,861 - Review.reviews.esg50_review - INFO - Companies with ESG Risk Score: 296
+2026-02-10 11:14:09,865 - Review.reviews.esg50_review - INFO - Eligible companies after ESG screen (top 120): 120
+2026-02-10 11:14:09,865 - Review.reviews.esg50_review - INFO - Step 3: Ranking eligible companies by free float market cap (Close Prc_CO)...
+2026-02-10 11:14:09,866 - Review.reviews.esg50_review - INFO - Selected 50 companies for index
+2026-02-10 11:14:09,866 - Review.reviews.esg50_review - INFO - Calculating equal-weight Number of Shares using Close Prc_EOD...
+2026-02-10 11:14:09,874 - Review.reviews.esg50_review - INFO - Saving ESG50 output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ESG50_df_20260210_111409.xlsx
+Completed ESG50 review in 1.74 seconds

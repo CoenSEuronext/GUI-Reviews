@@ -1,0 +1,31 @@
+{
+  "task_id": "1b890141-663c-4a28-9f90-882d5cef5edd",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-10T11:14:19.847553",
+  "started_at": "2026-02-10T11:14:20.376024",
+  "completed_at": "2026-02-10T11:14:22.016695",
+  "progress": 100,
+  "message": "ESG50 review completed successfully",
+  "error": null,
+  "result_data": {
+    "esg50_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ESG50_df_20260210_111421.xlsx"
+  },
+  "review_type": "ESG50",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ESG50",
+    "isin": "NL0012481741",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.590449,
+  "completed_at_review": "2026-02-10T11:14:22.016695",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

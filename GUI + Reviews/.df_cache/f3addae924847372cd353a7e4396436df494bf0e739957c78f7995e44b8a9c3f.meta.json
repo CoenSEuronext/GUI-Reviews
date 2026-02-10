@@ -1,0 +1,11 @@
+{
+  "abs_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\202512\\FF.xlsx",
+  "variant": "excel|cache_tag='ff'|dropdup_keep='first'|dropdup_subset=('ISIN Code:',)",
+  "signature": [
+    1765786133587933000,
+    935691
+  ],
+  "created_at": "2026-02-10T09:10:08.756107+00:00",
+  "format": "pickle",
+  "parquet_error": "Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.\nA suitable version of pyarrow or fastparquet is required for parquet support.\nTrying to import the above resulted in these errors:\n - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.\n - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet."
+}

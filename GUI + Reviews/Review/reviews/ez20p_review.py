@@ -32,7 +32,17 @@ def run_ez20p_review(date, co_date, effective_date, index="EZ20P", isin="NLIX000
             ['ff']
         )
 
-        ez20p_universe = {
+        ez20p_universe  = {
+            "BANCO SANTANDER CENT": {
+                "ISIN code": "ES0113900J37",
+                "MIC": "XMAD",
+                "Currency": "EUR"
+            },
+            "TUI AG": {
+                "ISIN code": "DE000TUAG505",
+                "MIC": "XETR",
+                "Currency": "EUR"
+            },
             "DELIVERY HERO SE": {
                 "ISIN code": "DE000A2E4K43",
                 "MIC": "XETR",
@@ -195,9 +205,9 @@ def run_ez20p_review(date, co_date, effective_date, index="EZ20P", isin="NLIX000
         selection_df["Free Float"] = selection_df["Free Float Round:"]
 
         # Select top companies from each universe based on FFMC
-        top_n = 15  # 15 companies in EZ20P universe
+        top_n = 20  # 20 companies in EZ20P universe
 
-        # Calculate the target market cap per company (equal weighting across all 15 companies)
+        # Calculate the target market cap per company (equal weighting across all 20 companies)
         target_mcap_per_company = index_mcap / top_n
         selection_df['Unrounded NOSH'] = target_mcap_per_company / (selection_df['Close Prc_EOD'] * selection_df['FX/Index Ccy'])
         selection_df['Rounded NOSH'] = selection_df['Unrounded NOSH'].round()

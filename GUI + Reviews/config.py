@@ -475,6 +475,21 @@ INDEX_CONFIGS = {
         "index": "EZ20P",
         "isin": "NLIX00009463",
         "output_key": "ez20p_path"
+    },
+    "EZGP": {
+        "index": "EZGP",
+        "isin": "FRESG0003540",
+        "output_key": "ezgp_path"
+    },
+    "ESF4P": {
+        "index": "ESF4P",
+        "isin": "FR0013317732",
+        "output_key": "esf4p_path"
+    },
+    "ESG50": {
+        "index": "ESG50",
+        "isin": "NL0012481741",
+        "output_key": "esg50_path"
     }
 }
 BATCH_CONFIG = {

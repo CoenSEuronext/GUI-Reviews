@@ -1,0 +1,10 @@
+Starting EZ20P review at 2026-02-09 17:05:29.841987
+2026-02-09 17:05:30,165 - Review.reviews.ez20p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-09 17:05:31,009 - Review.reviews.ez20p_review - INFO - Loading reference data...
+2026-02-09 17:05:32,258 - Review.reviews.ez20p_review - INFO - Saving EZ20P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ20P_df_20260209_170532.xlsx
+Completed EZ20P review in 2.51 seconds

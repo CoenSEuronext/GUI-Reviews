@@ -1,0 +1,30 @@
+Starting ESF4P review at 2026-02-10 10:21:27.555965
+2026-02-10 10:21:27,896 - Review.reviews.esf4p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-10 10:21:28,833 - Review.reviews.esf4p_review - INFO - Loading reference data...
+2026-02-10 10:21:28,999 - Review.reviews.esf4p_review - INFO - Starting universe size: 60
+2026-02-10 10:21:29,056 - Review.reviews.esf4p_review - INFO - Step 2: No additional eligibility screening required
+2026-02-10 10:21:29,056 - Review.reviews.esf4p_review - INFO - Merging Sustainalytics data...
+2026-02-10 10:21:29,056 - Review.reviews.esf4p_review - INFO - Sustainalytics ESG Risk Score merge completed.
+2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Step 3: Ranking by ESG Risk Score (lower is better)...
+2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Companies with ESG Risk Score: 60
+2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - ESG Risk Score ranking completed for 60 companies
+2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Step 4: Selecting top 40 companies with lowest ESG Risk Score...
+2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - INFO - Selected 40 companies for index
+2026-02-10 10:21:29,061 - Review.reviews.esf4p_review - ERROR - Error during review calculation: "['Currency'] not in index"
+2026-02-10 10:21:29,066 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\esf4p_review.py", line 223, in run_esf4p_review
+    top_40_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Currency'] not in index"
+Completed ESF4P review in 1.51 seconds

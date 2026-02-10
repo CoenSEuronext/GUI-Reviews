@@ -1,0 +1,31 @@
+{
+  "task_id": "911c6d10-cc9b-4ce8-9817-9c3f63fa1e28",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-09T17:05:29.427482",
+  "started_at": "2026-02-09T17:05:29.792031",
+  "completed_at": "2026-02-09T17:05:32.349610",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ez20p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZ20P_df_20260209_170532.xlsx"
+  },
+  "review_type": "EZ20P",
+  "parameters": {
+    "date": "20260205",
+    "co_date": "20260205",
+    "effective_date": "02-Feb-26",
+    "index": "EZ20P",
+    "isin": "NLIX00009463",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.507623,
+  "completed_at_review": "2026-02-09T17:05:32.349610",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

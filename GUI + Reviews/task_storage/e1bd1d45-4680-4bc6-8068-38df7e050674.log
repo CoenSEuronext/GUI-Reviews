@@ -1,0 +1,15 @@
+Starting EZ20P review at 2026-02-09 17:04:39.731300
+2026-02-09 17:04:40,254 - Review.reviews.ez20p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-09 17:04:41,164 - Review.reviews.ez20p_review - INFO - Loading reference data...
+2026-02-09 17:04:41,215 - Review.reviews.ez20p_review - ERROR - Error during review calculation: 'NoneType' object is not subscriptable
+2026-02-09 17:04:41,215 - Review.reviews.ez20p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\ez20p_review.py", line 190, in run_ez20p_review
+    ff_df[['ISIN Code:', 'Free Float Round:']].drop_duplicates(subset='ISIN Code:', keep='first'),
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+Completed EZ20P review in 1.48 seconds

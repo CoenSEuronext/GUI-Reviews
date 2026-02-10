@@ -1,0 +1,29 @@
+{
+  "task_id": "14c1be96-0097-4993-824c-ec4bee1f5fe0",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-10T10:19:13.924915",
+  "started_at": "2026-02-10T10:19:14.366915",
+  "completed_at": "2026-02-10T10:19:15.698931",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: Failed to load CAC Large 60 universe data",
+  "error": "Error during review calculation: Failed to load CAC Large 60 universe data",
+  "result_data": null,
+  "review_type": "ESF4P",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ESF4P",
+    "isin": "FR0013317732",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.275619,
+  "completed_at_review": "2026-02-10T10:19:15.698931",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esf4p_review.py\", line 50, in run_esf4p_review\n    raise ValueError(\"Failed to load CAC Large 60 universe data\")\nValueError: Failed to load CAC Large 60 universe data\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting ESF4P review at 2026-02-10 10:19:14.423312\n2026-02-10 10:19:14,749 - Review.reviews.esf4p_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-10 10:19:15,678 - Review.reviews.esf4p_review - INFO - Loading reference data...\nError loading cac_family: [Errno 13] Permission denied: 'C:\\\\Users\\\\CSonneveld\\\\OneDrive - Euronext\\\\Documents\\\\Projects\\\\GUI + Reviews\\\\202512\\\\CAC Family.xlsx'\n2026-02-10 10:19:15,693 - Review.reviews.esf4p_review - ERROR - Error during review calculation: Failed to load CAC Large 60 universe data\n2026-02-10 10:19:15,694 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esf4p_review.py\", line 50, in run_esf4p_review\n    raise ValueError(\"Failed to load CAC Large 60 universe data\")\nValueError: Failed to load CAC Large 60 universe data\nCompleted ESF4P review in 1.28 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\14c1be96-0097-4993-824c-ec4bee1f5fe0.log"
+}

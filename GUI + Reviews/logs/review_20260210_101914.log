@@ -1,0 +1,8 @@
+2026-02-10 10:19:14,749 - Review.reviews.esf4p_review - INFO - Loading EOD data...
+2026-02-10 10:19:15,678 - Review.reviews.esf4p_review - INFO - Loading reference data...
+2026-02-10 10:19:15,693 - Review.reviews.esf4p_review - ERROR - Error during review calculation: Failed to load CAC Large 60 universe data
+2026-02-10 10:19:15,694 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\esf4p_review.py", line 50, in run_esf4p_review
+    raise ValueError("Failed to load CAC Large 60 universe data")
+ValueError: Failed to load CAC Large 60 universe data
+

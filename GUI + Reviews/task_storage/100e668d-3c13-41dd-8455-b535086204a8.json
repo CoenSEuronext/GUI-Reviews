@@ -1,0 +1,29 @@
+{
+  "task_id": "100e668d-3c13-41dd-8455-b535086204a8",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-10T10:20:28.515682",
+  "started_at": "2026-02-10T10:20:28.728783",
+  "completed_at": "2026-02-10T10:20:30.379294",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: 'Price'",
+  "error": "Error during review calculation: 'Price'",
+  "result_data": null,
+  "review_type": "ESF4P",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ESF4P",
+    "isin": "FR0013317732",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.572258,
+  "completed_at_review": "2026-02-10T10:20:30.379294",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3805, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 167, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 196, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Price'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esf4p_review.py\", line 109, in run_esf4p_review\n    selection_df['FFMC'] = selection_df['Free Float'] * selection_df['Number of Shares'] * selection_df[\"Price\"]\n                                                                                           ~~~~~~~~~~~~^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4102, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3812, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Price'\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting ESF4P review at 2026-02-10 10:20:28.807036\n2026-02-10 10:20:29,190 - Review.reviews.esf4p_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-10 10:20:30,139 - Review.reviews.esf4p_review - INFO - Loading reference data...\n2026-02-10 10:20:30,310 - Review.reviews.esf4p_review - INFO - Starting universe size: 60\n2026-02-10 10:20:30,368 - Review.reviews.esf4p_review - ERROR - Error during review calculation: 'Price'\n2026-02-10 10:20:30,372 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3805, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 167, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 196, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Price'\nThe above exception was the direct cause of the following exception:\nTraceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\esf4p_review.py\", line 109, in run_esf4p_review\n    selection_df['FFMC'] = selection_df['Free Float'] * selection_df['Number of Shares'] * selection_df[\"Price\"]\n                                                                                           ~~~~~~~~~~~~^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4102, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3812, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Price'\nCompleted ESF4P review in 1.57 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\100e668d-3c13-41dd-8455-b535086204a8.log"
+}

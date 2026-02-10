@@ -1,0 +1,15 @@
+Starting ESF4P review at 2026-02-10 10:25:20.565644
+2026-02-10 10:25:20,938 - Review.reviews.esf4p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-10 10:25:21,923 - Review.reviews.esf4p_review - INFO - Loading reference data...
+Error loading cac_family: [Errno 13] Permission denied: 'C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\202512\\CAC Family.xlsx'
+2026-02-10 10:25:21,945 - Review.reviews.esf4p_review - ERROR - Error during review calculation: Failed to load CAC Large 60 universe data
+2026-02-10 10:25:21,945 - Review.reviews.esf4p_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\esf4p_review.py", line 50, in run_esf4p_review
+    raise ValueError("Failed to load CAC Large 60 universe data")
+ValueError: Failed to load CAC Large 60 universe data
+Completed ESF4P review in 1.39 seconds

@@ -1,0 +1,19 @@
+Starting ESF4P review at 2026-02-10 10:34:42.692919
+2026-02-10 10:34:43,205 - Review.reviews.esf4p_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-10 10:34:44,228 - Review.reviews.esf4p_review - INFO - Loading reference data...
+2026-02-10 10:34:44,465 - Review.reviews.esf4p_review - INFO - Starting universe size: 60
+2026-02-10 10:34:44,533 - Review.reviews.esf4p_review - INFO - Step 2: No additional eligibility screening required
+2026-02-10 10:34:44,533 - Review.reviews.esf4p_review - INFO - Merging Sustainalytics data...
+2026-02-10 10:34:44,536 - Review.reviews.esf4p_review - INFO - Sustainalytics ESG Risk Score merge completed.
+2026-02-10 10:34:44,536 - Review.reviews.esf4p_review - INFO - Step 3: Ranking by ESG Risk Score (lower is better)...
+2026-02-10 10:34:44,537 - Review.reviews.esf4p_review - INFO - Companies with ESG Risk Score: 60
+2026-02-10 10:34:44,540 - Review.reviews.esf4p_review - INFO - ESG Risk Score ranking completed for 60 companies
+2026-02-10 10:34:44,540 - Review.reviews.esf4p_review - INFO - Step 4: Selecting top 40 companies with lowest ESG Risk Score...
+2026-02-10 10:34:44,540 - Review.reviews.esf4p_review - INFO - Selected 40 companies for index
+2026-02-10 10:34:44,547 - Review.reviews.esf4p_review - INFO - Saving ESF4P output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\ESF4P_df_20260210_103444.xlsx
+Completed ESF4P review in 1.94 seconds
