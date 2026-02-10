@@ -261,13 +261,28 @@ def run_eeepr_review(date, co_date, effective_date, index="EEEPR", isin="NL00150
                     return col
             return None
 
-        # Helper: coerce a column to numeric
+        # Helper: coerce a column to numeric (for level-of-involvement and numeric fields)
         def to_numeric(df, code):
             col = find_col(df, code)
             if col is None:
                 logger.warning(f"Code {code} not found - exclusion check skipped, treating all as 0")
                 return pd.Series(0, index=df.index)
             return pd.to_numeric(df[col], errors='coerce').fillna(0)
+
+        # Helper: exclude if value is anything other than 0, NaN, or empty string
+        # Used for category-of-involvement fields that store a string when there is involvement
+        def has_any_involvement(df, code):
+            col = find_col(df, code)
+            if col is None:
+                logger.warning(f"Code {code} not found - exclusion check skipped, treating all as no involvement")
+                return pd.Series(False, index=df.index)
+            raw = df[col]
+            # Numeric zero or NaN -> no involvement
+            # Any non-zero number OR any non-empty string -> involvement
+            numeric = pd.to_numeric(raw, errors='coerce')
+            is_numeric_zero_or_nan = numeric.isna() | (numeric == 0)
+            is_empty_string = raw.astype(str).str.strip().isin(['', 'nan', 'None', '0'])
+            return ~(is_numeric_zero_or_nan & is_empty_string)
 
         # ----------------------------------------------------------------
         # Step 2a: Apply exclusion screens
@@ -296,13 +311,15 @@ def run_eeepr_review(date, co_date, effective_date, index="EEEPR", isin="NL00150
         excl_mil_related = to_numeric(selection_df, MILITARY_RELATED_CODE)
         exclusion_flags['excl_military_related'] = excl_mil_related >= 3
 
-        # -- Controversial Weapons Tailor-made/essential: any involvement (category > 0)
-        excl_cw_essential = to_numeric(selection_df, CONTROV_WEAPONS_ESSENTIAL_CODE)
-        exclusion_flags['excl_controv_weapons_essential'] = excl_cw_essential > 0
+        # -- Controversial Weapons Tailor-made/essential: any involvement (non-zero/non-empty string)
+        exclusion_flags['excl_controv_weapons_essential'] = has_any_involvement(
+            selection_df, CONTROV_WEAPONS_ESSENTIAL_CODE
+        )
 
-        # -- Controversial Weapons Non-tailor-made/non-essential: any involvement (category > 0)
-        excl_cw_non_essential = to_numeric(selection_df, CONTROV_WEAPONS_NON_ESSENTIAL_CODE)
-        exclusion_flags['excl_controv_weapons_non_essential'] = excl_cw_non_essential > 0
+        # -- Controversial Weapons Non-tailor-made/non-essential: any involvement (non-zero/non-empty string)
+        exclusion_flags['excl_controv_weapons_non_essential'] = has_any_involvement(
+            selection_df, CONTROV_WEAPONS_NON_ESSENTIAL_CODE
+        )
 
         # -- Small Arms Civilian Assault: Level ID > 0  (derived turnover > 0%)
         excl_sa_assault = to_numeric(selection_df, SMALL_ARMS_ASSAULT_CODE)
@@ -312,13 +329,11 @@ def run_eeepr_review(date, co_date, effective_date, index="EEEPR", isin="NL00150
         excl_sa_non_assault = to_numeric(selection_df, SMALL_ARMS_NON_ASSAULT_CODE)
         exclusion_flags['excl_small_arms_non_assault'] = excl_sa_non_assault > 0
 
-        # -- Oil Sands Extraction: any involvement (category > 0)
-        excl_oil_sands = to_numeric(selection_df, OIL_SANDS_CODE)
-        exclusion_flags['excl_oil_sands'] = excl_oil_sands > 0
+        # -- Oil Sands Extraction: any involvement (non-zero/non-empty string)
+        exclusion_flags['excl_oil_sands'] = has_any_involvement(selection_df, OIL_SANDS_CODE)
 
-        # -- Shale Energy Extraction: any involvement (category > 0)
-        excl_shale = to_numeric(selection_df, SHALE_ENERGY_CODE)
-        exclusion_flags['excl_shale_energy'] = excl_shale > 0
+        # -- Shale Energy Extraction: any involvement (non-zero/non-empty string)
+        exclusion_flags['excl_shale_energy'] = has_any_involvement(selection_df, SHALE_ENERGY_CODE)
 
         # -- Thermal Coal Extraction: Revenue % > 0%
         #    Field 171025111199 is stored as a revenue percentage (numeric), exclude if > 0
