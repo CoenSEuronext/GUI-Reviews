@@ -1,0 +1,29 @@
+{
+  "task_id": "b4877e11-11d4-4d5a-82b7-0016a7b62ed9",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-10T18:07:58.505701",
+  "started_at": "2026-02-10T18:07:58.827175",
+  "completed_at": "2026-02-10T18:08:01.278812",
+  "progress": 0,
+  "message": "Review failed: Error during EDWPE review calculation: \"['Number of Shares'] not in index\"",
+  "error": "Error during EDWPE review calculation: \"['Number of Shares'] not in index\"",
+  "result_data": null,
+  "review_type": "EDWPE",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "EDWPE",
+    "isin": "FRESG0003326",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.381178,
+  "completed_at_review": "2026-02-10T18:08:01.278812",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpe_review.py\", line 364, in run_edwpe_review\n    final_df[\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4108, in __getitem__\n    indexer = self.columns._get_indexer_strict(key, \"columns\")[1]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6200, in _get_indexer_strict\n    self._raise_if_missing(keyarr, indexer, axis_name)\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6252, in _raise_if_missing\n    raise KeyError(f\"{not_found} not in index\")\nKeyError: \"['Number of Shares'] not in index\"\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting EDWPE review at 2026-02-10 18:07:58.897634\n2026-02-10 18:07:59,563 - Review.reviews.edwpe_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-10 18:08:00,779 - Review.reviews.edwpe_review - INFO - Loading reference data...\n2026-02-10 18:08:01,183 - Review.reviews.edwpe_review - INFO - Developed World universe size: 1537\n2026-02-10 18:08:01,245 - Review.reviews.edwpe_review - INFO - Loading Sustainalytics data...\n2026-02-10 18:08:01,251 - Review.reviews.edwpe_review - INFO - Sustainalytics data merge completed.\n2026-02-10 18:08:01,251 - Review.reviews.edwpe_review - INFO - Step 2: Applying exclusion screens...\n2026-02-10 18:08:01,260 - Review.reviews.edwpe_review - INFO - ESG Risk Score screen: cutoff score = 24.0373, 458 in top 30%, 12 with no score\n2026-02-10 18:08:01,264 - Review.reviews.edwpe_review - INFO - Exclusion screen: 1537 -> 1053 companies (484 excluded)\n2026-02-10 18:08:01,264 - Review.reviews.edwpe_review - INFO - Steps 3 & 4: All eligible companies selected (no ranking applied).\n2026-02-10 18:08:01,264 - Review.reviews.edwpe_review - INFO - Final selection: 1053 companies\n2026-02-10 18:08:01,265 - Review.reviews.edwpe_review - INFO - Applying Free Float Market Cap weighting...\n2026-02-10 18:08:01,265 - Review.reviews.edwpe_review - ERROR - Error during EDWPE review calculation: \"['Number of Shares'] not in index\"\n2026-02-10 18:08:01,272 - Review.reviews.edwpe_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\edwpe_review.py\", line 364, in run_edwpe_review\n    final_df[\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4108, in __getitem__\n    indexer = self.columns._get_indexer_strict(key, \"columns\")[1]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6200, in _get_indexer_strict\n    self._raise_if_missing(keyarr, indexer, axis_name)\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 6252, in _raise_if_missing\n    raise KeyError(f\"{not_found} not in index\")\nKeyError: \"['Number of Shares'] not in index\"\nCompleted EDWPE review in 2.38 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\b4877e11-11d4-4d5a-82b7-0016a7b62ed9.log"
+}

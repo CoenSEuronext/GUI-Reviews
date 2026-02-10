@@ -1,0 +1,19 @@
+Starting EDWPE review at 2026-02-10 18:09:01.960994
+2026-02-10 18:09:02,427 - Review.reviews.edwpe_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-10 18:09:03,381 - Review.reviews.edwpe_review - INFO - Loading reference data...
+2026-02-10 18:09:03,395 - Review.reviews.edwpe_review - INFO - Developed World universe size: 1537
+2026-02-10 18:09:03,463 - Review.reviews.edwpe_review - INFO - Loading Sustainalytics data...
+2026-02-10 18:09:03,467 - Review.reviews.edwpe_review - INFO - Sustainalytics data merge completed.
+2026-02-10 18:09:03,467 - Review.reviews.edwpe_review - INFO - Step 2: Applying exclusion screens...
+2026-02-10 18:09:03,475 - Review.reviews.edwpe_review - INFO - ESG Risk Score screen: cutoff score = 24.0373, 458 in top 30%, 12 with no score
+2026-02-10 18:09:03,478 - Review.reviews.edwpe_review - INFO - Exclusion screen: 1537 -> 1053 companies (484 excluded)
+2026-02-10 18:09:03,478 - Review.reviews.edwpe_review - INFO - Steps 3 & 4: All eligible companies selected (no ranking applied).
+2026-02-10 18:09:03,478 - Review.reviews.edwpe_review - INFO - Final selection: 1053 companies
+2026-02-10 18:09:03,478 - Review.reviews.edwpe_review - INFO - Applying Free Float Market Cap weighting...
+2026-02-10 18:09:03,484 - Review.reviews.edwpe_review - INFO - Saving EDWPE output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EDWPE_df_20260210_180903.xlsx
+Completed EDWPE review in 2.59 seconds

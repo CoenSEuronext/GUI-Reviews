@@ -1,0 +1,11 @@
+{
+  "abs_path": "\\\\pbgfshqa08601v\\gis_ttm\\Archive\\TTMIndexUS1_GIS_EOD_INDEX_20251217.csv",
+  "variant": "csv:semicolon|encoding='latin1'",
+  "signature": [
+    1766007175761228000,
+    97944
+  ],
+  "created_at": "2026-02-10T13:15:12.579523+00:00",
+  "format": "pickle",
+  "parquet_error": "Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.\nA suitable version of pyarrow or fastparquet is required for parquet support.\nTrying to import the above resulted in these errors:\n - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.\n - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet."
+}

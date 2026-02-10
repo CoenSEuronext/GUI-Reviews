@@ -500,6 +500,21 @@ INDEX_CONFIGS = {
         "index": "EEEPR",
         "isin": "NL0015000AA9",
         "output_key": "eeepr_path"
+    },
+    "EUEPR": {
+        "index": "EUEPR",
+        "isin": "NL0015000A61",
+        "output_key": "euepr_path"
+    },
+    "GHCPR": {
+        "index": "GHCPR",
+        "isin": "FRESG0000009",
+        "output_key": "ghcpr_path"
+    },
+    "EDWPE": {
+        "index": "EDWPE",
+        "isin": "FRESG0003326",
+        "output_key": "edwpe_path"
     }
 }
 BATCH_CONFIG = {

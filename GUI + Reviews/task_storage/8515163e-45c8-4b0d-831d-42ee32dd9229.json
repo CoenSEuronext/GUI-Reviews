@@ -1,0 +1,29 @@
+{
+  "task_id": "8515163e-45c8-4b0d-831d-42ee32dd9229",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-10T16:05:47.414777",
+  "started_at": "2026-02-10T16:05:47.640917",
+  "completed_at": "2026-02-10T16:05:49.909488",
+  "progress": 0,
+  "message": "Review failed: Error during GHCPR review calculation: 'Number of Shares'",
+  "error": "Error during GHCPR review calculation: 'Number of Shares'",
+  "result_data": null,
+  "review_type": "GHCPR",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "GHCPR",
+    "isin": "FRESG0000009",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.178296,
+  "completed_at_review": "2026-02-10T16:05:49.909488",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3805, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 167, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 196, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Number of Shares'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ghcpr_review.py\", line 141, in run_ghcpr_review\n    * selection_df['Number of Shares']\n      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4102, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3812, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Number of Shares'\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting GHCPR review at 2026-02-10 16:05:47.731192\n2026-02-10 16:05:48,391 - Review.reviews.ghcpr_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-10 16:05:49,313 - Review.reviews.ghcpr_review - INFO - Loading reference data...\nError loading sustainalytics: [Errno 13] Permission denied: 'C:\\\\Users\\\\CSonneveld\\\\OneDrive - Euronext\\\\Documents\\\\Projects\\\\GUI + Reviews\\\\202512\\\\Sustainalytics.xlsx'\n2026-02-10 16:05:49,797 - Review.reviews.ghcpr_review - INFO - Developed Market universe size: 1800\n2026-02-10 16:05:49,898 - Review.reviews.ghcpr_review - INFO - After Health Care (ICB 20) filter: 122 companies (excluded 1678)\n2026-02-10 16:05:49,898 - Review.reviews.ghcpr_review - ERROR - Error during GHCPR review calculation: 'Number of Shares'\n2026-02-10 16:05:49,898 - Review.reviews.ghcpr_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3805, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 167, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 196, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas\\\\_libs\\\\hashtable_class_helper.pxi\", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Number of Shares'\nThe above exception was the direct cause of the following exception:\nTraceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ghcpr_review.py\", line 141, in run_ghcpr_review\n    * selection_df['Number of Shares']\n      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\frame.py\", line 4102, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\core\\indexes\\base.py\", line 3812, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Number of Shares'\nCompleted GHCPR review in 2.18 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\8515163e-45c8-4b0d-831d-42ee32dd9229.log"
+}

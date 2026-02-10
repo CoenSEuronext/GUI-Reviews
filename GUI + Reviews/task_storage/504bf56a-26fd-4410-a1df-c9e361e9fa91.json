@@ -1,0 +1,31 @@
+{
+  "task_id": "504bf56a-26fd-4410-a1df-c9e361e9fa91",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-10T18:09:01.680222",
+  "started_at": "2026-02-10T18:09:01.888012",
+  "completed_at": "2026-02-10T18:09:04.553272",
+  "progress": 100,
+  "message": "EDWPE review completed successfully",
+  "error": null,
+  "result_data": {
+    "edwpe_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EDWPE_df_20260210_180903.xlsx"
+  },
+  "review_type": "EDWPE",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "EDWPE",
+    "isin": "FRESG0003326",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.592278,
+  "completed_at_review": "2026-02-10T18:09:04.553272",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

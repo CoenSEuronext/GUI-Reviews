@@ -1,0 +1,24 @@
+2026-02-10 18:07:59,563 - Review.reviews.edwpe_review - INFO - Loading EOD data...
+2026-02-10 18:08:00,779 - Review.reviews.edwpe_review - INFO - Loading reference data...
+2026-02-10 18:08:01,183 - Review.reviews.edwpe_review - INFO - Developed World universe size: 1537
+2026-02-10 18:08:01,245 - Review.reviews.edwpe_review - INFO - Loading Sustainalytics data...
+2026-02-10 18:08:01,251 - Review.reviews.edwpe_review - INFO - Sustainalytics data merge completed.
+2026-02-10 18:08:01,251 - Review.reviews.edwpe_review - INFO - Step 2: Applying exclusion screens...
+2026-02-10 18:08:01,260 - Review.reviews.edwpe_review - INFO - ESG Risk Score screen: cutoff score = 24.0373, 458 in top 30%, 12 with no score
+2026-02-10 18:08:01,264 - Review.reviews.edwpe_review - INFO - Exclusion screen: 1537 -> 1053 companies (484 excluded)
+2026-02-10 18:08:01,264 - Review.reviews.edwpe_review - INFO - Steps 3 & 4: All eligible companies selected (no ranking applied).
+2026-02-10 18:08:01,264 - Review.reviews.edwpe_review - INFO - Final selection: 1053 companies
+2026-02-10 18:08:01,265 - Review.reviews.edwpe_review - INFO - Applying Free Float Market Cap weighting...
+2026-02-10 18:08:01,265 - Review.reviews.edwpe_review - ERROR - Error during EDWPE review calculation: "['Number of Shares'] not in index"
+2026-02-10 18:08:01,272 - Review.reviews.edwpe_review - ERROR - Traceback (most recent call last):
+  File "C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\Review\reviews\edwpe_review.py", line 364, in run_edwpe_review
+    final_df[
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\CSonneveld\AppData\Roaming\Python\Python312\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Number of Shares'] not in index"
+
