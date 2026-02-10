@@ -1,0 +1,31 @@
+{
+  "task_id": "6234f1f7-22fd-4bd6-a4df-51f980aaf722",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-10T11:43:32.441372",
+  "started_at": "2026-02-10T11:43:32.574425",
+  "completed_at": "2026-02-10T11:43:34.407816",
+  "progress": 100,
+  "message": "EEEPR review completed successfully",
+  "error": null,
+  "result_data": {
+    "eeepr_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EEEPR_df_20260210_114334.xlsx"
+  },
+  "review_type": "EEEPR",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "EEEPR",
+    "isin": "NL0015000AA9",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.759232,
+  "completed_at_review": "2026-02-10T11:43:34.407816",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "af4ed8c6-d951-463e-b4fb-747e44ed2dbb",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-10T11:34:38.455293",
+  "started_at": "2026-02-10T11:34:38.634282",
+  "completed_at": "2026-02-10T11:34:40.987258",
+  "progress": 100,
+  "message": "ESF5P review completed successfully",
+  "error": null,
+  "result_data": {
+    "esf5p_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\ESF5P_df_20260210_113440.xlsx"
+  },
+  "review_type": "ESF5P",
+  "parameters": {
+    "date": "20251216",
+    "co_date": "20251121",
+    "effective_date": "22-Dec-25",
+    "index": "ESF5P",
+    "isin": "FR0013371416",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 2.273887,
+  "completed_at_review": "2026-02-10T11:34:40.987258",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}

@@ -490,6 +490,16 @@ INDEX_CONFIGS = {
         "index": "ESG50",
         "isin": "NL0012481741",
         "output_key": "esg50_path"
+    },
+    "ESF5P": {
+        "index": "ESF5P",
+        "isin": "FR0013371416",
+        "output_key": "esf5p_path"
+    },
+    "EEEPR": {
+        "index": "EEEPR",
+        "isin": "NL0015000AA9",
+        "output_key": "eeepr_path"
     }
 }
 BATCH_CONFIG = {

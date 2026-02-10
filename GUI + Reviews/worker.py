@@ -10,8 +10,6 @@ import sys
 import subprocess
 from collections import deque
 
-from config import get_index_config
-
 
 TASK_STORAGE_DIR = Path(os.environ.get("TASK_STORAGE_DIR", "task_storage"))
 POLL_INTERVAL_SECONDS = float(os.environ.get("WORKER_POLL_INTERVAL", "0.5"))
@@ -24,10 +22,28 @@ TASK_RUNNER_PATH = os.environ.get("TASK_RUNNER_PATH", "task_runner.py")
 RUNNER_TAIL_LINES = int(os.environ.get("WORKER_RUNNER_TAIL_LINES", "300"))
 WRITE_TASK_LOG_FILES = os.environ.get("WORKER_WRITE_TASK_LOGS", "1") == "1"
 
+# NOTE: config is intentionally NOT imported at the top level.
+# The worker process stays alive indefinitely, so any top-level import of config
+# would be cached in sys.modules forever. Instead, use _get_index_config_fresh()
+# which busts the cache before every import so config changes are always picked up
+# without restarting the worker.
+
 
 def handle_signal(sig, frame):
     print("\nWorker interrupted by Ctrl+C. Cleaning up and exiting...")
     sys.exit(0)
+
+
+def _get_index_config_fresh(review_type: str):
+    """
+    Load config fresh from disk on every call by evicting it from sys.modules first.
+    This ensures that changes to config.py are picked up without restarting the worker.
+    """
+    for key in list(sys.modules):
+        if key == "config" or key.startswith("config."):
+            del sys.modules[key]
+    from config import get_index_config
+    return get_index_config(review_type)
 
 
 def _task_file_path(task_id: str) -> Path:
@@ -124,7 +140,8 @@ def _handle_auto_open(review_type: str, result_data: dict, is_local_request: boo
     if not (auto_open and is_local_request and isinstance(result_data, dict)):
         return
     try:
-        index_config = get_index_config(review_type)
+        # Fresh import every call so config changes are picked up without a worker restart.
+        index_config = _get_index_config_fresh(review_type)
         output_key = index_config.get("output_key")
         if not output_key:
             return
@@ -304,7 +321,10 @@ def _run_batch(task_id: str, task_data: Dict) -> None:
         child_task_id = f"{task_id}__{review_type}__{i}"
         child_path = _task_file_path(child_task_id)
 
-        index_config = get_index_config(review_type)
+        # Fresh config load on every iteration so batch jobs pick up config
+        # changes between reviews without requiring a worker restart.
+        index_config = _get_index_config_fresh(review_type)
+
         child_data = {
             "task_id": child_task_id,
             "task_type": "single",
