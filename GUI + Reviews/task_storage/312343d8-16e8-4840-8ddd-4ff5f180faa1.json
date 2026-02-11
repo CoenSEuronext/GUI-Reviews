@@ -1,0 +1,29 @@
+{
+  "task_id": "312343d8-16e8-4840-8ddd-4ff5f180faa1",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-11T17:34:29.913299",
+  "started_at": "2026-02-11T17:34:30.148610",
+  "completed_at": "2026-02-11T17:34:31.696920",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: DataFrame is empty or all market cap values are NaN",
+  "error": "Error during review calculation: DataFrame is empty or all market cap values are NaN",
+  "result_data": null,
+  "review_type": "EZGP",
+  "parameters": {
+    "date": "20260209",
+    "co_date": "20260209",
+    "effective_date": "22-Feb-26",
+    "index": "EZGP",
+    "isin": "FRESG0003540",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.494021,
+  "completed_at_review": "2026-02-11T17:34:31.696920",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezgp_review.py\", line 514, in run_ezgp_review\n    final_selection_df = apply_proportional_capping(\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_proportional.py\", line 43, in apply_proportional_capping\n    raise ValueError(\"DataFrame is empty or all market cap values are NaN\")\nValueError: DataFrame is empty or all market cap values are NaN\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting EZGP review at 2026-02-11 17:34:30.202899\n2026-02-11 17:34:30,570 - Review.reviews.ezgp_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-11 17:34:31,508 - Review.reviews.ezgp_review - INFO - Loading reference data...\n2026-02-11 17:34:31,596 - Review.reviews.ezgp_review - INFO - Starting universe size: 300\n2026-02-11 17:34:31,677 - Review.reviews.ezgp_review - INFO - Step 2.1: Filtering by 3-month Average Daily Traded Value...\n2026-02-11 17:34:31,678 - Review.reviews.ezgp_review - INFO - After ADTV filter (>= 40,000,000 EUR): 105 companies (excluded 195)\n2026-02-11 17:34:31,678 - Review.reviews.ezgp_review - INFO - Step 2.2: Carbon Emission Data filter - skipped for now\n2026-02-11 17:34:31,678 - Review.reviews.ezgp_review - INFO - Step 2.3: Filtering to Eurozone countries...\n2026-02-11 17:34:31,679 - Review.reviews.ezgp_review - INFO - After Eurozone filter: 102 companies\n2026-02-11 17:34:31,679 - Review.reviews.ezgp_review - INFO - Merging Sustainalytics data...\n2026-02-11 17:34:31,684 - Review.reviews.ezgp_review - INFO - Sustainalytics merge completed. Added 28 columns.\n2026-02-11 17:34:31,684 - Review.reviews.ezgp_review - INFO - Applying exclusion criteria...\n2026-02-11 17:34:31,690 - Review.reviews.ezgp_review - INFO - Exclusion criteria applied. 102 companies excluded.\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - INFO - After exclusions: 0 companies eligible\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - INFO - Step 2.6: Ranking by ESG Risk Score (lower is better)...\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - WARNING - ESG Risk Score (181110112399) not available. Skipping ESG ranking.\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - INFO - Step 2.7: Selecting top 40 companies with lowest ESG Risk Score...\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - INFO - Pre-selection: 0 companies\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - INFO - Step 3: Ranking pre-selected companies by FFMC...\n2026-02-11 17:34:31,691 - Review.reviews.ezgp_review - INFO - Step 4: Selecting top 20 companies with max 5 per Industry Code...\n2026-02-11 17:34:31,693 - Review.reviews.ezgp_review - INFO - Final selection: 0 companies\n2026-02-11 17:34:31,693 - Review.reviews.ezgp_review - INFO - Industry distribution: {}\n2026-02-11 17:34:31,693 - Review.reviews.ezgp_review - INFO - Applying 10% capping using most recent pricing data...\n2026-02-11 17:34:31,693 - Review.reviews.ezgp_review - ERROR - Error during review calculation: DataFrame is empty or all market cap values are NaN\n2026-02-11 17:34:31,694 - Review.reviews.ezgp_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezgp_review.py\", line 514, in run_ezgp_review\n    final_selection_df = apply_proportional_capping(\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\utils\\capping_proportional.py\", line 43, in apply_proportional_capping\n    raise ValueError(\"DataFrame is empty or all market cap values are NaN\")\nValueError: DataFrame is empty or all market cap values are NaN\nCompleted EZGP review in 1.49 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\312343d8-16e8-4840-8ddd-4ff5f180faa1.log"
+}

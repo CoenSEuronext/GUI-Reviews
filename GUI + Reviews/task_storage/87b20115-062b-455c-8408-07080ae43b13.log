@@ -1,0 +1,45 @@
+Starting EZ3R review at 2026-02-11 17:31:40.918011
+2026-02-11 17:31:41,243 - Review.reviews.ez3r_review - INFO - Loading EOD data...
+Loaded index data from 2 file(s)
+Loaded stock EOD data from 2 file(s)
+Loaded stock CO data from 2 file(s)
+Created FX lookup table with 35 unique currency pairs
+Available currency pairs: 15 currencies -> 6 index currencies
+2026-02-11 17:31:42,509 - Review.reviews.ez3r_review - INFO - Loading reference data...
+2026-02-11 17:31:45,270 - Review.reviews.ez3r_review - INFO - Starting universe size: 300
+2026-02-11 17:31:45,335 - Review.reviews.ez3r_review - INFO - Merging Physical Risk Score data at universe level...
+2026-02-11 17:31:45,335 - Review.reviews.ez3r_review - INFO - Physical Risk Score data loaded with 297 rows
+2026-02-11 17:31:45,335 - Review.reviews.ez3r_review - INFO - Physical Risk Score unique combinations: 297
+2026-02-11 17:31:45,344 - Review.reviews.ez3r_review - WARNING - 3 companies missing Physical Risk Score after merge
+2026-02-11 17:31:45,346 - Review.reviews.ez3r_review - WARNING - Missing combinations:
+    Industry Name iso_country_incorp      Company
+14     Financials                 BM        AEGON
+84     Financials                 JE  CVC CAPITAL
+139    Financials                 BM    HAL TRUST
+2026-02-11 17:31:45,346 - Review.reviews.ez3r_review - INFO - Step 1: Filtering to Eurozone countries...
+2026-02-11 17:31:45,348 - Review.reviews.ez3r_review - INFO - After Eurozone filter: 292 companies
+2026-02-11 17:31:45,348 - Review.reviews.ez3r_review - INFO - Step 2: Calculating FFMC and selecting top 100...
+2026-02-11 17:31:45,352 - Review.reviews.ez3r_review - INFO - Top 100 by FFMC selected: 100 companies
+2026-02-11 17:31:45,353 - Review.reviews.ez3r_review - INFO - Merging Sustainalytics data...
+2026-02-11 17:31:45,358 - Review.reviews.ez3r_review - INFO - Sustainalytics merge completed. Added 30 columns.
+2026-02-11 17:31:45,358 - Review.reviews.ez3r_review - INFO - Applying exclusion criteria...
+2026-02-11 17:31:45,359 - Review.reviews.ez3r_review - INFO - Exclusion criteria applied. 26 companies excluded.
+2026-02-11 17:31:45,366 - Review.reviews.ez3r_review - INFO - After exclusions: 74 companies eligible
+2026-02-11 17:31:45,366 - Review.reviews.ez3r_review - INFO - Applying Physical Risk Score ranking...
+2026-02-11 17:31:45,367 - Review.reviews.ez3r_review - INFO - After Physical Risk Score ranking: 70 companies (top 70)
+2026-02-11 17:31:45,367 - Review.reviews.ez3r_review - INFO - Applying sector screening...
+2026-02-11 17:31:45,367 - Review.reviews.ez3r_review - INFO - Sector screening: 11 companies excluded from industries ['15', '20', '45', '65']
+2026-02-11 17:31:45,368 - Review.reviews.ez3r_review - INFO - After sector screening: 59 companies eligible
+2026-02-11 17:31:45,368 - Review.reviews.ez3r_review - INFO - Ranking by FFMC...
+2026-02-11 17:31:45,368 - Review.reviews.ez3r_review - INFO - Selecting top 30 companies...
+2026-02-11 17:31:45,368 - Review.reviews.ez3r_review - INFO - Final selection: 30 companies
+2026-02-11 17:31:45,368 - Review.reviews.ez3r_review - INFO - Applying 10% capping using most recent pricing data...
+2026-02-11 17:31:45,369 - utils.capping_proportional - INFO - Starting proportional capping with max weight: 10.0%
+2026-02-11 17:31:45,370 - utils.capping_proportional - INFO - Capping procedure converged after 1 iterations
+2026-02-11 17:31:45,370 - utils.capping_proportional - INFO - Capping Summary:
+2026-02-11 17:31:45,370 - utils.capping_proportional - INFO -   Total companies: 30
+2026-02-11 17:31:45,370 - utils.capping_proportional - INFO -   Companies capped: 1
+2026-02-11 17:31:45,371 - utils.capping_proportional - INFO -   Weight sum after capping: 1.000000
+2026-02-11 17:31:45,371 - utils.capping_proportional - INFO -   Max weight after capping: 0.100000
+2026-02-11 17:31:45,376 - Review.reviews.ez3r_review - INFO - Saving EZ3R output to: C:\Users\CSonneveld\OneDrive - Euronext\Documents\Projects\GUI + Reviews\output\EZ3R_df_20260211_173145.xlsx
+Completed EZ3R review in 4.65 seconds

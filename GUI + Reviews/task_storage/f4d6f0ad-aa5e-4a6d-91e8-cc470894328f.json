@@ -1,0 +1,29 @@
+{
+  "task_id": "f4d6f0ad-aa5e-4a6d-91e8-cc470894328f",
+  "task_type": "single",
+  "status": "failed",
+  "created_at": "2026-02-11T17:39:25.048582",
+  "started_at": "2026-02-11T17:39:25.338782",
+  "completed_at": "2026-02-11T17:39:26.790636",
+  "progress": 0,
+  "message": "Review failed: Error during review calculation: No companies selected in final selection step",
+  "error": "Error during review calculation: No companies selected in final selection step",
+  "result_data": null,
+  "review_type": "EZGP",
+  "parameters": {
+    "date": "20260209",
+    "co_date": "20260209",
+    "effective_date": "22-Feb-26",
+    "index": "EZGP",
+    "isin": "FRESG0003540",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 1.40494,
+  "completed_at_review": "2026-02-11T17:39:26.790636",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezgp_review.py\", line 509, in run_ezgp_review\n    raise ValueError(\"No companies selected in final selection step\")\nValueError: No companies selected in final selection step\n",
+  "runner_returncode": 1,
+  "runner_stdout_tail": "Starting EZGP review at 2026-02-11 17:39:25.385696\n2026-02-11 17:39:25,762 - Review.reviews.ezgp_review - INFO - Loading EOD data...\nLoaded index data from 2 file(s)\nLoaded stock EOD data from 2 file(s)\nLoaded stock CO data from 2 file(s)\nCreated FX lookup table with 35 unique currency pairs\nAvailable currency pairs: 15 currencies -> 6 index currencies\n2026-02-11 17:39:26,598 - Review.reviews.ezgp_review - INFO - Loading reference data...\n2026-02-11 17:39:26,686 - Review.reviews.ezgp_review - INFO - Starting universe size: 300\n2026-02-11 17:39:26,765 - Review.reviews.ezgp_review - INFO - Step 2.1: Filtering by 3-month Average Daily Traded Value...\n2026-02-11 17:39:26,767 - Review.reviews.ezgp_review - INFO - After ADTV filter (>= 40,000,000 EUR): 105 companies (excluded 195)\n2026-02-11 17:39:26,767 - Review.reviews.ezgp_review - INFO - Step 2.2: Carbon Emission Data filter - skipped for now\n2026-02-11 17:39:26,767 - Review.reviews.ezgp_review - INFO - Step 2.3: Filtering to Eurozone countries...\n2026-02-11 17:39:26,767 - Review.reviews.ezgp_review - INFO - After Eurozone filter: 102 companies\n2026-02-11 17:39:26,767 - Review.reviews.ezgp_review - INFO - Merging Sustainalytics data...\n2026-02-11 17:39:26,775 - Review.reviews.ezgp_review - INFO - Sustainalytics merge completed. Added 28 columns.\n2026-02-11 17:39:26,775 - Review.reviews.ezgp_review - INFO - Applying exclusion criteria...\n2026-02-11 17:39:26,781 - Review.reviews.ezgp_review - INFO - Exclusion criteria applied. 102 companies excluded.\n2026-02-11 17:39:26,782 - Review.reviews.ezgp_review - INFO - After exclusions: 0 companies eligible\n2026-02-11 17:39:26,782 - Review.reviews.ezgp_review - INFO - Step 2.6: Ranking by ESG Risk Score (lower is better)...\n2026-02-11 17:39:26,783 - Review.reviews.ezgp_review - WARNING - ESG Risk Score (181110112399) not available. Skipping ESG ranking.\n2026-02-11 17:39:26,783 - Review.reviews.ezgp_review - INFO - Step 2.7: Selecting top 40 companies with lowest ESG Risk Score...\n2026-02-11 17:39:26,783 - Review.reviews.ezgp_review - INFO - Pre-selection: 0 companies\n2026-02-11 17:39:26,783 - Review.reviews.ezgp_review - INFO - Step 3: Ranking pre-selected companies by FFMC...\n2026-02-11 17:39:26,784 - Review.reviews.ezgp_review - INFO - Step 4: Selecting top 20 companies with max 5 per Industry Code...\n2026-02-11 17:39:26,784 - Review.reviews.ezgp_review - INFO - Final selection: 0 companies\n2026-02-11 17:39:26,784 - Review.reviews.ezgp_review - INFO - Industry distribution: {}\n2026-02-11 17:39:26,784 - Review.reviews.ezgp_review - ERROR - Error during review calculation: No companies selected in final selection step\n2026-02-11 17:39:26,786 - Review.reviews.ezgp_review - ERROR - Traceback (most recent call last):\n  File \"C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\Review\\reviews\\ezgp_review.py\", line 509, in run_ezgp_review\n    raise ValueError(\"No companies selected in final selection step\")\nValueError: No companies selected in final selection step\nCompleted EZGP review in 1.40 seconds",
+  "runner_stderr_tail": null,
+  "runner_log_path": "task_storage\\f4d6f0ad-aa5e-4a6d-91e8-cc470894328f.log"
+}

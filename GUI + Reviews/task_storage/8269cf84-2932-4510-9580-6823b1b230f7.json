@@ -1,0 +1,31 @@
+{
+  "task_id": "8269cf84-2932-4510-9580-6823b1b230f7",
+  "task_type": "single",
+  "status": "completed",
+  "created_at": "2026-02-11T17:12:41.485450",
+  "started_at": "2026-02-11T17:12:41.777762",
+  "completed_at": "2026-02-11T17:12:56.194393",
+  "progress": 100,
+  "message": "Review completed successfully",
+  "error": null,
+  "result_data": {
+    "ezgp_path": "C:\\Users\\CSonneveld\\OneDrive - Euronext\\Documents\\Projects\\GUI + Reviews\\output\\EZGP_df_20260211_171255.xlsx"
+  },
+  "review_type": "EZGP",
+  "parameters": {
+    "date": "20260209",
+    "co_date": "20260209",
+    "effective_date": "22-Feb-26",
+    "index": "EZGP",
+    "isin": "FRESG0003540",
+    "auto_open": true,
+    "is_local_request": true
+  },
+  "duration_seconds": 14.349914,
+  "completed_at_review": "2026-02-11T17:12:56.194393",
+  "traceback": null,
+  "runner_returncode": null,
+  "runner_stdout_tail": null,
+  "runner_stderr_tail": null,
+  "runner_log_path": null
+}
